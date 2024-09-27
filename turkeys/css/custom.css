@@ -1,0 +1,27 @@
+body {
+	padding: 5px;
+}
+
+.map {
+	width: 416px;
+	height: 312px;
+}
+
+h1, h2, h3 {
+	text-align: left;
+}
+
+h2 {
+	border-top: 1px solid #333333;
+	margin-bottom: 0;
+}
+
+h3{
+	font-size: 0.8rem;
+	margin-top: 0;
+}
+
+.jvectormap-container { 
+	width: inherited;  
+    height: inherited;  
+}

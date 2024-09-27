@@ -1,0 +1,161 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>States Visited - TheCuzzorts.com</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="css/jquery-jvectormap-2.0.3.css">
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Visited States</h1>
+
+        <h2>Josh's States</h2>
+        <h3><span id="joshTotal"></span> of 50</h3>
+        <div id="joshVisited" class="map"></div>
+
+        <h2>Sam's States</h2>
+        <h3><span id="samTotal"></span> of 50</h3>
+        <div id="samVisited" class="map"></div>
+
+        <h2>Ellie's States</h2>
+        <h3><span id="ellieTotal"></span> of 50</h3>
+        <div id="ellieVisited" class="map"></div>
+
+        <h2>Tilly's States</h2>
+        <h3><span id="tillyTotal"></span> of 50</h3>
+        <div id="tillyVisited" class="map"></div>
+
+        <h2>Poppy's States</h2>
+        <h3><span id="poppyTotal"></span> of 50</h3>
+        <div id="poppyVisited" class="map"></div>
+
+        <footer>
+        	<p><script>document.write(new Date().getFullYear())</script> &copy; The Cuzzorts</p>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="js/jquery-jvectormap-2.0.3.min.js"></script>
+        <script src="js/jquery-jvectormap-us-lcc.js"></script>
+        <script src="js/main.js"></script>
+
+        <script src="data/states-visited-josh.js"></script>
+        <script src="data/states-visited-sam.js"></script>
+        <script src="data/states-visited-ellie.js"></script>
+        <script src="data/states-visited-tilly.js"></script>
+        <script src="data/states-visited-poppy.js"></script>
+
+        <script type="text/javascript">
+			$(document).ready(function(){
+				$('#joshVisited').vectorMap({
+                    map: 'us_lcc',
+                    backgroundColor: '#1C6BA0',
+                    series: {
+                        regions: [{
+                            values: statesVisitedJosh,
+                            scale: ['#EFEFEF', '#00AC4B'],
+                            normalizeFunction: 'polynomial'
+                        }]
+                    }
+                });
+
+                $('#samVisited').vectorMap({
+                    map: 'us_lcc',
+                    backgroundColor: '#1C6BA0',
+                    series: {
+                        regions: [{
+                            values: statesVisitedSam,
+                            scale: ['#EFEFEF', '#662684'],
+                            normalizeFunction: 'polynomial'
+                        }]
+                    }
+                });
+
+                $('#ellieVisited').vectorMap({
+                    map: 'us_lcc',
+                    backgroundColor: '#1C6BA0',
+                    series: {
+                        regions: [{
+                            values: statesVisitedEllie,
+                            scale: ['#EFEFEF', '#d9259a'],
+                            normalizeFunction: 'polynomial'
+                        }]
+                    }
+                });
+
+                $('#tillyVisited').vectorMap({
+                    map: 'us_lcc',
+                    backgroundColor: '#1C6BA0',
+                    series: {
+                        regions: [{
+                            values: statesVisitedTilly,
+                            scale: ['#EFEFEF', '#0898ff'],
+                            normalizeFunction: 'polynomial'
+                        }]
+                    }
+                });
+
+                $('#poppyVisited').vectorMap({
+                    map: 'us_lcc',
+                    backgroundColor: '#1C6BA0',
+                    series: {
+                        regions: [{
+                            values: statesVisitedPoppy,
+                            scale: ['#EFEFEF', '#be3b43'],
+                            normalizeFunction: 'polynomial'
+                        }]
+                    }
+                });
+			});
+        </script>
+
+        <script type="text/javascript">
+            function sum(input){
+             
+             if (toString.call(input) !== "[object Array]")
+                return false;
+                  
+                var total =  0;
+                for(var i=0;i<input.length;i++)
+                    {                  
+                    if(isNaN(input[i])){
+                    continue;
+                        }
+                        total += Number(input[i]);
+                    }
+                return total;
+            }
+
+            var joshTotal = document.getElementById('joshTotal');
+            joshTotal.innerHTML = sum(Object.values(statesVisitedJosh));
+
+            var samTotal = document.getElementById('samTotal');
+            samTotal.innerHTML = sum(Object.values(statesVisitedSam));
+
+            var ellieTotal = document.getElementById('ellieTotal');
+            ellieTotal.innerHTML = sum(Object.values(statesVisitedEllie));
+
+            var tillyTotal = document.getElementById('tillyTotal');
+            tillyTotal.innerHTML = sum(Object.values(statesVisitedTilly));
+
+            var poppyTotal = document.getElementById('poppyTotal');
+            poppyTotal.innerHTML = sum(Object.values(statesVisitedPoppy));
+        </script>
+    </body>
+</html>

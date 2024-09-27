@@ -1,0 +1,49 @@
+/* NOT USED */
+.prev { padding: 1em; }
+.next { padding: 1em; }
+
+.divisionCount { float: right; font-size: 0.75em; letter-spacing: 0.06em;  }
+
+.team { border-bottom: 1px solid #ccc; display: block; margin: 0.3em; padding: 0.1em 0; }
+.team:last-child { border-bottom: none; }
+.visited-key { border-radius: 5px; padding: 0.2em 0.4em; margin: .2em; }
+	.visited-key.yes { background-color: #32cd32; }
+	.visited-key.planned { background-color: #ff8c00; }
+.visited { width: 8px; height: 24px; margin-bottom: 0.1em; margin-right: 0.1em; display: inline-block; border-radius: 2px; position: relative; top: 0.25em; }
+	.visited.yes { background-color: #32cd32; }
+	.visited.no { background-color: transparent; }
+	.visited.planned { background-color: #ff8c00; }
+.team-logo { background: url("../images/logos.png") no-repeat; width: 30px; height: 24px; margin-bottom: 0.1em; margin-right: 0.5em; display: inline-block; position: relative; top: 0.25em; }
+.team-name { height: 38px; margin-bottom: 0.1em; margin-right: 0.1em; display: inline-block; display: inline-block; line-height: 1em; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); vertical-align: middle; }
+	.team-name small { font-size: 0.75em; }
+
+.angels { background-position: 0 0;}				/* Los Angeles Angels of Anaheim */
+.diamondbacks { background-position: 0 -55px; }	/* Arizona Diamondbacks */
+.braves { background-position: 0 -111px; }		/* Atlanta Braves */
+.orioles { background-position: 0 -165px; }		/* Baltimore Orioles */
+.redsox { background-position: 0 -220px; }		/* Boston Red Sox */
+.cubs { background-position: 0 -275px; }			/* Chicago Cubs */
+.reds { background-position: 0 -330px; }			/* Cincinnati Reds */
+.indians { background-position: 0 -385px; }		/* Cleveland Indians */
+.rockies { background-position: 0 -440px; }		/* Colorado Rockies */
+.whitesox { background-position: 0 -495px; }		/* White Sox */
+.tigers { background-position: 0 -550px; }		/* Detroit Tigers */
+.marlins { background-position: 0 -606px; }		/* Miami Marlins */
+.astros { background-position: 0 -660px; } 		/* Houston Astros */
+.royals { background-position: 0 -715px; } 		/* Kansas City Royals */
+.dodgers { background-position: 0 -771px; }		/* Los Angeles Dodgers */
+.brewers { background-position: 0 -825px; }		/* Milwaukee Brewers */
+.twins { background-position: 0 -880px; }		/* Minnesota Twins */
+.mets { background-position: 0 -935px; } 		/* New York Mets */
+.yankees { background-position: 0 -990px; } 		/* New York Yankees */
+.athletics { background-position: 0 -1045px; } 	/* Oakland Athletics */
+.phillies { background-position: 0 -1100px; } 	/* Philadelphia Phillies */
+.pirates { background-position: 0 -1155px; } 	/* Pittsburgh Pirates */
+.padres { background-position: 0 -1210px; } 		/* San Diego Padres */
+.mariners { background-position: 0 -1266px; } 	/* Seattle Mariners */
+.giants { background-position: 0 -1320px; } 		/* San Francisco Giants */
+.cardinals { background-position: 0 -1375px; } 	/* St. Louis Cardinals */
+.rays { background-position: 0 -1430px; } 		/* Tampa Bay Rays */
+.rangers { background-position: 0 -1486px; } 	/* Texas Rangers */
+.bluejays { background-position: 0 -1540px; } 	/* Toronto Blue Jays */
+.nationals { background-position: 0 -1596px; } 	/* Washington Nationals */

@@ -1,0 +1,10 @@
+h3 {
+	border-top: 1px solid #333333;
+}
+
+.google-visualization-tooltip { 
+	display: none;
+	visibility: hidden;
+}
+
+svg {width: 100%; height: auto;}

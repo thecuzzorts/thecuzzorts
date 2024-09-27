@@ -1,0 +1,150 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Turkey Maps | TheCuzzorts.com</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta property="og:title" content="Turkey Hunting Maps" />
+        <meta property="og:type" content="websote" />
+        <meta property="og:url" content="https://www.thecuzzorts.com/turkeys/" />
+        <meta property="og:image" content="https://www.thecuzzorts.com/turkeys/og-image.jpg" />
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="css/jquery-jvectormap-2.0.3.css">
+
+        <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Turkey Maps</h1>
+
+        <a name="josh" />
+        <h2>Josh</h2>
+        <h3><span id="joshTotal"></span> of 49</h3>
+        <div id="joshTurkeys" class="map"></div>
+
+        <a name="sam" />
+        <h2>Sam</h2>
+        <h3><span id="samTotal"></span> of 49</h3>
+        <div id="samTurkeys" class="map"></div>
+
+        <a name="jack" />
+        <h2>Jack</h2>
+		<h3><span id="jackTotal"></span> of 49</h3>
+        <div id="jackTurkeys" class="map"></div>
+
+        <a name="debbie" />
+        <h2>Debbie</h2>
+		<h3><span id="debbieTotal"></span> of 49</h3>
+        <div id="debbieTurkeys" class="map"></div>
+
+        <footer>
+        	<p><script>document.write(new Date().getFullYear())</script> &copy; The Cuzzorts</p>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="js/jquery-jvectormap-2.0.3.min.js"></script>
+        <script src="js/jquery-jvectormap-us-lcc.js"></script>
+        <script src="js/main.js"></script>
+
+        <script src="data/turkeys-harvested-josh.js"></script>
+        <script src="data/turkeys-harvested-sam.js"></script>
+        <script src="data/turkeys-harvested-jack.js"></script>
+        <script src="data/turkeys-harvested-debbie.js"></script>
+
+        <script type="text/javascript">
+			$(document).ready(function(){
+				$('#joshTurkeys').vectorMap({
+                    map: 'us_lcc',
+                    backgroundColor: '#1C6BA0',
+                    series: {
+                        regions: [{
+                            values: turkeysHarvestedJosh,
+                            scale: ['#EFEFEF', '#75DB00'],
+                            normalizeFunction: 'polynomial'
+                        }]
+                    }
+                });
+
+                $('#samTurkeys').vectorMap({
+                    map: 'us_lcc',
+                    backgroundColor: '#1C6BA0',
+                    series: {
+                        regions: [{
+                            values: turkeysHarvestedSam,
+                            scale: ['#EFEFEF', '#7008A1'],
+                            normalizeFunction: 'polynomial'
+                        }]
+                    }
+                });
+
+                $('#jackTurkeys').vectorMap({
+                    map: 'us_lcc',
+                    backgroundColor: '#1C6BA0',
+                    series: {
+                        regions: [{
+                            values: turkeysHarvestedJack,
+                            scale: ['#EFEFEF', '#0898ff'],
+                            normalizeFunction: 'polynomial'
+                        }]
+                    }
+                });
+
+                $('#debbieTurkeys').vectorMap({
+                    map: 'us_lcc',
+                    backgroundColor: '#1C6BA0',
+                    series: {
+                        regions: [{
+                            values: turkeysHarvestedDebbie,
+                            scale: ['#EFEFEF', '#ff69b4'],
+                            normalizeFunction: 'polynomial'
+                        }]
+                    }
+                });
+			});
+        </script>
+
+        <script type="text/javascript">
+            function sum(input){
+             
+             if (toString.call(input) !== "[object Array]")
+                return false;
+                  
+                var total =  0;
+                for(var i=0;i<input.length;i++)
+                    {                  
+                    if(isNaN(input[i])){
+                    continue;
+                        }
+                        total += Number(input[i]);
+                    }
+                return total;
+            }
+
+            var joshTotal = document.getElementById('joshTotal');
+            joshTotal.innerHTML = Math.round(sum(Object.values(turkeysHarvestedJosh)));
+
+            var samTotal = document.getElementById('samTotal');
+            samTotal.innerHTML = Math.round(sum(Object.values(turkeysHarvestedSam)));
+
+            var jackTotal = document.getElementById('jackTotal');
+            jackTotal.innerHTML = Math.round(sum(Object.values(turkeysHarvestedJack)));
+
+            var debbieTotal = document.getElementById('debbieTotal');
+            debbieTotal.innerHTML = Math.round(sum(Object.values(turkeysHarvestedDebbie)));
+        </script>
+    </body>
+</html>
