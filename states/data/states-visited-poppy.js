@@ -8,7 +8,7 @@ var statesVisitedPoppy = {
 	"US-CT": 0,
 	"US-DC": 0,
 	"US-DE": 0,
-	"US-FL": 0,
+	"US-FL": 1,
 	"US-GA": 0,
 	"US-HI": 0,
 	"US-IA": 0,
