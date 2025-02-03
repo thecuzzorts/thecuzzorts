@@ -15,7 +15,7 @@ var statesVisitedPoppy = {
 	"US-ID": 0,
 	"US-IL": 1,
 	"US-IN": 1,
-	"US-KS": 0,
+	"US-KS": 1,
 	"US-KY": 1,
 	"US-LA": 0,
 	"US-MA": 0,
