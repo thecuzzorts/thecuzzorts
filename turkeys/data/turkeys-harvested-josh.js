@@ -21,7 +21,7 @@ var turkeysHarvestedJosh = {
 	"US-MA": 0,
 	"US-MD": 0,
 	"US-ME": 0,
-	"US-MI": 0,
+	"US-MI": 1,
 	"US-MN": 0,
 	"US-MO": 1,
 	"US-MS": 0,
