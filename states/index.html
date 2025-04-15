@@ -45,6 +45,10 @@
         <h3><span id="poppyTotal"></span> of 50</h3>
         <div id="poppyVisited" class="map"></div>
 
+	<h2>Deb's States</h2>
+        <h3><span id="debTotal"></span> of 50</h3>
+        <div id="debVisited" class="map"></div>
+
         <footer>
         	<p><script>document.write(new Date().getFullYear())</script> &copy; The Cuzzorts</p>
         </footer>
@@ -60,68 +64,81 @@
         <script src="data/states-visited-ellie.js"></script>
         <script src="data/states-visited-tilly.js"></script>
         <script src="data/states-visited-poppy.js"></script>
+	<script src="data/states-visited-deb.js"></script>
 
         <script type="text/javascript">
 			$(document).ready(function(){
 				$('#joshVisited').vectorMap({
-                    map: 'us_lcc',
-                    backgroundColor: '#1C6BA0',
-                    series: {
-                        regions: [{
-                            values: statesVisitedJosh,
-                            scale: ['#EFEFEF', '#00AC4B'],
-                            normalizeFunction: 'polynomial'
-                        }]
-                    }
-                });
+		                    map: 'us_lcc',
+		                    backgroundColor: '#1C6BA0',
+		                    series: {
+		                        regions: [{
+		                            values: statesVisitedJosh,
+		                            scale: ['#EFEFEF', '#00AC4B'],
+		                            normalizeFunction: 'polynomial'
+		                        }]
+		                    }
+		                });
+		
+		                $('#samVisited').vectorMap({
+		                    map: 'us_lcc',
+		                    backgroundColor: '#1C6BA0',
+		                    series: {
+		                        regions: [{
+		                            values: statesVisitedSam,
+		                            scale: ['#EFEFEF', '#662684'],
+		                            normalizeFunction: 'polynomial'
+		                        }]
+		                    }
+		                });
+		
+		                $('#ellieVisited').vectorMap({
+		                    map: 'us_lcc',
+		                    backgroundColor: '#1C6BA0',
+		                    series: {
+		                        regions: [{
+		                            values: statesVisitedEllie,
+		                            scale: ['#EFEFEF', '#66b2b2'],
+		                            normalizeFunction: 'polynomial'
+		                        }]
+		                    }
+		                });
+		
+		                $('#tillyVisited').vectorMap({
+		                    map: 'us_lcc',
+		                    backgroundColor: '#1C6BA0',
+		                    series: {
+		                        regions: [{
+		                            values: statesVisitedTilly,
+		                            scale: ['#EFEFEF', '#0898ff'],
+		                            normalizeFunction: 'polynomial'
+		                        }]
+		                    }
+		                });
+		
+		                $('#poppyVisited').vectorMap({
+		                    map: 'us_lcc',
+		                    backgroundColor: '#1C6BA0',
+		                    series: {
+		                        regions: [{
+		                            values: statesVisitedPoppy,
+		                            scale: ['#EFEFEF', '#d9259a'],
+		                            normalizeFunction: 'polynomial'
+		                        }]
+		                    }
+		                });
 
-                $('#samVisited').vectorMap({
-                    map: 'us_lcc',
-                    backgroundColor: '#1C6BA0',
-                    series: {
-                        regions: [{
-                            values: statesVisitedSam,
-                            scale: ['#EFEFEF', '#662684'],
-                            normalizeFunction: 'polynomial'
-                        }]
-                    }
-                });
-
-                $('#ellieVisited').vectorMap({
-                    map: 'us_lcc',
-                    backgroundColor: '#1C6BA0',
-                    series: {
-                        regions: [{
-                            values: statesVisitedEllie,
-                            scale: ['#EFEFEF', '#d9259a'],
-                            normalizeFunction: 'polynomial'
-                        }]
-                    }
-                });
-
-                $('#tillyVisited').vectorMap({
-                    map: 'us_lcc',
-                    backgroundColor: '#1C6BA0',
-                    series: {
-                        regions: [{
-                            values: statesVisitedTilly,
-                            scale: ['#EFEFEF', '#0898ff'],
-                            normalizeFunction: 'polynomial'
-                        }]
-                    }
-                });
-
-                $('#poppyVisited').vectorMap({
-                    map: 'us_lcc',
-                    backgroundColor: '#1C6BA0',
-                    series: {
-                        regions: [{
-                            values: statesVisitedPoppy,
-                            scale: ['#EFEFEF', '#be3b43'],
-                            normalizeFunction: 'polynomial'
-                        }]
-                    }
-                });
+				$('#DEBVisited').vectorMap({
+		                    map: 'us_lcc',
+		                    backgroundColor: '#1C6BA0',
+		                    series: {
+		                        regions: [{
+		                            values: statesVisitedDeb,
+		                            scale: ['#EFEFEF', '#be3b43'],
+		                            normalizeFunction: 'polynomial'
+		                        }]
+		                    }
+		                });
 			});
         </script>
 
@@ -156,6 +173,9 @@
 
             var poppyTotal = document.getElementById('poppyTotal');
             poppyTotal.innerHTML = sum(Object.values(statesVisitedPoppy));
+
+	    var debTotal = document.getElementById('debTotal');
+            debTotal.innerHTML = sum(Object.values(statesVisitedDeb));
         </script>
     </body>
 </html>
