@@ -7,7 +7,7 @@ var turkeysHarvestedJack = {
 	"US-CO": 1,
 	"US-CT": 1,
 	"US-DC": 0,
-	"US-DE": 0,
+	"US-DE": 1,
 	"US-FL": 1,
 	"US-GA": 1,
 	"US-HI": 1,
