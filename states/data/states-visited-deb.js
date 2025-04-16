@@ -5,7 +5,7 @@ var statesVisitedDeb = {
 	"US-AZ": 1,
 	"US-CA": 1,
 	"US-CO": 1,
-	"US-CT": 0,
+	"US-CT": 1,
 	"US-DC": 1,
 	"US-DE": 1,
 	"US-FL": 1,
