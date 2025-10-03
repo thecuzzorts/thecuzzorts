@@ -20,7 +20,7 @@ var statesVisitedJosh = {
 	"US-LA": 0,
 	"US-MA": 1,
 	"US-MD": 1,
-	"US-ME": 0,
+	"US-ME": 1,
 	"US-MI": 1,
 	"US-MN": 1,
 	"US-MO": 1,
