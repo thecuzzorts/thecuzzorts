@@ -205,7 +205,7 @@
 
   function countVisited(data) {
     return Object.keys(data).reduce(function (sum, key) {
-      return sum + (data[key] ? 1 : 0);
+      return sum + (key !== 'US-DC' && data[key] ? 1 : 0);
     }, 0);
   }
 
@@ -255,7 +255,7 @@
 
   function countHeatMapVisited(heatData) {
     return Object.keys(heatData).reduce(function (sum, key) {
-      return sum + (heatData[key] > 0 ? 1 : 0);
+      return sum + (key !== 'US-DC' && heatData[key] > 0 ? 1 : 0);
     }, 0);
   }
 
@@ -293,14 +293,35 @@
     details = details || {};
     var visited = Object.keys(data).filter(function (k) { return data[k]; });
     if (visited.length === 0) return '';
-    visited.sort(function (a, b) {
+
+    var states   = visited.filter(function (k) { return k !== 'US-DC'; });
+    var districts = visited.filter(function (k) { return k === 'US-DC'; });
+
+    function byName(a, b) {
       return (STATE_NAMES[a] || a).localeCompare(STATE_NAMES[b] || b);
-    });
-    var chips = visited.map(function (code) {
+    }
+    states.sort(byName);
+
+    var html = '<div class="visit-list"><div class="visit-chips">';
+    states.forEach(function (code) {
       var tip = chipTooltip(details[code]);
-      return '<span class="visit-chip"' + tip + '>' + (STATE_NAMES[code] || code) + '</span>';
-    }).join('');
-    return '<div class="visit-list"><div class="visit-chips">' + chips + '</div></div>';
+      html += '<span class="visit-chip"' + tip + '>' + (STATE_NAMES[code] || code) + '</span>';
+    });
+    html += '</div>';
+
+    if (districts.length > 0) {
+      html += '<div class="continent-group" style="margin-top:0.5rem">';
+      html += '<div class="continent-label">Federal District</div>';
+      html += '<div class="visit-chips">';
+      districts.forEach(function (code) {
+        var tip = chipTooltip(details[code]);
+        html += '<span class="visit-chip territory-chip"' + tip + '>' + (STATE_NAMES[code] || code) + '</span>';
+      });
+      html += '</div></div>';
+    }
+
+    html += '</div>';
+    return html;
   }
 
   function buildCountryListHTML(data, details) {
@@ -437,14 +458,19 @@
     var familyCount = countHeatMapCountries(familyHeat);
     var familyTerritories = countHeatMapTerritories(familyHeat);
 
-    // Family combined heat map
+    // Family combined map — binary (visited or not)
+    var familyBinary = {};
+    Object.keys(familyHeat).forEach(function (k) {
+      familyBinary[k] = familyHeat[k] > 0 ? 1 : 0;
+    });
+
     setCountryCount('familyCountriesTotal', familyCount, familyTerritories);
     $('#familyCountriesMap').vectorMap({
       map: 'world_mill_en',
       backgroundColor: '#1a2e3b',
       series: {
         regions: [{
-          values: familyHeat,
+          values: familyBinary,
           scale: ['#f0f2f5', '#E8A020'],
           normalizeFunction: 'linear'
         }]

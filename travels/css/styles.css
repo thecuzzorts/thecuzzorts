@@ -40,6 +40,18 @@ header h1 {
   color: #fff;
 }
 
+.home-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(255,255,255,0.35);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.home-link:hover {
+  color: #E8A020;
+  border-bottom-color: #E8A020;
+}
+
 /* --- Tab Bar --------------------------------------- */
 .tab-bar {
   display: flex;
@@ -153,6 +165,10 @@ main {
   .person-grid.grid-2col,
   .person-grid.grid-3col {
     grid-template-columns: 1fr;
+  }
+
+  .expand-btn {
+    display: none;
   }
 }
 
