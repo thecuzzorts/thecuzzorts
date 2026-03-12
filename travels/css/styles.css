@@ -431,8 +431,14 @@ main {
 
 /* --- Footer ---------------------------------------- */
 footer {
+  background: #1a2e3b;
+  color: #a8bfc9;
   text-align: center;
   padding: 1.5rem 1rem;
-  font-size: 0.8rem;
-  color: #aaa;
+  font-size: 0.85rem;
+}
+
+footer a {
+  color: #E8A020;
+  text-decoration: none;
 }

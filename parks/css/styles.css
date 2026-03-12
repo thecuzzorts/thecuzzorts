@@ -1,5 +1,5 @@
 /* ===================================================
-   TheCuzzorts — Turkey Maps Page
+   TheCuzzorts — National Parks Page
    =================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Kreon:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
@@ -27,7 +27,7 @@ body {
 header {
   background: #1a2e3b;
   color: #fff;
-  padding: 1.25rem 1.5rem;
+  padding: 1.25rem 1.5rem 1.25rem;
   text-align: center;
 }
 
@@ -37,6 +37,13 @@ header h1 {
   font-weight: 700;
   letter-spacing: 0.02em;
   color: #fff;
+}
+
+header p {
+  font-size: 0.85rem;
+  color: #a8bfc9;
+  letter-spacing: 0.04em;
+  margin-top: 0.25rem;
 }
 
 .home-link {
@@ -69,6 +76,30 @@ main {
   margin: 1.75rem 0 0.75rem;
 }
 
+/* --- Combined Card --------------------------------- */
+.combined-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 1.25rem 1.25rem 1rem;
+  margin-bottom: 1.5rem;
+  border-top: 5px solid #8B5E3C;
+}
+
+.combined-card h2 {
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a2e3b;
+  margin-bottom: 0.2rem;
+}
+
+.combined-card .count {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 0.85rem;
+}
+
 /* --- Person Grid ----------------------------------- */
 .person-grid {
   display: grid;
@@ -80,8 +111,19 @@ main {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.person-grid.grid-3col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 800px) {
+  .person-grid.grid-3col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 640px) {
-  .person-grid.grid-2col {
+  .person-grid.grid-2col,
+  .person-grid.grid-3col {
     grid-template-columns: 1fr;
   }
 
@@ -97,62 +139,11 @@ main {
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   padding: 1.25rem 1.25rem 1rem;
   border-top: 5px solid #ccc;
-}
-
-.person-card[data-person="josh"]   { border-top-color: #00AC4B; }
-.person-card[data-person="sam"]    { border-top-color: #662684; }
-.person-card[data-person="jack"]   { border-top-color: #0898ff; }
-.person-card[data-person="debbie"] { border-top-color: #d9259a; }
-
-.person-card h2 {
-  font-family: 'Kreon', Georgia, serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #1a2e3b;
-  margin-bottom: 0.2rem;
-}
-
-.person-card .count {
-  font-size: 0.85rem;
-  color: #777;
-  margin-bottom: 0.85rem;
-}
-
-/* --- Map Container (responsive aspect-ratio) ------- */
-.map-container {
   position: relative;
-  width: 100%;
 }
 
-/* US map — roughly 8:5 ratio using the LCC projection */
-.map-container.us-map {
-  padding-bottom: 62%;
-}
-
-.map-container .map {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* jVectorMap overrides */
-.jvectormap-container {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.jvectormap-tip {
-  background: #1a2e3b;
-  border: none;
-  color: #fff;
-  border-radius: 5px;
-  padding: 0.4rem 0.6rem;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 0.85rem;
-  line-height: 1.5;
-  max-width: 220px;
+.person-card.expanded {
+  grid-column: 1 / -1;
 }
 
 /* --- Expand Button --------------------------------- */
@@ -179,14 +170,33 @@ main {
   display: block;
   width: 14px;
   height: 14px;
-  fill: currentColor;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
 }
 
-.person-card.expanded {
-  grid-column: 1 / -1;
+.person-card[data-person="josh"]  { border-top-color: #00AC4B; }
+.person-card[data-person="sam"]   { border-top-color: #662684; }
+.person-card[data-person="ellie"] { border-top-color: #66b2b2; }
+.person-card[data-person="tilly"] { border-top-color: #0898ff; }
+.person-card[data-person="poppy"] { border-top-color: #d9259a; }
+
+.person-card h2 {
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a2e3b;
+  margin-bottom: 0.2rem;
 }
 
-/* --- List Toggle ----------------------------------- */
+.person-card .count {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 0.85rem;
+}
+
+/* --- Visit Lists ----------------------------------- */
 .list-toggle {
   display: block;
   width: 100%;
@@ -208,7 +218,6 @@ main {
   color: #555;
 }
 
-/* --- Visit List ------------------------------------ */
 .visit-list {
   display: none;
   margin-top: 0.5rem;
@@ -218,11 +227,11 @@ main {
   display: block;
 }
 
-.turkey-group {
+.region-group {
   margin-bottom: 0.55rem;
 }
 
-.turkey-group-label {
+.region-label {
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -238,7 +247,9 @@ main {
 }
 
 .visit-chip {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
   padding: 0.15rem 0.55rem;
   border-radius: 99px;
   font-size: 0.75rem;
@@ -248,20 +259,51 @@ main {
   white-space: nowrap;
 }
 
-/* Hunted-but-not-harvested chip */
-.turkey-chip--hunted {
-  font-style: italic;
-  background: rgba(232, 160, 32, 0.1) !important;
-  border-color: rgba(232, 160, 32, 0.5) !important;
-  border-style: dashed !important;
-  color: #7a5a10;
+/* Chip tooltip (date + notes) */
+.visit-chip[data-tooltip] {
+  position: relative;
+  cursor: default;
 }
 
-/* Per-person chip accent colors */
-.person-card[data-person="josh"]   .visit-chip { background: rgba(0,172,75,0.08);   border-color: rgba(0,172,75,0.3); }
-.person-card[data-person="sam"]    .visit-chip { background: rgba(102,38,132,0.08); border-color: rgba(102,38,132,0.3); }
-.person-card[data-person="jack"]   .visit-chip { background: rgba(8,152,255,0.08);  border-color: rgba(8,152,255,0.3); }
-.person-card[data-person="debbie"] .visit-chip { background: rgba(217,37,154,0.08); border-color: rgba(217,37,154,0.3); }
+.visit-chip[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a2e3b;
+  color: #fff;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  padding: 0.3rem 0.55rem;
+  border-radius: 5px;
+  white-space: nowrap;
+  max-width: 240px;
+  white-space: normal;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 10;
+}
+
+.visit-chip[data-tooltip]:hover::after {
+  opacity: 1;
+}
+
+/* Person dot in family chip */
+.person-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.no-visits {
+  font-size: 0.8rem;
+  color: #bbb;
+  font-style: italic;
+}
 
 /* --- Footer ---------------------------------------- */
 footer {
