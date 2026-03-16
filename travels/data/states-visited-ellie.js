@@ -55,5 +55,8 @@ var statesVisitedEllie = {
 // Optional visit details — add entries only where you have dates or notes
 var statesDetailsEllie = {
 	"US-CO": { date: "2015-06-17", notes: "Anniversary trip with mom and dad to Denver for baseball game" },
-	"US-NE": { date: "2015-06-17", notes: "Anniversary trip with mom and dad to Denver for baseball game" }
+	"US-NE": { date: "2015-06-17", notes: "Anniversary trip with mom and dad to Denver for baseball game" },
+	"US-AR": { date: "2026-03-14", notes: "Savannah Bananas baseball game at the Superdome" },
+	"US-LA": { date: "2026-03-14", notes: "Savannah Bananas baseball game at the Superdome" },
+	"US-MS": { date: "2026-03-14", notes: "Savannah Bananas baseball game at the Superdome" }
 };

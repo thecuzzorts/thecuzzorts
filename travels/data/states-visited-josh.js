@@ -54,4 +54,5 @@ var statesVisitedJosh = {
 
 // Optional visit details — add entries only where you have dates or notes
 var statesDetailsJosh = {
+	"US-LA": { date: "2026-03-14", notes: "Savannah Bananas baseball game at the Superdome" }
 };
