@@ -17,7 +17,7 @@ var statesVisitedJosh = {
 	"US-IN": 1,
 	"US-KS": 1,
 	"US-KY": 1,
-	"US-LA": 0,
+	"US-LA": 1,
 	"US-MA": 1,
 	"US-MD": 1,
 	"US-ME": 1,
