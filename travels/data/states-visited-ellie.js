@@ -42,7 +42,7 @@ var statesVisitedEllie = {
 	"US-SC": 1,
 	"US-SD": 0,
 	"US-TN": 1,
-	"US-TX": 0,
+	"US-TX": 1,
 	"US-UT": 0,
 	"US-VA": 0,
 	"US-VT": 0,
@@ -58,5 +58,6 @@ var statesDetailsEllie = {
 	"US-NE": { date: "2015-06-17", notes: "Anniversary trip with mom and dad to Denver for baseball game" },
 	"US-AR": { date: "2026-03-14", notes: "Savannah Bananas baseball game at the Superdome" },
 	"US-LA": { date: "2026-03-14", notes: "Savannah Bananas baseball game at the Superdome" },
-	"US-MS": { date: "2026-03-14", notes: "Savannah Bananas baseball game at the Superdome" }
+	"US-MS": { date: "2026-03-14", notes: "Savannah Bananas baseball game at the Superdome" },
+ 	"US-TX": { date: "2026-03-16", notes: "Texarkana" }
 };
