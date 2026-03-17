@@ -56,5 +56,6 @@ var statesVisitedTilly = {
 var statesDetailsTilly = {
 	"US-AR": { date: "2026-03-14", notes: "Savannah Bananas baseball game at the Superdome" },
 	"US-LA": { date: "2026-03-14", notes: "Savannah Bananas baseball game at the Superdome" },
-	"US-MS": { date: "2026-03-14", notes: "Savannah Bananas baseball game at the Superdome" }
+	"US-MS": { date: "2026-03-14", notes: "Savannah Bananas baseball game at the Superdome" },
+ 	"US-TX": { date: "2026-03-16", notes: "Texarkana" }
 };
