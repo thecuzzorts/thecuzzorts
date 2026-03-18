@@ -9,7 +9,7 @@
     {
       id:      'josh',
       name:    'Josh',
-      color:   '#00AC4B',
+      color:   '#E8A020',
       states:  function () { return statesVisitedJosh; },
       stateDetails: function () { return typeof statesDetailsJosh !== 'undefined' ? statesDetailsJosh : {}; },
       countries: function () { return countriesVisitedJosh; },
@@ -401,7 +401,7 @@
       series: {
         regions: [{
           values: familyHeat,
-          scale: ['#f0f2f5', '#E8A020'],
+          scale: ['#f0f2f5', '#E8601A'],
           normalizeFunction: 'linear'
         }]
       },
@@ -471,7 +471,7 @@
       series: {
         regions: [{
           values: familyBinary,
-          scale: ['#f0f2f5', '#E8A020'],
+          scale: ['#f0f2f5', '#E8601A'],
           normalizeFunction: 'linear'
         }]
       },

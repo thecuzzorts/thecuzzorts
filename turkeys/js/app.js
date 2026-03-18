@@ -6,10 +6,11 @@
 
   // ---- Person config --------------------------------
   var people = [
-    { id: 'josh',   color: '#00AC4B', data: function () { return turkeysHarvestedJosh;   } },
+    { id: 'josh',   color: '#E8A020', data: function () { return turkeysHarvestedJosh;   } },
     { id: 'sam',    color: '#662684', data: function () { return turkeysHarvestedSam;    } },
-    { id: 'jack',   color: '#0898ff', data: function () { return turkeysHarvestedJack;   } },
-    { id: 'debbie', color: '#d9259a', data: function () { return turkeysHarvestedDebbie; } }
+    { id: 'jack',   color: '#4A9E2F', data: function () { return turkeysHarvestedJack;   } },
+    { id: 'debbie', color: '#D93025', data: function () { return turkeysHarvestedDebbie; } },
+    { id: 'tilly',  color: '#0898ff', data: function () { return turkeysHarvestedTilly;  } }
   ];
 
   // ---- State name lookup ----------------------------
@@ -175,6 +176,58 @@
     });
   }
 
+  // ---- Family Combined Map --------------------------
+  function initFamilyMap() {
+    // For each state: count people who harvested (value >= 1) and who hunted (value > 0)
+    var harvestCombined = {};
+    var huntCombined    = {};
+
+    people.forEach(function (person) {
+      var data = person.data();
+      Object.keys(data).forEach(function (key) {
+        var v = Number(data[key]);
+        harvestCombined[key] = (harvestCombined[key] || 0) + (Math.round(v) >= 1 ? 1 : 0);
+        huntCombined[key]    = (huntCombined[key]    || 0) + (v > 0 ? 1 : 0);
+      });
+    });
+
+    var totalHarvested = Object.keys(harvestCombined).reduce(function (sum, key) {
+      return sum + (harvestCombined[key] >= 1 ? 1 : 0);
+    }, 0);
+
+    $('#familyTotal').text(totalHarvested);
+
+    $('#familyTurkeys').vectorMap({
+      map: 'us_lcc',
+      backgroundColor: '#1C6BA0',
+      series: {
+        regions: [{
+          values: harvestCombined,
+          scale: ['#EFEFEF', '#E8601A'],
+          normalizeFunction: 'linear'
+        }]
+      },
+      onRegionTipShow: function (_e, el, code) {
+        var count = harvestCombined[code] || 0;
+        var label = count === 1 ? '1 family member' : count + ' family members';
+        var tip = '<strong>' + el.html() + '</strong>';
+        if (count > 0) tip += '<br><span style="opacity:.8">Harvested by ' + label + '</span>';
+        el.html(tip);
+      }
+    });
+
+    registerMap('#familyTurkeys');
+
+    // Build list data: harvested = 1, hunted-only = 0.001, neither = 0
+    var listData = {};
+    Object.keys(harvestCombined).forEach(function (key) {
+      if (harvestCombined[key] >= 1)  listData[key] = 1;
+      else if (huntCombined[key] >= 1) listData[key] = 0.001;
+      else                             listData[key] = 0;
+    });
+    injectList('#familyTurkeys', buildTurkeyListHTML(listData));
+  }
+
   // ---- Window Resize --------------------------------
   function initResize() {
     $(window).on('resize', debounce(function () {
@@ -188,6 +241,7 @@
   $(document).ready(function () {
     document.getElementById('currentYear').textContent = new Date().getFullYear();
     initMaps();
+    initFamilyMap();
     initExpand();
     initListToggles();
     initResize();
