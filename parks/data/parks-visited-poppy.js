@@ -8,7 +8,7 @@ var parksVisitedPoppy = {
   "acadia": 0,
 
   /* Mid-Atlantic & Southeast */
-  "hot-springs": 0,
+  "hot-springs": 1,
   "mammoth-cave": 1,
   "great-smoky-mountains": 0,
   "shenandoah": 0,

@@ -213,11 +213,12 @@ main {
   fill: currentColor;
 }
 
-.person-card[data-person="josh"]  { border-top-color: #E8A020; }
-.person-card[data-person="sam"]   { border-top-color: #662684; }
-.person-card[data-person="ellie"] { border-top-color: #66b2b2; }
-.person-card[data-person="tilly"] { border-top-color: #0898ff; }
-.person-card[data-person="poppy"] { border-top-color: #d9259a; }
+.person-card[data-person="josh"]   { border-top-color: #E8A020; }
+.person-card[data-person="sam"]    { border-top-color: #662684; }
+.person-card[data-person="debbie"] { border-top-color: #D93025; }
+.person-card[data-person="ellie"]  { border-top-color: #66b2b2; }
+.person-card[data-person="tilly"]  { border-top-color: #0898ff; }
+.person-card[data-person="poppy"]  { border-top-color: #d9259a; }
 
 .person-card h2 {
   font-family: 'Kreon', Georgia, serif;
@@ -423,11 +424,12 @@ main {
 }
 
 /* Per-person chip accent colors */
-.person-card[data-person="josh"]  .visit-chip { background: rgba(232,160,32,0.08); border-color: rgba(232,160,32,0.3); }
-.person-card[data-person="sam"]   .visit-chip { background: rgba(102,38,132,0.08); border-color: rgba(102,38,132,0.3); }
-.person-card[data-person="ellie"] .visit-chip { background: rgba(102,178,178,0.1); border-color: rgba(102,178,178,0.4); }
-.person-card[data-person="tilly"] .visit-chip { background: rgba(8,152,255,0.08);  border-color: rgba(8,152,255,0.3); }
-.person-card[data-person="poppy"] .visit-chip { background: rgba(217,37,154,0.08); border-color: rgba(217,37,154,0.3); }
+.person-card[data-person="josh"]   .visit-chip { background: rgba(232,160,32,0.08);  border-color: rgba(232,160,32,0.3); }
+.person-card[data-person="sam"]    .visit-chip { background: rgba(102,38,132,0.08);  border-color: rgba(102,38,132,0.3); }
+.person-card[data-person="debbie"] .visit-chip { background: rgba(217,48,37,0.08);   border-color: rgba(217,48,37,0.3); }
+.person-card[data-person="ellie"]  .visit-chip { background: rgba(102,178,178,0.1);  border-color: rgba(102,178,178,0.4); }
+.person-card[data-person="tilly"]  .visit-chip { background: rgba(8,152,255,0.08);   border-color: rgba(8,152,255,0.3); }
+.person-card[data-person="poppy"]  .visit-chip { background: rgba(217,37,154,0.08);  border-color: rgba(217,37,154,0.3); }
 
 /* --- Footer ---------------------------------------- */
 footer {

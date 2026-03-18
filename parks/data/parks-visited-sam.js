@@ -8,7 +8,7 @@ var parksVisitedSam = {
   "acadia": 0,
 
   /* Mid-Atlantic & Southeast */
-  "hot-springs": 0,
+  "hot-springs": 1,
   "mammoth-cave": 1,
   "great-smoky-mountains": 1,
   "shenandoah": 0,
@@ -42,7 +42,7 @@ var parksVisitedSam = {
   "black-canyon": 0,
   "mesa-verde": 0,
   "glacier": 0,
-  "grand-teton": 0,
+  "grand-teton": 1,
   "yellowstone": 1,
 
   /* Desert Southwest */
@@ -65,7 +65,7 @@ var parksVisitedSam = {
   "pinnacles": 0,
   "redwood": 0,
   "sequoia": 0,
-  "yosemite": 0,
+  "yosemite": 1,
 
   /* Pacific Northwest */
   "crater-lake": 0,

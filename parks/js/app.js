@@ -247,15 +247,74 @@
     return Object.keys(seen).length;
   }
 
+  // ---- Build unvisited (bucket list) HTML — per person --
+  function buildUnvisitedListHTML(visited) {
+    var html = '<div class="visit-list">';
+    var hasAny = false;
+    PARKS_REGIONS.forEach(function (regionObj) {
+      var unvisited = regionObj.parks.filter(function (p) { return !visited[p.id]; });
+      if (unvisited.length === 0) return;
+      hasAny = true;
+      html += '<div class="region-group">';
+      html += '<div class="region-label">' + regionObj.region + '</div>';
+      html += '<div class="visit-chips">';
+      unvisited.forEach(function (p) {
+        html += '<span class="visit-chip visit-chip--unvisited">' + p.name + '</span>';
+      });
+      html += '</div></div>';
+    });
+    html += '</div>';
+    return hasAny ? html : '';
+  }
+
+  // ---- Build bucket list — parks Josh & Sam haven't both visited --
+  function buildBucketListHTML() {
+    var josh = getPersonData('josh').visited;
+    var sam  = getPersonData('sam').visited;
+
+    var html = '<div class="visit-list open">';
+    var hasAny = false;
+    PARKS_REGIONS.forEach(function (regionObj) {
+      var bucket = regionObj.parks.filter(function (p) {
+        return !(josh[p.id] && sam[p.id]);
+      });
+      if (bucket.length === 0) return;
+      hasAny = true;
+      html += '<div class="region-group">';
+      html += '<div class="region-label">' + regionObj.region + '</div>';
+      html += '<div class="visit-chips">';
+      bucket.forEach(function (p) {
+        html += '<span class="visit-chip visit-chip--unvisited">' + p.name + '</span>';
+      });
+      html += '</div></div>';
+    });
+    html += '</div>';
+    return hasAny ? html : '';
+  }
+
+  function countBucketList() {
+    var josh = getPersonData('josh').visited;
+    var sam  = getPersonData('sam').visited;
+    return PARKS_REGIONS.reduce(function (total, regionObj) {
+      return total + regionObj.parks.filter(function (p) {
+        return !(josh[p.id] && sam[p.id]);
+      }).length;
+    }, 0);
+  }
+
   // ---- Append list toggle + list to a container -----
-  function appendList(containerId, listHTML) {
+  function appendList(containerId, listHTML, showLabel, hideLabel) {
     var container = document.getElementById(containerId);
     if (!container || !listHTML) return;
 
+    var show = showLabel || 'Show list';
+    var hide = hideLabel || 'Hide list';
     var toggle = document.createElement('button');
     toggle.className = 'list-toggle';
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.innerHTML = 'Show list &#9662;';
+    toggle.setAttribute('data-show', show);
+    toggle.setAttribute('data-hide', hide);
+    toggle.innerHTML = show + ' &#9662;';
     container.appendChild(toggle);
 
     var wrapper = document.createElement('div');
@@ -271,22 +330,9 @@
         if (!list) return;
         var open = list.classList.toggle('open');
         btn.setAttribute('aria-expanded', String(open));
-        btn.innerHTML = open ? 'Hide list &#9652;' : 'Show list &#9662;';
-      });
-    });
-  }
-
-  // ---- Init expand buttons --------------------------
-  function initExpand() {
-    document.querySelectorAll('.expand-btn').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var card = btn.closest('.person-card');
-        if (!card) return;
-        var expanded = card.classList.toggle('expanded');
-        btn.setAttribute('aria-label', expanded ? 'Collapse' : 'Expand');
-        btn.innerHTML = expanded
-          ? '<svg viewBox="0 0 14 14"><line x1="2" y1="2" x2="12" y2="12"/><line x1="12" y1="2" x2="2" y2="12"/></svg>'
-          : '<svg viewBox="0 0 14 14"><line x1="1" y1="4" x2="13" y2="4"/><line x1="1" y1="10" x2="13" y2="10"/></svg>';
+        btn.innerHTML = open
+          ? (btn.getAttribute('data-hide') || 'Hide list') + ' &#9652;'
+          : (btn.getAttribute('data-show') || 'Show list') + ' &#9662;';
       });
     });
   }
@@ -303,8 +349,7 @@
     var countEl = card.querySelector('.count');
     if (countEl) countEl.textContent = count + ' of ' + TOTAL_PARKS + ' national parks';
 
-    var listHTML = buildParkListHTML(data.visited, data.details);
-    appendList(cardId, listHTML);
+    appendList(cardId, buildParkListHTML(data.visited, data.details), 'Show visited', 'Hide visited');
   }
 
   // ---- Init -----------------------------------------
@@ -313,13 +358,25 @@
     var familyCount = countFamilyVisited();
     var familyCountEl = document.getElementById('familyParksCount');
     if (familyCountEl) familyCountEl.textContent = familyCount + ' of ' + TOTAL_PARKS + ' national parks visited by anyone';
-    appendList('family-card', buildFamilyListHTML());
+    appendList('family-card', buildFamilyListHTML(), 'Show visited', 'Hide visited');
+
+    // Bucket list card
+    var bucketCountEl = document.getElementById('bucketParksCount');
+    if (bucketCountEl) bucketCountEl.textContent = countBucketList() + ' of ' + TOTAL_PARKS + ' parks neither Josh nor Sam has visited yet';
+    var bucketHTML = buildBucketListHTML();
+    if (bucketHTML) {
+      var bucketCard = document.getElementById('bucket-card');
+      if (bucketCard) {
+        var wrapper = document.createElement('div');
+        wrapper.innerHTML = bucketHTML;
+        bucketCard.appendChild(wrapper.firstChild);
+      }
+    }
 
     // Per-person cards
     PEOPLE.forEach(initPersonCard);
 
     initListToggles();
-    initExpand();
   }
 
   document.addEventListener('DOMContentLoaded', init);

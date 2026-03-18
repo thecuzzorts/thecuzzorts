@@ -138,7 +138,7 @@
   }
 
   // ---- Expand / Collapse ----------------------------
-  var EXPAND_ICON   = '<svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><path d="M1 4V1h3M6 1h3v3M9 6v3H6M4 9H1V6" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>';
+  var EXPAND_ICON   = '<svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><path d="M1 4V1h3M6 1h3v3M9 6v3H6M4 9H1V6"/><path d="M1 1l8 8M9 1L1 9" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>';
   var COLLAPSE_ICON = '<svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><path d="M4 1v3H1M6 4h3V1M6 9V6h3M1 6h3v3" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>';
 
   function initExpand() {

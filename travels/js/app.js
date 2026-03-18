@@ -50,6 +50,15 @@
       stateDetails: function () { return typeof statesDetailsPoppy !== 'undefined' ? statesDetailsPoppy : {}; },
       countries: function () { return countriesVisitedPoppy; },
       countryDetails: function () { return typeof countriesDetailsPoppy !== 'undefined' ? countriesDetailsPoppy : {}; }
+    },
+    {
+      id:      'debbie',
+      name:    'Deb',
+      color:   '#D93025',
+      states:  function () { return statesVisitedDebbie; },
+      stateDetails: function () { return typeof statesDetailsDebbie !== 'undefined' ? statesDetailsDebbie : {}; },
+      countries: function () { return countriesVisitedDebbie; },
+      countryDetails: function () { return typeof countriesDetailsDebbie !== 'undefined' ? countriesDetailsDebbie : {}; }
     }
   ];
 

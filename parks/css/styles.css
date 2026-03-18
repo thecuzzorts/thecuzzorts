@@ -126,10 +126,6 @@ main {
   .person-grid.grid-3col {
     grid-template-columns: 1fr;
   }
-
-  .expand-btn {
-    display: none;
-  }
 }
 
 /* --- Person Card ----------------------------------- */
@@ -139,41 +135,6 @@ main {
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   padding: 1.25rem 1.25rem 1rem;
   border-top: 5px solid #ccc;
-  position: relative;
-}
-
-.person-card.expanded {
-  grid-column: 1 / -1;
-}
-
-/* --- Expand Button --------------------------------- */
-.expand-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  cursor: pointer;
-  padding: 0.25rem 0.35rem;
-  line-height: 1;
-  color: #aaa;
-  transition: color 0.15s, border-color 0.15s;
-}
-
-.expand-btn:hover {
-  color: #444;
-  border-color: #aaa;
-}
-
-.expand-btn svg {
-  display: block;
-  width: 14px;
-  height: 14px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
 }
 
 .person-card[data-person="josh"]  { border-top-color: #00AC4B; }
@@ -257,6 +218,15 @@ main {
   border: 1px solid #ddd;
   color: #444;
   white-space: nowrap;
+}
+
+/* Unvisited / bucket-list chip */
+.visit-chip--unvisited {
+  font-style: italic;
+  color: #aaa;
+  background: #fafafa;
+  border-style: dashed;
+  border-color: #ddd;
 }
 
 /* Chip tooltip (date + notes) */
