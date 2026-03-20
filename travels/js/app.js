@@ -56,9 +56,9 @@
       name:    'Jack',
       color:   '#4A9E2F',
       family:  false,
-      states:  function () { return statesVisitedJack; },
+      states:  function () { return typeof statesVisitedJack !== 'undefined' ? statesVisitedJack : {}; },
       stateDetails: function () { return typeof statesDetailsJack !== 'undefined' ? statesDetailsJack : {}; },
-      countries: function () { return countriesVisitedJack; },
+      countries: function () { return typeof countriesVisitedJack !== 'undefined' ? countriesVisitedJack : {}; },
       countryDetails: function () { return typeof countriesDetailsJack !== 'undefined' ? countriesDetailsJack : {}; }
     },
     {
@@ -66,9 +66,9 @@
       name:    'Deb',
       color:   '#D93025',
       family:  false,
-      states:  function () { return statesVisitedDebbie; },
+      states:  function () { return typeof statesVisitedDebbie !== 'undefined' ? statesVisitedDebbie : {}; },
       stateDetails: function () { return typeof statesDetailsDebbie !== 'undefined' ? statesDetailsDebbie : {}; },
-      countries: function () { return countriesVisitedDebbie; },
+      countries: function () { return typeof countriesVisitedDebbie !== 'undefined' ? countriesVisitedDebbie : {}; },
       countryDetails: function () { return typeof countriesDetailsDebbie !== 'undefined' ? countriesDetailsDebbie : {}; }
     }
   ];
