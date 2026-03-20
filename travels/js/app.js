@@ -52,9 +52,20 @@
       countryDetails: function () { return typeof countriesDetailsPoppy !== 'undefined' ? countriesDetailsPoppy : {}; }
     },
     {
+      id:      'jack',
+      name:    'Jack',
+      color:   '#4A9E2F',
+      family:  false,
+      states:  function () { return statesVisitedJack; },
+      stateDetails: function () { return typeof statesDetailsJack !== 'undefined' ? statesDetailsJack : {}; },
+      countries: function () { return countriesVisitedJack; },
+      countryDetails: function () { return typeof countriesDetailsJack !== 'undefined' ? countriesDetailsJack : {}; }
+    },
+    {
       id:      'debbie',
       name:    'Deb',
       color:   '#D93025',
+      family:  false,
       states:  function () { return statesVisitedDebbie; },
       stateDetails: function () { return typeof statesDetailsDebbie !== 'undefined' ? statesDetailsDebbie : {}; },
       countries: function () { return countriesVisitedDebbie; },
@@ -397,32 +408,33 @@
 
   // ---- Init States Maps -----------------------------
   function initStateMaps() {
-    var stateSets = people.map(function (p) { return p.states(); });
+    var stateSets = people.filter(function (p) { return p.family !== false; }).map(function (p) { return p.states(); });
     var familyHeat = buildHeatMap(stateSets);
     var familyCount = countHeatMapVisited(familyHeat);
-    var totalStates = Object.keys(stateSets[0]).length;
 
-    // Family combined heat map
-    $('#familyStatesTotal').text(familyCount);
-    $('#familyStatesMap').vectorMap({
-      map: 'us_lcc',
-      backgroundColor: '#1a2e3b',
-      series: {
-        regions: [{
-          values: familyHeat,
-          scale: ['#f0f2f5', '#E8601A'],
-          normalizeFunction: 'linear'
-        }]
-      },
-      onRegionTipShow: function (e, el, code) {
-        var count = familyHeat[code] || 0;
-        var label = count === 1 ? '1 family member' : count + ' family members';
-        var tip = '<strong>' + el.html() + '</strong>';
-        if (count > 0) tip += '<br><span style="opacity:.8">Visited by ' + label + '</span>';
-        el.html(tip);
-      }
-    });
-    registerMap('#familyStatesMap');
+    // Family combined heat map (only if element exists)
+    if ($('#familyStatesMap').length) {
+      $('#familyStatesTotal').text(familyCount);
+      $('#familyStatesMap').vectorMap({
+        map: 'us_lcc',
+        backgroundColor: '#1a2e3b',
+        series: {
+          regions: [{
+            values: familyHeat,
+            scale: ['#f0f2f5', '#E8601A'],
+            normalizeFunction: 'linear'
+          }]
+        },
+        onRegionTipShow: function (_e, el, code) {
+          var count = familyHeat[code] || 0;
+          var label = count === 1 ? '1 family member' : count + ' family members';
+          var tip = '<strong>' + el.html() + '</strong>';
+          if (count > 0) tip += '<br><span style="opacity:.8">Visited by ' + label + '</span>';
+          el.html(tip);
+        }
+      });
+      registerMap('#familyStatesMap');
+    }
 
     // Per-person state travels
     people.forEach(function (person) {
@@ -431,6 +443,8 @@
       var count   = countVisited(data);
       var mapId   = '#' + person.id + 'StatesMap';
       var countId = '#' + person.id + 'StatesTotal';
+
+      if (!$(mapId).length) return;
 
       $(countId).text(count);
       $(mapId).vectorMap({
@@ -454,7 +468,7 @@
 
   // ---- Init Country Maps ----------------------------
   function initCountryMaps() {
-    var countrySets = people.map(function (p) { return p.countries(); });
+    var countrySets = people.filter(function (p) { return p.family !== false; }).map(function (p) { return p.countries(); });
 
     // Merge all keys across all datasets for accurate heat map
     var allKeys = {};
@@ -473,26 +487,29 @@
       familyBinary[k] = familyHeat[k] > 0 ? 1 : 0;
     });
 
-    setCountryCount('familyCountriesTotal', familyCount, familyTerritories);
-    $('#familyCountriesMap').vectorMap({
-      map: 'world_mill_en',
-      backgroundColor: '#1a2e3b',
-      series: {
-        regions: [{
-          values: familyBinary,
-          scale: ['#f0f2f5', '#E8601A'],
-          normalizeFunction: 'linear'
-        }]
-      },
-      onRegionTipShow: function (e, el, code) {
-        var count = familyHeat[code] || 0;
-        var label = count === 1 ? '1 family member' : count + ' family members';
-        var tip = '<strong>' + el.html() + '</strong>';
-        if (count > 0) tip += '<br><span style="opacity:.8">Visited by ' + label + '</span>';
-        el.html(tip);
-      }
-    });
-    registerMap('#familyCountriesMap');
+    // Family combined map (only if element exists)
+    if ($('#familyCountriesMap').length) {
+      setCountryCount('familyCountriesTotal', familyCount, familyTerritories);
+      $('#familyCountriesMap').vectorMap({
+        map: 'world_mill_en',
+        backgroundColor: '#1a2e3b',
+        series: {
+          regions: [{
+            values: familyBinary,
+            scale: ['#f0f2f5', '#E8601A'],
+            normalizeFunction: 'linear'
+          }]
+        },
+        onRegionTipShow: function (_e, el, code) {
+          var count = familyHeat[code] || 0;
+          var label = count === 1 ? '1 family member' : count + ' family members';
+          var tip = '<strong>' + el.html() + '</strong>';
+          if (count > 0) tip += '<br><span style="opacity:.8">Visited by ' + label + '</span>';
+          el.html(tip);
+        }
+      });
+      registerMap('#familyCountriesMap');
+    }
 
     // Per-person country travels
     people.forEach(function (person) {
@@ -502,6 +519,8 @@
       var territories = countTerritories(data);
       var mapId       = '#' + person.id + 'CountriesMap';
       var countId     = person.id + 'CountriesTotal';
+
+      if (!$(mapId).length) return;
 
       setCountryCount(countId, countries, territories);
       $(mapId).vectorMap({

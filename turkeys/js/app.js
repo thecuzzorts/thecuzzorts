@@ -118,6 +118,8 @@
       var data  = person.data();
       var mapId = '#' + person.id + 'Turkeys';
 
+      if (!$(mapId).length) return;
+
       $('#' + person.id + 'Total').text(sumHarvested(data));
 
       $(mapId).vectorMap({
@@ -178,6 +180,8 @@
 
   // ---- Family Combined Map --------------------------
   function initFamilyMap() {
+    if (!$('#familyTurkeys').length) return;
+
     // For each state: count people who harvested (value >= 1) and who hunted (value > 0)
     var harvestCombined = {};
     var huntCombined    = {};
