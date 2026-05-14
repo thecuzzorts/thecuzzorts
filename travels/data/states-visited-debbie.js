@@ -48,7 +48,7 @@ var statesVisitedDebbie = {
   "US-SD": 1,
   "US-TN": 1,
   "US-TX": 1,
-  "US-UT": 0,
+  "US-UT": 1,
   "US-VA": 1,
   "US-VT": 0,
   "US-WA": 1,
