@@ -12,6 +12,8 @@
       color:   '#E8A020',
       states:  function () { return statesVisitedJosh; },
       stateDetails: function () { return typeof statesDetailsJosh !== 'undefined' ? statesDetailsJosh : {}; },
+      provinces: function () { return provincesVisitedJosh; },
+      provinceDetails: function () { return typeof provincesDetailsJosh !== 'undefined' ? provincesDetailsJosh : {}; },
       countries: function () { return countriesVisitedJosh; },
       countryDetails: function () { return typeof countriesDetailsJosh !== 'undefined' ? countriesDetailsJosh : {}; }
     },
@@ -21,6 +23,8 @@
       color:   '#662684',
       states:  function () { return statesVisitedSam; },
       stateDetails: function () { return typeof statesDetailsSam !== 'undefined' ? statesDetailsSam : {}; },
+      provinces: function () { return provincesVisitedSam; },
+      provinceDetails: function () { return typeof provincesDetailsSam !== 'undefined' ? provincesDetailsSam : {}; },
       countries: function () { return countriesVisitedSam; },
       countryDetails: function () { return typeof countriesDetailsSam !== 'undefined' ? countriesDetailsSam : {}; }
     },
@@ -30,6 +34,8 @@
       color:   '#66b2b2',
       states:  function () { return statesVisitedEllie; },
       stateDetails: function () { return typeof statesDetailsEllie !== 'undefined' ? statesDetailsEllie : {}; },
+      provinces: function () { return provincesVisitedEllie; },
+      provinceDetails: function () { return typeof provincesDetailsEllie !== 'undefined' ? provincesDetailsEllie : {}; },
       countries: function () { return countriesVisitedEllie; },
       countryDetails: function () { return typeof countriesDetailsEllie !== 'undefined' ? countriesDetailsEllie : {}; }
     },
@@ -39,6 +45,8 @@
       color:   '#0898ff',
       states:  function () { return statesVisitedTilly; },
       stateDetails: function () { return typeof statesDetailsTilly !== 'undefined' ? statesDetailsTilly : {}; },
+      provinces: function () { return provincesVisitedTilly; },
+      provinceDetails: function () { return typeof provincesDetailsTilly !== 'undefined' ? provincesDetailsTilly : {}; },
       countries: function () { return countriesVisitedTilly; },
       countryDetails: function () { return typeof countriesDetailsTilly !== 'undefined' ? countriesDetailsTilly : {}; }
     },
@@ -48,6 +56,8 @@
       color:   '#d9259a',
       states:  function () { return statesVisitedPoppy; },
       stateDetails: function () { return typeof statesDetailsPoppy !== 'undefined' ? statesDetailsPoppy : {}; },
+      provinces: function () { return provincesVisitedPoppy; },
+      provinceDetails: function () { return typeof provincesDetailsPoppy !== 'undefined' ? provincesDetailsPoppy : {}; },
       countries: function () { return countriesVisitedPoppy; },
       countryDetails: function () { return typeof countriesDetailsPoppy !== 'undefined' ? countriesDetailsPoppy : {}; }
     },
@@ -58,6 +68,8 @@
       family:  false,
       states:  function () { return typeof statesVisitedJack !== 'undefined' ? statesVisitedJack : {}; },
       stateDetails: function () { return typeof statesDetailsJack !== 'undefined' ? statesDetailsJack : {}; },
+      provinces: function () { return {}; },
+      provinceDetails: function () { return {}; },
       countries: function () { return typeof countriesVisitedJack !== 'undefined' ? countriesVisitedJack : {}; },
       countryDetails: function () { return typeof countriesDetailsJack !== 'undefined' ? countriesDetailsJack : {}; }
     },
@@ -68,6 +80,8 @@
       family:  false,
       states:  function () { return typeof statesVisitedDebbie !== 'undefined' ? statesVisitedDebbie : {}; },
       stateDetails: function () { return typeof statesDetailsDebbie !== 'undefined' ? statesDetailsDebbie : {}; },
+      provinces: function () { return {}; },
+      provinceDetails: function () { return {}; },
       countries: function () { return typeof countriesVisitedDebbie !== 'undefined' ? countriesVisitedDebbie : {}; },
       countryDetails: function () { return typeof countriesDetailsDebbie !== 'undefined' ? countriesDetailsDebbie : {}; }
     }
@@ -75,6 +89,26 @@
 
   // ---- Territory codes (excluded from country count) -
   var TERRITORY_CODES = { 'PR': 1, 'VI': 1, 'SX': 1, 'GU': 1, 'AS': 1, 'MP': 1 };
+
+  // ---- Canadian territory codes (excluded from province count) -
+  var PROVINCE_TERRITORY_CODES = { 'CA-NT': 1, 'CA-NU': 1, 'CA-YT': 1 };
+
+  // ---- Province name lookup (CA-XX → full name) ------
+  var PROVINCE_NAMES = {
+    'CA-AB': 'Alberta',
+    'CA-BC': 'British Columbia',
+    'CA-MB': 'Manitoba',
+    'CA-NB': 'New Brunswick',
+    'CA-NL': 'Newfoundland and Labrador',
+    'CA-NS': 'Nova Scotia',
+    'CA-NT': 'Northwest Territories',
+    'CA-NU': 'Nunavut',
+    'CA-ON': 'Ontario',
+    'CA-PE': 'Prince Edward Island',
+    'CA-QC': 'Québec',
+    'CA-SK': 'Saskatchewan',
+    'CA-YT': 'Yukon'
+  };
 
   // ---- State name lookup (US-XX → full name) --------
   var STATE_NAMES = {
@@ -262,6 +296,33 @@
     $('#' + countId).closest('.count').html(html);
   }
 
+  function countProvinces(data) {
+    return Object.keys(data).reduce(function (sum, key) {
+      return sum + (data[key] && !PROVINCE_TERRITORY_CODES[key] ? 1 : 0);
+    }, 0);
+  }
+
+  function countProvinceTerritories(data) {
+    return Object.keys(data).reduce(function (sum, key) {
+      return sum + (data[key] && PROVINCE_TERRITORY_CODES[key] ? 1 : 0);
+    }, 0);
+  }
+
+  function countHeatMapProvinces(heatData) {
+    return Object.keys(heatData).reduce(function (sum, key) {
+      return sum + (heatData[key] > 0 && !PROVINCE_TERRITORY_CODES[key] ? 1 : 0);
+    }, 0);
+  }
+
+  function setProvinceCount(countId, provinces, territories) {
+    var html = '<span id="' + countId + '">' + provinces + '</span> of 10 provinces';
+    if (territories > 0) {
+      var label = territories === 1 ? '1 territory' : territories + ' territories';
+      html += ' <span class="territory-note">+ ' + label + '</span>';
+    }
+    $('#' + countId).closest('.count').html(html);
+  }
+
   // Sum values across all datasets (heat map: 0–N where N = number of people)
   function buildHeatMap(dataSets) {
     var combined = {};
@@ -336,6 +397,42 @@
       districts.forEach(function (code) {
         var tip = chipTooltip(details[code]);
         html += '<span class="visit-chip territory-chip"' + tip + '>' + (STATE_NAMES[code] || code) + '</span>';
+      });
+      html += '</div></div>';
+    }
+
+    html += '</div>';
+    return html;
+  }
+
+  function buildProvinceListHTML(data, details) {
+    details = details || {};
+    var visited = Object.keys(data).filter(function (k) { return data[k]; });
+    if (visited.length === 0) return '';
+
+    var provinces   = visited.filter(function (k) { return !PROVINCE_TERRITORY_CODES[k]; });
+    var territories = visited.filter(function (k) { return PROVINCE_TERRITORY_CODES[k]; });
+
+    function byName(a, b) {
+      return (PROVINCE_NAMES[a] || a).localeCompare(PROVINCE_NAMES[b] || b);
+    }
+    provinces.sort(byName);
+    territories.sort(byName);
+
+    var html = '<div class="visit-list"><div class="visit-chips">';
+    provinces.forEach(function (code) {
+      var tip = chipTooltip(details[code]);
+      html += '<span class="visit-chip"' + tip + '>' + (PROVINCE_NAMES[code] || code) + '</span>';
+    });
+    html += '</div>';
+
+    if (territories.length > 0) {
+      html += '<div class="continent-group" style="margin-top:0.5rem">';
+      html += '<div class="continent-label">Territories</div>';
+      html += '<div class="visit-chips">';
+      territories.forEach(function (code) {
+        var tip = chipTooltip(details[code]);
+        html += '<span class="visit-chip territory-chip"' + tip + '>' + (PROVINCE_NAMES[code] || code) + '</span>';
       });
       html += '</div></div>';
     }
@@ -463,6 +560,67 @@
       });
       registerMap(mapId);
       injectList(mapId, buildStateListHTML(data, details));
+    });
+  }
+
+  // ---- Init Province Maps ---------------------------
+  function initProvinceMaps() {
+    var provinceSets = people.filter(function (p) { return p.family !== false; }).map(function (p) { return p.provinces(); });
+    var familyHeat = buildHeatMap(provinceSets);
+    var familyCount = countHeatMapProvinces(familyHeat);
+
+    if ($('#familyProvincesMap').length) {
+      $('#familyProvincesTotal').text(familyCount);
+      $('#familyProvincesMap').vectorMap({
+        map: 'ca_lcc',
+        backgroundColor: '#1a2e3b',
+        series: {
+          regions: [{
+            values: familyHeat,
+            scale: ['#f0f2f5', '#E8601A'],
+            normalizeFunction: 'linear'
+          }]
+        },
+        onRegionTipShow: function (_e, el, code) {
+          var count = familyHeat[code] || 0;
+          var label = count === 1 ? '1 family member' : count + ' family members';
+          var tip = '<strong>' + el.html() + '</strong>';
+          if (count > 0) tip += '<br><span style="opacity:.8">Visited by ' + label + '</span>';
+          el.html(tip);
+        }
+      });
+      registerMap('#familyProvincesMap');
+    }
+
+    people.forEach(function (person) {
+      var data       = person.provinces();
+      var details    = person.provinceDetails();
+      var count      = countProvinces(data);
+      var territories = countProvinceTerritories(data);
+      var mapId      = '#' + person.id + 'ProvincesMap';
+      var countId    = person.id + 'ProvincesTotal';
+
+      if (!$(mapId).length) return;
+
+      setProvinceCount(countId, count, territories);
+      var visitedData = {};
+      Object.keys(data).forEach(function (k) { if (data[k]) visitedData[k] = data[k]; });
+      $(mapId).vectorMap({
+        map: 'ca_lcc',
+        backgroundColor: '#1a2e3b',
+        series: {
+          regions: [{
+            values: visitedData,
+            scale: ['#d0d4d8', person.color],
+            normalizeFunction: 'polynomial'
+          }]
+        },
+        onRegionTipShow: function (e, el, code) {
+          el.html(buildTip(el.html(), details, code));
+        }
+      });
+      registerMap(mapId);
+      injectList(mapId, buildProvinceListHTML(data, details));
     });
   }
 
@@ -614,6 +772,7 @@
   // ---- Boot -----------------------------------------
   $(document).ready(function () {
     initStateMaps();
+    initProvinceMaps();
     initCountryMaps();
     initTabs();
     initResize();

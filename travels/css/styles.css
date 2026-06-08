@@ -258,6 +258,11 @@ main {
   padding-bottom: 62%;
 }
 
+/* Canada map — roughly 1:1 ratio using the LCC projection */
+.map-container.ca-map {
+  padding-bottom: 96%;
+}
+
 /* World map — roughly 2:1 ratio */
 .map-container.world-map {
   padding-bottom: 50%;

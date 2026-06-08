@@ -11,9 +11,10 @@
 
   <header>
     <h1><a href="../index.html" class="home-link">The Cuzzorts</a> &mdash; Travels</h1>
-    <p>Tracking states and countries visited by each family member</p>
+    <p>Tracking states, provinces, and countries visited by each family member</p>
     <nav class="tab-bar" role="tablist">
       <button class="tab-btn active" data-tab="states" role="tab" aria-selected="true">States</button>
+      <button class="tab-btn" data-tab="provinces" role="tab" aria-selected="false">Provinces</button>
       <button class="tab-btn" data-tab="countries" role="tab" aria-selected="false">Countries</button>
     </nav>
   </header>
@@ -77,6 +78,68 @@
         <p class="count"><span id="familyStatesTotal">0</span> of 50 states between us</p>
         <div class="map-container us-map">
           <div id="familyStatesMap" class="map"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ======== PROVINCES TAB ======== -->
+    <section id="provinces" class="tab-section" role="tabpanel">
+
+      <p class="section-heading">By Person</p>
+      <div class="person-grid grid-2col">
+
+        <div class="person-card" data-person="josh">
+          <h2>Josh</h2>
+          <p class="count"><span id="joshProvincesTotal">0</span> of 10 provinces</p>
+          <div class="map-container ca-map">
+            <div id="joshProvincesMap" class="map"></div>
+          </div>
+        </div>
+
+        <div class="person-card" data-person="sam">
+          <h2>Sam</h2>
+          <p class="count"><span id="samProvincesTotal">0</span> of 10 provinces</p>
+          <div class="map-container ca-map">
+            <div id="samProvincesMap" class="map"></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="person-grid grid-3col">
+
+        <div class="person-card" data-person="ellie">
+          <h2>Ellie</h2>
+          <p class="count"><span id="ellieProvincesTotal">0</span> of 10 provinces</p>
+          <div class="map-container ca-map">
+            <div id="ellieProvincesMap" class="map"></div>
+          </div>
+        </div>
+
+        <div class="person-card" data-person="tilly">
+          <h2>Tilly</h2>
+          <p class="count"><span id="tillyProvincesTotal">0</span> of 10 provinces</p>
+          <div class="map-container ca-map">
+            <div id="tillyProvincesMap" class="map"></div>
+          </div>
+        </div>
+
+        <div class="person-card" data-person="poppy">
+          <h2>Poppy</h2>
+          <p class="count"><span id="poppyProvincesTotal">0</span> of 10 provinces</p>
+          <div class="map-container ca-map">
+            <div id="poppyProvincesMap" class="map"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="section-heading">All Together</p>
+      <div class="combined-card">
+        <h2>All Together</h2>
+        <p class="count"><span id="familyProvincesTotal">0</span> of 10 provinces between us</p>
+        <div class="map-container ca-map">
+          <div id="familyProvincesMap" class="map"></div>
         </div>
       </div>
 
@@ -154,6 +217,7 @@
   <script src="js/vendor/jquery-1.12.0.min.js"></script>
   <script src="js/jquery-jvectormap-2.0.3.min.js"></script>
   <script src="js/jquery-jvectormap-us-lcc.js"></script>
+  <script src="js/jquery-jvectormap-ca-lcc.js"></script>
   <script src="js/jquery-jvectormap-world-mill.js"></script>
 
   <!-- State data -->
@@ -163,6 +227,13 @@
   <script src="data/states-visited-tilly.js"></script>
   <script src="data/states-visited-poppy.js"></script>
   <script src="data/states-visited-debbie.js"></script>
+
+  <!-- Province data -->
+  <script src="data/provinces-visited-josh.js"></script>
+  <script src="data/provinces-visited-sam.js"></script>
+  <script src="data/provinces-visited-ellie.js"></script>
+  <script src="data/provinces-visited-tilly.js"></script>
+  <script src="data/provinces-visited-poppy.js"></script>
 
   <!-- Country data -->
   <script src="data/countries-visited-josh.js"></script>
