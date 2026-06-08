@@ -393,7 +393,7 @@
     if (!mapEl || typeof L === 'undefined') return;
 
     var map = L.map('parksMap', { scrollWheelZoom: false })
-      .setView([39.5, -98.35], 4);
+      .setView([39.2, -94.2], 3);
 
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
