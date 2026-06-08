@@ -275,6 +275,73 @@ main {
   font-style: italic;
 }
 
+#whole-family-card {
+  border-top-color: #FF8200;
+}
+
+/* --- Map Card -------------------------------------- */
+#parksMap {
+  height: 480px;
+  border-radius: 6px;
+  margin: 12px 0 8px;
+}
+
+.map-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.map-filter-btn {
+  padding: 5px 14px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  background: #fff;
+  cursor: pointer;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 0.9rem;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.map-filter-btn.active[data-filter="anyone"]       { border-color: #E8A020; color: #E8A020; }
+.map-filter-btn.active[data-filter="whole-family"] { border-color: #FF8200; color: #FF8200; }
+.map-filter-btn.active[data-filter="josh"]   { border-color: #00AC4B; color: #00AC4B; }
+.map-filter-btn.active[data-filter="sam"]    { border-color: #662684; color: #662684; }
+.map-filter-btn.active[data-filter="ellie"]  { border-color: #66b2b2; color: #66b2b2; }
+.map-filter-btn.active[data-filter="tilly"]  { border-color: #0898ff; color: #0898ff; }
+.map-filter-btn.active[data-filter="poppy"]  { border-color: #d9259a; color: #d9259a; }
+
+.map-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: #777;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1.5px solid #fff;
+  box-shadow: 0 0 0 1px #aaa;
+  flex-shrink: 0;
+}
+
+.legend-dot.visited   { background: #E8A020; }
+.legend-dot.unvisited { background: #aaaaaa; }
+
+.legend-sep {
+  color: #ccc;
+  margin: 0 4px;
+}
+
+@media (max-width: 640px) {
+  #parksMap { height: 320px; }
+}
+
 /* --- Footer ---------------------------------------- */
 footer {
   background: #1a2e3b;

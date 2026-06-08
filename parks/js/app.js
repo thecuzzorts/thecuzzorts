@@ -18,119 +18,119 @@
     {
       region: 'Northeast',
       parks: [
-        { id: 'acadia', name: 'Acadia', state: 'Maine' }
+        { id: 'acadia', name: 'Acadia', state: 'Maine', lat: 44.3386, lng: -68.2733 }
       ]
     },
     {
       region: 'Mid-Atlantic & Southeast',
       parks: [
-        { id: 'hot-springs',           name: 'Hot Springs',           state: 'Arkansas' },
-        { id: 'mammoth-cave',          name: 'Mammoth Cave',          state: 'Kentucky' },
-        { id: 'great-smoky-mountains', name: 'Great Smoky Mountains', state: 'Tennessee / North Carolina' },
-        { id: 'shenandoah',            name: 'Shenandoah',            state: 'Virginia' },
-        { id: 'new-river-gorge',       name: 'New River Gorge',       state: 'West Virginia' },
-        { id: 'congaree',              name: 'Congaree',              state: 'South Carolina' }
+        { id: 'hot-springs',           name: 'Hot Springs',           state: 'Arkansas',                   lat: 34.5217, lng:  -93.0432 },
+        { id: 'mammoth-cave',          name: 'Mammoth Cave',          state: 'Kentucky',                   lat: 37.1867, lng:  -86.1325 },
+        { id: 'great-smoky-mountains', name: 'Great Smoky Mountains', state: 'Tennessee / North Carolina', lat: 35.6532, lng:  -83.5070 },
+        { id: 'shenandoah',            name: 'Shenandoah',            state: 'Virginia',                   lat: 38.4755, lng:  -78.4534 },
+        { id: 'new-river-gorge',       name: 'New River Gorge',       state: 'West Virginia',              lat: 37.8368, lng:  -81.0899 },
+        { id: 'congaree',              name: 'Congaree',              state: 'South Carolina',             lat: 33.7948, lng:  -80.7821 }
       ]
     },
     {
       region: 'Florida',
       parks: [
-        { id: 'biscayne',     name: 'Biscayne',     state: 'Florida' },
-        { id: 'dry-tortugas', name: 'Dry Tortugas', state: 'Florida' },
-        { id: 'everglades',   name: 'Everglades',   state: 'Florida' }
+        { id: 'biscayne',     name: 'Biscayne',     state: 'Florida', lat: 25.4839, lng: -80.4300 },
+        { id: 'dry-tortugas', name: 'Dry Tortugas', state: 'Florida', lat: 24.6285, lng: -82.8733 },
+        { id: 'everglades',   name: 'Everglades',   state: 'Florida', lat: 25.2866, lng: -80.8987 }
       ]
     },
     {
       region: 'Midwest',
       parks: [
-        { id: 'gateway-arch',       name: 'Gateway Arch',       state: 'Missouri' },
-        { id: 'cuyahoga-valley',    name: 'Cuyahoga Valley',    state: 'Ohio' },
-        { id: 'indiana-dunes',      name: 'Indiana Dunes',      state: 'Indiana' },
-        { id: 'isle-royale',        name: 'Isle Royale',        state: 'Michigan' },
-        { id: 'voyageurs',          name: 'Voyageurs',          state: 'Minnesota' },
-        { id: 'theodore-roosevelt', name: 'Theodore Roosevelt', state: 'North Dakota' },
-        { id: 'badlands',           name: 'Badlands',           state: 'South Dakota' },
-        { id: 'wind-cave',          name: 'Wind Cave',          state: 'South Dakota' }
+        { id: 'gateway-arch',       name: 'Gateway Arch',       state: 'Missouri',     lat: 38.6247, lng:  -90.1848 },
+        { id: 'cuyahoga-valley',    name: 'Cuyahoga Valley',    state: 'Ohio',         lat: 41.2808, lng:  -81.5678 },
+        { id: 'indiana-dunes',      name: 'Indiana Dunes',      state: 'Indiana',      lat: 41.6533, lng:  -87.0524 },
+        { id: 'isle-royale',        name: 'Isle Royale',        state: 'Michigan',     lat: 48.0000, lng:  -88.8333 },
+        { id: 'voyageurs',          name: 'Voyageurs',          state: 'Minnesota',    lat: 48.4839, lng:  -92.8385 },
+        { id: 'theodore-roosevelt', name: 'Theodore Roosevelt', state: 'North Dakota', lat: 46.9797, lng: -103.5387 },
+        { id: 'badlands',           name: 'Badlands',           state: 'South Dakota', lat: 43.8554, lng: -102.3397 },
+        { id: 'wind-cave',          name: 'Wind Cave',          state: 'South Dakota', lat: 43.5640, lng: -103.4783 }
       ]
     },
     {
       region: 'Texas & Southwest',
       parks: [
-        { id: 'big-bend',            name: 'Big Bend',            state: 'Texas' },
-        { id: 'guadalupe-mountains', name: 'Guadalupe Mountains', state: 'Texas' },
-        { id: 'carlsbad-caverns',    name: 'Carlsbad Caverns',    state: 'New Mexico' },
-        { id: 'white-sands',         name: 'White Sands',         state: 'New Mexico' }
+        { id: 'big-bend',            name: 'Big Bend',            state: 'Texas',      lat: 29.2498, lng: -103.2502 },
+        { id: 'guadalupe-mountains', name: 'Guadalupe Mountains', state: 'Texas',      lat: 31.9232, lng: -104.8720 },
+        { id: 'carlsbad-caverns',    name: 'Carlsbad Caverns',    state: 'New Mexico', lat: 32.1479, lng: -104.5567 },
+        { id: 'white-sands',         name: 'White Sands',         state: 'New Mexico', lat: 32.7872, lng: -106.3254 }
       ]
     },
     {
       region: 'Rocky Mountain',
       parks: [
-        { id: 'rocky-mountain',   name: 'Rocky Mountain',               state: 'Colorado' },
-        { id: 'great-sand-dunes', name: 'Great Sand Dunes',             state: 'Colorado' },
-        { id: 'black-canyon',     name: 'Black Canyon of the Gunnison', state: 'Colorado' },
-        { id: 'mesa-verde',       name: 'Mesa Verde',                   state: 'Colorado' },
-        { id: 'glacier',          name: 'Glacier',                      state: 'Montana' },
-        { id: 'grand-teton',      name: 'Grand Teton',                  state: 'Wyoming' },
-        { id: 'yellowstone',      name: 'Yellowstone',                  state: 'Wyoming' }
+        { id: 'rocky-mountain',   name: 'Rocky Mountain',               state: 'Colorado', lat: 40.3428, lng: -105.6836 },
+        { id: 'great-sand-dunes', name: 'Great Sand Dunes',             state: 'Colorado', lat: 37.7929, lng: -105.5943 },
+        { id: 'black-canyon',     name: 'Black Canyon of the Gunnison', state: 'Colorado', lat: 38.5754, lng: -107.7416 },
+        { id: 'mesa-verde',       name: 'Mesa Verde',                   state: 'Colorado', lat: 37.2309, lng: -108.4618 },
+        { id: 'glacier',          name: 'Glacier',                      state: 'Montana',  lat: 48.7596, lng: -113.7870 },
+        { id: 'grand-teton',      name: 'Grand Teton',                  state: 'Wyoming',  lat: 43.7904, lng: -110.6818 },
+        { id: 'yellowstone',      name: 'Yellowstone',                  state: 'Wyoming',  lat: 44.4280, lng: -110.5885 }
       ]
     },
     {
       region: 'Desert Southwest',
       parks: [
-        { id: 'grand-canyon',    name: 'Grand Canyon',    state: 'Arizona' },
-        { id: 'petrified-forest',name: 'Petrified Forest',state: 'Arizona' },
-        { id: 'saguaro',         name: 'Saguaro',         state: 'Arizona' },
-        { id: 'arches',          name: 'Arches',          state: 'Utah' },
-        { id: 'bryce-canyon',    name: 'Bryce Canyon',    state: 'Utah' },
-        { id: 'canyonlands',     name: 'Canyonlands',     state: 'Utah' },
-        { id: 'capitol-reef',    name: 'Capitol Reef',    state: 'Utah' },
-        { id: 'zion',            name: 'Zion',            state: 'Utah' },
-        { id: 'great-basin',     name: 'Great Basin',     state: 'Nevada' },
-        { id: 'death-valley',    name: 'Death Valley',    state: 'California / Nevada' }
+        { id: 'grand-canyon',     name: 'Grand Canyon',     state: 'Arizona',             lat: 36.1069, lng: -112.1129 },
+        { id: 'petrified-forest', name: 'Petrified Forest', state: 'Arizona',             lat: 35.0656, lng: -109.7792 },
+        { id: 'saguaro',          name: 'Saguaro',          state: 'Arizona',             lat: 32.2967, lng: -111.1666 },
+        { id: 'arches',           name: 'Arches',           state: 'Utah',                lat: 38.7331, lng: -109.5925 },
+        { id: 'bryce-canyon',     name: 'Bryce Canyon',     state: 'Utah',                lat: 37.5930, lng: -112.1871 },
+        { id: 'canyonlands',      name: 'Canyonlands',      state: 'Utah',                lat: 38.2000, lng: -109.9300 },
+        { id: 'capitol-reef',     name: 'Capitol Reef',     state: 'Utah',                lat: 38.0877, lng: -111.1429 },
+        { id: 'zion',             name: 'Zion',             state: 'Utah',                lat: 37.2982, lng: -113.0263 },
+        { id: 'great-basin',      name: 'Great Basin',      state: 'Nevada',              lat: 38.9266, lng: -114.2632 },
+        { id: 'death-valley',     name: 'Death Valley',     state: 'California / Nevada', lat: 36.5054, lng: -117.0794 }
       ]
     },
     {
       region: 'California',
       parks: [
-        { id: 'channel-islands', name: 'Channel Islands', state: 'California' },
-        { id: 'joshua-tree',     name: 'Joshua Tree',     state: 'California' },
-        { id: 'kings-canyon',    name: 'Kings Canyon',    state: 'California' },
-        { id: 'lassen-volcanic', name: 'Lassen Volcanic', state: 'California' },
-        { id: 'pinnacles',       name: 'Pinnacles',       state: 'California' },
-        { id: 'redwood',         name: 'Redwood',         state: 'California' },
-        { id: 'sequoia',         name: 'Sequoia',         state: 'California' },
-        { id: 'yosemite',        name: 'Yosemite',        state: 'California' }
+        { id: 'channel-islands', name: 'Channel Islands', state: 'California', lat: 34.0069, lng: -119.7785 },
+        { id: 'joshua-tree',     name: 'Joshua Tree',     state: 'California', lat: 33.8734, lng: -115.9010 },
+        { id: 'kings-canyon',    name: 'Kings Canyon',    state: 'California', lat: 36.8879, lng: -118.5551 },
+        { id: 'lassen-volcanic', name: 'Lassen Volcanic', state: 'California', lat: 40.4977, lng: -121.4207 },
+        { id: 'pinnacles',       name: 'Pinnacles',       state: 'California', lat: 36.4906, lng: -121.1825 },
+        { id: 'redwood',         name: 'Redwood',         state: 'California', lat: 41.2132, lng: -124.0046 },
+        { id: 'sequoia',         name: 'Sequoia',         state: 'California', lat: 36.4864, lng: -118.5658 },
+        { id: 'yosemite',        name: 'Yosemite',        state: 'California', lat: 37.8651, lng: -119.5383 }
       ]
     },
     {
       region: 'Pacific Northwest',
       parks: [
-        { id: 'crater-lake',    name: 'Crater Lake',    state: 'Oregon' },
-        { id: 'mount-rainier',  name: 'Mount Rainier',  state: 'Washington' },
-        { id: 'north-cascades', name: 'North Cascades', state: 'Washington' },
-        { id: 'olympic',        name: 'Olympic',        state: 'Washington' }
+        { id: 'crater-lake',    name: 'Crater Lake',    state: 'Oregon',     lat: 42.8684, lng: -122.1685 },
+        { id: 'mount-rainier',  name: 'Mount Rainier',  state: 'Washington', lat: 46.8800, lng: -121.7269 },
+        { id: 'north-cascades', name: 'North Cascades', state: 'Washington', lat: 48.7718, lng: -121.2985 },
+        { id: 'olympic',        name: 'Olympic',        state: 'Washington', lat: 47.8021, lng: -123.6044 }
       ]
     },
     {
       region: 'Alaska',
       parks: [
-        { id: 'denali',              name: 'Denali',              state: 'Alaska' },
-        { id: 'gates-of-the-arctic', name: 'Gates of the Arctic', state: 'Alaska' },
-        { id: 'glacier-bay',         name: 'Glacier Bay',         state: 'Alaska' },
-        { id: 'katmai',              name: 'Katmai',              state: 'Alaska' },
-        { id: 'kenai-fjords',        name: 'Kenai Fjords',        state: 'Alaska' },
-        { id: 'kobuk-valley',        name: 'Kobuk Valley',        state: 'Alaska' },
-        { id: 'lake-clark',          name: 'Lake Clark',          state: 'Alaska' },
-        { id: 'wrangell-st-elias',   name: 'Wrangell-St. Elias', state: 'Alaska' }
+        { id: 'denali',              name: 'Denali',              state: 'Alaska', lat: 63.1148, lng: -151.1926 },
+        { id: 'gates-of-the-arctic', name: 'Gates of the Arctic', state: 'Alaska', lat: 67.7818, lng: -153.3001 },
+        { id: 'glacier-bay',         name: 'Glacier Bay',         state: 'Alaska', lat: 58.6658, lng: -136.9000 },
+        { id: 'katmai',              name: 'Katmai',              state: 'Alaska', lat: 58.5007, lng: -154.9723 },
+        { id: 'kenai-fjords',        name: 'Kenai Fjords',        state: 'Alaska', lat: 59.9209, lng: -150.3390 },
+        { id: 'kobuk-valley',        name: 'Kobuk Valley',        state: 'Alaska', lat: 67.3340, lng: -159.1230 },
+        { id: 'lake-clark',          name: 'Lake Clark',          state: 'Alaska', lat: 60.4126, lng: -153.4176 },
+        { id: 'wrangell-st-elias',   name: 'Wrangell-St. Elias', state: 'Alaska', lat: 61.7105, lng: -142.9855 }
       ]
     },
     {
       region: 'Hawaii & Territories',
       parks: [
-        { id: 'haleakala',       name: 'Haleakal\u0101',              state: 'Hawaii' },
-        { id: 'hawaii-volcanoes',name: 'Hawai\u02BBi Volcanoes',      state: 'Hawaii' },
-        { id: 'american-samoa',  name: 'American Samoa',              state: 'American Samoa' },
-        { id: 'virgin-islands',  name: 'Virgin Islands',              state: 'US Virgin Islands' }
+        { id: 'haleakala',        name: 'Haleakal\u0101',          state: 'Hawaii',            lat:  20.7204, lng: -156.1552 },
+        { id: 'hawaii-volcanoes', name: 'Hawai\u02BBi Volcanoes',  state: 'Hawaii',            lat:  19.4194, lng: -155.2885 },
+        { id: 'american-samoa',   name: 'American Samoa',          state: 'American Samoa',    lat: -14.2500, lng: -170.7500 },
+        { id: 'virgin-islands',   name: 'Virgin Islands',          state: 'US Virgin Islands', lat:  18.3444, lng:  -64.7272 }
       ]
     }
   ];
@@ -235,7 +235,7 @@
     return html;
   }
 
-  // ---- Count unique parks visited by any person -----
+  // ---- Count parks visited by any / all family members -
   function countFamilyVisited() {
     var seen = {};
     PEOPLE.forEach(function (person) {
@@ -245,6 +245,41 @@
       });
     });
     return Object.keys(seen).length;
+  }
+
+  function countWholeFamilyVisited() {
+    return PARKS_REGIONS.reduce(function (total, regionObj) {
+      return total + regionObj.parks.filter(function (p) {
+        return PEOPLE.every(function (person) {
+          return getPersonData(person.id).visited[p.id];
+        });
+      }).length;
+    }, 0);
+  }
+
+  function buildWholeFamilyListHTML() {
+    var html = '<div class="visit-list">';
+    var hasAny = false;
+    PARKS_REGIONS.forEach(function (regionObj) {
+      var parks = regionObj.parks.filter(function (p) {
+        return PEOPLE.every(function (person) {
+          return getPersonData(person.id).visited[p.id];
+        });
+      });
+      if (parks.length === 0) return;
+      hasAny = true;
+      html += '<div class="region-group">';
+      html += '<div class="region-label">' + regionObj.region + '</div>';
+      html += '<div class="visit-chips">';
+      parks.forEach(function (p) {
+        html += '<span class="visit-chip">' + p.name + '</span>';
+      });
+      html += '</div></div>';
+    });
+    html += '</div>';
+    return hasAny
+      ? html
+      : '<div class="visit-list"><p class="no-visits">No parks visited by everyone yet.</p></div>';
   }
 
   // ---- Build unvisited (bucket list) HTML — per person --
@@ -352,6 +387,103 @@
     appendList(cardId, buildParkListHTML(data.visited, data.details), 'Show visited', 'Hide visited');
   }
 
+  // ---- Parks map (Leaflet) --------------------------
+  function initParksMap() {
+    var mapEl = document.getElementById('parksMap');
+    if (!mapEl || typeof L === 'undefined') return;
+
+    var map = L.map('parksMap', { scrollWheelZoom: false })
+      .setView([39.5, -98.35], 4);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
+      maxZoom: 14
+    }).addTo(map);
+
+    var activeFilter = 'whole-family';
+    var markerEntries = [];
+
+    function isAnyoneVisited(parkId) {
+      return PEOPLE.some(function (p) {
+        return getPersonData(p.id).visited[parkId];
+      });
+    }
+
+    function isWholeFamilyVisited(parkId) {
+      return PEOPLE.every(function (p) {
+        return getPersonData(p.id).visited[parkId];
+      });
+    }
+
+    function getMarkerColor(park) {
+      if (activeFilter === 'anyone') {
+        return isAnyoneVisited(park.id) ? '#E8A020' : '#aaaaaa';
+      }
+      if (activeFilter === 'whole-family') {
+        return isWholeFamilyVisited(park.id) ? '#FF8200' : '#aaaaaa';
+      }
+      var person = PEOPLE.filter(function (p) { return p.id === activeFilter; })[0];
+      return getPersonData(activeFilter).visited[park.id] ? person.color : '#aaaaaa';
+    }
+
+    function getPopupContent(park) {
+      var visitedBy = PEOPLE.filter(function (p) {
+        return getPersonData(p.id).visited[park.id];
+      });
+      var html = '<strong>' + park.name + '</strong><br><em style="color:#888">' + park.state + '</em>';
+      if (visitedBy.length) {
+        html += '<br><span style="font-size:0.82em;color:#555">Visited by: ' +
+          visitedBy.map(function (p) {
+            return '<span style="color:' + p.color + '">&#9679;</span>&nbsp;' + p.name;
+          }).join(', ') + '</span>';
+      } else {
+        html += '<br><span style="font-size:0.82em;color:#bbb">Not yet visited</span>';
+      }
+      return html;
+    }
+
+    PARKS_REGIONS.forEach(function (regionObj) {
+      regionObj.parks.forEach(function (park) {
+        var circle = L.circleMarker([park.lat, park.lng], {
+          radius: 7,
+          color: '#ffffff',
+          weight: 1.5,
+          fillOpacity: 0.88,
+          fillColor: getMarkerColor(park)
+        }).bindPopup(getPopupContent(park));
+        circle.addTo(map);
+        markerEntries.push({ circle: circle, park: park });
+      });
+    });
+
+    function updateMarkers() {
+      var visitedColor;
+      if (activeFilter === 'anyone') {
+        visitedColor = '#E8A020';
+      } else if (activeFilter === 'whole-family') {
+        visitedColor = '#FF8200';
+      } else {
+        visitedColor = PEOPLE.filter(function (p) { return p.id === activeFilter; })[0].color;
+      }
+      markerEntries.forEach(function (m) {
+        m.circle.setStyle({ fillColor: getMarkerColor(m.park) });
+      });
+      var legendDot = document.getElementById('legendVisited');
+      if (legendDot) legendDot.style.background = visitedColor;
+    }
+
+    document.querySelectorAll('.map-filter-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.map-filter-btn').forEach(function (b) {
+          b.classList.remove('active');
+        });
+        btn.classList.add('active');
+        activeFilter = btn.dataset.filter;
+        updateMarkers();
+      });
+    });
+  }
+
   // ---- Init -----------------------------------------
   function init() {
     // Family card
@@ -359,6 +491,11 @@
     var familyCountEl = document.getElementById('familyParksCount');
     if (familyCountEl) familyCountEl.textContent = familyCount + ' of ' + TOTAL_PARKS + ' national parks visited by anyone';
     appendList('family-card', buildFamilyListHTML(), 'Show visited', 'Hide visited');
+
+    // Whole Family card
+    var wholeFamilyCountEl = document.getElementById('wholeFamilyParksCount');
+    if (wholeFamilyCountEl) wholeFamilyCountEl.textContent = countWholeFamilyVisited() + ' of ' + TOTAL_PARKS + ' national parks visited by everyone';
+    appendList('whole-family-card', buildWholeFamilyListHTML(), 'Show visited', 'Hide visited');
 
     // Bucket list card
     var bucketCountEl = document.getElementById('bucketParksCount');
@@ -377,6 +514,7 @@
     PEOPLE.forEach(initPersonCard);
 
     initListToggles();
+    initParksMap();
   }
 
   document.addEventListener('DOMContentLoaded', init);

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="The Cuzzorts tracking all 63 US National Parks by family member.">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
 
@@ -16,11 +17,41 @@
 
   <main>
 
-    <!-- Family combined card -->
+    <!-- Map card -->
+    <p class="section-heading">Map</p>
+    <div class="combined-card" id="map-card">
+      <h2>All 63 National Parks</h2>
+      <div class="map-filters" id="mapFilters">
+        <button class="map-filter-btn active" data-filter="whole-family">Whole Family</button>
+        <button class="map-filter-btn" data-filter="anyone">Anyone</button>
+        <button class="map-filter-btn" data-filter="josh">Josh</button>
+        <button class="map-filter-btn" data-filter="sam">Sam</button>
+        <button class="map-filter-btn" data-filter="ellie">Ellie</button>
+        <button class="map-filter-btn" data-filter="tilly">Tilly</button>
+        <button class="map-filter-btn" data-filter="poppy">Poppy</button>
+      </div>
+      <div id="parksMap"></div>
+      <div class="map-legend">
+        <span class="legend-dot visited" id="legendVisited"></span> Visited
+        <span class="legend-sep">·</span>
+        <span class="legend-dot unvisited"></span> Not yet visited
+      </div>
+    </div>
+
+    <!-- Family cards (half-width) -->
     <p class="section-heading">Family</p>
-    <div class="combined-card" id="family-card">
-      <h2>Family Combined</h2>
-      <p class="count" id="familyParksCount">0 of 63 national parks visited by anyone</p>
+    <div class="person-grid grid-2col">
+
+      <div class="combined-card" id="whole-family-card">
+        <h2>Whole Family</h2>
+        <p class="count" id="wholeFamilyParksCount">Loading&hellip;</p>
+      </div>
+
+      <div class="combined-card" id="family-card">
+        <h2>Anyone</h2>
+        <p class="count" id="familyParksCount">0 of 63 national parks visited by anyone</p>
+      </div>
+
     </div>
 
     <!-- Josh & Sam -->
@@ -79,6 +110,9 @@
   <script src="data/parks-visited-ellie.js"></script>
   <script src="data/parks-visited-tilly.js"></script>
   <script src="data/parks-visited-poppy.js"></script>
+
+  <!-- Map library -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <!-- App logic -->
   <script src="js/app.js"></script>
