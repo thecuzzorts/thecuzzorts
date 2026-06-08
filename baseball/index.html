@@ -6,8 +6,7 @@
   <meta name="description" content="Our love of baseball and travel is taking us on a ballpark tour! Our goal: visit all 30 ballparks.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:title" content="Our Ballpark Adventure | The Cuzzorts" />
-  <meta property="og:description" content="Our love of baseball and travel is taking us on a ballpark tour! Our goal: visit all 30 ballparks." />
-  <meta property="og:image" content="https://thecuzzorts.com/images/MLB-Team-Map.png" />
+  <meta property="og:description" content="We've visited all 30 active MLB ballparks! Our love of baseball and travel continues." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +14,7 @@
 
   <!-- Existing CSS (team logos sprite, team/division card styles) -->
   <link rel="stylesheet" href="../css/main.min.css?v=2">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
   <!-- Design-system overrides -->
   <style>
@@ -219,6 +219,52 @@
       border-radius: 5px;
     }
 
+    #ballparksMap {
+      height: 480px;
+      border-radius: 6px;
+    }
+
+    .team-marker-icon {
+      background: none !important;
+      border: none !important;
+    }
+
+    .team-marker-icon .team-logo {
+      top: 0;
+      display: block;
+      margin: 0;
+    }
+
+    .team-marker-icon.status-closed .team-logo  { filter: grayscale(1); opacity: 0.55; }
+    .team-marker-icon.status-future .team-logo  { opacity: 0.65; }
+
+    .bp-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .bp-filter-btn {
+      padding: 5px 14px;
+      border: 2px solid #ccc;
+      border-radius: 20px;
+      background: #fff;
+      cursor: pointer;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 0.9rem;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .bp-filter-btn.active[data-filter="all"]     { border-color: #E8A020; color: #E8A020; }
+    .bp-filter-btn.active[data-filter="current"] { border-color: #22703D; color: #22703D; }
+    .bp-filter-btn.active[data-filter="closed"]  { border-color: #888;    color: #888;    }
+    .bp-filter-btn.active[data-filter="future"]  { border-color: #003087; color: #003087; }
+
+    @media (max-width: 640px) {
+      #ballparksMap { height: 320px; }
+    }
+
     /* --- Division / park cards ----------------------- */
 
     /* Replace the float-based layout with CSS grid for readability */
@@ -262,13 +308,17 @@
       }
     }
 
-    /* Closed parks: half width on wide screens, full width at 2-col breakpoint and below. */
     .format .group .split.snip.ballpark {
       width: 100% !important;
     }
-    @media (min-width: 926px) {
-      .format .group .split.snip.ballpark {
-        width: 50% !important;
+
+    /* Closed & Future cards side-by-side */
+    .format .group.side-by-side {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 640px) {
+      .format .group.side-by-side {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -291,7 +341,9 @@
 
     .split.snip h2.nl  { background: #003087 !important; }
     .split.snip h2.al  { background: #C8102E !important; }
-    .split.snip h2.ballpark { background: #22703D !important; }
+    .split.snip h2.ballpark         { background: #22703D !important; }
+    .split.snip h2.ballpark-closed  { background: #64748b !important; }
+    .split.snip h2.ballpark-future  { background: #E8A020 !important; }
 
     .team-name {
       font-family: 'Roboto Condensed', sans-serif !important;
@@ -405,7 +457,7 @@
       <h2 class="serious moderate colonel">Stats</h2>
 
       <div class="stats-banner">
-        We have been to <strong>30</strong> of <strong>30</strong> MLB ballparks!
+        <strong>30 of 30</strong> active MLB ballparks! Also visited <strong>3</strong> historic closed parks (<strong>33</strong> total). <strong>3</strong> future stadiums on the horizon.
       </div>
 
       <!-- Map ------------------------------------------- -->
@@ -413,9 +465,13 @@
       <h2 class="serious moderate colonel">Map</h2>
 
       <div class="map-wrap">
-        <a href="../images/MLB-Team-Map.jpg" target="_blank">
-          <img src="../images/MLB-Team-Map.jpg" alt="MLB Team Map">
-        </a>
+        <div class="bp-filters">
+          <button class="bp-filter-btn active" data-filter="all">All</button>
+          <button class="bp-filter-btn" data-filter="current">Current</button>
+          <button class="bp-filter-btn" data-filter="closed">Closed</button>
+          <button class="bp-filter-btn" data-filter="future">Future</button>
+        </div>
+        <div id="ballparksMap"></div>
       </div>
 
       <!-- Parks ----------------------------------------- -->
@@ -516,13 +572,14 @@
         </section>
       </div>
 
-      <!-- Closed Parks ---------------------------------- -->
-      <h2 class="serious moderate colonel">Closed Parks</h2>
+      <!-- Closed & Future -------------------------------- -->
+      <h2 class="serious moderate colonel">Closed &amp; Future</h2>
 
       <div class="format">
-        <section class="group">
+        <section class="group side-by-side">
+
           <div class="split snip ballpark">
-            <h2 class="ballpark">
+            <h2 class="ballpark ballpark-closed">
               Closed
               <span class="divisionCount">3</span>
             </h2>
@@ -532,6 +589,19 @@
               <span class="team yes"><span class="visited"></span><span class="team-logo rangers" style="top:-0.25em"></span><span class="team-name" style="height:57px">Texas Rangers<br><small><i>Globe Life Park</i></small><br><small><i>(last MLB game: September 29, 2019)</i></small></span><span class="first-visit"><span class="date">30 July 2014</span></span></span>
             </p>
           </div>
+
+          <div class="split snip ballpark">
+            <h2 class="ballpark ballpark-future">
+              Future
+              <span class="divisionCount">3</span>
+            </h2>
+            <p>
+              <span class="team"><span class="team-logo athletics" style="top:-0.25em"></span><span class="team-name" style="height:57px">Athletics<br><small><i>Las Vegas Ballpark</i></small><br><small><i>(under construction, opening ~2028)</i></small></span></span>
+              <span class="team"><span class="team-logo rays" style="top:-0.25em"></span><span class="team-name" style="height:57px">Tampa Bay Rays<br><small><i>New Tropicana Field</i></small><br><small><i>(planning phase)</i></small></span></span>
+              <span class="team"><span class="team-logo royals" style="top:-0.25em"></span><span class="team-name" style="height:57px">Kansas City Royals<br><small><i>New Downtown Ballpark</i></small><br><small><i>(planning phase)</i></small></span></span>
+            </p>
+          </div>
+
         </section>
       </div>
 
@@ -541,6 +611,99 @@
   <footer>
     <p><script>document.write(new Date().getFullYear())</script> &copy; The Cuzzorts &mdash; <a href="../index.html">Home</a></p>
   </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    (function () {
+      var BALLPARKS = [
+        // ---- Current stadiums ----
+        { status: 'current', slug: 'braves',       name: 'Atlanta Braves',        stadium: 'Truist Park',                 lat: 33.8908, lng:  -84.4677, note: '28 May 2018' },
+        { status: 'current', slug: 'marlins',      name: 'Miami Marlins',         stadium: 'loanDepot Park',              lat: 25.7781, lng:  -80.2197, note: '21 September 2021' },
+        { status: 'current', slug: 'mets',         name: 'New York Mets',         stadium: 'Citi Field',                  lat: 40.7571, lng:  -73.8458, note: '19 June 2016' },
+        { status: 'current', slug: 'phillies',     name: 'Philadelphia Phillies', stadium: 'Citizens Bank Park',          lat: 39.9057, lng:  -75.1665, note: '25 July 2023' },
+        { status: 'current', slug: 'nationals',    name: 'Washington Nationals',  stadium: 'Nationals Park',              lat: 38.8731, lng:  -77.0074, note: '5 June 2014' },
+        { status: 'current', slug: 'cubs',         name: 'Chicago Cubs',          stadium: 'Wrigley Field',               lat: 41.9484, lng:  -87.6553, note: '1 July 2012' },
+        { status: 'current', slug: 'reds',         name: 'Cincinnati Reds',       stadium: 'Great American Ball Park',    lat: 39.0979, lng:  -84.5086, note: '18 June 2013' },
+        { status: 'current', slug: 'brewers',      name: 'Milwaukee Brewers',     stadium: 'American Family Field',       lat: 43.0283, lng:  -87.9712, note: '30 June 2012' },
+        { status: 'current', slug: 'pirates',      name: 'Pittsburgh Pirates',    stadium: 'PNC Park',                    lat: 40.4469, lng:  -80.0057, note: '16 June 2013' },
+        { status: 'current', slug: 'cardinals',    name: 'St. Louis Cardinals',   stadium: 'Busch Stadium',               lat: 38.6226, lng:  -90.1928, note: '26 June 2009' },
+        { status: 'current', slug: 'diamondbacks', name: 'Arizona Diamondbacks',  stadium: 'Chase Field',                 lat: 33.4453, lng: -112.0669, note: '18 June 2021' },
+        { status: 'current', slug: 'rockies',      name: 'Colorado Rockies',      stadium: 'Coors Field',                 lat: 39.7559, lng: -104.9942, note: '17 June 2015' },
+        { status: 'current', slug: 'dodgers',      name: 'Los Angeles Dodgers',   stadium: 'Dodger Stadium',              lat: 34.0739, lng: -118.2400, note: '22 June 2025' },
+        { status: 'current', slug: 'padres',       name: 'San Diego Padres',      stadium: 'Petco Park',                  lat: 32.7076, lng: -117.1570, note: '20 June 2025' },
+        { status: 'current', slug: 'giants',       name: 'San Francisco Giants',  stadium: 'Oracle Park',                 lat: 37.7786, lng: -122.3893, note: '17 April 2014' },
+        { status: 'current', slug: 'orioles',      name: 'Baltimore Orioles',     stadium: 'Oriole Park at Camden Yards', lat: 39.2838, lng:  -76.6217, note: '28 July 2023' },
+        { status: 'current', slug: 'redsox',       name: 'Boston Red Sox',        stadium: 'Fenway Park',                 lat: 42.3467, lng:  -71.0972, note: '18 June 2016' },
+        { status: 'current', slug: 'yankees',      name: 'New York Yankees',      stadium: 'Yankee Stadium',              lat: 40.8296, lng:  -73.9262, note: '14 August 2017' },
+        { status: 'current', slug: 'rays',         name: 'Tampa Bay Rays',        stadium: 'Tropicana Field',             lat: 27.7682, lng:  -82.6534, note: '12 July 2014' },
+        { status: 'current', slug: 'bluejays',     name: 'Toronto Blue Jays',     stadium: 'Rogers Centre',               lat: 43.6414, lng:  -79.3894, note: '23 May 2014' },
+        { status: 'current', slug: 'whitesox',     name: 'Chicago White Sox',     stadium: 'Rate Field',                  lat: 41.8299, lng:  -87.6338, note: '20 July 2013' },
+        { status: 'current', slug: 'indians',      name: 'Cleveland Guardians',   stadium: 'Progressive Field',           lat: 41.4962, lng:  -81.6852, note: '17 June 2013' },
+        { status: 'current', slug: 'tigers',       name: 'Detroit Tigers',        stadium: 'Comerica Park',               lat: 42.3390, lng:  -83.0485, note: '24 May 2014' },
+        { status: 'current', slug: 'royals',       name: 'Kansas City Royals',    stadium: 'Kauffman Stadium',            lat: 39.0517, lng:  -94.4803, note: '12 May 2013' },
+        { status: 'current', slug: 'twins',        name: 'Minnesota Twins',       stadium: 'Target Field',                lat: 44.9817, lng:  -93.2781, note: '3 July 2014' },
+        { status: 'current', slug: 'astros',       name: 'Houston Astros',        stadium: 'Daikin Park',                 lat: 29.7572, lng:  -95.3556, note: '31 July 2014' },
+        { status: 'current', slug: 'angels',       name: 'Los Angeles Angels',    stadium: 'Angel Stadium',               lat: 33.8003, lng: -117.8827, note: '21 June 2025' },
+        { status: 'current', slug: 'athletics',    name: 'Athletics',             stadium: 'Sutter Health Park',          lat: 38.5802, lng: -121.5010, note: '18 June 2025' },
+        { status: 'current', slug: 'mariners',     name: 'Seattle Mariners',      stadium: 'T-Mobile Park',               lat: 47.5914, lng: -122.3324, note: '9 July 2017' },
+        { status: 'current', slug: 'rangers',      name: 'Texas Rangers',         stadium: 'Globe Life Field',            lat: 32.7473, lng:  -97.0820, note: '19 June 2021' },
+        // ---- Closed stadiums ----
+        { status: 'closed',  slug: 'braves',       name: 'Atlanta Braves',        stadium: 'Turner Field',                         lat: 33.7353, lng:  -84.3893, note: 'Visited 31 July 2009 · Closed Oct 2016' },
+        { status: 'closed',  slug: 'athletics',    name: 'Oakland Athletics',     stadium: 'Oakland-Alameda County Coliseum',      lat: 37.7516, lng: -122.2005, note: 'Visited 18 April 2014 · Closed Sep 2024' },
+        { status: 'closed',  slug: 'rangers',      name: 'Texas Rangers',         stadium: 'Globe Life Park',                      lat: 32.7512, lng:  -97.0833, note: 'Visited 30 July 2014 · Closed Sep 2019' },
+        // ---- Future stadiums ----
+        { status: 'future',  slug: 'athletics',    name: 'Athletics',             stadium: 'Las Vegas Ballpark (under construction)', lat: 36.0978, lng: -115.1727, note: 'Opening: ~2028' },
+        { status: 'future',  slug: 'rays',         name: 'Tampa Bay Rays',        stadium: 'New Tropicana Field (planned)',  lat: 27.7700, lng:  -82.6520, note: 'Planning phase' },
+        { status: 'future',  slug: 'royals',       name: 'Kansas City Royals',    stadium: 'New Downtown Ballpark (planned)', lat: 39.1004, lng:  -94.5785, note: 'Planning phase' }
+      ];
+
+      var map = L.map('ballparksMap', { scrollWheelZoom: false })
+        .setView([38.5, -97], 3);
+
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
+        maxZoom: 14
+      }).addTo(map);
+
+      var markerEntries = [];
+
+      BALLPARKS.forEach(function (bp) {
+        var labelMap = { current: 'First visit', closed: 'Visited', future: 'Status' };
+        var icon = L.divIcon({
+          className: 'team-marker-icon status-' + bp.status,
+          html: '<div class="team-logo ' + bp.slug + '"></div>',
+          iconSize: [30, 24],
+          iconAnchor: [15, 12],
+          popupAnchor: [0, -14]
+        });
+        var marker = L.marker([bp.lat, bp.lng], { icon: icon })
+          .bindPopup(
+            '<strong>' + bp.name + '</strong><br>' +
+            '<em style="color:#888">' + bp.stadium + '</em><br>' +
+            '<span style="font-size:0.82em;color:#555">' + (labelMap[bp.status] || '') + ': ' + bp.note + '</span>'
+          )
+          .addTo(map);
+        markerEntries.push({ marker: marker, status: bp.status });
+      });
+
+      var activeFilter = 'all';
+
+      document.querySelectorAll('.bp-filter-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          document.querySelectorAll('.bp-filter-btn').forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          activeFilter = btn.dataset.filter;
+          markerEntries.forEach(function (e) {
+            if (activeFilter === 'all' || e.status === activeFilter) {
+              e.marker.addTo(map);
+            } else {
+              e.marker.remove();
+            }
+          });
+        });
+      });
+    }());
+  </script>
 
   <script src="../scripts/jquery.js"></script>
   <script src="../scripts/jquery.cycle2.min.js"></script>
