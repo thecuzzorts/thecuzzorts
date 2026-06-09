@@ -499,7 +499,7 @@
 
     // Bucket list card
     var bucketCountEl = document.getElementById('bucketParksCount');
-    if (bucketCountEl) bucketCountEl.textContent = countBucketList() + ' of ' + TOTAL_PARKS + ' parks neither Josh nor Sam has visited yet';
+    if (bucketCountEl) bucketCountEl.textContent = countBucketList() + ' of ' + TOTAL_PARKS + ' parks Josh and Sam haven\'t visited together yet';
     var bucketHTML = buildBucketListHTML();
     if (bucketHTML) {
       var bucketCard = document.getElementById('bucket-card');
