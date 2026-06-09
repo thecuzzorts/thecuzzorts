@@ -6,11 +6,11 @@
 
   // ---- Person config --------------------------------
   var people = [
-    { id: 'josh',   color: '#E8A020', data: function () { return turkeysHarvestedJosh;   } },
-    { id: 'sam',    color: '#662684', data: function () { return turkeysHarvestedSam;    } },
-    { id: 'jack',   color: '#4A9E2F', data: function () { return turkeysHarvestedJack;   } },
-    { id: 'debbie', color: '#D93025', data: function () { return turkeysHarvestedDebbie; } },
-    { id: 'tilly',  color: '#0898ff', data: function () { return turkeysHarvestedTilly;  } }
+    { id: 'josh',   color: '#E8A020',                  data: function () { return turkeysHarvestedJosh;   } },
+    { id: 'sam',    color: '#662684',                  data: function () { return turkeysHarvestedSam;    } },
+    { id: 'jack',   color: '#4A9E2F', family: false,   data: function () { return turkeysHarvestedJack;   } },
+    { id: 'debbie', color: '#D93025', family: false,   data: function () { return turkeysHarvestedDebbie; } },
+    { id: 'tilly',  color: '#0898ff',                  data: function () { return turkeysHarvestedTilly;  } }
   ];
 
   // ---- State name lookup ----------------------------
@@ -186,7 +186,7 @@
     var harvestCombined = {};
     var huntCombined    = {};
 
-    people.forEach(function (person) {
+    people.filter(function (p) { return p.family !== false; }).forEach(function (person) {
       var data = person.data();
       Object.keys(data).forEach(function (key) {
         var v = Number(data[key]);
