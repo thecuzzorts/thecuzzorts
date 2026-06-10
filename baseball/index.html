@@ -369,6 +369,20 @@
 
     /* Override main.min.css's 85% width constraint — cards need the full container */
     .format { width: 100% !important; margin-bottom: 0 !important; }
+
+    /* --- Kids section --------------------------------- */
+    .split.snip h2.kid-ellie { background: #66b2b2 !important; }
+    .split.snip h2.kid-tilly { background: #0898ff !important; }
+    .split.snip h2.kid-poppy { background: #d9259a !important; }
+
+    .format .group.kids-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 640px) {
+      .format .group.kids-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 
   <link rel="apple-touch-icon-precomposed" href="../images/apple/touch-icon-iphone.png" />
@@ -392,6 +406,7 @@
           <li><a href="#stats">Stats</a></li>
           <li><a href="#map">Map</a></li>
           <li><a href="#parks">Parks</a></li>
+          <li><a href="#kids">Kids</a></li>
         </ul>
       </nav>
     </div>
@@ -572,6 +587,54 @@
         </section>
       </div>
 
+      <!-- The Kids -------------------------------------- -->
+      <a name="kids"></a>
+      <h2 class="serious moderate colonel">The Kids</h2>
+
+      <div class="format">
+        <section class="group kids-grid">
+
+          <div class="split snip ballpark">
+            <h2 class="ballpark kid-ellie">
+              Ellie
+              <span class="divisionCount">5</span>
+            </h2>
+            <p>
+              <span class="team yes"><span class="visited"></span><span class="team-logo rockies"></span><span class="team-name">Colorado Rockies<br><small><i>Coors Field</i></small></span><span class="first-visit"><span class="date">17 June 2015</span></span></span>
+              <span class="team yes"><span class="visited"></span><span class="team-logo cardinals"></span><span class="team-name">St. Louis Cardinals<br><small><i>Busch Stadium</i></small></span><span class="first-visit"><span class="date">22 May 2016</span></span></span>
+              <span class="team yes"><span class="visited"></span><span class="team-logo braves"></span><span class="team-name">Atlanta Braves<br><small><i>Turner Field (closed)</i></small></span><span class="first-visit"><span class="date">29 July 2016</span></span></span>
+              <span class="team yes"><span class="visited"></span><span class="team-logo brewers"></span><span class="team-name">Milwaukee Brewers<br><small><i>American Family Field</i></small></span><span class="first-visit"><span class="date">18 June 2017</span></span></span>
+              <span class="team yes"><span class="visited"></span><span class="team-logo reds"></span><span class="team-name">Cincinnati Reds<br><small><i>Great American Ball Park</i></small></span><span class="first-visit"><span class="date">23 June 2023</span></span></span>
+            </p>
+          </div>
+
+          <div class="split snip ballpark">
+            <h2 class="ballpark kid-tilly">
+              Tilly
+              <span class="divisionCount">3</span>
+            </h2>
+            <p>
+              <span class="team yes"><span class="visited"></span><span class="team-logo brewers"></span><span class="team-name">Milwaukee Brewers<br><small><i>American Family Field</i></small></span><span class="first-visit"><span class="date">18 June 2017</span></span></span>
+              <span class="team yes"><span class="visited"></span><span class="team-logo cardinals"></span><span class="team-name">St. Louis Cardinals<br><small><i>Busch Stadium</i></small></span><span class="first-visit"><span class="date">3 August 2021</span></span></span>
+              <span class="team yes"><span class="visited"></span><span class="team-logo reds"></span><span class="team-name">Cincinnati Reds<br><small><i>Great American Ball Park</i></small></span><span class="first-visit"><span class="date">23 June 2023</span></span></span>
+            </p>
+          </div>
+
+          <div class="split snip ballpark">
+            <h2 class="ballpark kid-poppy">
+              Poppy
+              <span class="divisionCount">3</span>
+            </h2>
+            <p>
+              <span class="team yes"><span class="visited"></span><span class="team-logo reds"></span><span class="team-name">Cincinnati Reds<br><small><i>Great American Ball Park</i></small></span><span class="first-visit"><span class="date">23 June 2023</span></span></span>
+              <span class="team yes"><span class="visited"></span><span class="team-logo brewers"></span><span class="team-name">Milwaukee Brewers<br><small><i>American Family Field</i></small></span><span class="first-visit"><span class="date">22 July 2023</span></span></span>
+              <span class="team yes"><span class="visited"></span><span class="team-logo cardinals"></span><span class="team-name">St. Louis Cardinals<br><small><i>Busch Stadium</i></small></span><span class="first-visit"><span class="date">24 June 2024</span></span></span>
+            </p>
+          </div>
+
+        </section>
+      </div>
+
       <!-- Closed & Future -------------------------------- -->
       <h2 class="serious moderate colonel">Closed &amp; Future</h2>
 
@@ -658,7 +721,7 @@
       ];
 
       var map = L.map('ballparksMap', { scrollWheelZoom: false })
-        .setView([38.5, -97], 3);
+        .setView([38.5, -97], 4);
 
       L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
