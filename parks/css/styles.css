@@ -23,40 +23,7 @@ body {
   min-height: 100vh;
 }
 
-/* --- Header ---------------------------------------- */
-header {
-  background: #1a2e3b;
-  color: #fff;
-  padding: 1.25rem 1.5rem 1.25rem;
-  text-align: center;
-}
-
-header h1 {
-  font-family: 'Kreon', Georgia, serif;
-  font-size: clamp(1.4rem, 4vw, 2.2rem);
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: #fff;
-}
-
-header p {
-  font-size: 0.85rem;
-  color: #a8bfc9;
-  letter-spacing: 0.04em;
-  margin-top: 0.25rem;
-}
-
-.home-link {
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px dashed rgba(255,255,255,0.35);
-  transition: color 0.2s, border-color 0.2s;
-}
-
-.home-link:hover {
-  color: #E8A020;
-  border-bottom-color: #E8A020;
-}
+/* --- Header + footer styling now lives in ../../css/site-chrome.css --- */
 
 /* --- Main Content ---------------------------------- */
 main {
@@ -65,16 +32,7 @@ main {
   padding: 1.5rem 1rem 3rem;
 }
 
-/* --- Section Heading ------------------------------- */
-.section-heading {
-  font-family: 'Kreon', Georgia, serif;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #8a9aaa;
-  margin: 1.75rem 0 0.75rem;
-}
+/* --- Section labels now styled by ../../css/section-labels.css --- */
 
 /* --- Combined Card --------------------------------- */
 .combined-card {
@@ -342,16 +300,4 @@ main {
   #parksMap { height: 320px; }
 }
 
-/* --- Footer ---------------------------------------- */
-footer {
-  background: #1a2e3b;
-  color: #a8bfc9;
-  text-align: center;
-  padding: 1.5rem 1rem;
-  font-size: 0.85rem;
-}
-
-footer a {
-  color: #E8A020;
-  text-decoration: none;
-}
+/* --- Footer styling now lives in ../../css/site-chrome.css --- */

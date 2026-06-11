@@ -1,0 +1,63 @@
+/* ============================================================
+   Section labels — shared enhanced heading treatment.
+   Icon · gold-underlined label · trailing rule (· optional count
+   badge · hover anchor). Mirrors the baseball section headings.
+   Internals are injected by js/section-labels.js. Apply to any
+   .section-heading element.
+   ============================================================ */
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1a2e3b;
+  margin: 1.9rem 0 1rem;
+}
+
+.section-heading .sec-icon { flex: 0 0 auto; display: inline-flex; color: #E8A020; }
+.section-heading .sec-icon svg { width: 1.3rem; height: 1.3rem; display: block; }
+
+.section-heading .sec-label {
+  flex: 0 0 auto;
+  padding-bottom: 0.28rem;
+  border-bottom: 3px solid #E8A020;
+}
+
+.section-heading .sec-count {
+  flex: 0 0 auto;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #1a2e3b;
+  background: rgba(232,160,32,0.18);
+  border: 1px solid rgba(232,160,32,0.5);
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+  white-space: nowrap;
+}
+
+.section-heading .sec-rule {
+  flex: 1 1 auto;
+  min-width: 1rem;
+  height: 1px;
+  background: linear-gradient(to right, rgba(26,46,59,0.22), rgba(26,46,59,0));
+}
+
+.section-heading .sec-anchor:link,
+.section-heading .sec-anchor:visited {
+  flex: 0 0 auto;
+  color: #E8A020;
+  text-decoration: none;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.section-heading:hover .sec-anchor,
+.section-heading .sec-anchor:focus { opacity: 1; }
