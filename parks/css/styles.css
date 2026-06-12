@@ -300,4 +300,175 @@ main {
   #parksMap { height: 320px; }
 }
 
+/* --- Photos + Map row ------------------------------ */
+.photos-map-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;   /* equal-height columns */
+}
+
+.pm-col { min-width: 0; }   /* let the slideshow + map shrink inside their tracks */
+
+/* Desktop: photo + map cards fill their column so they match height.
+   The map grows to match the photo's natural height. */
+@media (min-width: 769px) {
+  .pm-col { display: flex; flex-direction: column; }
+
+  .pm-col .combined-card { flex: 1 1 auto; }
+
+  .pm-map .combined-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .pm-map #parksMap {
+    flex: 1 1 auto;
+    min-height: 320px;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .photos-map-row { grid-template-columns: 1fr; }
+}
+
+/* --- Photos / Slideshow ---------------------------- */
+.slideshow-wrap {
+  background: #3a2a1c;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  overflow: hidden;
+  margin: 12px 0 4px;
+}
+
+.parks-slideshow {
+  position: relative;
+  background: #4a3625;
+}
+
+.parks-slideshow img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+  cursor: zoom-in;
+}
+
+/* Only the active slide is shown */
+.parks-slideshow img:not(.is-active) {
+  display: none;
+}
+
+.slideshow-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.9rem 0.6rem;
+  background: #3a2a1c;
+}
+
+.slideshow-controls a {
+  flex: 0 0 auto;
+  font-family: 'Kreon', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  padding: 0.25rem 0.8rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.slideshow-controls a:hover {
+  color: #E8A020;
+  border-color: #E8A020;
+}
+
+.cycle-caption {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: center;
+  color: #fff;
+  font-family: 'Kreon', serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- Photo lightbox (full-screen) ------------------ */
+.lb-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(16,12,8,0.93);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.lb-overlay.is-open { display: flex; }
+
+.lb-figure {
+  margin: 0;
+  max-width: 92vw;
+  text-align: center;
+}
+.lb-img {
+  max-width: 92vw;
+  max-height: 84vh;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.5);
+}
+.lb-cap {
+  margin-top: 0.6rem;
+  font-family: 'Kreon', serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #e8eef2;
+}
+
+.lb-overlay button {
+  position: absolute;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Kreon', serif;
+  line-height: 1;
+  border-radius: 8px;
+  transition: background 0.15s, border-color 0.15s;
+}
+.lb-overlay button:hover { background: rgba(232,160,32,0.2); border-color: #E8A020; }
+
+.lb-prev, .lb-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 64px;
+  font-size: 1.6rem;
+}
+.lb-prev { left: 2vw; }
+.lb-next { right: 2vw; }
+
+.lb-close {
+  top: 2vh;
+  right: 2vw;
+  width: 44px;
+  height: 44px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .lb-prev, .lb-next { width: 38px; height: 52px; font-size: 1.3rem; }
+}
+
 /* --- Footer styling now lives in ../../css/site-chrome.css --- */

@@ -482,6 +482,13 @@
         updateMarkers();
       });
     });
+
+    // Map shares a row with the photos on desktop and grows to match its
+    // height (see .photos-map-row CSS), so re-measure after layout settles.
+    function refreshMapSize() { map.invalidateSize(); }
+    setTimeout(refreshMapSize, 0);
+    window.addEventListener('load', refreshMapSize);
+    window.addEventListener('resize', refreshMapSize);
   }
 
   // ---- Init -----------------------------------------

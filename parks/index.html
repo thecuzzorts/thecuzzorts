@@ -19,6 +19,7 @@
       <nav>
         <ul>
           <li><a href="#map">Map</a></li>
+          <li><a href="#photos">Photos</a></li>
           <li><a href="#family">Family</a></li>
           <li><a href="#josh-sam">Josh &amp; Sam</a></li>
           <li><a href="#kids">Kids</a></li>
@@ -30,26 +31,58 @@
 
   <main>
 
-    <!-- Map card -->
-    <p class="section-heading" id="map">Map</p>
-    <div class="combined-card" id="map-card">
-      <h2>All 63 National Parks</h2>
-      <div class="map-filters" id="mapFilters">
-        <button class="map-filter-btn active" data-filter="whole-family">Whole Family</button>
-        <button class="map-filter-btn" data-filter="anyone">Anyone</button>
-        <button class="map-filter-btn" data-filter="josh">Josh</button>
-        <button class="map-filter-btn" data-filter="sam">Sam</button>
-        <button class="map-filter-btn" data-filter="ellie">Ellie</button>
-        <button class="map-filter-btn" data-filter="tilly">Tilly</button>
-        <button class="map-filter-btn" data-filter="poppy">Poppy</button>
-      </div>
-      <div id="parksMap"></div>
-      <div class="map-legend">
-        <span class="legend-dot visited" id="legendVisited"></span> Visited
-        <span class="legend-sep">·</span>
-        <span class="legend-dot unvisited"></span> Not yet visited
-      </div>
-    </div>
+    <!-- Photos + Map share a row on desktop, stack on mobile -->
+    <div class="photos-map-row">
+
+      <!-- Photos -->
+      <div class="pm-col pm-photos">
+        <p class="section-heading" id="photos">Photos</p>
+        <div class="combined-card" id="photos-card">
+          <h2>From the Trail</h2>
+          <p class="count">Click a photo to view full-screen</p>
+          <div class="slideshow-wrap">
+            <!-- Add more slides by dropping photos in images/national-parks/ and
+                 copying an <img> line below. The alt text becomes the caption. -->
+            <div class="parks-slideshow" id="parksSlideshow">
+              <img class="is-active" loading="lazy" src="../images/national-parks/Gateway-Arch.jpg" alt="Gateway Arch National Park">
+              <img loading="lazy" src="../images/national-parks/Hot-Springs.jpg" alt="Hot Springs National Park">
+              <img loading="lazy" src="../images/national-parks/Indiana-Dunes.jpg" alt="Indiana Dunes National Park">
+              <img loading="lazy" src="../images/national-parks/Mammoth-Cave.jpg" alt="Mammoth Cave National Park">
+              <img loading="lazy" src="../images/national-parks/Virgin-Islands.jpg" alt="Virgin Islands National Park">
+            </div>
+            <div class="slideshow-controls">
+              <a class="prev" role="button" tabindex="0" aria-label="Previous photo">&#8592;</a>
+              <div class="cycle-caption"></div>
+              <a class="next" role="button" tabindex="0" aria-label="Next photo">&#8594;</a>
+            </div>
+          </div>
+        </div>
+      </div><!-- /pm-photos -->
+
+      <!-- Map -->
+      <div class="pm-col pm-map">
+        <p class="section-heading" id="map">Map</p>
+        <div class="combined-card" id="map-card">
+          <h2>All 63 National Parks</h2>
+          <div class="map-filters" id="mapFilters">
+            <button class="map-filter-btn active" data-filter="whole-family">Whole Family</button>
+            <button class="map-filter-btn" data-filter="anyone">Anyone</button>
+            <button class="map-filter-btn" data-filter="josh">Josh</button>
+            <button class="map-filter-btn" data-filter="sam">Sam</button>
+            <button class="map-filter-btn" data-filter="ellie">Ellie</button>
+            <button class="map-filter-btn" data-filter="tilly">Tilly</button>
+            <button class="map-filter-btn" data-filter="poppy">Poppy</button>
+          </div>
+          <div id="parksMap"></div>
+          <div class="map-legend">
+            <span class="legend-dot visited" id="legendVisited"></span> Visited
+            <span class="legend-sep">·</span>
+            <span class="legend-dot unvisited"></span> Not yet visited
+          </div>
+        </div>
+      </div><!-- /pm-map -->
+
+    </div><!-- /photos-map-row -->
 
     <!-- Family cards (half-width) -->
     <p class="section-heading" id="family">Family</p>
@@ -129,6 +162,9 @@
 
   <!-- App logic -->
   <script src="js/app.js?v=2"></script>
+
+  <!-- Photos: slideshow + full-screen lightbox -->
+  <script src="js/photos.js"></script>
 
   <!-- Shared section-label enhancer -->
   <script src="../js/section-labels.js"></script>
