@@ -66,33 +66,58 @@ main {
 
 /* --- Person Card ----------------------------------- */
 .person-card {
+  --accent: #ccc;
   position: relative;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   padding: 1.25rem 1.25rem 1rem;
-  border-top: 5px solid #ccc;
+  border-top: 5px solid var(--accent);
 }
 
-.person-card[data-person="josh"]   { border-top-color: #E8A020; }
-.person-card[data-person="sam"]    { border-top-color: #662684; }
-.person-card[data-person="jack"]   { border-top-color: #4A9E2F; }
-.person-card[data-person="debbie"] { border-top-color: #D93025; }
-.person-card[data-person="tilly"]  { border-top-color: #0898ff; }
-.person-card[data-person="family"] { border-top-color: #E8601A; }
+.person-card[data-person="josh"]   { --accent: #D18A00; }
+.person-card[data-person="sam"]    { --accent: #662684; }
+.person-card[data-person="jack"]   { --accent: #4A9E2F; }
+.person-card[data-person="debbie"] { --accent: #D93025; }
+.person-card[data-person="tilly"]  { --accent: #0B7AD0; }
+.person-card[data-person="family"] { --accent: #E8601A; }
 
 .person-card h2 {
+  display: inline-block;
+  vertical-align: middle;
   font-family: 'Kreon', Georgia, serif;
-  font-size: 1.2rem;
+  font-size: 1.55rem;
   font-weight: 700;
-  color: #1a2e3b;
-  margin-bottom: 0.2rem;
+  color: var(--accent);
+  letter-spacing: 0.01em;
+  margin: 0 0.7em 0.85rem 0;
 }
 
 .person-card .count {
+  display: inline-block;
+  vertical-align: middle;
   font-size: 0.85rem;
-  color: #777;
-  margin-bottom: 0.85rem;
+  color: #5d6b79;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0 0 0.85rem 0;
+}
+
+/* Count number as a bold, colorful pill badge — white figure on the
+   person's accent colour so it pops and stays high-contrast/legible. */
+.person-card .count span:not(.territory-note) {
+  display: inline-block;
+  background: var(--accent, #1a2e3b);
+  color: #fff;
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0;
+  padding: 0.08em 0.45em;
+  border-radius: 9px;
+  margin-right: 0.5em;
+  vertical-align: middle;
 }
 
 /* --- Map Container (responsive aspect-ratio) ------- */
@@ -200,46 +225,46 @@ main {
 }
 
 .turkey-group-label {
-  font-size: 0.68rem;
+  font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #bbb;
-  margin-bottom: 0.25rem;
+  color: #7d8a97;
+  margin-bottom: 0.35rem;
 }
 
 .visit-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.3rem;
+  gap: 0.4rem;
 }
 
 .visit-chip {
   display: inline-block;
-  padding: 0.15rem 0.55rem;
+  padding: 0.3rem 0.75rem;
   border-radius: 99px;
-  font-size: 0.75rem;
-  background: #f0f2f5;
-  border: 1px solid #ddd;
-  color: #444;
+  font-size: 0.92rem;
+  background: #eaeef2;
+  border: 1px solid #c6cfd7;
+  color: #28333d;
   white-space: nowrap;
 }
 
 /* Hunted-but-not-harvested chip */
 .turkey-chip--hunted {
   font-style: italic;
-  background: rgba(232, 160, 32, 0.1) !important;
-  border-color: rgba(232, 160, 32, 0.5) !important;
+  background: rgba(232, 160, 32, 0.16) !important;
+  border-color: rgba(232, 160, 32, 0.6) !important;
   border-style: dashed !important;
-  color: #7a5a10;
+  color: #6b4f0e;
 }
 
 /* Per-person chip accent colors */
-.person-card[data-person="josh"]   .visit-chip { background: rgba(232,160,32,0.08);  border-color: rgba(232,160,32,0.3); }
-.person-card[data-person="sam"]    .visit-chip { background: rgba(102,38,132,0.08);  border-color: rgba(102,38,132,0.3); }
-.person-card[data-person="jack"]   .visit-chip { background: rgba(74,158,47,0.08);   border-color: rgba(74,158,47,0.3); }
-.person-card[data-person="debbie"] .visit-chip { background: rgba(217,48,37,0.08);   border-color: rgba(217,48,37,0.3); }
-.person-card[data-person="tilly"]  .visit-chip { background: rgba(8,152,255,0.08);   border-color: rgba(8,152,255,0.3); }
-.person-card[data-person="family"] .visit-chip { background: rgba(232,96,26,0.08);   border-color: rgba(232,96,26,0.3); }
+.person-card[data-person="josh"]   .visit-chip { background: rgba(232,160,32,0.14);  border-color: rgba(232,160,32,0.55); }
+.person-card[data-person="sam"]    .visit-chip { background: rgba(102,38,132,0.14);  border-color: rgba(102,38,132,0.55); }
+.person-card[data-person="jack"]   .visit-chip { background: rgba(74,158,47,0.14);   border-color: rgba(74,158,47,0.55); }
+.person-card[data-person="debbie"] .visit-chip { background: rgba(217,48,37,0.14);   border-color: rgba(217,48,37,0.55); }
+.person-card[data-person="tilly"]  .visit-chip { background: rgba(8,152,255,0.14);   border-color: rgba(8,152,255,0.55); }
+.person-card[data-person="family"] .visit-chip { background: rgba(232,96,26,0.14);   border-color: rgba(232,96,26,0.55); }
 
 /* --- Footer styling now lives in ../../css/site-chrome.css --- */

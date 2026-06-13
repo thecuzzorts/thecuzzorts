@@ -382,7 +382,7 @@
     var count = countVisited(data.visited);
 
     var countEl = card.querySelector('.count');
-    if (countEl) countEl.textContent = count + ' of ' + TOTAL_PARKS + ' national parks';
+    if (countEl) countEl.innerHTML = '<span class="count-num">' + count + '</span> of ' + TOTAL_PARKS + ' national parks';
 
     appendList(cardId, buildParkListHTML(data.visited, data.details), 'Show visited', 'Hide visited');
   }
@@ -496,17 +496,17 @@
     // Family card
     var familyCount = countFamilyVisited();
     var familyCountEl = document.getElementById('familyParksCount');
-    if (familyCountEl) familyCountEl.textContent = familyCount + ' of ' + TOTAL_PARKS + ' national parks visited by anyone';
+    if (familyCountEl) familyCountEl.innerHTML = '<span class="count-num">' + familyCount + '</span> of ' + TOTAL_PARKS + ' national parks visited by anyone';
     appendList('family-card', buildFamilyListHTML(), 'Show visited', 'Hide visited');
 
     // Whole Family card
     var wholeFamilyCountEl = document.getElementById('wholeFamilyParksCount');
-    if (wholeFamilyCountEl) wholeFamilyCountEl.textContent = countWholeFamilyVisited() + ' of ' + TOTAL_PARKS + ' national parks visited by everyone';
+    if (wholeFamilyCountEl) wholeFamilyCountEl.innerHTML = '<span class="count-num">' + countWholeFamilyVisited() + '</span> of ' + TOTAL_PARKS + ' national parks visited by everyone';
     appendList('whole-family-card', buildWholeFamilyListHTML(), 'Show visited', 'Hide visited');
 
     // Bucket list card
     var bucketCountEl = document.getElementById('bucketParksCount');
-    if (bucketCountEl) bucketCountEl.textContent = countBucketList() + ' of ' + TOTAL_PARKS + ' parks Josh and Sam haven\'t visited together yet';
+    if (bucketCountEl) bucketCountEl.innerHTML = '<span class="count-num">' + countBucketList() + '</span> of ' + TOTAL_PARKS + ' parks Josh and Sam haven\'t visited together yet';
     var bucketHTML = buildBucketListHTML();
     if (bucketHTML) {
       var bucketCard = document.getElementById('bucket-card');

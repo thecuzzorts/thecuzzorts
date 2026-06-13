@@ -47,7 +47,7 @@
 
     /* --- Main content --------------------------------- */
     [role="main"] {
-      max-width: 1100px !important;
+      max-width: 1200px !important;
       margin: 0 auto;
       padding: 2rem 1rem 3rem;
     }
@@ -437,6 +437,10 @@
 
     /* --- Beyond MLB ----------------------------------- */
     .split.snip h2.beyond-milb    { background: #1a2e3b !important; }
+    .split.snip h2.beyond-milb .divisionCount {
+      color: #fff;
+      background: rgba(255,255,255,0.16);
+    }
     /* Savannah Bananas brand yellow — dark text for contrast */
     .split.snip h2.beyond-bananas {
       background: #FFDC00 !important;
@@ -446,6 +450,15 @@
       color: #1a2e3b;
       background: rgba(26,46,59,0.12);
     }
+
+    /* Banana Ball badge shows two tallies (games attended · teams seen) */
+    .bb-tally {
+      font-weight: 400;
+      white-space: nowrap;
+      padding: 0.1em 0.55em;
+      border-radius: 999px;
+    }
+    .bb-tally b { font-weight: 700; color: inherit; }
 
     .bp-sublabel {
       margin: 0.9rem 1rem 0.3rem;
@@ -980,7 +993,7 @@
           <div class="split snip ballpark milb-card">
             <h2 class="ballpark beyond-milb">
               Minor &amp; Indie Ball
-              <span class="divisionCount">7</span>
+              <span class="divisionCount bb-tally"><b>7</b> ballparks</span>
             </h2>
             <div class="map-wrap">
               <div id="milbMap"></div>
@@ -1005,7 +1018,7 @@
           <div class="split snip ballpark">
             <h2 class="ballpark beyond-bananas">
               Banana Ball
-              <span class="divisionCount">3</span>
+              <span class="divisionCount bb-tally"><b>2</b> games &middot; <b>2</b> teams</span>
             </h2>
             <p class="bp-sublabel">Games</p>
             <p class="bp-chip-list">

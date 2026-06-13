@@ -36,25 +36,27 @@ main {
 
 /* --- Combined Card --------------------------------- */
 .combined-card {
+  --accent: #8B5E3C;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   padding: 1.25rem 1.25rem 1rem;
   margin-bottom: 1.5rem;
-  border-top: 5px solid #8B5E3C;
+  border-top: 5px solid var(--accent);
 }
 
 .combined-card h2 {
   font-family: 'Kreon', Georgia, serif;
-  font-size: 1.3rem;
+  font-size: 1.75rem;
   font-weight: 700;
-  color: #1a2e3b;
-  margin-bottom: 0.2rem;
+  color: var(--accent);
+  letter-spacing: 0.01em;
+  margin-bottom: 0.35rem;
 }
 
 .combined-card .count {
-  font-size: 0.9rem;
-  color: #777;
+  font-size: 0.85rem;
+  color: #5d6b79;
   margin-bottom: 0.85rem;
 }
 
@@ -88,31 +90,71 @@ main {
 
 /* --- Person Card ----------------------------------- */
 .person-card {
+  --accent: #ccc;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   padding: 1.25rem 1.25rem 1rem;
-  border-top: 5px solid #ccc;
+  border-top: 5px solid var(--accent);
 }
 
-.person-card[data-person="josh"]  { border-top-color: #00AC4B; }
-.person-card[data-person="sam"]   { border-top-color: #662684; }
-.person-card[data-person="ellie"] { border-top-color: #66b2b2; }
-.person-card[data-person="tilly"] { border-top-color: #0898ff; }
-.person-card[data-person="poppy"] { border-top-color: #d9259a; }
+.person-card[data-person="josh"]  { --accent: #008C3D; }
+.person-card[data-person="sam"]   { --accent: #662684; }
+.person-card[data-person="ellie"] { --accent: #3E8F8F; }
+.person-card[data-person="tilly"] { --accent: #0B7AD0; }
+.person-card[data-person="poppy"] { --accent: #d9259a; }
 
 .person-card h2 {
   font-family: 'Kreon', Georgia, serif;
-  font-size: 1.2rem;
+  font-size: 1.55rem;
   font-weight: 700;
-  color: #1a2e3b;
-  margin-bottom: 0.2rem;
+  color: var(--accent);
+  letter-spacing: 0.01em;
+  margin-bottom: 0.35rem;
 }
 
 .person-card .count {
   font-size: 0.85rem;
-  color: #777;
+  color: #5d6b79;
   margin-bottom: 0.85rem;
+}
+
+/* Stat cards: name + count share one line; count number as a colourful
+   pill. Photos/Map combined cards (no .count-num) keep block headers. */
+.person-card h2,
+.person-card .count,
+.combined-card:has(.count-num) h2,
+.combined-card:has(.count-num) .count {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.person-card h2,
+.combined-card:has(.count-num) h2 {
+  margin: 0 0.7em 0.85rem 0;
+}
+
+.person-card .count,
+.combined-card:has(.count-num) .count {
+  margin: 0 0 0.85rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.count-num {
+  display: inline-block;
+  background: var(--accent, #1a2e3b);
+  color: #fff;
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0;
+  text-transform: none;
+  padding: 0.08em 0.45em;
+  border-radius: 9px;
+  margin-right: 0.5em;
+  vertical-align: middle;
 }
 
 /* --- Visit Lists ----------------------------------- */
@@ -151,40 +193,40 @@ main {
 }
 
 .region-label {
-  font-size: 0.68rem;
+  font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #bbb;
-  margin-bottom: 0.25rem;
+  color: #7d8a97;
+  margin-bottom: 0.35rem;
 }
 
 .visit-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.3rem;
+  gap: 0.4rem;
 }
 
 .visit-chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
-  padding: 0.15rem 0.55rem;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
   border-radius: 99px;
-  font-size: 0.75rem;
-  background: #f0f2f5;
-  border: 1px solid #ddd;
-  color: #444;
+  font-size: 0.92rem;
+  background: #eaeef2;
+  border: 1px solid #c6cfd7;
+  color: #28333d;
   white-space: nowrap;
 }
 
 /* Unvisited / bucket-list chip */
 .visit-chip--unvisited {
   font-style: italic;
-  color: #aaa;
-  background: #fafafa;
+  color: #56636f;
+  background: #f4f6f8;
   border-style: dashed;
-  border-color: #ddd;
+  border-color: #b9c2cb;
 }
 
 /* Chip tooltip (date + notes) */
