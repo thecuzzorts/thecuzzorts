@@ -54,24 +54,13 @@
     .hero-inner {
       position: relative;
       z-index: 1;
-      max-width: 900px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 4rem 1.5rem 3.5rem;
+      padding: 4.5rem 2rem 4rem;
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: 2rem;
+      gap: 3rem;
       align-items: center;
-    }
-
-    @media (max-width: 640px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        padding: 3rem 1.25rem 2.5rem;
-        justify-items: center;
-        text-align: center;
-      }
-      .hero-text .intro { max-width: 100%; }
-      .hero-photo { width: 150px; height: 150px; }
     }
 
     .hero-text h1 {
@@ -95,14 +84,14 @@
 
     .hero-text .intro {
       color: #a8bfc9;
-      font-size: 1rem;
-      line-height: 1.55;
-      max-width: 480px;
+      font-size: clamp(1rem, 1.3vw, 1.15rem);
+      line-height: 1.6;
+      max-width: 620px;
     }
 
     .hero-photo {
-      width: 200px;
-      height: 200px;
+      width: clamp(200px, 18vw, 260px);
+      height: clamp(200px, 18vw, 260px);
       border-radius: 50%;
       object-fit: cover;
       object-position: center top;
@@ -113,34 +102,40 @@
     /* ---- Main / Cards -------------------------------- */
     main {
       flex: 1;
-      padding: 2.5rem 1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;   /* balance the leftover space top/bottom */
+      padding: 3.5rem 2rem;
     }
 
     .section-label {
       font-family: 'Kreon', serif;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: #aab4bd;
       text-align: center;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.75rem;
     }
 
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.25rem;
-      max-width: 900px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.75rem;
+      max-width: 1200px;
+      width: 100%;
       margin: 0 auto;
     }
 
     .card {
-      display: block;
+      display: flex;
+      flex-direction: column;
       background: #fff;
-      border-radius: 10px;
+      border-radius: 12px;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-      padding: 1.75rem 1.5rem 1.5rem;
+      padding: clamp(1.75rem, 2.5vw, 2.5rem) clamp(1.5rem, 2vw, 2.25rem);
+      min-height: 220px;
       text-decoration: none;
       color: inherit;
       border-top: 5px solid #ccc;
@@ -158,25 +153,38 @@
     .card-parks    { border-top-color: #8B5E3C; }
 
     .card-icon {
-      font-size: 2rem;
+      font-size: clamp(2rem, 3vw, 2.75rem);
       line-height: 1;
-      margin-bottom: 0.65rem;
+      margin-bottom: 0.8rem;
     }
 
     .card h2 {
       font-family: 'Kreon', serif;
-      font-size: 1.35rem;
+      font-size: clamp(1.35rem, 1.8vw, 1.6rem);
       color: #1a2e3b;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.45rem;
     }
 
     .card p {
       color: #777;
-      font-size: 0.9rem;
-      line-height: 1.45;
+      font-size: clamp(0.9rem, 1.1vw, 1rem);
+      line-height: 1.5;
+      margin-top: auto;   /* push description to the bottom for a consistent baseline */
     }
 
     /* Footer styling comes from css/site-chrome.css */
+
+    /* ---- Mobile overrides (kept last so they win the cascade) ---- */
+    @media (max-width: 640px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 3rem 1.25rem 2.5rem;
+        justify-items: center;
+        text-align: center;
+      }
+      .hero-text .intro { max-width: 100%; }
+      .hero-photo { width: 150px; height: 150px; }
+    }
   </style>
 </head>
 <body>
@@ -204,25 +212,25 @@
       <a class="card card-baseball" href="baseball/index.html">
         <div class="card-icon">&#9918;</div>
         <h2>Baseball</h2>
-        <p>30 of 30 MLB ballparks visited</p>
+        <p>All 30 MLB ballparks &mdash; plus minor league &amp; Banana Ball</p>
       </a>
 
       <a class="card card-travels" href="travels/index.html">
         <div class="card-icon">&#128506;</div>
         <h2>Travels</h2>
-        <p>States &amp; countries explored by the family</p>
+        <p>States, provinces &amp; countries visited by each of us</p>
       </a>
 
       <a class="card card-turkeys" href="turkeys/index.html">
         <div class="card-icon">&#129411;</div>
         <h2>Turkey Hunting</h2>
-        <p>Harvest maps across the country</p>
+        <p>Harvests &amp; hunts mapped by family member</p>
       </a>
 
       <a class="card card-parks" href="parks/index.html">
         <div class="card-icon">&#127748;</div>
         <h2>National Parks</h2>
-        <p>Tracking all 63 US National Parks by family member</p>
+        <p>All 63 US National Parks &mdash; map, photos &amp; bucket list</p>
       </a>
 
     </div>

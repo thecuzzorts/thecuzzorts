@@ -266,6 +266,28 @@
       font-size: 1.15rem;
     }
 
+    /* Story "Read more" — desktop shows the full story, no button */
+    .bp-story-toggle { display: none; }
+
+    @media (max-width: 640px) {
+      .bp-story-more { display: none; }
+      .stats-banner.story-open .bp-story-more { display: block; }
+
+      .bp-story-toggle {
+        display: inline-block;
+        margin-top: 0.5rem;
+        padding: 0.1rem 0;
+        background: none;
+        border: none;
+        font-family: 'Kreon', serif;
+        font-size: 0.95rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        color: #003087;
+        cursor: pointer;
+      }
+    }
+
     /* --- Map container -------------------------------- */
     .map-wrap {
       background: #fff;
@@ -722,8 +744,14 @@
       <h2 class="serious moderate colonel">Our Story</h2>
 
       <div class="stats-banner">
-        <p class="bp-story">While our ballpark journey technically began with a visit to Busch Stadium in St. Louis in June 2009, the mission really took shape in 2012 when Josh's first anniversary gift to Samantha (paper, appropriately enough) was a baseball road trip featuring games in Milwaukee and Chicago. Somewhere between the highways, hotel rooms, and ballpark gates, a simple getaway turned into a quest. Over the next 16 years, baseball became woven into the fabric of our family, giving us countless shared memories, traditions, and adventures while cheering on our Braves across the country. What started as something Josh and Sam loved soon became something Ellie, Tilly, and Poppy loved too, each building their own ballpark counts and favorite baseball memories along the way.</p>
-        <p class="bp-story">We completed all 30 active MLB ballparks in June 2025, but the real accomplishment isn't the number; it's the time spent and memories made together. We were fortunate to experience a few historic parks before they closed, and with new stadiums already on the horizon, we're excited to keep the tradition alive and have our daughters carry the journey forward.</p>
+        <p class="bp-story">Our baseball story goes back to 2009. We made a trip to Busch Stadium that summer, and as Braves fans, we also road-tripped to Atlanta to catch an entire series. At the time, we weren't trying to visit every ballpark. We just liked baseball and liked taking baseball trips together.</p>
+        <div class="bp-story-more">
+          <p class="bp-story">Things really got rolling in 2012 when Josh gave Sam a baseball trip for their first anniversary gift. We went to a Brewers game and a Cubs game on the same trip, and somewhere along the way we started talking about how many ballparks we could knock off if we kept doing this every year.</p>
+          <p class="bp-story">Before long, Ellie, Tilly, and Poppy were coming along too. Somewhere along the way, baseball stopped being something we watched and became something we did as a family. We started planning vacations around games, keeping track of parks we'd visited, and looking for excuses to squeeze another stadium into a trip.</p>
+          <p class="bp-story">In June 2025, we finished all 30 active Major League ballparks. That's a pretty cool accomplishment, but it's only part of the story. Along the way we saw parks that no longer exist, added minor league and independent league stadiums to the list, got hooked on Banana Ball, and made enough baseball trips that we're usually talking about the next one before the current one is over.</p>
+          <p class="bp-story">This site is where we keep track of all of it. The parks, the teams, the games, the photos, and the memories. The list keeps growing, and honestly, we hope it always does.</p>
+        </div>
+        <button type="button" class="bp-story-toggle" aria-expanded="false">Read more &#9662;</button>
         <p class="stat-strip"><strong>30/30</strong> active &middot; <strong>3</strong> historic</p>
       </div>
 
@@ -1433,6 +1461,20 @@
 
       setCap($('.cycle-slideshow > img').first());
     });
+  </script>
+
+  <!-- Story "Read more" toggle (mobile only) -->
+  <script>
+    (function () {
+      var banner = document.querySelector('.stats-banner');
+      var btn = banner && banner.querySelector('.bp-story-toggle');
+      if (!btn) { return; }
+      btn.addEventListener('click', function () {
+        var open = banner.classList.toggle('story-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.innerHTML = open ? 'Read less &#9652;' : 'Read more &#9662;';
+      });
+    }());
   </script>
 
 </body>
