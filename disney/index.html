@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SNE2PKC43Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SNE2PKC43Y');
+  </script>
+  <meta charset="utf-8">
+  <title>Disney Parks | The Cuzzorts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The Cuzzorts tracking Disney theme parks around the world by family member.">
+  <link rel="stylesheet" href="css/styles.css?v=1">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="../css/site-chrome.css">
+  <link rel="stylesheet" href="../css/section-labels.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <p class="site-title"><a class="home-link" href="../index.html">The Cuzzorts</a> &mdash; Disney Parks</p>
+    <p class="site-tagline">Tracking Disney theme parks around the world</p>
+    <div role="navigation">
+      <nav>
+        <ul>
+          <li><a href="#map">Map</a></li>
+          <li><a href="#photos">Photos</a></li>
+          <li><a href="#family">Family</a></li>
+          <li><a href="#josh-sam">Josh &amp; Sam</a></li>
+          <li><a href="#kids">Kids</a></li>
+          <li><a href="#bucket">Bucket List</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Photos + Map share a row on desktop, stack on mobile -->
+    <div class="photos-map-row">
+
+      <!-- Photos -->
+      <div class="pm-col pm-photos">
+        <p class="section-heading" id="photos">Photos</p>
+        <div class="combined-card" id="photos-card">
+          <h2>From the Parks</h2>
+          <p class="count">Click a photo to view full-screen</p>
+          <div class="slideshow-wrap">
+            <!-- Add more photos by dropping images in images/disney/ and copying an
+                 <img> line below. The alt text becomes the caption. -->
+            <div class="disney-slideshow" id="disneySlideshow">
+              <img class="is-active" loading="lazy" src="../images/disney/Disneyland-Park-California.jpg" alt="Disneyland Park, California">
+              <img loading="lazy" src="../images/disney/Disneyland-California-Adventure.jpg" alt="Disney California Adventure">
+            </div>
+            <div class="slideshow-controls">
+              <a class="prev" role="button" tabindex="0" aria-label="Previous photo">&#8592;</a>
+              <div class="cycle-caption"></div>
+              <a class="next" role="button" tabindex="0" aria-label="Next photo">&#8594;</a>
+            </div>
+          </div>
+        </div>
+      </div><!-- /pm-photos -->
+
+      <!-- Map -->
+      <div class="pm-col pm-map">
+        <p class="section-heading" id="map">Map</p>
+        <div class="combined-card" id="map-card">
+          <h2>Disney Parks Worldwide</h2>
+          <div class="map-filters" id="mapFilters">
+            <button class="map-filter-btn active" data-filter="whole-family">Whole Family</button>
+            <button class="map-filter-btn" data-filter="anyone">Anyone</button>
+            <button class="map-filter-btn" data-filter="josh">Josh</button>
+            <button class="map-filter-btn" data-filter="sam">Sam</button>
+            <button class="map-filter-btn" data-filter="ellie">Ellie</button>
+            <button class="map-filter-btn" data-filter="tilly">Tilly</button>
+            <button class="map-filter-btn" data-filter="poppy">Poppy</button>
+          </div>
+          <div id="disneyMap"></div>
+          <div class="map-legend">
+            <span class="legend-dot visited" id="legendVisited"></span> Visited
+            <span class="legend-sep">·</span>
+            <span class="legend-dot unvisited"></span> Not yet visited
+          </div>
+        </div>
+      </div><!-- /pm-map -->
+
+    </div><!-- /photos-map-row -->
+
+    <!-- Family cards (half-width) -->
+    <p class="section-heading" id="family">Family</p>
+    <div class="person-grid grid-2col">
+
+      <div class="combined-card" id="whole-family-card">
+        <h2>Whole Family</h2>
+        <p class="count" id="wholeFamilyParksCount">Loading&hellip;</p>
+      </div>
+
+      <div class="combined-card" id="family-card">
+        <h2>Anyone</h2>
+        <p class="count" id="familyParksCount">Loading&hellip;</p>
+      </div>
+
+    </div>
+
+    <!-- Josh & Sam -->
+    <p class="section-heading" id="josh-sam">Josh &amp; Sam</p>
+    <div class="person-grid grid-2col">
+
+      <div class="person-card" data-person="josh" id="josh-card">
+        <h2>Josh</h2>
+        <p class="count">Loading&hellip;</p>
+      </div>
+
+      <div class="person-card" data-person="sam" id="sam-card">
+        <h2>Sam</h2>
+        <p class="count">Loading&hellip;</p>
+      </div>
+
+    </div>
+
+    <!-- Kids -->
+    <p class="section-heading" id="kids">The Kids</p>
+    <div class="person-grid grid-3col">
+
+      <div class="person-card" data-person="ellie" id="ellie-card">
+        <h2>Ellie</h2>
+        <p class="count">Loading&hellip;</p>
+      </div>
+
+      <div class="person-card" data-person="tilly" id="tilly-card">
+        <h2>Tilly</h2>
+        <p class="count">Loading&hellip;</p>
+      </div>
+
+      <div class="person-card" data-person="poppy" id="poppy-card">
+        <h2>Poppy</h2>
+        <p class="count">Loading&hellip;</p>
+      </div>
+
+    </div>
+
+    <!-- Bucket List -->
+    <p class="section-heading" id="bucket">Bucket List</p>
+    <div class="combined-card" id="bucket-card">
+      <h2>Parks to Visit</h2>
+      <p class="count" id="bucketParksCount">Loading&hellip;</p>
+    </div>
+
+  </main>
+
+  <footer>
+    <p><script>document.write(new Date().getFullYear())</script> &copy; The Cuzzorts &mdash; <a href="../index.html">Home</a></p>
+  </footer>
+
+  <!-- Data files — one per person -->
+  <script src="data/disney-visited-josh.js"></script>
+  <script src="data/disney-visited-sam.js"></script>
+  <script src="data/disney-visited-ellie.js"></script>
+  <script src="data/disney-visited-tilly.js"></script>
+  <script src="data/disney-visited-poppy.js"></script>
+
+  <!-- Map library -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- App logic -->
+  <script src="js/app.js?v=1"></script>
+
+  <!-- Photos: slideshow + full-screen lightbox -->
+  <script src="js/photos.js"></script>
+
+  <!-- Shared section-label enhancer -->
+  <script src="../js/section-labels.js"></script>
+
+</body>
+</html>
