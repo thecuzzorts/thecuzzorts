@@ -14,15 +14,16 @@
   var header = document.querySelector('.site-header');
   if (!header) { return; }
 
-  // hrefs are relative from a section subfolder (every section page is
-  // one level below the repo root, e.g. /baseball/index.html).
+  // Paths are root-relative (no leading slash) — prefix is computed
+  // at runtime so this script works from both the homepage (depth 0)
+  // and any section page (depth 1).
   var SECTIONS = [
-    { key: '',              label: 'Home',          href: '../index.html' },
-    { key: 'baseball',      label: 'Baseball',      href: '../baseball/index.html' },
-    { key: 'travels',       label: 'Travels',       href: '../travels/index.html' },
-    { key: 'turkeys',       label: 'Turkeys',       href: '../turkeys/index.html' },
-    { key: 'national-parks', label: 'National Parks', href: '../national-parks/index.html' },
-    { key: 'disney',        label: 'Disney',        href: '../disney/index.html' }
+    { key: '',              label: 'Home',          path: 'index.html',              color: '#E8A020' },
+    { key: 'baseball',      label: 'Baseball',      path: 'baseball/index.html',     color: '#F07070' },
+    { key: 'travels',       label: 'Travels',       path: 'travels/index.html',      color: '#E8A020' },
+    { key: 'turkey-hunting', label: 'Turkey Hunting', path: 'turkey-hunting/index.html', color: '#57BD83' },
+    { key: 'national-parks', label: 'National Parks', path: 'national-parks/index.html', color: '#C99A6A' },
+    { key: 'disney',        label: 'Disney',        path: 'disney/index.html',       color: '#1F8FE5' }
   ];
 
   // Current section = the folder name in the path (e.g. "disney").
@@ -33,6 +34,10 @@
     currentKey = '';
   }
 
+  // prefix: '' on the homepage, '../' on any section page one level deep.
+  var prefix = currentKey === '' ? '' : '../';
+  SECTIONS.forEach(function (s) { s.href = prefix + s.path; });
+
   // --- Desktop strip ---------------------------------------
   var strip = document.createElement('nav');
   strip.className = 'global-nav-strip';
@@ -41,6 +46,7 @@
     var current = s.key === currentKey;
     return '<a class="global-nav-link' + (current ? ' is-current' : '') + '"' +
            (current ? ' aria-current="page"' : '') +
+           ' style="--nav-color:' + s.color + '"' +
            ' href="' + s.href + '">' + s.label + '</a>';
   }).join('<span class="global-nav-sep" aria-hidden="true">&middot;</span>');
 

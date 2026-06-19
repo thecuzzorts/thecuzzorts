@@ -12,6 +12,7 @@
   var TWO    = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="9" r="3"/><path d="M2.5 20a5.5 5.5 0 0 1 11 0"/><circle cx="16.5" cy="9" r="3"/><path d="M14 20a5.5 5.5 0 0 1 7.5-5.1"/></svg>';
   var PIN    = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6 7-12a7 7 0 1 0-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="10" r="2.4"/></svg>';
   var LIST   = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h9M4 12h9M4 17h6"/><path d="M16.5 16.5l2 2 3.5-3.5"/></svg>';
+  var CAMERA = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>';
 
   // Map section-label text -> icon. Extend as new labels appear.
   var ICON = {
@@ -21,7 +22,8 @@
     'Family': GROUP,
     'Josh & Sam': TWO,
     'The Kids': GROUP,
-    'Bucket List': LIST
+    'Bucket List': LIST,
+    'Photos': CAMERA
   };
 
   var heads = Array.prototype.slice.call(document.querySelectorAll('.section-heading'));

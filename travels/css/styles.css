@@ -17,6 +17,8 @@ html {
 }
 
 body {
+  --section: #E8A020;          /* signature colour — used on light backgrounds */
+  --section-on-dark: #E8A020;  /* readable on the navy header/footer (gold reads fine) */
   font-family: 'Roboto Condensed', Arial, sans-serif;
   background: #f0f2f5;
   color: #222;
@@ -57,8 +59,8 @@ body {
 }
 
 .tab-btn.active {
-  color: #fff;
-  border-bottom: 3px solid #E8A020;
+  color: var(--section-on-dark, #E8A020);
+  border-bottom: 3px solid var(--section-on-dark, #E8A020);
 }
 
 /* --- Main Content ---------------------------------- */
@@ -207,7 +209,7 @@ main {
   fill: currentColor;
 }
 
-.person-card[data-person="josh"]   { --accent: #D18A00; }
+.person-card[data-person="josh"]   { --accent: #008C3D; }
 .person-card[data-person="sam"]    { --accent: #662684; }
 .person-card[data-person="jack"]   { --accent: #4A9E2F; }
 .person-card[data-person="debbie"] { --accent: #D93025; }
@@ -431,7 +433,7 @@ main {
 }
 
 /* Per-person chip accent colors */
-.person-card[data-person="josh"]   .visit-chip { background: rgba(232,160,32,0.14);  border-color: rgba(232,160,32,0.55); }
+.person-card[data-person="josh"]   .visit-chip { background: rgba(0,172,75,0.14);    border-color: rgba(0,172,75,0.55); }
 .person-card[data-person="sam"]    .visit-chip { background: rgba(102,38,132,0.14);  border-color: rgba(102,38,132,0.55); }
 .person-card[data-person="jack"]   .visit-chip { background: rgba(74,158,47,0.14);   border-color: rgba(74,158,47,0.55); }
 .person-card[data-person="debbie"] .visit-chip { background: rgba(217,48,37,0.14);   border-color: rgba(217,48,37,0.55); }

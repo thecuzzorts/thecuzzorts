@@ -6,7 +6,7 @@
 
   // ---- Person config --------------------------------
   var people = [
-    { id: 'josh',   color: '#E8A020',                  data: function () { return turkeysHarvestedJosh;   } },
+    { id: 'josh',   color: '#00AC4B',                  data: function () { return turkeysHarvestedJosh;   } },
     { id: 'sam',    color: '#662684',                  data: function () { return turkeysHarvestedSam;    } },
     { id: 'jack',   color: '#4A9E2F', family: false,   data: function () { return turkeysHarvestedJack;   } },
     { id: 'debbie', color: '#D93025', family: false,   data: function () { return turkeysHarvestedDebbie; } },

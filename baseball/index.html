@@ -10,10 +10,10 @@
     gtag('config', 'G-SNE2PKC43Y');
   </script>
   <meta charset="utf-8">
-  <title>Our Ballpark Adventure | The Cuzzorts</title>
+  <title>Baseball | The Cuzzorts</title>
   <meta name="description" content="Our love of baseball and travel is taking us on a ballpark tour! Our goal: visit all 30 ballparks.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Our Ballpark Adventure | The Cuzzorts" />
+  <meta property="og:title" content="Baseball | The Cuzzorts" />
   <meta property="og:description" content="We've visited all 30 active MLB ballparks! Our love of baseball and travel continues." />
 
   <!-- Fonts -->
@@ -35,6 +35,8 @@
     html { font-size: 17px; }
 
     body {
+      --section: #C8102E;          /* signature colour — used on light backgrounds */
+      --section-on-dark: #F07070;  /* lightened so it reads on the navy header/footer */
       font-family: 'Roboto Condensed', sans-serif;
       background: #f0f2f5;
       color: #333;
@@ -72,13 +74,13 @@
       text-align: left !important;
     }
 
-    .sec-icon { flex: 0 0 auto; display: inline-flex; color: #E8A020; }
+    .sec-icon { flex: 0 0 auto; display: inline-flex; color: var(--section, #E8A020); }
     .sec-icon svg { width: 1.3rem; height: 1.3rem; display: block; }
 
     .sec-label {
       flex: 0 0 auto;
       padding-bottom: 0.28rem;
-      border-bottom: 3px solid #E8A020;
+      border-bottom: 3px solid var(--section, #E8A020);
     }
 
     .sec-count {
@@ -88,8 +90,8 @@
       font-weight: 700;
       letter-spacing: 0.05em;
       color: #1a2e3b;
-      background: rgba(232,160,32,0.18);
-      border: 1px solid rgba(232,160,32,0.5);
+      background: color-mix(in srgb, var(--section, #E8A020) 18%, transparent);
+      border: 1px solid color-mix(in srgb, var(--section, #E8A020) 50%, transparent);
       border-radius: 999px;
       padding: 0.1rem 0.55rem;
       white-space: nowrap;
@@ -104,7 +106,7 @@
 
     .sec-anchor {
       flex: 0 0 auto;
-      color: #E8A020 !important;
+      color: var(--section, #E8A020) !important;
       text-decoration: none !important;
       font-family: 'Roboto Condensed', sans-serif;
       font-weight: 700;
@@ -231,7 +233,7 @@
       background: #fff;
       border-radius: 10px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      border-top: 5px solid #003087;
+      border-top: 5px solid #C8102E;
       padding: 1.25rem 1.5rem;
       font-size: 1rem;
       color: #333;
@@ -239,7 +241,7 @@
     }
 
     .stats-banner strong {
-      color: #003087;
+      color: #C8102E;
       font-family: 'Kreon', serif;
     }
 
@@ -283,7 +285,7 @@
         font-size: 0.95rem;
         font-weight: 700;
         letter-spacing: 0.03em;
-        color: #003087;
+        color: #C8102E;
         cursor: pointer;
       }
     }
@@ -738,6 +740,11 @@
 
   <div role="main">
     <div class="contents">
+
+      <div class="page-intro">
+        <h1>Baseball</h1>
+        <p>Tracking our visits to all 30 MLB ballparks &mdash; and beyond</p>
+      </div>
 
       <!-- Our Story (full width, on top) ---------------- -->
       <a name="story"></a>

@@ -19,6 +19,28 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* ---- Homepage header: five-section color bar ---------- */
+    /* Replaces the single-color border-top with a segmented strip —
+       one equal-width band per section in card order, separated by
+       narrow navy cuts so each reads as its own distinct identity. */
+    .site-header {
+      border-top: none;
+      padding-bottom: 0;   /* no subnav below the nav strip */
+      background:
+        linear-gradient(to right,
+          #F07070 0%,                   #F07070 calc(20% - 2px),
+          #1a2e3b calc(20% - 2px),      #1a2e3b calc(20% + 2px),
+          #E8A020 calc(20% + 2px),      #E8A020 calc(40% - 2px),
+          #1a2e3b calc(40% - 2px),      #1a2e3b calc(40% + 2px),
+          #57BD83 calc(40% + 2px),      #57BD83 calc(60% - 2px),
+          #1a2e3b calc(60% - 2px),      #1a2e3b calc(60% + 2px),
+          #C99A6A calc(60% + 2px),      #C99A6A calc(80% - 2px),
+          #1a2e3b calc(80% - 2px),      #1a2e3b calc(80% + 2px),
+          #1F8FE5 calc(80% + 2px),      #1F8FE5 100%
+        ) top / 100% 4px no-repeat,
+        #1a2e3b;
+    }
+
     body {
       font-family: 'Roboto Condensed', sans-serif;
       background: #f0f2f5;
@@ -89,14 +111,29 @@
       max-width: 620px;
     }
 
-    .hero-photo {
+    .hero-photo-wrap {
       width: clamp(200px, 18vw, 260px);
       height: clamp(200px, 18vw, 260px);
       border-radius: 50%;
+      padding: 8px;
+      background: conic-gradient(
+        #F07070 0deg 72deg,
+        #E8A020 72deg 144deg,
+        #57BD83 144deg 216deg,
+        #C99A6A 216deg 288deg,
+        #1F8FE5 288deg 360deg
+      );
+      box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+      flex-shrink: 0;
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
       object-fit: cover;
       object-position: center top;
-      border: 4px solid rgba(232, 160, 32, 0.6);
-      box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+      display: block;
     }
 
     /* ---- Main / Cards -------------------------------- */
@@ -121,11 +158,24 @@
 
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.75rem;
-      max-width: 1200px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.25rem;
+      max-width: 1400px;
       width: 100%;
       margin: 0 auto;
+    }
+
+    @media (max-width: 1000px) {
+      .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 860px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     .card {
@@ -137,8 +187,8 @@
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-      padding: clamp(1.75rem, 2.5vw, 2.5rem) clamp(1.5rem, 2vw, 2.25rem);
-      min-height: 220px;
+      padding: clamp(1.25rem, 2vw, 1.75rem) clamp(1rem, 1.5vw, 1.5rem);
+      min-height: 200px;
       text-decoration: none;
       color: #1a2e3b;
       border-top: 4px solid var(--accent);
@@ -150,10 +200,10 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.13);
     }
 
-    .card-baseball { --accent: #003087; }
+    .card-baseball { --accent: #F07070; }
     .card-travels  { --accent: #E8A020; }
-    .card-turkeys  { --accent: #22703D; }
-    .card-parks    { --accent: #8B5E3C; }
+    .card-turkeys  { --accent: #57BD83; }
+    .card-parks    { --accent: #C99A6A; }
     .card-disney   { --accent: #1F8FE5; }
 
     /* Large emblem as a faint same-colour watermark, fully inside the card */
@@ -207,6 +257,29 @@
       margin-top: auto;   /* push description to the bottom for a consistent baseline */
     }
 
+    /* Call-to-action — makes it obvious the whole card is clickable */
+    .card-cta {
+      position: relative;   /* sit above the watermark */
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 1rem;
+      color: var(--accent);
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .card-cta-arrow {
+      font-size: 1.05rem;
+      line-height: 1;
+      transition: transform 0.15s ease;
+    }
+
+    .card:hover .card-cta-arrow { transform: translateX(4px); }
+
     /* Footer styling comes from css/site-chrome.css */
 
     /* ---- Mobile overrides (kept last so they win the cascade) ---- */
@@ -218,11 +291,49 @@
         text-align: center;
       }
       .hero-text .intro { max-width: 100%; }
-      .hero-photo { width: clamp(180px, 52vw, 230px); height: clamp(180px, 52vw, 230px); }
+      .hero-photo-wrap { width: clamp(180px, 52vw, 230px); height: clamp(180px, 52vw, 230px); }
+
+      /* Tighten the cards so more fit on screen at once */
+      main { padding: 2rem 1.25rem; }
+      .section-label { margin-bottom: 1.1rem; }
+      .card-grid { gap: 0.85rem; }
+      .card {
+        min-height: 0;
+        padding: 1.1rem 1.25rem;
+      }
+      .card { padding-right: 3.1rem; }   /* reserve room for the arrow button */
+      .card h2 { font-size: 1.2rem; margin-bottom: 0.3rem; }
+      .card h2::after { margin-top: 0.4rem; }
+      .card p { font-size: 0.88rem; line-height: 1.4; }
+      .card-icon { width: 92px; height: 92px; right: 8px; bottom: 6px; }
+
+      /* Collapse the CTA to an accent circle button on the right edge */
+      .card-cta {
+        position: absolute;
+        right: 0.9rem;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-top: 0;
+      }
+      .card-cta-label { display: none; }
+      .card-cta-arrow {
+        display: grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
+
+  <header class="site-header">
+    <!-- global-nav injected here by js/site-nav.js -->
+  </header>
 
   <div class="hero">
     <div class="hero-inner">
@@ -236,7 +347,9 @@
           the world. This is where we keep track of it all.
         </p>
       </div>
-      <img class="hero-photo" src="images/family-hero.jpg" alt="The Cuzzorts">
+      <div class="hero-photo-wrap">
+        <img class="hero-photo" src="images/family-hero.jpg" alt="The Cuzzorts">
+      </div>
     </div>
   </div>
 
@@ -256,6 +369,7 @@
         </div>
         <h2>Baseball</h2>
         <p>All 30 MLB ballparks &mdash; plus minor league &amp; Banana Ball</p>
+        <span class="card-cta"><span class="card-cta-label">View</span><span class="card-cta-arrow" aria-hidden="true">&rarr;</span></span>
       </a>
 
       <a class="card card-travels" href="travels/index.html">
@@ -270,9 +384,10 @@
         </div>
         <h2>Travels</h2>
         <p>States, provinces &amp; countries visited by each of us</p>
+        <span class="card-cta"><span class="card-cta-label">View</span><span class="card-cta-arrow" aria-hidden="true">&rarr;</span></span>
       </a>
 
-      <a class="card card-turkeys" href="turkeys/index.html">
+      <a class="card card-turkeys" href="turkey-hunting/index.html">
         <div class="card-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path d="M9 16L2.6 13M9 16L4 9.6M9 16L8.6 8M9 16L13 9.2M9 16L15.4 12"/>
@@ -287,6 +402,7 @@
         </div>
         <h2>Turkey Hunting</h2>
         <p>Harvests &amp; hunts mapped by family member</p>
+        <span class="card-cta"><span class="card-cta-label">View</span><span class="card-cta-arrow" aria-hidden="true">&rarr;</span></span>
       </a>
 
       <a class="card card-parks" href="national-parks/index.html">
@@ -300,6 +416,7 @@
         </div>
         <h2>National Parks</h2>
         <p>All 63 US National Parks &mdash; map, photos &amp; bucket list</p>
+        <span class="card-cta"><span class="card-cta-label">View</span><span class="card-cta-arrow" aria-hidden="true">&rarr;</span></span>
       </a>
 
       <a class="card card-disney" href="disney/index.html">
@@ -320,6 +437,7 @@
         </div>
         <h2>Disney Parks</h2>
         <p>Theme parks around the world &mdash; map &amp; checklist by family member</p>
+        <span class="card-cta"><span class="card-cta-label">View</span><span class="card-cta-arrow" aria-hidden="true">&rarr;</span></span>
       </a>
 
     </div>
@@ -328,6 +446,7 @@
   <footer>
     <p><script>document.write(new Date().getFullYear())</script> &copy; The Cuzzorts</p>
   </footer>
+  <script src="js/site-nav.js"></script>
 
 </body>
 </html>

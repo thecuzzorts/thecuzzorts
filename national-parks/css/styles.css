@@ -17,6 +17,8 @@ html {
 }
 
 body {
+  --section: #8B5E3C;          /* signature colour — used on light backgrounds */
+  --section-on-dark: #C99A6A;  /* lightened so it reads on the navy header/footer */
   font-family: 'Roboto Condensed', Arial, sans-serif;
   background: #f0f2f5;
   color: #222;

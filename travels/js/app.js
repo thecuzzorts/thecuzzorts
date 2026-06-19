@@ -9,7 +9,7 @@
     {
       id:      'josh',
       name:    'Josh',
-      color:   '#E8A020',
+      color:   '#00AC4B',
       states:  function () { return statesVisitedJosh; },
       stateDetails: function () { return typeof statesDetailsJosh !== 'undefined' ? statesDetailsJosh : {}; },
       provinces: function () { return provincesVisitedJosh; },

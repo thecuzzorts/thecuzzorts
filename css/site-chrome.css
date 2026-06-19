@@ -34,13 +34,13 @@
 
 .global-nav-link:hover,
 .global-nav-link:focus {
-  color: #fff;
+  color: var(--nav-color, #fff);
   background: rgba(255,255,255,0.08);
 }
 
 .global-nav-link.is-current:link,
 .global-nav-link.is-current:visited {
-  color: #E8A020;
+  color: var(--section-on-dark, #E8A020);
 }
 
 .global-nav-sep {
@@ -82,6 +82,9 @@
   font-size: 16px;
   background: #1a2e3b;
   color: #fff;
+  /* Thin per-section colour stripe (falls back to brand gold on pages
+     that don't set --section, e.g. the home page). */
+  border-top: 3px solid var(--section-on-dark, #E8A020);
   padding: 0.55em 1rem 0;
   text-align: center;
   position: sticky;
@@ -90,23 +93,32 @@
   box-shadow: 0 2px 10px rgba(0,0,0,0.18);
 }
 
-.site-title {
-  font-family: 'Kreon', Georgia, serif;
-  font-size: clamp(1.4em, 4vw, 2.2em);
-  font-weight: 700;
-  line-height: 1.2;        /* explicit so pages loading main.min.css (line-height:1.5) match */
-  letter-spacing: 0.02em;
-  color: #fff;
-  margin: 0 0 0.5em;
+.site-title,
+.site-tagline {
+  display: none;
 }
 
-.site-tagline {
+/* Page intro — section name + one-liner, first child of <main> on section pages */
+.page-intro {
+  text-align: center;
+  padding: 2rem 1rem 0.5rem;
+}
+
+.page-intro h1 {
+  font-family: 'Kreon', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  color: var(--section, #E8A020);
+  margin: 0 0 0.3rem;
+  letter-spacing: 0.01em;
+}
+
+.page-intro p {
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 0.85em;
-  line-height: 1.2;
-  color: #a8bfc9;
-  letter-spacing: 0.04em;
-  margin: 0 0 0.6em;
+  font-size: 0.95rem;
+  color: #8a9baa;
+  margin: 0;
+  letter-spacing: 0.02em;
 }
 
 /* Home link — explicit states so it wins over any base a:link rules */
@@ -120,8 +132,8 @@
 
 .home-link:hover,
 .home-link:focus {
-  color: #E8A020;
-  border-bottom-color: #E8A020;
+  color: var(--section-on-dark, #E8A020);
+  border-bottom-color: var(--section-on-dark, #E8A020);
   text-decoration: none;
 }
 
@@ -176,8 +188,8 @@
 
 /* Scrollspy: highlight the nav link for the section currently in view */
 .site-header nav ul li a.active {
-  color: #E8A020 !important;
-  border-bottom-color: #E8A020 !important;
+  color: var(--section-on-dark, #E8A020) !important;
+  border-bottom-color: var(--section-on-dark, #E8A020) !important;
 }
 
 /* Mobile: keep the nav on a single line (scroll if truly too narrow) */
@@ -215,12 +227,12 @@ footer {
 
 footer a:link,
 footer a:visited {
-  color: #E8A020;
+  color: var(--section-on-dark, #E8A020);
   text-decoration: none;
 }
 
 footer a:hover,
 footer a:focus {
-  color: #E8A020;
+  color: var(--section-on-dark, #E8A020);
   text-decoration: underline;
 }
