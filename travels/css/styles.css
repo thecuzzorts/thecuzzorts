@@ -35,7 +35,11 @@ body {
 
 .tab-btn {
   font-family: 'Kreon', Georgia, serif;
-  font-size: 1rem;
+  /* Vertical metrics mirror the shared .site-header nav link
+     (css/site-chrome.css) so the Travels header matches every other
+     page's height. Horizontal padding can differ freely. */
+  font-size: 0.9em;
+  line-height: 1.2;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -43,7 +47,7 @@ body {
   color: rgba(255,255,255,0.6);
   border: none;
   border-bottom: 3px solid transparent;
-  padding: 0.65rem 2rem;
+  padding: 0.65em 2rem;
   cursor: pointer;
   transition: color 0.2s, border-color 0.2s;
 }
