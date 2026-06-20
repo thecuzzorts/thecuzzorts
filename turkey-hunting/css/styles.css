@@ -1,145 +1,94 @@
 /* ===================================================
-   TheCuzzorts — Turkey Maps Page
+   TheCuzzorts — Turkey Hunting
    =================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Kreon:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
 
 /* --- Reset & Base ---------------------------------- */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html {
-  font-size: 16px;
-  -webkit-text-size-adjust: 100%;
-}
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
 
 body {
-  --section: #22703D;          /* signature colour — used on light backgrounds */
-  --section-on-dark: #57BD83;  /* lightened so it reads on the navy header/footer */
+  --section: #22703D;
+  --section-on-dark: #57BD83;
   font-family: 'Roboto Condensed', Arial, sans-serif;
   background: #f0f2f5;
   color: #222;
   min-height: 100vh;
 }
 
-/* --- Header + footer styling now lives in ../../css/site-chrome.css --- */
-
-/* --- Main Content ---------------------------------- */
-/* --- Section labels now styled by ../../css/section-labels.css --- */
-
-/* --- Person Grid ----------------------------------- */
-.person-grid {
-  display: grid;
-  gap: 1.25rem;
-  margin-bottom: 1.25rem;
+/* --- Person Filter Row ----------------------------- */
+.person-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.person-grid.grid-2col {
-  grid-template-columns: repeat(2, 1fr);
+.person-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 2px solid var(--filter-color, #888);
+  background: transparent;
+  color: var(--filter-color, #888);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
 }
 
-.person-grid.grid-3col {
-  grid-template-columns: repeat(3, 1fr);
+.person-filter:hover:not(.active) {
+  background: color-mix(in srgb, var(--filter-color, #888) 10%, transparent);
 }
 
-.person-grid.grid-1col {
-  grid-template-columns: 1fr;
+.person-filter.active {
+  background: var(--filter-color, #888);
+  color: #fff;
 }
 
-@media (max-width: 640px) {
-  .person-grid.grid-2col,
-  .person-grid.grid-3col {
-    grid-template-columns: 1fr;
-  }
-
-  .expand-btn {
-    display: none;
-  }
+.filter-name {
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
-/* --- Person Card ----------------------------------- */
-.person-card {
-  --accent: #ccc;
-  position: relative;
+.filter-count {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+/* --- Map Card -------------------------------------- */
+.map-card {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  padding: 1.25rem 1.25rem 1rem;
-  border-top: 5px solid var(--accent);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
-.person-card[data-person="josh"]   { --accent: #008C3D; }
-.person-card[data-person="sam"]    { --accent: #662684; }
-.person-card[data-person="jack"]   { --accent: #4A9E2F; }
-.person-card[data-person="debbie"] { --accent: #D93025; }
-.person-card[data-person="tilly"]  { --accent: #0B7AD0; }
-.person-card[data-person="family"] { --accent: #E8601A; }
-
-.person-card h2 {
-  display: inline-block;
-  vertical-align: middle;
-  font-family: 'Kreon', Georgia, serif;
-  font-size: 1.55rem;
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: 0.01em;
-  margin: 0 0.7em 0.85rem 0;
-}
-
-.person-card .count {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 0.85rem;
-  color: #5d6b79;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  margin: 0 0 0.85rem 0;
-}
-
-/* Count number as a bold, colorful pill badge — white figure on the
-   person's accent colour so it pops and stays high-contrast/legible. */
-.person-card .count span:not(.territory-note) {
-  display: inline-block;
-  background: var(--accent, #1a2e3b);
-  color: #fff;
-  font-family: 'Kreon', Georgia, serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: 0;
-  padding: 0.08em 0.45em;
-  border-radius: 9px;
-  margin-right: 0.5em;
-  vertical-align: middle;
-}
+/* --- Map Views ------------------------------------- */
+.map-view { display: none; }
+.map-view.active { display: block; }
 
 /* --- Map Container (responsive aspect-ratio) ------- */
-.map-container {
-  position: relative;
-  width: 100%;
-}
-
-/* US map — roughly 8:5 ratio using the LCC projection */
-.map-container.us-map {
-  padding-bottom: 62%;
-}
+.map-container { position: relative; width: 100%; }
+.map-container.us-map { padding-bottom: 50%; }
 
 .map-container .map {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
 }
 
 /* jVectorMap overrides */
-.jvectormap-container {
-  width: 100% !important;
-  height: 100% !important;
-}
+.jvectormap-container { width: 100% !important; height: 100% !important; }
 
 .jvectormap-tip {
   background: #1a2e3b;
@@ -151,37 +100,6 @@ body {
   font-size: 0.85rem;
   line-height: 1.5;
   max-width: 220px;
-}
-
-/* --- Expand Button --------------------------------- */
-.expand-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  cursor: pointer;
-  padding: 0.25rem 0.35rem;
-  line-height: 1;
-  color: #aaa;
-  transition: color 0.15s, border-color 0.15s;
-}
-
-.expand-btn:hover {
-  color: #444;
-  border-color: #aaa;
-}
-
-.expand-btn svg {
-  display: block;
-  width: 14px;
-  height: 14px;
-  fill: currentColor;
-}
-
-.person-card.expanded {
-  grid-column: 1 / -1;
 }
 
 /* --- List Toggle ----------------------------------- */
@@ -202,23 +120,13 @@ body {
   transition: color 0.15s;
 }
 
-.list-toggle:hover {
-  color: #555;
-}
+.list-toggle:hover { color: #555; }
 
 /* --- Visit List ------------------------------------ */
-.visit-list {
-  display: none;
-  margin-top: 0.5rem;
-}
+.visit-list { display: none; margin-top: 0.5rem; }
+.visit-list.open { display: block; }
 
-.visit-list.open {
-  display: block;
-}
-
-.turkey-group {
-  margin-bottom: 0.55rem;
-}
+.turkey-group { margin-bottom: 0.55rem; }
 
 .turkey-group-label {
   font-size: 0.74rem;
@@ -229,11 +137,7 @@ body {
   margin-bottom: 0.35rem;
 }
 
-.visit-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
+.visit-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
 .visit-chip {
   display: inline-block;
@@ -249,18 +153,21 @@ body {
 /* Hunted-but-not-harvested chip */
 .turkey-chip--hunted {
   font-style: italic;
-  background: rgba(232, 160, 32, 0.16) !important;
-  border-color: rgba(232, 160, 32, 0.6) !important;
+  background: rgba(232,160,32,0.16) !important;
+  border-color: rgba(232,160,32,0.6) !important;
   border-style: dashed !important;
   color: #6b4f0e;
 }
 
 /* Per-person chip accent colors */
-.person-card[data-person="josh"]   .visit-chip { background: rgba(0,172,75,0.14);    border-color: rgba(0,172,75,0.55); }
-.person-card[data-person="sam"]    .visit-chip { background: rgba(102,38,132,0.14);  border-color: rgba(102,38,132,0.55); }
-.person-card[data-person="jack"]   .visit-chip { background: rgba(74,158,47,0.14);   border-color: rgba(74,158,47,0.55); }
-.person-card[data-person="debbie"] .visit-chip { background: rgba(217,48,37,0.14);   border-color: rgba(217,48,37,0.55); }
-.person-card[data-person="tilly"]  .visit-chip { background: rgba(8,152,255,0.14);   border-color: rgba(8,152,255,0.55); }
-.person-card[data-person="family"] .visit-chip { background: rgba(232,96,26,0.14);   border-color: rgba(232,96,26,0.55); }
+.map-view[data-view="josh"]   .visit-chip { background: rgba(0,172,75,0.14);   border-color: rgba(0,172,75,0.55); }
+.map-view[data-view="sam"]    .visit-chip { background: rgba(102,38,132,0.14); border-color: rgba(102,38,132,0.55); }
+.map-view[data-view="tilly"]  .visit-chip { background: rgba(8,152,255,0.14);  border-color: rgba(8,152,255,0.55); }
+.map-view[data-view="family"] .visit-chip { background: rgba(232,96,26,0.14);  border-color: rgba(232,96,26,0.55); }
 
-/* --- Footer styling now lives in ../../css/site-chrome.css --- */
+/* --- Mobile ---------------------------------------- */
+@media (max-width: 640px) {
+  .filter-name { font-size: 0.82rem; }
+  .filter-count { font-size: 0.72rem; }
+  .person-filter { padding: 0.3rem 0.7rem; }
+}

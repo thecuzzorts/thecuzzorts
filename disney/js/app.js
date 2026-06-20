@@ -13,10 +13,10 @@
     { id: 'poppy', name: 'Poppy', color: '#d9259a' }
   ];
 
+  var ANYONE_COLOR       = '#E8A020';
+  var WHOLE_FAMILY_COLOR = '#E8601A';
+
   // ---- Disney theme parks grouped by resort ---------
-  // Each resort carries one lat/lng (the map shows one marker per resort,
-  // since parks within a resort overlap at world zoom). Add a future resort
-  // or park here and to each data file to extend the tracker.
   var DISNEY_RESORTS = [
     {
       region: 'Walt Disney World',
@@ -138,7 +138,7 @@
 
   // ---- Build family combined chip list --------------
   function buildFamilyListHTML() {
-    var combined = {}; // parkId → array of { name, color }
+    var combined = {};
     PEOPLE.forEach(function (person) {
       var data = getPersonData(person.id);
       Object.keys(data.visited).forEach(function (parkId) {
@@ -256,6 +256,71 @@
     }, 0);
   }
 
+  // ---- Parks filter row + card ----------------------
+  function buildParksFilterRow() {
+    var container = document.getElementById('parksFilters');
+    if (!container) return;
+
+    function makeBtn(viewId, label, color, count, isActive) {
+      var btn = document.createElement('button');
+      btn.className = 'person-filter' + (isActive ? ' active' : '');
+      btn.setAttribute('data-view', viewId);
+      btn.style.setProperty('--filter-color', color);
+      btn.innerHTML =
+        '<span class="filter-name">' + label + '</span>' +
+        '<span class="filter-count">' + count + ' / ' + TOTAL_PARKS + '</span>';
+      container.appendChild(btn);
+    }
+
+    makeBtn('anyone',       'Anyone',       ANYONE_COLOR,       countFamilyVisited(),      true);
+    makeBtn('whole-family', 'Whole Family', WHOLE_FAMILY_COLOR, countWholeFamilyVisited(), false);
+    PEOPLE.forEach(function (p) {
+      makeBtn(p.id, p.name, p.color, countVisited(getPersonData(p.id).visited), false);
+    });
+  }
+
+  function buildParksCard() {
+    var card = document.getElementById('parksCard');
+    if (!card) return;
+
+    function addView(viewId, listHTML, isActive) {
+      var view = document.createElement('div');
+      view.className = 'park-view' + (isActive ? ' active' : '');
+      view.setAttribute('data-view', viewId);
+      var wrapper = document.createElement('div');
+      wrapper.innerHTML = listHTML;
+      var list = wrapper.firstChild;
+      if (list) { list.classList.add('open'); view.appendChild(list); }
+      card.appendChild(view);
+    }
+
+    addView('anyone',       buildFamilyListHTML(),      true);
+    addView('whole-family', buildWholeFamilyListHTML(), false);
+    PEOPLE.forEach(function (p) {
+      var data = getPersonData(p.id);
+      addView(p.id, buildParkListHTML(data.visited, data.details), false);
+    });
+  }
+
+  function initParkFilters() {
+    var container = document.getElementById('parksFilters');
+    var card      = document.getElementById('parksCard');
+    if (!container || !card) return;
+
+    container.addEventListener('click', function (e) {
+      var btn = e.target.closest('.person-filter');
+      if (!btn) return;
+      var view = btn.getAttribute('data-view');
+
+      container.querySelectorAll('.person-filter').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      card.querySelectorAll('.park-view').forEach(function (v) { v.classList.remove('active'); });
+      var activeView = card.querySelector('.park-view[data-view="' + view + '"]');
+      if (activeView) activeView.classList.add('active');
+    });
+  }
+
   // ---- Append list toggle + list to a container -----
   function appendList(containerId, listHTML, showLabel, hideLabel) {
     var container = document.getElementById(containerId);
@@ -291,19 +356,19 @@
     });
   }
 
-  // ---- Build and inject person card content ---------
-  function initPersonCard(person) {
-    var cardId = person.id + '-card';
-    var card = document.getElementById(cardId);
-    if (!card) return;
-
-    var data = getPersonData(person.id);
-    var count = countVisited(data.visited);
-
-    var countEl = card.querySelector('.count');
-    if (countEl) countEl.innerHTML = '<span class="count-num">' + count + '</span> of ' + TOTAL_PARKS + ' Disney parks';
-
-    appendList(cardId, buildParkListHTML(data.visited, data.details), 'Show visited', 'Hide visited');
+  // ---- Inject sec-count badge into a section heading -
+  function setHeadingCount(headingId, text) {
+    var heading = document.getElementById(headingId);
+    if (!heading) return;
+    var badge = heading.querySelector('.sec-count');
+    if (!badge) {
+      badge = document.createElement('span');
+      badge.className = 'sec-count';
+      var rule = heading.querySelector('.sec-rule');
+      if (rule) heading.insertBefore(badge, rule);
+      else heading.appendChild(badge);
+    }
+    badge.textContent = text;
   }
 
   // ---- Disney map (Leaflet) — one marker per resort -
@@ -322,7 +387,6 @@
     var activeFilter = 'whole-family';
     var markerEntries = [];
 
-    // A resort counts as "visited" by a person if they've been to any park there.
     function resortVisitedBy(resort, personId) {
       var visited = getPersonData(personId).visited;
       return resort.parks.some(function (p) { return visited[p.id]; });
@@ -331,11 +395,11 @@
     function getMarkerColor(resort) {
       if (activeFilter === 'anyone') {
         var anyone = PEOPLE.some(function (p) { return resortVisitedBy(resort, p.id); });
-        return anyone ? '#E8A020' : '#aaaaaa';
+        return anyone ? ANYONE_COLOR : '#aaaaaa';
       }
       if (activeFilter === 'whole-family') {
         var all = PEOPLE.every(function (p) { return resortVisitedBy(resort, p.id); });
-        return all ? '#FF8200' : '#aaaaaa';
+        return all ? WHOLE_FAMILY_COLOR : '#aaaaaa';
       }
       var person = PEOPLE.filter(function (p) { return p.id === activeFilter; })[0];
       return resortVisitedBy(resort, activeFilter) ? person.color : '#aaaaaa';
@@ -351,10 +415,10 @@
         html += '<div style="margin-top:2px">' + park.name;
         if (visitedBy.length) {
           html += ' ' + visitedBy.map(function (p) {
-            return '<span style="color:' + p.color + '">&#9679;</span>';
+            return '<span style="color:' + p.color + '">●</span>';
           }).join('');
         } else {
-          html += ' <span style="color:#bbb">&#9675;</span>';
+          html += ' <span style="color:#bbb">○</span>';
         }
         html += '</div>';
       });
@@ -377,9 +441,9 @@
     function updateMarkers() {
       var visitedColor;
       if (activeFilter === 'anyone') {
-        visitedColor = '#E8A020';
+        visitedColor = ANYONE_COLOR;
       } else if (activeFilter === 'whole-family') {
-        visitedColor = '#FF8200';
+        visitedColor = WHOLE_FAMILY_COLOR;
       } else {
         visitedColor = PEOPLE.filter(function (p) { return p.id === activeFilter; })[0].color;
       }
@@ -401,8 +465,6 @@
       });
     });
 
-    // Map shares a row with the photos on desktop and grows to match its
-    // height (see .photos-map-row CSS), so re-measure after layout settles.
     function refreshMapSize() { map.invalidateSize(); }
     setTimeout(refreshMapSize, 0);
     window.addEventListener('load', refreshMapSize);
@@ -411,20 +473,11 @@
 
   // ---- Init -----------------------------------------
   function init() {
-    // Family card
-    var familyCount = countFamilyVisited();
-    var familyCountEl = document.getElementById('familyParksCount');
-    if (familyCountEl) familyCountEl.innerHTML = '<span class="count-num">' + familyCount + '</span> of ' + TOTAL_PARKS + ' Disney parks visited by anyone';
-    appendList('family-card', buildFamilyListHTML(), 'Show visited', 'Hide visited');
+    buildParksFilterRow();
+    buildParksCard();
+    initParkFilters();
 
-    // Whole Family card
-    var wholeFamilyCountEl = document.getElementById('wholeFamilyParksCount');
-    if (wholeFamilyCountEl) wholeFamilyCountEl.innerHTML = '<span class="count-num">' + countWholeFamilyVisited() + '</span> of ' + TOTAL_PARKS + ' Disney parks visited by everyone';
-    appendList('whole-family-card', buildWholeFamilyListHTML(), 'Show visited', 'Hide visited');
-
-    // Bucket list card
-    var bucketCountEl = document.getElementById('bucketParksCount');
-    if (bucketCountEl) bucketCountEl.innerHTML = '<span class="count-num">' + countBucketList() + '</span> of ' + TOTAL_PARKS + ' parks Josh and Sam haven\'t visited together yet';
+    setHeadingCount('bucket', countBucketList() + ' / ' + TOTAL_PARKS);
     var bucketHTML = buildBucketListHTML();
     if (bucketHTML) {
       var bucketCard = document.getElementById('bucket-card');
@@ -434,9 +487,6 @@
         bucketCard.appendChild(wrapper.firstChild);
       }
     }
-
-    // Per-person cards
-    PEOPLE.forEach(initPersonCard);
 
     initListToggles();
     initDisneyMap();

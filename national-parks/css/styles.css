@@ -56,86 +56,63 @@ body {
   margin-bottom: 0.85rem;
 }
 
-/* --- Person Grid ----------------------------------- */
-.person-grid {
-  display: grid;
-  gap: 1.25rem;
-  margin-bottom: 1.25rem;
+/* --- Person Filter Row ----------------------------- */
+.person-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.person-grid.grid-2col {
-  grid-template-columns: repeat(2, 1fr);
+.person-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 2px solid var(--filter-color, #888);
+  background: transparent;
+  color: var(--filter-color, #888);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
 }
 
-.person-grid.grid-3col {
-  grid-template-columns: repeat(3, 1fr);
+.person-filter:hover:not(.active) {
+  background: color-mix(in srgb, var(--filter-color, #888) 10%, transparent);
 }
 
-@media (max-width: 800px) {
-  .person-grid.grid-3col {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.person-filter.active {
+  background: var(--filter-color, #888);
+  color: #fff;
 }
 
-@media (max-width: 640px) {
-  .person-grid.grid-2col,
-  .person-grid.grid-3col {
-    grid-template-columns: 1fr;
-  }
+.filter-name {
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
-/* --- Person Card ----------------------------------- */
-.person-card {
-  --accent: #ccc;
+.filter-count {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+/* --- Park Card + Views ----------------------------- */
+.park-card {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  padding: 1.25rem 1.25rem 1rem;
-  border-top: 5px solid var(--accent);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
-.person-card[data-person="josh"]  { --accent: #008C3D; }
-.person-card[data-person="sam"]   { --accent: #662684; }
-.person-card[data-person="ellie"] { --accent: #3E8F8F; }
-.person-card[data-person="tilly"] { --accent: #0B7AD0; }
-.person-card[data-person="poppy"] { --accent: #d9259a; }
-
-.person-card h2 {
-  font-family: 'Kreon', Georgia, serif;
-  font-size: 1.55rem;
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: 0.01em;
-  margin-bottom: 0.35rem;
-}
-
-.person-card .count {
-  font-size: 0.85rem;
-  color: #5d6b79;
-  margin-bottom: 0.85rem;
-}
-
-/* Stat cards: name + count share one line; count number as a colourful
-   pill. Photos/Map combined cards (no .count-num) keep block headers. */
-.person-card h2,
-.person-card .count,
-.combined-card:has(.count-num) h2,
-.combined-card:has(.count-num) .count {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.person-card h2,
-.combined-card:has(.count-num) h2 {
-  margin: 0 0.7em 0.85rem 0;
-}
-
-.person-card .count,
-.combined-card:has(.count-num) .count {
-  margin: 0 0 0.85rem 0;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
+.park-view { display: none; }
+.park-view.active { display: block; }
 
 .count-num {
   display: inline-block;
@@ -271,10 +248,6 @@ body {
   font-style: italic;
 }
 
-#whole-family-card {
-  border-top-color: #FF8200;
-}
-
 /* --- Map Card -------------------------------------- */
 #parksMap {
   height: 480px;
@@ -290,18 +263,21 @@ body {
 }
 
 .map-filter-btn {
-  padding: 5px 14px;
+  padding: 0.3rem 0.85rem;
   border: 2px solid #ccc;
-  border-radius: 20px;
-  background: #fff;
+  border-radius: 999px;
+  background: transparent;
+  color: #888;
   cursor: pointer;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 0.9rem;
-  transition: border-color 0.15s, color 0.15s;
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
 }
 
 .map-filter-btn.active[data-filter="anyone"]       { border-color: #E8A020; color: #E8A020; }
-.map-filter-btn.active[data-filter="whole-family"] { border-color: #FF8200; color: #FF8200; }
+.map-filter-btn.active[data-filter="whole-family"] { border-color: #E8601A; color: #E8601A; }
 .map-filter-btn.active[data-filter="josh"]   { border-color: #00AC4B; color: #00AC4B; }
 .map-filter-btn.active[data-filter="sam"]    { border-color: #662684; color: #662684; }
 .map-filter-btn.active[data-filter="ellie"]  { border-color: #66b2b2; color: #66b2b2; }

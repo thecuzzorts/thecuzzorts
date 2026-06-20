@@ -1,17 +1,17 @@
 /* ===================================================
-   TheCuzzorts — Turkey Maps app.js
+   TheCuzzorts — Turkey Hunting app.js
    =================================================== */
 
 (function ($) {
 
-  // ---- Person config --------------------------------
-  var people = [
-    { id: 'josh',   color: '#00AC4B',                  data: function () { return turkeysHarvestedJosh;   } },
-    { id: 'sam',    color: '#662684',                  data: function () { return turkeysHarvestedSam;    } },
-    { id: 'jack',   color: '#4A9E2F', family: false,   data: function () { return turkeysHarvestedJack;   } },
-    { id: 'debbie', color: '#D93025', family: false,   data: function () { return turkeysHarvestedDebbie; } },
-    { id: 'tilly',  color: '#0898ff',                  data: function () { return turkeysHarvestedTilly;  } }
+  // ---- People config --------------------------------
+  var PEOPLE = [
+    { id: 'josh',  name: 'Josh',  color: '#00AC4B', data: function () { return turkeysHarvestedJosh;  } },
+    { id: 'sam',   name: 'Sam',   color: '#662684', data: function () { return turkeysHarvestedSam;   } },
+    { id: 'tilly', name: 'Tilly', color: '#0898ff', data: function () { return turkeysHarvestedTilly; } }
   ];
+
+  var FAMILY_COLOR = '#E8601A';
 
   // ---- State name lookup ----------------------------
   var STATE_NAMES = {
@@ -43,12 +43,16 @@
     }, 0);
   }
 
+  function findPerson(id) {
+    for (var i = 0; i < PEOPLE.length; i++) { if (PEOPLE[i].id === id) return PEOPLE[i]; }
+    return null;
+  }
+
+  function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
   function debounce(fn, delay) {
-    var timer;
-    return function () {
-      clearTimeout(timer);
-      timer = setTimeout(fn, delay);
-    };
+    var t;
+    return function () { clearTimeout(t); t = setTimeout(fn, delay); };
   }
 
   // ---- List builder ---------------------------------
@@ -59,114 +63,186 @@
 
     Object.keys(data).forEach(function (code) {
       var v = data[code];
-      if (v >= 1)    harvested.push(code);
+      if (v >= 1)     harvested.push(code);
       else if (v > 0) hunted.push(code);
     });
 
-    if (harvested.length === 0 && hunted.length === 0) return '';
+    if (!harvested.length && !hunted.length) return '';
 
-    function byName(a, b) {
-      return (STATE_NAMES[a] || a).localeCompare(STATE_NAMES[b] || b);
-    }
+    function byName(a, b) { return (STATE_NAMES[a] || a).localeCompare(STATE_NAMES[b] || b); }
     harvested.sort(byName);
     hunted.sort(byName);
 
     var html = '<div class="visit-list">';
 
-    if (harvested.length > 0) {
-      html += '<div class="turkey-group">';
-      html += '<div class="turkey-group-label">Harvested</div>';
-      html += '<div class="visit-chips">';
+    if (harvested.length) {
+      html += '<div class="turkey-group"><div class="turkey-group-label">Harvested</div><div class="visit-chips">';
       harvested.forEach(function (code) {
         html += '<span class="visit-chip">' + (STATE_NAMES[code] || code) + '</span>';
       });
       html += '</div></div>';
     }
 
-    if (hunted.length > 0) {
-      html += '<div class="turkey-group">';
-      html += '<div class="turkey-group-label">Hunted</div>';
-      html += '<div class="visit-chips">';
+    if (hunted.length) {
+      html += '<div class="turkey-group"><div class="turkey-group-label">Hunted</div><div class="visit-chips">';
       hunted.forEach(function (code) {
         html += '<span class="visit-chip turkey-chip--hunted">' + (STATE_NAMES[code] || code) + '</span>';
       });
       html += '</div></div>';
     }
 
-    html += '</div>';
-    return html;
+    return html + '</div>';
   }
 
-  function injectList(mapId, listHTML) {
+  // ---- Pre-computed family data ---------------------
+  var computed = {};
+
+  function computeFamilyData() {
+    var harvested = {};
+    var hunted    = {};
+
+    PEOPLE.forEach(function (p) {
+      var d = p.data();
+      Object.keys(d).forEach(function (k) {
+        var v = Number(d[k]);
+        harvested[k] = (harvested[k] || 0) + (Math.round(v) >= 1 ? 1 : 0);
+        hunted[k]    = (hunted[k]    || 0) + (v > 0 ? 1 : 0);
+      });
+    });
+
+    computed.harvested = harvested;
+    computed.hunted    = hunted;
+  }
+
+  // ---- Count text per person ------------------------
+  function getCount(personId) {
+    if (personId === 'family') {
+      var n = Object.keys(computed.harvested).reduce(function (s, k) {
+        return s + (computed.harvested[k] >= 1 ? 1 : 0);
+      }, 0);
+      return n + ' / 49';
+    }
+    var p = findPerson(personId);
+    return p ? sumHarvested(p.data()) + ' / 49' : '';
+  }
+
+  // ---- Build filter row + map card (DOM) -----------
+
+  function buildFilterRow() {
+    var $row = $('#harvestsFilters');
+
+    var $all = $('<button class="person-filter active" data-person="family"></button>');
+    $all[0].style.setProperty('--filter-color', FAMILY_COLOR);
+    $all.append('<span class="filter-name">All</span>');
+    $all.append('<span class="filter-count">' + getCount('family') + '</span>');
+    $row.append($all);
+
+    PEOPLE.forEach(function (p) {
+      var $btn = $('<button class="person-filter" data-person="' + p.id + '"></button>');
+      $btn[0].style.setProperty('--filter-color', p.color);
+      $btn.append('<span class="filter-name">' + p.name + '</span>');
+      $btn.append('<span class="filter-count">' + getCount(p.id) + '</span>');
+      $row.append($btn);
+    });
+  }
+
+  function buildMapCard() {
+    var $card = $('#harvestsMapCard');
+
+    $card.append(
+      '<div class="map-view active" data-view="family">' +
+        '<div class="map-container us-map"><div id="mapFamily" class="map"></div></div>' +
+      '</div>'
+    );
+
+    PEOPLE.forEach(function (p) {
+      $card.append(
+        '<div class="map-view" data-view="' + p.id + '">' +
+          '<div class="map-container us-map"><div id="map' + cap(p.id) + '" class="map"></div></div>' +
+        '</div>'
+      );
+    });
+  }
+
+  // ---- Map instances + lazy init -------------------
+  var mapInst  = {};
+  var mapReady = {};
+
+  function injectList(mapElId, listHTML) {
     if (!listHTML) return;
-    var $container = $(mapId).closest('.map-container');
+    var $container = $(mapElId).closest('.map-container');
+    if ($container.next('.list-toggle').length) return;
     $('<button class="list-toggle" aria-expanded="false">Show list &#9662;</button>').insertAfter($container);
     $(listHTML).insertAfter($container.next('.list-toggle'));
   }
 
-  // ---- Map instances (for resize) -------------------
-  var mapInstances = [];
+  function initMap(personId) {
+    if (mapReady[personId]) {
+      if (mapInst[personId]) { try { mapInst[personId].updateSize(); } catch (e) {} }
+      return;
+    }
+    mapReady[personId] = true;
 
-  function registerMap(selector) {
-    var obj = $(selector).vectorMap('get', 'mapObject');
-    if (obj) mapInstances.push(obj);
-  }
+    var mapElId = '#map' + (personId === 'family' ? 'Family' : cap(personId));
+    if (!$(mapElId).length) return;
 
-  // ---- Init Maps ------------------------------------
-  function initMaps() {
-    people.forEach(function (person) {
-      var data  = person.data();
-      var mapId = '#' + person.id + 'Turkeys';
+    if (personId === 'family') {
+      var listData = {};
+      Object.keys(computed.harvested).forEach(function (k) {
+        if (computed.harvested[k] >= 1)   listData[k] = 1;
+        else if (computed.hunted[k] >= 1) listData[k] = 0.001;
+        else                              listData[k] = 0;
+      });
 
-      if (!$(mapId).length) return;
-
-      $('#' + person.id + 'Total').text(sumHarvested(data));
-
-      $(mapId).vectorMap({
+      $(mapElId).vectorMap({
         map: 'us_lcc',
-        backgroundColor: '#1C6BA0',
-        series: {
-          regions: [{
-            values: data,
-            scale: ['#EFEFEF', person.color],
-            normalizeFunction: 'polynomial'
-          }]
+        backgroundColor: '#1a2e3b',
+        series: { regions: [{ values: computed.harvested, scale: ['#f0f2f5', FAMILY_COLOR], normalizeFunction: 'linear' }] },
+        onRegionTipShow: function (_e, el, code) {
+          var n = computed.harvested[code] || 0;
+          var label = n === 1 ? '1 family member' : n + ' family members';
+          var tip = '<strong>' + el.html() + '</strong>';
+          if (n > 0) tip += '<br><span style="opacity:.8">Harvested by ' + label + '</span>';
+          el.html(tip);
         }
       });
 
-      registerMap(mapId);
-      injectList(mapId, buildTurkeyListHTML(data));
+      mapInst[personId] = $(mapElId).vectorMap('get', 'mapObject');
+      injectList(mapElId, buildTurkeyListHTML(listData));
+
+    } else {
+      var p = findPerson(personId);
+      if (!p) return;
+      var data = p.data();
+
+      $(mapElId).vectorMap({
+        map: 'us_lcc',
+        backgroundColor: '#1a2e3b',
+        series: { regions: [{ values: data, scale: ['#d0d4d8', p.color], normalizeFunction: 'polynomial' }] }
+      });
+
+      mapInst[personId] = $(mapElId).vectorMap('get', 'mapObject');
+      injectList(mapElId, buildTurkeyListHTML(data));
+    }
+  }
+
+  // ---- Filter clicks --------------------------------
+  function initFilters() {
+    $(document).on('click', '.person-filter', function () {
+      var $btn   = $(this);
+      var person = $btn.data('person');
+
+      $('#harvestsFilters .person-filter').removeClass('active');
+      $btn.addClass('active');
+
+      $('#harvests .map-view').removeClass('active');
+      $('#harvests .map-view[data-view="' + person + '"]').addClass('active');
+
+      setTimeout(function () { initMap(person); }, 0);
     });
   }
 
-  // ---- Expand / Collapse ----------------------------
-  var EXPAND_ICON   = '<svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><path d="M1 4V1h3M6 1h3v3M9 6v3H6M4 9H1V6"/><path d="M1 1l8 8M9 1L1 9" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>';
-  var COLLAPSE_ICON = '<svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><path d="M4 1v3H1M6 4h3V1M6 9V6h3M1 6h3v3" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>';
-
-  function initExpand() {
-    $('.person-card').each(function () {
-      $('<button class="expand-btn" title="Expand map" aria-label="Expand map"></button>')
-        .html(EXPAND_ICON)
-        .appendTo(this);
-    });
-
-    $(document).on('click', '.expand-btn', function () {
-      var $card     = $(this).closest('.person-card');
-      var expanding = !$card.hasClass('expanded');
-      $card.toggleClass('expanded', expanding);
-      $(this)
-        .attr('title', expanding ? 'Collapse map' : 'Expand map')
-        .html(expanding ? COLLAPSE_ICON : EXPAND_ICON);
-
-      setTimeout(function () {
-        mapInstances.forEach(function (m) {
-          try { m.updateSize(); } catch (e) {}
-        });
-      }, 50);
-    });
-  }
-
-  // ---- List Toggle ----------------------------------
+  // ---- List toggles ---------------------------------
   function initListToggles() {
     $(document).on('click', '.list-toggle', function () {
       var $btn  = $(this);
@@ -178,77 +254,29 @@
     });
   }
 
-  // ---- Family Combined Map --------------------------
-  function initFamilyMap() {
-    if (!$('#familyTurkeys').length) return;
-
-    // For each state: count people who harvested (value >= 1) and who hunted (value > 0)
-    var harvestCombined = {};
-    var huntCombined    = {};
-
-    people.filter(function (p) { return p.family !== false; }).forEach(function (person) {
-      var data = person.data();
-      Object.keys(data).forEach(function (key) {
-        var v = Number(data[key]);
-        harvestCombined[key] = (harvestCombined[key] || 0) + (Math.round(v) >= 1 ? 1 : 0);
-        huntCombined[key]    = (huntCombined[key]    || 0) + (v > 0 ? 1 : 0);
-      });
-    });
-
-    var totalHarvested = Object.keys(harvestCombined).reduce(function (sum, key) {
-      return sum + (harvestCombined[key] >= 1 ? 1 : 0);
-    }, 0);
-
-    $('#familyTotal').text(totalHarvested);
-
-    $('#familyTurkeys').vectorMap({
-      map: 'us_lcc',
-      backgroundColor: '#1C6BA0',
-      series: {
-        regions: [{
-          values: harvestCombined,
-          scale: ['#EFEFEF', '#E8601A'],
-          normalizeFunction: 'linear'
-        }]
-      },
-      onRegionTipShow: function (_e, el, code) {
-        var count = harvestCombined[code] || 0;
-        var label = count === 1 ? '1 family member' : count + ' family members';
-        var tip = '<strong>' + el.html() + '</strong>';
-        if (count > 0) tip += '<br><span style="opacity:.8">Harvested by ' + label + '</span>';
-        el.html(tip);
-      }
-    });
-
-    registerMap('#familyTurkeys');
-
-    // Build list data: harvested = 1, hunted-only = 0.001, neither = 0
-    var listData = {};
-    Object.keys(harvestCombined).forEach(function (key) {
-      if (harvestCombined[key] >= 1)  listData[key] = 1;
-      else if (huntCombined[key] >= 1) listData[key] = 0.001;
-      else                             listData[key] = 0;
-    });
-    injectList('#familyTurkeys', buildTurkeyListHTML(listData));
-  }
-
-  // ---- Window Resize --------------------------------
+  // ---- Window resize --------------------------------
   function initResize() {
     $(window).on('resize', debounce(function () {
-      mapInstances.forEach(function (m) {
-        try { m.updateSize(); } catch (e) {}
+      Object.keys(mapInst).forEach(function (key) {
+        if (mapInst[key]) { try { mapInst[key].updateSize(); } catch (e) {} }
       });
     }, 150));
   }
 
   // ---- Boot -----------------------------------------
   $(document).ready(function () {
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-    initMaps();
-    initFamilyMap();
-    initExpand();
+    computeFamilyData();
+    buildFilterRow();
+    buildMapCard();
+
+    initMap('family');
+
+    initFilters();
     initListToggles();
     initResize();
+
+    var yearEl = document.getElementById('currentYear');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
   });
 
 }(jQuery));
