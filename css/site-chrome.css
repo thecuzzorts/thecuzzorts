@@ -121,6 +121,13 @@
   letter-spacing: 0.02em;
 }
 
+/* Main content area — shared layout for all section pages */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
 /* Home link — explicit states so it wins over any base a:link rules */
 .home-link:link,
 .home-link:visited {

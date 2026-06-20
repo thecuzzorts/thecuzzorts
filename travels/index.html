@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Travels | The Cuzzorts</title>
   <link rel="stylesheet" href="css/jquery-jvectormap-2.0.3.css">
-  <link rel="stylesheet" href="css/styles.css?v=2">
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="../css/site-chrome.css">
   <link rel="stylesheet" href="../css/section-labels.css">
 </head>
@@ -22,10 +22,12 @@
   <header class="site-header">
     <p class="site-title"><a href="../index.html" class="home-link">The Cuzzorts</a> | Travels</p>
     <p class="site-tagline">Tracking states, provinces, and countries visited by each family member</p>
-    <nav class="tab-bar" role="tablist">
-      <button class="tab-btn active" data-tab="states" role="tab" aria-selected="true">States</button>
-      <button class="tab-btn" data-tab="provinces" role="tab" aria-selected="false">Provinces</button>
-      <button class="tab-btn" data-tab="countries" role="tab" aria-selected="false">Countries</button>
+    <nav>
+      <ul>
+        <li><a href="#states">States</a></li>
+        <li><a href="#provinces">Provinces</a></li>
+        <li><a href="#countries">Countries</a></li>
+      </ul>
     </nav>
   </header>
 
@@ -36,190 +38,22 @@
       <p>States, provinces &amp; countries visited by each family member</p>
     </div>
 
-    <!-- ======== STATES TAB ======== -->
-    <section id="states" class="tab-section active" role="tabpanel">
-
-      <p class="section-heading">By Person</p>
-      <div class="person-grid grid-2col">
-
-        <div class="person-card" data-person="josh">
-          <h2>Josh</h2>
-          <p class="count"><span id="joshStatesTotal">0</span> of 50 states</p>
-          <div class="map-container us-map">
-            <div id="joshStatesMap" class="map"></div>
-          </div>
-        </div>
-
-        <div class="person-card" data-person="sam">
-          <h2>Sam</h2>
-          <p class="count"><span id="samStatesTotal">0</span> of 50 states</p>
-          <div class="map-container us-map">
-            <div id="samStatesMap" class="map"></div>
-          </div>
-        </div>
-
-      </div>
-      <div class="person-grid grid-3col">
-
-        <div class="person-card" data-person="ellie">
-          <h2>Ellie</h2>
-          <p class="count"><span id="ellieStatesTotal">0</span> of 50 states</p>
-          <div class="map-container us-map">
-            <div id="ellieStatesMap" class="map"></div>
-          </div>
-        </div>
-
-        <div class="person-card" data-person="tilly">
-          <h2>Tilly</h2>
-          <p class="count"><span id="tillyStatesTotal">0</span> of 50 states</p>
-          <div class="map-container us-map">
-            <div id="tillyStatesMap" class="map"></div>
-          </div>
-        </div>
-
-        <div class="person-card" data-person="poppy">
-          <h2>Poppy</h2>
-          <p class="count"><span id="poppyStatesTotal">0</span> of 50 states</p>
-          <div class="map-container us-map">
-            <div id="poppyStatesMap" class="map"></div>
-          </div>
-        </div>
-
-      </div>
-
-      <p class="section-heading">All Together</p>
-      <div class="combined-card">
-        <h2>All Together</h2>
-        <p class="count"><span id="familyStatesTotal">0</span> of 50 states between us</p>
-        <div class="map-container us-map">
-          <div id="familyStatesMap" class="map"></div>
-        </div>
-      </div>
-
+    <section id="states">
+      <p class="section-heading">States</p>
+      <div class="person-filters" id="statesFilters"></div>
+      <div class="map-card" id="statesMapCard"></div>
     </section>
 
-    <!-- ======== PROVINCES TAB ======== -->
-    <section id="provinces" class="tab-section" role="tabpanel">
-
-      <p class="section-heading">By Person</p>
-      <div class="person-grid grid-2col">
-
-        <div class="person-card" data-person="josh">
-          <h2>Josh</h2>
-          <p class="count"><span id="joshProvincesTotal">0</span> of 10 provinces</p>
-          <div class="map-container ca-map">
-            <div id="joshProvincesMap" class="map"></div>
-          </div>
-        </div>
-
-        <div class="person-card" data-person="sam">
-          <h2>Sam</h2>
-          <p class="count"><span id="samProvincesTotal">0</span> of 10 provinces</p>
-          <div class="map-container ca-map">
-            <div id="samProvincesMap" class="map"></div>
-          </div>
-        </div>
-
-      </div>
-      <div class="person-grid grid-3col">
-
-        <div class="person-card" data-person="ellie">
-          <h2>Ellie</h2>
-          <p class="count"><span id="ellieProvincesTotal">0</span> of 10 provinces</p>
-          <div class="map-container ca-map">
-            <div id="ellieProvincesMap" class="map"></div>
-          </div>
-        </div>
-
-        <div class="person-card" data-person="tilly">
-          <h2>Tilly</h2>
-          <p class="count"><span id="tillyProvincesTotal">0</span> of 10 provinces</p>
-          <div class="map-container ca-map">
-            <div id="tillyProvincesMap" class="map"></div>
-          </div>
-        </div>
-
-        <div class="person-card" data-person="poppy">
-          <h2>Poppy</h2>
-          <p class="count"><span id="poppyProvincesTotal">0</span> of 10 provinces</p>
-          <div class="map-container ca-map">
-            <div id="poppyProvincesMap" class="map"></div>
-          </div>
-        </div>
-
-      </div>
-
-      <p class="section-heading">All Together</p>
-      <div class="combined-card">
-        <h2>All Together</h2>
-        <p class="count"><span id="familyProvincesTotal">0</span> of 10 provinces between us</p>
-        <div class="map-container ca-map">
-          <div id="familyProvincesMap" class="map"></div>
-        </div>
-      </div>
-
+    <section id="provinces">
+      <p class="section-heading">Provinces</p>
+      <div class="person-filters" id="provincesFilters"></div>
+      <div class="map-card" id="provincesMapCard"></div>
     </section>
 
-    <!-- ======== COUNTRIES TAB ======== -->
-    <section id="countries" class="tab-section" role="tabpanel">
-
-      <p class="section-heading">By Person</p>
-      <div class="person-grid grid-2col">
-
-        <div class="person-card" data-person="josh">
-          <h2>Josh</h2>
-          <p class="count"><span id="joshCountriesTotal">0</span> countries</p>
-          <div class="map-container world-map">
-            <div id="joshCountriesMap" class="map"></div>
-          </div>
-        </div>
-
-        <div class="person-card" data-person="sam">
-          <h2>Sam</h2>
-          <p class="count"><span id="samCountriesTotal">0</span> countries</p>
-          <div class="map-container world-map">
-            <div id="samCountriesMap" class="map"></div>
-          </div>
-        </div>
-
-      </div>
-      <div class="person-grid grid-3col">
-
-        <div class="person-card" data-person="ellie">
-          <h2>Ellie</h2>
-          <p class="count"><span id="ellieCountriesTotal">0</span> countries</p>
-          <div class="map-container world-map">
-            <div id="ellieCountriesMap" class="map"></div>
-          </div>
-        </div>
-
-        <div class="person-card" data-person="tilly">
-          <h2>Tilly</h2>
-          <p class="count"><span id="tillyCountriesTotal">0</span> countries</p>
-          <div class="map-container world-map">
-            <div id="tillyCountriesMap" class="map"></div>
-          </div>
-        </div>
-
-        <div class="person-card" data-person="poppy">
-          <h2>Poppy</h2>
-          <p class="count"><span id="poppyCountriesTotal">0</span> countries</p>
-          <div class="map-container world-map">
-            <div id="poppyCountriesMap" class="map"></div>
-          </div>
-        </div>
-
-      </div>
-
-      <p class="section-heading">All Together</p>
-      <div class="combined-card">
-        <h2>All Together</h2>
-        <p class="count"><span id="familyCountriesTotal">0</span> countries between us</p>
-        <div class="map-container world-map">
-          <div id="familyCountriesMap" class="map"></div>
-        </div>
-      </div>
-
+    <section id="countries">
+      <p class="section-heading">Countries</p>
+      <div class="person-filters" id="countriesFilters"></div>
+      <div class="map-card" id="countriesMapCard"></div>
     </section>
 
   </main>

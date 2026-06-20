@@ -16,6 +16,8 @@
 
   // Map section-label text -> icon. Extend as new labels appear.
   var ICON = {
+    'Josh': PERSON,
+    'Sam': PERSON,
     'By Person': PERSON,
     'All Together': GROUP,
     'Map': PIN,

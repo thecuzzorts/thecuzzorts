@@ -20,694 +20,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Kreon:wght@400;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <!-- Existing CSS (team logos sprite, team/division card styles) -->
   <link rel="stylesheet" href="../css/main.min.css?v=2">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-
-  <!-- Shared site chrome (header + footer) -->
   <link rel="stylesheet" href="../css/site-chrome.css">
-
-  <!-- Design-system overrides -->
-  <style>
-    *, *::before, *::after { box-sizing: border-box; }
-
-    /* Bump base type slightly — most sizes are rem, so they scale together */
-    html { font-size: 17px; }
-
-    body {
-      --section: #C8102E;          /* signature colour — used on light backgrounds */
-      --section-on-dark: #F07070;  /* lightened so it reads on the navy header/footer */
-      font-family: 'Roboto Condensed', sans-serif;
-      background: #f0f2f5;
-      color: #333;
-      margin: 0;
-    }
-
-    /* --- Header + footer chrome now lives in ../css/site-chrome.css --- */
-
-    /* --- Header nav styling now lives in ../css/site-chrome.css --- */
-
-    /* --- Main content --------------------------------- */
-    [role="main"] {
-      max-width: 1200px !important;
-      margin: 0 auto;
-      padding: 2rem 1rem 3rem;
-    }
-
-    /* Hide old h1 / h3 that main.css renders in the content area */
-    [role="main"] > .contents > h1,
-    [role="main"] > .contents > h3 { display: none; }
-
-    /* Section headings — icon · label (gold underline) · count badge · trailing rule,
-       with a subtle scroll-in reveal. Internals injected by the enhancer script below. */
-    h2.serious.moderate.colonel {
-      display: flex !important;
-      align-items: center !important;
-      gap: 0.55rem !important;
-      font-family: 'Kreon', serif !important;
-      font-size: 1.2rem !important;
-      font-weight: 700 !important;
-      letter-spacing: 0.08em !important;
-      text-transform: uppercase !important;
-      color: #1a2e3b !important;
-      margin: 2rem 0 1rem !important;
-      text-align: left !important;
-    }
-
-    .sec-icon { flex: 0 0 auto; display: inline-flex; color: var(--section, #E8A020); }
-    .sec-icon svg { width: 1.3rem; height: 1.3rem; display: block; }
-
-    .sec-label {
-      flex: 0 0 auto;
-      padding-bottom: 0.28rem;
-      border-bottom: 3px solid var(--section, #E8A020);
-    }
-
-    .sec-count {
-      flex: 0 0 auto;
-      font-family: 'Roboto Condensed', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      color: #1a2e3b;
-      background: color-mix(in srgb, var(--section, #E8A020) 18%, transparent);
-      border: 1px solid color-mix(in srgb, var(--section, #E8A020) 50%, transparent);
-      border-radius: 999px;
-      padding: 0.1rem 0.55rem;
-      white-space: nowrap;
-    }
-
-    .sec-rule {
-      flex: 1 1 auto;
-      min-width: 1rem;
-      height: 1px;
-      background: linear-gradient(to right, rgba(26,46,59,0.22), rgba(26,46,59,0));
-    }
-
-    .sec-anchor {
-      flex: 0 0 auto;
-      color: var(--section, #E8A020) !important;
-      text-decoration: none !important;
-      font-family: 'Roboto Condensed', sans-serif;
-      font-weight: 700;
-      opacity: 0;
-      transition: opacity 0.15s;
-    }
-    h2.serious.moderate.colonel:hover .sec-anchor,
-    .sec-anchor:focus { opacity: 1; }
-
-    /* Scroll-in reveal */
-    h2.sec-reveal { opacity: 0; transform: translateY(8px); transition: opacity 0.5s ease, transform 0.5s ease; }
-    h2.sec-reveal.in-view { opacity: 1; transform: none; }
-
-    hr {
-      display: none;
-    }
-
-    /* --- Photos + Map row ----------------------------- */
-    .photos-map-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      align-items: stretch;   /* equal-height columns */
-    }
-
-    .pm-col { min-width: 0; }   /* let the slideshow + map shrink inside their tracks */
-
-    /* Desktop: photo + map cards fill their column so they match height.
-       Photo covers (barely any crop at this width); map grows to fill. */
-    @media (min-width: 769px) {
-      .pm-col { display: flex; flex-direction: column; }
-
-      /* Map card shrinks/grows to match the photo's natural (uncropped) height */
-      .pm-map .map-wrap {
-        flex: 1 1 auto;
-        display: flex;
-        flex-direction: column;
-        min-height: 0;
-      }
-      .pm-map #ballparksMap {
-        flex: 1 1 auto;
-        min-height: 0;
-        height: auto;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .photos-map-row { grid-template-columns: 1fr; }
-    }
-
-    /* --- Slideshow ------------------------------------ */
-    .slideshow-wrap {
-      background: #1a2e3b;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-      overflow: hidden;
-      margin-bottom: 0.5rem;
-    }
-
-    .cycle-slideshow {
-      background: #253e4f url("../images/spinner.gif") no-repeat center center;
-      margin: 0 auto !important;
-      padding: 0 !important;
-      max-width: 100% !important;
-    }
-
-    .cycle-slideshow img {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 3 / 2;   /* reserve slide height so lazy images don't cause a jump */
-      display: block;
-    }
-
-    /* Hide all but first slide before Cycle2 initializes */
-    .cycle-slideshow img:not(:first-child) {
-      display: none;
-    }
-
-    /* Caption (stadium name from each photo's alt) — centered in the controls bar */
-    .cycle-caption {
-      flex: 1 1 auto;
-      min-width: 0;
-      text-align: center;
-      color: #fff;
-      font-family: 'Kreon', serif;
-      font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .slideshow-controls {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.5rem 0.9rem 0.6rem;
-      background: #1a2e3b;
-    }
-
-    .slideshow-controls a {
-      flex: 0 0 auto;
-      font-family: 'Kreon', serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      line-height: 1;
-      color: rgba(255,255,255,0.7) !important;
-      text-decoration: none !important;
-      padding: 0.25rem 0.8rem;
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 5px;
-      transition: color 0.15s, border-color 0.15s;
-    }
-
-    .slideshow-controls a:hover {
-      color: #E8A020 !important;
-      border-color: #E8A020;
-    }
-
-    /* --- Stats banner --------------------------------- */
-    .stats-banner {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      border-top: 5px solid #C8102E;
-      padding: 1.25rem 1.5rem;
-      font-size: 1rem;
-      color: #333;
-      margin-bottom: 0.25rem;
-    }
-
-    .stats-banner strong {
-      color: #C8102E;
-      font-family: 'Kreon', serif;
-    }
-
-    .bp-story {
-      margin: 0 0 0.9rem;
-      line-height: 1.6;
-    }
-
-    .bp-story:last-of-type {
-      margin-bottom: 0;
-    }
-
-    .stat-strip {
-      margin: 1rem 0 0;
-      padding-top: 0.85rem;
-      border-top: 1px solid #e3e7eb;
-      font-size: 0.9rem;
-      letter-spacing: 0.02em;
-      color: #8a9aaa;
-      text-transform: uppercase;
-    }
-
-    .stat-strip strong {
-      font-size: 1.15rem;
-    }
-
-    /* Story "Read more" — desktop shows the full story, no button */
-    .bp-story-toggle { display: none; }
-
-    @media (max-width: 640px) {
-      .bp-story-more { display: none; }
-      .stats-banner.story-open .bp-story-more { display: block; }
-
-      .bp-story-toggle {
-        display: inline-block;
-        margin-top: 0.5rem;
-        padding: 0.1rem 0;
-        background: none;
-        border: none;
-        font-family: 'Kreon', serif;
-        font-size: 0.95rem;
-        font-weight: 700;
-        letter-spacing: 0.03em;
-        color: #C8102E;
-        cursor: pointer;
-      }
-    }
-
-    /* --- Map container -------------------------------- */
-    .map-wrap {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      padding: 1.25rem;
-      overflow: hidden;
-    }
-
-    .map-wrap img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 5px;
-    }
-
-    #ballparksMap {
-      height: 480px;
-      border-radius: 6px;
-    }
-
-    .team-marker-icon {
-      background: none !important;
-      border: none !important;
-    }
-
-    .team-marker-icon .team-logo {
-      top: 0;
-      display: block;
-      margin: 0;
-    }
-
-    .team-marker-icon.status-closed .team-logo  { filter: grayscale(1); opacity: 0.55; }
-    .team-marker-icon.status-future .team-logo  { opacity: 0.65; }
-
-    .bp-filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-
-    .bp-filter-btn {
-      padding: 5px 14px;
-      border: 2px solid #ccc;
-      border-radius: 20px;
-      background: #fff;
-      cursor: pointer;
-      font-family: 'Roboto Condensed', sans-serif;
-      font-size: 0.9rem;
-      transition: border-color 0.15s, color 0.15s;
-    }
-
-    .bp-filter-btn.active[data-filter="all"]     { border-color: #E8A020; color: #E8A020; }
-    .bp-filter-btn.active[data-filter="current"] { border-color: #22703D; color: #22703D; }
-    .bp-filter-btn.active[data-filter="closed"]  { border-color: #888;    color: #888;    }
-    .bp-filter-btn.active[data-filter="future"]  { border-color: #003087; color: #003087; }
-
-    @media (max-width: 640px) {
-      #ballparksMap { height: 320px; }
-    }
-
-    /* --- Division / park cards ----------------------- */
-
-    /* Replace the float-based layout with CSS grid for readability */
-    .format .group {
-      display: grid;
-      gap: 1.25rem;
-    }
-
-    /* Kill clearfix pseudo-elements that conflict with grid */
-    .format .group::before,
-    .format .group::after { display: none; }
-
-    /* Kill float widths set by main.min.css */
-    .format .group .split.division,
-    .format .group .split.ballpark {
-      float: none !important;
-      width: auto !important;
-      margin-left: 0 !important;
-      margin-bottom: 0 !important;
-    }
-
-    /* 6 division cards: 3 per row (NL row / AL row) → 2 per row paired by division → 1 col */
-    .format .group:has(.split.division) {
-      grid-template-columns: repeat(3, 1fr);
-      /* default grid-auto-flow: row → NL East, NL Central, NL West / AL East, AL Central, AL West */
-    }
-    @media (max-width: 1099px) {
-      .format .group:has(.split.division) {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, auto);
-        grid-auto-flow: column;
-        /* column flow → Col 1: NL East, NL Central, NL West  Col 2: AL East, AL Central, AL West
-           reads as rows: NL East/AL East · NL Central/AL Central · NL West/AL West */
-      }
-    }
-    @media (max-width: 767px) {
-      .format .group:has(.split.division) {
-        grid-template-columns: 1fr;
-        grid-template-rows: none;
-        grid-auto-flow: row;
-      }
-    }
-
-    .format .group .split.snip.ballpark {
-      width: 100% !important;
-    }
-
-    /* Closed & Future cards side-by-side */
-    .format .group.side-by-side {
-      grid-template-columns: 1fr 1fr;
-    }
-    @media (max-width: 640px) {
-      .format .group.side-by-side {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .split.snip {
-      border-radius: 10px !important;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07) !important;
-      margin-bottom: 0 !important;
-    }
-
-    .split.snip h2.nl,
-    .split.snip h2.al,
-    .split.snip h2.ballpark {
-      font-family: 'Kreon', serif !important;
-      font-size: 1rem !important;
-      font-weight: 700 !important;
-      letter-spacing: 0.06em !important;
-      text-transform: uppercase !important;
-      border-radius: 9px 9px 0 0 !important;
-    }
-
-    .split.snip h2.nl  { background: #003087 !important; }
-    .split.snip h2.al  { background: #C8102E !important; }
-    .split.snip h2.ballpark         { background: #22703D !important; }
-    .split.snip h2.ballpark-closed  { background: #64748b !important; }
-    .split.snip h2.ballpark-future  { background: #E8A020 !important; }
-
-    .team-name {
-      font-family: 'Roboto Condensed', sans-serif !important;
-    }
-
-    .first-visit .date {
-      font-family: 'Roboto Condensed', sans-serif !important;
-    }
-
-    /* Footer chrome now lives in ../css/site-chrome.css */
-
-    /* Override main.min.css's 85% width constraint — cards need the full container */
-    .format { width: 100% !important; margin-bottom: 0 !important; }
-
-    /* --- Kids section --------------------------------- */
-    .split.snip h2.kid-ellie { background: #66b2b2 !important; }
-    .split.snip h2.kid-tilly { background: #0898ff !important; }
-    .split.snip h2.kid-poppy { background: #d9259a !important; }
-
-    .format .group.kids-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    @media (max-width: 1099px) {
-      .format .group.kids-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* --- Beyond MLB ----------------------------------- */
-    .split.snip h2.beyond-milb    { background: #1a2e3b !important; }
-    .split.snip h2.beyond-milb .divisionCount {
-      color: #fff;
-      background: rgba(255,255,255,0.16);
-    }
-    /* Savannah Bananas brand yellow — dark text for contrast */
-    .split.snip h2.beyond-bananas {
-      background: #FFDC00 !important;
-      color: #1a2e3b !important;
-    }
-    .split.snip h2.beyond-bananas .divisionCount {
-      color: #1a2e3b;
-      background: rgba(26,46,59,0.12);
-    }
-
-    /* Banana Ball badge shows two tallies (games attended · teams seen) */
-    .bb-tally {
-      font-weight: 400;
-      white-space: nowrap;
-      padding: 0.1em 0.55em;
-      border-radius: 999px;
-    }
-    .bb-tally b { font-weight: 700; color: inherit; }
-
-    .bp-sublabel {
-      margin: 0.9rem 1rem 0.3rem;
-      font-family: 'Kreon', serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #8a9aaa;
-    }
-
-    .bp-chip-list {
-      padding: 0.4rem 1rem 0.6rem;
-      margin: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    /* Map-led MiLB card keeps the original top/bottom padding */
-    .milb-card .bp-chip-list {
-      padding: 0.9rem 1rem 1.1rem;
-    }
-
-    .bp-chip-list:last-child {
-      padding-bottom: 1.1rem;
-    }
-
-    .bp-chip {
-      display: inline-flex;
-      flex-direction: column;
-      padding: 6px 12px;
-      border-radius: 16px;
-      background: #eef1f4;
-      color: #333;
-      font-size: 0.9rem;
-      line-height: 1.25;
-    }
-
-    .bp-chip small {
-      color: #8a9aaa;
-      font-style: italic;
-    }
-
-    /* Upcoming game chip (amber dashed) */
-    .bp-chip.bp-chip-upcoming {
-      background: #fff;
-      border: 1px dashed #E8A020;
-      color: #9a6a10;
-    }
-    .bp-chip.bp-chip-upcoming small { color: #b07d18; }
-
-    /* Team badges — colored by each team's branding via --team.
-       is-seen = solid fill · is-upcoming = solid outline · is-unseen = dashed outline */
-    .bp-chip.bp-team { border: 1.5px solid var(--team, #c7cdd3); }
-
-    .bp-chip.bp-team.is-seen {
-      background: var(--team);
-      color: #fff;
-    }
-    .bp-chip.bp-team.is-seen small { color: rgba(255,255,255,0.85); }
-
-    .bp-chip.bp-team.is-upcoming,
-    .bp-chip.bp-team.is-unseen {
-      background: #fff;
-      color: var(--team);
-    }
-    .bp-chip.bp-team.is-upcoming small,
-    .bp-chip.bp-team.is-unseen small { color: var(--team); opacity: 0.8; }
-
-    .bp-chip.bp-team.is-unseen { border-style: dashed; opacity: 0.9; }
-
-    /* Bananas yellow needs dark ink when filled */
-    .bp-chip.bp-team.ink-dark.is-seen { color: #1a2e3b; }
-    .bp-chip.bp-team.ink-dark.is-seen small { color: rgba(26,46,59,0.7); }
-
-    #milbMap {
-      height: 300px;
-      border-radius: 0;
-    }
-    @media (max-width: 640px) {
-      #milbMap { height: 240px; }
-    }
-
-    .milb-marker-icon {
-      background: none !important;
-      border: none !important;
-    }
-
-    .milb-marker-icon .milb-dot {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: #E8A020;
-      border: 2px solid #fff;
-      box-shadow: 0 0 0 1px rgba(0,0,0,0.25);
-    }
-
-    /* MiLB card: map flush to the top of the card, chip list below */
-    .split.snip.milb-card .map-wrap {
-      box-shadow: none;
-      border-radius: 0;
-      padding: 0;
-    }
-
-    /* --- Beyond MLB photo strips ---------------------- */
-    /* Game-day photos for the Minor League + Banana Ball cards.
-       Drop real photos in by replacing a placeholder tile with:
-         <div class="bp-photo"><img loading="lazy" src="../images/beyond-mlb/your-photo.jpg" alt="Caption"></div>
-       Placeholder tiles render until the photos are in place. */
-    .bp-photo-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      padding: 0.4rem 1rem 1.1rem;
-      margin: 0;
-    }
-
-    .bp-photo-strip .bp-photo {
-      aspect-ratio: 4 / 3;
-      border-radius: 8px;
-      overflow: hidden;
-      background: #eef1f4;
-    }
-
-    .bp-photo-strip .bp-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      cursor: zoom-in;
-    }
-
-    .bp-photo-strip .bp-photo.is-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.3rem;
-      background: #fff;
-      border: 1px dashed #c7cdd3;
-      color: #aab4bd;
-    }
-    .bp-photo-strip .bp-photo.is-placeholder svg { width: 1.6rem; height: 1.6rem; }
-    .bp-photo-strip .bp-photo.is-placeholder span {
-      font-family: 'Roboto Condensed', sans-serif;
-      font-size: 0.62rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    @media (max-width: 640px) {
-      .bp-photo-strip { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    /* --- Photo lightbox ------------------------------- */
-    .cycle-slideshow img { cursor: zoom-in; }
-
-    .lb-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(10,16,22,0.93);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-    .lb-overlay.is-open { display: flex; }
-
-    .lb-figure {
-      margin: 0;
-      max-width: 92vw;
-      text-align: center;
-    }
-    .lb-img {
-      max-width: 92vw;
-      max-height: 84vh;
-      object-fit: contain;
-      border-radius: 6px;
-      box-shadow: 0 6px 30px rgba(0,0,0,0.5);
-    }
-    .lb-cap {
-      margin-top: 0.6rem;
-      font-family: 'Kreon', serif;
-      font-size: 0.95rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: #e8eef2;
-    }
-
-    .lb-overlay button {
-      position: absolute;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.25);
-      color: #fff;
-      cursor: pointer;
-      font-family: 'Kreon', serif;
-      line-height: 1;
-      border-radius: 8px;
-      transition: background 0.15s, border-color 0.15s;
-    }
-    .lb-overlay button:hover { background: rgba(232,160,32,0.2); border-color: #E8A020; }
-
-    .lb-prev, .lb-next {
-      top: 50%;
-      transform: translateY(-50%);
-      width: 48px;
-      height: 64px;
-      font-size: 1.6rem;
-    }
-    .lb-prev { left: 2vw; }
-    .lb-next { right: 2vw; }
-
-    .lb-close {
-      top: 2vh;
-      right: 2vw;
-      width: 44px;
-      height: 44px;
-      font-size: 1.5rem;
-    }
-
-    @media (max-width: 640px) {
-      .lb-prev, .lb-next { width: 38px; height: 52px; font-size: 1.3rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="../css/section-labels.css">
+  <link rel="stylesheet" href="css/styles.css">
 
   <link rel="apple-touch-icon-precomposed" href="../images/apple/touch-icon-iphone.png" />
   <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../images/apple/TC-Icon-57x57.png" />
@@ -724,22 +41,20 @@
   <header class="site-header">
     <p class="site-title"><a class="home-link" href="../index.html">The Cuzzorts</a> &mdash; Baseball</p>
     <p class="site-tagline">Tracking our visits to all 30 MLB ballparks &mdash; and beyond</p>
-    <div role="navigation">
-      <nav>
-        <ul>
-          <li><a href="#story">Story</a></li>
-          <li><a href="#photos">Photos</a></li>
-          <li><a href="#map">Map</a></li>
-          <li><a href="#parks">Parks</a></li>
-          <li><a href="#kids">Kids</a></li>
-          <li><a href="#beyond">Beyond MLB</a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav>
+      <ul>
+        <li><a href="#story">Story</a></li>
+        <li><a href="#photos">Photos</a></li>
+        <li><a href="#map">Map</a></li>
+        <li><a href="#parks">Parks</a></li>
+        <li><a href="#kids">Kids</a></li>
+        <li><a href="#closed-future">Closed &amp; Future</a></li>
+        <li><a href="#beyond">Beyond MLB</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <div role="main">
-    <div class="contents">
+  <main>
 
       <div class="page-intro">
         <h1>Baseball</h1>
@@ -747,8 +62,7 @@
       </div>
 
       <!-- Our Story (full width, on top) ---------------- -->
-      <a name="story"></a>
-      <h2 class="serious moderate colonel">Our Story</h2>
+      <p class="section-heading" id="story">Our Story</p>
 
       <div class="stats-banner">
         <p class="bp-story">Our baseball story goes back to 2009. We made a trip to Busch Stadium that summer, and as Braves fans, we also road-tripped to Atlanta to catch an entire series. At the time, we weren't trying to visit every ballpark. We just liked baseball and liked taking baseball trips together.</p>
@@ -767,8 +81,7 @@
 
       <!-- Photos ---------------------------------------- -->
       <div class="pm-col pm-photos">
-      <a name="photos"></a>
-      <h2 class="serious moderate colonel">Photos</h2>
+      <p class="section-heading" id="photos">Photos</p>
 
       <div class="slideshow-wrap">
         <div class="cycle-slideshow"
@@ -823,8 +136,7 @@
 
       <!-- Map ------------------------------------------- -->
       <div class="pm-col pm-map">
-      <a name="map"></a>
-      <h2 class="serious moderate colonel">Map</h2>
+      <p class="section-heading" id="map">Map</p>
 
       <div class="map-wrap">
         <div class="bp-filters">
@@ -840,8 +152,7 @@
       </div><!-- /photos-map-row -->
 
       <!-- Parks ----------------------------------------- -->
-      <a name="parks"></a>
-      <h2 class="serious moderate colonel">Parks</h2>
+      <p class="section-heading" id="parks">Parks</p>
 
       <div class="format">
         <!-- <p class="major moderate" style="margin-bottom:1rem;">
@@ -938,8 +249,7 @@
       </div>
 
       <!-- The Kids -------------------------------------- -->
-      <a name="kids"></a>
-      <h2 class="serious moderate colonel">The Kids</h2>
+      <p class="section-heading" id="kids">The Kids</p>
 
       <div class="format">
         <section class="group kids-grid">
@@ -986,7 +296,7 @@
       </div>
 
       <!-- Closed & Future -------------------------------- -->
-      <h2 class="serious moderate colonel">Closed &amp; Future</h2>
+      <p class="section-heading" id="closed-future">Closed &amp; Future</p>
 
       <div class="format">
         <section class="group side-by-side">
@@ -1019,8 +329,7 @@
       </div>
 
       <!-- Beyond MLB ------------------------------------ -->
-      <a name="beyond"></a>
-      <h2 class="serious moderate colonel">Beyond MLB</h2>
+      <p class="section-heading" id="beyond">Beyond MLB</p>
 
       <div class="format">
         <section class="group side-by-side">
@@ -1081,8 +390,7 @@
         </section>
       </div>
 
-    </div>
-  </div>
+  </main>
 
   <footer>
     <p><script>document.write(new Date().getFullYear())</script> &copy; The Cuzzorts &mdash; <a href="../index.html">Home</a></p>
@@ -1320,131 +628,8 @@
     }());
   </script>
 
-  <!-- Section-heading enhancer: icons, count badges, trailing rule, anchor links, reveal, scrollspy -->
-  <script>
-    (function () {
-      var BASEBALL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M6.6 5.4C9 7.7 9 16.3 6.6 18.6M17.4 5.4C15 7.7 15 16.3 17.4 18.6"/></svg>';
-      var ICON = {
-        'Our Story': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6C10 4.7 7 4.7 5 6v12c2-1.3 5-1.3 7 0 2-1.3 5-1.3 7 0V6c-2-1.3-5-1.3-7 0z"/><path d="M12 6v12"/></svg>',
-        'Photos': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.4-2h7.2L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.2"/></svg>',
-        'Map': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6 7-12a7 7 0 1 0-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="10" r="2.4"/></svg>',
-        'Parks': BASEBALL,
-        'The Kids': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><circle cx="17.5" cy="9" r="2.3"/><path d="M16.2 14.3A4.5 4.5 0 0 1 21 18.6"/></svg>',
-        'Closed & Future': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3.2 2"/></svg>',
-        'Beyond MLB': BASEBALL
-      };
-      var COUNT = { 'Parks': '30 / 30', 'The Kids': '3' };
-
-      var heads = Array.prototype.slice.call(document.querySelectorAll('h2.serious.moderate.colonel'));
-      if (!heads.length) { return; }
-
-      heads.forEach(function (h2) {
-        var label = h2.textContent.trim();
-
-        // preceding <a name> (for the hover anchor link + scrollspy)
-        var anchorName = null, prev = h2.previousElementSibling;
-        while (prev) {
-          if (prev.tagName === 'A' && prev.getAttribute('name')) { anchorName = prev.getAttribute('name'); break; }
-          if (prev.tagName === 'H2') { break; }
-          prev = prev.previousElementSibling;
-        }
-
-        var count = COUNT[label];
-        if (label === 'Photos') {
-          var n = document.querySelectorAll('.cycle-slideshow > img').length;
-          if (n) { count = String(n); }
-        }
-
-        h2.textContent = '';
-
-        if (ICON[label]) {
-          var ic = document.createElement('span');
-          ic.className = 'sec-icon';
-          ic.innerHTML = ICON[label];
-          h2.appendChild(ic);
-        }
-
-        var lab = document.createElement('span');
-        lab.className = 'sec-label';
-        lab.textContent = label;
-        h2.appendChild(lab);
-
-        if (count) {
-          var badge = document.createElement('span');
-          badge.className = 'sec-count';
-          badge.textContent = count;
-          h2.appendChild(badge);
-        }
-
-        h2.appendChild(Object.assign(document.createElement('span'), { className: 'sec-rule' }));
-
-        if (anchorName) {
-          var link = document.createElement('a');
-          link.className = 'sec-anchor';
-          link.href = '#' + anchorName;
-          link.textContent = '#';
-          link.setAttribute('aria-label', 'Link to ' + label);
-          h2.appendChild(link);
-          h2.setAttribute('data-spy', anchorName);
-        }
-
-        h2.classList.add('sec-reveal');
-      });
-
-      // Scroll-in reveal
-      if (window.IntersectionObserver) {
-        var revealIO = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) {
-            if (e.isIntersecting) { e.target.classList.add('in-view'); revealIO.unobserve(e.target); }
-          });
-        }, { threshold: 0.25 });
-        heads.forEach(function (h) { revealIO.observe(h); });
-      } else {
-        heads.forEach(function (h) { h.classList.add('in-view'); });
-      }
-
-      // Scrollspy — highlight the nav link(s) for the section currently in view.
-      // Scroll-position based so the top section works, and side-by-side
-      // sections (Photos + Map) both light up since they share a row.
-      var navLinks = {};
-      Array.prototype.forEach.call(document.querySelectorAll('.site-header nav a'), function (a) {
-        var href = a.getAttribute('href') || '';
-        if (href.charAt(0) === '#') { navLinks[href.slice(1)] = a; }
-      });
-      var spyHeads = heads.filter(function (h) { return h.getAttribute('data-spy'); });
-      var header = document.querySelector('.site-header');
-
-      function topOf(el) { return el.getBoundingClientRect().top + window.pageYOffset; }
-
-      function syncSpy() {
-        if (!spyHeads.length) { return; }
-        var line = window.pageYOffset + (header ? header.offsetHeight : 0) + 120;
-        var activeTop = null;
-        spyHeads.forEach(function (h) {
-          var t = topOf(h);
-          if (t <= line && (activeTop === null || t > activeTop)) { activeTop = t; }
-        });
-        if (activeTop === null) { activeTop = topOf(spyHeads[0]); }   // scrolled above the first section
-        var active = {};
-        spyHeads.forEach(function (h) {
-          if (Math.abs(topOf(h) - activeTop) < 80) { active[h.getAttribute('data-spy')] = true; }
-        });
-        Object.keys(navLinks).forEach(function (k) {
-          navLinks[k].classList.toggle('active', !!active[k]);
-        });
-      }
-
-      var ticking = false;
-      function onScroll() {
-        if (ticking) { return; }
-        ticking = true;
-        window.requestAnimationFrame(function () { syncSpy(); ticking = false; });
-      }
-      window.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('resize', onScroll);
-      syncSpy();
-    }());
-  </script>
+  <!-- Section-heading enhancer (baseball-specific: icons, counts, reveal, scrollspy) -->
+  <script src="js/section-labels.js"></script>
 
   <script src="../scripts/jquery.js"></script>
   <script src="../scripts/jquery.cycle2.min.js"></script>

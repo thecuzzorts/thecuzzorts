@@ -42,7 +42,7 @@ var statesVisitedPoppy = {
 	"US-SC": 0,
 	"US-SD": 0,
 	"US-TN": 1,
-	"US-TX": 0,
+	"US-TX": 1,
 	"US-UT": 0,
 	"US-VA": 0,
 	"US-VT": 0,

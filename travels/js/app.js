@@ -4,113 +4,70 @@
 
 (function ($) {
 
-  // ---- Person config --------------------------------
-  var people = [
+  // ---- Family members (shown in filter row + maps) --
+  var PEOPLE = [
     {
-      id:      'josh',
-      name:    'Josh',
-      color:   '#00AC4B',
-      states:  function () { return statesVisitedJosh; },
-      stateDetails: function () { return typeof statesDetailsJosh !== 'undefined' ? statesDetailsJosh : {}; },
-      provinces: function () { return provincesVisitedJosh; },
+      id: 'josh', name: 'Josh', color: '#00AC4B',
+      states:          function () { return statesVisitedJosh; },
+      stateDetails:    function () { return typeof statesDetailsJosh    !== 'undefined' ? statesDetailsJosh    : {}; },
+      provinces:       function () { return provincesVisitedJosh; },
       provinceDetails: function () { return typeof provincesDetailsJosh !== 'undefined' ? provincesDetailsJosh : {}; },
-      countries: function () { return countriesVisitedJosh; },
-      countryDetails: function () { return typeof countriesDetailsJosh !== 'undefined' ? countriesDetailsJosh : {}; }
+      countries:       function () { return countriesVisitedJosh; },
+      countryDetails:  function () { return typeof countriesDetailsJosh !== 'undefined' ? countriesDetailsJosh : {}; }
     },
     {
-      id:      'sam',
-      name:    'Sam',
-      color:   '#662684',
-      states:  function () { return statesVisitedSam; },
-      stateDetails: function () { return typeof statesDetailsSam !== 'undefined' ? statesDetailsSam : {}; },
-      provinces: function () { return provincesVisitedSam; },
+      id: 'sam', name: 'Sam', color: '#662684',
+      states:          function () { return statesVisitedSam; },
+      stateDetails:    function () { return typeof statesDetailsSam    !== 'undefined' ? statesDetailsSam    : {}; },
+      provinces:       function () { return provincesVisitedSam; },
       provinceDetails: function () { return typeof provincesDetailsSam !== 'undefined' ? provincesDetailsSam : {}; },
-      countries: function () { return countriesVisitedSam; },
-      countryDetails: function () { return typeof countriesDetailsSam !== 'undefined' ? countriesDetailsSam : {}; }
+      countries:       function () { return countriesVisitedSam; },
+      countryDetails:  function () { return typeof countriesDetailsSam !== 'undefined' ? countriesDetailsSam : {}; }
     },
     {
-      id:      'ellie',
-      name:    'Ellie',
-      color:   '#66b2b2',
-      states:  function () { return statesVisitedEllie; },
-      stateDetails: function () { return typeof statesDetailsEllie !== 'undefined' ? statesDetailsEllie : {}; },
-      provinces: function () { return provincesVisitedEllie; },
+      id: 'ellie', name: 'Ellie', color: '#66b2b2',
+      states:          function () { return statesVisitedEllie; },
+      stateDetails:    function () { return typeof statesDetailsEllie    !== 'undefined' ? statesDetailsEllie    : {}; },
+      provinces:       function () { return provincesVisitedEllie; },
       provinceDetails: function () { return typeof provincesDetailsEllie !== 'undefined' ? provincesDetailsEllie : {}; },
-      countries: function () { return countriesVisitedEllie; },
-      countryDetails: function () { return typeof countriesDetailsEllie !== 'undefined' ? countriesDetailsEllie : {}; }
+      countries:       function () { return countriesVisitedEllie; },
+      countryDetails:  function () { return typeof countriesDetailsEllie !== 'undefined' ? countriesDetailsEllie : {}; }
     },
     {
-      id:      'tilly',
-      name:    'Tilly',
-      color:   '#0898ff',
-      states:  function () { return statesVisitedTilly; },
-      stateDetails: function () { return typeof statesDetailsTilly !== 'undefined' ? statesDetailsTilly : {}; },
-      provinces: function () { return provincesVisitedTilly; },
+      id: 'tilly', name: 'Tilly', color: '#0898ff',
+      states:          function () { return statesVisitedTilly; },
+      stateDetails:    function () { return typeof statesDetailsTilly    !== 'undefined' ? statesDetailsTilly    : {}; },
+      provinces:       function () { return provincesVisitedTilly; },
       provinceDetails: function () { return typeof provincesDetailsTilly !== 'undefined' ? provincesDetailsTilly : {}; },
-      countries: function () { return countriesVisitedTilly; },
-      countryDetails: function () { return typeof countriesDetailsTilly !== 'undefined' ? countriesDetailsTilly : {}; }
+      countries:       function () { return countriesVisitedTilly; },
+      countryDetails:  function () { return typeof countriesDetailsTilly !== 'undefined' ? countriesDetailsTilly : {}; }
     },
     {
-      id:      'poppy',
-      name:    'Poppy',
-      color:   '#d9259a',
-      states:  function () { return statesVisitedPoppy; },
-      stateDetails: function () { return typeof statesDetailsPoppy !== 'undefined' ? statesDetailsPoppy : {}; },
-      provinces: function () { return provincesVisitedPoppy; },
+      id: 'poppy', name: 'Poppy', color: '#d9259a',
+      states:          function () { return statesVisitedPoppy; },
+      stateDetails:    function () { return typeof statesDetailsPoppy    !== 'undefined' ? statesDetailsPoppy    : {}; },
+      provinces:       function () { return provincesVisitedPoppy; },
       provinceDetails: function () { return typeof provincesDetailsPoppy !== 'undefined' ? provincesDetailsPoppy : {}; },
-      countries: function () { return countriesVisitedPoppy; },
-      countryDetails: function () { return typeof countriesDetailsPoppy !== 'undefined' ? countriesDetailsPoppy : {}; }
-    },
-    {
-      id:      'jack',
-      name:    'Jack',
-      color:   '#4A9E2F',
-      family:  false,
-      states:  function () { return typeof statesVisitedJack !== 'undefined' ? statesVisitedJack : {}; },
-      stateDetails: function () { return typeof statesDetailsJack !== 'undefined' ? statesDetailsJack : {}; },
-      provinces: function () { return {}; },
-      provinceDetails: function () { return {}; },
-      countries: function () { return typeof countriesVisitedJack !== 'undefined' ? countriesVisitedJack : {}; },
-      countryDetails: function () { return typeof countriesDetailsJack !== 'undefined' ? countriesDetailsJack : {}; }
-    },
-    {
-      id:      'debbie',
-      name:    'Deb',
-      color:   '#D93025',
-      family:  false,
-      states:  function () { return typeof statesVisitedDebbie !== 'undefined' ? statesVisitedDebbie : {}; },
-      stateDetails: function () { return typeof statesDetailsDebbie !== 'undefined' ? statesDetailsDebbie : {}; },
-      provinces: function () { return {}; },
-      provinceDetails: function () { return {}; },
-      countries: function () { return typeof countriesVisitedDebbie !== 'undefined' ? countriesVisitedDebbie : {}; },
-      countryDetails: function () { return typeof countriesDetailsDebbie !== 'undefined' ? countriesDetailsDebbie : {}; }
+      countries:       function () { return countriesVisitedPoppy; },
+      countryDetails:  function () { return typeof countriesDetailsPoppy !== 'undefined' ? countriesDetailsPoppy : {}; }
     }
   ];
 
-  // ---- Territory codes (excluded from country count) -
-  var TERRITORY_CODES = { 'PR': 1, 'VI': 1, 'SX': 1, 'GU': 1, 'AS': 1, 'MP': 1 };
+  var FAMILY_COLOR = '#E8601A';
 
-  // ---- Canadian territory codes (excluded from province count) -
+  // ---- Territory / province exclusion lists ---------
+  var TERRITORY_CODES       = { 'PR': 1, 'VI': 1, 'SX': 1, 'GU': 1, 'AS': 1, 'MP': 1 };
   var PROVINCE_TERRITORY_CODES = { 'CA-NT': 1, 'CA-NU': 1, 'CA-YT': 1 };
 
-  // ---- Province name lookup (CA-XX → full name) ------
+  // ---- Name lookups ---------------------------------
   var PROVINCE_NAMES = {
-    'CA-AB': 'Alberta',
-    'CA-BC': 'British Columbia',
-    'CA-MB': 'Manitoba',
-    'CA-NB': 'New Brunswick',
-    'CA-NL': 'Newfoundland and Labrador',
-    'CA-NS': 'Nova Scotia',
-    'CA-NT': 'Northwest Territories',
-    'CA-NU': 'Nunavut',
-    'CA-ON': 'Ontario',
-    'CA-PE': 'Prince Edward Island',
-    'CA-QC': 'Québec',
-    'CA-SK': 'Saskatchewan',
-    'CA-YT': 'Yukon'
+    'CA-AB': 'Alberta',      'CA-BC': 'British Columbia', 'CA-MB': 'Manitoba',
+    'CA-NB': 'New Brunswick','CA-NL': 'Newfoundland and Labrador',
+    'CA-NS': 'Nova Scotia',  'CA-NT': 'Northwest Territories',
+    'CA-NU': 'Nunavut',      'CA-ON': 'Ontario', 'CA-PE': 'Prince Edward Island',
+    'CA-QC': 'Québec',       'CA-SK': 'Saskatchewan', 'CA-YT': 'Yukon'
   };
 
-  // ---- State name lookup (US-XX → full name) --------
   var STATE_NAMES = {
     'US-AK': 'Alaska',         'US-AL': 'Alabama',        'US-AR': 'Arkansas',
     'US-AZ': 'Arizona',        'US-CA': 'California',     'US-CO': 'Colorado',
@@ -131,13 +88,10 @@
     'US-WI': 'Wisconsin',      'US-WV': 'West Virginia',  'US-WY': 'Wyoming'
   };
 
-  // ---- Country name + continent lookup ---------------
   var COUNTRY_INFO = {
-    // North America
     'US': { name: 'United States',       continent: 'North America' },
     'CA': { name: 'Canada',              continent: 'North America' },
     'MX': { name: 'Mexico',              continent: 'North America' },
-    // Caribbean
     'BS': { name: 'Bahamas',             continent: 'Caribbean' },
     'CU': { name: 'Cuba',                continent: 'Caribbean' },
     'DO': { name: 'Dominican Republic',  continent: 'Caribbean' },
@@ -148,13 +102,12 @@
     'LC': { name: 'St. Lucia',           continent: 'Caribbean' },
     'AG': { name: 'Antigua & Barbuda',   continent: 'Caribbean' },
     'GD': { name: 'Grenada',             continent: 'Caribbean' },
-    'KN': { name: 'St. Kitts & Nevis',  continent: 'Caribbean' },
+    'KN': { name: 'St. Kitts & Nevis',   continent: 'Caribbean' },
     'DM': { name: 'Dominica',            continent: 'Caribbean' },
     'VC': { name: 'St. Vincent',         continent: 'Caribbean' },
     'PR': { name: 'Puerto Rico',         continent: 'Caribbean' },
     'VI': { name: 'U.S. Virgin Islands', continent: 'Caribbean' },
     'SX': { name: 'Sint Maarten',        continent: 'Caribbean' },
-    // Central America
     'BZ': { name: 'Belize',              continent: 'Central America' },
     'GT': { name: 'Guatemala',           continent: 'Central America' },
     'HN': { name: 'Honduras',            continent: 'Central America' },
@@ -162,7 +115,6 @@
     'NI': { name: 'Nicaragua',           continent: 'Central America' },
     'CR': { name: 'Costa Rica',          continent: 'Central America' },
     'PA': { name: 'Panama',              continent: 'Central America' },
-    // South America
     'CO': { name: 'Colombia',            continent: 'South America' },
     'VE': { name: 'Venezuela',           continent: 'South America' },
     'GY': { name: 'Guyana',              continent: 'South America' },
@@ -175,7 +127,6 @@
     'UY': { name: 'Uruguay',             continent: 'South America' },
     'AR': { name: 'Argentina',           continent: 'South America' },
     'CL': { name: 'Chile',               continent: 'South America' },
-    // Europe
     'GB': { name: 'United Kingdom',      continent: 'Europe' },
     'IE': { name: 'Ireland',             continent: 'Europe' },
     'IS': { name: 'Iceland',             continent: 'Europe' },
@@ -215,7 +166,6 @@
     'BY': { name: 'Belarus',             continent: 'Europe' },
     'MD': { name: 'Moldova',             continent: 'Europe' },
     'RU': { name: 'Russia',              continent: 'Europe' },
-    // Africa
     'MA': { name: 'Morocco',             continent: 'Africa' },
     'EG': { name: 'Egypt',               continent: 'Africa' },
     'GH': { name: 'Ghana',               continent: 'Africa' },
@@ -223,14 +173,12 @@
     'KE': { name: 'Kenya',               continent: 'Africa' },
     'TZ': { name: 'Tanzania',            continent: 'Africa' },
     'ZA': { name: 'South Africa',        continent: 'Africa' },
-    // Middle East
     'TR': { name: 'Turkey',              continent: 'Middle East' },
     'IL': { name: 'Israel',              continent: 'Middle East' },
     'JO': { name: 'Jordan',              continent: 'Middle East' },
     'AE': { name: 'UAE',                 continent: 'Middle East' },
     'SA': { name: 'Saudi Arabia',        continent: 'Middle East' },
     'QA': { name: 'Qatar',               continent: 'Middle East' },
-    // Asia
     'IN': { name: 'India',               continent: 'Asia' },
     'CN': { name: 'China',               continent: 'Asia' },
     'JP': { name: 'Japan',               continent: 'Asia' },
@@ -241,7 +189,6 @@
     'ID': { name: 'Indonesia',           continent: 'Asia' },
     'MY': { name: 'Malaysia',            continent: 'Asia' },
     'SG': { name: 'Singapore',           continent: 'Asia' },
-    // Oceania
     'AU': { name: 'Australia',           continent: 'Oceania' },
     'NZ': { name: 'New Zealand',         continent: 'Oceania' },
     'FJ': { name: 'Fiji',                continent: 'Oceania' },
@@ -255,109 +202,57 @@
     'Europe', 'Africa', 'Middle East', 'Asia', 'Oceania'
   ];
 
-  // ---- Helpers --------------------------------------
+  // ---- Count helpers --------------------------------
 
   function countVisited(data) {
-    return Object.keys(data).reduce(function (sum, key) {
-      return sum + (key !== 'US-DC' && data[key] ? 1 : 0);
+    return Object.keys(data).reduce(function (s, k) {
+      return s + (k !== 'US-DC' && data[k] ? 1 : 0);
     }, 0);
   }
 
   function countCountries(data) {
-    return Object.keys(data).reduce(function (sum, key) {
-      return sum + (data[key] && !TERRITORY_CODES[key] ? 1 : 0);
+    return Object.keys(data).reduce(function (s, k) {
+      return s + (data[k] && !TERRITORY_CODES[k] ? 1 : 0);
     }, 0);
-  }
-
-  function countTerritories(data) {
-    return Object.keys(data).reduce(function (sum, key) {
-      return sum + (data[key] && TERRITORY_CODES[key] ? 1 : 0);
-    }, 0);
-  }
-
-  function countHeatMapCountries(heatData) {
-    return Object.keys(heatData).reduce(function (sum, key) {
-      return sum + (heatData[key] > 0 && !TERRITORY_CODES[key] ? 1 : 0);
-    }, 0);
-  }
-
-  function countHeatMapTerritories(heatData) {
-    return Object.keys(heatData).reduce(function (sum, key) {
-      return sum + (heatData[key] > 0 && TERRITORY_CODES[key] ? 1 : 0);
-    }, 0);
-  }
-
-  function setCountryCount(countId, countries, territories) {
-    var html = '<span id="' + countId + '">' + countries + '</span> countries';
-    if (territories > 0) {
-      var label = territories === 1 ? '1 territory' : territories + ' territories';
-      html += ' <span class="territory-note">+ ' + label + '</span>';
-    }
-    $('#' + countId).closest('.count').html(html);
   }
 
   function countProvinces(data) {
-    return Object.keys(data).reduce(function (sum, key) {
-      return sum + (data[key] && !PROVINCE_TERRITORY_CODES[key] ? 1 : 0);
+    return Object.keys(data).reduce(function (s, k) {
+      return s + (data[k] && !PROVINCE_TERRITORY_CODES[k] ? 1 : 0);
     }, 0);
   }
 
-  function countProvinceTerritories(data) {
-    return Object.keys(data).reduce(function (sum, key) {
-      return sum + (data[key] && PROVINCE_TERRITORY_CODES[key] ? 1 : 0);
+  function countHeatMapVisited(heat) {
+    return Object.keys(heat).reduce(function (s, k) {
+      return s + (k !== 'US-DC' && heat[k] > 0 ? 1 : 0);
     }, 0);
   }
 
-  function countHeatMapProvinces(heatData) {
-    return Object.keys(heatData).reduce(function (sum, key) {
-      return sum + (heatData[key] > 0 && !PROVINCE_TERRITORY_CODES[key] ? 1 : 0);
+  function countHeatMapCountries(heat) {
+    return Object.keys(heat).reduce(function (s, k) {
+      return s + (heat[k] > 0 && !TERRITORY_CODES[k] ? 1 : 0);
     }, 0);
   }
 
-  function setProvinceCount(countId, provinces, territories) {
-    var html = '<span id="' + countId + '">' + provinces + '</span> of 10 provinces';
-    if (territories > 0) {
-      var label = territories === 1 ? '1 territory' : territories + ' territories';
-      html += ' <span class="territory-note">+ ' + label + '</span>';
-    }
-    $('#' + countId).closest('.count').html(html);
+  function countHeatMapProvinces(heat) {
+    return Object.keys(heat).reduce(function (s, k) {
+      return s + (heat[k] > 0 && !PROVINCE_TERRITORY_CODES[k] ? 1 : 0);
+    }, 0);
   }
 
-  // Sum values across all datasets (heat map: 0–N where N = number of people)
-  function buildHeatMap(dataSets) {
+  function buildHeatMap(datasets) {
     var combined = {};
-    dataSets.forEach(function (data) {
-      Object.keys(data).forEach(function (key) {
-        combined[key] = (combined[key] || 0) + (data[key] ? 1 : 0);
+    datasets.forEach(function (data) {
+      Object.keys(data).forEach(function (k) {
+        combined[k] = (combined[k] || 0) + (data[k] ? 1 : 0);
       });
     });
     return combined;
   }
 
-  function countHeatMapVisited(heatData) {
-    return Object.keys(heatData).reduce(function (sum, key) {
-      return sum + (key !== 'US-DC' && heatData[key] > 0 ? 1 : 0);
-    }, 0);
-  }
-
-  // Debounce helper
   function debounce(fn, delay) {
-    var timer;
-    return function () {
-      clearTimeout(timer);
-      timer = setTimeout(fn, delay);
-    };
-  }
-
-  // Build tooltip content with optional details
-  function buildTip(regionName, details, code) {
-    var detail = details[code];
-    var tip = '<strong>' + regionName + '</strong>';
-    if (detail) {
-      if (detail.date)  tip += '<br><span style="opacity:.8">First visited: ' + detail.date + '</span>';
-      if (detail.notes) tip += '<br><em style="opacity:.7">' + detail.notes + '</em>';
-    }
-    return tip;
+    var t;
+    return function () { clearTimeout(t); t = setTimeout(fn, delay); };
   }
 
   // ---- List builders --------------------------------
@@ -372,392 +267,317 @@
 
   function buildStateListHTML(data, details) {
     details = details || {};
-    var visited = Object.keys(data).filter(function (k) { return data[k]; });
-    if (visited.length === 0) return '';
+    var visited      = Object.keys(data).filter(function (k) { return data[k]; });
+    var states       = visited.filter(function (k) { return k !== 'US-DC'; });
+    var district     = visited.filter(function (k) { return k === 'US-DC'; });
+    var unvisited    = Object.keys(STATE_NAMES).filter(function (k) { return k !== 'US-DC' && !data[k]; });
 
-    var states   = visited.filter(function (k) { return k !== 'US-DC'; });
-    var districts = visited.filter(function (k) { return k === 'US-DC'; });
-
-    function byName(a, b) {
-      return (STATE_NAMES[a] || a).localeCompare(STATE_NAMES[b] || b);
-    }
+    function byName(a, b) { return (STATE_NAMES[a] || a).localeCompare(STATE_NAMES[b] || b); }
     states.sort(byName);
+    unvisited.sort(byName);
 
-    var html = '<div class="visit-list"><div class="visit-chips">';
-    states.forEach(function (code) {
-      var tip = chipTooltip(details[code]);
-      html += '<span class="visit-chip"' + tip + '>' + (STATE_NAMES[code] || code) + '</span>';
-    });
-    html += '</div>';
+    if (!states.length && !district.length && !unvisited.length) return '';
 
-    if (districts.length > 0) {
-      html += '<div class="continent-group" style="margin-top:0.5rem">';
-      html += '<div class="continent-label">Federal District</div>';
+    var html = '<div class="visit-list">';
+    if (states.length) {
       html += '<div class="visit-chips">';
-      districts.forEach(function (code) {
-        var tip = chipTooltip(details[code]);
-        html += '<span class="visit-chip territory-chip"' + tip + '>' + (STATE_NAMES[code] || code) + '</span>';
+      states.forEach(function (k) {
+        html += '<span class="visit-chip"' + chipTooltip(details[k]) + '>' + (STATE_NAMES[k] || k) + '</span>';
+      });
+      html += '</div>';
+    }
+    if (unvisited.length) {
+      html += '<div class="continent-group" style="margin-top:0.75rem"><div class="continent-label">Not Yet Visited</div><div class="visit-chips">';
+      unvisited.forEach(function (k) {
+        html += '<span class="visit-chip visit-chip--unvisited">' + (STATE_NAMES[k] || k) + '</span>';
       });
       html += '</div></div>';
     }
-
-    html += '</div>';
-    return html;
+    if (district.length) {
+      html += '<div class="continent-group" style="margin-top:0.5rem"><div class="continent-label">Federal District</div><div class="visit-chips">';
+      district.forEach(function (k) {
+        html += '<span class="visit-chip territory-chip"' + chipTooltip(details[k]) + '>' + (STATE_NAMES[k] || k) + '</span>';
+      });
+      html += '</div></div>';
+    }
+    return html + '</div>';
   }
 
   function buildProvinceListHTML(data, details) {
     details = details || {};
-    var visited = Object.keys(data).filter(function (k) { return data[k]; });
-    if (visited.length === 0) return '';
+    var visited          = Object.keys(data).filter(function (k) { return data[k]; });
+    var provinces        = visited.filter(function (k) { return !PROVINCE_TERRITORY_CODES[k]; });
+    var territories      = visited.filter(function (k) { return  PROVINCE_TERRITORY_CODES[k]; });
+    var allProvKeys      = Object.keys(PROVINCE_NAMES);
+    var unvisitedProv    = allProvKeys.filter(function (k) { return !PROVINCE_TERRITORY_CODES[k] && !data[k]; });
+    var unvisitedTerr    = allProvKeys.filter(function (k) { return  PROVINCE_TERRITORY_CODES[k] && !data[k]; });
 
-    var provinces   = visited.filter(function (k) { return !PROVINCE_TERRITORY_CODES[k]; });
-    var territories = visited.filter(function (k) { return PROVINCE_TERRITORY_CODES[k]; });
+    function byName(a, b) { return (PROVINCE_NAMES[a] || a).localeCompare(PROVINCE_NAMES[b] || b); }
+    provinces.sort(byName); territories.sort(byName);
+    unvisitedProv.sort(byName); unvisitedTerr.sort(byName);
 
-    function byName(a, b) {
-      return (PROVINCE_NAMES[a] || a).localeCompare(PROVINCE_NAMES[b] || b);
-    }
-    provinces.sort(byName);
-    territories.sort(byName);
+    if (!provinces.length && !territories.length && !unvisitedProv.length && !unvisitedTerr.length) return '';
 
-    var html = '<div class="visit-list"><div class="visit-chips">';
-    provinces.forEach(function (code) {
-      var tip = chipTooltip(details[code]);
-      html += '<span class="visit-chip"' + tip + '>' + (PROVINCE_NAMES[code] || code) + '</span>';
-    });
-    html += '</div>';
-
-    if (territories.length > 0) {
-      html += '<div class="continent-group" style="margin-top:0.5rem">';
-      html += '<div class="continent-label">Territories</div>';
+    var html = '<div class="visit-list">';
+    if (provinces.length) {
       html += '<div class="visit-chips">';
-      territories.forEach(function (code) {
-        var tip = chipTooltip(details[code]);
-        html += '<span class="visit-chip territory-chip"' + tip + '>' + (PROVINCE_NAMES[code] || code) + '</span>';
+      provinces.forEach(function (k) {
+        html += '<span class="visit-chip"' + chipTooltip(details[k]) + '>' + (PROVINCE_NAMES[k] || k) + '</span>';
+      });
+      html += '</div>';
+    }
+    if (unvisitedProv.length) {
+      html += '<div class="continent-group" style="margin-top:0.75rem"><div class="continent-label">Not Yet Visited</div><div class="visit-chips">';
+      unvisitedProv.forEach(function (k) {
+        html += '<span class="visit-chip visit-chip--unvisited">' + (PROVINCE_NAMES[k] || k) + '</span>';
       });
       html += '</div></div>';
     }
-
-    html += '</div>';
-    return html;
+    if (territories.length || unvisitedTerr.length) {
+      html += '<div class="continent-group" style="margin-top:0.5rem"><div class="continent-label">Territories</div><div class="visit-chips">';
+      territories.forEach(function (k) {
+        html += '<span class="visit-chip territory-chip"' + chipTooltip(details[k]) + '>' + (PROVINCE_NAMES[k] || k) + '</span>';
+      });
+      unvisitedTerr.forEach(function (k) {
+        html += '<span class="visit-chip visit-chip--unvisited">' + (PROVINCE_NAMES[k] || k) + '</span>';
+      });
+      html += '</div></div>';
+    }
+    return html + '</div>';
   }
 
   function buildCountryListHTML(data, details) {
     details = details || {};
     var visited = Object.keys(data).filter(function (k) { return data[k]; });
-    if (visited.length === 0) return '';
+    if (!visited.length) return '';
 
     var groups = {};
-    visited.forEach(function (code) {
-      var info      = COUNTRY_INFO[code];
-      var continent = info ? info.continent : 'Other';
+    visited.forEach(function (k) {
+      var continent = (COUNTRY_INFO[k] || {}).continent || 'Other';
       if (!groups[continent]) groups[continent] = [];
-      groups[continent].push(code);
+      groups[continent].push(k);
     });
-
-    Object.keys(groups).forEach(function (continent) {
-      groups[continent].sort(function (a, b) {
-        var na = COUNTRY_INFO[a] ? COUNTRY_INFO[a].name : a;
-        var nb = COUNTRY_INFO[b] ? COUNTRY_INFO[b].name : b;
-        return na.localeCompare(nb);
+    Object.keys(groups).forEach(function (c) {
+      groups[c].sort(function (a, b) {
+        return ((COUNTRY_INFO[a] || {}).name || a).localeCompare((COUNTRY_INFO[b] || {}).name || b);
       });
     });
 
-    var order = CONTINENT_ORDER.concat(['Other']);
-    var html  = '<div class="visit-list">';
-    order.forEach(function (continent) {
-      if (!groups[continent]) return;
-      html += '<div class="continent-group">';
-      html += '<div class="continent-label">' + continent + '</div>';
-      html += '<div class="visit-chips">';
-      groups[continent].forEach(function (code) {
-        var info        = COUNTRY_INFO[code];
-        var name        = info ? info.name : code;
-        var isTerritory = !!TERRITORY_CODES[code];
-        var cls         = isTerritory ? ' territory-chip' : '';
-        var tip         = chipTooltip(details[code]);
-        html += '<span class="visit-chip' + cls + '"' + tip + '>' + name + '</span>';
+    var html = '<div class="visit-list">';
+    CONTINENT_ORDER.concat(['Other']).forEach(function (c) {
+      if (!groups[c]) return;
+      html += '<div class="continent-group"><div class="continent-label">' + c + '</div><div class="visit-chips">';
+      groups[c].forEach(function (k) {
+        var name = (COUNTRY_INFO[k] || {}).name || k;
+        var cls  = TERRITORY_CODES[k] ? ' territory-chip' : '';
+        html += '<span class="visit-chip' + cls + '"' + chipTooltip(details[k]) + '>' + name + '</span>';
       });
       html += '</div></div>';
     });
-    html += '<div class="list-legend">';
-    html += '<span class="list-legend-label">Key:</span>';
+    html += '<div class="list-legend"><span class="list-legend-label">Key:</span>';
     html += '<span class="visit-chip">Country</span>';
-    html += '<span class="visit-chip territory-chip" title="Territory">Territory</span>';
-    html += '</div>';
-    html += '</div>';
-    return html;
+    html += '<span class="visit-chip territory-chip">Territory</span></div>';
+    return html + '</div>';
   }
 
-  function injectList(mapId, listHTML) {
+  function buildTip(regionName, details, code) {
+    var detail = details[code];
+    var tip = '<strong>' + regionName + '</strong>';
+    if (detail) {
+      if (detail.date)  tip += '<br><span style="opacity:.8">First visited: ' + detail.date + '</span>';
+      if (detail.notes) tip += '<br><em style="opacity:.7">' + detail.notes + '</em>';
+    }
+    return tip;
+  }
+
+  // ---- Pre-computed family data ---------------------
+  var computed = {};
+
+  function computeAllData() {
+    var stateSets   = PEOPLE.map(function (p) { return p.states();    });
+    var provSets    = PEOPLE.map(function (p) { return p.provinces(); });
+    var countrySets = PEOPLE.map(function (p) { return p.countries(); });
+
+    computed.statesHeat  = buildHeatMap(stateSets);
+    computed.provHeat    = buildHeatMap(provSets);
+    computed.countryHeat = buildHeatMap(countrySets);
+
+    computed.countryBinary = {};
+    Object.keys(computed.countryHeat).forEach(function (k) {
+      computed.countryBinary[k] = computed.countryHeat[k] > 0 ? 1 : 0;
+    });
+  }
+
+  // ---- Count text per tab + person ------------------
+  function getCount(tab, personId) {
+    if (personId === 'family') {
+      if (tab === 'states')    return countHeatMapVisited(computed.statesHeat)    + ' / 50';
+      if (tab === 'provinces') return countHeatMapProvinces(computed.provHeat)    + ' / 10';
+      if (tab === 'countries') return String(countHeatMapCountries(computed.countryHeat));
+    }
+    var p = findPerson(personId);
+    if (!p) return '';
+    if (tab === 'states')    return countVisited(p.states())    + ' / 50';
+    if (tab === 'provinces') return countProvinces(p.provinces()) + ' / 10';
+    if (tab === 'countries') return String(countCountries(p.countries()));
+    return '';
+  }
+
+  function findPerson(id) {
+    for (var i = 0; i < PEOPLE.length; i++) { if (PEOPLE[i].id === id) return PEOPLE[i]; }
+    return null;
+  }
+
+  function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+  // ---- Build filter row + map card (DOM) -----------
+
+  function buildFilterRow(tab) {
+    var $row = $('#' + tab + 'Filters');
+
+    var $all = $('<button class="person-filter active" data-tab="' + tab + '" data-person="family"></button>');
+    $all[0].style.setProperty('--filter-color', FAMILY_COLOR);
+    $all.append('<span class="filter-name">All</span>');
+    $all.append('<span class="filter-count">' + getCount(tab, 'family') + '</span>');
+    $row.append($all);
+
+    PEOPLE.forEach(function (p) {
+      var $btn = $('<button class="person-filter" data-tab="' + tab + '" data-person="' + p.id + '"></button>');
+      $btn[0].style.setProperty('--filter-color', p.color);
+      $btn.append('<span class="filter-name">' + p.name + '</span>');
+      $btn.append('<span class="filter-count">' + getCount(tab, p.id) + '</span>');
+      $row.append($btn);
+    });
+  }
+
+  function buildMapCard(tab) {
+    var $card    = $('#' + tab + 'MapCard');
+    var mapClass = tab === 'states' ? 'us-map' : tab === 'provinces' ? 'ca-map' : 'world-map';
+
+    // Family "All" view — active by default
+    $card.append(
+      '<div class="map-view active" data-view="family">' +
+        '<div class="map-container ' + mapClass + '">' +
+          '<div id="' + tab + 'MapFamily" class="map"></div>' +
+        '</div>' +
+      '</div>'
+    );
+
+    PEOPLE.forEach(function (p) {
+      $card.append(
+        '<div class="map-view" data-view="' + p.id + '">' +
+          '<div class="map-container ' + mapClass + '">' +
+            '<div id="' + tab + 'Map' + cap(p.id) + '" class="map"></div>' +
+          '</div>' +
+        '</div>'
+      );
+    });
+  }
+
+  // ---- Map instances + lazy init -------------------
+  var mapInst  = {};  // keyed "tab-personId"
+  var mapReady = {};
+
+  function injectList(mapElId, listHTML) {
     if (!listHTML) return;
-    var $container = $(mapId).closest('.map-container');
+    var $container = $(mapElId).closest('.map-container');
+    if ($container.next('.list-toggle').length) return;
     $('<button class="list-toggle" aria-expanded="false">Show list &#9662;</button>').insertAfter($container);
     $(listHTML).insertAfter($container.next('.list-toggle'));
   }
 
-  // ---- Map instances (for resize) -------------------
-  var mapInstances = [];
+  function initMap(tab, personId) {
+    var key = tab + '-' + personId;
+    if (mapReady[key]) {
+      if (mapInst[key]) { try { mapInst[key].updateSize(); } catch (e) {} }
+      return;
+    }
+    mapReady[key] = true;
 
-  function registerMap(selector) {
-    var obj = $(selector).vectorMap('get', 'mapObject');
-    if (obj) mapInstances.push(obj);
-  }
+    var mapType = tab === 'states' ? 'us_lcc' : tab === 'provinces' ? 'ca_lcc' : 'world_mill_en';
+    var mapElId = '#' + tab + 'Map' + (personId === 'family' ? 'Family' : cap(personId));
+    if (!$(mapElId).length) return;
 
-  // ---- Init States Maps -----------------------------
-  function initStateMaps() {
-    var stateSets = people.filter(function (p) { return p.family !== false; }).map(function (p) { return p.states(); });
-    var familyHeat = buildHeatMap(stateSets);
-    var familyCount = countHeatMapVisited(familyHeat);
+    if (personId === 'family') {
+      var heat    = tab === 'states'    ? computed.statesHeat
+                  : tab === 'provinces' ? computed.provHeat
+                  :                       computed.countryBinary;
+      var tipHeat = tab === 'countries' ? computed.countryHeat : heat;
 
-    // Family combined heat map (only if element exists)
-    if ($('#familyStatesMap').length) {
-      $('#familyStatesTotal').text(familyCount);
-      $('#familyStatesMap').vectorMap({
-        map: 'us_lcc',
+      $(mapElId).vectorMap({
+        map: mapType,
         backgroundColor: '#1a2e3b',
-        series: {
-          regions: [{
-            values: familyHeat,
-            scale: ['#f0f2f5', '#E8601A'],
-            normalizeFunction: 'linear'
-          }]
-        },
+        series: { regions: [{ values: heat, scale: ['#f0f2f5', '#E8601A'], normalizeFunction: 'linear' }] },
         onRegionTipShow: function (_e, el, code) {
-          var count = familyHeat[code] || 0;
-          var label = count === 1 ? '1 family member' : count + ' family members';
+          var n = (tipHeat[code] || 0);
+          var label = n === 1 ? '1 family member' : n + ' family members';
           var tip = '<strong>' + el.html() + '</strong>';
-          if (count > 0) tip += '<br><span style="opacity:.8">Visited by ' + label + '</span>';
+          if (n > 0) tip += '<br><span style="opacity:.8">Visited by ' + label + '</span>';
           el.html(tip);
         }
       });
-      registerMap('#familyStatesMap');
+
+      mapInst[key] = $(mapElId).vectorMap('get', 'mapObject');
+
+      // Build chip list from heat (binary: any-member visited = 1)
+      var rawHeat = tab === 'states' ? computed.statesHeat : tab === 'provinces' ? computed.provHeat : computed.countryHeat;
+      var bin = {};
+      Object.keys(rawHeat).forEach(function (k) { bin[k] = rawHeat[k] > 0 ? 1 : 0; });
+      var listHTML = tab === 'states'    ? buildStateListHTML(bin, {})
+                   : tab === 'provinces' ? buildProvinceListHTML(bin, {})
+                   :                       buildCountryListHTML(bin, {});
+      injectList(mapElId, listHTML);
+
+    } else {
+      var p = findPerson(personId);
+      if (!p) return;
+
+      var mapData, details, listHTML2;
+      if (tab === 'states') {
+        mapData   = p.states();
+        details   = p.stateDetails();
+        listHTML2 = buildStateListHTML(mapData, details);
+      } else if (tab === 'provinces') {
+        mapData = {};
+        Object.keys(p.provinces()).forEach(function (k) { if (p.provinces()[k]) mapData[k] = p.provinces()[k]; });
+        details   = p.provinceDetails();
+        listHTML2 = buildProvinceListHTML(p.provinces(), details);
+      } else {
+        mapData   = p.countries();
+        details   = p.countryDetails();
+        listHTML2 = buildCountryListHTML(mapData, details);
+      }
+
+      $(mapElId).vectorMap({
+        map: mapType,
+        backgroundColor: '#1a2e3b',
+        series: { regions: [{ values: mapData, scale: ['#d0d4d8', p.color], normalizeFunction: 'polynomial' }] },
+        onRegionTipShow: function (_e, el, code) { el.html(buildTip(el.html(), details, code)); }
+      });
+
+      mapInst[key] = $(mapElId).vectorMap('get', 'mapObject');
+      injectList(mapElId, listHTML2);
     }
+  }
 
-    // Per-person state travels
-    people.forEach(function (person) {
-      var data    = person.states();
-      var details = person.stateDetails();
-      var count   = countVisited(data);
-      var mapId   = '#' + person.id + 'StatesMap';
-      var countId = '#' + person.id + 'StatesTotal';
+  // ---- Filter clicks --------------------------------
+  function initFilters() {
+    $(document).on('click', '.person-filter', function () {
+      var $btn   = $(this);
+      var tab    = $btn.data('tab');
+      var person = $btn.data('person');
 
-      if (!$(mapId).length) return;
+      $('#' + tab + 'Filters .person-filter').removeClass('active');
+      $btn.addClass('active');
 
-      $(countId).text(count);
-      $(mapId).vectorMap({
-        map: 'us_lcc',
-        backgroundColor: '#1a2e3b',
-        series: {
-          regions: [{
-            values: data,
-            scale: ['#d0d4d8', person.color],
-            normalizeFunction: 'polynomial'
-          }]
-        },
-        onRegionTipShow: function (e, el, code) {
-          el.html(buildTip(el.html(), details, code));
-        }
-      });
-      registerMap(mapId);
-      injectList(mapId, buildStateListHTML(data, details));
+      $('#' + tab + ' .map-view').removeClass('active');
+      $('#' + tab + ' .map-view[data-view="' + person + '"]').addClass('active');
+
+      setTimeout(function () { initMap(tab, person); }, 0);
     });
   }
 
-  // ---- Init Province Maps ---------------------------
-  function initProvinceMaps() {
-    var provinceSets = people.filter(function (p) { return p.family !== false; }).map(function (p) { return p.provinces(); });
-    var familyHeat = buildHeatMap(provinceSets);
-    var familyCount = countHeatMapProvinces(familyHeat);
-
-    if ($('#familyProvincesMap').length) {
-      $('#familyProvincesTotal').text(familyCount);
-      $('#familyProvincesMap').vectorMap({
-        map: 'ca_lcc',
-        backgroundColor: '#1a2e3b',
-        series: {
-          regions: [{
-            values: familyHeat,
-            scale: ['#f0f2f5', '#E8601A'],
-            normalizeFunction: 'linear'
-          }]
-        },
-        onRegionTipShow: function (_e, el, code) {
-          var count = familyHeat[code] || 0;
-          var label = count === 1 ? '1 family member' : count + ' family members';
-          var tip = '<strong>' + el.html() + '</strong>';
-          if (count > 0) tip += '<br><span style="opacity:.8">Visited by ' + label + '</span>';
-          el.html(tip);
-        }
-      });
-      registerMap('#familyProvincesMap');
-    }
-
-    people.forEach(function (person) {
-      var data       = person.provinces();
-      var details    = person.provinceDetails();
-      var count      = countProvinces(data);
-      var territories = countProvinceTerritories(data);
-      var mapId      = '#' + person.id + 'ProvincesMap';
-      var countId    = person.id + 'ProvincesTotal';
-
-      if (!$(mapId).length) return;
-
-      setProvinceCount(countId, count, territories);
-      var visitedData = {};
-      Object.keys(data).forEach(function (k) { if (data[k]) visitedData[k] = data[k]; });
-      $(mapId).vectorMap({
-        map: 'ca_lcc',
-        backgroundColor: '#1a2e3b',
-        series: {
-          regions: [{
-            values: visitedData,
-            scale: ['#d0d4d8', person.color],
-            normalizeFunction: 'polynomial'
-          }]
-        },
-        onRegionTipShow: function (e, el, code) {
-          el.html(buildTip(el.html(), details, code));
-        }
-      });
-      registerMap(mapId);
-      injectList(mapId, buildProvinceListHTML(data, details));
-    });
-  }
-
-  // ---- Init Country Maps ----------------------------
-  function initCountryMaps() {
-    var countrySets = people.filter(function (p) { return p.family !== false; }).map(function (p) { return p.countries(); });
-
-    // Merge all keys across all datasets for accurate heat map
-    var allKeys = {};
-    countrySets.forEach(function (data) {
-      Object.keys(data).forEach(function (k) { allKeys[k] = true; });
-    });
-
-    // Build heat map — only keys that appear in at least one person's data
-    var familyHeat = buildHeatMap(countrySets);
-    var familyCount = countHeatMapCountries(familyHeat);
-    var familyTerritories = countHeatMapTerritories(familyHeat);
-
-    // Family combined map — binary (visited or not)
-    var familyBinary = {};
-    Object.keys(familyHeat).forEach(function (k) {
-      familyBinary[k] = familyHeat[k] > 0 ? 1 : 0;
-    });
-
-    // Family combined map (only if element exists)
-    if ($('#familyCountriesMap').length) {
-      setCountryCount('familyCountriesTotal', familyCount, familyTerritories);
-      $('#familyCountriesMap').vectorMap({
-        map: 'world_mill_en',
-        backgroundColor: '#1a2e3b',
-        series: {
-          regions: [{
-            values: familyBinary,
-            scale: ['#f0f2f5', '#E8601A'],
-            normalizeFunction: 'linear'
-          }]
-        },
-        onRegionTipShow: function (_e, el, code) {
-          var count = familyHeat[code] || 0;
-          var label = count === 1 ? '1 family member' : count + ' family members';
-          var tip = '<strong>' + el.html() + '</strong>';
-          if (count > 0) tip += '<br><span style="opacity:.8">Visited by ' + label + '</span>';
-          el.html(tip);
-        }
-      });
-      registerMap('#familyCountriesMap');
-    }
-
-    // Per-person country travels
-    people.forEach(function (person) {
-      var data        = person.countries();
-      var details     = person.countryDetails();
-      var countries   = countCountries(data);
-      var territories = countTerritories(data);
-      var mapId       = '#' + person.id + 'CountriesMap';
-      var countId     = person.id + 'CountriesTotal';
-
-      if (!$(mapId).length) return;
-
-      setCountryCount(countId, countries, territories);
-      $(mapId).vectorMap({
-        map: 'world_mill_en',
-        backgroundColor: '#1a2e3b',
-        series: {
-          regions: [{
-            values: data,
-            scale: ['#d0d4d8', person.color],
-            normalizeFunction: 'polynomial'
-          }]
-        },
-        onRegionTipShow: function (e, el, code) {
-          el.html(buildTip(el.html(), details, code));
-        }
-      });
-      registerMap(mapId);
-      injectList(mapId, buildCountryListHTML(data, details));
-    });
-  }
-
-  // ---- Tab Switching --------------------------------
-  function initTabs() {
-    $('.tab-btn').on('click', function () {
-      var target = $(this).data('tab');
-      $('.tab-btn').removeClass('active');
-      $(this).addClass('active');
-      $('.tab-section').removeClass('active');
-      $('#' + target).addClass('active');
-
-      // Trigger resize so newly-visible travels render at correct size
-      setTimeout(function () {
-        mapInstances.forEach(function (m) {
-          try { m.updateSize(); } catch (e) {}
-        });
-      }, 50);
-    });
-  }
-
-  // ---- Window Resize --------------------------------
-  function initResize() {
-    $(window).on('resize', debounce(function () {
-      mapInstances.forEach(function (m) {
-        try { m.updateSize(); } catch (e) {}
-      });
-    }, 150));
-  }
-
-  // ---- Expand / Collapse ----------------------------
-  var EXPAND_ICON   = '<svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><path d="M1 4V1h3M6 1h3v3M9 6v3H6M4 9H1V6"/><path d="M1 1l8 8M9 1L1 9" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>';
-  var COLLAPSE_ICON = '<svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><path d="M4 1v3H1M6 4h3V1M6 9V6h3M1 6h3v3" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>';
-
-  function initExpand() {
-    // Inject a button into every person card
-    $('.person-card').each(function () {
-      $('<button class="expand-btn" title="Expand map" aria-label="Expand map"></button>')
-        .html(EXPAND_ICON)
-        .appendTo(this);
-    });
-
-    $(document).on('click', '.expand-btn', function () {
-      var $card = $(this).closest('.person-card');
-      var expanding = !$card.hasClass('expanded');
-
-      $card.toggleClass('expanded', expanding);
-      $(this)
-        .attr('title', expanding ? 'Collapse map' : 'Expand map')
-        .html(expanding ? COLLAPSE_ICON : EXPAND_ICON);
-
-      // Redraw all travels after the layout shift settles
-      setTimeout(function () {
-        mapInstances.forEach(function (m) {
-          try { m.updateSize(); } catch (e) {}
-        });
-      }, 50);
-    });
-  }
-
-  // ---- List Toggle ----------------------------------
+  // ---- List toggles ---------------------------------
   function initListToggles() {
     $(document).on('click', '.list-toggle', function () {
       var $btn  = $(this);
@@ -769,17 +589,32 @@
     });
   }
 
+  // ---- Window resize --------------------------------
+  function initResize() {
+    $(window).on('resize', debounce(function () {
+      Object.keys(mapInst).forEach(function (key) {
+        if (mapInst[key]) { try { mapInst[key].updateSize(); } catch (e) {} }
+      });
+    }, 150));
+  }
+
   // ---- Boot -----------------------------------------
   $(document).ready(function () {
-    initStateMaps();
-    initProvinceMaps();
-    initCountryMaps();
-    initTabs();
-    initResize();
-    initExpand();
-    initListToggles();
+    computeAllData();
 
-    // Update footer year
+    ['states', 'provinces', 'countries'].forEach(function (tab) {
+      buildFilterRow(tab);
+      buildMapCard(tab);
+    });
+
+    initMap('states', 'family');
+    setTimeout(function () { initMap('provinces', 'family'); }, 50);
+    setTimeout(function () { initMap('countries', 'family'); }, 100);
+
+    initFilters();
+    initListToggles();
+    initResize();
+
     var yearEl = document.getElementById('currentYear');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
   });
