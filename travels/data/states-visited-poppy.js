@@ -11,7 +11,7 @@ var statesVisitedPoppy = {
 	"US-FL": 1,
 	"US-GA": 0,
 	"US-HI": 0,
-	"US-IA": 0,
+	"US-IA": 1,
 	"US-ID": 0,
 	"US-IL": 1,
 	"US-IN": 1,
@@ -57,5 +57,6 @@ var statesDetailsPoppy = {
 	"US-AR": { date: "2026-03-14", notes: "Savannah Bananas baseball game at the Superdome" },
 	"US-LA": { date: "2026-03-14", notes: "Savannah Bananas baseball game at the Superdome" },
 	"US-MS": { date: "2026-03-14", notes: "Savannah Bananas baseball game at the Superdome" },
- 	"US-TX": { date: "2026-03-16", notes: "Texarkana" }
+ 	"US-TX": { date: "2026-03-16", notes: "Texarkana" },
+	"US-IA": { date: "2026-06-20", notes: "Quad Cities River Bandits game at Modern Woodmen Park" }
 };
