@@ -6,9 +6,9 @@
 
   // ---- People config --------------------------------
   var PEOPLE = [
-    { id: 'josh',  name: 'Josh',  color: '#00AC4B', data: function () { return turkeysHarvestedJosh;  } },
-    { id: 'sam',   name: 'Sam',   color: '#662684', data: function () { return turkeysHarvestedSam;   } },
-    { id: 'tilly', name: 'Tilly', color: '#0898ff', data: function () { return turkeysHarvestedTilly; } }
+    { id: 'josh',  name: 'Josh',  color: '#00AC4B', data: function () { return turkeysHarvestedJosh;  }, photos: function () { return turkeyPhotosJosh;  } },
+    { id: 'sam',   name: 'Sam',   color: '#662684', data: function () { return turkeysHarvestedSam;   }, photos: function () { return turkeyPhotosSam;   } },
+    { id: 'tilly', name: 'Tilly', color: '#0898ff', data: function () { return turkeysHarvestedTilly; }, photos: function () { return turkeyPhotosTilly; } }
   ];
 
   var FAMILY_COLOR = '#E8601A';
@@ -55,6 +55,8 @@
     return function () { clearTimeout(t); t = setTimeout(fn, delay); };
   }
 
+  function stateSort(a, b) { return (STATE_NAMES[a] || a).localeCompare(STATE_NAMES[b] || b); }
+
   // ---- List builder ---------------------------------
 
   function buildTurkeyListHTML(data) {
@@ -69,9 +71,8 @@
 
     if (!harvested.length && !hunted.length) return '';
 
-    function byName(a, b) { return (STATE_NAMES[a] || a).localeCompare(STATE_NAMES[b] || b); }
-    harvested.sort(byName);
-    hunted.sort(byName);
+    harvested.sort(stateSort);
+    hunted.sort(stateSort);
 
     var html = '<div class="visit-list">';
 
@@ -226,6 +227,172 @@
     }
   }
 
+  // ---- Gallery builder ------------------------------
+
+  function buildPersonGalleryHTML(person, showHeader) {
+    var photos = person.photos ? person.photos() : {};
+    var codes  = Object.keys(photos).filter(function (k) { return photos[k] && photos[k].length; });
+    if (!codes.length) return '';
+
+    codes.sort(stateSort);
+
+    var html = '<div class="person-gallery" data-person="' + person.id + '">';
+
+    if (showHeader) {
+      html += '<div class="person-gallery-header" style="--person-color:' + person.color + '">' + person.name + '</div>';
+    }
+
+    html += '<div class="photo-grid">';
+    codes.forEach(function (code) {
+      var stateName = STATE_NAMES[code] || code;
+      photos[code].forEach(function (src) {
+        html += '<div class="photo-item">' +
+                '<img class="photo-thumb" src="' + src + '" ' +
+                'data-person="' + person.id + '" data-src="' + src + '" ' +
+                'alt="' + person.name + ' – ' + stateName + '" loading="lazy">' +
+                '<div class="photo-caption">' + stateName + '</div>' +
+                '</div>';
+      });
+    });
+    html += '</div>';
+
+    html += '</div>';
+    return html;
+  }
+
+  function buildFamilyGalleryHTML() {
+    var html = '<div class="family-gallery">';
+    PEOPLE.forEach(function (p) {
+      var photos = p.photos ? p.photos() : {};
+      var codes  = Object.keys(photos).filter(function (k) { return photos[k] && photos[k].length; });
+      if (!codes.length) return;
+      codes.sort(stateSort);
+
+      var totalPhotos = 0;
+      codes.forEach(function (k) { totalPhotos += photos[k].length; });
+
+      var firstCode = codes[0];
+      var firstSrc  = photos[firstCode][0];
+      var stateName = STATE_NAMES[firstCode] || firstCode;
+
+      html += '<div class="family-person-col">' +
+              '<div class="person-gallery-header" style="--person-color:' + p.color + '">' + p.name + '</div>' +
+              '<div class="photo-item">' +
+              '<img class="photo-thumb" src="' + firstSrc + '" ' +
+              'data-person="' + p.id + '" data-src="' + firstSrc + '" ' +
+              'alt="' + p.name + '" loading="lazy">' +
+              '<div class="photo-caption">' + stateName + '</div>';
+
+      if (totalPhotos > 1) {
+        html += '<div class="photo-count-badge">' + totalPhotos + ' photos</div>';
+      }
+
+      html += '</div></div>';
+    });
+    return html + '</div>';
+  }
+
+  function buildGallery() {
+    var $container = $('<div class="photos-gallery-card"></div>');
+
+    // "All" view — one featured photo per person
+    $container.append(
+      '<div class="gallery-view active" data-view="family">' +
+      buildFamilyGalleryHTML() +
+      '</div>'
+    );
+
+    // Per-person views — full 3-column grid
+    PEOPLE.forEach(function (p) {
+      $container.append(
+        '<div class="gallery-view" data-view="' + p.id + '">' +
+        buildPersonGalleryHTML(p, false) +
+        '</div>'
+      );
+    });
+
+    $('#photosGallery').append($container);
+  }
+
+  // ---- Lightbox -------------------------------------
+  var lbPhotos = [];
+  var lbIndex  = 0;
+
+  function buildFlatPhotoList(person) {
+    var photos = person.photos ? person.photos() : {};
+    var codes  = Object.keys(photos).sort(stateSort);
+    var list   = [];
+    codes.forEach(function (code) {
+      (photos[code] || []).forEach(function (src) {
+        list.push({ src: src, caption: (STATE_NAMES[code] || code) + ' — ' + person.name });
+      });
+    });
+    return list;
+  }
+
+  function showLightboxPhoto() {
+    var item = lbPhotos[lbIndex];
+    if (!item) return;
+    $('#lbImg').attr('src', item.src).attr('alt', item.caption);
+    $('#lbCaption').text(item.caption);
+    $('#lbPrev').css('visibility', lbIndex > 0 ? 'visible' : 'hidden');
+    $('#lbNext').css('visibility', lbIndex < lbPhotos.length - 1 ? 'visible' : 'hidden');
+  }
+
+  function openLightbox(personId, src) {
+    var p = findPerson(personId);
+    if (!p) return;
+    lbPhotos = buildFlatPhotoList(p);
+    lbIndex  = 0;
+    for (var i = 0; i < lbPhotos.length; i++) {
+      if (lbPhotos[i].src === src) { lbIndex = i; break; }
+    }
+    showLightboxPhoto();
+    $('#photoLightbox').fadeIn(150);
+    $('body').addClass('lb-open');
+  }
+
+  function closeLightbox() {
+    $('#photoLightbox').fadeOut(150);
+    $('body').removeClass('lb-open');
+  }
+
+  function initLightbox() {
+    $('body').append(
+      '<div id="photoLightbox" class="lb-overlay" style="display:none">' +
+        '<div class="lb-backdrop"></div>' +
+        '<div class="lb-frame">' +
+          '<button class="lb-close" aria-label="Close">&times;</button>' +
+          '<button class="lb-prev" aria-label="Previous">&#8249;</button>' +
+          '<img id="lbImg" class="lb-img" src="" alt="">' +
+          '<button class="lb-next" aria-label="Next">&#8250;</button>' +
+          '<div id="lbCaption" class="lb-caption"></div>' +
+        '</div>' +
+      '</div>'
+    );
+
+    $(document).on('click', '.photo-thumb', function () {
+      openLightbox($(this).data('person'), $(this).data('src'));
+    });
+
+    $(document).on('click', '.lb-backdrop, .lb-close', closeLightbox);
+
+    $(document).on('click', '.lb-prev', function () {
+      if (lbIndex > 0) { lbIndex--; showLightboxPhoto(); }
+    });
+
+    $(document).on('click', '.lb-next', function () {
+      if (lbIndex < lbPhotos.length - 1) { lbIndex++; showLightboxPhoto(); }
+    });
+
+    $(document).on('keydown', function (e) {
+      if (!$('#photoLightbox').is(':visible')) return;
+      if (e.key === 'ArrowLeft'  && lbIndex > 0)                      { lbIndex--; showLightboxPhoto(); }
+      if (e.key === 'ArrowRight' && lbIndex < lbPhotos.length - 1)   { lbIndex++; showLightboxPhoto(); }
+      if (e.key === 'Escape') closeLightbox();
+    });
+  }
+
   // ---- Filter clicks --------------------------------
   function initFilters() {
     $(document).on('click', '.person-filter', function () {
@@ -237,6 +404,9 @@
 
       $('#harvests .map-view').removeClass('active');
       $('#harvests .map-view[data-view="' + person + '"]').addClass('active');
+
+      $('#photos .gallery-view').removeClass('active');
+      $('#photos .gallery-view[data-view="' + person + '"]').addClass('active');
 
       setTimeout(function () { initMap(person); }, 0);
     });
@@ -270,6 +440,9 @@
     buildMapCard();
 
     initMap('family');
+
+    buildGallery();
+    initLightbox();
 
     initFilters();
     initListToggles();
