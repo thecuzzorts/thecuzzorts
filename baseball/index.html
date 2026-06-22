@@ -44,12 +44,10 @@
     <nav>
       <ul>
         <li><a href="#story">Story</a></li>
-        <li><a href="#photos">Photos</a></li>
-        <li><a href="#map">Map</a></li>
-        <li><a href="#parks">Parks</a></li>
-        <li><a href="#kids">Kids</a></li>
-        <li><a href="#closed-future">Closed &amp; Future</a></li>
-        <li><a href="#beyond">Beyond MLB</a></li>
+        <li><a href="#mlb">MLB</a></li>
+        <li><a href="#milb">M<span class="preserve-case">i</span>LB</a></li>
+        <li><a href="#banana">Banana Ball</a></li>
+        <li><a href="#indie">Indie Ball</a></li>
       </ul>
     </nav>
   </header>
@@ -62,7 +60,8 @@
       </div>
 
       <!-- Our Story (full width, on top) ---------------- -->
-      <p class="section-heading" id="story">Our Story</p>
+      <div class="section-panel" id="story">
+      <h2 class="section-group">Our Story</h2>
 
       <div class="stats-banner">
         <p class="bp-story">Our baseball story goes back to 2009. We made a trip to Busch Stadium that summer, and as Braves fans, we also road-tripped to Atlanta to catch an entire series. At the time, we weren't trying to visit every ballpark. We just liked baseball and liked taking baseball trips together.</p>
@@ -75,13 +74,18 @@
         <button type="button" class="bp-story-toggle" aria-expanded="false">Read more &#9662;</button>
         <p class="stat-strip"><strong>30/30</strong> active &middot; <strong>3</strong> historic</p>
       </div>
+      </div><!-- /section-panel story -->
+
+      <!-- MLB -------------------------------------------- -->
+      <div class="section-panel" id="mlb">
+      <h2 class="section-group">MLB</h2>
 
       <!-- Photos + Map share a row on desktop, stack on mobile -->
       <div class="photos-map-row">
 
       <!-- Photos ---------------------------------------- -->
       <div class="pm-col pm-photos">
-      <p class="section-heading" id="photos">Photos</p>
+      <h3 class="section-heading" id="photos">Photos</h3>
 
       <div class="slideshow-wrap">
         <div class="cycle-slideshow"
@@ -91,39 +95,39 @@
              data-cycle-prev=".prev"
              data-cycle-next=".next">
           <!-- Ordered by first-visit date, newest first -->
-          <img loading="lazy" src="../images/ballparks/Dodger-Stadium.jpg" alt="Dodger Stadium">                 <!-- 22 Jun 2025 -->
-          <img loading="lazy" src="../images/ballparks/Angel-Stadium.jpg" alt="Angel Stadium">                   <!-- 21 Jun 2025 -->
-          <img loading="lazy" src="../images/ballparks/Petco-Park.jpg" alt="Petco Park">                          <!-- 20 Jun 2025 -->
-          <img loading="lazy" src="../images/ballparks/Sutter-Health-Park.jpg" alt="Sutter Health Park">         <!-- 18 Jun 2025 -->
-          <img loading="lazy" src="../images/ballparks/Oriole-Park.jpg" alt="Oriole Park at Camden Yards">       <!-- 28 Jul 2023 -->
-          <img loading="lazy" src="../images/ballparks/Citizens-Bank-Park.jpg" alt="Citizens Bank Park">         <!-- 25 Jul 2023 -->
-          <img loading="lazy" src="../images/ballparks/loanDepot-Park.jpg" alt="loanDepot Park">                 <!-- 21 Sep 2021 -->
-          <img loading="lazy" src="../images/ballparks/Globe-Life-Field.jpg" alt="Globe Life Field">             <!-- 19 Jun 2021 -->
-          <img loading="lazy" src="../images/ballparks/Chase-Field.jpg" alt="Chase Field">                       <!-- 18 Jun 2021 -->
-          <img loading="lazy" src="../images/ballparks/Truist-Park.jpg" alt="Truist Park">                       <!-- 28 May 2018 -->
-          <img loading="lazy" src="../images/ballparks/Yankee-Stadium.jpg" alt="Yankee Stadium">                 <!-- 14 Aug 2017 -->
-          <img loading="lazy" src="../images/ballparks/Safeco-Field.jpg" alt="T-Mobile Park">                    <!-- 9 Jul 2017 -->
-          <img loading="lazy" src="../images/ballparks/Citi-Field.jpg" alt="Citi Field">                         <!-- 19 Jun 2016 -->
-          <img loading="lazy" src="../images/ballparks/Fenway-Park.jpg" alt="Fenway Park">                       <!-- 18 Jun 2016 -->
-          <img loading="lazy" src="../images/ballparks/Coors-Field.jpg" alt="Coors Field">                       <!-- 17 Jun 2015 -->
-          <img loading="lazy" src="../images/ballparks/Minute-Maid-Park.jpg" alt="Daikin Park">                  <!-- 31 Jul 2014 -->
-          <img loading="lazy" src="../images/ballparks/Globe-Life-Park.jpg" alt="Globe Life Park">               <!-- 30 Jul 2014 -->
-          <img loading="lazy" src="../images/ballparks/Tropicana-Field.jpg" alt="Tropicana Field">               <!-- 12 Jul 2014 -->
-          <img loading="lazy" src="../images/ballparks/Target-Field.jpg" alt="Target Field">                     <!-- 3 Jul 2014 -->
-          <img loading="lazy" src="../images/ballparks/Nationals-Park.jpg" alt="Nationals Park">                 <!-- 5 Jun 2014 -->
-          <img loading="lazy" src="../images/ballparks/Comerica-Park.jpg" alt="Comerica Park">                   <!-- 24 May 2014 -->
-          <img loading="lazy" src="../images/ballparks/Rogers-Centre.jpg" alt="Rogers Centre">                   <!-- 23 May 2014 -->
-          <img loading="lazy" src="../images/ballparks/O-Co-Coliseum.jpg" alt="Oakland Coliseum">                <!-- 18 Apr 2014 -->
-          <img loading="lazy" src="../images/ballparks/ATT-Park.jpg" alt="Oracle Park">                          <!-- 17 Apr 2014 -->
-          <img loading="lazy" src="../images/ballparks/Guaranteed-Rate-Field.jpg" alt="Rate Field">              <!-- 20 Jul 2013 -->
-          <img loading="lazy" src="../images/ballparks/Great-American-Ball-Park.jpg" alt="Great American Ball Park"> <!-- 18 Jun 2013 -->
-          <img loading="lazy" src="../images/ballparks/Progressive-Field.jpg" alt="Progressive Field">           <!-- 17 Jun 2013 -->
-          <img loading="lazy" src="../images/ballparks/PNC-Park.jpg" alt="PNC Park">                              <!-- 16 Jun 2013 -->
-          <img loading="lazy" src="../images/ballparks/Kauffman-Stadium.jpg" alt="Kauffman Stadium">             <!-- 12 May 2013 -->
-          <img loading="lazy" src="../images/ballparks/Wrigley-Field.jpg" alt="Wrigley Field">                   <!-- 1 Jul 2012 -->
-          <img loading="lazy" src="../images/ballparks/Miller-Park.jpg" alt="American Family Field">             <!-- 30 Jun 2012 -->
-          <img loading="lazy" src="../images/ballparks/Turner-Field.jpg" alt="Turner Field">                     <!-- 31 Jul 2009 -->
-          <img loading="lazy" src="../images/ballparks/Busch-Stadium.jpg" alt="Busch Stadium">                   <!-- 26 Jun 2009 -->
+          <img loading="lazy" src="../images/baseball/mlb/Dodger-Stadium.jpg" alt="Dodger Stadium">                 <!-- 22 Jun 2025 -->
+          <img loading="lazy" src="../images/baseball/mlb/Angel-Stadium.jpg" alt="Angel Stadium">                   <!-- 21 Jun 2025 -->
+          <img loading="lazy" src="../images/baseball/mlb/Petco-Park.jpg" alt="Petco Park">                          <!-- 20 Jun 2025 -->
+          <img loading="lazy" src="../images/baseball/mlb/Sutter-Health-Park.jpg" alt="Sutter Health Park">         <!-- 18 Jun 2025 -->
+          <img loading="lazy" src="../images/baseball/mlb/Oriole-Park.jpg" alt="Oriole Park at Camden Yards">       <!-- 28 Jul 2023 -->
+          <img loading="lazy" src="../images/baseball/mlb/Citizens-Bank-Park.jpg" alt="Citizens Bank Park">         <!-- 25 Jul 2023 -->
+          <img loading="lazy" src="../images/baseball/mlb/loanDepot-Park.jpg" alt="loanDepot Park">                 <!-- 21 Sep 2021 -->
+          <img loading="lazy" src="../images/baseball/mlb/Globe-Life-Field.jpg" alt="Globe Life Field">             <!-- 19 Jun 2021 -->
+          <img loading="lazy" src="../images/baseball/mlb/Chase-Field.jpg" alt="Chase Field">                       <!-- 18 Jun 2021 -->
+          <img loading="lazy" src="../images/baseball/mlb/Truist-Park.jpg" alt="Truist Park">                       <!-- 28 May 2018 -->
+          <img loading="lazy" src="../images/baseball/mlb/Yankee-Stadium.jpg" alt="Yankee Stadium">                 <!-- 14 Aug 2017 -->
+          <img loading="lazy" src="../images/baseball/mlb/Safeco-Field.jpg" alt="T-Mobile Park">                    <!-- 9 Jul 2017 -->
+          <img loading="lazy" src="../images/baseball/mlb/Citi-Field.jpg" alt="Citi Field">                         <!-- 19 Jun 2016 -->
+          <img loading="lazy" src="../images/baseball/mlb/Fenway-Park.jpg" alt="Fenway Park">                       <!-- 18 Jun 2016 -->
+          <img loading="lazy" src="../images/baseball/mlb/Coors-Field.jpg" alt="Coors Field">                       <!-- 17 Jun 2015 -->
+          <img loading="lazy" src="../images/baseball/mlb/Minute-Maid-Park.jpg" alt="Daikin Park">                  <!-- 31 Jul 2014 -->
+          <img loading="lazy" src="../images/baseball/mlb/Globe-Life-Park.jpg" alt="Globe Life Park">               <!-- 30 Jul 2014 -->
+          <img loading="lazy" src="../images/baseball/mlb/Tropicana-Field.jpg" alt="Tropicana Field">               <!-- 12 Jul 2014 -->
+          <img loading="lazy" src="../images/baseball/mlb/Target-Field.jpg" alt="Target Field">                     <!-- 3 Jul 2014 -->
+          <img loading="lazy" src="../images/baseball/mlb/Nationals-Park.jpg" alt="Nationals Park">                 <!-- 5 Jun 2014 -->
+          <img loading="lazy" src="../images/baseball/mlb/Comerica-Park.jpg" alt="Comerica Park">                   <!-- 24 May 2014 -->
+          <img loading="lazy" src="../images/baseball/mlb/Rogers-Centre.jpg" alt="Rogers Centre">                   <!-- 23 May 2014 -->
+          <img loading="lazy" src="../images/baseball/mlb/O-Co-Coliseum.jpg" alt="Oakland Coliseum">                <!-- 18 Apr 2014 -->
+          <img loading="lazy" src="../images/baseball/mlb/ATT-Park.jpg" alt="Oracle Park">                          <!-- 17 Apr 2014 -->
+          <img loading="lazy" src="../images/baseball/mlb/Guaranteed-Rate-Field.jpg" alt="Rate Field">              <!-- 20 Jul 2013 -->
+          <img loading="lazy" src="../images/baseball/mlb/Great-American-Ball-Park.jpg" alt="Great American Ball Park"> <!-- 18 Jun 2013 -->
+          <img loading="lazy" src="../images/baseball/mlb/Progressive-Field.jpg" alt="Progressive Field">           <!-- 17 Jun 2013 -->
+          <img loading="lazy" src="../images/baseball/mlb/PNC-Park.jpg" alt="PNC Park">                              <!-- 16 Jun 2013 -->
+          <img loading="lazy" src="../images/baseball/mlb/Kauffman-Stadium.jpg" alt="Kauffman Stadium">             <!-- 12 May 2013 -->
+          <img loading="lazy" src="../images/baseball/mlb/Wrigley-Field.jpg" alt="Wrigley Field">                   <!-- 1 Jul 2012 -->
+          <img loading="lazy" src="../images/baseball/mlb/Miller-Park.jpg" alt="American Family Field">             <!-- 30 Jun 2012 -->
+          <img loading="lazy" src="../images/baseball/mlb/Turner-Field.jpg" alt="Turner Field">                     <!-- 31 Jul 2009 -->
+          <img loading="lazy" src="../images/baseball/mlb/Busch-Stadium.jpg" alt="Busch Stadium">                   <!-- 26 Jun 2009 -->
           <!-- All 33 ballpark photos are live, ordered above by visit date (newest first) -->
         </div>
         <div class="slideshow-controls">
@@ -136,10 +140,10 @@
 
       <!-- Map ------------------------------------------- -->
       <div class="pm-col pm-map">
-      <p class="section-heading" id="map">Map</p>
+      <h3 class="section-heading" id="map">Map</h3>
 
       <div class="map-wrap">
-        <div class="bp-filters">
+        <div class="bp-filters" id="mlb-filters">
           <button class="bp-filter-btn active" data-filter="all">All</button>
           <button class="bp-filter-btn" data-filter="current">Current</button>
           <button class="bp-filter-btn" data-filter="closed">Closed</button>
@@ -152,7 +156,7 @@
       </div><!-- /photos-map-row -->
 
       <!-- Parks ----------------------------------------- -->
-      <p class="section-heading" id="parks">Parks</p>
+      <h3 class="section-heading" id="parks">Parks</h3>
 
       <div class="format">
         <!-- <p class="major moderate" style="margin-bottom:1rem;">
@@ -162,10 +166,10 @@
         <section class="group">
 
           <div class="split snip division">
-            <h2 class="nl">
+            <span class="nl">
               NL East
               <span class="divisionCount">5/5</span>
-            </h2>
+            </span>
             <p>
               <span class="team yes"><span class="visited"></span><span class="team-logo braves"></span><span class="team-name">Atlanta Braves<br><small><i>Truist Park</i></small></span><span class="first-visit"><span class="date">28 May 2018</span></span></span>
               <span class="team yes"><span class="visited"></span><span class="team-logo marlins"></span><span class="team-name">Miami Marlins<br><small><i>loanDepot Park</i></small></span><span class="first-visit"><span class="date">21 September 2021</span></span></span>
@@ -176,10 +180,10 @@
           </div>
 
           <div class="split snip division">
-            <h2 class="nl">
+            <span class="nl">
               NL Central
               <span class="divisionCount">5/5</span>
-            </h2>
+            </span>
             <p>
               <span class="team yes"><span class="visited"></span><span class="team-logo cubs"></span><span class="team-name">Chicago Cubs<br><small><i>Wrigley Field</i></small></span><span class="first-visit"><span class="date">1 July 2012</span></span></span>
               <span class="team yes"><span class="visited"></span><span class="team-logo reds"></span><span class="team-name">Cincinnati Reds<br><small><i>Great American Ball Park</i></small></span><span class="first-visit"><span class="date">18 June 2013</span></span></span>
@@ -190,10 +194,10 @@
           </div>
 
           <div class="split snip division">
-            <h2 class="nl">
+            <span class="nl">
               NL West
               <span class="divisionCount">5/5</span>
-            </h2>
+            </span>
             <p>
               <span class="team yes"><span class="visited"></span><span class="team-logo diamondbacks"></span><span class="team-name">Arizona Diamondbacks<br><small><i>Chase Field</i></small></span><span class="first-visit"><span class="date">18 June 2021</span></span></span>
               <span class="team yes"><span class="visited"></span><span class="team-logo rockies"></span><span class="team-name">Colorado Rockies<br><small><i>Coors Field</i></small></span><span class="first-visit"><span class="date">17 June 2015</span></span></span>
@@ -204,10 +208,10 @@
           </div>
 
           <div class="split snip division">
-            <h2 class="al">
+            <span class="al">
               AL East
               <span class="divisionCount">5/5</span>
-            </h2>
+            </span>
             <p>
               <span class="team yes"><span class="visited"></span><span class="team-logo orioles"></span><span class="team-name">Baltimore Orioles<br><small><i>Oriole Park at Camden Yards</i></small></span><span class="first-visit"><span class="date">28 July 2023</span></span></span>
               <span class="team yes"><span class="visited"></span><span class="team-logo redsox"></span><span class="team-name">Boston Red Sox<br><small><i>Fenway Park</i></small></span><span class="first-visit"><span class="date">18 June 2016</span></span></span>
@@ -218,10 +222,10 @@
           </div>
 
           <div class="split snip division">
-            <h2 class="al">
+            <span class="al">
               AL Central
               <span class="divisionCount">5/5</span>
-            </h2>
+            </span>
             <p>
               <span class="team yes"><span class="visited"></span><span class="team-logo whitesox"></span><span class="team-name">Chicago White Sox<br><small><i>Rate Field</i></small></span><span class="first-visit"><span class="date">20 July 2013</span></span></span>
               <span class="team yes"><span class="visited"></span><span class="team-logo indians"></span><span class="team-name">Cleveland Guardians<br><small><i>Progressive Field</i></small></span><span class="first-visit"><span class="date">17 June 2013</span></span></span>
@@ -232,10 +236,10 @@
           </div>
 
           <div class="split snip division">
-            <h2 class="al">
+            <span class="al">
               AL West
               <span class="divisionCount">5/5</span>
-            </h2>
+            </span>
             <p>
               <span class="team yes"><span class="visited"></span><span class="team-logo astros"></span><span class="team-name">Houston Astros<br><small><i>Daikin Park</i></small></span><span class="first-visit"><span class="date">31 July 2014</span></span></span>
               <span class="team yes"><span class="visited"></span><span class="team-logo angels"></span><span class="team-name">Los Angeles Angels<br><small><i>Angel Stadium</i></small></span><span class="first-visit"><span class="date">21 June 2025</span></span></span>
@@ -249,16 +253,16 @@
       </div>
 
       <!-- The Kids -------------------------------------- -->
-      <p class="section-heading" id="kids">The Kids</p>
+      <h3 class="section-heading" id="kids">The Kids</h3>
 
       <div class="format">
         <section class="group kids-grid">
 
           <div class="split snip ballpark">
-            <h2 class="ballpark kid-ellie">
+            <span class="ballpark kid-ellie">
               Ellie
               <span class="divisionCount">5</span>
-            </h2>
+            </span>
             <p>
               <span class="team yes"><span class="visited"></span><span class="team-logo rockies"></span><span class="team-name">Colorado Rockies<br><small><i>Coors Field</i></small></span><span class="first-visit"><span class="date">17 June 2015</span></span></span>
               <span class="team yes"><span class="visited"></span><span class="team-logo cardinals"></span><span class="team-name">St. Louis Cardinals<br><small><i>Busch Stadium</i></small></span><span class="first-visit"><span class="date">22 May 2016</span></span></span>
@@ -269,10 +273,10 @@
           </div>
 
           <div class="split snip ballpark">
-            <h2 class="ballpark kid-tilly">
+            <span class="ballpark kid-tilly">
               Tilly
               <span class="divisionCount">3</span>
-            </h2>
+            </span>
             <p>
               <span class="team yes"><span class="visited"></span><span class="team-logo brewers"></span><span class="team-name">Milwaukee Brewers<br><small><i>American Family Field</i></small></span><span class="first-visit"><span class="date">18 June 2017</span></span></span>
               <span class="team yes"><span class="visited"></span><span class="team-logo cardinals"></span><span class="team-name">St. Louis Cardinals<br><small><i>Busch Stadium</i></small></span><span class="first-visit"><span class="date">3 August 2021</span></span></span>
@@ -281,10 +285,10 @@
           </div>
 
           <div class="split snip ballpark">
-            <h2 class="ballpark kid-poppy">
+            <span class="ballpark kid-poppy">
               Poppy
               <span class="divisionCount">3</span>
-            </h2>
+            </span>
             <p>
               <span class="team yes"><span class="visited"></span><span class="team-logo reds"></span><span class="team-name">Cincinnati Reds<br><small><i>Great American Ball Park</i></small></span><span class="first-visit"><span class="date">23 June 2023</span></span></span>
               <span class="team yes"><span class="visited"></span><span class="team-logo brewers"></span><span class="team-name">Milwaukee Brewers<br><small><i>American Family Field</i></small></span><span class="first-visit"><span class="date">22 July 2023</span></span></span>
@@ -296,84 +300,144 @@
       </div>
 
       <!-- Closed & Future -------------------------------- -->
-      <p class="section-heading" id="closed-future">Closed &amp; Future</p>
+      <h3 class="section-heading" id="closed-future">Legacy</h3>
 
-      <div class="format">
-        <section class="group side-by-side">
+      <div class="beyond-section closed-future-section">
 
+        <div class="section-sub">
           <div class="split snip ballpark">
-            <h2 class="ballpark ballpark-closed">
+            <span class="ballpark ballpark-closed">
               Closed
               <span class="divisionCount">3</span>
-            </h2>
+            </span>
             <p>
               <span class="team yes"><span class="visited"></span><span class="team-logo braves" style="top:-0.25em"></span><span class="team-name" style="height:57px">Atlanta Braves<br><small><i>Turner Field</i></small><br><small><i>(last MLB game: October 2, 2016)</i></small></span><span class="first-visit"><span class="date">31 July 2009</span></span></span>
               <span class="team yes"><span class="visited"></span><span class="team-logo athletics" style="top:-0.25em"></span><span class="team-name" style="height:57px">Oakland Athletics<br><small><i>Oakland-Alameda County Coliseum</i></small><br><small><i>(last MLB game: September 26, 2024)</i></small></span><span class="first-visit"><span class="date">18 April 2014</span></span></span>
               <span class="team yes"><span class="visited"></span><span class="team-logo rangers" style="top:-0.25em"></span><span class="team-name" style="height:57px">Texas Rangers<br><small><i>Globe Life Park</i></small><br><small><i>(last MLB game: September 29, 2019)</i></small></span><span class="first-visit"><span class="date">30 July 2014</span></span></span>
             </p>
           </div>
+        </div>
 
+        <div class="section-sub">
           <div class="split snip ballpark">
-            <h2 class="ballpark ballpark-future">
+            <span class="ballpark ballpark-future">
               Future
               <span class="divisionCount">3</span>
-            </h2>
+            </span>
             <p>
               <span class="team"><span class="team-logo athletics" style="top:-0.25em"></span><span class="team-name" style="height:57px">Athletics<br><small><i>Las Vegas Ballpark</i></small><br><small><i>(under construction, opening ~2028)</i></small></span></span>
               <span class="team"><span class="team-logo rays" style="top:-0.25em"></span><span class="team-name" style="height:57px">Tampa Bay Rays<br><small><i>New Tropicana Field</i></small><br><small><i>(planning phase)</i></small></span></span>
               <span class="team"><span class="team-logo royals" style="top:-0.25em"></span><span class="team-name" style="height:57px">Kansas City Royals<br><small><i>New Downtown Ballpark</i></small><br><small><i>(planning phase)</i></small></span></span>
             </p>
           </div>
+        </div>
 
-        </section>
-      </div>
+      </div><!-- /closed-future-section -->
+      </div><!-- /section-panel mlb -->
 
-      <!-- Beyond MLB ------------------------------------ -->
-      <p class="section-heading" id="beyond">Beyond MLB</p>
+      <!-- MiLB ------------------------------------------  -->
+      <div class="section-panel" id="milb">
+      <h2 class="section-group">M<span class="preserve-case">i</span>LB</h2>
 
-      <div class="format">
-        <section class="group side-by-side">
+      <div class="beyond-section milb-section">
 
-          <div class="split snip ballpark milb-card">
-            <h2 class="ballpark beyond-milb">
-              Minor &amp; Indie Ball
-              <span class="divisionCount bb-tally"><b>7</b> ballparks</span>
-            </h2>
-            <div class="map-wrap">
-              <div id="milbMap"></div>
+        <!-- MiLB Photos -->
+        <div class="section-sub">
+          <h3 class="section-heading" id="milb-photos">Photos</h3>
+          <div class="slideshow-wrap">
+            <div class="cycle-slideshow milb-slideshow"
+                 data-cycle-fx="scrollHorz"
+                 data-cycle-timeout="0"
+                 data-cycle-swipe="true"
+                 data-cycle-prev=".prev"
+                 data-cycle-next=".next">
+              <img loading="lazy" src="../images/baseball/milb/Modern-Woodmen-Park.jpg" alt="Quad Cities River Bandits · Modern Woodmen Park, Davenport">
+              <img loading="lazy" src="../images/baseball/milb/Dozer-Park.jpg" alt="Peoria Chiefs · Dozer Park, Peoria">
+              <img loading="lazy" src="../images/baseball/milb/Regions-Field.jpg" alt="Birmingham Barons · Regions Field, Birmingham">
             </div>
-            <p class="bp-chip-list">
-              <span class="bp-chip bp-team ink-dark is-seen" style="--team:#F2A900">Burlington Bees<small>Community Field &middot; Jul 29, 2011</small><small>left MiLB after 2020</small></span>
-              <span class="bp-chip bp-team is-seen" style="--team:#DB6B1E">Springfield Horseshoes<small>Robin Roberts Stadium</small><small>Jun 15, 2012 &amp; Jul 20, 2023</small><small>formerly Springfield Sliders &middot; Prospect League</small></span>
-              <span class="bp-chip bp-team is-seen" style="--team:#CE1141">Gwinnett Braves<small>Coolray Field &middot; Aug 2, 2013</small><small>now Gwinnett Stripers</small></span>
-              <span class="bp-chip bp-team is-seen" style="--team:#13274F">Birmingham Barons<small>Regions Field &middot; Jul 19, 2014</small></span>
-              <span class="bp-chip bp-team is-seen" style="--team:#008E97">Chicago Dogs<small>Impact Field &middot; Jun 17, 2022</small><small>MLB partner league</small></span>
-              <span class="bp-chip bp-team is-seen" style="--team:#2C8C3C">Normal CornBelters<small>The Corn Crib &middot; Jun 18, 2023</small><small>Prospect League</small></span>
-              <span class="bp-chip bp-team is-seen" style="--team:#6A4C93">Peoria Chiefs<small>Dozer Park &middot; Jun 15, 2024</small></span>
-              <span class="bp-chip bp-team is-seen" style="--team:#C8102E">Quad Cities River Bandits<small>Modern Woodmen Park &middot; Jun 20, 2026</small></span>
-            </p>
-            <p class="bp-sublabel">Photos</p>
-            <div class="bp-photo-strip">
-              <div class="bp-photo"><img loading="lazy" src="../images/ballparks/beyond-mlb/Modern-Woodmen-Park.jpg" alt="Quad Cities River Bandits &middot; Modern Woodmen Park, Davenport"></div>
-              <div class="bp-photo"><img loading="lazy" src="../images/ballparks/beyond-mlb/Dozer-Park.jpg" alt="Peoria Chiefs &middot; Dozer Park, Peoria"></div>
-              <div class="bp-photo"><img loading="lazy" src="../images/ballparks/beyond-mlb/Impact-Field.jpg" alt="Chicago Dogs &middot; Impact Field, Rosemont"></div>
-              <div class="bp-photo"><img loading="lazy" src="../images/ballparks/beyond-mlb/Regions-Field.jpg" alt="Birmingham Barons &middot; Regions Field, Birmingham"></div>
+            <div class="slideshow-controls">
+              <a class="prev" href="#" aria-label="Previous photo">&#8592;</a>
+              <div class="cycle-caption"></div>
+              <a class="next" href="#" aria-label="Next photo">&#8594;</a>
             </div>
           </div>
+        </div>
 
+        <!-- MiLB Map -->
+        <div class="section-sub">
+          <h3 class="section-heading" id="milb-map">Map</h3>
+          <div class="map-wrap">
+            <div class="bp-filters" id="milb-filters">
+              <button class="bp-filter-btn active" data-filter="visited">Visited</button>
+              <button class="bp-filter-btn" data-filter="all">All Affiliates</button>
+            </div>
+            <div id="milbMap"></div>
+          </div>
+        </div>
+
+        <!-- MiLB Parks & Affiliates (full width) -->
+        <div class="section-sub section-sub--full">
+          <h3 class="section-heading" id="milb-parks">Parks &amp; Affiliates</h3>
           <div class="split snip ballpark">
-            <h2 class="ballpark beyond-bananas">
-              Banana Ball
-              <span class="divisionCount bb-tally"><b>2</b> games &middot; <b>2</b> teams</span>
-            </h2>
-            <p class="bp-sublabel">Games</p>
             <p class="bp-chip-list">
+              <span class="bp-chip bp-team is-seen" style="--team:#CE1141">Gwinnett Stripers<small>AAA &middot; Atlanta Braves affiliate</small><small>Coolray Field &middot; Aug 2, 2013</small></span>
+              <span class="bp-chip bp-team is-seen" style="--team:#231F20">Birmingham Barons<small>AA &middot; Chicago White Sox affiliate</small><small>Regions Field &middot; Jul 19, 2014</small></span>
+              <span class="bp-chip bp-team is-seen" style="--team:#CC0000">Peoria Chiefs<small>High-A &middot; St. Louis Cardinals affiliate</small><small>Dozer Park &middot; Jun 15, 2024</small></span>
+              <span class="bp-chip bp-team is-seen" style="--team:#002D62">Quad Cities River Bandits<small>High-A &middot; Kansas City Royals affiliate</small><small>Modern Woodmen Park &middot; Jun 20, 2026</small></span>
+            </p>
+            <div class="milb-bucket-divider"></div>
+            <button class="milb-bucket-toggle" id="milbBucketToggle"></button>
+            <p class="bp-chip-list milb-bucket-list" id="milbBucketList">
+              <!-- Populated by JS from MILB array -->
+            </p>
+          </div>
+        </div>
+
+      </div><!-- /milb-section -->
+      </div><!-- /section-panel milb -->
+
+      <!-- Banana Ball ------------------------------------ -->
+      <div class="section-panel" id="banana">
+      <h2 class="section-group">Banana Ball</h2>
+
+      <div class="beyond-section banana-section">
+
+        <!-- Banana Ball Photos -->
+        <div class="section-sub">
+          <h3 class="section-heading" id="banana-photos">Photos</h3>
+          <div class="split snip ballpark">
+            <div class="slideshow-wrap bp-slideshow-wrap">
+              <div class="cycle-slideshow bananas-slideshow">
+                <img loading="lazy" src="../images/baseball/banana/Banana-Ball-Caesars-Superdome-Outside-2026.jpg" alt="Banana Ball · Caesars Superdome, New Orleans · Mar 2026">
+                <img loading="lazy" src="../images/baseball/banana/Banana-Ball-Caesars-Superdome-Inside-2026.jpg" alt="Banana Ball · Caesars Superdome, New Orleans · Mar 2026">
+                <img loading="lazy" src="../images/baseball/banana/Banana-Ball-Busch-Stadium-2025.jpg" alt="Banana Ball · Busch Stadium, St. Louis · Jul 2025">
+              </div>
+              <div class="slideshow-controls">
+                <button id="bananasPrev" type="button" aria-label="Previous photo">&#8592;</button>
+                <div id="bananasCaption" class="cycle-caption"></div>
+                <button id="bananasNext" type="button" aria-label="Next photo">&#8594;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Banana Ball Games -->
+        <div class="section-sub">
+          <h3 class="section-heading" id="banana-games">Games</h3>
+          <div class="split snip ballpark">
+            <p class="bp-chip-list" style="padding-top: 1rem;">
               <span class="bp-chip">Busch Stadium<small>St. Louis, MO &middot; Jul 19, 2025</small><small>Bananas vs. Party Animals</small></span>
               <span class="bp-chip">Caesars Superdome<small>New Orleans, LA &middot; Mar 15, 2026</small><small>Bananas vs. Party Animals</small></span>
               <span class="bp-chip bp-chip-upcoming">Busch Stadium<small>St. Louis, MO &middot; Aug 21, 2026</small><small>Bananas vs. Loco Beach Coconuts &middot; upcoming</small></span>
             </p>
-            <p class="bp-sublabel">Teams</p>
-            <p class="bp-chip-list">
+          </div>
+        </div>
+
+        <!-- Banana Ball Teams -->
+        <div class="section-sub">
+          <h3 class="section-heading" id="banana-teams">Teams</h3>
+          <div class="split snip ballpark">
+            <p class="bp-chip-list" style="padding-top: 1rem;">
               <span class="bp-chip bp-team ink-dark is-seen" style="--team:#FFDC00">Savannah Bananas<small>seen &times;2</small></span>
               <span class="bp-chip bp-team is-seen" style="--team:#E6118C">Party Animals<small>seen &times;2</small></span>
               <span class="bp-chip bp-team is-upcoming" style="--team:#12B5A5">Loco Beach Coconuts<small>Aug 2026</small></span>
@@ -381,16 +445,65 @@
               <span class="bp-chip bp-team is-unseen" style="--team:#D62828">Firefighters</span>
               <span class="bp-chip bp-team is-unseen" style="--team:#7C2D3A">Indianapolis Clowns</span>
             </p>
-            <p class="bp-sublabel">Photos</p>
-            <div class="bp-photo-strip">
-              <div class="bp-photo"><img loading="lazy" src="../images/ballparks/beyond-mlb/Banana-Ball-Caesars-Superdome-Outside-2026.jpg" alt="Banana Ball · Caesars Superdome, New Orleans &middot; Mar 2026"></div>
-              <div class="bp-photo"><img loading="lazy" src="../images/ballparks/beyond-mlb/Banana-Ball-Caesars-Superdome-Inside-2026.jpg" alt="Banana Ball · Caesars Superdome, New Orleans &middot; Mar 2026"></div>
-              <div class="bp-photo"><img loading="lazy" src="../images/ballparks/beyond-mlb/Banana-Ball-Busch-Stadium-2025.jpg" alt="Banana Ball · Busch Stadium, St. Louis &middot; Jul 2025"></div>
+          </div>
+        </div>
+
+      </div><!-- /banana-section -->
+      </div><!-- /section-panel banana -->
+
+      <!-- Indie Ball ------------------------------------- -->
+      <div class="section-panel" id="indie">
+      <h2 class="section-group">Indie Ball</h2>
+
+      <div class="beyond-section indie-section">
+
+        <!-- Indie Ball Photos -->
+        <div class="section-sub">
+          <h3 class="section-heading" id="indie-photos">Photos</h3>
+          <div class="split snip ballpark">
+            <div class="slideshow-wrap bp-slideshow-wrap">
+              <div class="cycle-slideshow indie-slideshow">
+                <img loading="lazy" src="../images/baseball/indie/Impact-Field.jpg" alt="Chicago Dogs · Impact Field, Rosemont · Jun 2022">
+              </div>
+              <div class="slideshow-controls">
+                <button id="indiePrev" type="button" aria-label="Previous photo">&#8592;</button>
+                <div id="indieCaption" class="cycle-caption"></div>
+                <button id="indieNext" type="button" aria-label="Next photo">&#8594;</button>
+              </div>
             </div>
           </div>
+        </div>
 
-        </section>
-      </div>
+        <!-- Indie Ball Map -->
+        <div class="section-sub">
+          <h3 class="section-heading" id="indie-map">Map</h3>
+          <div class="split snip ballpark indie-card">
+            <div class="bp-filters" id="indie-filters">
+              <button class="bp-filter-btn active" data-filter="all">All</button>
+              <button class="bp-filter-btn" data-filter="prospect">Prospect League</button>
+              <button class="bp-filter-btn" data-filter="partner">American Association</button>
+            </div>
+            <div class="map-wrap">
+              <div id="indieMap"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Indie Ball Parks (full width) -->
+        <div class="section-sub section-sub--full">
+          <h3 class="section-heading" id="indie-parks">Parks</h3>
+          <div class="split snip ballpark">
+            <p class="bp-chip-list" style="padding-top: 1rem;">
+              <span class="bp-chip bp-team ink-dark is-seen" style="--team:#F2A900">Burlington Bees<small>Community Field &middot; Jul 29, 2011</small><small>Prospect League</small></span>
+              <span class="bp-chip bp-team is-seen" style="--team:#DB6B1E">Springfield Horseshoes<small>Robin Roberts Stadium &middot; Jun 15, 2012 &amp; Jul 20, 2023</small><small>Prospect League &middot; formerly Springfield Sliders</small></span>
+              <span class="bp-chip bp-team is-seen" style="--team:#008E97">Chicago Dogs<small>Impact Field &middot; Jun 17, 2022</small><small>American Association</small></span>
+              <span class="bp-chip bp-team is-seen" style="--team:#2C8C3C">Normal CornBelters<small>The Corn Crib &middot; Jun 18, 2023</small><small>Prospect League</small></span>
+            </p>
+          </div>
+        </div>
+
+      </div><!-- /indie-section -->
+      </div><!-- /section-panel indie -->
 
   </main>
 
@@ -474,9 +587,10 @@
 
       var activeFilter = 'all';
 
-      document.querySelectorAll('.bp-filter-btn').forEach(function (btn) {
+      var mlbFilterBtns = document.getElementById('mlb-filters').querySelectorAll('.bp-filter-btn');
+      mlbFilterBtns.forEach(function (btn) {
         btn.addEventListener('click', function () {
-          document.querySelectorAll('.bp-filter-btn').forEach(function (b) { b.classList.remove('active'); });
+          mlbFilterBtns.forEach(function (b) { b.classList.remove('active'); });
           btn.classList.add('active');
           activeFilter = btn.dataset.filter;
           markerEntries.forEach(function (e) {
@@ -500,55 +614,311 @@
     }());
   </script>
 
-  <!-- MiLB map (separate from the MLB map above) -->
+  <!-- MiLB + Indie maps -->
   <script>
     (function () {
+
+      // Single source of truth — review/update each spring when affiliations change.
+      // If a team loses MiLB status, move it to the INDIE array with a note field.
       var MILB = [
-        { team: 'Burlington Bees',   park: 'Community Field', city: 'Burlington, IA',   lat: 40.8090, lng: -91.1378, note: '29 July 2011 · left MiLB after 2020' },
-        { team: 'Springfield Horseshoes', park: 'Robin Roberts Stadium', city: 'Springfield, IL', lat: 39.8186, lng: -89.6310, note: '15 June 2012 (Sliders) · 20 July 2023 (Horseshoes) · Prospect League' },
-        { team: 'Gwinnett Braves',   park: 'Coolray Field',   city: 'Lawrenceville, GA', lat: 34.0099, lng: -83.9560, note: '2 August 2013 · now Gwinnett Stripers' },
-        { team: 'Birmingham Barons', park: 'Regions Field',   city: 'Birmingham, AL',   lat: 33.5046, lng: -86.8127, note: '19 July 2014' },
-        { team: 'Chicago Dogs',      park: 'Impact Field',    city: 'Rosemont, IL',     lat: 41.9806, lng: -87.8656, note: '17 June 2022 · MLB partner league' },
-        { team: 'Normal CornBelters',park: 'The Corn Crib',   city: 'Normal, IL',       lat: 40.5640, lng: -88.9937, note: '18 June 2023 · Prospect League' },
-        { team: 'Peoria Chiefs',     park: 'Dozer Park',      city: 'Peoria, IL',       lat: 40.6917, lng: -89.5917, note: '15 June 2024' },
-        { team: 'Quad Cities River Bandits', park: 'Modern Woodmen Park', city: 'Davenport, IA', lat: 41.5230, lng: -90.5773, note: '20 June 2026' }
+        // NL East
+        { affiliate: 'Atlanta Braves',        team: 'Gwinnett Stripers',           level: 'AAA',    park: 'Coolray Field',                   city: 'Lawrenceville, GA',     lat:  34.0099, lng:  -83.9560, visited: true,  date: 'Aug 2, 2013',   color: '#CE1141' },
+        { affiliate: 'Atlanta Braves',        team: 'Mississippi Braves',          level: 'AA',     park: 'Trustmark Park',                  city: 'Pearl, MS',             lat:  32.2879, lng:  -90.0951, visited: false,                        color: '#CE1141' },
+        { affiliate: 'Atlanta Braves',        team: 'Rome Braves',                 level: 'High-A', park: 'AdventHealth Stadium',            city: 'Rome, GA',              lat:  34.2488, lng:  -85.1845, visited: false,                        color: '#CE1141' },
+        { affiliate: 'Atlanta Braves',        team: 'Augusta GreenJackets',        level: 'A',      park: 'SRP Park',                        city: 'North Augusta, SC',     lat:  33.4895, lng:  -81.9893, visited: false,                        color: '#007240' },
+        { affiliate: 'New York Mets',         team: 'Syracuse Mets',               level: 'AAA',    park: 'NBT Bank Stadium',                city: 'Syracuse, NY',          lat:  43.0703, lng:  -76.1494, visited: false,                        color: '#FF5910' },
+        { affiliate: 'New York Mets',         team: 'Binghamton Rumble Ponies',    level: 'AA',     park: 'Mirabito Stadium',                city: 'Binghamton, NY',        lat:  42.0973, lng:  -75.9135, visited: false,                        color: '#002D72' },
+        { affiliate: 'New York Mets',         team: 'Brooklyn Cyclones',           level: 'High-A', park: 'MCU Park',                        city: 'Brooklyn, NY',          lat:  40.5750, lng:  -73.9699, visited: false,                        color: '#002B5C' },
+        { affiliate: 'New York Mets',         team: 'St. Lucie Mets',              level: 'A',      park: 'Clover Park',                     city: 'Port St. Lucie, FL',    lat:  27.2697, lng:  -80.3817, visited: false,                        color: '#002D72' },
+        { affiliate: 'Philadelphia Phillies', team: 'Lehigh Valley IronPigs',      level: 'AAA',    park: 'Coca-Cola Park',                  city: 'Allentown, PA',         lat:  40.6108, lng:  -75.4704, visited: false,                        color: '#D50032' },
+        { affiliate: 'Philadelphia Phillies', team: 'Reading Fightin Phils',       level: 'AA',     park: 'FirstEnergy Stadium',             city: 'Reading, PA',           lat:  40.3358, lng:  -75.9275, visited: false,                        color: '#CC0000' },
+        { affiliate: 'Philadelphia Phillies', team: 'Jersey Shore BlueClaws',      level: 'High-A', park: 'ShoreTown Ballpark',              city: 'Lakewood, NJ',          lat:  40.0715, lng:  -74.2179, visited: false,                        color: '#002B5C' },
+        { affiliate: 'Philadelphia Phillies', team: 'Clearwater Threshers',        level: 'A',      park: 'BayCare Ballpark',                city: 'Clearwater, FL',        lat:  27.9664, lng:  -82.7131, visited: false,                        color: '#E81828' },
+        { affiliate: 'Miami Marlins',         team: 'Jacksonville Jumbo Shrimp',   level: 'AAA',    park: '121 Financial Ballpark',          city: 'Jacksonville, FL',      lat:  30.3238, lng:  -81.6557, visited: false,                        color: '#00A0B4' },
+        { affiliate: 'Miami Marlins',         team: 'Pensacola Blue Wahoos',       level: 'AA',     park: 'Blue Wahoos Stadium',             city: 'Pensacola, FL',         lat:  30.4076, lng:  -87.2169, visited: false,                        color: '#003882' },
+        { affiliate: 'Miami Marlins',         team: 'Beloit Sky Carp',             level: 'High-A', park: 'ABC Supply Stadium',              city: 'Beloit, WI',            lat:  42.5085, lng:  -89.0311, visited: false,                        color: '#00A3AD' },
+        { affiliate: 'Miami Marlins',         team: 'Jupiter Hammerheads',         level: 'A',      park: 'Roger Dean Chevrolet Stadium',    city: 'Jupiter, FL',           lat:  26.8913, lng:  -80.1162, visited: false,                        color: '#00A3E0' },
+        { affiliate: 'Washington Nationals',  team: 'Rochester Red Wings',         level: 'AAA',    park: 'Innovative Field',                city: 'Rochester, NY',         lat:  43.1566, lng:  -77.6088, visited: false,                        color: '#C41E3A' },
+        { affiliate: 'Washington Nationals',  team: 'Harrisburg Senators',         level: 'AA',     park: 'FNB Field',                       city: 'Harrisburg, PA',        lat:  40.2649, lng:  -76.8837, visited: false,                        color: '#003082' },
+        { affiliate: 'Washington Nationals',  team: 'Wilmington Blue Rocks',       level: 'High-A', park: 'Frawley Stadium',                 city: 'Wilmington, DE',        lat:  39.7459, lng:  -75.5466, visited: false,                        color: '#003082' },
+        { affiliate: 'Washington Nationals',  team: 'Fredericksburg Nationals',    level: 'A',      park: 'FredNats Ballpark',               city: 'Fredericksburg, VA',    lat:  38.3032, lng:  -77.4605, visited: false,                        color: '#AB0003' },
+        // NL Central
+        { affiliate: 'Chicago Cubs',          team: 'Iowa Cubs',                   level: 'AAA',    park: 'Principal Park',                  city: 'Des Moines, IA',        lat:  41.5836, lng:  -93.6274, visited: false,                        color: '#0E3386' },
+        { affiliate: 'Chicago Cubs',          team: 'Tennessee Smokies',           level: 'AA',     park: 'Smokies Stadium',                 city: 'Kodak, TN',             lat:  36.0076, lng:  -83.6310, visited: false,                        color: '#0E3386' },
+        { affiliate: 'Chicago Cubs',          team: 'South Bend Cubs',             level: 'High-A', park: 'Four Winds Field',                city: 'South Bend, IN',        lat:  41.6833, lng:  -86.2539, visited: false,                        color: '#0E3386' },
+        { affiliate: 'Chicago Cubs',          team: 'Myrtle Beach Pelicans',       level: 'A',      park: 'Pelicans Ballpark',               city: 'Myrtle Beach, SC',      lat:  33.7790, lng:  -78.8851, visited: false,                        color: '#003082' },
+        { affiliate: 'St. Louis Cardinals',   team: 'Memphis Redbirds',            level: 'AAA',    park: 'AutoZone Park',                   city: 'Memphis, TN',           lat:  35.1465, lng:  -90.0519, visited: false,                        color: '#C41E3A' },
+        { affiliate: 'St. Louis Cardinals',   team: 'Springfield Cardinals',       level: 'AA',     park: 'Hammons Field',                   city: 'Springfield, MO',       lat:  37.2075, lng:  -93.2969, visited: false,                        color: '#C41E3A' },
+        { affiliate: 'St. Louis Cardinals',   team: 'Peoria Chiefs',               level: 'High-A', park: 'Dozer Park',                      city: 'Peoria, IL',            lat:  40.6917, lng:  -89.5917, visited: true,  date: 'Jun 15, 2024', color: '#CC0000' },
+        { affiliate: 'St. Louis Cardinals',   team: 'Palm Beach Cardinals',        level: 'A',      park: 'Roger Dean Chevrolet Stadium',    city: 'Jupiter, FL',           lat:  26.8913, lng:  -80.1162, visited: false,                        color: '#C41E3A' },
+        { affiliate: 'Milwaukee Brewers',     team: 'Nashville Sounds',            level: 'AAA',    park: 'First Horizon Park',              city: 'Nashville, TN',         lat:  36.1602, lng:  -86.7832, visited: false,                        color: '#005C9B' },
+        { affiliate: 'Milwaukee Brewers',     team: 'Biloxi Shuckers',             level: 'AA',     park: 'MGM Park',                        city: 'Biloxi, MS',            lat:  30.3960, lng:  -88.8882, visited: false,                        color: '#002D62' },
+        { affiliate: 'Milwaukee Brewers',     team: 'Wisconsin Timber Rattlers',   level: 'High-A', park: 'Neuroscience Group Field',        city: 'Appleton, WI',          lat:  44.2706, lng:  -88.4592, visited: false,                        color: '#154734' },
+        { affiliate: 'Milwaukee Brewers',     team: 'Carolina Mudcats',            level: 'A',      park: 'Five County Stadium',             city: 'Zebulon, NC',           lat:  35.8224, lng:  -78.3178, visited: false,                        color: '#FFC52F' },
+        { affiliate: 'Cincinnati Reds',       team: 'Louisville Bats',             level: 'AAA',    park: 'Louisville Slugger Field',        city: 'Louisville, KY',        lat:  38.2568, lng:  -85.7479, visited: false,                        color: '#BA0C2F' },
+        { affiliate: 'Cincinnati Reds',       team: 'Chattanooga Lookouts',        level: 'AA',     park: 'AT&T Field',                      city: 'Chattanooga, TN',       lat:  35.0458, lng:  -85.3094, visited: false,                        color: '#003082' },
+        { affiliate: 'Cincinnati Reds',       team: 'Dayton Dragons',              level: 'High-A', park: 'Day Air Ballpark',                city: 'Dayton, OH',            lat:  39.7602, lng:  -84.1921, visited: false,                        color: '#CC0000' },
+        { affiliate: 'Cincinnati Reds',       team: 'Daytona Tortugas',            level: 'A',      park: 'Jackie Robinson Ballpark',        city: 'Daytona Beach, FL',     lat:  29.2100, lng:  -81.0160, visited: false,                        color: '#C6011F' },
+        { affiliate: 'Pittsburgh Pirates',    team: 'Indianapolis Indians',        level: 'AAA',    park: 'Victory Field',                   city: 'Indianapolis, IN',      lat:  39.7689, lng:  -86.1624, visited: false,                        color: '#CC0000' },
+        { affiliate: 'Pittsburgh Pirates',    team: 'Altoona Curve',               level: 'AA',     park: 'Peoples Natural Gas Field',       city: 'Altoona, PA',           lat:  40.5174, lng:  -78.3946, visited: false,                        color: '#002D62' },
+        { affiliate: 'Pittsburgh Pirates',    team: 'Greensboro Grasshoppers',     level: 'High-A', park: 'First National Bank Field',       city: 'Greensboro, NC',        lat:  36.0697, lng:  -79.7937, visited: false,                        color: '#003082' },
+        { affiliate: 'Pittsburgh Pirates',    team: 'Bradenton Marauders',         level: 'A',      park: 'LECOM Park',                      city: 'Bradenton, FL',         lat:  27.4947, lng:  -82.5748, visited: false,                        color: '#FDB827' },
+        // NL West
+        { affiliate: 'Los Angeles Dodgers',   team: 'OKC Baseball Club',           level: 'AAA',    park: 'Chickasaw Bricktown Ballpark',    city: 'Oklahoma City, OK',     lat:  35.4672, lng:  -97.5150, visited: false,                        color: '#005A9C' },
+        { affiliate: 'Los Angeles Dodgers',   team: 'Tulsa Drillers',              level: 'AA',     park: 'ONEOK Field',                     city: 'Tulsa, OK',             lat:  36.1537, lng:  -95.9887, visited: false,                        color: '#003082' },
+        { affiliate: 'Los Angeles Dodgers',   team: 'Great Lakes Loons',           level: 'High-A', park: 'Dow Diamond',                     city: 'Midland, MI',           lat:  43.6147, lng:  -84.2472, visited: false,                        color: '#001F5B' },
+        { affiliate: 'Los Angeles Dodgers',   team: 'Rancho Cucamonga Quakes',     level: 'A',      park: 'LoanMart Field',                  city: 'Rancho Cucamonga, CA',  lat:  34.1062, lng: -117.5932, visited: false,                        color: '#002D62' },
+        { affiliate: 'San Francisco Giants',  team: 'Sacramento River Cats',       level: 'AAA',    park: 'Sutter Health Park',              city: 'Sacramento, CA',        lat:  38.5802, lng: -121.5006, visited: false,                        color: '#002D62' },
+        { affiliate: 'San Francisco Giants',  team: 'Richmond Flying Squirrels',   level: 'AA',     park: 'The Diamond',                     city: 'Richmond, VA',          lat:  37.5629, lng:  -77.4637, visited: false,                        color: '#C8102E' },
+        { affiliate: 'San Francisco Giants',  team: 'Eugene Emeralds',             level: 'High-A', park: 'PK Park',                         city: 'Eugene, OR',            lat:  44.0521, lng: -123.0688, visited: false,                        color: '#004C26' },
+        { affiliate: 'San Francisco Giants',  team: 'San Jose Giants',             level: 'A',      park: 'Excite Ballpark',                 city: 'San Jose, CA',          lat:  37.3321, lng: -121.8994, visited: false,                        color: '#231F20' },
+        { affiliate: 'San Diego Padres',      team: 'El Paso Chihuahuas',          level: 'AAA',    park: 'Southwest University Park',       city: 'El Paso, TX',           lat:  31.7588, lng: -106.4880, visited: false,                        color: '#17325A' },
+        { affiliate: 'San Diego Padres',      team: 'San Antonio Missions',        level: 'AA',     park: 'Wolff Stadium',                   city: 'San Antonio, TX',       lat:  29.4249, lng:  -98.5570, visited: false,                        color: '#2B2B2B' },
+        { affiliate: 'San Diego Padres',      team: 'Fort Wayne TinCaps',          level: 'High-A', park: 'Parkview Field',                  city: 'Fort Wayne, IN',        lat:  41.0819, lng:  -85.1383, visited: false,                        color: '#00285E' },
+        { affiliate: 'San Diego Padres',      team: 'Lake Elsinore Storm',         level: 'A',      park: 'The Diamond',                     city: 'Lake Elsinore, CA',     lat:  33.6717, lng: -117.3283, visited: false,                        color: '#003082' },
+        { affiliate: 'Arizona Diamondbacks',  team: 'Reno Aces',                   level: 'AAA',    park: 'Greater Nevada Field',            city: 'Reno, NV',              lat:  39.5296, lng: -119.8138, visited: false,                        color: '#522D80' },
+        { affiliate: 'Arizona Diamondbacks',  team: 'Amarillo Sod Poodles',        level: 'AA',     park: 'HODGETOWN',                       city: 'Amarillo, TX',          lat:  35.1975, lng: -101.8384, visited: false,                        color: '#003F87' },
+        { affiliate: 'Arizona Diamondbacks',  team: 'Hillsboro Hops',              level: 'High-A', park: 'Ron Tonkin Field',                city: 'Hillsboro, OR',         lat:  45.5272, lng: -122.9880, visited: false,                        color: '#D4A900' },
+        { affiliate: 'Arizona Diamondbacks',  team: 'Visalia Rawhide',             level: 'A',      park: 'Valley Strong Ballpark',          city: 'Visalia, CA',           lat:  36.3305, lng: -119.3126, visited: false,                        color: '#4B2D83' },
+        { affiliate: 'Colorado Rockies',      team: 'Albuquerque Isotopes',        level: 'AAA',    park: 'Rio Grande Credit Union Field',   city: 'Albuquerque, NM',       lat:  35.0963, lng: -106.6504, visited: false,                        color: '#00557B' },
+        { affiliate: 'Colorado Rockies',      team: 'Hartford Yard Goats',         level: 'AA',     park: "Dunkin' Park",                    city: 'Hartford, CT',          lat:  41.7677, lng:  -72.6795, visited: false,                        color: '#4A2279' },
+        { affiliate: 'Colorado Rockies',      team: 'Spokane Indians',             level: 'High-A', park: 'Avista Stadium',                  city: 'Spokane, WA',           lat:  47.6677, lng: -117.3941, visited: false,                        color: '#CC0000' },
+        { affiliate: 'Colorado Rockies',      team: 'Fresno Grizzlies',            level: 'A',      park: 'Chukchansi Park',                 city: 'Fresno, CA',            lat:  36.7678, lng: -119.7877, visited: false,                        color: '#003082' },
+        // AL East
+        { affiliate: 'New York Yankees',      team: 'Scranton/WB RailRiders',      level: 'AAA',    park: 'PNC Field',                       city: 'Moosic, PA',            lat:  41.3987, lng:  -75.6327, visited: false,                        color: '#003087' },
+        { affiliate: 'New York Yankees',      team: 'Somerset Patriots',           level: 'AA',     park: 'TD Bank Ballpark',                city: 'Bridgewater, NJ',       lat:  40.5951, lng:  -74.5983, visited: false,                        color: '#002D62' },
+        { affiliate: 'New York Yankees',      team: 'Hudson Valley Renegades',     level: 'High-A', park: 'Heritage Financial Park',         city: 'Wappingers Falls, NY',  lat:  41.5958, lng:  -73.9480, visited: false,                        color: '#002D62' },
+        { affiliate: 'New York Yankees',      team: 'Tampa Tarpons',               level: 'A',      park: 'George M. Steinbrenner Field',    city: 'Tampa, FL',             lat:  27.9993, lng:  -82.5086, visited: false,                        color: '#003087' },
+        { affiliate: 'Boston Red Sox',        team: 'Worcester Red Sox',           level: 'AAA',    park: 'Polar Park',                      city: 'Worcester, MA',         lat:  42.3497, lng:  -71.8019, visited: false,                        color: '#0C2340' },
+        { affiliate: 'Boston Red Sox',        team: 'Portland Sea Dogs',           level: 'AA',     park: 'Hadlock Field',                   city: 'Portland, ME',          lat:  43.6501, lng:  -70.2792, visited: false,                        color: '#002D62' },
+        { affiliate: 'Boston Red Sox',        team: 'Greenville Drive',            level: 'High-A', park: 'Fluor Field',                     city: 'Greenville, SC',        lat:  34.8476, lng:  -82.4015, visited: false,                        color: '#CC0000' },
+        { affiliate: 'Boston Red Sox',        team: 'Salem Red Sox',               level: 'A',      park: 'Carilion Clinic Field',           city: 'Salem, VA',             lat:  37.2858, lng:  -80.0528, visited: false,                        color: '#BD3039' },
+        { affiliate: 'Toronto Blue Jays',     team: 'Buffalo Bisons',              level: 'AAA',    park: 'Sahlen Field',                    city: 'Buffalo, NY',           lat:  42.8827, lng:  -78.8716, visited: false,                        color: '#003B6F' },
+        { affiliate: 'Toronto Blue Jays',     team: 'New Hampshire Fisher Cats',   level: 'AA',     park: 'Delta Dental Stadium',            city: 'Manchester, NH',        lat:  42.9936, lng:  -71.4643, visited: false,                        color: '#002D62' },
+        { affiliate: 'Toronto Blue Jays',     team: 'Vancouver Canadians',         level: 'High-A', park: 'Nat Bailey Stadium',              city: 'Vancouver, BC',         lat:  49.2489, lng: -123.1117, visited: false,                        color: '#002D62' },
+        { affiliate: 'Toronto Blue Jays',     team: 'Dunedin Blue Jays',           level: 'A',      park: 'TD Ballpark',                     city: 'Dunedin, FL',           lat:  28.0183, lng:  -82.7707, visited: false,                        color: '#134A8E' },
+        { affiliate: 'Tampa Bay Rays',        team: 'Durham Bulls',                level: 'AAA',    park: 'Durham Bulls Athletic Park',      city: 'Durham, NC',            lat:  35.9958, lng:  -78.8877, visited: false,                        color: '#1C4B3B' },
+        { affiliate: 'Tampa Bay Rays',        team: 'Montgomery Biscuits',         level: 'AA',     park: 'Riverwalk Stadium',               city: 'Montgomery, AL',        lat:  32.3687, lng:  -86.2994, visited: false,                        color: '#003082' },
+        { affiliate: 'Tampa Bay Rays',        team: 'Bowling Green Hot Rods',      level: 'High-A', park: 'Bowling Green Ballpark',          city: 'Bowling Green, KY',     lat:  36.9914, lng:  -86.4436, visited: false,                        color: '#CC0000' },
+        { affiliate: 'Tampa Bay Rays',        team: 'Charleston RiverDogs',        level: 'A',      park: 'Joseph P. Riley, Jr. Park',       city: 'Charleston, SC',        lat:  32.7837, lng:  -79.9735, visited: false,                        color: '#00285E' },
+        { affiliate: 'Baltimore Orioles',     team: 'Norfolk Tides',               level: 'AAA',    park: 'Harbor Park',                     city: 'Norfolk, VA',           lat:  36.8462, lng:  -76.2985, visited: false,                        color: '#002D62' },
+        { affiliate: 'Baltimore Orioles',     team: 'Bowie Baysox',                level: 'AA',     park: "Prince George's Stadium",         city: 'Bowie, MD',             lat:  38.9468, lng:  -76.7377, visited: false,                        color: '#1E3C73' },
+        { affiliate: 'Baltimore Orioles',     team: 'Aberdeen IronBirds',          level: 'High-A', park: 'Leidos Field at Ripken Stadium',  city: 'Aberdeen, MD',          lat:  39.5188, lng:  -76.1733, visited: false,                        color: '#DF4601' },
+        { affiliate: 'Baltimore Orioles',     team: 'Delmarva Shorebirds',         level: 'A',      park: 'Arthur W. Perdue Stadium',        city: 'Salisbury, MD',         lat:  38.3718, lng:  -75.5852, visited: false,                        color: '#003082' },
+        // AL Central
+        { affiliate: 'Minnesota Twins',       team: 'St. Paul Saints',             level: 'AAA',    park: 'CHS Field',                       city: 'St. Paul, MN',          lat:  44.9524, lng:  -93.0820, visited: false,                        color: '#BA0C2F' },
+        { affiliate: 'Minnesota Twins',       team: 'Wichita Wind Surge',          level: 'AA',     park: 'Riverfront Stadium',              city: 'Wichita, KS',           lat:  37.6928, lng:  -97.3375, visited: false,                        color: '#002751' },
+        { affiliate: 'Minnesota Twins',       team: 'Cedar Rapids Kernels',        level: 'High-A', park: 'Perfect Game Field',              city: 'Cedar Rapids, IA',      lat:  41.9788, lng:  -91.6685, visited: false,                        color: '#002B5C' },
+        { affiliate: 'Minnesota Twins',       team: 'Fort Myers Mighty Mussels',   level: 'A',      park: 'Hammond Stadium',                 city: 'Fort Myers, FL',        lat:  26.5386, lng:  -81.8731, visited: false,                        color: '#002B5C' },
+        { affiliate: 'Chicago White Sox',     team: 'Charlotte Knights',           level: 'AAA',    park: 'Truist Field',                    city: 'Charlotte, NC',         lat:  35.2255, lng:  -80.8425, visited: false,                        color: '#231F20' },
+        { affiliate: 'Chicago White Sox',     team: 'Birmingham Barons',           level: 'AA',     park: 'Regions Field',                   city: 'Birmingham, AL',        lat:  33.5046, lng:  -86.8127, visited: true,  date: 'Jul 19, 2014', color: '#231F20' },
+        { affiliate: 'Chicago White Sox',     team: 'Winston-Salem Dash',          level: 'High-A', park: 'Truist Stadium',                  city: 'Winston-Salem, NC',     lat:  36.0989, lng:  -80.2602, visited: false,                        color: '#003B5C' },
+        { affiliate: 'Chicago White Sox',     team: 'Kannapolis Cannon Ballers',   level: 'A',      park: 'Atrium Health Ballpark',          city: 'Kannapolis, NC',        lat:  35.4889, lng:  -80.6265, visited: false,                        color: '#27251F' },
+        { affiliate: 'Cleveland Guardians',   team: 'Columbus Clippers',           level: 'AAA',    park: 'Huntington Park',                 city: 'Columbus, OH',          lat:  39.9612, lng:  -83.0059, visited: false,                        color: '#002D62' },
+        { affiliate: 'Cleveland Guardians',   team: 'Akron RubberDucks',           level: 'AA',     park: 'Canal Park',                      city: 'Akron, OH',             lat:  41.0791, lng:  -81.5173, visited: false,                        color: '#002D62' },
+        { affiliate: 'Cleveland Guardians',   team: 'Lake County Captains',        level: 'High-A', park: 'Classic Auto Group Park',         city: 'Eastlake, OH',          lat:  41.6662, lng:  -81.4394, visited: false,                        color: '#002D62' },
+        { affiliate: 'Cleveland Guardians',   team: 'Lynchburg Hillcats',          level: 'A',      park: 'Bank of the James Stadium',       city: 'Lynchburg, VA',         lat:  37.4160, lng:  -79.1613, visited: false,                        color: '#E31937' },
+        { affiliate: 'Kansas City Royals',    team: 'Omaha Storm Chasers',         level: 'AAA',    park: 'Werner Park',                     city: 'Papillion, NE',         lat:  41.1500, lng:  -96.0394, visited: false,                        color: '#004B8D' },
+        { affiliate: 'Kansas City Royals',    team: 'NW Arkansas Naturals',        level: 'AA',     park: 'Arvest Ballpark',                 city: 'Springdale, AR',        lat:  36.1728, lng:  -94.1333, visited: false,                        color: '#004B8D' },
+        { affiliate: 'Kansas City Royals',    team: 'Quad Cities River Bandits',   level: 'High-A', park: 'Modern Woodmen Park',             city: 'Davenport, IA',         lat:  41.5230, lng:  -90.5773, visited: true,  date: 'Jun 20, 2026', color: '#002D62' },
+        { affiliate: 'Kansas City Royals',    team: 'Columbia Fireflies',          level: 'A',      park: 'Segra Park',                      city: 'Columbia, SC',          lat:  34.0012, lng:  -81.0495, visited: false,                        color: '#002D62' },
+        { affiliate: 'Detroit Tigers',        team: 'Toledo Mud Hens',             level: 'AAA',    park: 'Fifth Third Field',               city: 'Toledo, OH',            lat:  41.6644, lng:  -83.5555, visited: false,                        color: '#002D62' },
+        { affiliate: 'Detroit Tigers',        team: 'Erie SeaWolves',              level: 'AA',     park: 'UPMC Park',                       city: 'Erie, PA',              lat:  42.1181, lng:  -80.0817, visited: false,                        color: '#003A5C' },
+        { affiliate: 'Detroit Tigers',        team: 'West Michigan Whitecaps',     level: 'High-A', park: 'LMCU Ballpark',                   city: 'Comstock Park, MI',     lat:  43.0514, lng:  -85.6760, visited: false,                        color: '#003082' },
+        { affiliate: 'Detroit Tigers',        team: 'Lakeland Flying Tigers',      level: 'A',      park: 'Publix Field at Joker Marchant',  city: 'Lakeland, FL',          lat:  28.0399, lng:  -81.9748, visited: false,                        color: '#0C2340' },
+        // AL West
+        { affiliate: 'Houston Astros',        team: 'Sugar Land Space Cowboys',    level: 'AAA',    park: 'Constellation Field',             city: 'Sugar Land, TX',        lat:  29.5681, lng:  -95.6491, visited: false,                        color: '#092C3C' },
+        { affiliate: 'Houston Astros',        team: 'Corpus Christi Hooks',        level: 'AA',     park: 'Whataburger Field',               city: 'Corpus Christi, TX',    lat:  27.7979, lng:  -97.3959, visited: false,                        color: '#002D62' },
+        { affiliate: 'Houston Astros',        team: 'Asheville Tourists',          level: 'High-A', park: 'McCormick Field',                 city: 'Asheville, NC',         lat:  35.5440, lng:  -82.5099, visited: false,                        color: '#003366' },
+        { affiliate: 'Houston Astros',        team: 'Fayetteville Woodpeckers',    level: 'A',      park: 'Segra Stadium',                   city: 'Fayetteville, NC',      lat:  35.0585, lng:  -78.8856, visited: false,                        color: '#CC0000' },
+        { affiliate: 'Los Angeles Angels',    team: 'Salt Lake Bees',              level: 'AAA',    park: "Smith's Ballpark",                city: 'Salt Lake City, UT',    lat:  40.7585, lng: -111.9028, visited: false,                        color: '#002855' },
+        { affiliate: 'Los Angeles Angels',    team: 'Rocket City Trash Pandas',    level: 'AA',     park: 'Toyota Field',                    city: 'Madison, AL',           lat:  34.7332, lng:  -86.7464, visited: false,                        color: '#1D3163' },
+        { affiliate: 'Los Angeles Angels',    team: 'Tri-City Dust Devils',        level: 'High-A', park: 'Gesa Stadium',                    city: 'Pasco, WA',             lat:  46.2372, lng: -119.0969, visited: false,                        color: '#CC0000' },
+        { affiliate: 'Los Angeles Angels',    team: 'Inland Empire 66ers',         level: 'A',      park: 'San Manuel Stadium',              city: 'San Bernardino, CA',    lat:  34.0747, lng: -117.2825, visited: false,                        color: '#003082' },
+        { affiliate: 'Texas Rangers',         team: 'Round Rock Express',          level: 'AAA',    park: 'Dell Diamond',                    city: 'Round Rock, TX',        lat:  30.5041, lng:  -97.6831, visited: false,                        color: '#003087' },
+        { affiliate: 'Texas Rangers',         team: 'Frisco RoughRiders',          level: 'AA',     park: 'Riders Field',                    city: 'Frisco, TX',            lat:  33.1528, lng:  -96.8231, visited: false,                        color: '#002D62' },
+        { affiliate: 'Texas Rangers',         team: 'Hickory Crawdads',            level: 'High-A', park: 'L.P. Frans Stadium',              city: 'Hickory, NC',           lat:  35.7255, lng:  -81.3609, visited: false,                        color: '#003082' },
+        { affiliate: 'Texas Rangers',         team: 'Down East Wood Ducks',        level: 'A',      park: 'Grainger Stadium',                city: 'Kinston, NC',           lat:  35.2613, lng:  -77.5868, visited: false,                        color: '#003278' },
+        { affiliate: 'Seattle Mariners',      team: 'Tacoma Rainiers',             level: 'AAA',    park: 'Cheney Stadium',                  city: 'Tacoma, WA',            lat:  47.2525, lng: -122.4603, visited: false,                        color: '#003A70' },
+        { affiliate: 'Seattle Mariners',      team: 'Arkansas Travelers',          level: 'AA',     park: 'Dickey-Stephens Park',            city: 'North Little Rock, AR', lat:  34.7626, lng:  -92.2713, visited: false,                        color: '#CC0000' },
+        { affiliate: 'Seattle Mariners',      team: 'Everett AquaSox',             level: 'High-A', park: 'Funko Field',                     city: 'Everett, WA',           lat:  47.9809, lng: -122.1932, visited: false,                        color: '#003882' },
+        { affiliate: 'Seattle Mariners',      team: 'Modesto Nuts',                level: 'A',      park: 'John Thurman Field',              city: 'Modesto, CA',           lat:  37.6369, lng: -120.9949, visited: false,                        color: '#0C2C56' },
+        { affiliate: 'Oakland Athletics',     team: 'Las Vegas Aviators',          level: 'AAA',    park: 'Las Vegas Ballpark',              city: 'Las Vegas, NV',         lat:  36.1911, lng: -115.1767, visited: false,                        color: '#002751' },
+        { affiliate: 'Oakland Athletics',     team: 'Midland RockHounds',          level: 'AA',     park: 'Momentum Bank Ballpark',          city: 'Midland, TX',           lat:  31.9826, lng: -102.0780, visited: false,                        color: '#003F7A' },
+        { affiliate: 'Oakland Athletics',     team: 'Lansing Lugnuts',             level: 'High-A', park: 'Jackson Field',                   city: 'Lansing, MI',           lat:  42.7328, lng:  -84.5614, visited: false,                        color: '#005C36' },
+        { affiliate: 'Oakland Athletics',     team: 'Stockton Ports',              level: 'A',      park: 'Banner Island Ballpark',          city: 'Stockton, CA',          lat:  37.9558, lng: -121.3038, visited: false,                        color: '#003087' }
       ];
 
-      var el = document.getElementById('milbMap');
-      if (!el || !MILB.length) { return; }
+      var INDIE = [
+        { team: 'Burlington Bees',        league: 'prospect', note: 'Prospect League',                    park: 'Community Field',       city: 'Burlington, IA',   lat: 40.8090, lng: -91.1378, date: 'Jul 29, 2011',                color: '#F2A900' },
+        { team: 'Springfield Horseshoes', league: 'prospect', note: 'Prospect League (formerly Sliders)', park: 'Robin Roberts Stadium', city: 'Springfield, IL',  lat: 39.8186, lng: -89.6310, date: 'Jun 15, 2012 & Jul 20, 2023',  color: '#DB6B1E' },
+        { team: 'Chicago Dogs',           league: 'partner',  note: 'American Association of Professional Baseball', park: 'Impact Field', city: 'Rosemont, IL', lat: 41.9806, lng: -87.8656, date: 'Jun 17, 2022', color: '#008E97' },
+        { team: 'Normal CornBelters',     league: 'prospect', note: 'Prospect League',                    park: 'The Corn Crib',         city: 'Normal, IL',       lat: 40.5640, lng: -88.9937, date: 'Jun 18, 2023',                color: '#2C8C3C' }
+      ];
 
-      var map = L.map('milbMap', { scrollWheelZoom: false });
-
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      var tileOpts = {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
         maxZoom: 14
-      }).addTo(map);
+      };
 
-      var latlngs = [];
+      // ---- MiLB map ----
+      (function () {
+        var el = document.getElementById('milbMap');
+        if (!el) return;
 
-      MILB.forEach(function (p) {
-        var icon = L.divIcon({
-          className: 'milb-marker-icon',
-          html: '<div class="milb-dot"></div>',
-          iconSize: [14, 14],
-          iconAnchor: [7, 7],
-          popupAnchor: [0, -8]
-        });
-        L.marker([p.lat, p.lng], { icon: icon })
-          .bindPopup(
+        var map = L.map('milbMap', { scrollWheelZoom: false });
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', tileOpts).addTo(map);
+
+        var visitedLayer   = L.layerGroup();
+        var unvisitedLayer = L.layerGroup();
+        var visitedLatLngs   = [];
+        var allLatLngs       = [];
+
+        MILB.forEach(function (p) {
+          var isV = p.visited;
+          var icon = L.divIcon({
+            className: 'milb-marker-icon',
+            html: '<div class="' + (isV ? 'milb-dot' : 'milb-dot milb-dot--unvisited') + '"></div>',
+            iconSize:   isV ? [14, 14] : [10, 10],
+            iconAnchor: isV ? [7,  7]  : [5,  5],
+            popupAnchor: [0, -8]
+          });
+          var popup =
             '<strong>' + p.team + '</strong><br>' +
             '<em style="color:#888">' + p.park + '</em><br>' +
-            '<span style="font-size:0.82em;color:#555">' + p.city + ' &middot; ' + p.note + '</span>'
-          )
-          .addTo(map);
-        latlngs.push([p.lat, p.lng]);
-      });
+            '<span style="font-size:0.82em;color:#555">' + p.city + ' &middot; ' + p.level + ' &middot; ' + p.affiliate + '</span>' +
+            (isV ? '<br><span style="font-size:0.82em;color:#555">Visited ' + p.date + '</span>' : '');
+          var marker = L.marker([p.lat, p.lng], { icon: icon }).bindPopup(popup);
+          (isV ? visitedLayer : unvisitedLayer).addLayer(marker);
+          if (isV) visitedLatLngs.push([p.lat, p.lng]);
+          allLatLngs.push([p.lat, p.lng]);
+        });
 
-      if (latlngs.length === 1) {
-        map.setView(latlngs[0], 6);
-      } else {
-        map.fitBounds(latlngs, { padding: [40, 40], maxZoom: 7 });
-      }
+        visitedLayer.addTo(map);
+        map.fitBounds(visitedLatLngs.length > 1 ? visitedLatLngs : allLatLngs, { padding: [40, 40], maxZoom: 7 });
+
+        // Build full affiliate directory — all 120 teams, visited ones fill in solid
+        var bucketEl = document.getElementById('milbBucketList');
+        if (bucketEl) {
+          var gridEl = document.createElement('div');
+          gridEl.className = 'milb-full-list';
+
+          // Header row: empty org-name cell + 4 level labels
+          gridEl.appendChild(document.createElement('div'));
+          ['AAA', 'AA', 'High-A', 'A'].forEach(function (lv) {
+            var h = document.createElement('div');
+            h.className = 'milb-level-header';
+            h.textContent = lv;
+            gridEl.appendChild(h);
+          });
+
+          // One org-name cell per affiliate, then its 4 affiliate chips
+          var currentAffiliate = null;
+          MILB.forEach(function (p) {
+            if (p.affiliate !== currentAffiliate) {
+              currentAffiliate = p.affiliate;
+              var orgCell = document.createElement('div');
+              orgCell.className = 'milb-org-name';
+              orgCell.textContent = p.affiliate;
+              gridEl.appendChild(orgCell);
+            }
+            var chip = document.createElement('span');
+            chip.className = 'bp-chip bp-team ' + (p.visited ? 'is-seen' : 'is-unseen');
+            chip.style.setProperty('--team', p.color);
+            chip.title = p.park + ' \xb7 ' + p.city + (p.visited ? ' \xb7 Visited ' + p.date : '');
+            chip.textContent = p.team;
+            gridEl.appendChild(chip);
+          });
+
+          bucketEl.appendChild(gridEl);
+          bucketEl.style.display = 'none';
+
+          var toggleBtn = document.getElementById('milbBucketToggle');
+          if (toggleBtn) {
+            toggleBtn.textContent = 'Show all affiliates (' + MILB.length + ' teams) ▾';
+            toggleBtn.addEventListener('click', function () {
+              var isOpen = bucketEl.style.display !== 'none';
+              bucketEl.style.display = isOpen ? 'none' : '';
+              toggleBtn.textContent = isOpen
+                ? 'Show all affiliates (' + MILB.length + ' teams) ▾'
+                : 'Hide affiliate list ▴';
+            });
+          }
+        }
+
+        // Filter buttons
+        var milbFilterBtns = document.getElementById('milb-filters').querySelectorAll('.bp-filter-btn');
+        milbFilterBtns.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            milbFilterBtns.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            if (btn.dataset.filter === 'all') {
+              unvisitedLayer.addTo(map);
+              map.fitBounds(allLatLngs, { padding: [30, 30], maxZoom: 5 });
+            } else {
+              map.removeLayer(unvisitedLayer);
+              map.fitBounds(visitedLatLngs, { padding: [40, 40], maxZoom: 7 });
+            }
+          });
+        });
+
+        if (window.ResizeObserver) {
+          new ResizeObserver(function () { map.invalidateSize(); }).observe(el);
+        }
+      }());
+
+      // ---- Indie map ----
+      (function () {
+        var el = document.getElementById('indieMap');
+        if (!el) return;
+
+        var map = L.map('indieMap', { scrollWheelZoom: false });
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', tileOpts).addTo(map);
+
+        var markers = [];
+        INDIE.forEach(function (p) {
+          var icon = L.divIcon({
+            className: 'milb-marker-icon',
+            html: '<div class="milb-dot milb-dot--' + p.league + '"></div>',
+            iconSize: [14, 14], iconAnchor: [7, 7], popupAnchor: [0, -8]
+          });
+          var marker = L.marker([p.lat, p.lng], { icon: icon })
+            .bindPopup(
+              '<strong>' + p.team + '</strong><br>' +
+              '<em style="color:#888">' + p.park + '</em><br>' +
+              '<span style="font-size:0.82em;color:#555">' + p.city + ' &middot; ' + p.note + ' &middot; ' + p.date + '</span>'
+            )
+            .addTo(map);
+          markers.push({ marker: marker, league: p.league, latlng: [p.lat, p.lng] });
+        });
+
+        var allLatLngs = markers.map(function (m) { return m.latlng; });
+        map.fitBounds(allLatLngs, { padding: [40, 40], maxZoom: 7 });
+
+        var indieFilterBtns = document.getElementById('indie-filters').querySelectorAll('.bp-filter-btn');
+        indieFilterBtns.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            indieFilterBtns.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            var filter = btn.dataset.filter;
+            var visible = [];
+            markers.forEach(function (m) {
+              if (filter === 'all' || m.league === filter) {
+                m.marker.addTo(map);
+                visible.push(m.latlng);
+              } else {
+                m.marker.remove();
+              }
+            });
+            if (visible.length) { map.fitBounds(visible, { padding: [40, 40], maxZoom: 7 }); }
+          });
+        });
+
+        if (window.ResizeObserver) {
+          new ResizeObserver(function () { map.invalidateSize(); }).observe(el);
+        }
+      }());
+
     }());
   </script>
 
@@ -588,23 +958,24 @@
         document.body.style.overflow = '';
       }
 
-      // MLB slideshow — capture originals before Cycle2 clones/reorders them,
-      // and match the clicked clone back to its original by src.
-      var slideshow = document.querySelector('.cycle-slideshow');
-      if (slideshow) {
-        var slides = Array.prototype.map.call(slideshow.querySelectorAll('img'), capture);
-        if (slides.length) {
-          slideshow.addEventListener('click', function (e) {
-            var img = e.target.closest ? e.target.closest('img') : null;
-            if (!img) { return; }
-            var src = img.getAttribute('src'), i = -1;
-            for (var j = 0; j < slides.length; j++) { if (slides[j].src === src) { i = j; break; } }
-            open(slides, i < 0 ? 0 : i);
-          });
-        }
+      // Attach lightbox to a cycle slideshow — captures originals before Cycle2 clones them,
+      // then matches a clicked (possibly cloned) image back to its original by src.
+      function attachSlideshowLightbox(ss) {
+        var slides = Array.prototype.map.call(ss.querySelectorAll('img'), capture);
+        if (!slides.length) { return; }
+        ss.addEventListener('click', function (e) {
+          var img = e.target.closest ? e.target.closest('img') : null;
+          if (!img) { return; }
+          var src = img.getAttribute('src'), i = -1;
+          for (var j = 0; j < slides.length; j++) { if (slides[j].src === src) { i = j; break; } }
+          open(slides, i < 0 ? 0 : i);
+        });
       }
 
-      // Beyond-MLB photo strips — each strip is its own gallery (no cloning)
+      // Attach to all cycle slideshows (MLB, MiLB, Banana Ball)
+      Array.prototype.forEach.call(document.querySelectorAll('.cycle-slideshow'), attachSlideshowLightbox);
+
+      // Beyond-MLB photo strips (kept for any non-slideshow strips)
       Array.prototype.forEach.call(document.querySelectorAll('.bp-photo-strip'), function (strip) {
         var imgs = Array.prototype.slice.call(strip.querySelectorAll('.bp-photo img'));
         if (!imgs.length) { return; }
@@ -640,21 +1011,29 @@
 
   <script>
     $(function() {
-      var $cap = $('.cycle-caption');
-      function setCap(slide) { $cap.text($(slide).attr('alt') || ''); }
+      // MLB + MiLB — scrollHorz with .prev/.next siblings; caption found relative to each slideshow
+      var $mainSS = $('.cycle-slideshow').not('.bananas-slideshow').not('.indie-slideshow');
+      $mainSS.on('cycle-after', function (e, opts, out, inc) {
+        $(this).closest('.slideshow-wrap').find('.cycle-caption').text($(inc).attr('alt') || '');
+      }).cycle({ fx: 'scrollHorz', timeout: 0, swipe: true, prev: '.prev', next: '.next', slides: '> img' });
+      $mainSS.each(function () {
+        var $ss = $(this);
+        $ss.closest('.slideshow-wrap').find('.cycle-caption').text($ss.find('> img').first().attr('alt') || '');
+      });
 
-      $('.cycle-slideshow')
-        .on('cycle-after', function (e, opts, outgoing, incoming) { setCap(incoming); })
-        .cycle({
-          fx: 'scrollHorz',
-          timeout: 0,
-          swipe: true,
-          prev: '.prev',
-          next: '.next',
-          slides: '> img'   // exclude the caption element from the slides
-        });
+      // Banana Ball and Indie — bind prev/next manually (buttons live outside .cycle-slideshow)
+      function initSlideshow($ss, $cap, $prev, $next) {
+        if (!$ss.length) { return; }
+        $ss.on('cycle-after', function (e, opts, out, inc) {
+          $cap.text($(inc).attr('alt') || '');
+        }).cycle({ fx: 'scrollHorz', timeout: 0, swipe: true, slides: '> img' });
+        $cap.text($ss.find('> img').first().attr('alt') || '');
+        $prev.on('click', function() { $ss.cycle('prev'); });
+        $next.on('click', function() { $ss.cycle('next'); });
+      }
 
-      setCap($('.cycle-slideshow > img').first());
+      initSlideshow($('.bananas-slideshow'), $('#bananasCaption'), $('#bananasPrev'), $('#bananasNext'));
+      initSlideshow($('.indie-slideshow'),   $('#indieCaption'),   $('#indiePrev'),   $('#indieNext'));
     });
   </script>
 

@@ -307,9 +307,6 @@ a:active {
 	margin-top: 0;
 }
 
-.split.snip p:last-child {
-	padding-bottom: 3%;
-}
 
 .caption {
 	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.8);

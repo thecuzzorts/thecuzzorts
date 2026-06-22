@@ -101,7 +101,8 @@ hr { display: none; }
   background: #1a2e3b;
 }
 
-.slideshow-controls a {
+.slideshow-controls a,
+.slideshow-controls button {
   flex: 0 0 auto;
   font-family: 'Kreon', serif;
   font-size: 1.05rem;
@@ -115,7 +116,13 @@ hr { display: none; }
   transition: color 0.15s, border-color 0.15s;
 }
 
-.slideshow-controls a:hover {
+.slideshow-controls button {
+  background: none;
+  cursor: pointer;
+}
+
+.slideshow-controls a:hover,
+.slideshow-controls button:hover {
   color: #E8A020 !important;
   border-color: #E8A020;
 }
@@ -231,10 +238,13 @@ hr { display: none; }
   transition: border-color 0.15s, color 0.15s;
 }
 
-.bp-filter-btn.active[data-filter="all"]     { border-color: #E8A020; color: #E8A020; }
-.bp-filter-btn.active[data-filter="current"] { border-color: #22703D; color: #22703D; }
-.bp-filter-btn.active[data-filter="closed"]  { border-color: #888;    color: #888;    }
-.bp-filter-btn.active[data-filter="future"]  { border-color: #003087; color: #003087; }
+.bp-filter-btn.active[data-filter="all"]      { border-color: #E8A020; color: #E8A020; }
+.bp-filter-btn.active[data-filter="current"]  { border-color: #22703D; color: #22703D; }
+.bp-filter-btn.active[data-filter="closed"]   { border-color: #888;    color: #888;    }
+.bp-filter-btn.active[data-filter="future"]   { border-color: #003087; color: #003087; }
+.bp-filter-btn.active[data-filter="visited"]  { border-color: #E8A020; color: #E8A020; }
+.bp-filter-btn.active[data-filter="prospect"] { border-color: #22703D; color: #22703D; }
+.bp-filter-btn.active[data-filter="partner"]  { border-color: #003087; color: #003087; }
 
 @media (max-width: 640px) {
   #ballparksMap { height: 320px; }
@@ -277,8 +287,8 @@ hr { display: none; }
 
 .format .group .split.snip.ballpark { width: 100% !important; }
 
-.format .group.side-by-side { grid-template-columns: 1fr 1fr; }
-@media (max-width: 640px) {
+.format .group.side-by-side { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+@media (max-width: 1099px) {
   .format .group.side-by-side { grid-template-columns: 1fr; }
 }
 
@@ -288,22 +298,25 @@ hr { display: none; }
   margin-bottom: 0 !important;
 }
 
-.split.snip h2.nl,
-.split.snip h2.al,
-.split.snip h2.ballpark {
+.split.snip span.nl,
+.split.snip span.al,
+.split.snip span.ballpark {
   font-family: 'Kreon', serif !important;
   font-size: 1rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.06em !important;
   text-transform: uppercase !important;
   border-radius: 9px 9px 0 0 !important;
+  padding: 0.65rem 1.25rem !important;
+  display: block !important;
+  color: #fff !important;
 }
 
-.split.snip h2.nl             { background: #003087 !important; }
-.split.snip h2.al             { background: #C8102E !important; }
-.split.snip h2.ballpark       { background: #22703D !important; }
-.split.snip h2.ballpark-closed { background: #64748b !important; }
-.split.snip h2.ballpark-future { background: #E8A020 !important; }
+.split.snip span.nl             { background: #003087 !important; }
+.split.snip span.al             { background: #C8102E !important; }
+.split.snip span.ballpark       { background: #22703D !important; }
+.split.snip span.ballpark-closed { background: #64748b !important; }
+.split.snip span.ballpark-future { background: #E8A020 !important; color: #1a2e3b !important; }
 
 .team-name { font-family: 'Roboto Condensed', sans-serif !important; }
 .first-visit .date { font-family: 'Roboto Condensed', sans-serif !important; }
@@ -311,9 +324,9 @@ hr { display: none; }
 .format { width: 100% !important; margin-bottom: 0 !important; }
 
 /* --- Kids section ----------------------------------------- */
-.split.snip h2.kid-ellie { background: #66b2b2 !important; }
-.split.snip h2.kid-tilly { background: #0898ff !important; }
-.split.snip h2.kid-poppy { background: #d9259a !important; }
+.split.snip span.kid-ellie { background: #66b2b2 !important; color: #1a2e3b !important; }
+.split.snip span.kid-tilly { background: #0898ff !important; }
+.split.snip span.kid-poppy { background: #d9259a !important; }
 
 .format .group.kids-grid { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 1099px) {
@@ -321,17 +334,17 @@ hr { display: none; }
 }
 
 /* --- Beyond MLB ------------------------------------------- */
-.split.snip h2.beyond-milb { background: #1a2e3b !important; }
-.split.snip h2.beyond-milb .divisionCount {
+.split.snip span.beyond-milb { background: #1a2e3b !important; padding: 0.65rem 1.25rem !important; }
+.split.snip span.beyond-milb .divisionCount {
   color: #fff;
   background: rgba(255,255,255,0.16);
 }
 
-.split.snip h2.beyond-bananas {
+.split.snip span.beyond-bananas {
   background: #FFDC00 !important;
   color: #1a2e3b !important;
 }
-.split.snip h2.beyond-bananas .divisionCount {
+.split.snip span.beyond-bananas .divisionCount {
   color: #1a2e3b;
   background: rgba(26,46,59,0.12);
 }
@@ -395,13 +408,12 @@ hr { display: none; }
 .bp-chip.bp-team.is-upcoming small,
 .bp-chip.bp-team.is-unseen small { color: var(--team); opacity: 0.8; }
 
-.bp-chip.bp-team.is-unseen { border-style: dashed; opacity: 0.9; }
+.bp-chip.bp-team.is-unseen { border-style: dashed; opacity: 0.9; background: color-mix(in srgb, var(--team) 8%, #fff); }
 
 .bp-chip.bp-team.ink-dark.is-seen { color: #1a2e3b; }
 .bp-chip.bp-team.ink-dark.is-seen small { color: rgba(26,46,59,0.7); }
 
-#milbMap { height: 300px; border-radius: 0; }
-@media (max-width: 640px) { #milbMap { height: 240px; } }
+#milbMap { height: 320px; border-radius: 6px; }
 
 .milb-marker-icon { background: none !important; border: none !important; }
 
@@ -414,7 +426,132 @@ hr { display: none; }
   box-shadow: 0 0 0 1px rgba(0,0,0,0.25);
 }
 
-.split.snip.milb-card .map-wrap { box-shadow: none; border-radius: 0; padding: 0; }
+.milb-marker-icon .milb-dot--prospect { background: #22703D; }
+.milb-marker-icon .milb-dot--partner  { background: #003087; }
+
+
+/* Banana Ball in-card slideshow */
+.bp-slideshow-wrap {
+  margin: 0;
+  box-shadow: none;
+  border-radius: 0 0 9px 9px;
+}
+
+.milb-marker-icon .milb-dot.milb-dot--unvisited {
+  width: 10px;
+  height: 10px;
+  background: #aaaaaa;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.18);
+}
+
+/* Indie card filter bar sits above the edge-to-edge map */
+.split.snip.indie-card .bp-filters { padding: 0.6rem 1rem 0; }
+
+.milb-group-label {
+  flex: 0 0 100%;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8a9aaa;
+  padding-top: 0.5rem;
+}
+.milb-group-label:first-child { padding-top: 0; }
+
+.split.snip span.beyond-indie {
+  background: #7B4F2E !important;
+  color: #fff !important;
+}
+.split.snip span.beyond-indie .divisionCount {
+  color: #fff;
+  background: rgba(255,255,255,0.16);
+}
+
+#indieMap { height: 280px; border-radius: 0; }
+.split.snip.indie-card { overflow: hidden; }
+.split.snip.indie-card .map-wrap { box-shadow: none; border-radius: 0; padding: 0; }
+
+.milb-bucket-divider {
+  border-top: 1px solid #e3e7eb;
+  margin: 0.9rem 0 0.75rem;
+}
+
+.milb-bucket-toggle {
+  display: block;
+  margin: 0 auto 0.4rem;
+  padding: 5px 14px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  background: #fff;
+  color: #333;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.milb-bucket-toggle:hover { border-color: #1a2e3b; color: #1a2e3b; }
+
+/* Full affiliate directory grid */
+#milbBucketList { display: block; padding: 0.2rem 1rem 0.8rem; }
+
+.milb-full-list {
+  display: grid;
+  grid-template-columns: auto repeat(4, 1fr);
+  gap: 4px 6px;
+  align-items: center;
+}
+
+.milb-level-header {
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #8a9aaa;
+  text-align: center;
+  padding-bottom: 0.15rem;
+}
+
+.milb-org-name {
+  font-size: 0.64rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #7a8a99;
+  padding-right: 0.5rem;
+  white-space: nowrap;
+}
+
+.milb-full-list .bp-chip {
+  display: block;
+  padding: 0.22rem 0.4rem;
+  font-size: 0.75rem;
+  border-radius: 10px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  cursor: help;
+}
+
+@media (max-width: 1280px) {
+  /* Medium: drop level-header row, org name takes its own full-width row, 4 chips below */
+  .milb-full-list { grid-template-columns: repeat(4, 1fr); }
+  .milb-full-list > div:first-child,
+  .milb-level-header { display: none; }
+  .milb-org-name {
+    grid-column: 1 / -1;
+    padding-top: 0.55rem;
+    padding-right: 0;
+    padding-bottom: 0.05rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Narrow: 3 rows — affiliate name, AAA+AA, High-A+A */
+  .milb-full-list { grid-template-columns: repeat(2, 1fr); }
+}
 
 /* --- Beyond MLB photo strips ------------------------------ */
 .bp-photo-strip {
@@ -528,4 +665,88 @@ hr { display: none; }
 
 @media (max-width: 640px) {
   .lb-prev, .lb-next { width: 38px; height: 52px; font-size: 1.3rem; }
+}
+
+/* --- Section panel (groups H2 + all its content) ---------- */
+.section-panel {
+  overflow: hidden;
+  border-radius: 12px;
+  background: rgba(26, 46, 59, 0.04);
+  padding: 0 1.25rem 1.5rem;
+  margin-bottom: 2.5rem;
+  scroll-margin-top: 4rem;
+}
+
+.section-panel > *:last-child { margin-bottom: 0; }
+
+/* --- Section group H2 (major category dividers) ----------- */
+h2.section-group {
+  font-family: 'Kreon', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  background: #1a2e3b;
+  display: block;
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  border-radius: 10px;
+  margin: 2rem 0 1.25rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-left: 5px solid #E8A020;
+  box-sizing: border-box;
+}
+
+/* Inside a panel: H2 spans edge-to-edge, square corners (panel clips the top) */
+.section-panel > h2.section-group {
+  border-radius: 0;
+  margin: 0 -1.25rem 1.5rem;
+  width: calc(100% + 2.5rem);
+}
+
+h2.section-group.sec-reveal { opacity: 0; transform: translateY(8px); transition: opacity 0.5s ease, transform 0.5s ease; }
+h2.section-group.sec-reveal.in-view { opacity: 1; transform: none; }
+
+.preserve-case { text-transform: none; }
+
+/* --- Beyond MLB section grid layouts ---------------------- */
+.beyond-section {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.milb-section,
+.indie-section,
+.closed-future-section { grid-template-columns: 1fr 1fr; }
+
+.banana-section { grid-template-columns: 2fr 1fr 1fr; }
+
+.section-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+.section-sub--full { grid-column: 1 / -1; }
+
+.section-sub .split.snip {
+  float: none !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Slideshow filling top of a photos-only card (no header strip above it) */
+.section-sub .split.snip > .bp-slideshow-wrap:first-child,
+.section-sub .split.snip > .slideshow-wrap:first-child { border-radius: 9px; }
+
+@media (max-width: 1099px) {
+  .milb-section,
+  .indie-section,
+  .closed-future-section,
+  .banana-section { grid-template-columns: 1fr; }
+
+  .section-sub--full { grid-column: 1; }
 }
