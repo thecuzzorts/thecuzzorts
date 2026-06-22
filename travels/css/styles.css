@@ -18,8 +18,12 @@ body {
   min-height: 100vh;
 }
 
-/* --- Section spacing ------------------------------- */
-section + section { margin-top: 2.5rem; }
+/* --- Section panels (anchor-nav targets) ----------- */
+.section-panel {
+  scroll-margin-top: 4rem;
+}
+
+.section-panel + .section-panel { margin-top: 2.5rem; }
 
 /* --- Person Filter Row ----------------------------- */
 .person-filters {

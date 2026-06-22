@@ -287,7 +287,7 @@ body {
 }
 
 .map-filter-btn.active[data-filter="anyone"]       { border-color: #E8A020; color: #E8A020; }
-.map-filter-btn.active[data-filter="whole-family"] { border-color: #E8601A; color: #E8601A; }
+.map-filter-btn.active[data-filter="whole-family"] { border-color: #FF8200; color: #FF8200; }
 .map-filter-btn.active[data-filter="josh"]   { border-color: #00AC4B; color: #00AC4B; }
 .map-filter-btn.active[data-filter="sam"]    { border-color: #662684; color: #662684; }
 .map-filter-btn.active[data-filter="ellie"]  { border-color: #66b2b2; color: #66b2b2; }

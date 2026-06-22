@@ -18,6 +18,11 @@ body {
   min-height: 100vh;
 }
 
+/* --- Section panels (anchor-nav targets) ----------- */
+.section-panel {
+  scroll-margin-top: 4rem;
+}
+
 /* --- Person Filter Row ----------------------------- */
 .person-filters {
   display: flex;
