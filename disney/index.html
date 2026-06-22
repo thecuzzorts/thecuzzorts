@@ -13,6 +13,10 @@
   <title>Disney Parks | The Cuzzorts</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="The Cuzzorts tracking Disney theme parks around the world by family member.">
+  <meta property="og:title" content="Disney Parks | The Cuzzorts" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.thecuzzorts.com/disney/" />
+  <meta property="og:image" content="https://www.thecuzzorts.com/images/family-hero.jpg" />
   <link rel="stylesheet" href="css/styles.css?v=1">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="../css/site-chrome.css">
@@ -47,10 +51,8 @@
 
       <!-- Photos -->
       <div class="pm-col pm-photos">
-        <p class="section-heading" id="photos">Photos</p>
+        <h3 class="section-heading" id="photos">Photos</h3>
         <div class="combined-card" id="photos-card">
-          <h2>From the Parks</h2>
-          <p class="count">Click a photo to view full-screen</p>
           <div class="slideshow-wrap">
             <!-- Add more photos by dropping images in images/disney/ and copying an
                  <img> line below. The alt text becomes the caption. -->
@@ -69,9 +71,8 @@
 
       <!-- Map -->
       <div class="pm-col pm-map">
-        <p class="section-heading" id="map">Map</p>
+        <h3 class="section-heading" id="map">Map</h3>
         <div class="combined-card" id="map-card">
-          <h2>Disney Parks Worldwide</h2>
           <div class="map-filters" id="mapFilters">
             <button class="map-filter-btn active" data-filter="whole-family">Whole Family</button>
             <button class="map-filter-btn" data-filter="anyone">Anyone</button>
@@ -93,17 +94,19 @@
     </div><!-- /photos-map-row -->
 
     <!-- Parks Visited -->
-    <section id="parks">
-      <p class="section-heading">Parks Visited</p>
+    <div class="section-panel" id="parks">
+      <h3 class="section-heading">Parks Visited</h3>
       <div class="person-filters" id="parksFilters"></div>
       <div class="park-card" id="parksCard"></div>
-    </section>
+    </div><!-- /section-panel parks -->
 
     <!-- Bucket List -->
-    <p class="section-heading" id="bucket">Bucket List</p>
-    <div class="combined-card" id="bucket-card">
-      <h2>Parks to Visit</h2>
-    </div>
+    <div class="section-panel">
+      <h3 class="section-heading" id="bucket">Bucket List</h3>
+      <div class="combined-card" id="bucket-card">
+        <h2>Parks to Visit</h2>
+      </div>
+    </div><!-- /section-panel bucket -->
 
   </main>
 

@@ -30,6 +30,16 @@ body {
 /* --- Main Content ---------------------------------- */
 /* --- Section labels now styled by ../../css/section-labels.css --- */
 
+/* --- Section panels (anchor-nav targets) ----------- */
+.section-panel {
+  scroll-margin-top: 4rem;
+}
+
+/* Headings that are themselves anchor targets (Photos, Map, Bucket List) */
+.section-heading[id] {
+  scroll-margin-top: 4rem;
+}
+
 /* --- Combined Card --------------------------------- */
 .combined-card {
   --accent: #8B5E3C;

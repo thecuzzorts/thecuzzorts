@@ -242,9 +242,14 @@ hr { display: none; }
 .bp-filter-btn.active[data-filter="current"]  { border-color: #22703D; color: #22703D; }
 .bp-filter-btn.active[data-filter="closed"]   { border-color: #888;    color: #888;    }
 .bp-filter-btn.active[data-filter="future"]   { border-color: #003087; color: #003087; }
-.bp-filter-btn.active[data-filter="visited"]  { border-color: #E8A020; color: #E8A020; }
-.bp-filter-btn.active[data-filter="prospect"] { border-color: #22703D; color: #22703D; }
-.bp-filter-btn.active[data-filter="partner"]  { border-color: #003087; color: #003087; }
+.bp-filter-btn.active[data-filter="visited"]   { border-color: #E8A020; color: #E8A020; }
+.bp-filter-btn.active[data-filter="unvisited"] { border-color: #888;    color: #888;    }
+.bp-filter-btn.active[data-filter="aaa"]       { border-color: #1a2e3b; color: #1a2e3b; }
+.bp-filter-btn.active[data-filter="aa"]        { border-color: #1a2e3b; color: #1a2e3b; }
+.bp-filter-btn.active[data-filter="high-a"]    { border-color: #1a2e3b; color: #1a2e3b; }
+.bp-filter-btn.active[data-filter="a"]         { border-color: #1a2e3b; color: #1a2e3b; }
+.bp-filter-btn.active[data-filter="prospect"]  { border-color: #22703D; color: #22703D; }
+.bp-filter-btn.active[data-filter="partner"]   { border-color: #003087; color: #003087; }
 
 @media (max-width: 640px) {
   #ballparksMap { height: 320px; }
@@ -444,6 +449,30 @@ hr { display: none; }
   border: 2px solid #fff;
   box-shadow: 0 0 0 1px rgba(0,0,0,0.18);
 }
+
+.map-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: #777;
+  margin-top: 6px;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1.5px solid #fff;
+  box-shadow: 0 0 0 1px #aaa;
+  flex-shrink: 0;
+}
+
+.legend-dot.visited   { background: linear-gradient(135deg, #C8102E 0%, #E8A020 40%, #22703D 70%, #002D62 100%); }
+.legend-dot.unvisited { background: #aaaaaa; }
+
+.legend-sep { color: #ccc; margin: 0 4px; }
 
 /* Indie card filter bar sits above the edge-to-edge map */
 .split.snip.indie-card .bp-filters { padding: 0.6rem 1rem 0; }

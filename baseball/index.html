@@ -14,7 +14,9 @@
   <meta name="description" content="Our love of baseball and travel is taking us on a ballpark tour! Our goal: visit all 30 ballparks.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:title" content="Baseball | The Cuzzorts" />
-  <meta property="og:description" content="We've visited all 30 active MLB ballparks! Our love of baseball and travel continues." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.thecuzzorts.com/baseball/" />
+  <meta property="og:image" content="https://www.thecuzzorts.com/images/family-hero.jpg" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,15 +27,6 @@
   <link rel="stylesheet" href="../css/site-chrome.css">
   <link rel="stylesheet" href="../css/section-labels.css">
   <link rel="stylesheet" href="css/styles.css">
-
-  <link rel="apple-touch-icon-precomposed" href="../images/apple/touch-icon-iphone.png" />
-  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../images/apple/TC-Icon-57x57.png" />
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../images/apple/TC-Icon-72x72.png" />
-  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../images/apple/TC-Icon-76x76.png" />
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../images/apple/TC-Icon-114x114.png" />
-  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../images/apple/TC-Icon-120x120.png" />
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../images/apple/TC-Icon-144x144.png" />
-  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../images/apple/TC-Icon-152x152.png" />
 </head>
 
 <body>
@@ -368,10 +361,20 @@
           <h3 class="section-heading" id="milb-map">Map</h3>
           <div class="map-wrap">
             <div class="bp-filters" id="milb-filters">
+              <button class="bp-filter-btn" data-filter="all">All</button>
               <button class="bp-filter-btn active" data-filter="visited">Visited</button>
-              <button class="bp-filter-btn" data-filter="all">All Affiliates</button>
+              <button class="bp-filter-btn" data-filter="unvisited">Not Yet Visited</button>
+              <button class="bp-filter-btn" data-filter="aaa">AAA</button>
+              <button class="bp-filter-btn" data-filter="aa">AA</button>
+              <button class="bp-filter-btn" data-filter="high-a">High A</button>
+              <button class="bp-filter-btn" data-filter="a">A</button>
             </div>
             <div id="milbMap"></div>
+            <div class="map-legend">
+              <span class="legend-dot visited"></span> Visited
+              <span class="legend-sep">&middot;</span>
+              <span class="legend-dot unvisited"></span> Not yet visited
+            </div>
           </div>
         </div>
 
@@ -769,16 +772,13 @@
         var map = L.map('milbMap', { scrollWheelZoom: false });
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', tileOpts).addTo(map);
 
-        var visitedLayer   = L.layerGroup();
-        var unvisitedLayer = L.layerGroup();
-        var visitedLatLngs   = [];
-        var allLatLngs       = [];
+        var milbMarkers = [];
 
         MILB.forEach(function (p) {
           var isV = p.visited;
           var icon = L.divIcon({
             className: 'milb-marker-icon',
-            html: '<div class="' + (isV ? 'milb-dot' : 'milb-dot milb-dot--unvisited') + '"></div>',
+            html: '<div class="' + (isV ? 'milb-dot' : 'milb-dot milb-dot--unvisited') + '"' + (isV ? ' style="background:' + p.color + '"' : '') + '></div>',
             iconSize:   isV ? [14, 14] : [10, 10],
             iconAnchor: isV ? [7,  7]  : [5,  5],
             popupAnchor: [0, -8]
@@ -789,13 +789,30 @@
             '<span style="font-size:0.82em;color:#555">' + p.city + ' &middot; ' + p.level + ' &middot; ' + p.affiliate + '</span>' +
             (isV ? '<br><span style="font-size:0.82em;color:#555">Visited ' + p.date + '</span>' : '');
           var marker = L.marker([p.lat, p.lng], { icon: icon }).bindPopup(popup);
-          (isV ? visitedLayer : unvisitedLayer).addLayer(marker);
-          if (isV) visitedLatLngs.push([p.lat, p.lng]);
-          allLatLngs.push([p.lat, p.lng]);
+          milbMarkers.push({ marker: marker, visited: isV, level: p.level, lat: p.lat, lng: p.lng });
         });
 
-        visitedLayer.addTo(map);
-        map.fitBounds(visitedLatLngs.length > 1 ? visitedLatLngs : allLatLngs, { padding: [40, 40], maxZoom: 7 });
+        function applyMilbFilter(f) {
+          var latLngs = [];
+          milbMarkers.forEach(function (m) {
+            var show =
+              f === 'all'       ? true :
+              f === 'visited'   ? m.visited :
+              f === 'unvisited' ? !m.visited :
+              f === 'aaa'       ? m.level === 'AAA' :
+              f === 'aa'        ? m.level === 'AA' :
+              f === 'high-a'    ? m.level === 'High-A' :
+              f === 'a'         ? m.level === 'A' : false;
+            if (show) { m.marker.addTo(map); latLngs.push([m.lat, m.lng]); }
+            else { map.removeLayer(m.marker); }
+          });
+          if (latLngs.length) {
+            var tight = (f === 'visited' || f === 'unvisited');
+            map.fitBounds(latLngs, { padding: tight ? [40, 40] : [30, 30], maxZoom: tight ? 7 : 5 });
+          }
+        }
+
+        applyMilbFilter('visited');
 
         // Build full affiliate directory — all 120 teams, visited ones fill in solid
         var bucketEl = document.getElementById('milbBucketList');
@@ -852,13 +869,7 @@
           btn.addEventListener('click', function () {
             milbFilterBtns.forEach(function (b) { b.classList.remove('active'); });
             btn.classList.add('active');
-            if (btn.dataset.filter === 'all') {
-              unvisitedLayer.addTo(map);
-              map.fitBounds(allLatLngs, { padding: [30, 30], maxZoom: 5 });
-            } else {
-              map.removeLayer(unvisitedLayer);
-              map.fitBounds(visitedLatLngs, { padding: [40, 40], maxZoom: 7 });
-            }
+            applyMilbFilter(btn.dataset.filter);
           });
         });
 

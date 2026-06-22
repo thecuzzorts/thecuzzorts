@@ -21,9 +21,11 @@
 
   // Counts keyed by element ID (not label — same label text can appear in multiple sections)
   var COUNT = {
-    'parks':       '30 / 30',
-    'milb-parks':  '4 / 120',
-    'indie-parks': '4'
+    'parks':        '30 / 30',
+    'milb-parks':   '4 / 120',
+    'indie-parks':  '4',
+    'banana-games': '2',
+    'banana-teams': '2 / 6'
   };
 
   // --- H3 sub-section enrichment ---
