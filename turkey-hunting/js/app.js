@@ -266,12 +266,12 @@
       var photos = p.photos ? p.photos() : {};
       var codes  = Object.keys(photos).filter(function (k) { return photos[k] && photos[k].length; });
       if (!codes.length) return;
+
+      var firstCode = codes[0]; // insertion order — controls which photo is the preview
       codes.sort(stateSort);
 
       var totalPhotos = 0;
       codes.forEach(function (k) { totalPhotos += photos[k].length; });
-
-      var firstCode = codes[0];
       var firstSrc  = photos[firstCode][0];
       var stateName = STATE_NAMES[firstCode] || firstCode;
 
