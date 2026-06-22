@@ -683,11 +683,33 @@ hr { display: none; }
   border-radius: 12px;
   background: rgba(26, 46, 59, 0.04);
   padding: 0 1.25rem 1.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 5.5rem;
   scroll-margin-top: 4rem;
 }
 
+@media (max-width: 640px) {
+  .section-panel { margin-bottom: 3.5rem; }
+}
+
 .section-panel > *:last-child { margin-bottom: 0; }
+
+.section-panel::after {
+  content: '';
+  display: block;
+  height: 2px;
+  margin-top: 1.25rem;
+  border-radius: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent       0%,
+    rgba(26,46,59,.15) 10%,
+    rgba(232,160,32,.45) 30%,
+    #E8A020           50%,
+    rgba(232,160,32,.45) 70%,
+    rgba(26,46,59,.15) 90%,
+    transparent       100%
+  );
+}
 
 /* --- Section group H2 (major category dividers) ----------- */
 h2.section-group {
