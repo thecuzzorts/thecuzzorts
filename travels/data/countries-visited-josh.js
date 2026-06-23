@@ -17,7 +17,9 @@ var countriesVisitedJosh = {
 // Example: "MX": { date: "2019-03-15", notes: "Cancun trip" }
 var countriesDetailsJosh = {
 	"BS": { date: "2003-06-30" },
+	"CA": { date: "2002-08-01" },
 	"DO": { date: "2022-01-15", notes: "Neighborhood friends trip to Punta Cana" },
+	"PL": { date: "2005-06-01" },
 	"PR": { date: "2026-03-04", notes: "Cruise on the Oasis of the Seas" },
 	"SX": { date: "2025-03-19", notes: "Cruise on the Wonder of the Seas" },
 	"VI": { date: "2025-03-20", notes: "Cruise on the Wonder of the Seas" }

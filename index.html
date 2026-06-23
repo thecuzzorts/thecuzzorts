@@ -289,6 +289,68 @@
 
     /* Footer styling comes from css/site-chrome.css */
 
+    /* ---- Activity feed -------------------------------- */
+    .activity-feed {
+      margin-top: 2.75rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e3e7eb;
+    }
+
+    .activity-feed .section-label {
+      text-align: left;
+      margin-bottom: 0.6rem;
+    }
+
+    .activity-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .activity-item {
+      display: grid;
+      grid-template-columns: 4.5rem 10px 1fr;
+      align-items: center;
+      gap: 0 0.9rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #f0f2f5;
+    }
+
+    .activity-item:last-child { border-bottom: none; }
+
+    .af-date {
+      font-size: 0.78rem;
+      color: #aab4bd;
+      font-family: 'Roboto Condensed', sans-serif;
+      letter-spacing: 0.03em;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .af-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      justify-self: center;
+    }
+
+    .af-text {
+      font-size: 0.9rem;
+      color: #4a5a6a;
+      line-height: 1.35;
+    }
+
+    .af-tag {
+      font-style: normal;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-left: 0.45rem;
+      white-space: nowrap;
+      opacity: 0.8;
+    }
+
     /* ---- Mobile overrides (kept last so they win the cascade) ---- */
     @media (max-width: 640px) {
       .hero-inner {
@@ -302,6 +364,11 @@
 
       /* Tighten the cards so more fit on screen at once */
       main { padding: 2rem 1.25rem; }
+      .activity-item { grid-template-columns: 3.5rem 8px 1fr; gap: 0 0.65rem; padding: 0.6rem 0; align-items: start; }
+      .af-date { padding-top: 0.15rem; font-size: 0.74rem; }
+      .af-dot { margin-top: 0.38rem; }
+      .af-text { display: flex; flex-direction: column; gap: 0.18rem; font-size: 0.86rem; }
+      .af-tag { display: block; margin-left: 0; font-size: 0.68rem; }
       .section-label { margin-bottom: 1.1rem; }
       .card-grid { gap: 0.85rem; grid-template-columns: 1fr; }
       .card {
@@ -448,6 +515,80 @@
       </a>
 
     </div>
+
+    <div class="activity-feed">
+      <p class="section-label">Recently Added</p>
+      <ul class="activity-list">
+
+        <li class="activity-item">
+          <time class="af-date">Jun 2026</time>
+          <span class="af-dot" style="background: #F07070"></span>
+          <span class="af-text">Quad Cities River Bandits &middot; Modern Woodmen Park <em class="af-tag" style="color: #F07070">Baseball</em></span>
+        </li>
+
+        <li class="activity-item">
+          <time class="af-date">Apr 2026</time>
+          <span class="af-dot" style="background: #57BD83"></span>
+          <span class="af-text">Tilly &middot; Turkey season in Illinois <em class="af-tag" style="color: #57BD83">Turkey Hunting</em></span>
+        </li>
+
+        <li class="activity-item">
+          <time class="af-date">Mar 2026</time>
+          <span class="af-dot" style="background: #F07070"></span>
+          <span class="af-text">Banana Ball &middot; Caesars Superdome, New Orleans <em class="af-tag" style="color: #F07070">Baseball</em></span>
+        </li>
+
+        <li class="activity-item">
+          <time class="af-date">Mar 2026</time>
+          <span class="af-dot" style="background: #E8A020"></span>
+          <span class="af-text">Oasis of the Seas &middot; Puerto Rico &amp; Dominican Republic <em class="af-tag" style="color: #E8A020">Travels</em></span>
+        </li>
+
+        <li class="activity-item">
+          <time class="af-date">Jul 2025</time>
+          <span class="af-dot" style="background: #F07070"></span>
+          <span class="af-text">Banana Ball &middot; Busch Stadium, St. Louis <em class="af-tag" style="color: #F07070">Baseball</em></span>
+        </li>
+
+        <li class="activity-item">
+          <time class="af-date">Jun 2025</time>
+          <span class="af-dot" style="background: #1F8FE5"></span>
+          <span class="af-text">Josh &amp; Sam &middot; Disneyland (first visit) <em class="af-tag" style="color: #1F8FE5">Disney</em></span>
+        </li>
+
+        <li class="activity-item">
+          <time class="af-date">Jun 2025</time>
+          <span class="af-dot" style="background: #F07070"></span>
+          <span class="af-text">Completed all 30 active MLB ballparks &middot; Dodger Stadium <em class="af-tag" style="color: #F07070">Baseball</em></span>
+        </li>
+
+        <li class="activity-item">
+          <time class="af-date">Mar 2025</time>
+          <span class="af-dot" style="background: #57BD83"></span>
+          <span class="af-text">Tilly &middot; Turkey season in Illinois <em class="af-tag" style="color: #57BD83">Turkey Hunting</em></span>
+        </li>
+
+        <li class="activity-item">
+          <time class="af-date">Mar 2025</time>
+          <span class="af-dot" style="background: #C99A6A"></span>
+          <span class="af-text">Virgin Islands National Park <em class="af-tag" style="color: #C99A6A">National Parks</em></span>
+        </li>
+
+        <li class="activity-item">
+          <time class="af-date">Mar 2025</time>
+          <span class="af-dot" style="background: #E8A020"></span>
+          <span class="af-text">Wonder of the Seas cruise &middot; Sint Maarten &amp; US Virgin Islands <em class="af-tag" style="color: #E8A020">Travels</em></span>
+        </li>
+
+        <li class="activity-item">
+          <time class="af-date">Jan 2025</time>
+          <span class="af-dot" style="background: #C99A6A"></span>
+          <span class="af-text">Mammoth Cave National Park <em class="af-tag" style="color: #C99A6A">National Parks</em></span>
+        </li>
+
+      </ul>
+    </div>
+
   </main>
 
   <footer>
