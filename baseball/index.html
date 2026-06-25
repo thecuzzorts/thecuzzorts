@@ -83,7 +83,7 @@
       <div class="slideshow-wrap">
         <div class="cycle-slideshow"
              data-cycle-fx="scrollHorz"
-             data-cycle-timeout="0"
+             data-cycle-timeout="5000"
              data-cycle-swipe="true"
              data-cycle-prev=".prev"
              data-cycle-next=".next">
@@ -1028,7 +1028,7 @@
       var $mainSS = $('.cycle-slideshow').not('.bananas-slideshow').not('.indie-slideshow');
       $mainSS.on('cycle-after', function (e, opts, out, inc) {
         $(this).closest('.slideshow-wrap').find('.cycle-caption').text($(inc).attr('alt') || '');
-      }).cycle({ fx: 'scrollHorz', timeout: 0, swipe: true, prev: '.prev', next: '.next', slides: '> img' });
+      }).cycle({ fx: 'scrollHorz', timeout: 5000, swipe: true, prev: '.prev', next: '.next', slides: '> img' });
       $mainSS.each(function () {
         var $ss = $(this);
         $ss.closest('.slideshow-wrap').find('.cycle-caption').text($ss.find('> img').first().attr('alt') || '');
@@ -1039,7 +1039,7 @@
         if (!$ss.length) { return; }
         $ss.on('cycle-after', function (e, opts, out, inc) {
           $cap.text($(inc).attr('alt') || '');
-        }).cycle({ fx: 'scrollHorz', timeout: 0, swipe: true, slides: '> img' });
+        }).cycle({ fx: 'scrollHorz', timeout: 5000, swipe: true, slides: '> img' });
         $cap.text($ss.find('> img').first().attr('alt') || '');
         $prev.on('click', function() { $ss.cycle('prev'); });
         $next.on('click', function() { $ss.cycle('next'); });

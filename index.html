@@ -152,7 +152,6 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center;   /* balance the leftover space top/bottom */
       padding: 3.5rem 2rem;
       max-width: 1400px;
       width: 100%;
@@ -298,11 +297,106 @@
 
     /* Footer styling comes from css/site-chrome.css */
 
+    /* ---- Quick stats strip -------------------------------- */
+    .quick-stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem 2.5rem;
+      margin: 2.25rem auto 0;
+      max-width: 1100px;
+      width: 100%;
+      padding: 1.25rem 1.5rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .qs-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.15rem;
+    }
+
+    .qs-num {
+      font-family: 'Kreon', serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .qs-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: #aab4bd;
+      white-space: nowrap;
+    }
+
+    .qs-divider {
+      width: 1px;
+      background: #e3e7eb;
+      align-self: stretch;
+      flex-shrink: 0;
+    }
+
+    /* ---- Coming Up ------------------------------------ */
+    .coming-up {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 1.25rem auto 0;
+      max-width: 1100px;
+      width: 100%;
+      padding: 0.75rem 1.25rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border-left: 4px solid #F07070;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.15s;
+    }
+
+    .coming-up:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.1); }
+
+    .cu-label {
+      font-family: 'Kreon', serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #F07070;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .cu-divider { width: 1px; height: 1.2em; background: #e3e7eb; flex-shrink: 0; }
+
+    .cu-text {
+      font-size: 0.88rem;
+      color: #1a2e3b;
+      font-family: 'Roboto Condensed', sans-serif;
+    }
+
+    .cu-date {
+      margin-left: auto;
+      font-size: 0.8rem;
+      color: #aab4bd;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
     /* ---- Activity feed -------------------------------- */
     .activity-feed {
-      margin-top: 2.75rem;
+      margin: 2.75rem auto 0;
       padding-top: 2rem;
       border-top: 1px solid #e3e7eb;
+      max-width: 1100px;
+      width: 100%;
     }
 
     .activity-feed .section-label {
@@ -360,6 +454,24 @@
       opacity: 0.8;
     }
 
+    /* ---- Wide: 2-col activity feed ---- */
+    @media (min-width: 1001px) {
+      .activity-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 2.5rem; }
+      .activity-item:last-child { border-bottom: 1px solid #f0f2f5; }
+    }
+
+    @media (min-width: 1001px) and (max-width: 1200px) {
+      .af-text { display: flex; flex-direction: column; gap: 0.18rem; }
+      .af-tag { display: block; margin-left: 0; }
+    }
+
+    /* ---- Tablet: quick stats grid (641px–1000px) ---- */
+    @media (max-width: 1000px) {
+      .quick-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem 1rem; padding: 1.25rem 1.5rem; margin-top: 1.5rem; }
+      .qs-divider { display: none; }
+      .coming-up { margin-top: 0.85rem; }
+    }
+
     /* ---- Mobile overrides (kept last so they win the cascade) ---- */
     @media (max-width: 640px) {
       .hero-inner {
@@ -373,6 +485,11 @@
 
       /* Tighten the cards so more fit on screen at once */
       main { padding: 2rem 1.25rem; }
+      .quick-stats { gap: 0.9rem 0.5rem; padding: 1rem; }
+      .qs-num { font-size: 1.35rem; }
+      .qs-label { font-size: 0.62rem; }
+      .cu-date { display: none; }
+      .cu-text { font-size: 0.82rem; }
       .activity-item { grid-template-columns: 3.5rem 8px 1fr; gap: 0 0.65rem; padding: 0.6rem 0; align-items: start; }
       .af-date { padding-top: 0.15rem; font-size: 0.74rem; }
       .af-dot { margin-top: 0.38rem; }
@@ -539,6 +656,47 @@
 
     </div>
 
+    <!-- Quick stats -->
+    <div class="quick-stats">
+      <div class="qs-item" style="--accent: #F07070">
+        <span class="qs-num">30/30</span>
+        <span class="qs-label">MLB Ballparks</span>
+      </div>
+      <div class="qs-divider"></div>
+      <div class="qs-item" style="--accent: #E8A020">
+        <span class="qs-num" id="qs-states">—</span>
+        <span class="qs-label">States</span>
+      </div>
+      <div class="qs-divider"></div>
+      <div class="qs-item" style="--accent: #E8A020">
+        <span class="qs-num" id="qs-countries">—</span>
+        <span class="qs-label">Countries</span>
+      </div>
+      <div class="qs-divider"></div>
+      <div class="qs-item" style="--accent: #57BD83">
+        <span class="qs-num" id="qs-turkey">—</span>
+        <span class="qs-label">States Harvested</span>
+      </div>
+      <div class="qs-divider"></div>
+      <div class="qs-item" style="--accent: #C99A6A">
+        <span class="qs-num" id="qs-parks">—</span>
+        <span class="qs-label">National Parks</span>
+      </div>
+      <div class="qs-divider"></div>
+      <div class="qs-item" style="--accent: #1F8FE5">
+        <span class="qs-num" id="qs-disney">—</span>
+        <span class="qs-label">Disney Parks</span>
+      </div>
+    </div>
+
+    <!-- Coming Up -->
+    <a class="coming-up" href="baseball/index.html#banana">
+      <span class="cu-label">Coming Up</span>
+      <span class="cu-divider"></span>
+      <span class="cu-text">Banana Ball &middot; Busch Stadium, St. Louis</span>
+      <span class="cu-date">Aug 21, 2026</span>
+    </a>
+
     <div class="activity-feed">
       <p class="section-label">Recently Added</p>
       <ul class="activity-list">
@@ -617,6 +775,74 @@
   <footer>
     <p><script>document.write(new Date().getFullYear())</script> &copy; The Cuzzorts</p>
   </footer>
+  <!-- Data files for quick stats -->
+  <script src="travels/data/states-visited-josh.js"></script>
+  <script src="travels/data/states-visited-sam.js"></script>
+  <script src="travels/data/states-visited-ellie.js"></script>
+  <script src="travels/data/states-visited-tilly.js"></script>
+  <script src="travels/data/states-visited-poppy.js"></script>
+  <script src="travels/data/countries-visited-josh.js"></script>
+  <script src="travels/data/countries-visited-sam.js"></script>
+  <script src="travels/data/countries-visited-ellie.js"></script>
+  <script src="travels/data/countries-visited-tilly.js"></script>
+  <script src="travels/data/countries-visited-poppy.js"></script>
+  <script src="turkey-hunting/data/turkeys-harvested-josh.js"></script>
+  <script src="turkey-hunting/data/turkeys-harvested-sam.js"></script>
+  <script src="turkey-hunting/data/turkeys-harvested-tilly.js"></script>
+  <script src="national-parks/data/parks-visited-josh.js"></script>
+  <script src="national-parks/data/parks-visited-sam.js"></script>
+  <script src="disney/data/disney-visited-josh.js"></script>
+  <script src="disney/data/disney-visited-sam.js"></script>
+  <script src="disney/data/disney-visited-ellie.js"></script>
+  <script src="disney/data/disney-visited-tilly.js"></script>
+  <script src="disney/data/disney-visited-poppy.js"></script>
+
+  <script>
+    (function () {
+      var TERRITORIES = { PR:1, VI:1, SX:1, GU:1, AS:1, MP:1 };
+
+      function union(sets, include) {
+        var all = {};
+        sets.forEach(function (d) {
+          for (var k in d) { if (include(k, d[k])) all[k] = 1; }
+        });
+        return Object.keys(all).length;
+      }
+
+      function set(id, val) {
+        var el = document.getElementById(id);
+        if (el) el.textContent = val;
+      }
+
+      set('qs-states', union(
+        [statesVisitedJosh, statesVisitedSam, statesVisitedEllie, statesVisitedTilly, statesVisitedPoppy],
+        function (k, v) { return k !== 'US-DC' && v === 1; }
+      ));
+
+      set('qs-countries', union(
+        [countriesVisitedJosh, countriesVisitedSam, countriesVisitedEllie, countriesVisitedTilly, countriesVisitedPoppy],
+        function (k, v) { return !TERRITORIES[k] && v === 1; }
+      ));
+
+      set('qs-turkey', union(
+        [turkeysHarvestedJosh, turkeysHarvestedSam, turkeysHarvestedTilly],
+        function (k, v) { return Math.round(v) >= 1; }
+      ));
+
+      // NP: parks both Josh AND Sam have visited (matches bucket list definition)
+      var parksCount = 0;
+      for (var k in parksVisitedJosh) {
+        if (parksVisitedJosh[k] === 1 && parksVisitedSam[k] === 1) parksCount++;
+      }
+      set('qs-parks', parksCount);
+
+      set('qs-disney', union(
+        [disneyVisitedJosh, disneyVisitedSam, disneyVisitedEllie, disneyVisitedTilly, disneyVisitedPoppy],
+        function (k, v) { return v === 1; }
+      ));
+    }());
+  </script>
+
   <script src="js/site-nav.js"></script>
 
 </body>

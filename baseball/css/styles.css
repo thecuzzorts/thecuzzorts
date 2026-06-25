@@ -812,25 +812,3 @@ h2.section-group.sec-reveal.in-view { opacity: 1; transform: none; }
   .section-sub--full { grid-column: 1; }
 }
 
-  .tl-pair {
-    display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
-    margin-bottom: 0.45rem;
-  }
-
-  .tl-spine-col { display: none; }
-  .tl-spacer    { display: none; }
-
-  .tl-park-left, .tl-park-right {
-    flex-direction: row;
-    text-align: left;
-    opacity: 1;
-    transform: none;
-  }
-
-  .tl-park-right .tl-park-text { text-align: left; }
-
-  .tl-park-left.tl-reveal,
-  .tl-park-right.tl-reveal { transform: translateY(6px); }
-}
