@@ -1,0 +1,307 @@
+/* ============================================================
+   Stats page — By the Numbers
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  --section: #6B5EA8;
+  --section-on-dark: #8B7EC8;
+  font-family: 'Roboto Condensed', sans-serif;
+  background: #f0f2f5;
+  color: #333;
+  margin: 0;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+
+.page-intro {
+  text-align: center;
+  padding: 2.5rem 0 2rem;
+}
+
+.page-intro h1 {
+  font-family: 'Kreon', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: #1a2e3b;
+  margin-bottom: 0.35rem;
+}
+
+.page-intro p {
+  color: #8a9aaa;
+  font-size: 1rem;
+}
+
+/* ---- Section header (navy bar) ---- */
+.stat-head {
+  font-family: 'Kreon', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  background: #1a2e3b;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  margin: 2.75rem 0 1.25rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-left: 5px solid var(--sh-color, #E8A020);
+  scroll-margin-top: 5rem;
+}
+
+/* ---- Hero family stats ---- */
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.hero-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border-top: 5px solid var(--a);
+  padding: 1.75rem 1.25rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-num {
+  font-family: 'Kreon', serif;
+  font-size: clamp(2.8rem, 4.5vw, 3.75rem);
+  font-weight: 700;
+  color: var(--a);
+  line-height: 1;
+}
+
+.hero-denom {
+  font-size: 1.5rem;
+  font-weight: 400;
+  opacity: 0.45;
+}
+
+.hero-badge {
+  display: inline-block;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #22703D;
+  padding: 0.2em 0.7em;
+  border-radius: 20px;
+  margin-top: 0.5rem;
+}
+
+.hero-sub {
+  font-size: 0.78rem;
+  color: #b4bfc9;
+  margin-top: 0.4rem;
+}
+
+.hero-label {
+  font-family: 'Kreon', serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1a2e3b;
+  margin-top: 0.8rem;
+}
+
+/* ---- Per-person cards ---- */
+.person-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.person-grid--parents { grid-template-columns: repeat(2, 1fr); margin-bottom: 1.25rem; }
+.person-grid--kids    { grid-template-columns: repeat(3, 1fr); }
+
+.person-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  border-top: 5px solid var(--pc);
+}
+
+.person-card-name {
+  font-family: 'Kreon', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--pc);
+  padding: 0.6rem 1.25rem;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.person-card-stats {
+  padding: 0.35rem 1.25rem 0.65rem;
+}
+
+.pcs-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0.42rem 0;
+  border-bottom: 1px solid #f0f2f5;
+  gap: 0.5rem;
+}
+
+.pcs-row:last-child { border-bottom: none; }
+
+.pcs-label {
+  font-size: 0.82rem;
+  color: #6b7682;
+  flex: 1;
+}
+
+.pcs-val {
+  font-family: 'Kreon', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a2e3b;
+  flex-shrink: 0;
+}
+
+.pcs-note {
+  font-size: 0.8rem;
+  color: #7a8a99;
+  margin-left: 0.2rem;
+  flex-shrink: 0;
+}
+
+/* ---- Baseball breakdown ---- */
+.bb-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.bb-stat {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 1.1rem 0.9rem;
+  text-align: center;
+  border-top: 4px solid var(--a, #C8102E);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bb-num {
+  font-family: 'Kreon', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--a, #C8102E);
+  line-height: 1;
+}
+
+.bb-denom {
+  font-size: 1rem;
+  opacity: 0.45;
+}
+
+.bb-badge {
+  display: inline-block;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #22703D;
+  padding: 0.18em 0.55em;
+  border-radius: 10px;
+  margin-top: 0.35rem;
+}
+
+.bb-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #8a9aaa;
+  margin-top: 0.45rem;
+  display: block;
+}
+
+/* ---- Turkey Hunting ---- */
+.turkey-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.turkey-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border-top: 5px solid var(--pc);
+  padding: 1.35rem 1rem;
+  text-align: center;
+}
+
+.tc-name {
+  font-family: 'Kreon', serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--pc);
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.tc-num {
+  font-family: 'Kreon', serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #1a2e3b;
+  line-height: 1;
+}
+
+.tc-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #8a9aaa;
+  display: block;
+  margin-top: 0.35rem;
+}
+
+.tc-sub {
+  font-size: 0.74rem;
+  color: #b4bfc9;
+  margin-top: 0.3rem;
+  font-style: italic;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: repeat(2, 1fr); }
+  .bb-grid   { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .person-grid--parents { grid-template-columns: 1fr; }
+  .person-grid--kids    { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  main { padding: 0 1rem 3rem; }
+  .hero-grid    { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
+  .person-grid--kids { grid-template-columns: 1fr; }
+  .bb-grid      { grid-template-columns: repeat(2, 1fr); }
+  .turkey-grid  { grid-template-columns: 1fr; }
+  .stat-head    { font-size: 1.1rem; padding: 0.7rem 1rem; margin-top: 2rem; }
+}

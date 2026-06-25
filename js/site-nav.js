@@ -18,12 +18,13 @@
   // at runtime so this script works from both the homepage (depth 0)
   // and any section page (depth 1).
   var SECTIONS = [
-    { key: '',              label: 'Home',          path: 'index.html',              color: '#E8A020' },
+    { key: '',              label: 'Home',          path: 'index.html',              color: '#c8d8e4' },
     { key: 'baseball',      label: 'Baseball',      path: 'baseball/index.html',     color: '#F07070' },
     { key: 'travels',       label: 'Travels',       path: 'travels/index.html',      color: '#E8A020' },
     { key: 'turkey-hunting', label: 'Turkey Hunting', path: 'turkey-hunting/index.html', color: '#57BD83' },
     { key: 'national-parks', label: 'National Parks', path: 'national-parks/index.html', color: '#C99A6A' },
-    { key: 'disney',        label: 'Disney',        path: 'disney/index.html',       color: '#1F8FE5' }
+    { key: 'disney',        label: 'Disney',        path: 'disney/index.html',       color: '#1F8FE5' },
+    { key: 'stats',         label: 'By the Numbers', path: 'stats/index.html',        color: '#8B7EC8' }
   ];
 
   // Current section = the folder name in the path (e.g. "disney").

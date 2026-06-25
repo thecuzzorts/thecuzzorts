@@ -23,24 +23,31 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --section-on-dark: #c8d8e4;
+    }
+
     /* ---- Homepage header: five-section color bar ---------- */
     /* Replaces the single-color border-top with a segmented strip —
        one equal-width band per section in card order, separated by
        narrow navy cuts so each reads as its own distinct identity. */
     .site-header {
       border-top: none;
+      padding-top: calc(0.55em + 4px); /* 4px compensates for gradient living inside padding */
       padding-bottom: 0;   /* no subnav below the nav strip */
       background:
         linear-gradient(to right,
-          #F07070 0%,                   #F07070 calc(20% - 2px),
-          #1a2e3b calc(20% - 2px),      #1a2e3b calc(20% + 2px),
-          #E8A020 calc(20% + 2px),      #E8A020 calc(40% - 2px),
-          #1a2e3b calc(40% - 2px),      #1a2e3b calc(40% + 2px),
-          #57BD83 calc(40% + 2px),      #57BD83 calc(60% - 2px),
-          #1a2e3b calc(60% - 2px),      #1a2e3b calc(60% + 2px),
-          #C99A6A calc(60% + 2px),      #C99A6A calc(80% - 2px),
-          #1a2e3b calc(80% - 2px),      #1a2e3b calc(80% + 2px),
-          #1F8FE5 calc(80% + 2px),      #1F8FE5 100%
+          #F07070 0%,                              #F07070 calc(16.66% - 2px),
+          #1a2e3b calc(16.66% - 2px),              #1a2e3b calc(16.66% + 2px),
+          #E8A020 calc(16.66% + 2px),              #E8A020 calc(33.33% - 2px),
+          #1a2e3b calc(33.33% - 2px),              #1a2e3b calc(33.33% + 2px),
+          #57BD83 calc(33.33% + 2px),              #57BD83 calc(50% - 2px),
+          #1a2e3b calc(50% - 2px),                 #1a2e3b calc(50% + 2px),
+          #C99A6A calc(50% + 2px),                 #C99A6A calc(66.66% - 2px),
+          #1a2e3b calc(66.66% - 2px),              #1a2e3b calc(66.66% + 2px),
+          #1F8FE5 calc(66.66% + 2px),              #1F8FE5 calc(83.33% - 2px),
+          #1a2e3b calc(83.33% - 2px),              #1a2e3b calc(83.33% + 2px),
+          #8B7EC8 calc(83.33% + 2px),              #8B7EC8 100%
         ) top / 100% 4px no-repeat,
         #1a2e3b;
     }
@@ -120,11 +127,12 @@
       border-radius: 50%;
       padding: 8px;
       background: conic-gradient(
-        #F07070 0deg 72deg,
-        #E8A020 72deg 144deg,
-        #57BD83 144deg 216deg,
-        #C99A6A 216deg 288deg,
-        #1F8FE5 288deg 360deg
+        #F07070 0deg 60deg,
+        #E8A020 60deg 120deg,
+        #57BD83 120deg 180deg,
+        #C99A6A 180deg 240deg,
+        #1F8FE5 240deg 300deg,
+        #8B7EC8 300deg 360deg
       );
       box-shadow: 0 4px 24px rgba(0,0,0,0.35);
       flex-shrink: 0;
@@ -165,9 +173,9 @@
 
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.25rem;
-      max-width: 1400px;
+      max-width: 1100px;
       width: 100%;
       margin: 0 auto;
     }
@@ -212,6 +220,7 @@
     .card-turkeys  { --accent: #57BD83; }
     .card-parks    { --accent: #C99A6A; }
     .card-disney   { --accent: #1F8FE5; }
+    .card-stats    { --accent: #8B7EC8; }
 
     /* Large emblem as a faint same-colour watermark, fully inside the card */
     .card-icon {
@@ -511,6 +520,20 @@
         </div>
         <h2>Disney Parks</h2>
         <p>Theme parks around the world &mdash; map &amp; checklist by family member</p>
+        <span class="card-cta"><span class="card-cta-label">View</span><span class="card-cta-arrow" aria-hidden="true">&rarr;</span></span>
+      </a>
+
+      <a class="card card-stats" href="stats/index.html">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <line x1="3" y1="20" x2="21" y2="20"/>
+            <rect x="4" y="13" width="3.5" height="7"/>
+            <rect x="10.25" y="8" width="3.5" height="12"/>
+            <rect x="16.5" y="4" width="3.5" height="16"/>
+          </svg>
+        </div>
+        <h2>By the Numbers</h2>
+        <p>Stats, milestones &amp; totals across all of our adventures</p>
         <span class="card-cta"><span class="card-cta-label">View</span><span class="card-cta-arrow" aria-hidden="true">&rarr;</span></span>
       </a>
 

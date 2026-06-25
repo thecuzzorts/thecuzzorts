@@ -234,12 +234,12 @@ footer {
 
 footer a:link,
 footer a:visited {
-  color: var(--section-on-dark, #E8A020);
+  color: #fff;
   text-decoration: none;
 }
 
 footer a:hover,
 footer a:focus {
-  color: var(--section-on-dark, #E8A020);
+  color: #fff;
   text-decoration: underline;
 }

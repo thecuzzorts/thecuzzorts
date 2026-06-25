@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SNE2PKC43Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SNE2PKC43Y');
+  </script>
+  <meta charset="utf-8">
+  <title>By the Numbers | The Cuzzorts</title>
+  <meta name="description" content="A look at the data behind The Cuzzorts' adventures — ballparks, states, countries, national parks, and more.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kreon:wght@400;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site-chrome.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <p class="site-title"><a class="home-link" href="../index.html">The Cuzzorts</a> &mdash; By the Numbers</p>
+    <p class="site-tagline">Milestones, totals, and fun stats from across the site</p>
+    <nav>
+      <ul>
+        <li><a href="#per-person">Per Person</a></li>
+        <li><a href="#baseball">Baseball</a></li>
+        <li><a href="#travels">Travels</a></li>
+        <li><a href="#turkey">Turkey Hunting</a></li>
+        <li><a href="#national-parks">National Parks</a></li>
+        <li><a href="#disney">Disney</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="page-intro">
+      <h1>By the Numbers</h1>
+      <p>Everything we've done, counted up.</p>
+    </div>
+
+    <!-- ---- Family headline stats ---- -->
+    <div class="hero-grid">
+
+      <div class="hero-card" style="--a: #C8102E">
+        <div class="hero-num">30<span class="hero-denom">/30</span></div>
+        <span class="hero-badge">&#10003; Complete</span>
+        <span class="hero-label">Active MLB Ballparks</span>
+      </div>
+
+      <div class="hero-card" style="--a: #E8A020">
+        <div class="hero-num"><span id="h-states">—</span><span class="hero-denom">/50</span></div>
+        <div class="hero-sub" id="h-states-sub"></div>
+        <span class="hero-label">States (Family)</span>
+      </div>
+
+      <div class="hero-card" style="--a: #8B5E3C">
+        <div class="hero-num"><span id="h-parks">—</span><span class="hero-denom">/63</span></div>
+        <div class="hero-sub" id="h-parks-sub"></div>
+        <span class="hero-label">National Parks</span>
+        <span class="hero-sub">both Josh &amp; Sam</span>
+      </div>
+
+      <div class="hero-card" style="--a: #1F8FE5">
+        <div class="hero-num"><span id="h-countries">—</span></div>
+        <div class="hero-sub" id="h-countries-sub"></div>
+        <span class="hero-label">Countries (Family)</span>
+      </div>
+
+    </div><!-- /hero-grid -->
+
+    <!-- ---- Per-person breakdown ---- -->
+    <h2 class="stat-head" id="per-person" style="--sh-color: #8B7EC8">Per Person</h2>
+
+    <div class="person-grid person-grid--parents">
+
+      <div class="person-card" style="--pc: #00AC4B">
+        <span class="person-card-name">Josh</span>
+        <div class="person-card-stats">
+          <div class="pcs-row">
+            <span class="pcs-label">MLB Ballparks</span>
+            <span class="pcs-val">30<span class="pcs-note"> of 30</span></span>
+          </div>
+          <div class="pcs-row">
+            <span class="pcs-label">States</span>
+            <span class="pcs-val"><span id="p-josh-states">—</span><span class="pcs-note"> of 50</span></span>
+          </div>
+          <div class="pcs-row">
+            <span class="pcs-label">Countries</span>
+            <span class="pcs-val"><span id="p-josh-countries">—</span><span class="pcs-note" id="p-josh-countries-note"></span></span>
+          </div>
+          <div class="pcs-row">
+            <span class="pcs-label">National Parks</span>
+            <span class="pcs-val"><span id="p-josh-parks">—</span><span class="pcs-note"> of 63</span></span>
+          </div>
+          <div class="pcs-row">
+            <span class="pcs-label">Disney Parks</span>
+            <span class="pcs-val"><span id="p-josh-disney">—</span><span class="pcs-note"> of 12</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="person-card" style="--pc: #662684">
+        <span class="person-card-name">Sam</span>
+        <div class="person-card-stats">
+          <div class="pcs-row">
+            <span class="pcs-label">MLB Ballparks</span>
+            <span class="pcs-val">30<span class="pcs-note"> of 30</span></span>
+          </div>
+          <div class="pcs-row">
+            <span class="pcs-label">States</span>
+            <span class="pcs-val"><span id="p-sam-states">—</span><span class="pcs-note"> of 50</span></span>
+          </div>
+          <div class="pcs-row">
+            <span class="pcs-label">Countries</span>
+            <span class="pcs-val"><span id="p-sam-countries">—</span><span class="pcs-note" id="p-sam-countries-note"></span></span>
+          </div>
+          <div class="pcs-row">
+            <span class="pcs-label">National Parks</span>
+            <span class="pcs-val"><span id="p-sam-parks">—</span><span class="pcs-note"> of 63</span></span>
+          </div>
+          <div class="pcs-row">
+            <span class="pcs-label">Disney Parks</span>
+            <span class="pcs-val"><span id="p-sam-disney">—</span><span class="pcs-note"> of 12</span></span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /parents -->
+
+    <div class="person-grid person-grid--kids">
+
+      <div class="person-card" style="--pc: #66b2b2">
+        <span class="person-card-name">Ellie</span>
+        <div class="person-card-stats">
+          <div class="pcs-row">
+            <span class="pcs-label">MLB Ballparks</span>
+            <span class="pcs-val">5<span class="pcs-note"> of 30</span></span>
+          </div>
+          <div class="pcs-row">
+            <span class="pcs-label">States</span>
+            <span class="pcs-val"><span id="p-ellie-states">—</span><span class="pcs-note"> of 50</span></span>
+          </div>
+          <div class="pcs-row">
+            <span class="pcs-label">Countries</span>
+            <span class="pcs-val"><span id="p-ellie-countries">—</span><span class="pcs-note" id="p-ellie-countries-note"></span></span>
+          </div>
+          <div class="pcs-row">
+            <span class="pcs-label">National Parks</span>
+            <span class="pcs-val"><span id="p-ellie-parks">—</span><span class="pcs-note"> of 63</span></span>
+          </div>
+          <div class="pcs-row">
+            <span class="pcs-label">Disney Parks</span>
+            <span class="pcs-val"><span id="p-ellie-disney">—</span><span class="pcs-note"> of 12</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="person-card" style="--pc: #0898ff">
+        <span class="person-card-name">Tilly</span>
+        <div class="person-card-stats">
+          <div class="pcs-row">
+            <span class="pcs-label">MLB Ballparks</span>
+            <span class="pcs-val">3<span class="pcs-note"> of 30</span></span>
+          </div>
+          <div class="pcs-row">
+            <span class="pcs-label">States</span>
+            <span class="pcs-val"><span id="p-tilly-states">—</span><span class="pcs-note"> of 50</span></span>
+          </div>
+          <div class="pcs-row">
+            <span class="pcs-label">Countries</span>
+            <span class="pcs-val"><span id="p-tilly-countries">—</span><span class="pcs-note" id="p-tilly-countries-note"></span></span>
+          </div>
+          <div class="pcs-row">
+            <span class="pcs-label">National Parks</span>
+            <span class="pcs-val"><span id="p-tilly-parks">—</span><span class="pcs-note"> of 63</span></span>
+          </div>
+          <div class="pcs-row">
+            <span class="pcs-label">Disney Parks</span>
+            <span class="pcs-val"><span id="p-tilly-disney">—</span><span class="pcs-note"> of 12</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="person-card" style="--pc: #d9259a">
+        <span class="person-card-name">Poppy</span>
+        <div class="person-card-stats">
+          <div class="pcs-row">
+            <span class="pcs-label">MLB Ballparks</span>
+            <span class="pcs-val">3<span class="pcs-note"> of 30</span></span>
+          </div>
+          <div class="pcs-row">
+            <span class="pcs-label">States</span>
+            <span class="pcs-val"><span id="p-poppy-states">—</span><span class="pcs-note"> of 50</span></span>
+          </div>
+          <div class="pcs-row">
+            <span class="pcs-label">Countries</span>
+            <span class="pcs-val"><span id="p-poppy-countries">—</span><span class="pcs-note" id="p-poppy-countries-note"></span></span>
+          </div>
+          <div class="pcs-row">
+            <span class="pcs-label">National Parks</span>
+            <span class="pcs-val"><span id="p-poppy-parks">—</span><span class="pcs-note"> of 63</span></span>
+          </div>
+          <div class="pcs-row">
+            <span class="pcs-label">Disney Parks</span>
+            <span class="pcs-val"><span id="p-poppy-disney">—</span><span class="pcs-note"> of 12</span></span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /kids -->
+
+    <!-- ---- Baseball (hardcoded — lives in baseball/index.html inline data) ---- -->
+    <h2 class="stat-head" id="baseball" style="--sh-color: #F07070">Baseball</h2>
+
+    <div class="bb-grid">
+
+      <div class="bb-stat" style="--a: #C8102E">
+        <div class="bb-num">30<span class="bb-denom">/30</span></div>
+        <span class="bb-badge">&#10003; Complete</span>
+        <span class="bb-label">Active MLB Parks</span>
+      </div>
+
+      <div class="bb-stat" style="--a: #64748b">
+        <div class="bb-num">3</div>
+        <span class="bb-label">Historic Parks</span>
+      </div>
+
+      <div class="bb-stat" style="--a: #1a2e3b">
+        <div class="bb-num">4</div>
+        <span class="bb-label">MiLB Parks</span>
+      </div>
+
+      <div class="bb-stat" style="--a: #7B4F2E">
+        <div class="bb-num">4</div>
+        <span class="bb-label">Indie Ball Parks</span>
+      </div>
+
+      <div class="bb-stat" style="--a: #d4a800">
+        <div class="bb-num">2</div>
+        <span class="bb-label">Banana Ball Games</span>
+      </div>
+
+    </div><!-- /bb-grid -->
+
+    <!-- ---- Travels ---- -->
+    <h2 class="stat-head" id="travels" style="--sh-color: #E8A020">Travels</h2>
+
+    <div class="bb-grid" style="grid-template-columns: repeat(3, 1fr)">
+
+      <div class="bb-stat" style="--a: #E8A020">
+        <div class="bb-num"><span id="trav-states">—</span><span class="bb-denom">/50</span></div>
+        <span class="bb-label">States (Family)</span>
+      </div>
+
+      <div class="bb-stat" style="--a: #E8A020">
+        <div class="bb-num"><span id="trav-countries">—</span></div>
+        <span class="bb-label">Countries (Family)</span>
+      </div>
+
+      <div class="bb-stat" style="--a: #E8A020">
+        <div class="bb-num"><span id="trav-territories">—</span></div>
+        <span class="bb-label">Territories (Family)</span>
+      </div>
+
+    </div>
+
+    <!-- ---- Turkey Hunting ---- -->
+    <h2 class="stat-head" id="turkey" style="--sh-color: #57BD83">Turkey Hunting</h2>
+
+    <div class="turkey-grid">
+
+      <div class="turkey-card" style="--pc: #00AC4B">
+        <span class="tc-name">Josh</span>
+        <div class="tc-num" id="t-josh-num">—</div>
+        <span class="tc-label">States Harvested</span>
+        <div class="tc-sub" id="t-josh-sub"></div>
+      </div>
+
+      <div class="turkey-card" style="--pc: #662684">
+        <span class="tc-name">Sam</span>
+        <div class="tc-num" id="t-sam-num">—</div>
+        <span class="tc-label">States Harvested</span>
+      </div>
+
+      <div class="turkey-card" style="--pc: #0898ff">
+        <span class="tc-name">Tilly</span>
+        <div class="tc-num" id="t-tilly-num">—</div>
+        <span class="tc-label">States Harvested</span>
+      </div>
+
+    </div><!-- /turkey-grid -->
+
+    <!-- ---- National Parks ---- -->
+    <h2 class="stat-head" id="national-parks" style="--sh-color: #C99A6A">National Parks</h2>
+
+    <div class="bb-grid" style="grid-template-columns: repeat(2, 1fr)">
+
+      <div class="bb-stat" style="--a: #8B5E3C">
+        <div class="bb-num"><span id="np-family">—</span><span class="bb-denom">/63</span></div>
+        <span class="bb-label">Parks Visited (Family)</span>
+      </div>
+
+      <div class="bb-stat" style="--a: #8B5E3C">
+        <div class="bb-num"><span id="np-remaining">—</span></div>
+        <span class="bb-label">On the Bucket List</span>
+      </div>
+
+    </div>
+
+    <!-- ---- Disney ---- -->
+    <h2 class="stat-head" id="disney" style="--sh-color: #1F8FE5">Disney Parks</h2>
+
+    <div class="bb-grid" style="grid-template-columns: repeat(2, 1fr)">
+
+      <div class="bb-stat" style="--a: #1F8FE5">
+        <div class="bb-num"><span id="dis-family">—</span><span class="bb-denom">/12</span></div>
+        <span class="bb-label">Parks Visited (Family)</span>
+      </div>
+
+      <div class="bb-stat" style="--a: #1F8FE5">
+        <div class="bb-num"><span id="dis-remaining">—</span></div>
+        <span class="bb-label">Still to Visit</span>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <p><script>document.write(new Date().getFullYear())</script> &copy; The Cuzzorts &mdash; <a href="../index.html">Home</a></p>
+  </footer>
+
+  <!-- Data files -->
+  <script src="../travels/data/states-visited-josh.js"></script>
+  <script src="../travels/data/states-visited-sam.js"></script>
+  <script src="../travels/data/states-visited-ellie.js"></script>
+  <script src="../travels/data/states-visited-tilly.js"></script>
+  <script src="../travels/data/states-visited-poppy.js"></script>
+  <script src="../travels/data/countries-visited-josh.js"></script>
+  <script src="../travels/data/countries-visited-sam.js"></script>
+  <script src="../travels/data/countries-visited-ellie.js"></script>
+  <script src="../travels/data/countries-visited-tilly.js"></script>
+  <script src="../travels/data/countries-visited-poppy.js"></script>
+  <script src="../national-parks/data/parks-visited-josh.js"></script>
+  <script src="../national-parks/data/parks-visited-sam.js"></script>
+  <script src="../national-parks/data/parks-visited-ellie.js"></script>
+  <script src="../national-parks/data/parks-visited-tilly.js"></script>
+  <script src="../national-parks/data/parks-visited-poppy.js"></script>
+  <script src="../turkey-hunting/data/turkeys-harvested-josh.js"></script>
+  <script src="../turkey-hunting/data/turkeys-harvested-sam.js"></script>
+  <script src="../turkey-hunting/data/turkeys-harvested-tilly.js"></script>
+  <script src="../disney/data/disney-visited-josh.js"></script>
+  <script src="../disney/data/disney-visited-sam.js"></script>
+  <script src="../disney/data/disney-visited-ellie.js"></script>
+  <script src="../disney/data/disney-visited-tilly.js"></script>
+  <script src="../disney/data/disney-visited-poppy.js"></script>
+
+  <script>
+    (function () {
+      var TERRITORIES = { PR:1, VI:1, SX:1, GU:1, AS:1, MP:1 };
+      var TOTAL_STATES = 50;
+      var TOTAL_PARKS  = 63;
+
+      function countStates(data) {
+        var n = 0;
+        for (var k in data) { if (k !== 'US-DC' && data[k] === 1) n++; }
+        return n;
+      }
+
+      function countCountries(data) {
+        var countries = 0, terr = 0;
+        for (var k in data) {
+          if (data[k] === 1) { TERRITORIES[k] ? terr++ : countries++; }
+        }
+        return { countries: countries, territories: terr };
+      }
+
+      function countVisited(data) {
+        var n = 0;
+        for (var k in data) { if (data[k] === 1) n++; }
+        return n;
+      }
+
+      function countHarvested(data) {
+        var harvested = 0, huntedOnly = 0;
+        for (var k in data) {
+          var v = data[k];
+          if (Math.round(v) >= 1) harvested++;
+          else if (v > 0) huntedOnly++;
+        }
+        return { harvested: harvested, huntedOnly: huntedOnly };
+      }
+
+      function familyUnionStates() {
+        var all = {};
+        var sets = [statesVisitedJosh, statesVisitedSam, statesVisitedEllie, statesVisitedTilly, statesVisitedPoppy];
+        sets.forEach(function (d) { for (var k in d) { if (d[k] === 1) all[k] = 1; } });
+        delete all['US-DC'];
+        return Object.keys(all).length;
+      }
+
+      function familyUnionCountries() {
+        var all = {};
+        var sets = [countriesVisitedJosh, countriesVisitedSam, countriesVisitedEllie, countriesVisitedTilly, countriesVisitedPoppy];
+        sets.forEach(function (d) { for (var k in d) { if (d[k] === 1) all[k] = 1; } });
+        var countries = 0, terr = 0;
+        for (var k in all) { TERRITORIES[k] ? terr++ : countries++; }
+        return { countries: countries, territories: terr };
+      }
+
+      function familyUnionParks() {
+        // Matches the NP page bucket list definition: parks both Josh AND Sam have visited.
+        // A park visited by only one parent stays on the bucket list.
+        var count = 0;
+        for (var k in parksVisitedJosh) {
+          if (parksVisitedJosh[k] === 1 && parksVisitedSam[k] === 1) count++;
+        }
+        return count;
+      }
+
+      function set(id, val) {
+        var el = document.getElementById(id);
+        if (el) el.textContent = val;
+      }
+
+      function familyUnionDisney() {
+        var all = {};
+        var sets = [disneyVisitedJosh, disneyVisitedSam, disneyVisitedEllie, disneyVisitedTilly, disneyVisitedPoppy];
+        sets.forEach(function (d) { for (var k in d) { if (d[k] === 1) all[k] = 1; } });
+        return Object.keys(all).length;
+      }
+
+      // --- Family headline ---
+      var famStates    = familyUnionStates();
+      var famCountries = familyUnionCountries();
+      var famParks     = familyUnionParks();
+      var famDisney    = familyUnionDisney();
+      var DISNEY_TOTAL = 12;
+
+      set('h-states',       famStates);
+      set('h-states-sub',   (TOTAL_STATES - famStates) + ' states remaining');
+      set('h-parks',        famParks);
+      set('h-parks-sub',    (TOTAL_PARKS - famParks) + ' on the bucket list');
+      set('h-countries',    famCountries.countries);
+      set('h-countries-sub', '+ ' + famCountries.territories + ' territories');
+
+      // --- Travels section ---
+      set('trav-states',      famStates);
+      set('trav-countries',   famCountries.countries);
+      set('trav-territories', famCountries.territories);
+
+      // --- National Parks section ---
+      set('np-family',    famParks);
+      set('np-remaining', TOTAL_PARKS - famParks);
+
+      // --- Disney section ---
+      set('dis-family',    famDisney);
+      set('dis-remaining', DISNEY_TOTAL - famDisney);
+
+      // --- Per person ---
+      var people = [
+        { id: 'josh',  states: statesVisitedJosh,  countries: countriesVisitedJosh,  parks: parksVisitedJosh,  disney: disneyVisitedJosh  },
+        { id: 'sam',   states: statesVisitedSam,   countries: countriesVisitedSam,   parks: parksVisitedSam,   disney: disneyVisitedSam   },
+        { id: 'ellie', states: statesVisitedEllie, countries: countriesVisitedEllie, parks: parksVisitedEllie, disney: disneyVisitedEllie },
+        { id: 'tilly', states: statesVisitedTilly, countries: countriesVisitedTilly, parks: parksVisitedTilly, disney: disneyVisitedTilly },
+        { id: 'poppy', states: statesVisitedPoppy, countries: countriesVisitedPoppy, parks: parksVisitedPoppy, disney: disneyVisitedPoppy }
+      ];
+
+      people.forEach(function (p) {
+        var c = countCountries(p.countries);
+        set('p-' + p.id + '-states',         countStates(p.states));
+        set('p-' + p.id + '-countries',      c.countries);
+        set('p-' + p.id + '-countries-note', c.territories ? ' + ' + c.territories + ' territories' : '');
+        set('p-' + p.id + '-parks',          countVisited(p.parks));
+        set('p-' + p.id + '-disney',         countVisited(p.disney));
+      });
+
+      // --- Turkey Hunting ---
+      var turkeyPeople = [
+        { id: 'josh',  data: turkeysHarvestedJosh  },
+        { id: 'sam',   data: turkeysHarvestedSam   },
+        { id: 'tilly', data: turkeysHarvestedTilly }
+      ];
+
+      turkeyPeople.forEach(function (p) {
+        var t = countHarvested(p.data);
+        set('t-' + p.id + '-num', t.harvested);
+        if (t.huntedOnly > 0) {
+          set('t-' + p.id + '-sub', '+ ' + t.huntedOnly + ' state' + (t.huntedOnly > 1 ? 's' : '') + ' hunted, not harvested');
+        }
+      });
+
+    }());
+  </script>
+
+  <script src="../js/site-nav.js"></script>
+
+</body>
+</html>
