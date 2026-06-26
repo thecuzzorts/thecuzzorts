@@ -84,7 +84,7 @@
       <div class="slideshow-wrap">
         <div class="cycle-slideshow"
              data-cycle-fx="scrollHorz"
-             data-cycle-timeout="5000"
+             data-cycle-timeout="3000"
              data-cycle-swipe="true"
              data-cycle-prev=".prev"
              data-cycle-next=".next">
@@ -124,6 +124,7 @@
           <img loading="lazy" src="../images/baseball/mlb/Busch-Stadium.jpg" alt="Busch Stadium">                   <!-- 26 Jun 2009 -->
           <!-- All 33 ballpark photos are live, ordered above by visit date (newest first) -->
         </div>
+        <div class="ss-progress"><div class="ss-progress-bar"></div></div>
         <div class="slideshow-controls">
           <a class="prev" href="#" aria-label="Previous photo">&#8592;</a>
           <div class="cycle-caption"></div>
@@ -352,7 +353,7 @@
           <div class="slideshow-wrap">
             <div class="cycle-slideshow milb-slideshow"
                  data-cycle-fx="scrollHorz"
-                 data-cycle-timeout="0"
+                 data-cycle-timeout="3000"
                  data-cycle-swipe="true"
                  data-cycle-prev=".prev"
                  data-cycle-next=".next">
@@ -360,6 +361,7 @@
               <img loading="lazy" src="../images/baseball/milb/Dozer-Park.jpg" alt="Peoria Chiefs · Dozer Park, Peoria">
               <img loading="lazy" src="../images/baseball/milb/Regions-Field.jpg" alt="Birmingham Barons · Regions Field, Birmingham">
             </div>
+            <div class="ss-progress"><div class="ss-progress-bar"></div></div>
             <div class="slideshow-controls">
               <a class="prev" href="#" aria-label="Previous photo">&#8592;</a>
               <div class="cycle-caption"></div>
@@ -427,6 +429,7 @@
                 <img loading="lazy" src="../images/baseball/banana/Banana-Ball-Caesars-Superdome-Inside-2026.jpg" alt="Banana Ball · Caesars Superdome, New Orleans · Mar 2026">
                 <img loading="lazy" src="../images/baseball/banana/Banana-Ball-Busch-Stadium-2025.jpg" alt="Banana Ball · Busch Stadium, St. Louis · Jul 2025">
               </div>
+              <div class="ss-progress"><div class="ss-progress-bar"></div></div>
               <div class="slideshow-controls">
                 <button id="bananasPrev" type="button" aria-label="Previous photo">&#8592;</button>
                 <div id="bananasCaption" class="cycle-caption"></div>
@@ -479,7 +482,11 @@
             <div class="slideshow-wrap bp-slideshow-wrap">
               <div class="cycle-slideshow indie-slideshow">
                 <img loading="lazy" src="../images/baseball/indie/Impact-Field.jpg" alt="Chicago Dogs · Impact Field, Rosemont · Jun 2022">
+                <img loading="lazy" src="../images/baseball/indie/Burlington-Bees_Community-Field.jpg" alt="Burlington Bees · Community Field, Burlington · Jul 2011">
+                <img loading="lazy" src="../images/baseball/indie/Springfield-Horseshoes_Robin-Roberts-Stadium.jpg" alt="Springfield Horseshoes · Robin Roberts Stadium, Springfield · Jun 2012 &amp; Jul 2023">
+                <img loading="lazy" src="../images/baseball/indie/Normal-CornBelters_The-Corn-Crib.jpg" alt="Normal CornBelters · The Corn Crib, Normal · Jun 2023">
               </div>
+              <div class="ss-progress"><div class="ss-progress-bar"></div></div>
               <div class="slideshow-controls">
                 <button id="indiePrev" type="button" aria-label="Previous photo">&#8592;</button>
                 <div id="indieCaption" class="cycle-caption"></div>
@@ -1432,13 +1439,23 @@
   <script>
     $(function() {
       // MLB + MiLB — scrollHorz with .prev/.next siblings; caption found relative to each slideshow
+      function ssRestart(ss) {
+        var bar = ss.closest('.slideshow-wrap').querySelector('.ss-progress-bar');
+        if (!bar) { return; }
+        bar.classList.remove('is-running');
+        void bar.offsetWidth;
+        bar.classList.add('is-running');
+      }
+
       var $mainSS = $('.cycle-slideshow').not('.bananas-slideshow').not('.indie-slideshow');
       $mainSS.on('cycle-after', function (e, opts, out, inc) {
         $(this).closest('.slideshow-wrap').find('.cycle-caption').text($(inc).attr('alt') || '');
-      }).cycle({ fx: 'scrollHorz', timeout: 5000, swipe: true, prev: '.prev', next: '.next', slides: '> img' });
+        ssRestart(this);
+      }).cycle({ fx: 'scrollHorz', timeout: 3000, pauseOnHover: true, swipe: true, prev: '.prev', next: '.next', slides: '> img' });
       $mainSS.each(function () {
         var $ss = $(this);
         $ss.closest('.slideshow-wrap').find('.cycle-caption').text($ss.find('> img').first().attr('alt') || '');
+        ssRestart(this);
       });
 
       // Banana Ball and Indie — bind prev/next manually (buttons live outside .cycle-slideshow)
@@ -1446,11 +1463,20 @@
         if (!$ss.length) { return; }
         $ss.on('cycle-after', function (e, opts, out, inc) {
           $cap.text($(inc).attr('alt') || '');
-        }).cycle({ fx: 'scrollHorz', timeout: 5000, swipe: true, slides: '> img' });
+          ssRestart($ss[0]);
+        }).cycle({ fx: 'scrollHorz', timeout: 3000, pauseOnHover: true, swipe: true, slides: '> img' });
         $cap.text($ss.find('> img').first().attr('alt') || '');
+        ssRestart($ss[0]);
         $prev.on('click', function() { $ss.cycle('prev'); });
         $next.on('click', function() { $ss.cycle('next'); });
       }
+
+      // Pause/resume progress bar on hover (mirrors Cycle2 pauseOnHover)
+      $('.slideshow-wrap').on('mouseenter', function () {
+        $(this).find('.ss-progress-bar').addClass('paused');
+      }).on('mouseleave', function () {
+        $(this).find('.ss-progress-bar').removeClass('paused');
+      });
 
       initSlideshow($('.bananas-slideshow'), $('#bananasCaption'), $('#bananasPrev'), $('#bananasNext'));
       initSlideshow($('.indie-slideshow'),   $('#indieCaption'),   $('#indiePrev'),   $('#indieNext'));

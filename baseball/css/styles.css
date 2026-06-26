@@ -60,6 +60,7 @@ hr { display: none; }
   box-shadow: 0 2px 12px rgba(0,0,0,0.12);
   overflow: hidden;
   margin-bottom: 0.5rem;
+  position: relative;
 }
 
 .cycle-slideshow {
@@ -125,6 +126,31 @@ hr { display: none; }
 .slideshow-controls button:hover {
   color: #E8A020 !important;
   border-color: #E8A020;
+}
+
+.ss-progress {
+  height: 3px;
+  background: rgba(255,255,255,0.1);
+  overflow: hidden;
+}
+
+@keyframes ss-fill {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+.ss-progress-bar {
+  height: 100%;
+  width: 0;
+  background: #C8102E;
+}
+
+.ss-progress-bar.is-running {
+  animation: ss-fill 3s linear forwards;
+}
+
+.ss-progress-bar.paused {
+  animation-play-state: paused;
 }
 
 /* --- Stats banner (Our Story card) ------------------------ */

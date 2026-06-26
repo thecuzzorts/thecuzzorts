@@ -125,15 +125,7 @@
       width: clamp(200px, 18vw, 260px);
       height: clamp(200px, 18vw, 260px);
       border-radius: 50%;
-      padding: 8px;
-      background: conic-gradient(
-        #F07070 0deg 60deg,
-        #E8A020 60deg 120deg,
-        #57BD83 120deg 180deg,
-        #C99A6A 180deg 240deg,
-        #1F8FE5 240deg 300deg,
-        #8B7EC8 300deg 360deg
-      );
+      position: relative;
       box-shadow: 0 4px 24px rgba(0,0,0,0.35);
       flex-shrink: 0;
     }
@@ -142,10 +134,72 @@
       width: 100%;
       height: 100%;
       border-radius: 50%;
+      clip-path: circle(50%);
       object-fit: cover;
       object-position: center top;
       display: block;
     }
+
+    .hero-ring {
+      position: absolute;
+      inset: -20px;
+      width: calc(100% + 40px);
+      height: calc(100% + 40px);
+    }
+
+    .ring-slice { cursor: pointer; }
+
+    .ring-hit  { fill: transparent; }
+
+    @keyframes intro-bump-1 { 0%,100%{transform:translate(0,0);opacity:.85} 45%{transform:translate(9px,-15.6px);opacity:1} }
+    @keyframes intro-bump-2 { 0%,100%{transform:translate(0,0);opacity:.85} 45%{transform:translate(18px,0);opacity:1} }
+    @keyframes intro-bump-3 { 0%,100%{transform:translate(0,0);opacity:.85} 45%{transform:translate(9px,15.6px);opacity:1} }
+    @keyframes intro-bump-4 { 0%,100%{transform:translate(0,0);opacity:.85} 45%{transform:translate(-9px,15.6px);opacity:1} }
+    @keyframes intro-bump-5 { 0%,100%{transform:translate(0,0);opacity:.85} 45%{transform:translate(-18px,0);opacity:1} }
+    @keyframes intro-bump-6 { 0%,100%{transform:translate(0,0);opacity:.85} 45%{transform:translate(-9px,-15.6px);opacity:1} }
+
+    .ring-arc {
+      fill: var(--clr);
+      opacity: 0.85;
+      transition: transform 0.22s ease-out, opacity 0.2s, filter 0.2s;
+    }
+
+    .ring-slice:nth-child(1) .ring-arc { animation: intro-bump-1 0.7s ease-in-out 0.35s 1; }
+    .ring-slice:nth-child(2) .ring-arc { animation: intro-bump-2 0.7s ease-in-out 1.10s 1; }
+    .ring-slice:nth-child(3) .ring-arc { animation: intro-bump-3 0.7s ease-in-out 0.65s 1; }
+    .ring-slice:nth-child(4) .ring-arc { animation: intro-bump-4 0.7s ease-in-out 1.45s 1; }
+    .ring-slice:nth-child(5) .ring-arc { animation: intro-bump-5 0.7s ease-in-out 0.10s 1; }
+    .ring-slice:nth-child(6) .ring-arc { animation: intro-bump-6 0.7s ease-in-out 0.85s 1; }
+
+    .ring-slice:nth-child(1):hover .ring-arc { opacity: 1; filter: brightness(1.2); transform: translate(3px, -5.2px); }
+    .ring-slice:nth-child(2):hover .ring-arc { opacity: 1; filter: brightness(1.2); transform: translate(6px, 0); }
+    .ring-slice:nth-child(3):hover .ring-arc { opacity: 1; filter: brightness(1.2); transform: translate(3px, 5.2px); }
+    .ring-slice:nth-child(4):hover .ring-arc { opacity: 1; filter: brightness(1.2); transform: translate(-3px, 5.2px); }
+    .ring-slice:nth-child(5):hover .ring-arc { opacity: 1; filter: brightness(1.2); transform: translate(-6px, 0); }
+    .ring-slice:nth-child(6):hover .ring-arc { opacity: 1; filter: brightness(1.2); transform: translate(-3px, -5.2px); }
+
+    .ring-overlay {
+      opacity: 0;
+      transition: opacity 0.25s;
+      pointer-events: none;
+    }
+    .ring-slice:hover .ring-overlay { opacity: 0.28; }
+
+    .ring-label {
+      opacity: 0;
+      fill: #fff;
+      font-family: 'Kreon', serif;
+      font-size: 16px;
+      font-weight: 700;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      filter: drop-shadow(0 1px 3px rgba(0,0,0,0.55));
+      transition: opacity 0.25s;
+      pointer-events: none;
+    }
+    .ring-slice:hover .ring-label { opacity: 1; }
 
     /* ---- Main / Cards -------------------------------- */
     main {
@@ -481,7 +535,7 @@
         text-align: center;
       }
       .hero-text .intro { max-width: 100%; }
-      .hero-photo-wrap { width: clamp(180px, 52vw, 230px); height: clamp(180px, 52vw, 230px); }
+      .hero-photo-wrap { width: clamp(160px, 52vw, 220px); height: clamp(160px, 52vw, 220px); }
 
       /* Tighten the cards so more fit on screen at once */
       main { padding: 2rem 1.25rem; }
@@ -549,9 +603,73 @@
       </div>
       <div class="hero-photo-wrap">
         <img class="hero-photo" src="images/family-hero.jpg" alt="The Cuzzorts">
+        <svg class="hero-ring" viewBox="-20 -20 300 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+
+          <!-- Baseball: 0°–60° -->
+          <g class="ring-slice" style="--clr:#F07070" onclick="location.href='baseball/index.html'">
+            <path class="ring-hit" d="M 130,130 L 130,0 A 130,130 0 0,1 242.6,65 Z"/>
+            <path class="ring-arc" d="M 130,0 A 130,130 0 0,1 242.6,65 L 232.2,71 A 118,118 0 0,0 130,12 Z"/>
+            <circle class="ring-overlay" cx="130" cy="130" r="108" fill="#F07070"/>
+            <text class="ring-label" x="130" y="130">Baseball</text>
+          </g>
+
+          <!-- Travels: 60°–120° -->
+          <g class="ring-slice" style="--clr:#E8A020" onclick="location.href='travels/index.html'">
+            <path class="ring-hit" d="M 130,130 L 242.6,65 A 130,130 0 0,1 242.6,195 Z"/>
+            <path class="ring-arc" d="M 242.6,65 A 130,130 0 0,1 242.6,195 L 232.2,189 A 118,118 0 0,0 232.2,71 Z"/>
+            <circle class="ring-overlay" cx="130" cy="130" r="108" fill="#E8A020"/>
+            <text class="ring-label" x="130" y="130">Travels</text>
+          </g>
+
+          <!-- Turkey Hunting: 120°–180° -->
+          <g class="ring-slice" style="--clr:#57BD83" onclick="location.href='turkey-hunting/index.html'">
+            <path class="ring-hit" d="M 130,130 L 242.6,195 A 130,130 0 0,1 130,260 Z"/>
+            <path class="ring-arc" d="M 242.6,195 A 130,130 0 0,1 130,260 L 130,248 A 118,118 0 0,0 232.2,189 Z"/>
+            <circle class="ring-overlay" cx="130" cy="130" r="108" fill="#57BD83"/>
+            <text class="ring-label" x="130" y="130">Turkey Hunting</text>
+          </g>
+
+          <!-- National Parks: 180°–240° -->
+          <g class="ring-slice" style="--clr:#C99A6A" onclick="location.href='national-parks/index.html'">
+            <path class="ring-hit" d="M 130,130 L 130,260 A 130,130 0 0,1 17.4,195 Z"/>
+            <path class="ring-arc" d="M 130,260 A 130,130 0 0,1 17.4,195 L 27.8,189 A 118,118 0 0,0 130,248 Z"/>
+            <circle class="ring-overlay" cx="130" cy="130" r="108" fill="#C99A6A"/>
+            <text class="ring-label" x="130" y="130">National Parks</text>
+          </g>
+
+          <!-- Disney Parks: 240°–300° -->
+          <g class="ring-slice" style="--clr:#1F8FE5" onclick="location.href='disney/index.html'">
+            <path class="ring-hit" d="M 130,130 L 17.4,195 A 130,130 0 0,1 17.4,65 Z"/>
+            <path class="ring-arc" d="M 17.4,195 A 130,130 0 0,1 17.4,65 L 27.8,71 A 118,118 0 0,0 27.8,189 Z"/>
+            <circle class="ring-overlay" cx="130" cy="130" r="108" fill="#1F8FE5"/>
+            <text class="ring-label" x="130" y="130">Disney Parks</text>
+          </g>
+
+          <!-- By the Numbers: 300°–360° -->
+          <g class="ring-slice" style="--clr:#8B7EC8" onclick="location.href='stats/index.html'">
+            <path class="ring-hit" d="M 130,130 L 17.4,65 A 130,130 0 0,1 130,0 Z"/>
+            <path class="ring-arc" d="M 17.4,65 A 130,130 0 0,1 130,0 L 130,12 A 118,118 0 0,0 27.8,71 Z"/>
+            <circle class="ring-overlay" cx="130" cy="130" r="108" fill="#8B7EC8"/>
+            <text class="ring-label" x="130" y="130">By the Numbers</text>
+          </g>
+
+        </svg>
       </div>
     </div>
   </div>
+  <script>
+    (function () {
+      var delays = [0.1, 0.35, 0.6, 0.85, 1.1, 1.35];
+      for (var i = delays.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = delays[i]; delays[i] = delays[j]; delays[j] = t;
+      }
+      var arcs = document.querySelectorAll('.ring-slice .ring-arc');
+      for (var k = 0; k < arcs.length; k++) {
+        arcs[k].style.animationDelay = delays[k] + 's';
+      }
+    }());
+  </script>
 
   <main>
     <p class="section-label">Our Adventures</p>
