@@ -1315,3 +1315,15 @@ img.mem-card-photo {
   .mem-fact-num { font-size: 3rem; }
 }
 
+@media (max-width: 640px) {
+  .bp-chip-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  .bp-chip {
+    font-size: 0.8rem;
+    padding: 5px 9px;
+  }
+}
+

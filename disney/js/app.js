@@ -16,6 +16,22 @@
   var ANYONE_COLOR       = '#E8A020';
   var WHOLE_FAMILY_COLOR = '#E8601A';
 
+  var filterColors = { 'whole-family': WHOLE_FAMILY_COLOR, 'anyone': ANYONE_COLOR };
+  PEOPLE.forEach(function (p) { filterColors[p.id] = p.color; });
+
+  function applyChipColors(filterValue) {
+    var card = document.getElementById('parksCard');
+    if (!card) return;
+    var hex = filterColors[filterValue] || '#8a9aaa';
+    var r = parseInt(hex.slice(1, 3), 16);
+    var g = parseInt(hex.slice(3, 5), 16);
+    var b = parseInt(hex.slice(5, 7), 16);
+    card.style.setProperty('--chip-bg',
+      'rgb(' + Math.round(r*.14+255*.86) + ',' + Math.round(g*.14+255*.86) + ',' + Math.round(b*.14+255*.86) + ')');
+    card.style.setProperty('--chip-border',
+      'rgb(' + Math.round(r*.30+255*.70) + ',' + Math.round(g*.30+255*.70) + ',' + Math.round(b*.30+255*.70) + ')');
+  }
+
   // ---- Disney theme parks grouped by resort ---------
   var DISNEY_RESORTS = [
     {
@@ -221,6 +237,26 @@
       : '<div class="visit-list"><p class="no-visits">No parks visited by everyone yet.</p></div>';
   }
 
+  // ---- Build unvisited list — per person --
+  function buildUnvisitedListHTML(visited) {
+    var html = '<div class="visit-list open">';
+    var hasAny = false;
+    DISNEY_RESORTS.forEach(function (resort) {
+      var unvisited = resort.parks.filter(function (p) { return !visited[p.id]; });
+      if (unvisited.length === 0) return;
+      hasAny = true;
+      html += '<div class="region-group">';
+      html += '<div class="region-label">' + resort.region + '</div>';
+      html += '<div class="visit-chips">';
+      unvisited.forEach(function (p) {
+        html += '<span class="visit-chip visit-chip--unvisited">' + p.name + '</span>';
+      });
+      html += '</div></div>';
+    });
+    html += '</div>';
+    return hasAny ? html : '';
+  }
+
   // ---- Build bucket list — parks Josh & Sam haven't both visited --
   function buildBucketListHTML() {
     var josh = getPersonData('josh').visited;
@@ -256,6 +292,62 @@
     }, 0);
   }
 
+  function buildBucketForFilter(filterValue) {
+    if (filterValue === 'whole-family') { return buildBucketListHTML(); }
+    var visited;
+    if (filterValue === 'anyone') {
+      visited = {};
+      PEOPLE.forEach(function (p) {
+        var v = getPersonData(p.id).visited;
+        Object.keys(v).forEach(function (k) { if (v[k]) visited[k] = true; });
+      });
+    } else {
+      var data = getPersonData(filterValue);
+      if (!data) return '';
+      visited = data.visited;
+    }
+    return buildUnvisitedListHTML(visited);
+  }
+
+  function countBucketForFilter(filterValue) {
+    if (filterValue === 'whole-family') { return countBucketList(); }
+    var visited;
+    if (filterValue === 'anyone') {
+      visited = {};
+      PEOPLE.forEach(function (p) {
+        var v = getPersonData(p.id).visited;
+        Object.keys(v).forEach(function (k) { if (v[k]) visited[k] = true; });
+      });
+    } else {
+      var data = getPersonData(filterValue);
+      if (!data) return 0;
+      visited = data.visited;
+    }
+    return DISNEY_RESORTS.reduce(function (t, r) {
+      return t + r.parks.filter(function (p) { return !visited[p.id]; }).length;
+    }, 0);
+  }
+
+  function updateBucketList(filterValue) {
+    var bucketCard = document.getElementById('bucket-card');
+    if (!bucketCard) return;
+    var existing = bucketCard.querySelector('.visit-list');
+    var html = buildBucketForFilter(filterValue);
+    if (html) {
+      var wrapper = document.createElement('div');
+      wrapper.innerHTML = html;
+      var newList = wrapper.firstChild;
+      if (newList) {
+        newList.classList.add('open');
+        if (existing) bucketCard.replaceChild(newList, existing);
+        else bucketCard.appendChild(newList);
+      }
+    } else if (existing) {
+      bucketCard.removeChild(existing);
+    }
+    setHeadingCount('bucket', countBucketForFilter(filterValue) + ' / ' + TOTAL_PARKS);
+  }
+
   // ---- Parks filter row + card ----------------------
   function buildParksFilterRow() {
     var container = document.getElementById('parksFilters');
@@ -272,8 +364,8 @@
       container.appendChild(btn);
     }
 
-    makeBtn('anyone',       'Anyone',       ANYONE_COLOR,       countFamilyVisited(),      true);
-    makeBtn('whole-family', 'Whole Family', WHOLE_FAMILY_COLOR, countWholeFamilyVisited(), false);
+    makeBtn('whole-family', 'All',    WHOLE_FAMILY_COLOR, countWholeFamilyVisited(), true);
+    makeBtn('anyone',       'Anyone', ANYONE_COLOR,       countFamilyVisited(),      false);
     PEOPLE.forEach(function (p) {
       makeBtn(p.id, p.name, p.color, countVisited(getPersonData(p.id).visited), false);
     });
@@ -294,8 +386,8 @@
       card.appendChild(view);
     }
 
-    addView('anyone',       buildFamilyListHTML(),      true);
-    addView('whole-family', buildWholeFamilyListHTML(), false);
+    addView('whole-family', buildWholeFamilyListHTML(), true);
+    addView('anyone',       buildFamilyListHTML(),      false);
     PEOPLE.forEach(function (p) {
       var data = getPersonData(p.id);
       addView(p.id, buildParkListHTML(data.visited, data.details), false);
@@ -309,7 +401,7 @@
 
     container.addEventListener('click', function (e) {
       var btn = e.target.closest('.person-filter');
-      if (!btn) return;
+      if (!btn || btn.classList.contains('active')) return;
       var view = btn.getAttribute('data-view');
 
       container.querySelectorAll('.person-filter').forEach(function (b) { b.classList.remove('active'); });
@@ -318,6 +410,12 @@
       card.querySelectorAll('.park-view').forEach(function (v) { v.classList.remove('active'); });
       var activeView = card.querySelector('.park-view[data-view="' + view + '"]');
       if (activeView) activeView.classList.add('active');
+
+      applyChipColors(view);
+      updateBucketList(view);
+
+      var mapBtn = document.querySelector('.map-filter-btn[data-filter="' + view + '"]');
+      if (mapBtn) mapBtn.click();
     });
   }
 
@@ -456,12 +554,15 @@
 
     document.querySelectorAll('.map-filter-btn').forEach(function (btn) {
       btn.addEventListener('click', function () {
+        if (btn.classList.contains('active')) return;
         document.querySelectorAll('.map-filter-btn').forEach(function (b) {
           b.classList.remove('active');
         });
         btn.classList.add('active');
         activeFilter = btn.dataset.filter;
         updateMarkers();
+        var parksBtn = document.querySelector('#parksFilters .person-filter[data-view="' + activeFilter + '"]');
+        if (parksBtn) parksBtn.click();
       });
     });
 
@@ -476,6 +577,7 @@
     buildParksFilterRow();
     buildParksCard();
     initParkFilters();
+    applyChipColors('whole-family');
 
     setHeadingCount('bucket', countBucketList() + ' / ' + TOTAL_PARKS);
     var bucketHTML = buildBucketListHTML();

@@ -25,7 +25,8 @@
     'Josh & Sam': TWO,
     'The Kids': GROUP,
     'Bucket List': LIST,
-    'Photos': CAMERA
+    'Photos': CAMERA,
+    'Parks Visited': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 18L8 7l3.5 6.5L14 9.5 21.5 18"/><line x1="2.5" y1="18" x2="21.5" y2="18"/></svg>'
   };
 
   var heads = Array.prototype.slice.call(document.querySelectorAll('.section-heading'));

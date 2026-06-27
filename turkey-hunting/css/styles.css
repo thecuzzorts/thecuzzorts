@@ -277,60 +277,77 @@ body {
   position: relative;
   z-index: 1;
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  max-width: 92vw;
+  flex-direction: column;
+  max-width: 90vw;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
 }
 
 .lb-img {
-  max-width: 80vw;
-  max-height: 82vh;
+  max-width: 90vw;
+  max-height: 75vh;
   object-fit: contain;
-  border-radius: 4px;
   display: block;
 }
 
 .lb-close {
   position: absolute;
-  top: -2.5rem;
-  right: 0;
-  background: none;
+  top: 0.4rem;
+  right: 0.5rem;
+  background: rgba(0,0,0,0.45);
   border: none;
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.4rem;
   line-height: 1;
   cursor: pointer;
-  padding: 0.25rem;
-  opacity: 0.8;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  opacity: 0.85;
+  z-index: 2;
   transition: opacity 0.15s;
 }
 .lb-close:hover { opacity: 1; }
 
+.lb-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.9rem 0.6rem;
+  background: #1a2e3b;
+}
+
 .lb-prev,
 .lb-next {
-  background: rgba(255,255,255,0.18);
-  border: none;
-  color: #fff;
-  font-size: 2.25rem;
+  flex: 0 0 auto;
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
   line-height: 1;
-  padding: 0.4rem 0.6rem;
-  border-radius: 4px;
+  color: rgba(255,255,255,0.7);
+  background: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 5px;
+  padding: 0.25rem 0.8rem;
   cursor: pointer;
-  flex-shrink: 0;
-  transition: background 0.15s;
+  transition: color 0.15s, border-color 0.15s;
 }
 .lb-prev:hover,
-.lb-next:hover { background: rgba(255,255,255,0.32); }
+.lb-next:hover { color: #E8A020; border-color: #E8A020; }
 
 .lb-caption {
-  position: absolute;
-  bottom: -2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgba(255,255,255,0.72);
-  font-size: 0.82rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: center;
+  color: #fff;
+  font-family: 'Kreon', Georgia, serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   white-space: nowrap;
-  font-family: 'Roboto Condensed', sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 body.lb-open { overflow: hidden; }
@@ -342,6 +359,5 @@ body.lb-open { overflow: hidden; }
   .person-filter { padding: 0.3rem 0.7rem; }
   .family-gallery { grid-template-columns: 1fr; }
   .photo-grid { grid-template-columns: repeat(2, 1fr); }
-  .lb-prev, .lb-next { font-size: 1.75rem; padding: 0.3rem 0.45rem; }
-  .lb-img { max-width: 92vw; max-height: 75vh; }
+  .lb-img { max-width: 92vw; max-height: 70vh; }
 }

@@ -171,19 +171,26 @@
     .ring-slice:nth-child(5) .ring-arc { animation: intro-bump-5 0.7s ease-in-out 0.10s 1; }
     .ring-slice:nth-child(6) .ring-arc { animation: intro-bump-6 0.7s ease-in-out 0.85s 1; }
 
-    .ring-slice:nth-child(1):hover .ring-arc { opacity: 1; filter: brightness(1.2); transform: translate(3px, -5.2px); }
-    .ring-slice:nth-child(2):hover .ring-arc { opacity: 1; filter: brightness(1.2); transform: translate(6px, 0); }
-    .ring-slice:nth-child(3):hover .ring-arc { opacity: 1; filter: brightness(1.2); transform: translate(3px, 5.2px); }
-    .ring-slice:nth-child(4):hover .ring-arc { opacity: 1; filter: brightness(1.2); transform: translate(-3px, 5.2px); }
-    .ring-slice:nth-child(5):hover .ring-arc { opacity: 1; filter: brightness(1.2); transform: translate(-6px, 0); }
-    .ring-slice:nth-child(6):hover .ring-arc { opacity: 1; filter: brightness(1.2); transform: translate(-3px, -5.2px); }
+    .ring-slice:nth-child(1):hover .ring-arc,
+    .ring-slice:nth-child(1).is-tapped .ring-arc { opacity: 1; filter: brightness(1.2); transform: translate(3px, -5.2px); }
+    .ring-slice:nth-child(2):hover .ring-arc,
+    .ring-slice:nth-child(2).is-tapped .ring-arc { opacity: 1; filter: brightness(1.2); transform: translate(6px, 0); }
+    .ring-slice:nth-child(3):hover .ring-arc,
+    .ring-slice:nth-child(3).is-tapped .ring-arc { opacity: 1; filter: brightness(1.2); transform: translate(3px, 5.2px); }
+    .ring-slice:nth-child(4):hover .ring-arc,
+    .ring-slice:nth-child(4).is-tapped .ring-arc { opacity: 1; filter: brightness(1.2); transform: translate(-3px, 5.2px); }
+    .ring-slice:nth-child(5):hover .ring-arc,
+    .ring-slice:nth-child(5).is-tapped .ring-arc { opacity: 1; filter: brightness(1.2); transform: translate(-6px, 0); }
+    .ring-slice:nth-child(6):hover .ring-arc,
+    .ring-slice:nth-child(6).is-tapped .ring-arc { opacity: 1; filter: brightness(1.2); transform: translate(-3px, -5.2px); }
 
     .ring-overlay {
       opacity: 0;
       transition: opacity 0.25s;
       pointer-events: none;
     }
-    .ring-slice:hover .ring-overlay { opacity: 0.28; }
+    .ring-slice:hover .ring-overlay,
+    .ring-slice.is-tapped .ring-overlay { opacity: 0.28; }
 
     .ring-label {
       opacity: 0;
@@ -199,7 +206,8 @@
       transition: opacity 0.25s;
       pointer-events: none;
     }
-    .ring-slice:hover .ring-label { opacity: 1; }
+    .ring-slice:hover .ring-label,
+    .ring-slice.is-tapped .ring-label { opacity: 1; }
 
     /* ---- Main / Cards -------------------------------- */
     main {
@@ -409,11 +417,13 @@
       background: #fff;
       border-radius: 10px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      border-left: 4px solid #F07070;
+      border-left: 4px solid var(--cu-accent, #F07070);
       text-decoration: none;
       color: inherit;
       transition: box-shadow 0.15s;
     }
+
+    .coming-up + .coming-up { margin-top: 0.5rem; }
 
     .coming-up:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.1); }
 
@@ -423,7 +433,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: #F07070;
+      color: var(--cu-accent, #F07070);
       white-space: nowrap;
       flex-shrink: 0;
     }
@@ -669,6 +679,31 @@
         arcs[k].style.animationDelay = delays[k] + 's';
       }
     }());
+
+    // Touch devices: first tap previews wedge, second tap navigates
+    if (window.matchMedia('(hover: none)').matches) {
+      (function () {
+        var slices = Array.prototype.slice.call(document.querySelectorAll('.ring-slice'));
+        slices.forEach(function (slice) {
+          var href = (slice.getAttribute('onclick') || '').replace(/.*'([^']+)'.*/, '$1');
+          slice.removeAttribute('onclick');
+          slice.addEventListener('click', function (e) {
+            if (slice.classList.contains('is-tapped')) {
+              if (href) { location.href = href; }
+            } else {
+              slices.forEach(function (s) { s.classList.remove('is-tapped'); });
+              slice.classList.add('is-tapped');
+              e.preventDefault();
+            }
+          });
+        });
+        document.addEventListener('click', function (e) {
+          if (!e.target.closest || !e.target.closest('.ring-slice')) {
+            slices.forEach(function (s) { s.classList.remove('is-tapped'); });
+          }
+        });
+      }());
+    }
   </script>
 
   <main>
@@ -808,11 +843,17 @@
     </div>
 
     <!-- Coming Up -->
+    <a class="coming-up" href="national-parks/index.html" style="--cu-accent:#C99A6A">
+      <span class="cu-label">Coming Up</span>
+      <span class="cu-divider"></span>
+      <span class="cu-text">Everglades National Park</span>
+      <span class="cu-date">Jul 2026</span>
+    </a>
     <a class="coming-up" href="baseball/index.html#banana">
       <span class="cu-label">Coming Up</span>
       <span class="cu-divider"></span>
       <span class="cu-text">Banana Ball &middot; Busch Stadium, St. Louis</span>
-      <span class="cu-date">Aug 21, 2026</span>
+      <span class="cu-date">Aug 2026</span>
     </a>
 
     <div class="activity-feed">

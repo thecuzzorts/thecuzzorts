@@ -16,7 +16,7 @@ body {
 main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem 4rem;
+  padding: 0 2rem 2rem;
 }
 
 .page-intro {
@@ -297,11 +297,26 @@ main {
   .person-grid--kids    { grid-template-columns: repeat(2, 1fr); }
 }
 
+@media (max-width: 640px) {
+  /* Override site-chrome's nowrap scroll — this page's items are too long */
+  .site-header nav ul {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    justify-content: center;
+  }
+  .site-header nav ul li a:link,
+  .site-header nav ul li a:visited {
+    padding: 0.35em 0.7em;
+    font-size: 0.7em;
+  }
+}
+
 @media (max-width: 560px) {
-  main { padding: 0 1rem 3rem; }
+  main { padding: 0 1rem 2rem; }
   .hero-grid    { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
   .person-grid--kids { grid-template-columns: 1fr; }
   .bb-grid      { grid-template-columns: repeat(2, 1fr); }
   .turkey-grid  { grid-template-columns: 1fr; }
   .stat-head    { font-size: 1.1rem; padding: 0.7rem 1rem; margin-top: 2rem; }
 }
+

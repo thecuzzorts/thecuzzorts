@@ -32,12 +32,12 @@ body {
 
 /* --- Section panels (anchor-nav targets) ----------- */
 .section-panel {
-  scroll-margin-top: 4rem;
+  scroll-margin-top: 7rem;
 }
 
 /* Headings that are themselves anchor targets (Photos, Map, Bucket List) */
 .section-heading[id] {
-  scroll-margin-top: 4rem;
+  scroll-margin-top: 7rem;
 }
 
 /* --- Combined Card --------------------------------- */
@@ -197,10 +197,11 @@ body {
   padding: 0.3rem 0.75rem;
   border-radius: 99px;
   font-size: 0.92rem;
-  background: #eaeef2;
-  border: 1px solid #c6cfd7;
+  background: var(--chip-bg, #eaeef2);
+  border: 1px solid var(--chip-border, #c6cfd7);
   color: #28333d;
   white-space: nowrap;
+  transition: background 0.3s, border-color 0.3s;
 }
 
 /* Unvisited / bucket-list chip */
@@ -274,10 +275,10 @@ body {
 
 .map-filter-btn {
   padding: 0.3rem 0.85rem;
-  border: 2px solid #ccc;
+  border: 2px solid var(--filter-color, #888);
   border-radius: 999px;
   background: transparent;
-  color: #888;
+  color: var(--filter-color, #888);
   cursor: pointer;
   font-family: 'Kreon', Georgia, serif;
   font-size: 0.85rem;
@@ -286,13 +287,14 @@ body {
   transition: border-color 0.15s, color 0.15s, background 0.15s;
 }
 
-.map-filter-btn.active[data-filter="anyone"]       { border-color: #E8A020; color: #E8A020; }
-.map-filter-btn.active[data-filter="whole-family"] { border-color: #FF8200; color: #FF8200; }
-.map-filter-btn.active[data-filter="josh"]   { border-color: #00AC4B; color: #00AC4B; }
-.map-filter-btn.active[data-filter="sam"]    { border-color: #662684; color: #662684; }
-.map-filter-btn.active[data-filter="ellie"]  { border-color: #66b2b2; color: #66b2b2; }
-.map-filter-btn.active[data-filter="tilly"]  { border-color: #0898ff; color: #0898ff; }
-.map-filter-btn.active[data-filter="poppy"]  { border-color: #d9259a; color: #d9259a; }
+.map-filter-btn:hover:not(.active) {
+  background: color-mix(in srgb, var(--filter-color, #888) 10%, transparent);
+}
+
+.map-filter-btn.active {
+  background: var(--filter-color, #888);
+  color: #fff;
+}
 
 .map-legend {
   display: flex;

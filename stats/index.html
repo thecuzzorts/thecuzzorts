@@ -499,5 +499,41 @@
 
   <script src="../js/site-nav.js"></script>
 
+  <script>
+    (function () {
+      var headings = Array.prototype.slice.call(document.querySelectorAll('h2.stat-head[id]'));
+      var navLinks = {};
+      Array.prototype.forEach.call(document.querySelectorAll('.site-header nav a[href^="#"]'), function (a) {
+        navLinks[a.getAttribute('href').slice(1)] = a;
+      });
+
+      function sync() {
+        var header = document.querySelector('.site-header');
+        var line = window.pageYOffset + (header ? header.offsetHeight : 60) + 40;
+        var nearBottom = (window.pageYOffset + window.innerHeight) >= (document.body.scrollHeight - 80);
+        var active = null;
+        headings.forEach(function (h) {
+          if (h.getBoundingClientRect().top + window.pageYOffset <= line) { active = h; }
+        });
+        if (nearBottom && headings.length) { active = headings[headings.length - 1]; }
+        Object.keys(navLinks).forEach(function (k) {
+          navLinks[k].classList.remove('active');
+          navLinks[k].style.removeProperty('--section-on-dark');
+        });
+        if (active && navLinks[active.id]) {
+          navLinks[active.id].classList.add('active');
+          var color = active.style.getPropertyValue('--sh-color').trim();
+          if (color) { navLinks[active.id].style.setProperty('--section-on-dark', color); }
+        }
+      }
+
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) { ticking = true; requestAnimationFrame(function () { sync(); ticking = false; }); }
+      }, { passive: true });
+      sync();
+    }());
+  </script>
+
 </body>
 </html>

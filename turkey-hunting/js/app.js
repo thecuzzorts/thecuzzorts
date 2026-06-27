@@ -363,10 +363,12 @@
         '<div class="lb-backdrop"></div>' +
         '<div class="lb-frame">' +
           '<button class="lb-close" aria-label="Close">&times;</button>' +
-          '<button class="lb-prev" aria-label="Previous">&#8249;</button>' +
           '<img id="lbImg" class="lb-img" src="" alt="">' +
-          '<button class="lb-next" aria-label="Next">&#8250;</button>' +
-          '<div id="lbCaption" class="lb-caption"></div>' +
+          '<div class="lb-controls">' +
+            '<button class="lb-prev" aria-label="Previous">&#8592;</button>' +
+            '<div id="lbCaption" class="lb-caption"></div>' +
+            '<button class="lb-next" aria-label="Next">&#8594;</button>' +
+          '</div>' +
         '</div>' +
       '</div>'
     );

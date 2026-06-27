@@ -74,4 +74,31 @@
   bar.appendChild(strip);
   bar.appendChild(selectWrap);
   header.insertBefore(bar, header.firstChild);
+
+  // --- End mark: mini ring appended to <main> on all section pages ---
+  if (currentKey !== '') {
+    var mainEl = document.querySelector('main');
+    if (mainEl) {
+      var endMark = document.createElement('div');
+      endMark.className = 'site-end-mark';
+      endMark.setAttribute('aria-hidden', 'true');
+      var ns = 'http://www.w3.org/2000/svg';
+      var svg = document.createElementNS(ns, 'svg');
+      svg.setAttribute('class', 'site-end-ring');
+      svg.setAttribute('viewBox', '0 0 1200 500');
+      svg.setAttribute('preserveAspectRatio', 'xMidYMax slice');
+      var clrs = ['#F07070','#E8A020','#57BD83','#C99A6A','#1F8FE5','#8B7EC8'];
+      for (var ci = 0; ci < 9; ci++) {
+        var c = document.createElementNS(ns, 'circle');
+        c.setAttribute('cx', (Math.random() * 1400 - 100).toFixed(0));
+        c.setAttribute('cy', (Math.random() * 320 + 200).toFixed(0));
+        c.setAttribute('r',  (Math.random() * 150 + 100).toFixed(0));
+        c.setAttribute('fill', clrs[Math.floor(Math.random() * clrs.length)]);
+        c.setAttribute('fill-opacity', (Math.random() * 0.06 + 0.08).toFixed(2));
+        svg.appendChild(c);
+      }
+      endMark.appendChild(svg);
+      mainEl.appendChild(endMark);
+    }
+  }
 }());
