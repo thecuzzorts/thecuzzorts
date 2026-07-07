@@ -1,6 +1,12 @@
 (function () {
   'use strict';
 
+  var MO_MAP = {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
+  function parseDate(str) {
+    var p = str.split(/[\s,]+/);
+    return new Date(+p[2], MO_MAP[p[0]], +p[1]);
+  }
+
   var STATE_NAMES = {
     'US-AL': 'Alabama',       'US-AK': 'Alaska',         'US-AZ': 'Arizona',       'US-AR': 'Arkansas',
     'US-CA': 'California',    'US-CO': 'Colorado',       'US-CT': 'Connecticut',   'US-DE': 'Delaware',
@@ -131,14 +137,65 @@
     });
   }
 
+  function buildChronologicalHTML() {
+    var allRaces = [];
+    for (var code in racesJosh) {
+      racesJosh[code].forEach(function (r) {
+        allRaces.push({ race: r, stateName: STATE_NAMES[code] || code });
+      });
+    }
+    allRaces.sort(function (a, b) { return parseDate(a.race.date) - parseDate(b.race.date); });
+
+    var cardsHTML = allRaces.map(function (item) {
+      var race = item.race;
+      var isHalf = race.type === 'Half Marathon';
+      var badgeClass = 'race-type-badge' + (isHalf ? ' race-type-badge--half' : '');
+      var notesHTML = race.notes ? '<div class="race-notes">' + race.notes + '</div>' : '';
+      var photosHTML = '';
+      if (race.slug) {
+        var medalSrc = IMG_BASE + race.slug + '-medal-2025.jpg';
+        photosHTML = '<div class="race-photos">' +
+          '<img class="race-photo-thumb" src="' + medalSrc + '" alt="Medal" data-caption="' + race.name + '" onerror="this.parentNode.removeChild(this)">' +
+        '</div>';
+      }
+      return '<div class="race-entry">' +
+        '<div class="race-details">' +
+          '<div class="race-header-row">' +
+            '<span class="race-name">' + race.name + '</span>' +
+            '<span class="' + badgeClass + '">' + race.type + '</span>' +
+          '</div>' +
+          '<div class="race-meta">' +
+            '<span class="race-date">' + race.date + '</span>' +
+            '<span class="race-sep">·</span>' +
+            '<span class="race-time">' + race.time + '</span>' +
+          '</div>' +
+          '<div class="race-state-tag">' + item.stateName + '</div>' +
+          notesHTML +
+        '</div>' +
+        photosHTML +
+      '</div>';
+    }).join('');
+
+    return '<div class="race-list race-list--multi">' + cardsHTML + '</div>';
+  }
+
+  function initSortToggle() {
+    document.getElementById('raceSortToggle').addEventListener('click', function (e) {
+      var btn = e.target.closest('.race-sort-btn');
+      if (!btn || btn.classList.contains('active')) return;
+      document.querySelectorAll('.race-sort-btn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var card = document.getElementById('racesCard');
+      card.classList.add('is-sorting');
+      setTimeout(function () {
+        card.innerHTML = btn.dataset.sort === 'date' ? buildChronologicalHTML() : buildRaceListHTML();
+        card.classList.remove('is-sorting');
+      }, 220);
+    });
+  }
+
   function buildTrendChart() {
     var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    var MO_MAP = {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
-
-    function parseDate(str) {
-      var p = str.split(/[\s,]+/);
-      return new Date(+p[2], MO_MAP[p[0]], +p[1]);
-    }
     function toSecs(t) {
       var p = t.split(':').map(Number);
       return p.length === 2 ? p[0]*60+p[1] : p[0]*3600+p[1]*60+p[2];
@@ -295,6 +352,7 @@
     buildTrendChart();
     initMap(mapData);
     initLightbox();
+    initSortToggle();
   }
 
   document.addEventListener('DOMContentLoaded', init);

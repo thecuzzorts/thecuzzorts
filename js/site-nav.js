@@ -24,7 +24,8 @@
     { key: 'turkey-hunting', label: 'Turkey Hunting', path: 'turkey-hunting/index.html', color: '#57BD83' },
     { key: 'national-parks', label: 'National Parks', path: 'national-parks/index.html', color: '#C99A6A' },
     { key: 'disney',        label: 'Disney',        path: 'disney/index.html',       color: '#1F8FE5' },
-    { key: 'stats',         label: 'By the Numbers', path: 'stats/index.html',        color: '#8B7EC8' }
+    { key: 'stats',         label: 'By the Numbers', path: 'stats/index.html',        color: '#8B7EC8' },
+    { key: 'run',           label: 'Running',        path: 'run/index.html',          color: '#00AC4B', hidden: true }
   ];
 
   // Current section = the folder name in the path (e.g. "disney").
@@ -43,7 +44,7 @@
   var strip = document.createElement('nav');
   strip.className = 'global-nav-strip';
   strip.setAttribute('aria-label', 'Site sections');
-  strip.innerHTML = SECTIONS.map(function (s) {
+  strip.innerHTML = SECTIONS.filter(function (s) { return !s.hidden; }).map(function (s) {
     var current = s.key === currentKey;
     return '<a class="global-nav-link' + (current ? ' is-current' : '') + '"' +
            (current ? ' aria-current="page"' : '') +
@@ -56,7 +57,7 @@
   selectWrap.className = 'global-nav-select';
   var select = document.createElement('select');
   select.setAttribute('aria-label', 'Go to section');
-  SECTIONS.forEach(function (s) {
+  SECTIONS.filter(function (s) { return !s.hidden; }).forEach(function (s) {
     var opt = document.createElement('option');
     opt.value = s.href;
     opt.textContent = s.label;

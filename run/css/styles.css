@@ -111,7 +111,10 @@ body {
   border-radius: 10px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   padding: 1.25rem;
+  transition: opacity 0.22s;
 }
+
+.races-card.is-sorting { opacity: 0; }
 
 /* --- State Groups ---------------------------------- */
 .state-group {
@@ -141,6 +144,36 @@ body {
   font-weight: 400;
 }
 
+/* --- Sort Toggle ----------------------------------- */
+.race-sort-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.race-sort-btn {
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.3rem 0.9rem;
+  border-radius: 99px;
+  border: 2px solid rgba(0,172,75,0.4);
+  background: transparent;
+  color: #00AC4B;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.race-sort-btn.active {
+  background: #00AC4B;
+  color: #fff;
+  border-color: #00AC4B;
+}
+
+.race-sort-btn:not(.active):hover {
+  background: rgba(0,172,75,0.1);
+}
+
 /* --- Race List ------------------------------------- */
 .race-list--multi {
   display: grid;
@@ -150,6 +183,16 @@ body {
 
 .race-list--multi .race-entry {
   margin-bottom: 0;
+}
+
+/* --- State Tag (chronological view) ---------------- */
+.race-state-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #7d8a97;
+  margin-top: 0.2rem;
 }
 
 /* --- Race Entries ---------------------------------- */
