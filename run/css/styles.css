@@ -1,0 +1,452 @@
+/* ===================================================
+   TheCuzzorts — Running
+   =================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Kreon:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
+
+/* --- Reset & Base ---------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+
+body {
+  --section: #00AC4B;
+  --section-on-dark: #57BD83;
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+  background: #f0f2f5;
+  color: #222;
+  min-height: 100vh;
+}
+
+/* --- Section panels (anchor-nav targets) ----------- */
+.section-panel {
+  scroll-margin-top: 4rem;
+}
+
+/* --- Map Card -------------------------------------- */
+.map-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Stats Strip ----------------------------------- */
+.run-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+}
+
+.run-stat {
+  text-align: center;
+  min-width: 4rem;
+}
+
+.run-stat-num {
+  display: block;
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #00AC4B;
+  line-height: 1;
+}
+
+.run-stat-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7d8a97;
+  margin-top: 0.2rem;
+}
+
+.run-stat-pipe {
+  width: 1px;
+  height: 2.5rem;
+  background: #dde3ea;
+  flex-shrink: 0;
+}
+
+.run-stat-breakdown {
+  font-size: 0.85rem;
+  color: #5a6a7a;
+  line-height: 1.6;
+}
+
+/* --- Map Container (responsive aspect-ratio) ------- */
+.map-container { position: relative; width: 100%; }
+.map-container.us-map { padding-bottom: 50%; }
+
+.map-container .map {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+/* jVectorMap overrides */
+.jvectormap-container { width: 100% !important; height: 100% !important; }
+
+.jvectormap-tip {
+  background: #1a2e3b;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.4rem 0.6rem;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  max-width: 240px;
+}
+
+/* --- Races Card ------------------------------------ */
+.races-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 1.25rem;
+}
+
+/* --- State Groups ---------------------------------- */
+.state-group {
+  margin-bottom: 1.75rem;
+}
+.state-group:last-child {
+  margin-bottom: 0;
+}
+
+.state-group-label {
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #00AC4B;
+  border-left: 4px solid #00AC4B;
+  padding: 0.15rem 0 0.15rem 0.65rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.state-race-count {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 0.78rem;
+  color: #7d8a97;
+  font-weight: 400;
+}
+
+/* --- Race List ------------------------------------- */
+.race-list--multi {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.race-list--multi .race-entry {
+  margin-bottom: 0;
+}
+
+/* --- Race Entries ---------------------------------- */
+.race-entry {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #f5f8fb;
+  border: 1px solid #dde3ea;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.race-entry:last-child {
+  margin-bottom: 0;
+}
+
+.race-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.race-header-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.race-name {
+  font-family: 'Kreon', Georgia, serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #1a2e3b;
+  flex: 1;
+}
+
+.race-type-badge {
+  flex-shrink: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  background: #1F8FE5;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.race-type-badge--half {
+  background: #E8601A;
+  color: #fff;
+}
+
+.race-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  color: #5a6a7a;
+}
+
+.race-sep {
+  color: #bcc5ce;
+}
+
+.race-time {
+  font-family: 'Kreon', Georgia, serif;
+  font-weight: 700;
+  color: #1a2e3b;
+}
+
+.race-notes {
+  margin-top: 0.4rem;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: #7a530a;
+  background: rgba(232,160,32,0.12);
+  border-left: 3px solid #E8A020;
+  padding: 0.2rem 0.55rem;
+  border-radius: 0 4px 4px 0;
+}
+
+/* --- 5K Trend Chart -------------------------------- */
+.trend-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+}
+
+.trend-chart-wrap {
+  position: relative;
+  min-width: 420px;
+}
+
+.trend-svg {
+  width: 100%;
+  display: block;
+  overflow: visible;
+}
+
+.chart-grid {
+  stroke: #eaeef2;
+  stroke-width: 1;
+}
+
+.chart-area { fill: url(#trendGrad); }
+
+.chart-line {
+  fill: none;
+  stroke: #00AC4B;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chart-trend-line {
+  fill: none;
+  stroke: #00AC4B;
+  stroke-width: 1.5;
+  stroke-dasharray: 5 4;
+  opacity: 0.3;
+}
+
+.chart-hit { fill: transparent; cursor: pointer; }
+
+.chart-dot {
+  fill: #00AC4B;
+  stroke: #fff;
+  stroke-width: 2;
+  pointer-events: none;
+}
+
+.chart-dot--pr { fill: #E8A020; }
+
+.chart-dot-group { cursor: pointer; }
+
+.chart-label {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 11px;
+  fill: #7d8a97;
+}
+.chart-label--y { text-anchor: end; }
+.chart-label--x { text-anchor: middle; }
+
+.chart-pr-label {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  fill: #E8A020;
+  text-anchor: middle;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.chart-tooltip {
+  position: absolute;
+  background: #1a2e3b;
+  color: #fff;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  padding: 0.35rem 0.65rem;
+  border-radius: 5px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.12s;
+  white-space: nowrap;
+  z-index: 10;
+}
+.chart-tooltip.is-visible { opacity: 1; }
+
+.tt-pr {
+  display: inline-block;
+  background: #E8A020;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.05rem 0.4rem;
+  border-radius: 3px;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}
+
+/* --- Race Photos ----------------------------------- */
+.race-photos {
+  flex-shrink: 0;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.race-photo-thumb {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 8px;
+  border: 1px solid #dde3ea;
+  cursor: zoom-in;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.race-photo-thumb:hover {
+  opacity: 0.85;
+  transform: scale(1.03);
+}
+
+/* --- Lightbox -------------------------------------- */
+.race-lb-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  align-items: center;
+  justify-content: center;
+}
+.race-lb-overlay.is-open {
+  display: flex;
+}
+
+.race-lb-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  cursor: pointer;
+}
+
+.race-lb-frame {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 92vw;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+}
+
+.race-lb-img {
+  max-width: 92vw;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+}
+
+.race-lb-close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.5rem;
+  background: rgba(0,0,0,0.45);
+  border: none;
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  opacity: 0.85;
+  z-index: 2;
+  transition: opacity 0.15s;
+}
+.race-lb-close:hover { opacity: 1; }
+
+.race-lb-caption {
+  background: #1a2e3b;
+  color: #fff;
+  font-family: 'Kreon', Georgia, serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.5rem 1rem 0.6rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+body.lb-open { overflow: hidden; }
+
+/* --- Mobile ---------------------------------------- */
+@media (max-width: 640px) {
+  .run-stats { gap: 0.9rem; }
+  .run-stat-num { font-size: 1.45rem; }
+  .run-stat-pipe { height: 2rem; }
+  .race-list--multi { grid-template-columns: 1fr; }
+  .race-entry { flex-direction: column; align-items: center; text-align: center; }
+  .race-header-row { flex-wrap: wrap; justify-content: center; align-items: center; }
+  .race-meta { justify-content: center; }
+  .race-notes { text-align: center; }
+  .race-photos { justify-content: center; }
+  .race-photo-thumb { width: 100%; height: auto; max-height: 200px; }
+}
