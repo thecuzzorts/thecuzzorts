@@ -274,6 +274,8 @@ hr { display: none; }
 .bp-filter-btn.active[data-filter="aa"]        { border-color: #1a2e3b; color: #1a2e3b; }
 .bp-filter-btn.active[data-filter="high-a"]    { border-color: #1a2e3b; color: #1a2e3b; }
 .bp-filter-btn.active[data-filter="a"]         { border-color: #1a2e3b; color: #1a2e3b; }
+.bp-filter-btn.active[data-filter="fcl"]       { border-color: #1a2e3b; color: #1a2e3b; }
+.bp-filter-btn.active[data-filter="acl"]       { border-color: #1a2e3b; color: #1a2e3b; }
 .bp-filter-btn.active[data-filter="prospect"]  { border-color: #22703D; color: #22703D; }
 .bp-filter-btn.active[data-filter="partner"]   { border-color: #003087; color: #003087; }
 
@@ -471,7 +473,7 @@ hr { display: none; }
 .milb-marker-icon .milb-dot.milb-dot--unvisited {
   width: 10px;
   height: 10px;
-  background: #aaaaaa;
+  background: #64748b;
   border: 2px solid #fff;
   box-shadow: 0 0 0 1px rgba(0,0,0,0.18);
 }
@@ -496,7 +498,7 @@ hr { display: none; }
 }
 
 .legend-dot.visited   { background: linear-gradient(135deg, #C8102E 0%, #E8A020 40%, #22703D 70%, #002D62 100%); }
-.legend-dot.unvisited { background: #aaaaaa; }
+.legend-dot.unvisited { background: #64748b; }
 
 .legend-sep { color: #ccc; margin: 0 4px; }
 
@@ -552,10 +554,18 @@ hr { display: none; }
 
 .milb-full-list {
   display: grid;
-  grid-template-columns: auto repeat(4, 1fr);
+  grid-template-columns: auto repeat(6, 1fr);
   gap: 4px 6px;
   align-items: center;
 }
+
+.milb-chip-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.milb-chip-stack .bp-chip { margin: 0; }
 
 .milb-level-header {
   font-size: 0.62rem;
@@ -591,8 +601,8 @@ hr { display: none; }
 }
 
 @media (max-width: 1280px) {
-  /* Medium: drop level-header row, org name takes its own full-width row, 4 chips below */
-  .milb-full-list { grid-template-columns: repeat(4, 1fr); }
+  /* Medium: drop level-header row, org name takes its own full-width row, chips wrap in 3s below */
+  .milb-full-list { grid-template-columns: repeat(3, 1fr); }
   .milb-full-list > div:first-child,
   .milb-level-header { display: none; }
   .milb-org-name {
@@ -604,7 +614,7 @@ hr { display: none; }
 }
 
 @media (max-width: 1024px) {
-  /* Narrow: 3 rows — affiliate name, AAA+AA, High-A+A */
+  /* Narrow: affiliate name, then chips wrap two per row */
   .milb-full-list { grid-template-columns: repeat(2, 1fr); }
 }
 

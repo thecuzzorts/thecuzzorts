@@ -563,13 +563,24 @@
 
     function getMarkerColor(park) {
       if (activeFilter === 'anyone') {
-        return isAnyoneVisited(park.id) ? '#E8A020' : '#aaaaaa';
+        return isAnyoneVisited(park.id) ? '#E8A020' : '#64748b';
       }
       if (activeFilter === 'whole-family') {
-        return isWholeFamilyVisited(park.id) ? '#FF8200' : '#aaaaaa';
+        return isWholeFamilyVisited(park.id) ? '#FF8200' : '#64748b';
       }
       var person = PEOPLE.filter(function (p) { return p.id === activeFilter; })[0];
-      return getPersonData(activeFilter).visited[park.id] ? person.color : '#aaaaaa';
+      return getPersonData(activeFilter).visited[park.id] ? person.color : '#64748b';
+    }
+
+    function makeMarkerIcon(color) {
+      var isV = color !== '#64748b';
+      return L.divIcon({
+        className: 'milb-marker-icon',
+        html: '<div class="' + (isV ? 'milb-dot' : 'milb-dot milb-dot--unvisited') + '"' + (isV ? ' style="background:' + color + '"' : '') + '></div>',
+        iconSize:   isV ? [14, 14] : [10, 10],
+        iconAnchor: isV ? [7,  7]  : [5,  5],
+        popupAnchor: [0, -8]
+      });
     }
 
     function getPopupContent(park) {
@@ -590,15 +601,10 @@
 
     PARKS_REGIONS.forEach(function (regionObj) {
       regionObj.parks.forEach(function (park) {
-        var circle = L.circleMarker([park.lat, park.lng], {
-          radius: 7,
-          color: '#ffffff',
-          weight: 1.5,
-          fillOpacity: 0.88,
-          fillColor: getMarkerColor(park)
-        }).bindPopup(getPopupContent(park));
-        circle.addTo(map);
-        markerEntries.push({ circle: circle, park: park });
+        var marker = L.marker([park.lat, park.lng], { icon: makeMarkerIcon(getMarkerColor(park)) })
+          .bindPopup(getPopupContent(park));
+        marker.addTo(map);
+        markerEntries.push({ marker: marker, park: park });
       });
     });
 
@@ -612,7 +618,7 @@
         visitedColor = PEOPLE.filter(function (p) { return p.id === activeFilter; })[0].color;
       }
       markerEntries.forEach(function (m) {
-        m.circle.setStyle({ fillColor: getMarkerColor(m.park) });
+        m.marker.setIcon(makeMarkerIcon(getMarkerColor(m.park)));
       });
       var legendDot = document.getElementById('legendVisited');
       if (legendDot) legendDot.style.background = visitedColor;

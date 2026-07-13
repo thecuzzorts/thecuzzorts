@@ -493,14 +493,25 @@
     function getMarkerColor(resort) {
       if (activeFilter === 'anyone') {
         var anyone = PEOPLE.some(function (p) { return resortVisitedBy(resort, p.id); });
-        return anyone ? ANYONE_COLOR : '#aaaaaa';
+        return anyone ? ANYONE_COLOR : '#64748b';
       }
       if (activeFilter === 'whole-family') {
         var all = PEOPLE.every(function (p) { return resortVisitedBy(resort, p.id); });
-        return all ? WHOLE_FAMILY_COLOR : '#aaaaaa';
+        return all ? WHOLE_FAMILY_COLOR : '#64748b';
       }
       var person = PEOPLE.filter(function (p) { return p.id === activeFilter; })[0];
-      return resortVisitedBy(resort, activeFilter) ? person.color : '#aaaaaa';
+      return resortVisitedBy(resort, activeFilter) ? person.color : '#64748b';
+    }
+
+    function makeMarkerIcon(color) {
+      var isV = color !== '#64748b';
+      return L.divIcon({
+        className: 'milb-marker-icon',
+        html: '<div class="' + (isV ? 'milb-dot' : 'milb-dot milb-dot--unvisited') + '"' + (isV ? ' style="background:' + color + '"' : '') + '></div>',
+        iconSize:   isV ? [14, 14] : [10, 10],
+        iconAnchor: isV ? [7,  7]  : [5,  5],
+        popupAnchor: [0, -8]
+      });
     }
 
     function getPopupContent(resort) {
@@ -525,15 +536,10 @@
     }
 
     DISNEY_RESORTS.forEach(function (resort) {
-      var circle = L.circleMarker([resort.lat, resort.lng], {
-        radius: 8,
-        color: '#ffffff',
-        weight: 1.5,
-        fillOpacity: 0.88,
-        fillColor: getMarkerColor(resort)
-      }).bindPopup(getPopupContent(resort));
-      circle.addTo(map);
-      markerEntries.push({ circle: circle, resort: resort });
+      var marker = L.marker([resort.lat, resort.lng], { icon: makeMarkerIcon(getMarkerColor(resort)) })
+        .bindPopup(getPopupContent(resort));
+      marker.addTo(map);
+      markerEntries.push({ marker: marker, resort: resort });
     });
 
     function updateMarkers() {
@@ -546,7 +552,7 @@
         visitedColor = PEOPLE.filter(function (p) { return p.id === activeFilter; })[0].color;
       }
       markerEntries.forEach(function (m) {
-        m.circle.setStyle({ fillColor: getMarkerColor(m.resort) });
+        m.marker.setIcon(makeMarkerIcon(getMarkerColor(m.resort)));
       });
       var legendDot = document.getElementById('legendVisited');
       if (legendDot) legendDot.style.background = visitedColor;

@@ -382,6 +382,8 @@
               <button class="bp-filter-btn" data-filter="aa">AA</button>
               <button class="bp-filter-btn" data-filter="high-a">High A</button>
               <button class="bp-filter-btn" data-filter="a">A</button>
+              <button class="bp-filter-btn" data-filter="fcl">FCL</button>
+              <button class="bp-filter-btn" data-filter="acl">ACL</button>
             </div>
             <div id="milbMap"></div>
             <div class="map-legend">
@@ -1147,7 +1149,43 @@
         { affiliate: 'Oakland Athletics',     team: 'Las Vegas Aviators',          level: 'AAA',    park: 'Las Vegas Ballpark',              city: 'Las Vegas, NV',         lat:  36.1911, lng: -115.1767, visited: false,                        color: '#002751' },
         { affiliate: 'Oakland Athletics',     team: 'Midland RockHounds',          level: 'AA',     park: 'Momentum Bank Ballpark',          city: 'Midland, TX',           lat:  31.9826, lng: -102.0780, visited: false,                        color: '#003F7A' },
         { affiliate: 'Oakland Athletics',     team: 'Lansing Lugnuts',             level: 'High-A', park: 'Jackson Field',                   city: 'Lansing, MI',           lat:  42.7328, lng:  -84.5614, visited: false,                        color: '#005C36' },
-        { affiliate: 'Oakland Athletics',     team: 'Stockton Ports',              level: 'A',      park: 'Banner Island Ballpark',          city: 'Stockton, CA',          lat:  37.9558, lng: -121.3038, visited: false,                        color: '#003087' }
+        { affiliate: 'Oakland Athletics',     team: 'Stockton Ports',              level: 'A',      park: 'Banner Island Ballpark',          city: 'Stockton, CA',          lat:  37.9558, lng: -121.3038, visited: false,                        color: '#003087' },
+        // FCL — Florida Complex League (spring-training complexes; several orgs share a site)
+        { affiliate: 'Atlanta Braves',        team: 'FCL Braves',                  level: 'FCL',    park: 'CoolToday Park',                  city: 'North Port, FL',        lat:  27.0587, lng:  -82.2076, visited: false,                        color: '#CE1141' },
+        { affiliate: 'New York Mets',         team: 'FCL Mets',                    level: 'FCL',    park: 'Clover Park',                     city: 'Port St. Lucie, FL',    lat:  27.2697, lng:  -80.3817, visited: false,                        color: '#FF5910' },
+        { affiliate: 'Philadelphia Phillies', team: 'FCL Phillies',                level: 'FCL',    park: 'BayCare Ballpark',                city: 'Clearwater, FL',        lat:  27.9664, lng:  -82.7131, visited: false,                        color: '#D50032' },
+        { affiliate: 'Miami Marlins',         team: 'FCL Marlins',                 level: 'FCL',    park: 'Roger Dean Chevrolet Stadium',    city: 'Jupiter, FL',           lat:  26.8913, lng:  -80.1162, visited: false,                        color: '#00A0B4' },
+        { affiliate: 'Washington Nationals',  team: 'FCL Nationals',               level: 'FCL',    park: 'CACTI Park of the Palm Beaches',  city: 'West Palm Beach, FL',   lat:  26.6435, lng:  -80.1077, visited: false,                        color: '#C41E3A' },
+        { affiliate: 'St. Louis Cardinals',   team: 'FCL Cardinals',               level: 'FCL',    park: 'Roger Dean Chevrolet Stadium',    city: 'Jupiter, FL',           lat:  26.8913, lng:  -80.1162, visited: false,                        color: '#C41E3A' },
+        { affiliate: 'Pittsburgh Pirates',    team: 'FCL Pirates',                 level: 'FCL',    park: 'LECOM Park',                      city: 'Bradenton, FL',         lat:  27.4947, lng:  -82.5748, visited: false,                        color: '#CC0000' },
+        { affiliate: 'New York Yankees',      team: 'FCL Yankees',                 level: 'FCL',    park: 'George M. Steinbrenner Field',    city: 'Tampa, FL',             lat:  27.9993, lng:  -82.5086, visited: false,                        color: '#003087' },
+        { affiliate: 'Boston Red Sox',        team: 'FCL Red Sox',                 level: 'FCL',    park: 'JetBlue Park at Fenway South',    city: 'Fort Myers, FL',        lat:  26.5309, lng:  -81.7717, visited: false,                        color: '#0C2340' },
+        { affiliate: 'Toronto Blue Jays',     team: 'FCL Blue Jays',               level: 'FCL',    park: 'TD Ballpark',                     city: 'Dunedin, FL',           lat:  28.0183, lng:  -82.7707, visited: false,                        color: '#003B6F' },
+        { affiliate: 'Tampa Bay Rays',        team: 'FCL Rays',                    level: 'FCL',    park: 'Charlotte Sports Park',           city: 'Port Charlotte, FL',    lat:  26.9765, lng:  -82.0904, visited: false,                        color: '#1C4B3B' },
+        { affiliate: 'Baltimore Orioles',     team: 'FCL Orioles',                 level: 'FCL',    park: 'Ed Smith Stadium',                city: 'Sarasota, FL',          lat:  27.3364, lng:  -82.5307, visited: false,                        color: '#002D62' },
+        { affiliate: 'Minnesota Twins',       team: 'FCL Twins',                   level: 'FCL',    park: 'Hammond Stadium',                 city: 'Fort Myers, FL',        lat:  26.5386, lng:  -81.8731, visited: false,                        color: '#BA0C2F' },
+        { affiliate: 'Detroit Tigers',        team: 'FCL Tigers',                  level: 'FCL',    park: 'Publix Field at Joker Marchant Stadium', city: 'Lakeland, FL',   lat:  28.0399, lng:  -81.9748, visited: false,                        color: '#002D62' },
+        { affiliate: 'Houston Astros',        team: 'FCL Astros',                  level: 'FCL',    park: 'CACTI Park of the Palm Beaches',  city: 'West Palm Beach, FL',   lat:  26.6435, lng:  -80.1077, visited: false,                        color: '#092C3C' },
+        // ACL — Arizona Complex League (spring-training complexes; several orgs share a site,
+        // and Diamondbacks / Brewers / Giants each field two complex-league squads)
+        { affiliate: 'Chicago Cubs',          team: 'ACL Cubs',                    level: 'ACL',    park: 'Sloan Park',                      city: 'Mesa, AZ',              lat:  33.3086, lng: -111.7297, visited: false,                        color: '#0E3386' },
+        { affiliate: 'Milwaukee Brewers',     team: 'ACL Brewers Blue',            level: 'ACL',    park: 'American Family Fields of Phoenix', city: 'Phoenix, AZ',         lat:  33.5228, lng: -112.1592, visited: false,                        color: '#005C9B' },
+        { affiliate: 'Milwaukee Brewers',     team: 'ACL Brewers Gold',            level: 'ACL',    park: 'American Family Fields of Phoenix', city: 'Phoenix, AZ',         lat:  33.5228, lng: -112.1592, visited: false,                        color: '#005C9B' },
+        { affiliate: 'Cincinnati Reds',       team: 'ACL Reds',                    level: 'ACL',    park: 'Goodyear Ballpark',               city: 'Goodyear, AZ',          lat:  33.4353, lng: -112.3576, visited: false,                        color: '#BA0C2F' },
+        { affiliate: 'Los Angeles Dodgers',   team: 'ACL Dodgers',                 level: 'ACL',    park: 'Camelback Ranch',                 city: 'Glendale, AZ',          lat:  33.5361, lng: -112.2402, visited: false,                        color: '#005A9C' },
+        { affiliate: 'San Francisco Giants',  team: 'ACL Giants Black',            level: 'ACL',    park: 'Scottsdale Stadium',              city: 'Scottsdale, AZ',        lat:  33.4942, lng: -111.9261, visited: false,                        color: '#002D62' },
+        { affiliate: 'San Francisco Giants',  team: 'ACL Giants Orange',           level: 'ACL',    park: 'Scottsdale Stadium',              city: 'Scottsdale, AZ',        lat:  33.4942, lng: -111.9261, visited: false,                        color: '#002D62' },
+        { affiliate: 'San Diego Padres',      team: 'ACL Padres',                  level: 'ACL',    park: 'Peoria Sports Complex',            city: 'Peoria, AZ',            lat:  33.5806, lng: -112.2427, visited: false,                        color: '#17325A' },
+        { affiliate: 'Arizona Diamondbacks',  team: 'ACL D-backs Black',           level: 'ACL',    park: 'Salt River Fields at Talking Stick', city: 'Scottsdale, AZ',      lat:  33.5386, lng: -111.8756, visited: false,                        color: '#522D80' },
+        { affiliate: 'Arizona Diamondbacks',  team: 'ACL D-backs Red',             level: 'ACL',    park: 'Salt River Fields at Talking Stick', city: 'Scottsdale, AZ',      lat:  33.5386, lng: -111.8756, visited: false,                        color: '#522D80' },
+        { affiliate: 'Colorado Rockies',      team: 'ACL Rockies',                 level: 'ACL',    park: 'Salt River Fields at Talking Stick', city: 'Scottsdale, AZ',      lat:  33.5386, lng: -111.8756, visited: false,                        color: '#00557B' },
+        { affiliate: 'Chicago White Sox',     team: 'ACL White Sox',               level: 'ACL',    park: 'Camelback Ranch',                 city: 'Glendale, AZ',          lat:  33.5361, lng: -112.2402, visited: false,                        color: '#231F20' },
+        { affiliate: 'Cleveland Guardians',   team: 'ACL Guardians',               level: 'ACL',    park: 'Goodyear Ballpark',               city: 'Goodyear, AZ',          lat:  33.4353, lng: -112.3576, visited: false,                        color: '#002D62' },
+        { affiliate: 'Kansas City Royals',    team: 'ACL Royals',                  level: 'ACL',    park: 'Surprise Stadium',                city: 'Surprise, AZ',          lat:  33.6303, lng: -112.3676, visited: false,                        color: '#004B8D' },
+        { affiliate: 'Los Angeles Angels',    team: 'ACL Angels',                  level: 'ACL',    park: 'Tempe Diablo Stadium',             city: 'Tempe, AZ',             lat:  33.4272, lng: -111.9264, visited: false,                        color: '#002855' },
+        { affiliate: 'Texas Rangers',         team: 'ACL Rangers',                 level: 'ACL',    park: 'Surprise Stadium',                city: 'Surprise, AZ',          lat:  33.6303, lng: -112.3676, visited: false,                        color: '#003087' },
+        { affiliate: 'Seattle Mariners',      team: 'ACL Mariners',                level: 'ACL',    park: 'Peoria Sports Complex',            city: 'Peoria, AZ',            lat:  33.5806, lng: -112.2427, visited: false,                        color: '#003A70' },
+        { affiliate: 'Oakland Athletics',     team: 'ACL Athletics',               level: 'ACL',    park: 'Hohokam Stadium',                 city: 'Mesa, AZ',              lat:  33.3956, lng: -111.8218, visited: false,                        color: '#002751' }
       ];
 
       var INDIE = [
@@ -1172,22 +1210,58 @@
 
         var milbMarkers = [];
 
-        MILB.forEach(function (p) {
-          var isV = p.visited;
+        function addMilbMarker(isV, color, levels, lat, lng, popup) {
           var icon = L.divIcon({
             className: 'milb-marker-icon',
-            html: '<div class="' + (isV ? 'milb-dot' : 'milb-dot milb-dot--unvisited') + '"' + (isV ? ' style="background:' + p.color + '"' : '') + '></div>',
+            html: '<div class="' + (isV ? 'milb-dot' : 'milb-dot milb-dot--unvisited') + '"' + (isV ? ' style="background:' + color + '"' : '') + '></div>',
             iconSize:   isV ? [14, 14] : [10, 10],
             iconAnchor: isV ? [7,  7]  : [5,  5],
             popupAnchor: [0, -8]
           });
-          var popup =
-            '<strong>' + p.team + '</strong><br>' +
-            '<em style="color:#888">' + p.park + '</em><br>' +
-            '<span style="font-size:0.82em;color:#555">' + p.city + ' &middot; ' + p.level + ' &middot; ' + p.affiliate + '</span>' +
-            (isV ? '<br><span style="font-size:0.82em;color:#555">Visited ' + p.date + '</span>' : '');
-          var marker = L.marker([p.lat, p.lng], { icon: icon }).bindPopup(popup);
-          milbMarkers.push({ marker: marker, visited: isV, level: p.level, lat: p.lat, lng: p.lng });
+          var marker = L.marker([lat, lng], { icon: icon }).bindPopup(popup);
+          milbMarkers.push({ marker: marker, visited: isV, levels: levels, lat: lat, lng: lng });
+        }
+
+        // Several orgs share one physical spring-training complex — an FCL/ACL team often plays
+        // at the exact same site as its org's full-season A-level (Florida State League) team.
+        // Group every entry by lat/lng (not by park name — two unrelated parks can share a name,
+        // e.g. "The Diamond" in both Richmond, VA and Lake Elsinore, CA) so any location hosting
+        // more than one team gets a single pin with a combined popup.
+        var byLocation = {};
+        var locationOrder = [];
+        MILB.forEach(function (p) {
+          var key = p.lat + ',' + p.lng;
+          if (!byLocation[key]) { byLocation[key] = []; locationOrder.push(key); }
+          byLocation[key].push(p);
+        });
+
+        locationOrder.forEach(function (key) {
+          var teams = byLocation[key];
+          var isV = teams.some(function (p) { return p.visited; });
+          var swatch = teams.filter(function (p) { return p.visited; })[0] || teams[0];
+          var levels = teams.reduce(function (acc, p) {
+            if (acc.indexOf(p.level) === -1) { acc.push(p.level); }
+            return acc;
+          }, []);
+
+          var popup;
+          if (teams.length === 1) {
+            var p = teams[0];
+            popup =
+              '<strong>' + p.team + '</strong><br>' +
+              '<em style="color:#888">' + p.park + '</em><br>' +
+              '<span style="font-size:0.82em;color:#555">' + p.city + ' &middot; ' + p.level + ' &middot; ' + p.affiliate + '</span>' +
+              (p.visited ? '<br><span style="font-size:0.82em;color:#555">Visited ' + p.date + '</span>' : '');
+          } else {
+            popup =
+              '<strong>' + teams[0].park + '</strong><br>' +
+              '<span style="font-size:0.82em;color:#555">' + teams[0].city + '</span><br>' +
+              teams.map(function (p) {
+                return '<span style="font-size:0.82em;color:#555">' + p.team + ' &middot; ' + p.level + ' (' + p.affiliate + ')' +
+                  (p.visited ? ' &mdash; Visited ' + p.date : '') + '</span>';
+              }).join('<br>');
+          }
+          addMilbMarker(isV, swatch.color, levels, teams[0].lat, teams[0].lng, popup);
         });
 
         function applyMilbFilter(f) {
@@ -1197,10 +1271,12 @@
               f === 'all'       ? true :
               f === 'visited'   ? m.visited :
               f === 'unvisited' ? !m.visited :
-              f === 'aaa'       ? m.level === 'AAA' :
-              f === 'aa'        ? m.level === 'AA' :
-              f === 'high-a'    ? m.level === 'High-A' :
-              f === 'a'         ? m.level === 'A' : false;
+              f === 'aaa'       ? m.levels.indexOf('AAA') !== -1 :
+              f === 'aa'        ? m.levels.indexOf('AA') !== -1 :
+              f === 'high-a'    ? m.levels.indexOf('High-A') !== -1 :
+              f === 'a'         ? m.levels.indexOf('A') !== -1 :
+              f === 'fcl'       ? m.levels.indexOf('FCL') !== -1 :
+              f === 'acl'       ? m.levels.indexOf('ACL') !== -1 : false;
             if (show) { m.marker.addTo(map); latLngs.push([m.lat, m.lng]); }
             else { map.removeLayer(m.marker); }
           });
@@ -1212,37 +1288,59 @@
 
         applyMilbFilter('visited');
 
-        // Build full affiliate directory — all 120 teams, visited ones fill in solid
+        // Build full affiliate directory — grouped by org across all levels, visited ones fill in solid
         var bucketEl = document.getElementById('milbBucketList');
         if (bucketEl) {
+          var LEVELS = ['AAA', 'AA', 'High-A', 'A', 'FCL', 'ACL'];
           var gridEl = document.createElement('div');
           gridEl.className = 'milb-full-list';
 
-          // Header row: empty org-name cell + 4 level labels
+          // Header row: empty org-name cell + one label per level
           gridEl.appendChild(document.createElement('div'));
-          ['AAA', 'AA', 'High-A', 'A'].forEach(function (lv) {
+          LEVELS.forEach(function (lv) {
             var h = document.createElement('div');
             h.className = 'milb-level-header';
             h.textContent = lv;
             gridEl.appendChild(h);
           });
 
-          // One org-name cell per affiliate, then its 4 affiliate chips
-          var currentAffiliate = null;
-          MILB.forEach(function (p) {
-            if (p.affiliate !== currentAffiliate) {
-              currentAffiliate = p.affiliate;
-              var orgCell = document.createElement('div');
-              orgCell.className = 'milb-org-name';
-              orgCell.textContent = p.affiliate;
-              gridEl.appendChild(orgCell);
-            }
+          function makeMilbChip(p) {
             var chip = document.createElement('span');
             chip.className = 'bp-chip bp-team ' + (p.visited ? 'is-seen' : 'is-unseen');
             chip.style.setProperty('--team', p.color);
             chip.title = p.park + ' \xb7 ' + p.city + (p.visited ? ' \xb7 Visited ' + p.date : '');
             chip.textContent = p.team;
-            gridEl.appendChild(chip);
+            return chip;
+          }
+
+          // Group entries by org (not by array position — FCL/ACL entries live after the
+          // full-season block, and some orgs field two complex-league squads)
+          var orgOrder = [];
+          var orgEntries = {};
+          MILB.forEach(function (p) {
+            if (!orgEntries[p.affiliate]) { orgEntries[p.affiliate] = []; orgOrder.push(p.affiliate); }
+            orgEntries[p.affiliate].push(p);
+          });
+
+          orgOrder.forEach(function (affiliate) {
+            var orgCell = document.createElement('div');
+            orgCell.className = 'milb-org-name';
+            orgCell.textContent = affiliate;
+            gridEl.appendChild(orgCell);
+
+            LEVELS.forEach(function (lv) {
+              var matches = orgEntries[affiliate].filter(function (p) { return p.level === lv; });
+              if (matches.length === 0) {
+                gridEl.appendChild(document.createElement('div'));
+              } else if (matches.length === 1) {
+                gridEl.appendChild(makeMilbChip(matches[0]));
+              } else {
+                var stack = document.createElement('div');
+                stack.className = 'milb-chip-stack';
+                matches.forEach(function (p) { stack.appendChild(makeMilbChip(p)); });
+                gridEl.appendChild(stack);
+              }
+            });
           });
 
           bucketEl.appendChild(gridEl);

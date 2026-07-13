@@ -315,7 +315,25 @@ body {
 }
 
 .legend-dot.visited   { background: #E8A020; }
-.legend-dot.unvisited { background: #aaaaaa; }
+.legend-dot.unvisited { background: #64748b; }
+
+.milb-marker-icon { background: none !important; border: none !important; }
+
+.milb-marker-icon .milb-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.25);
+}
+
+.milb-marker-icon .milb-dot.milb-dot--unvisited {
+  width: 10px;
+  height: 10px;
+  background: #64748b;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.18);
+}
 
 .legend-sep {
   color: #ccc;

@@ -28,7 +28,7 @@
   var COUNT = {
     'parks':        '30 / 30',
     'timeline':     '33',
-    'milb-parks':   '4 / 120',
+    'milb-parks':   '4 / 153',
     'indie-parks':  '4',
     'banana-games': '2',
     'banana-teams': '2 / 6'
