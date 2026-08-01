@@ -76,6 +76,64 @@
   bar.appendChild(selectWrap);
   header.insertBefore(bar, header.firstChild);
 
+  // --- Theme toggle (auto-detects OS preference; click overrides it) ---
+  (function () {
+    var STORAGE_KEY = 'theme';
+    var mql = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+
+    function storedTheme() {
+      try { return window.localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+    }
+
+    function effectiveTheme() {
+      var stored = storedTheme();
+      if (stored === 'dark' || stored === 'light') { return stored; }
+      return (mql && mql.matches) ? 'dark' : 'light';
+    }
+
+    var SUN_ICON = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>';
+    var MOON_ICON = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg>';
+
+    var toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'theme-toggle';
+
+    function render() {
+      var theme = effectiveTheme();
+      toggle.innerHTML = theme === 'dark' ? MOON_ICON : SUN_ICON;
+      var label = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+      toggle.setAttribute('aria-label', label);
+      toggle.title = label;
+    }
+
+    // Broadcast so per-page scripts that paint colors via inline styles
+    // (e.g. jVectorMap/Leaflet init, or JS-computed chip tints) can react —
+    // plain CSS var(--token) consumers already update for free via the
+    // [data-theme] attribute and need no listener.
+    function broadcast() {
+      window.dispatchEvent(new CustomEvent('cuzz-theme-change', { detail: { theme: effectiveTheme() } }));
+    }
+
+    toggle.addEventListener('click', function () {
+      var next = effectiveTheme() === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { window.localStorage.setItem(STORAGE_KEY, next); } catch (e) {}
+      render();
+      broadcast();
+    });
+
+    // Keep the icon in sync with OS changes as long as the visitor
+    // hasn't set an explicit override via the toggle.
+    if (mql && mql.addEventListener) {
+      mql.addEventListener('change', function () {
+        if (!storedTheme()) { render(); broadcast(); }
+      });
+    }
+
+    render();
+    header.appendChild(toggle);
+  }());
+
   // --- End mark: mini ring appended to <main> on all section pages ---
   if (currentKey !== '') {
     var mainEl = document.querySelector('main');

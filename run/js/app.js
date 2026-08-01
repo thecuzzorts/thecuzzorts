@@ -1,6 +1,18 @@
 (function () {
   'use strict';
 
+  // ---- Dark-mode-aware map colors ---------------------
+  // jVectorMap paints SVG fills at init time, so it can't react to a
+  // CSS media query — read the effective theme once here instead
+  // (an explicit toggle override in localStorage wins over the OS setting).
+  var storedTheme = null;
+  try { storedTheme = window.localStorage.getItem('theme'); } catch (e) {}
+  var IS_DARK = storedTheme === 'dark' ||
+    (storedTheme !== 'light' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  var MAP_FILL       = IS_DARK ? '#2a323b' : '#dce3ea';
+  var MAP_STROKE     = IS_DARK ? '#3a4550' : '#fff';
+  var MAP_HOVER_FILL = IS_DARK ? '#3f4c58' : '#b8c5ce';
+
   var MO_MAP = {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
   function parseDate(str) {
     var p = str.split(/[\s,]+/);
@@ -306,8 +318,8 @@
       map: 'us_lcc',
       backgroundColor: 'transparent',
       regionStyle: {
-        initial: { fill: '#dce3ea', stroke: '#fff', 'stroke-width': 0.5 },
-        hover:   { fill: '#b8c5ce', cursor: 'pointer' }
+        initial: { fill: MAP_FILL, stroke: MAP_STROKE, 'stroke-width': 0.5 },
+        hover:   { fill: MAP_HOVER_FILL, cursor: 'pointer' }
       },
       series: {
         regions: [{

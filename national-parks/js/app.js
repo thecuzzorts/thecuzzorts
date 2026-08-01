@@ -4,6 +4,18 @@
 
 (function () {
 
+  // ---- Dark-mode-aware map tiles ---------------------
+  // Leaflet paints tiles at init time, so it can't react to a CSS media
+  // query — read the effective theme once here instead (an explicit
+  // toggle override in localStorage wins over the OS setting).
+  function computeIsDark() {
+    var stored = null;
+    try { stored = window.localStorage.getItem('theme'); } catch (e) {}
+    return stored === 'dark' ||
+      (stored !== 'light' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  }
+  var IS_DARK = computeIsDark();
+
   // ---- People config --------------------------------
   var PEOPLE = [
     { id: 'josh',  name: 'Josh',  color: '#00AC4B' },
@@ -400,18 +412,44 @@
   var filterColors = { 'whole-family': WHOLE_FAMILY_COLOR, 'anyone': ANYONE_COLOR };
   PEOPLE.forEach(function (p) { filterColors[p.id] = p.color; });
 
+  // Remembered so the theme-change listener below can recompute the same
+  // chip tint after a manual light/dark toggle, without a page reload.
+  var currentChipFilter = 'whole-family';
+
   function applyChipColors(filterValue) {
+    currentChipFilter = filterValue;
     var card = document.getElementById('parksCard');
     if (!card) return;
     var hex = filterColors[filterValue] || '#8a9aaa';
+    // Sam's brand purple is already very dark — mixed toward the dark
+    // surface tone below it barely lightens at all, producing a muddy,
+    // low-contrast chip. Use the lightened on-dark variant as the mix
+    // source instead (same hue, same one used for Sam's other dark-mode
+    // text/border spots).
+    if (IS_DARK && filterValue === 'sam') { hex = '#AB88BB'; }
     var r = parseInt(hex.slice(1, 3), 16);
     var g = parseInt(hex.slice(3, 5), 16);
     var b = parseInt(hex.slice(5, 7), 16);
+    // Mix the accent toward white in light mode, toward the dark surface
+    // tone in dark mode — mixing toward white unconditionally produced a
+    // bright pastel chip that had poor contrast on a dark page.
+    var base = IS_DARK ? [42, 50, 59] : [255, 255, 255];
+    var bgPct = IS_DARK ? 0.22 : 0.14;
+    var borderPct = IS_DARK ? 0.45 : 0.30;
     card.style.setProperty('--chip-bg',
-      'rgb(' + Math.round(r*.14+255*.86) + ',' + Math.round(g*.14+255*.86) + ',' + Math.round(b*.14+255*.86) + ')');
+      'rgb(' + Math.round(r*bgPct+base[0]*(1-bgPct)) + ',' + Math.round(g*bgPct+base[1]*(1-bgPct)) + ',' + Math.round(b*bgPct+base[2]*(1-bgPct)) + ')');
     card.style.setProperty('--chip-border',
-      'rgb(' + Math.round(r*.30+255*.70) + ',' + Math.round(g*.30+255*.70) + ',' + Math.round(b*.30+255*.70) + ')');
+      'rgb(' + Math.round(r*borderPct+base[0]*(1-borderPct)) + ',' + Math.round(g*borderPct+base[1]*(1-borderPct)) + ',' + Math.round(b*borderPct+base[2]*(1-borderPct)) + ')');
   }
+
+  // The chip tint above is painted via inline styles, so — unlike the
+  // CSS var(--token) driven chrome/cards — it won't update on its own
+  // when the manual toggle (js/site-nav.js) flips [data-theme]. Recompute
+  // it on that signal instead of requiring a page reload.
+  window.addEventListener('cuzz-theme-change', function () {
+    IS_DARK = computeIsDark();
+    applyChipColors(currentChipFilter);
+  });
 
   function buildParksFilterRow() {
     var container = document.getElementById('parksFilters');
@@ -541,7 +579,7 @@
     var map = L.map('parksMap', { scrollWheelZoom: false })
       .setView([39.2, -94.2], 3);
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/' + (IS_DARK ? 'dark_all' : 'light_all') + '/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
       maxZoom: 14
     }).addTo(map);

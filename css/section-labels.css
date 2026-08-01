@@ -15,7 +15,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #1a2e3b;
+  color: var(--text, #1a2e3b);
   margin: 1.9rem 0 1rem;
 }
 
@@ -34,7 +34,7 @@
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: #1a2e3b;
+  color: var(--text, #1a2e3b);
   background: color-mix(in srgb, var(--section, #E8A020) 18%, transparent);
   border: 1px solid color-mix(in srgb, var(--section, #E8A020) 50%, transparent);
   border-radius: 999px;
@@ -46,7 +46,7 @@
   flex: 1 1 auto;
   min-width: 1rem;
   height: 1px;
-  background: linear-gradient(to right, rgba(26,46,59,0.22), rgba(26,46,59,0));
+  background: linear-gradient(to right, rgba(var(--rule-rgb, 26,46,59), 0.22), rgba(var(--rule-rgb, 26,46,59), 0));
 }
 
 .section-heading .sec-anchor:link,

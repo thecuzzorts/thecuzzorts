@@ -4,12 +4,38 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+/* Several hero/bb-stat cards borrow another section's brand color for
+   their --a accent (baseball red, national-parks brown, indie-ball
+   brown). Those colors read fine on white but are too dark to read as
+   a big number directly on the dark card surface — lighten them for
+   dark mode only, reusing each section's own already-tuned "on dark"
+   variant where one exists (matches --section-on-dark elsewhere). */
+:root {
+  --mlb-red-on-dark:      #C8102E;
+  --parks-brown-on-dark:  #8B5E3C;
+  --indie-brown-on-dark:  #7B4F2E;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --mlb-red-on-dark:      #F07070;
+    --parks-brown-on-dark:  #C99A6A;
+    --indie-brown-on-dark:  #A2846C;
+  }
+}
+
+:root[data-theme="dark"] {
+  --mlb-red-on-dark:      #F07070;
+  --parks-brown-on-dark:  #C99A6A;
+  --indie-brown-on-dark:  #A2846C;
+}
+
 body {
   --section: #6B5EA8;
   --section-on-dark: #8B7EC8;
   font-family: 'Roboto Condensed', sans-serif;
-  background: #f0f2f5;
-  color: #333;
+  background: var(--bg, #f0f2f5);
+  color: var(--text, #333);
   margin: 0;
 }
 
@@ -27,12 +53,12 @@ main {
 .page-intro h1 {
   font-family: 'Kreon', serif;
   font-size: clamp(1.8rem, 4vw, 2.8rem);
-  color: #1a2e3b;
+  color: var(--text, #1a2e3b);
   margin-bottom: 0.35rem;
 }
 
 .page-intro p {
-  color: #8a9aaa;
+  color: var(--text-muted, #8a9aaa);
   font-size: 1rem;
 }
 
@@ -60,9 +86,9 @@ main {
 }
 
 .hero-card {
-  background: #fff;
+  background: var(--surface, #fff);
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.08));
   border-top: 5px solid var(--a);
   padding: 1.75rem 1.25rem 1.5rem;
   text-align: center;
@@ -100,7 +126,7 @@ main {
 
 .hero-sub {
   font-size: 0.78rem;
-  color: #b4bfc9;
+  color: var(--text-muted, #b4bfc9);
   margin-top: 0.4rem;
 }
 
@@ -110,7 +136,7 @@ main {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #1a2e3b;
+  color: var(--text, #1a2e3b);
   margin-top: 0.8rem;
 }
 
@@ -124,9 +150,9 @@ main {
 .person-grid--kids    { grid-template-columns: repeat(3, 1fr); }
 
 .person-card {
-  background: #fff;
+  background: var(--surface, #fff);
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.08));
   overflow: hidden;
   border-top: 5px solid var(--pc);
 }
@@ -152,7 +178,7 @@ main {
   align-items: baseline;
   justify-content: space-between;
   padding: 0.42rem 0;
-  border-bottom: 1px solid #f0f2f5;
+  border-bottom: 1px solid var(--border, #f0f2f5);
   gap: 0.5rem;
 }
 
@@ -160,7 +186,7 @@ main {
 
 .pcs-label {
   font-size: 0.82rem;
-  color: #6b7682;
+  color: var(--text-muted, #6b7682);
   flex: 1;
 }
 
@@ -168,13 +194,13 @@ main {
   font-family: 'Kreon', serif;
   font-size: 1.15rem;
   font-weight: 700;
-  color: #1a2e3b;
+  color: var(--text, #1a2e3b);
   flex-shrink: 0;
 }
 
 .pcs-note {
   font-size: 0.8rem;
-  color: #7a8a99;
+  color: var(--text-muted, #7a8a99);
   margin-left: 0.2rem;
   flex-shrink: 0;
 }
@@ -187,9 +213,9 @@ main {
 }
 
 .bb-stat {
-  background: #fff;
+  background: var(--surface, #fff);
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 8px var(--shadow, rgba(0,0,0,0.07));
   padding: 1.1rem 0.9rem;
   text-align: center;
   border-top: 4px solid var(--a, #C8102E);
@@ -229,7 +255,7 @@ main {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  color: #8a9aaa;
+  color: var(--text-muted, #8a9aaa);
   margin-top: 0.45rem;
   display: block;
 }
@@ -242,9 +268,9 @@ main {
 }
 
 .turkey-card {
-  background: #fff;
+  background: var(--surface, #fff);
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.08));
   border-top: 5px solid var(--pc);
   padding: 1.35rem 1rem;
   text-align: center;
@@ -261,11 +287,19 @@ main {
   margin-bottom: 0.6rem;
 }
 
+/* Sam's purple is too dark to read as text directly on a dark card —
+   use the lightened on-dark variant here (the border-top accent stripe
+   and the person-card's solid-fill name badge keep the original purple,
+   since white text on it already has plenty of contrast). */
+.turkey-card[data-person="sam"] .tc-name {
+  color: var(--sam-on-dark, var(--pc));
+}
+
 .tc-num {
   font-family: 'Kreon', serif;
   font-size: 2.75rem;
   font-weight: 700;
-  color: #1a2e3b;
+  color: var(--text, #1a2e3b);
   line-height: 1;
 }
 
@@ -274,14 +308,14 @@ main {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  color: #8a9aaa;
+  color: var(--text-muted, #8a9aaa);
   display: block;
   margin-top: 0.35rem;
 }
 
 .tc-sub {
   font-size: 0.74rem;
-  color: #b4bfc9;
+  color: var(--text-muted, #b4bfc9);
   margin-top: 0.3rem;
   font-style: italic;
 }

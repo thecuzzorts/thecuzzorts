@@ -4,6 +4,17 @@
 
 (function ($) {
 
+  // ---- Dark-mode-aware unvisited-region colors -------
+  // jVectorMap paints SVG fills at init time, so it can't react to a
+  // CSS media query — read the effective theme once here instead
+  // (an explicit toggle override in localStorage wins over the OS setting).
+  var storedTheme = null;
+  try { storedTheme = window.localStorage.getItem('theme'); } catch (e) {}
+  var IS_DARK = storedTheme === 'dark' ||
+    (storedTheme !== 'light' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  var UNVISITED_HEAT   = IS_DARK ? '#2a323b' : '#f0f2f5';
+  var UNVISITED_PERSON = IS_DARK ? '#3a4550' : '#d0d4d8';
+
   // ---- Family members (shown in filter row + maps) --
   var PEOPLE = [
     {
@@ -507,7 +518,8 @@
       $(mapElId).vectorMap({
         map: mapType,
         backgroundColor: '#1a2e3b',
-        series: { regions: [{ values: heat, scale: ['#f0f2f5', '#E8601A'], normalizeFunction: 'linear' }] },
+        regionStyle: { initial: { fill: UNVISITED_HEAT } },
+        series: { regions: [{ values: heat, scale: [UNVISITED_HEAT, '#E8601A'], normalizeFunction: 'linear' }] },
         onRegionTipShow: function (_e, el, code) {
           var n = (tipHeat[code] || 0);
           var label = n === 1 ? '1 family member' : n + ' family members';
@@ -551,7 +563,8 @@
       $(mapElId).vectorMap({
         map: mapType,
         backgroundColor: '#1a2e3b',
-        series: { regions: [{ values: mapData, scale: ['#d0d4d8', p.color], normalizeFunction: 'polynomial' }] },
+        regionStyle: { initial: { fill: UNVISITED_PERSON } },
+        series: { regions: [{ values: mapData, scale: [UNVISITED_PERSON, p.color], normalizeFunction: 'polynomial' }] },
         onRegionTipShow: function (_e, el, code) { el.html(buildTip(el.html(), details, code)); }
       });
 
