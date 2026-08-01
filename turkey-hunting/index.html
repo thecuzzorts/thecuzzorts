@@ -16,6 +16,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.thecuzzorts.com/turkey-hunting/" />
   <meta property="og:image" content="https://www.thecuzzorts.com/images/family-hero.jpg" />
+  <script>
+    (function () {
+      try {
+        var t = window.localStorage.getItem('theme');
+        if (t === 'dark' || t === 'light') { document.documentElement.setAttribute('data-theme', t); }
+      } catch (e) {}
+    }());
+  </script>
   <link rel="stylesheet" href="css/jquery-jvectormap-2.0.3.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="../css/site-chrome.css">

@@ -13,8 +13,8 @@ body {
   --section: #E8A020;
   --section-on-dark: #E8A020;
   font-family: 'Roboto Condensed', Arial, sans-serif;
-  background: #f0f2f5;
-  color: #222;
+  background: var(--bg, #f0f2f5);
+  color: var(--text, #222);
   min-height: 100vh;
 }
 
@@ -73,9 +73,9 @@ body {
 
 /* --- Map Card -------------------------------------- */
 .map-card {
-  background: #fff;
+  background: var(--surface, #fff);
   border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.08));
   padding: 1.25rem;
   margin-bottom: 1.5rem;
 }
@@ -119,8 +119,8 @@ body {
   padding: 0.35rem 0 0;
   background: none;
   border: none;
-  border-top: 1px solid #eee;
-  color: #aaa;
+  border-top: 1px solid var(--border, #eee);
+  color: var(--text-muted, #aaa);
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 0.78rem;
   letter-spacing: 0.04em;
@@ -129,7 +129,7 @@ body {
   transition: color 0.15s;
 }
 
-.list-toggle:hover { color: #555; }
+.list-toggle:hover { color: var(--text, #555); }
 
 .visit-list { display: none; margin-top: 0.5rem; }
 .visit-list.open { display: block; }
@@ -141,7 +141,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #7d8a97;
+  color: var(--text-muted, #7d8a97);
   margin-bottom: 0.35rem;
 }
 
@@ -152,9 +152,9 @@ body {
   padding: 0.3rem 0.75rem;
   border-radius: 99px;
   font-size: 0.92rem;
-  background: #eaeef2;
-  border: 1px solid #c6cfd7;
-  color: #28333d;
+  background: var(--chip-bg, #eaeef2);
+  border: 1px solid var(--chip-border, #c6cfd7);
+  color: var(--chip-text, #28333d);
   white-space: nowrap;
 }
 
@@ -197,10 +197,10 @@ body {
 
 .visit-chip--unvisited {
   font-style: italic;
-  color: #56636f;
-  background: #f4f6f8;
+  color: var(--chip-unv-text, #56636f);
+  background: var(--chip-unv-bg, #f4f6f8);
   border-style: dashed;
-  border-color: #b9c2cb;
+  border-color: var(--chip-unv-border, #b9c2cb);
 }
 
 .territory-chip {
@@ -217,6 +217,26 @@ body {
 .map-view[data-view="tilly"]  .visit-chip { background: rgba(8,152,255,0.14);   border-color: rgba(8,152,255,0.55); }
 .map-view[data-view="poppy"]  .visit-chip { background: rgba(217,37,154,0.14);  border-color: rgba(217,37,154,0.55); }
 
+/* Sam's purple is too dark to read as text/border directly on a dark
+   surface — use the lightened on-dark variant for those spots (the
+   solid-fill active-filter pill keeps the original purple; white text
+   on it already has plenty of contrast). */
+.person-filter[data-person="sam"]:not(.active) {
+  border-color: var(--sam-on-dark, #662684);
+  color: var(--sam-on-dark, #662684);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .map-view[data-view="sam"] .visit-chip {
+    background: rgba(171,136,187,0.16);
+    border-color: rgba(171,136,187,0.6);
+  }
+}
+:root[data-theme="dark"] .map-view[data-view="sam"] .visit-chip {
+  background: rgba(171,136,187,0.16);
+  border-color: rgba(171,136,187,0.6);
+}
+
 /* --- List Legend ----------------------------------- */
 .list-legend {
   display: flex;
@@ -224,21 +244,21 @@ body {
   gap: 0.4rem;
   margin-top: 0.55rem;
   padding-top: 0.45rem;
-  border-top: 1px dashed #eee;
+  border-top: 1px dashed var(--border, #eee);
 }
 
 .list-legend-label {
   font-size: 0.68rem;
   letter-spacing: 0.04em;
-  color: #bbb;
+  color: var(--text-muted, #bbb);
   white-space: nowrap;
 }
 
 .list-legend .visit-chip {
-  background: #eaeef2 !important;
-  border-color: #c6cfd7 !important;
+  background: var(--chip-bg, #eaeef2) !important;
+  border-color: var(--chip-border, #c6cfd7) !important;
   border-style: solid !important;
-  color: #28333d !important;
+  color: var(--chip-text, #28333d) !important;
   font-size: 0.8rem;
 }
 

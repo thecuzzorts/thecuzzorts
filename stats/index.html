@@ -13,6 +13,14 @@
   <title>By the Numbers | The Cuzzorts</title>
   <meta name="description" content="A look at the data behind The Cuzzorts' adventures — ballparks, states, countries, national parks, and more.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      try {
+        var t = window.localStorage.getItem('theme');
+        if (t === 'dark' || t === 'light') { document.documentElement.setAttribute('data-theme', t); }
+      } catch (e) {}
+    }());
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Kreon:wght@400;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/site-chrome.css">
@@ -45,7 +53,7 @@
     <!-- ---- Family headline stats ---- -->
     <div class="hero-grid">
 
-      <div class="hero-card" style="--a: #C8102E">
+      <div class="hero-card" style="--a: var(--mlb-red-on-dark, #C8102E)">
         <div class="hero-num">30<span class="hero-denom">/30</span></div>
         <span class="hero-badge">&#10003; Complete</span>
         <span class="hero-label">Active MLB Ballparks</span>
@@ -57,7 +65,7 @@
         <span class="hero-label">States (Family)</span>
       </div>
 
-      <div class="hero-card" style="--a: #8B5E3C">
+      <div class="hero-card" style="--a: var(--parks-brown-on-dark, #8B5E3C)">
         <div class="hero-num"><span id="h-parks">—</span><span class="hero-denom">/63</span></div>
         <div class="hero-sub" id="h-parks-sub"></div>
         <span class="hero-label">National Parks</span>
@@ -218,7 +226,7 @@
 
     <div class="bb-grid">
 
-      <div class="bb-stat" style="--a: #C8102E">
+      <div class="bb-stat" style="--a: var(--mlb-red-on-dark, #C8102E)">
         <div class="bb-num">30<span class="bb-denom">/30</span></div>
         <span class="bb-badge">&#10003; Complete</span>
         <span class="bb-label">Active MLB Parks</span>
@@ -229,12 +237,12 @@
         <span class="bb-label">Historic Parks</span>
       </div>
 
-      <div class="bb-stat" style="--a: #1a2e3b">
+      <div class="bb-stat" style="--a: var(--text, #1a2e3b)">
         <div class="bb-num">4</div>
-        <span class="bb-label">MiLB Parks</span>
+        <span class="bb-label">M<span class="preserve-case">i</span>LB Parks</span>
       </div>
 
-      <div class="bb-stat" style="--a: #7B4F2E">
+      <div class="bb-stat" style="--a: var(--indie-brown-on-dark, #7B4F2E)">
         <div class="bb-num">4</div>
         <span class="bb-label">Indie Ball Parks</span>
       </div>
@@ -280,7 +288,7 @@
         <div class="tc-sub" id="t-josh-sub"></div>
       </div>
 
-      <div class="turkey-card" style="--pc: #662684">
+      <div class="turkey-card" data-person="sam" style="--pc: #662684">
         <span class="tc-name">Sam</span>
         <div class="tc-num" id="t-sam-num">—</div>
         <span class="tc-label">States Harvested</span>
@@ -299,12 +307,12 @@
 
     <div class="bb-grid" style="grid-template-columns: repeat(2, 1fr)">
 
-      <div class="bb-stat" style="--a: #8B5E3C">
+      <div class="bb-stat" style="--a: var(--parks-brown-on-dark, #8B5E3C)">
         <div class="bb-num"><span id="np-family">—</span><span class="bb-denom">/63</span></div>
         <span class="bb-label">Parks Visited (Family)</span>
       </div>
 
-      <div class="bb-stat" style="--a: #8B5E3C">
+      <div class="bb-stat" style="--a: var(--parks-brown-on-dark, #8B5E3C)">
         <div class="bb-num"><span id="np-remaining">—</span></div>
         <span class="bb-label">On the Bucket List</span>
       </div>

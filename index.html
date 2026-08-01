@@ -17,6 +17,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.thecuzzorts.com/" />
   <meta property="og:image" content="https://www.thecuzzorts.com/images/family-hero.jpg" />
+  <script>
+    (function () {
+      try {
+        var t = window.localStorage.getItem('theme');
+        if (t === 'dark' || t === 'light') { document.documentElement.setAttribute('data-theme', t); }
+      } catch (e) {}
+    }());
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Kreon:wght@400;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/site-chrome.css">
@@ -54,7 +62,7 @@
 
     body {
       font-family: 'Roboto Condensed', sans-serif;
-      background: #f0f2f5;
+      background: var(--bg, #f0f2f5);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -227,7 +235,7 @@
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #aab4bd;
+      color: var(--text-muted, #aab4bd);
       text-align: center;
       margin-bottom: 1.75rem;
     }
@@ -260,13 +268,13 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      background: #fff;
+      background: var(--surface, #fff);
       border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 2px 12px var(--shadow, rgba(0, 0, 0, 0.08));
       padding: clamp(1.25rem, 2vw, 1.75rem) clamp(1rem, 1.5vw, 1.5rem);
       min-height: 200px;
       text-decoration: none;
-      color: #1a2e3b;
+      color: var(--text, #1a2e3b);
       border-top: 4px solid var(--accent);
       transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
@@ -311,7 +319,7 @@
       position: relative;   /* sit above the watermark */
       font-family: 'Kreon', serif;
       font-size: clamp(1.35rem, 1.8vw, 1.6rem);
-      color: #1a2e3b;
+      color: var(--text, #1a2e3b);
       margin-bottom: 0.45rem;
     }
 
@@ -328,7 +336,7 @@
 
     .card p {
       position: relative;   /* sit above the watermark */
-      color: #6b7682;
+      color: var(--text-muted, #6b7682);
       font-size: clamp(0.9rem, 1.1vw, 1rem);
       line-height: 1.5;
       margin-top: auto;   /* push description to the bottom for a consistent baseline */
@@ -369,9 +377,9 @@
       max-width: 1100px;
       width: 100%;
       padding: 1.25rem 1.5rem;
-      background: #fff;
+      background: var(--surface, #fff);
       border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.06));
     }
 
     .qs-item {
@@ -394,13 +402,13 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.09em;
-      color: #aab4bd;
+      color: var(--text-muted, #aab4bd);
       white-space: nowrap;
     }
 
     .qs-divider {
       width: 1px;
-      background: #e3e7eb;
+      background: var(--border, #e3e7eb);
       align-self: stretch;
       flex-shrink: 0;
     }
@@ -414,9 +422,9 @@
       max-width: 1100px;
       width: 100%;
       padding: 0.75rem 1.25rem;
-      background: #fff;
+      background: var(--surface, #fff);
       border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.06));
       border-left: 4px solid var(--cu-accent, #F07070);
       text-decoration: none;
       color: inherit;
@@ -438,18 +446,18 @@
       flex-shrink: 0;
     }
 
-    .cu-divider { width: 1px; height: 1.2em; background: #e3e7eb; flex-shrink: 0; }
+    .cu-divider { width: 1px; height: 1.2em; background: var(--border, #e3e7eb); flex-shrink: 0; }
 
     .cu-text {
       font-size: 0.88rem;
-      color: #1a2e3b;
+      color: var(--text, #1a2e3b);
       font-family: 'Roboto Condensed', sans-serif;
     }
 
     .cu-date {
       margin-left: auto;
       font-size: 0.8rem;
-      color: #aab4bd;
+      color: var(--text-muted, #aab4bd);
       white-space: nowrap;
       flex-shrink: 0;
     }
@@ -458,7 +466,7 @@
     .activity-feed {
       margin: 2.75rem auto 0;
       padding-top: 2rem;
-      border-top: 1px solid #e3e7eb;
+      border-top: 1px solid var(--border, #e3e7eb);
       max-width: 1100px;
       width: 100%;
     }
@@ -480,14 +488,14 @@
       align-items: center;
       gap: 0 0.9rem;
       padding: 0.6rem 0;
-      border-bottom: 1px solid #f0f2f5;
+      border-bottom: 1px solid var(--border, #f0f2f5);
     }
 
     .activity-item:last-child { border-bottom: none; }
 
     .af-date {
       font-size: 0.78rem;
-      color: #aab4bd;
+      color: var(--text-muted, #aab4bd);
       font-family: 'Roboto Condensed', sans-serif;
       letter-spacing: 0.03em;
       text-align: right;
@@ -503,7 +511,7 @@
 
     .af-text {
       font-size: 0.9rem;
-      color: #4a5a6a;
+      color: var(--text, #4a5a6a);
       line-height: 1.35;
     }
 
@@ -847,7 +855,7 @@
       <span class="cu-label">Coming Up</span>
       <span class="cu-divider"></span>
       <span class="cu-text">Everglades National Park</span>
-      <span class="cu-date">Jul 2026</span>
+      <span class="cu-date">Augye 2026</span>
     </a>
     <a class="coming-up" href="baseball/index.html#banana">
       <span class="cu-label">Coming Up</span>
@@ -917,7 +925,7 @@
         <li class="activity-item">
           <time class="af-date">Mar 2025</time>
           <span class="af-dot" style="background: #E8A020"></span>
-          <span class="af-text">Wonder of the Seas cruise &middot; Sint Maarten &amp; US Virgin Islands <em class="af-tag" style="color: #E8A020">Travels</em></span>
+          <span class="af-text">Wonder of the Seas &middot; Sint Maarten &amp; US Virgin Islands <em class="af-tag" style="color: #E8A020">Travels</em></span>
         </li>
 
         <li class="activity-item">

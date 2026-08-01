@@ -13,8 +13,8 @@ body {
   --section: #00AC4B;
   --section-on-dark: #57BD83;
   font-family: 'Roboto Condensed', Arial, sans-serif;
-  background: #f0f2f5;
-  color: #222;
+  background: var(--bg, #f0f2f5);
+  color: var(--text, #222);
   min-height: 100vh;
 }
 
@@ -25,9 +25,9 @@ body {
 
 /* --- Map Card -------------------------------------- */
 .map-card {
-  background: #fff;
+  background: var(--surface, #fff);
   border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.08));
   padding: 1.25rem;
   margin-bottom: 1.5rem;
 }
@@ -39,7 +39,7 @@ body {
   gap: 1.25rem;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border, #eee);
   flex-wrap: wrap;
 }
 
@@ -63,20 +63,20 @@ body {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #7d8a97;
+  color: var(--text-muted, #7d8a97);
   margin-top: 0.2rem;
 }
 
 .run-stat-pipe {
   width: 1px;
   height: 2.5rem;
-  background: #dde3ea;
+  background: var(--border, #dde3ea);
   flex-shrink: 0;
 }
 
 .run-stat-breakdown {
   font-size: 0.85rem;
-  color: #5a6a7a;
+  color: var(--text-muted, #5a6a7a);
   line-height: 1.6;
 }
 
@@ -107,9 +107,9 @@ body {
 
 /* --- Races Card ------------------------------------ */
 .races-card {
-  background: #fff;
+  background: var(--surface, #fff);
   border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.08));
   padding: 1.25rem;
   transition: opacity 0.22s;
 }
@@ -140,7 +140,7 @@ body {
 .state-race-count {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 0.78rem;
-  color: #7d8a97;
+  color: var(--text-muted, #7d8a97);
   font-weight: 400;
 }
 
@@ -191,7 +191,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #7d8a97;
+  color: var(--text-muted, #7d8a97);
   margin-top: 0.2rem;
 }
 
@@ -200,8 +200,8 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: #f5f8fb;
-  border: 1px solid #dde3ea;
+  background: var(--surface, #f5f8fb);
+  border: 1px solid var(--border, #dde3ea);
   border-radius: 8px;
   padding: 0.75rem 1rem;
   margin-bottom: 0.5rem;
@@ -226,7 +226,7 @@ body {
   font-family: 'Kreon', Georgia, serif;
   font-weight: 700;
   font-size: 1rem;
-  color: #1a2e3b;
+  color: var(--text, #1a2e3b);
   flex: 1;
 }
 
@@ -255,17 +255,17 @@ body {
   gap: 0.5rem;
   margin-top: 0.3rem;
   font-size: 0.85rem;
-  color: #5a6a7a;
+  color: var(--text-muted, #5a6a7a);
 }
 
 .race-sep {
-  color: #bcc5ce;
+  color: var(--text-muted, #bcc5ce);
 }
 
 .race-time {
   font-family: 'Kreon', Georgia, serif;
   font-weight: 700;
-  color: #1a2e3b;
+  color: var(--text, #1a2e3b);
 }
 
 .race-notes {
@@ -281,9 +281,9 @@ body {
 
 /* --- 5K Trend Chart -------------------------------- */
 .trend-card {
-  background: #fff;
+  background: var(--surface, #fff);
   border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.08));
   padding: 1.25rem;
   margin-bottom: 1.5rem;
   overflow-x: auto;
@@ -301,7 +301,7 @@ body {
 }
 
 .chart-grid {
-  stroke: #eaeef2;
+  stroke: var(--border, #eaeef2);
   stroke-width: 1;
 }
 
@@ -339,7 +339,7 @@ body {
 .chart-label {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 11px;
-  fill: #7d8a97;
+  fill: var(--text-muted, #7d8a97);
 }
 .chart-label--y { text-anchor: end; }
 .chart-label--x { text-anchor: middle; }
@@ -398,7 +398,7 @@ body {
   object-fit: cover;
   object-position: top center;
   border-radius: 8px;
-  border: 1px solid #dde3ea;
+  border: 1px solid var(--border, #dde3ea);
   cursor: zoom-in;
   transition: opacity 0.15s, transform 0.15s;
 }

@@ -20,8 +20,8 @@ body {
   --section: #1F8FE5;          /* signature colour — used on light backgrounds */
   --section-on-dark: #1F8FE5;  /* readable on the navy header/footer (bright blue reads fine) */
   font-family: 'Roboto Condensed', Arial, sans-serif;
-  background: #f0f2f5;
-  color: #222;
+  background: var(--bg, #f0f2f5);
+  color: var(--text, #222);
   min-height: 100vh;
 }
 
@@ -43,9 +43,9 @@ body {
 /* --- Combined Card --------------------------------- */
 .combined-card {
   --accent: #1F8FE5;
-  background: #fff;
+  background: var(--surface, #fff);
   border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.08));
   padding: 1.25rem 1.25rem 1rem;
   margin-bottom: 1.5rem;
   border-top: 5px solid var(--accent);
@@ -62,7 +62,7 @@ body {
 
 .combined-card .count {
   font-size: 0.85rem;
-  color: #5d6b79;
+  color: var(--text-muted, #5d6b79);
   margin-bottom: 0.85rem;
 }
 
@@ -114,9 +114,9 @@ body {
 
 /* --- Park Card + Views ----------------------------- */
 .park-card {
-  background: #fff;
+  background: var(--surface, #fff);
   border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.08));
   padding: 1.25rem;
   margin-bottom: 1.5rem;
 }
@@ -148,8 +148,8 @@ body {
   padding: 0.35rem 0 0;
   background: none;
   border: none;
-  border-top: 1px solid #eee;
-  color: #aaa;
+  border-top: 1px solid var(--border, #eee);
+  color: var(--text-muted, #aaa);
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 0.78rem;
   letter-spacing: 0.04em;
@@ -159,7 +159,7 @@ body {
 }
 
 .list-toggle:hover {
-  color: #555;
+  color: var(--text, #555);
 }
 
 .visit-list {
@@ -180,7 +180,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #7d8a97;
+  color: var(--text-muted, #7d8a97);
   margin-bottom: 0.35rem;
 }
 
@@ -199,7 +199,7 @@ body {
   font-size: 0.92rem;
   background: var(--chip-bg, #eaeef2);
   border: 1px solid var(--chip-border, #c6cfd7);
-  color: #28333d;
+  color: var(--chip-text, #28333d);
   white-space: nowrap;
   transition: background 0.3s, border-color 0.3s;
 }
@@ -207,10 +207,10 @@ body {
 /* Unvisited / bucket-list chip */
 .visit-chip--unvisited {
   font-style: italic;
-  color: #56636f;
-  background: #f4f6f8;
+  color: var(--chip-unv-text, #56636f);
+  background: var(--chip-unv-bg, #f4f6f8);
   border-style: dashed;
-  border-color: #b9c2cb;
+  border-color: var(--chip-unv-border, #b9c2cb);
 }
 
 /* Chip tooltip (date + notes) */
@@ -255,9 +255,22 @@ body {
 
 .no-visits {
   font-size: 0.8rem;
-  color: #bbb;
+  color: var(--text-muted, #bbb);
   font-style: italic;
 }
+
+/* Sam's purple is too dark to read as text/border directly on a dark
+   surface — use the lightened on-dark variant for those spots (the
+   solid-fill active-filter pill keeps the original purple; white text
+   on it already has plenty of contrast). */
+.person-filter[data-view="sam"]:not(.active),
+.map-filter-btn[data-filter="sam"]:not(.active) {
+  border-color: var(--sam-on-dark, #662684);
+  color: var(--sam-on-dark, #662684);
+}
+
+/* The Sam-tinted "Parks Visited" chip background/border (set inline via
+   applyChipColors()) is already dark-mode aware in JS — see app.js. */
 
 /* --- Map Card -------------------------------------- */
 #disneyMap {
@@ -301,7 +314,7 @@ body {
   align-items: center;
   gap: 6px;
   font-size: 0.82rem;
-  color: #777;
+  color: var(--text-muted, #777);
 }
 
 .legend-dot {
@@ -309,7 +322,7 @@ body {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  border: 1.5px solid #fff;
+  border: 1.5px solid rgba(255,255,255,0.55);
   box-shadow: 0 0 0 1px #aaa;
   flex-shrink: 0;
 }
@@ -323,7 +336,7 @@ body {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  border: 2px solid #fff;
+  border: 2px solid rgba(255,255,255,0.55);
   box-shadow: 0 0 0 1px rgba(0,0,0,0.25);
 }
 
@@ -331,12 +344,12 @@ body {
   width: 10px;
   height: 10px;
   background: #64748b;
-  border: 2px solid #fff;
+  border: 2px solid rgba(255,255,255,0.55);
   box-shadow: 0 0 0 1px rgba(0,0,0,0.18);
 }
 
 .legend-sep {
-  color: #ccc;
+  color: var(--text-muted, #ccc);
   margin: 0 4px;
 }
 

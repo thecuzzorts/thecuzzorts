@@ -4,6 +4,17 @@
 
 (function ($) {
 
+  // ---- Dark-mode-aware unvisited-region colors -------
+  // jVectorMap paints SVG fills at init time, so it can't react to a
+  // CSS media query — read the effective theme once here instead
+  // (an explicit toggle override in localStorage wins over the OS setting).
+  var storedTheme = null;
+  try { storedTheme = window.localStorage.getItem('theme'); } catch (e) {}
+  var IS_DARK = storedTheme === 'dark' ||
+    (storedTheme !== 'light' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  var UNVISITED_HEAT   = IS_DARK ? '#2a323b' : '#f0f2f5';
+  var UNVISITED_PERSON = IS_DARK ? '#3a4550' : '#d0d4d8';
+
   // ---- People config --------------------------------
   var PEOPLE = [
     { id: 'josh',  name: 'Josh',  color: '#00AC4B', data: function () { return turkeysHarvestedJosh;  }, photos: function () { return turkeyPhotosJosh;  } },
@@ -198,7 +209,8 @@
       $(mapElId).vectorMap({
         map: 'us_lcc',
         backgroundColor: '#1a2e3b',
-        series: { regions: [{ values: computed.harvested, scale: ['#f0f2f5', FAMILY_COLOR], normalizeFunction: 'linear' }] },
+        regionStyle: { initial: { fill: UNVISITED_HEAT } },
+        series: { regions: [{ values: computed.harvested, scale: [UNVISITED_HEAT, FAMILY_COLOR], normalizeFunction: 'linear' }] },
         onRegionTipShow: function (_e, el, code) {
           var n = computed.harvested[code] || 0;
           var label = n === 1 ? '1 family member' : n + ' family members';
@@ -219,7 +231,8 @@
       $(mapElId).vectorMap({
         map: 'us_lcc',
         backgroundColor: '#1a2e3b',
-        series: { regions: [{ values: data, scale: ['#d0d4d8', p.color], normalizeFunction: 'polynomial' }] }
+        regionStyle: { initial: { fill: UNVISITED_PERSON } },
+        series: { regions: [{ values: data, scale: [UNVISITED_PERSON, p.color], normalizeFunction: 'polynomial' }] }
       });
 
       mapInst[personId] = $(mapElId).vectorMap('get', 'mapObject');
