@@ -1,0 +1,236 @@
+/* ===================================================
+   TheCuzzorts — Trapping (Illinois furbearers)
+   =================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Kreon:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
+
+/* --- Reset & Base ---------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+
+body {
+  --section: #8C5A3B;
+  --section-on-dark: #C99A6A;
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+  background: var(--bg, #f0f2f5);
+  color: var(--text, #222);
+  min-height: 100vh;
+}
+
+/* --- Section panels (anchor-nav targets) ----------- */
+.section-panel {
+  scroll-margin-top: 4rem;
+}
+
+/* --- Overview card ---------------------------------- */
+.trapping-overview-card {
+  background: var(--surface, #fff);
+  border-radius: 10px;
+  box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.08));
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.trapping-overview-card p {
+  color: var(--text-muted, #5a6a7a);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.trapping-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.trapping-stat-num {
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--section);
+  line-height: 1;
+}
+
+.trapping-stat-label {
+  font-size: 0.78rem;
+  color: var(--text-muted, #7d8a97);
+  letter-spacing: 0.03em;
+}
+
+.trapping-progress-track {
+  flex: 1;
+  min-width: 140px;
+  height: 10px;
+  border-radius: 99px;
+  background: var(--chip-bg, #eaeef2);
+  overflow: hidden;
+}
+
+.trapping-progress-bar {
+  height: 100%;
+  width: 0;
+  background: var(--section);
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+
+/* --- Species subtitle --------------------------------- */
+.species-subtitle {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted, #7d8a97);
+  margin-bottom: 0.9rem;
+}
+
+/* --- Species sort toggle ------------------------------ */
+.species-sort-toggle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.species-sort-btn {
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.3rem 0.9rem;
+  border-radius: 99px;
+  border: 2px solid var(--section);
+  opacity: 0.55;
+  background: transparent;
+  color: var(--section);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, opacity 0.15s;
+}
+
+.species-sort-btn.active {
+  background: var(--section);
+  color: #fff;
+  opacity: 1;
+}
+
+.species-sort-btn:not(.active):hover {
+  opacity: 0.85;
+}
+
+/* --- Species grid ------------------------------------ */
+.species-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  transition: opacity 0.22s;
+}
+
+.species-grid.is-sorting {
+  opacity: 0;
+}
+
+.species-card {
+  width: 150px;
+  text-align: center;
+  padding: 0.25rem 0.5rem 0;
+}
+
+.species-portrait {
+  width: 132px;
+  height: 132px;
+  margin: 0 auto 0.6rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #F3EEDF;
+  border: 3px solid var(--species, var(--section));
+  box-shadow: 0 2px 10px var(--shadow, rgba(0,0,0,0.1));
+  transition: border-color 0.15s;
+}
+
+.species-card.is-untrapped .species-portrait {
+  border-color: var(--chip-unv-border, #b9c2cb);
+}
+
+.species-portrait img {
+  width: 120%;
+  height: 120%;
+  margin: -12%;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.15s, opacity 0.15s;
+}
+
+.species-card.is-untrapped .species-portrait img {
+  filter: grayscale(1);
+  opacity: 0.55;
+}
+
+.species-portrait-fallback {
+  width: 68%;
+  height: 68%;
+  margin-top: 16%;
+}
+
+.species-card.is-untrapped .species-portrait-fallback {
+  opacity: 0.55;
+}
+
+.species-name {
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text, #1a2e3b);
+  margin-bottom: 0.3rem;
+}
+
+.species-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+.species-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.species-dot--trapped { background: #2E7D46; }
+.species-dot--untrapped { background: var(--chip-unv-border, #9AA3AB); }
+
+.species-status-text {
+  color: var(--text-muted, #5a6a7a);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.species-card.is-trapped .species-status-text { color: #2E7D46; }
+
+.species-status small {
+  font-style: italic;
+  color: var(--text-muted, #8a9aaa);
+  text-transform: none;
+  font-weight: 400;
+}
+
+.species-notes {
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--text-muted, #5a6a7a);
+}
+
+/* --- Mobile ---------------------------------------- */
+@media (max-width: 640px) {
+  .species-grid { gap: 0.75rem; }
+  .species-card { width: 120px; }
+  .species-portrait { width: 108px; height: 108px; }
+  .trapping-stat-num { font-size: 1.45rem; }
+}
