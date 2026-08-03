@@ -18,7 +18,7 @@ var parksVisitedTilly = {
   /* Florida */
   "biscayne": 0,
   "dry-tortugas": 0,
-  "everglades": 0,
+  "everglades": 1,
 
   /* Midwest */
   "gateway-arch": 1,
@@ -94,5 +94,6 @@ var parksDetailsTilly = {
   "mammoth-cave":   { date: "2025-01-02" },
   "gateway-arch":   { date: "2024-06-24" },
   "indiana-dunes":  { date: "2024-08-31" },
-  "virgin-islands": { date: "2025-03-20" }
+  "virgin-islands": { date: "2025-03-20" },
+  "everglades":     { date: "2026-08-03" }
 };

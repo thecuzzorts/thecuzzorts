@@ -18,7 +18,7 @@ var parksVisitedSam = {
   /* Florida */
   "biscayne": 0,
   "dry-tortugas": 0,
-  "everglades": 0,
+  "everglades": 1,
 
   /* Midwest */
   "gateway-arch": 1,
@@ -96,5 +96,6 @@ var parksDetailsSam = {
   "gateway-arch":          { date: "2024-06-24" },
   "indiana-dunes":         { date: "2024-08-31" },
   "rocky-mountain":        { date: "2015-06-19" },
-  "virgin-islands":        { date: "2025-03-20" }
+  "virgin-islands":        { date: "2025-03-20" },
+  "everglades":            { date: "2026-08-03" }
 };
