@@ -64,7 +64,8 @@
     }
   ];
 
-  var FAMILY_COLOR = '#E8601A';
+  var WHOLE_FAMILY_COLOR = '#E8601A';
+  var ANYONE_COLOR       = '#E8A020';
 
   // ---- Territory / province exclusion lists ---------
   var TERRITORY_CODES       = { 'PR': 1, 'VI': 1, 'SX': 1, 'GU': 1, 'AS': 1, 'MP': 1 };
@@ -417,11 +418,31 @@
     Object.keys(computed.countryHeat).forEach(function (k) {
       computed.countryBinary[k] = computed.countryHeat[k] > 0 ? 1 : 0;
     });
+
+    // "Whole family" = visited by every person, i.e. heat count === PEOPLE.length
+    var n = PEOPLE.length;
+    computed.statesWhole = {};
+    Object.keys(computed.statesHeat).forEach(function (k) {
+      computed.statesWhole[k] = computed.statesHeat[k] === n ? 1 : 0;
+    });
+    computed.provWhole = {};
+    Object.keys(computed.provHeat).forEach(function (k) {
+      computed.provWhole[k] = computed.provHeat[k] === n ? 1 : 0;
+    });
+    computed.countryWhole = {};
+    Object.keys(computed.countryHeat).forEach(function (k) {
+      computed.countryWhole[k] = computed.countryHeat[k] === n ? 1 : 0;
+    });
   }
 
   // ---- Count text per tab + person ------------------
   function getCount(tab, personId) {
-    if (personId === 'family') {
+    if (personId === 'whole-family') {
+      if (tab === 'states')    return countHeatMapVisited(computed.statesWhole)    + ' / 50';
+      if (tab === 'provinces') return countHeatMapProvinces(computed.provWhole)    + ' / 10';
+      if (tab === 'countries') return String(countHeatMapCountries(computed.countryWhole));
+    }
+    if (personId === 'anyone') {
       if (tab === 'states')    return countHeatMapVisited(computed.statesHeat)    + ' / 50';
       if (tab === 'provinces') return countHeatMapProvinces(computed.provHeat)    + ' / 10';
       if (tab === 'countries') return String(countHeatMapCountries(computed.countryHeat));
@@ -446,11 +467,17 @@
   function buildFilterRow(tab) {
     var $row = $('#' + tab + 'Filters');
 
-    var $all = $('<button class="person-filter active" data-tab="' + tab + '" data-person="family"></button>');
-    $all[0].style.setProperty('--filter-color', FAMILY_COLOR);
-    $all.append('<span class="filter-name">All</span>');
-    $all.append('<span class="filter-count">' + getCount(tab, 'family') + '</span>');
-    $row.append($all);
+    var $whole = $('<button class="person-filter active" data-tab="' + tab + '" data-person="whole-family"></button>');
+    $whole[0].style.setProperty('--filter-color', WHOLE_FAMILY_COLOR);
+    $whole.append('<span class="filter-name">All</span>');
+    $whole.append('<span class="filter-count">' + getCount(tab, 'whole-family') + '</span>');
+    $row.append($whole);
+
+    var $anyone = $('<button class="person-filter" data-tab="' + tab + '" data-person="anyone"></button>');
+    $anyone[0].style.setProperty('--filter-color', ANYONE_COLOR);
+    $anyone.append('<span class="filter-name">Anyone</span>');
+    $anyone.append('<span class="filter-count">' + getCount(tab, 'anyone') + '</span>');
+    $row.append($anyone);
 
     PEOPLE.forEach(function (p) {
       var $btn = $('<button class="person-filter" data-tab="' + tab + '" data-person="' + p.id + '"></button>');
@@ -465,11 +492,19 @@
     var $card    = $('#' + tab + 'MapCard');
     var mapClass = tab === 'states' ? 'us-map' : tab === 'provinces' ? 'ca-map' : 'world-map';
 
-    // Family "All" view — active by default
+    // Whole-family "All" view — active by default
     $card.append(
-      '<div class="map-view active" data-view="family">' +
+      '<div class="map-view active" data-view="whole-family">' +
         '<div class="map-container ' + mapClass + '">' +
-          '<div id="' + tab + 'MapFamily" class="map"></div>' +
+          '<div id="' + tab + 'MapWholeFamily" class="map"></div>' +
+        '</div>' +
+      '</div>'
+    );
+
+    $card.append(
+      '<div class="map-view" data-view="anyone">' +
+        '<div class="map-container ' + mapClass + '">' +
+          '<div id="' + tab + 'MapAnyone" class="map"></div>' +
         '</div>' +
       '</div>'
     );
@@ -506,35 +541,46 @@
     mapReady[key] = true;
 
     var mapType = tab === 'states' ? 'us_lcc' : tab === 'provinces' ? 'ca_lcc' : 'world_mill_en';
-    var mapElId = '#' + tab + 'Map' + (personId === 'family' ? 'Family' : cap(personId));
+    var idSuffix = personId === 'whole-family' ? 'WholeFamily' : personId === 'anyone' ? 'Anyone' : cap(personId);
+    var mapElId = '#' + tab + 'Map' + idSuffix;
     if (!$(mapElId).length) return;
 
-    if (personId === 'family') {
-      var heat    = tab === 'states'    ? computed.statesHeat
-                  : tab === 'provinces' ? computed.provHeat
-                  :                       computed.countryBinary;
-      var tipHeat = tab === 'countries' ? computed.countryHeat : heat;
+    if (personId === 'whole-family' || personId === 'anyone') {
+      var isWhole = personId === 'whole-family';
+      var seriesValues = isWhole
+        ? (tab === 'states' ? computed.statesWhole : tab === 'provinces' ? computed.provWhole : computed.countryWhole)
+        : (tab === 'states' ? computed.statesHeat  : tab === 'provinces' ? computed.provHeat  : computed.countryBinary);
+      var actualHeat = tab === 'states' ? computed.statesHeat : tab === 'provinces' ? computed.provHeat : computed.countryHeat;
+      var topColor = isWhole ? WHOLE_FAMILY_COLOR : ANYONE_COLOR;
 
       $(mapElId).vectorMap({
         map: mapType,
         backgroundColor: '#1a2e3b',
         regionStyle: { initial: { fill: UNVISITED_HEAT } },
-        series: { regions: [{ values: heat, scale: [UNVISITED_HEAT, '#E8601A'], normalizeFunction: 'linear' }] },
+        series: { regions: [{ values: seriesValues, scale: [UNVISITED_HEAT, topColor], normalizeFunction: 'linear' }] },
         onRegionTipShow: function (_e, el, code) {
-          var n = (tipHeat[code] || 0);
-          var label = n === 1 ? '1 family member' : n + ' family members';
           var tip = '<strong>' + el.html() + '</strong>';
-          if (n > 0) tip += '<br><span style="opacity:.8">Visited by ' + label + '</span>';
+          if (isWhole) {
+            if (seriesValues[code] > 0) tip += '<br><span style="opacity:.8">Visited by the whole family</span>';
+          } else {
+            var n = actualHeat[code] || 0;
+            var label = n === 1 ? '1 family member' : n + ' family members';
+            if (n > 0) tip += '<br><span style="opacity:.8">Visited by ' + label + '</span>';
+          }
           el.html(tip);
         }
       });
 
       mapInst[key] = $(mapElId).vectorMap('get', 'mapObject');
 
-      // Build chip list from heat (binary: any-member visited = 1)
-      var rawHeat = tab === 'states' ? computed.statesHeat : tab === 'provinces' ? computed.provHeat : computed.countryHeat;
-      var bin = {};
-      Object.keys(rawHeat).forEach(function (k) { bin[k] = rawHeat[k] > 0 ? 1 : 0; });
+      // Build chip list (binary: whole-family = every member, anyone = any member)
+      var bin;
+      if (isWhole) {
+        bin = seriesValues;
+      } else {
+        bin = {};
+        Object.keys(seriesValues).forEach(function (k) { bin[k] = seriesValues[k] > 0 ? 1 : 0; });
+      }
       var listHTML = tab === 'states'    ? buildStateListHTML(bin, {})
                    : tab === 'provinces' ? buildProvinceListHTML(bin, {})
                    :                       buildCountryListHTML(bin, {});
@@ -620,9 +666,9 @@
       buildMapCard(tab);
     });
 
-    initMap('states', 'family');
-    setTimeout(function () { initMap('provinces', 'family'); }, 50);
-    setTimeout(function () { initMap('countries', 'family'); }, 100);
+    initMap('states', 'whole-family');
+    setTimeout(function () { initMap('provinces', 'whole-family'); }, 50);
+    setTimeout(function () { initMap('countries', 'whole-family'); }, 100);
 
     initFilters();
     initListToggles();

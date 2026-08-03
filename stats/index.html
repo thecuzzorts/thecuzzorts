@@ -257,7 +257,7 @@
     <!-- ---- Travels ---- -->
     <h2 class="stat-head" id="travels" style="--sh-color: #E8A020">Travels</h2>
 
-    <div class="bb-grid" style="grid-template-columns: repeat(3, 1fr)">
+    <div class="bb-grid" style="grid-template-columns: repeat(4, 1fr)">
 
       <div class="bb-stat" style="--a: #E8A020">
         <div class="bb-num"><span id="trav-states">—</span><span class="bb-denom">/50</span></div>
@@ -272,6 +272,11 @@
       <div class="bb-stat" style="--a: #E8A020">
         <div class="bb-num"><span id="trav-territories">—</span></div>
         <span class="bb-label">Territories (Family)</span>
+      </div>
+
+      <div class="bb-stat" style="--a: #E8A020">
+        <div class="bb-num"><span id="trav-max-num">—</span></div>
+        <span class="bb-label">Most States (<span id="trav-max-name">—</span>)</span>
       </div>
 
     </div>
@@ -305,7 +310,7 @@
     <!-- ---- National Parks ---- -->
     <h2 class="stat-head" id="national-parks" style="--sh-color: #C99A6A">National Parks</h2>
 
-    <div class="bb-grid" style="grid-template-columns: repeat(2, 1fr)">
+    <div class="bb-grid" style="grid-template-columns: repeat(3, 1fr)">
 
       <div class="bb-stat" style="--a: var(--parks-brown-on-dark, #8B5E3C)">
         <div class="bb-num"><span id="np-family">—</span><span class="bb-denom">/63</span></div>
@@ -317,12 +322,17 @@
         <span class="bb-label">On the Bucket List</span>
       </div>
 
+      <div class="bb-stat" style="--a: var(--parks-brown-on-dark, #8B5E3C)">
+        <div class="bb-num"><span id="np-max-num">—</span></div>
+        <span class="bb-label">Most Visited (<span id="np-max-name">—</span>)</span>
+      </div>
+
     </div>
 
     <!-- ---- Disney ---- -->
     <h2 class="stat-head" id="disney" style="--sh-color: #1F8FE5">Disney Parks</h2>
 
-    <div class="bb-grid" style="grid-template-columns: repeat(2, 1fr)">
+    <div class="bb-grid" style="grid-template-columns: repeat(3, 1fr)">
 
       <div class="bb-stat" style="--a: #1F8FE5">
         <div class="bb-num"><span id="dis-family">—</span><span class="bb-denom">/12</span></div>
@@ -332,6 +342,11 @@
       <div class="bb-stat" style="--a: #1F8FE5">
         <div class="bb-num"><span id="dis-remaining">—</span></div>
         <span class="bb-label">Still to Visit</span>
+      </div>
+
+      <div class="bb-stat" style="--a: #1F8FE5">
+        <div class="bb-num"><span id="dis-max-num">—</span></div>
+        <span class="bb-label">Most Visited (<span id="dis-max-name">—</span>)</span>
       </div>
 
     </div>
@@ -404,28 +419,34 @@
       }
 
       function familyUnionStates() {
-        var all = {};
-        var sets = [statesVisitedJosh, statesVisitedSam, statesVisitedEllie, statesVisitedTilly, statesVisitedPoppy];
-        sets.forEach(function (d) { for (var k in d) { if (d[k] === 1) all[k] = 1; } });
-        delete all['US-DC'];
-        return Object.keys(all).length;
+        // Matches the /travels page "All" filter: states every family member has visited.
+        var count = 0;
+        for (var k in statesVisitedJosh) {
+          if (k === 'US-DC') continue;
+          if (statesVisitedJosh[k] === 1 && statesVisitedSam[k] === 1 &&
+              statesVisitedEllie[k] === 1 && statesVisitedTilly[k] === 1 && statesVisitedPoppy[k] === 1) count++;
+        }
+        return count;
       }
 
       function familyUnionCountries() {
-        var all = {};
-        var sets = [countriesVisitedJosh, countriesVisitedSam, countriesVisitedEllie, countriesVisitedTilly, countriesVisitedPoppy];
-        sets.forEach(function (d) { for (var k in d) { if (d[k] === 1) all[k] = 1; } });
+        // Matches the /travels page "All" filter: countries every family member has visited.
         var countries = 0, terr = 0;
-        for (var k in all) { TERRITORIES[k] ? terr++ : countries++; }
+        for (var k in countriesVisitedJosh) {
+          if (countriesVisitedJosh[k] === 1 && countriesVisitedSam[k] === 1 &&
+              countriesVisitedEllie[k] === 1 && countriesVisitedTilly[k] === 1 && countriesVisitedPoppy[k] === 1) {
+            TERRITORIES[k] ? terr++ : countries++;
+          }
+        }
         return { countries: countries, territories: terr };
       }
 
       function familyUnionParks() {
-        // Matches the NP page bucket list definition: parks both Josh AND Sam have visited.
-        // A park visited by only one parent stays on the bucket list.
+        // Matches the NP page "All" filter: parks every family member has visited.
         var count = 0;
         for (var k in parksVisitedJosh) {
-          if (parksVisitedJosh[k] === 1 && parksVisitedSam[k] === 1) count++;
+          if (parksVisitedJosh[k] === 1 && parksVisitedSam[k] === 1 &&
+              parksVisitedEllie[k] === 1 && parksVisitedTilly[k] === 1 && parksVisitedPoppy[k] === 1) count++;
         }
         return count;
       }
@@ -436,10 +457,13 @@
       }
 
       function familyUnionDisney() {
-        var all = {};
-        var sets = [disneyVisitedJosh, disneyVisitedSam, disneyVisitedEllie, disneyVisitedTilly, disneyVisitedPoppy];
-        sets.forEach(function (d) { for (var k in d) { if (d[k] === 1) all[k] = 1; } });
-        return Object.keys(all).length;
+        // Matches the Disney page "All" filter: parks every family member has visited.
+        var count = 0;
+        for (var k in disneyVisitedJosh) {
+          if (disneyVisitedJosh[k] === 1 && disneyVisitedSam[k] === 1 &&
+              disneyVisitedEllie[k] === 1 && disneyVisitedTilly[k] === 1 && disneyVisitedPoppy[k] === 1) count++;
+        }
+        return count;
       }
 
       // --- Family headline ---
@@ -486,6 +510,31 @@
         set('p-' + p.id + '-parks',          countVisited(p.parks));
         set('p-' + p.id + '-disney',         countVisited(p.disney));
       });
+
+      // --- Most visited (individual leader) per category ---
+      function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+      function mostVisited(list, countFn, key) {
+        var maxCount = -1, leaders = [];
+        list.forEach(function (p) {
+          var n = countFn(p[key]);
+          if (n > maxCount) { maxCount = n; leaders = [p.id]; }
+          else if (n === maxCount) { leaders.push(p.id); }
+        });
+        return { count: maxCount, names: leaders.map(cap).join(' & ') };
+      }
+
+      var mostStates = mostVisited(people, countStates, 'states');
+      set('trav-max-num',  mostStates.count);
+      set('trav-max-name', mostStates.names);
+
+      var mostParks = mostVisited(people, countVisited, 'parks');
+      set('np-max-num',  mostParks.count);
+      set('np-max-name', mostParks.names);
+
+      var mostDisney = mostVisited(people, countVisited, 'disney');
+      set('dis-max-num',  mostDisney.count);
+      set('dis-max-name', mostDisney.names);
 
       // --- Turkey Hunting ---
       var turkeyPeople = [
