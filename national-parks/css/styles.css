@@ -417,6 +417,31 @@ body {
   display: none;
 }
 
+.ss-progress {
+  height: 3px;
+  background: rgba(255,255,255,0.1);
+  overflow: hidden;
+}
+
+@keyframes ss-fill {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+.ss-progress-bar {
+  height: 100%;
+  width: 0;
+  background: var(--accent, #8B5E3C);
+}
+
+.ss-progress-bar.is-running {
+  animation: ss-fill 3s linear forwards;
+}
+
+.ss-progress-bar.paused {
+  animation-play-state: paused;
+}
+
 .slideshow-controls {
   display: flex;
   align-items: center;

@@ -8,7 +8,7 @@ var disneyVisitedPoppy = {
   "magic-kingdom": 1,
   "epcot": 1,
   "hollywood-studios": 1,
-  "animal-kingdom": 1,
+  "animal-kingdom": 0,
 
   /* Disneyland Resort */
   "disneyland-park": 0,

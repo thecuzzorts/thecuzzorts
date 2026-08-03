@@ -16,8 +16,16 @@
   var caption = wrap ? wrap.querySelector('.cycle-caption') : null;
   var prevBtn = wrap ? wrap.querySelector('.prev') : null;
   var nextBtn = wrap ? wrap.querySelector('.next') : null;
+  var progressBar = wrap ? wrap.querySelector('.ss-progress-bar') : null;
 
   var idx = 0;
+
+  function restartProgress() {
+    if (!progressBar) { return; }
+    progressBar.classList.remove('is-running');
+    void progressBar.offsetWidth;
+    progressBar.classList.add('is-running');
+  }
 
   // --- Slideshow -----------------------------------
   function showSlide(i) {
@@ -26,6 +34,7 @@
       img.classList.toggle('is-active', j === idx);
     });
     if (caption) { caption.textContent = slides[idx].alt || ''; }
+    restartProgress();
   }
 
   if (prevBtn) {
@@ -62,6 +71,24 @@
 
   showSlide(0);
 
+  // --- Auto-advance (mirrors the baseball Photos section: 3s, pause on hover) --
+  var AUTO_MS = 3000;
+  var autoTimer = null;
+  function startAuto() {
+    stopAuto();
+    if (progressBar) { progressBar.classList.remove('paused'); }
+    if (slides.length > 1) { autoTimer = setInterval(function () { showSlide(idx + 1); }, AUTO_MS); }
+  }
+  function stopAuto() {
+    if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+    if (progressBar) { progressBar.classList.add('paused'); }
+  }
+  if (prevBtn) { prevBtn.addEventListener('click', startAuto); }
+  if (nextBtn) { nextBtn.addEventListener('click', startAuto); }
+  slideshow.addEventListener('mouseenter', stopAuto);
+  slideshow.addEventListener('mouseleave', startAuto);
+  startAuto();
+
   // --- Lightbox (full-screen) ----------------------
   var overlay = document.createElement('div');
   overlay.className = 'lb-overlay';
@@ -86,10 +113,12 @@
     lbShow(i);
     overlay.classList.add('is-open');
     document.body.style.overflow = 'hidden';
+    stopAuto();
   }
   function lbClose() {
     overlay.classList.remove('is-open');
     document.body.style.overflow = '';
+    startAuto();
   }
 
   slideshow.addEventListener('click', function (e) {
