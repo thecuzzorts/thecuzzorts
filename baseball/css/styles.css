@@ -364,6 +364,10 @@ hr { display: none; }
 .split.snip span.kid-tilly { background: #0898ff !important; }
 .split.snip span.kid-poppy { background: #d9259a !important; }
 
+/* Closed/historic park entries within a kid's list — dim the row, badge the park name */
+.kids-grid .team.closed .team-logo { filter: grayscale(1); opacity: 0.55; }
+.kids-grid .team.closed .team-name { color: var(--text-muted, #8a9aaa); }
+
 .format .group.kids-grid { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 1099px) {
   .format .group.kids-grid { grid-template-columns: 1fr; }
