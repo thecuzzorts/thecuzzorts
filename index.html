@@ -958,6 +958,9 @@
   <script src="turkey-hunting/data/turkeys-harvested-tilly.js"></script>
   <script src="national-parks/data/parks-visited-josh.js"></script>
   <script src="national-parks/data/parks-visited-sam.js"></script>
+  <script src="national-parks/data/parks-visited-ellie.js"></script>
+  <script src="national-parks/data/parks-visited-tilly.js"></script>
+  <script src="national-parks/data/parks-visited-poppy.js"></script>
   <script src="disney/data/disney-visited-josh.js"></script>
   <script src="disney/data/disney-visited-sam.js"></script>
   <script src="disney/data/disney-visited-ellie.js"></script>
@@ -976,17 +979,29 @@
         return Object.keys(all).length;
       }
 
+      function intersection(sets, include) {
+        var count = 0;
+        for (var k in sets[0]) {
+          var all = true;
+          for (var i = 0; i < sets.length; i++) {
+            if (!include(k, sets[i][k])) { all = false; break; }
+          }
+          if (all) count++;
+        }
+        return count;
+      }
+
       function set(id, val) {
         var el = document.getElementById(id);
         if (el) el.textContent = val;
       }
 
-      set('qs-states', union(
+      set('qs-states', intersection(
         [statesVisitedJosh, statesVisitedSam, statesVisitedEllie, statesVisitedTilly, statesVisitedPoppy],
         function (k, v) { return k !== 'US-DC' && v === 1; }
       ));
 
-      set('qs-countries', union(
+      set('qs-countries', intersection(
         [countriesVisitedJosh, countriesVisitedSam, countriesVisitedEllie, countriesVisitedTilly, countriesVisitedPoppy],
         function (k, v) { return !TERRITORIES[k] && v === 1; }
       ));
@@ -996,14 +1011,13 @@
         function (k, v) { return Math.round(v) >= 1; }
       ));
 
-      // NP: parks both Josh AND Sam have visited (matches bucket list definition)
-      var parksCount = 0;
-      for (var k in parksVisitedJosh) {
-        if (parksVisitedJosh[k] === 1 && parksVisitedSam[k] === 1) parksCount++;
-      }
-      set('qs-parks', parksCount);
+      // Matches the NP page "All" filter: parks every family member has visited.
+      set('qs-parks', intersection(
+        [parksVisitedJosh, parksVisitedSam, parksVisitedEllie, parksVisitedTilly, parksVisitedPoppy],
+        function (k, v) { return v === 1; }
+      ));
 
-      set('qs-disney', union(
+      set('qs-disney', intersection(
         [disneyVisitedJosh, disneyVisitedSam, disneyVisitedEllie, disneyVisitedTilly, disneyVisitedPoppy],
         function (k, v) { return v === 1; }
       ));
