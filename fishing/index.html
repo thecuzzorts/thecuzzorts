@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SNE2PKC43Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SNE2PKC43Y');
+  </script>
+  <meta charset="utf-8">
+  <title>Fishing | The Cuzzorts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      try {
+        var t = window.localStorage.getItem('theme');
+        if (t === 'dark' || t === 'light') { document.documentElement.setAttribute('data-theme', t); }
+      } catch (e) {}
+    }());
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../css/site-chrome.css">
+  <link rel="stylesheet" href="../css/section-labels.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <p class="site-title"><a class="home-link" href="../index.html">The Cuzzorts</a> &mdash; Fishing</p>
+    <p class="site-tagline">Every fish the family's caught &mdash; freshwater &amp; saltwater</p>
+    <div role="navigation">
+      <nav>
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#saltwater">Saltwater</a></li>
+          <li><a href="#freshwater">Freshwater</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="page-intro">
+      <h1>Fishing</h1>
+      <p>Every species caught, freshwater and saltwater alike</p>
+    </div>
+
+    <!-- Overview -->
+    <div class="section-panel" id="overview">
+      <h3 class="section-heading">Overview</h3>
+      <div class="fishing-overview-card">
+        <div class="fishing-stats">
+          <div class="fishing-stat">
+            <span class="fishing-stat-num" id="catchTotal">0</span>
+            <span class="fishing-stat-label">Catches</span>
+          </div>
+          <div class="fishing-stat">
+            <span class="fishing-stat-num" id="speciesTotal">0</span>
+            <span class="fishing-stat-label">Species</span>
+          </div>
+          <div class="fishing-stat">
+            <span class="fishing-stat-num" id="stateTotal">0</span>
+            <span class="fishing-stat-label">States</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Saltwater -->
+    <div class="section-panel" id="saltwater">
+      <h3 class="section-heading">Saltwater</h3>
+      <div id="saltwaterGrid"></div>
+    </div>
+
+    <!-- Freshwater -->
+    <div class="section-panel" id="freshwater">
+      <h3 class="section-heading">Freshwater</h3>
+      <div id="freshwaterGrid"></div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p><span id="currentYear"></span> &copy; The Cuzzorts &mdash; <a href="../index.html">Home</a></p>
+  </footer>
+
+  <script src="data/fish-caught.js"></script>
+  <script src="data/fish-photos.js"></script>
+  <script src="js/app.js"></script>
+
+  <script src="../js/site-nav.js"></script>
+  <script src="../js/section-labels.js"></script>
+
+</body>
+</html>

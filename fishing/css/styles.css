@@ -1,0 +1,287 @@
+/* ===================================================
+   TheCuzzorts — Fishing (family catch log)
+   Family-shared tracker: no map, no per-catch attribution.
+   =================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Kreon:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
+
+/* --- Reset & Base ---------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+
+body {
+  --section: #1C7C9C;
+  --section-on-dark: #5FB8D6;
+  --fresh: #2E8B76;
+  --salt: #145C82;
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+  background: var(--bg, #f0f2f5);
+  color: var(--text, #222);
+  min-height: 100vh;
+}
+
+/* --- Section panels (anchor-nav targets) ----------- */
+.section-panel {
+  scroll-margin-top: 4rem;
+}
+
+.section-panel + .section-panel {
+  margin-top: 2rem;
+}
+
+/* --- Overview card ---------------------------------- */
+.fishing-overview-card {
+  background: var(--surface, #fff);
+  border-radius: 10px;
+  box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.08));
+  padding: 1.25rem 1.5rem;
+}
+
+.fishing-stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.fishing-stat {
+  text-align: center;
+}
+
+.fishing-stat-num {
+  display: block;
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--section);
+  line-height: 1;
+}
+
+.fishing-stat-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted, #7d8a97);
+}
+
+/* --- Catch cards ------------------------------------ */
+.catch-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.catch-card {
+  background: var(--surface, #fff);
+  border-radius: 10px;
+  box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.08));
+  border-top: 3px solid var(--section);
+  overflow: hidden;
+}
+
+/* Freshwater/saltwater get their own accent instead of one repeated
+   color everywhere — gives the two sections a distinct identity. */
+#freshwaterGrid .catch-card { border-top-color: var(--fresh); }
+#saltwaterGrid .catch-card  { border-top-color: var(--salt); }
+
+/* Every card gets the same photo slot — a real photo when we have
+   one, a themed placeholder icon when we don't — so the grid stays
+   even instead of jagged as photos get added over time. */
+.catch-card-media {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--chip-bg, #eaeef2);
+}
+
+.catch-card-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.15s;
+}
+
+.catch-card-photo:hover {
+  opacity: 0.88;
+  transform: scale(1.02);
+}
+
+.catch-card-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--section);
+}
+
+#freshwaterGrid .catch-card-placeholder { background: color-mix(in srgb, var(--fresh) 14%, var(--chip-bg, #eaeef2)); color: var(--fresh); }
+#saltwaterGrid .catch-card-placeholder  { background: color-mix(in srgb, var(--salt) 14%, var(--chip-bg, #eaeef2));  color: var(--salt); }
+
+.catch-card-placeholder svg {
+  width: 40%;
+  height: 40%;
+}
+
+.catch-card-body {
+  padding: 0.7rem 0.75rem;
+}
+
+.catch-species {
+  font-family: 'Kreon', Georgia, serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  line-height: 1.2;
+  color: var(--text, #1a2e3b);
+  margin-bottom: 0.45rem;
+}
+
+.catch-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.catch-state-chip {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 0.12rem 0.55rem;
+  border-radius: 99px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  background: var(--chip-bg, #eaeef2);
+  border: 1px solid var(--chip-border, #c6cfd7);
+  color: var(--chip-text, #28333d);
+}
+
+#freshwaterGrid .catch-state-chip {
+  background: color-mix(in srgb, var(--fresh) 10%, var(--chip-bg, #eaeef2));
+  border-color: color-mix(in srgb, var(--fresh) 35%, var(--chip-border, #c6cfd7));
+}
+
+#saltwaterGrid .catch-state-chip {
+  background: color-mix(in srgb, var(--salt) 10%, var(--chip-bg, #eaeef2));
+  border-color: color-mix(in srgb, var(--salt) 35%, var(--chip-border, #c6cfd7));
+}
+
+.catch-detail {
+  font-size: 0.64rem;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: normal;
+  color: var(--text-muted, #5a6a7a);
+}
+
+.catch-empty {
+  color: var(--text-muted, #7d8a97);
+  font-style: italic;
+  padding: 1rem 0;
+}
+
+/* --- Lightbox --------------------------------------- */
+body.lb-open { overflow: hidden; }
+
+.lb-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lb-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  cursor: pointer;
+}
+
+.lb-frame {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 90vw;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+}
+
+.lb-img {
+  max-width: 90vw;
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+}
+
+.lb-close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.5rem;
+  background: rgba(0,0,0,0.45);
+  border: none;
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  opacity: 0.85;
+  z-index: 2;
+  transition: opacity 0.15s;
+}
+.lb-close:hover { opacity: 1; }
+
+.lb-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.9rem 0.6rem;
+  background: #1a2e3b;
+}
+
+.lb-prev,
+.lb-next {
+  flex: 0 0 auto;
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(255,255,255,0.7);
+  background: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 5px;
+  padding: 0.25rem 0.8rem;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.lb-prev:hover,
+.lb-next:hover { color: var(--section-on-dark); border-color: var(--section-on-dark); }
+
+.lb-caption {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: center;
+  color: #fff;
+  font-family: 'Kreon', Georgia, serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- Mobile ---------------------------------------- */
+@media (max-width: 640px) {
+  .catch-grid { grid-template-columns: repeat(auto-fill, minmax(115px, 1fr)); gap: 0.55rem; }
+  .catch-card-body { padding: 0.55rem 0.6rem; }
+  .fishing-stat-num { font-size: 1.45rem; }
+  .fishing-stats { gap: 1.25rem; }
+}

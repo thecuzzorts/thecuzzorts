@@ -26,7 +26,8 @@
     { key: 'disney',        label: 'Disney',        path: 'disney/index.html',       color: '#1F8FE5' },
     { key: 'stats',         label: 'By the Numbers', path: 'stats/index.html',        color: '#8B7EC8' },
     { key: 'run',           label: 'Running',        path: 'run/index.html',          color: '#00AC4B', hidden: true },
-    { key: 'trapping',      label: 'Trapping',       path: 'trapping/index.html',     color: '#8C5A3B', hidden: true }
+    { key: 'trapping',      label: 'Trapping',       path: 'trapping/index.html',     color: '#8C5A3B', hidden: true },
+    { key: 'fishing',       label: 'Fishing',        path: 'fishing/index.html',      color: '#1C7C9C', hidden: true }
   ];
 
   // Current section = the folder name in the path (e.g. "disney").
