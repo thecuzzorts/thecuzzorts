@@ -190,6 +190,44 @@ body {
   border-color: rgba(171,136,187,0.6);
 }
 
+/* ---- Slams ----------------------------------------- */
+.slams-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.slam-cards { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.slam-card {
+  background: var(--surface, #fff);
+  border-radius: 10px;
+  box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.08));
+  padding: 0.9rem 1rem;
+}
+.slam-card--complete { border: 1px solid rgba(34,112,61,0.35); }
+
+.slam-card-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem; }
+.slam-card-name { font-family: 'Kreon', Georgia, serif; font-weight: 700; font-size: 0.95rem; color: var(--text, #222); }
+.slam-card-count { font-family: 'Roboto Condensed', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--text-muted, #7d8a97); }
+
+.slam-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.slam-chip {
+  display: inline-block; padding: 0.22rem 0.6rem; border-radius: 99px; font-size: 0.78rem;
+  background: var(--chip-unv-bg, #f4f6f8); border: 1px solid var(--chip-unv-border, #b9c2cb); color: var(--chip-unv-text, #56636f);
+}
+.slam-chip--met {
+  background: var(--chip-bg, #eaeef2); border-color: var(--chip-border, #c6cfd7); color: var(--chip-text, #28333d); font-weight: 700;
+}
+
+.slam-bar { height: 8px; border-radius: 99px; background: var(--chip-unv-bg, #f4f6f8); overflow: hidden; }
+.slam-bar-fill { height: 100%; border-radius: 99px; }
+
+/* Mirrors stats/index.html's .bb-badge — that stylesheet isn't loaded here, so duplicated rather than shared. */
+.slam-badge {
+  display: inline-block; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: #fff; background: #22703D; padding: 0.18em 0.55em; border-radius: 10px; margin-top: 0.5rem;
+}
+
+.slam-empty { color: var(--text-muted, #7d8a97); font-style: italic; text-align: center; padding: 1rem; }
+
+@media (max-width: 640px) { .slams-grid { grid-template-columns: 1fr; } }
+
 /* ---- Photo Gallery -------------------------------- */
 .photos-gallery-card {
   background: var(--surface, #fff);

@@ -17,12 +17,19 @@
 
   // ---- People config --------------------------------
   var PEOPLE = [
-    { id: 'josh',  name: 'Josh',  color: '#00AC4B', data: function () { return turkeysHarvestedJosh;  }, photos: function () { return turkeyPhotosJosh;  } },
-    { id: 'sam',   name: 'Sam',   color: '#662684', data: function () { return turkeysHarvestedSam;   }, photos: function () { return turkeyPhotosSam;   } },
-    { id: 'tilly', name: 'Tilly', color: '#0898ff', data: function () { return turkeysHarvestedTilly; }, photos: function () { return turkeyPhotosTilly; } }
+    { id: 'josh',  name: 'Josh',  color: '#00AC4B',
+      data: function () { return turkeysHarvestedJosh;  }, photos: function () { return turkeyPhotosJosh;  },
+      harvests: function () { return (typeof turkeyHarvestsJosh !== 'undefined') ? turkeyHarvestsJosh : null; } },
+    { id: 'sam',   name: 'Sam',   color: '#662684',
+      data: function () { return turkeysHarvestedSam;   }, photos: function () { return turkeyPhotosSam;   },
+      harvests: function () { return (typeof turkeyHarvestsSam !== 'undefined') ? turkeyHarvestsSam : null; } },
+    { id: 'tilly', name: 'Tilly', color: '#0898ff',
+      data: function () { return turkeysHarvestedTilly; }, photos: function () { return turkeyPhotosTilly; },
+      harvests: function () { return (typeof turkeyHarvestsTilly !== 'undefined') ? turkeyHarvestsTilly : null; } }
   ];
 
   var FAMILY_COLOR = '#E8601A';
+  var TOTAL_TURKEY_STATES = 49; // states with a huntable turkey population (Alaska excluded) — shared with SLAMS' US Super Slam target
 
   // ---- State name lookup ----------------------------
   var STATE_NAMES = {
@@ -132,10 +139,109 @@
       var n = Object.keys(computed.harvested).reduce(function (s, k) {
         return s + (computed.harvested[k] >= 1 ? 1 : 0);
       }, 0);
-      return n + ' / 49';
+      return n + ' / ' + TOTAL_TURKEY_STATES;
     }
     var p = findPerson(personId);
-    return p ? sumHarvested(p.data()) + ' / 49' : '';
+    return p ? sumHarvested(p.data()) + ' / ' + TOTAL_TURKEY_STATES : '';
+  }
+
+  // ---- Slam tracking ---------------------------------
+  // NWTF "slams" — collecting harvests across recognized turkey
+  // subspecies and/or locations. See nwtf.org for official criteria.
+  var GRAND_REQS = [
+    { label: 'Eastern',    match: function (r) { return r.subspecies === 'Eastern'    && r.country === 'USA'; } },
+    { label: "Merriam's",  match: function (r) { return r.subspecies === "Merriam's"  && r.country === 'USA'; } },
+    { label: 'Osceola',    match: function (r) { return r.subspecies === 'Osceola'    && r.country === 'USA'; } },
+    { label: 'Rio Grande', match: function (r) { return r.subspecies === 'Rio Grande' && r.country === 'USA'; } }
+  ];
+  var GOULDS_REQ = { label: "Gould's", match: function (r) { return r.subspecies === "Gould's"; } }; // either USA or Mexico
+  var OCELLATED_MEX_REQ = { label: 'Ocellated', match: function (r) { return r.subspecies === 'Ocellated' && r.country === 'Mexico'; } };
+
+  var SLAMS = [
+    { id: 'grand',    name: 'Grand Slam',    type: 'checklist', requirements: GRAND_REQS },
+    { id: 'royal',    name: 'Royal Slam',    type: 'checklist', requirements: GRAND_REQS.concat([GOULDS_REQ]) },
+    { id: 'world',    name: 'World Slam',    type: 'checklist', requirements: GRAND_REQS.concat([GOULDS_REQ, OCELLATED_MEX_REQ]) },
+    { id: 'canadian', name: 'Canadian Slam', type: 'checklist', requirements: [
+        { label: 'Eastern (Canada)',   match: function (r) { return r.subspecies === 'Eastern'   && r.country === 'Canada'; } },
+        { label: "Merriam's (Canada)", match: function (r) { return r.subspecies === "Merriam's" && r.country === 'Canada'; } }
+    ] },
+    { id: 'mexican',  name: 'Mexican Slam',  type: 'checklist', requirements: [
+        { label: 'Rio Grande (Mexico)', match: function (r) { return r.subspecies === 'Rio Grande' && r.country === 'Mexico'; } },
+        { label: "Gould's (Mexico)",    match: function (r) { return r.subspecies === "Gould's"    && r.country === 'Mexico'; } },
+        { label: 'Ocellated (Mexico)',  match: function (r) { return r.subspecies === 'Ocellated'  && r.country === 'Mexico'; } }
+    ] },
+    { id: 'super',    name: 'US Super Slam', type: 'state-count', target: TOTAL_TURKEY_STATES,
+      match: function (r) { return r.country === 'USA'; } }
+  ];
+
+  function evaluateSlam(slam, harvests) {
+    if (slam.type === 'checklist') {
+      var items = slam.requirements.map(function (req) {
+        return { label: req.label, met: harvests.some(req.match) };
+      });
+      var completedCount = items.filter(function (i) { return i.met; }).length;
+      return { type: 'checklist', items: items, completedCount: completedCount,
+               total: slam.requirements.length, complete: completedCount === slam.requirements.length };
+    }
+    var states = {};
+    harvests.forEach(function (r) { if (slam.match(r)) states[r.state] = true; });
+    var count = Object.keys(states).length;
+    return { type: 'state-count', completedCount: count, total: slam.target, complete: count >= slam.target };
+  }
+
+  function computeSlamProgress(person) {
+    var harvests = person.harvests ? person.harvests() : null;
+    if (!harvests || !harvests.length) return [];
+    var out = [];
+    SLAMS.forEach(function (slam) {
+      var result = evaluateSlam(slam, harvests);
+      if (result.completedCount > 0) out.push({ slam: slam, result: result });
+    });
+    return out;
+  }
+
+  function buildSlamCardHTML(person, entry) {
+    var slam = entry.slam, result = entry.result;
+    var html = '<div class="slam-card' + (result.complete ? ' slam-card--complete' : '') + '">' +
+      '<div class="slam-card-head">' +
+        '<span class="slam-card-name">' + slam.name + '</span>' +
+        '<span class="slam-card-count">' + result.completedCount + ' / ' + result.total + '</span>' +
+      '</div>';
+
+    if (result.type === 'checklist') {
+      html += '<div class="slam-chips">';
+      result.items.forEach(function (item) {
+        html += '<span class="slam-chip' + (item.met ? ' slam-chip--met' : '') + '">' + item.label + '</span>';
+      });
+      html += '</div>';
+    } else {
+      var pct = Math.min(100, Math.round(result.completedCount / result.total * 100));
+      html += '<div class="slam-bar"><div class="slam-bar-fill" style="width:' + pct + '%;background:' + person.color + '"></div></div>';
+    }
+
+    if (result.complete) html += '<span class="slam-badge">&#10003; Complete</span>';
+    return html + '</div>';
+  }
+
+  function buildSlamsSection() {
+    var $container = $('#slamsContent');
+    var $grid = $('<div class="slams-grid"></div>');
+    var any = false;
+
+    PEOPLE.forEach(function (p) {
+      var progress = computeSlamProgress(p);
+      if (!progress.length) return;
+      any = true;
+      var $col = $('<div class="slam-person-col"></div>');
+      $col.append('<div class="person-gallery-header" style="--person-color:' + p.color + '">' + p.name + '</div>');
+      var $cards = $('<div class="slam-cards"></div>');
+      progress.forEach(function (entry) { $cards.append(buildSlamCardHTML(p, entry)); });
+      $col.append($cards);
+      $grid.append($col);
+    });
+
+    if (!any) { $container.append('<p class="slam-empty">No slam progress yet.</p>'); return; }
+    $container.append($grid);
   }
 
   // ---- Build filter row + map card (DOM) -----------
@@ -455,6 +561,8 @@
     buildMapCard();
 
     initMap('family');
+
+    buildSlamsSection();
 
     buildGallery();
     initLightbox();
