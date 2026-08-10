@@ -608,7 +608,7 @@
       function sync() {
         var header = document.querySelector('.site-header');
         var line = window.pageYOffset + (header ? header.offsetHeight : 60) + 40;
-        var nearBottom = (window.pageYOffset + window.innerHeight) >= (document.body.scrollHeight - 80);
+        var nearBottom = (window.pageYOffset + window.innerHeight) >= (document.body.scrollHeight - 4);
         var active = null;
         headings.forEach(function (h) {
           if (h.getBoundingClientRect().top + window.pageYOffset <= line) { active = h; }
