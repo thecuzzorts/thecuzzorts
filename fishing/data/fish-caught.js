@@ -21,7 +21,8 @@ var fishCaught = {
     { species: 'Rainbow Trout',    state: 'US-MO', date: null, weight: null, length: null, notes: '' },
     { species: 'Largemouth Bass',  state: 'US-MO', date: null, weight: null, length: null, notes: '' },
     { species: 'Rainbow Trout',    state: 'US-VA', date: null, weight: null, length: null, notes: '' },
-    { species: 'Brook Trout',      state: 'US-VA', date: null, weight: null, length: null, notes: '' }
+    { species: 'Brook Trout',      state: 'US-VA', date: null, weight: null, length: null, notes: '' },
+    { species: 'Redear Sunfish',   state: 'US-IL', date: null, weight: null, length: null, notes: '' }
   ],
   saltwater: [
     { species: 'Mangrove Snapper',        state: 'US-FL', date: null, weight: null, length: null, notes: '' },
@@ -31,6 +32,7 @@ var fishCaught = {
     { species: 'Pigfish',                 state: 'US-FL', date: null, weight: null, length: null, notes: '' },
     { species: 'Hardhead Catfish',        state: 'US-FL', date: null, weight: null, length: null, notes: '' },
     { species: "Sailor's Choice Grunt",   state: 'US-FL', date: null, weight: null, length: null, notes: '' },
-    { species: 'Bluestriped Grunt',       state: 'US-FL', date: null, weight: null, length: null, notes: '' }
+    { species: 'Bluestriped Grunt',       state: 'US-FL', date: null, weight: null, length: null, notes: '' },
+    { species: 'Candy Snapper',           state: 'US-FL', date: null, weight: null, length: null, notes: '' }
   ]
 };
