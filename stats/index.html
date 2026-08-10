@@ -37,6 +37,7 @@
         <li><a href="#baseball">Baseball</a></li>
         <li><a href="#travels">Travels</a></li>
         <li><a href="#turkey">Turkey Hunting</a></li>
+        <li><a href="#fishing">Fishing</a></li>
         <li><a href="#national-parks">National Parks</a></li>
         <li><a href="#disney">Disney</a></li>
       </ul>
@@ -71,7 +72,7 @@
         <span class="hero-label">National Parks (Family)</span>
       </div>
 
-      <div class="hero-card" style="--a: #1F8FE5">
+      <div class="hero-card" style="--a: #E0609C">
         <div class="hero-num"><span id="h-countries">—</span></div>
         <div class="hero-sub" id="h-countries-sub"></div>
         <span class="hero-label">Countries (Family)</span>
@@ -306,6 +307,33 @@
 
     </div><!-- /turkey-grid -->
 
+    <!-- ---- Fishing ---- -->
+    <h2 class="stat-head" id="fishing" style="--sh-color: #1C7C9C">Fishing</h2>
+
+    <div class="bb-grid" style="grid-template-columns: repeat(4, 1fr)">
+
+      <div class="bb-stat" style="--a: #1C7C9C">
+        <div class="bb-num"><span id="fish-species">—</span></div>
+        <span class="bb-label">Species Caught</span>
+      </div>
+
+      <div class="bb-stat" style="--a: #1C7C9C">
+        <div class="bb-num"><span id="fish-catches">—</span></div>
+        <span class="bb-label">Total Catches</span>
+      </div>
+
+      <div class="bb-stat" style="--a: #2E8B76">
+        <div class="bb-num"><span id="fish-species-fresh">—</span></div>
+        <span class="bb-label">Freshwater Species</span>
+      </div>
+
+      <div class="bb-stat" style="--a: #145C82">
+        <div class="bb-num"><span id="fish-species-salt">—</span></div>
+        <span class="bb-label">Saltwater Species</span>
+      </div>
+
+    </div>
+
     <!-- ---- National Parks ---- -->
     <h2 class="stat-head" id="national-parks" style="--sh-color: #C99A6A">National Parks</h2>
 
@@ -329,21 +357,21 @@
     </div>
 
     <!-- ---- Disney ---- -->
-    <h2 class="stat-head" id="disney" style="--sh-color: #1F8FE5">Disney Parks</h2>
+    <h2 class="stat-head" id="disney" style="--sh-color: #E0609C">Disney Parks</h2>
 
     <div class="bb-grid" style="grid-template-columns: repeat(3, 1fr)">
 
-      <div class="bb-stat" style="--a: #1F8FE5">
+      <div class="bb-stat" style="--a: #E0609C">
         <div class="bb-num"><span id="dis-family">—</span><span class="bb-denom">/12</span></div>
         <span class="bb-label">Parks Visited (Family)</span>
       </div>
 
-      <div class="bb-stat" style="--a: #1F8FE5">
+      <div class="bb-stat" style="--a: #E0609C">
         <div class="bb-num"><span id="dis-remaining">—</span></div>
         <span class="bb-label">Still to Visit</span>
       </div>
 
-      <div class="bb-stat" style="--a: #1F8FE5">
+      <div class="bb-stat" style="--a: #E0609C">
         <div class="bb-num"><span id="dis-max-num">—</span></div>
         <span class="bb-label">Most Visited (<span id="dis-max-name">—</span>)</span>
       </div>
@@ -381,6 +409,7 @@
   <script src="../disney/data/disney-visited-ellie.js"></script>
   <script src="../disney/data/disney-visited-tilly.js"></script>
   <script src="../disney/data/disney-visited-poppy.js"></script>
+  <script src="../fishing/data/fish-caught.js"></script>
 
   <script>
     (function () {
@@ -535,6 +564,18 @@
       var mostDisney = mostVisited(people, countVisited, 'disney');
       set('dis-max-num',  mostDisney.count);
       set('dis-max-name', mostDisney.names);
+
+      // --- Fishing ---
+      function distinctCount(records, key) {
+        var seen = {};
+        records.forEach(function (r) { seen[r[key]] = true; });
+        return Object.keys(seen).length;
+      }
+      var allFish = fishCaught.freshwater.concat(fishCaught.saltwater);
+      set('fish-species', distinctCount(allFish, 'species'));
+      set('fish-catches', allFish.length);
+      set('fish-species-fresh', distinctCount(fishCaught.freshwater, 'species'));
+      set('fish-species-salt', distinctCount(fishCaught.saltwater, 'species'));
 
       // --- Turkey Hunting ---
       var turkeyPeople = [

@@ -295,17 +295,18 @@
     return hasAny ? html : '';
   }
 
-  // ---- Build bucket list — parks Josh & Sam haven't both visited --
-  function buildBucketListHTML() {
-    var josh = getPersonData('josh').visited;
-    var sam  = getPersonData('sam').visited;
+  // ---- Build bucket list — parks not yet visited by the whole family --
+  function notVisitedByWholeFamily(p) {
+    return !PEOPLE.every(function (person) {
+      return getPersonData(person.id).visited[p.id];
+    });
+  }
 
+  function buildBucketListHTML() {
     var html = '<div class="visit-list open">';
     var hasAny = false;
     DISNEY_RESORTS.forEach(function (resort) {
-      var bucket = resort.parks.filter(function (p) {
-        return !(josh[p.id] && sam[p.id]);
-      });
+      var bucket = resort.parks.filter(notVisitedByWholeFamily);
       if (bucket.length === 0) return;
       hasAny = true;
       html += '<div class="region-group">';
@@ -321,12 +322,8 @@
   }
 
   function countBucketList() {
-    var josh = getPersonData('josh').visited;
-    var sam  = getPersonData('sam').visited;
     return DISNEY_RESORTS.reduce(function (total, resort) {
-      return total + resort.parks.filter(function (p) {
-        return !(josh[p.id] && sam[p.id]);
-      }).length;
+      return total + resort.parks.filter(notVisitedByWholeFamily).length;
     }, 0);
   }
 

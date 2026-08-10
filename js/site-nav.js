@@ -22,12 +22,12 @@
     { key: 'baseball',      label: 'Baseball',      path: 'baseball/index.html',     color: '#F07070' },
     { key: 'travels',       label: 'Travels',       path: 'travels/index.html',      color: '#E8A020' },
     { key: 'turkey-hunting', label: 'Turkey Hunting', path: 'turkey-hunting/index.html', color: '#57BD83' },
+    { key: 'fishing',       label: 'Fishing',        path: 'fishing/index.html',      color: '#1C7C9C' },
     { key: 'national-parks', label: 'National Parks', path: 'national-parks/index.html', color: '#C99A6A' },
-    { key: 'disney',        label: 'Disney',        path: 'disney/index.html',       color: '#1F8FE5' },
-    { key: 'stats',         label: 'By the Numbers', path: 'stats/index.html',        color: '#8B7EC8' },
+    { key: 'disney',        label: 'Disney',        path: 'disney/index.html',       color: '#E0609C' },
+    { key: 'stats',         label: 'By the Numbers', path: 'stats/index.html',        color: '#8B7EC8', hidden: true },
     { key: 'run',           label: 'Running',        path: 'run/index.html',          color: '#00AC4B', hidden: true },
-    { key: 'trapping',      label: 'Trapping',       path: 'trapping/index.html',     color: '#8C5A3B', hidden: true },
-    { key: 'fishing',       label: 'Fishing',        path: 'fishing/index.html',      color: '#1C7C9C', hidden: true }
+    { key: 'trapping',      label: 'Trapping',       path: 'trapping/index.html',     color: '#8C5A3B', hidden: true }
   ];
 
   // Current section = the folder name in the path (e.g. "disney").
@@ -148,7 +148,7 @@
       svg.setAttribute('class', 'site-end-ring');
       svg.setAttribute('viewBox', '0 0 1200 500');
       svg.setAttribute('preserveAspectRatio', 'xMidYMax slice');
-      var clrs = ['#F07070','#E8A020','#57BD83','#C99A6A','#1F8FE5','#8B7EC8'];
+      var clrs = ['#F07070','#E8A020','#57BD83','#C99A6A','#E0609C','#1C7C9C'];
       for (var ci = 0; ci < 9; ci++) {
         var c = document.createElementNS(ns, 'circle');
         c.setAttribute('cx', (Math.random() * 1400 - 100).toFixed(0));

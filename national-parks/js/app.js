@@ -314,17 +314,18 @@
     return hasAny ? html : '';
   }
 
-  // ---- Build bucket list — parks Josh & Sam haven't both visited --
-  function buildBucketListHTML() {
-    var josh = getPersonData('josh').visited;
-    var sam  = getPersonData('sam').visited;
+  // ---- Build bucket list — parks not yet visited by the whole family --
+  function notVisitedByWholeFamily(p) {
+    return !PEOPLE.every(function (person) {
+      return getPersonData(person.id).visited[p.id];
+    });
+  }
 
+  function buildBucketListHTML() {
     var html = '<div class="visit-list open">';
     var hasAny = false;
     PARKS_REGIONS.forEach(function (regionObj) {
-      var bucket = regionObj.parks.filter(function (p) {
-        return !(josh[p.id] && sam[p.id]);
-      });
+      var bucket = regionObj.parks.filter(notVisitedByWholeFamily);
       if (bucket.length === 0) return;
       hasAny = true;
       html += '<div class="region-group">';
@@ -340,12 +341,8 @@
   }
 
   function countBucketList() {
-    var josh = getPersonData('josh').visited;
-    var sam  = getPersonData('sam').visited;
     return PARKS_REGIONS.reduce(function (total, regionObj) {
-      return total + regionObj.parks.filter(function (p) {
-        return !(josh[p.id] && sam[p.id]);
-      }).length;
+      return total + regionObj.parks.filter(notVisitedByWholeFamily).length;
     }, 0);
   }
 

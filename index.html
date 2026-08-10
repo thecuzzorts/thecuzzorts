@@ -51,11 +51,11 @@
           #1a2e3b calc(33.33% - 2px),              #1a2e3b calc(33.33% + 2px),
           #57BD83 calc(33.33% + 2px),              #57BD83 calc(50% - 2px),
           #1a2e3b calc(50% - 2px),                 #1a2e3b calc(50% + 2px),
-          #C99A6A calc(50% + 2px),                 #C99A6A calc(66.66% - 2px),
+          #1C7C9C calc(50% + 2px),                 #1C7C9C calc(66.66% - 2px),
           #1a2e3b calc(66.66% - 2px),              #1a2e3b calc(66.66% + 2px),
-          #1F8FE5 calc(66.66% + 2px),              #1F8FE5 calc(83.33% - 2px),
+          #C99A6A calc(66.66% + 2px),              #C99A6A calc(83.33% - 2px),
           #1a2e3b calc(83.33% - 2px),              #1a2e3b calc(83.33% + 2px),
-          #8B7EC8 calc(83.33% + 2px),              #8B7EC8 100%
+          #E0609C calc(83.33% + 2px),              #E0609C 100%
         ) top / 100% 4px no-repeat,
         #1a2e3b;
     }
@@ -288,8 +288,8 @@
     .card-travels  { --accent: #E8A020; }
     .card-turkeys  { --accent: #57BD83; }
     .card-parks    { --accent: #C99A6A; }
-    .card-disney   { --accent: #1F8FE5; }
-    .card-stats    { --accent: #8B7EC8; }
+    .card-disney   { --accent: #E0609C; }
+    .card-fishing  { --accent: #1C7C9C; }
 
     /* Large emblem as a faint same-colour watermark, fully inside the card */
     .card-icon {
@@ -412,6 +412,19 @@
       align-self: stretch;
       flex-shrink: 0;
     }
+
+    .quick-stats-more {
+      display: block;
+      text-align: center;
+      margin-top: 0.6rem;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #8B7EC8;
+    }
+    .quick-stats-more:hover { text-decoration: underline; }
 
     /* ---- Coming Up ------------------------------------ */
     .coming-up {
@@ -614,9 +627,9 @@
         <h1>The Cuzzorts</h1>
         <p class="intro">
           We're a family that runs toward adventure — chasing down ballparks,
-          exploring new states and countries, hunting turkeys, working our way
-          through the national parks, and making magic at Disney parks around
-          the world. This is where we keep track of it all.
+          exploring new states and countries, hunting turkeys, catching fish,
+          working our way through the national parks, and making magic at Disney 
+          parks around the world. This is where we keep track of it all.
         </p>
       </div>
       <div class="hero-photo-wrap">
@@ -647,28 +660,28 @@
             <text class="ring-label" x="130" y="130">Turkey Hunting</text>
           </g>
 
-          <!-- National Parks: 180°–240° -->
-          <g class="ring-slice" style="--clr:#C99A6A" onclick="location.href='national-parks/index.html'">
+          <!-- Fishing: 180°–240° -->
+          <g class="ring-slice" style="--clr:#1C7C9C" onclick="location.href='fishing/index.html'">
             <path class="ring-hit" d="M 130,130 L 130,260 A 130,130 0 0,1 17.4,195 Z"/>
             <path class="ring-arc" d="M 130,260 A 130,130 0 0,1 17.4,195 L 27.8,189 A 118,118 0 0,0 130,248 Z"/>
+            <circle class="ring-overlay" cx="130" cy="130" r="108" fill="#1C7C9C"/>
+            <text class="ring-label" x="130" y="130">Fishing</text>
+          </g>
+
+          <!-- National Parks: 240°–300° -->
+          <g class="ring-slice" style="--clr:#C99A6A" onclick="location.href='national-parks/index.html'">
+            <path class="ring-hit" d="M 130,130 L 17.4,195 A 130,130 0 0,1 17.4,65 Z"/>
+            <path class="ring-arc" d="M 17.4,195 A 130,130 0 0,1 17.4,65 L 27.8,71 A 118,118 0 0,0 27.8,189 Z"/>
             <circle class="ring-overlay" cx="130" cy="130" r="108" fill="#C99A6A"/>
             <text class="ring-label" x="130" y="130">National Parks</text>
           </g>
 
-          <!-- Disney Parks: 240°–300° -->
-          <g class="ring-slice" style="--clr:#1F8FE5" onclick="location.href='disney/index.html'">
-            <path class="ring-hit" d="M 130,130 L 17.4,195 A 130,130 0 0,1 17.4,65 Z"/>
-            <path class="ring-arc" d="M 17.4,195 A 130,130 0 0,1 17.4,65 L 27.8,71 A 118,118 0 0,0 27.8,189 Z"/>
-            <circle class="ring-overlay" cx="130" cy="130" r="108" fill="#1F8FE5"/>
-            <text class="ring-label" x="130" y="130">Disney Parks</text>
-          </g>
-
-          <!-- By the Numbers: 300°–360° -->
-          <g class="ring-slice" style="--clr:#8B7EC8" onclick="location.href='stats/index.html'">
+          <!-- Disney Parks: 300°–360° -->
+          <g class="ring-slice" style="--clr:#E0609C" onclick="location.href='disney/index.html'">
             <path class="ring-hit" d="M 130,130 L 17.4,65 A 130,130 0 0,1 130,0 Z"/>
             <path class="ring-arc" d="M 17.4,65 A 130,130 0 0,1 130,0 L 130,12 A 118,118 0 0,0 27.8,71 Z"/>
-            <circle class="ring-overlay" cx="130" cy="130" r="108" fill="#8B7EC8"/>
-            <text class="ring-label" x="130" y="130">By the Numbers</text>
+            <circle class="ring-overlay" cx="130" cy="130" r="108" fill="#E0609C"/>
+            <text class="ring-label" x="130" y="130">Disney Parks</text>
           </g>
 
         </svg>
@@ -766,6 +779,19 @@
         <span class="card-cta"><span class="card-cta-label">View</span><span class="card-cta-arrow" aria-hidden="true">&rarr;</span></span>
       </a>
 
+      <a class="card card-fishing" href="fishing/index.html">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M2 12c3-4 8-6 13-6 3 0 6 2 7 6-1 4-4 6-7 6-5 0-10-2-13-6z"/>
+            <path d="M22 12l-4-3v6l4-3z"/>
+            <circle cx="7" cy="10.5" r="0.9"/>
+          </svg>
+        </div>
+        <h2>Fishing</h2>
+        <p>Every species caught, freshwater and saltwater alike</p>
+        <span class="card-cta"><span class="card-cta-label">View</span><span class="card-cta-arrow" aria-hidden="true">&rarr;</span></span>
+      </a>
+
       <a class="card card-parks" href="national-parks/index.html">
         <div class="card-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -801,20 +827,6 @@
         <span class="card-cta"><span class="card-cta-label">View</span><span class="card-cta-arrow" aria-hidden="true">&rarr;</span></span>
       </a>
 
-      <a class="card card-stats" href="stats/index.html">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <line x1="3" y1="20" x2="21" y2="20"/>
-            <rect x="4" y="13" width="3.5" height="7"/>
-            <rect x="10.25" y="8" width="3.5" height="12"/>
-            <rect x="16.5" y="4" width="3.5" height="16"/>
-          </svg>
-        </div>
-        <h2>By the Numbers</h2>
-        <p>Stats, milestones &amp; totals across all of our adventures</p>
-        <span class="card-cta"><span class="card-cta-label">View</span><span class="card-cta-arrow" aria-hidden="true">&rarr;</span></span>
-      </a>
-
     </div>
 
     <!-- Quick stats -->
@@ -839,16 +851,23 @@
         <span class="qs-label">States Harvested</span>
       </div>
       <div class="qs-divider"></div>
+      <div class="qs-item" style="--accent: #1C7C9C">
+        <span class="qs-num" id="qs-fishing">—</span>
+        <span class="qs-label">Fish Species</span>
+      </div>
+      <div class="qs-divider"></div>
       <div class="qs-item" style="--accent: #C99A6A">
         <span class="qs-num" id="qs-parks">—</span>
         <span class="qs-label">National Parks</span>
       </div>
       <div class="qs-divider"></div>
-      <div class="qs-item" style="--accent: #1F8FE5">
+      <div class="qs-item" style="--accent: #E0609C">
         <span class="qs-num" id="qs-disney">—</span>
         <span class="qs-label">Disney Parks</span>
       </div>
     </div>
+
+    <a class="quick-stats-more" href="stats/index.html">View full stats &rarr;</a>
 
     <!-- Coming Up -->
     <a class="coming-up" href="baseball/index.html#banana">
@@ -906,8 +925,8 @@
 
         <li class="activity-item">
           <time class="af-date">Jun 2025</time>
-          <span class="af-dot" style="background: #1F8FE5"></span>
-          <span class="af-text">Josh &amp; Sam &middot; Disneyland (first visit) <em class="af-tag" style="color: #1F8FE5">Disney</em></span>
+          <span class="af-dot" style="background: #E0609C"></span>
+          <span class="af-text">Josh &amp; Sam &middot; Disneyland (first visit) <em class="af-tag" style="color: #E0609C">Disney</em></span>
         </li>
 
         <li class="activity-item">
@@ -973,6 +992,7 @@
   <script src="disney/data/disney-visited-ellie.js"></script>
   <script src="disney/data/disney-visited-tilly.js"></script>
   <script src="disney/data/disney-visited-poppy.js"></script>
+  <script src="fishing/data/fish-caught.js"></script>
 
   <script>
     (function () {
@@ -1028,6 +1048,13 @@
         [disneyVisitedJosh, disneyVisitedSam, disneyVisitedEllie, disneyVisitedTilly, disneyVisitedPoppy],
         function (k, v) { return v === 1; }
       ));
+
+      function distinctCount(records, key) {
+        var seen = {};
+        records.forEach(function (r) { seen[r[key]] = true; });
+        return Object.keys(seen).length;
+      }
+      set('qs-fishing', distinctCount(fishCaught.freshwater.concat(fishCaught.saltwater), 'species'));
     }());
   </script>
 

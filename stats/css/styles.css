@@ -31,8 +31,8 @@
 }
 
 body {
-  --section: #6B5EA8;
-  --section-on-dark: #8B7EC8;
+  --section: #1C7C9C;
+  --section-on-dark: #5FB8D6;
   font-family: 'Roboto Condensed', sans-serif;
   background: var(--bg, #f0f2f5);
   color: var(--text, #333);
