@@ -889,6 +889,17 @@ h2.section-group.sec-reveal.in-view { opacity: 1; transform: none; }
   line-height: 1.5;
 }
 
+.mlbg-callout {
+  border-top: 5px solid #C8102E !important;
+  margin-top: 1.25rem;
+}
+.mlbg-callout-link {
+  font-weight: 700;
+  color: #C8102E;
+  white-space: nowrap;
+}
+.mlbg-callout-link:hover { text-decoration: underline; }
+
 .tl-scroller {
   overflow-x: auto;
   overflow-y: visible;

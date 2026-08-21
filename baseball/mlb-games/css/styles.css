@@ -1,0 +1,704 @@
+/* ============================================================
+   MLB Games (baseball/mlb-games) styles.
+   Nested under /baseball -- reuses baseball's own signature accent
+   (#C8102E / #F07070) rather than introducing a new hue, since this
+   page is baseball-family content, only ever linked from within the
+   baseball page itself. Loaded after site-chrome.css; every color
+   below consumes site-chrome's shared tokens via var(--token, fallback)
+   so dark mode works for free, matching every other section.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  --section: #C8102E;
+  --section-on-dark: #F07070;
+  font-family: 'Roboto Condensed', sans-serif;
+  background: var(--bg, #f0f2f5);
+  color: var(--text, #222);
+  margin: 0;
+}
+
+/* Set by initStickyFilterOffset() in js/app.js -- reserves enough space
+   above each section for the two stacked sticky elements (site header +
+   person-filter bar) so in-page nav links don't land a section's heading
+   hidden behind them. */
+.section-panel { scroll-margin-top: var(--mlbg-scroll-offset, 7rem); }
+
+.mlbg-subhead {
+  font-family: 'Kreon', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text, #1a2e3b);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 1.5rem 0 0.75rem;
+}
+
+/* ---- Overview stat tiles (mirrors stats/index.html's .bb-grid/.bb-stat) ---- */
+.mlbg-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mlbg-stat-grid--headline .bb-num { font-size: 2.1rem; }
+
+.bb-stat {
+  background: var(--surface, #fff);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px var(--shadow, rgba(0,0,0,0.07));
+  padding: 1.1rem 0.9rem;
+  text-align: center;
+  border-top: 4px solid var(--section, #C8102E);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bb-num {
+  font-family: 'Kreon', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--section, #C8102E);
+  line-height: 1;
+}
+
+.bb-denom { font-size: 0.9rem; opacity: 0.45; }
+
+.bb-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted, #8a9aaa);
+  margin-top: 0.45rem;
+  display: block;
+}
+
+/* Which game(s) a stat like "Longest Game" or "Most Innings" refers to --
+   always visible (not hover-only) so it works on touch devices too.
+   Scrollable rather than letting the tile grow unbounded, since a stat
+   like extra-inning games can list several. */
+.bb-stat.has-detail { padding-bottom: 0.85rem; }
+.bb-stat-detail {
+  margin-top: 0.5rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--border, #e3e7eb);
+  width: 100%;
+  font-size: 0.66rem;
+  line-height: 1.55;
+  color: var(--text-muted, #8a9aaa);
+}
+/* No internal scrollbar -- past a few entries, statDetailHTML() hides the
+   rest behind this toggle instead, which expands the card to full height
+   (see initStatDetailToggle) rather than cramming a scroll region into a
+   small tile. */
+.bb-stat-detail-toggle {
+  display: block;
+  margin-top: 0.3rem;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: var(--section, #C8102E);
+  cursor: pointer;
+  text-decoration: underline;
+}
+.bb-stat-detail-more { margin-top: 0.2rem; }
+
+@media (max-width: 900px) {
+  .mlbg-stat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---- Per-person attendance row ---- */
+.mlbg-person-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.mlbg-person-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #e3e7eb);
+  border-radius: 99px;
+  padding: 0.35rem 0.8rem 0.35rem 0.6rem;
+  font-size: 0.82rem;
+}
+
+.mlbg-person-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--person);
+  flex-shrink: 0;
+}
+
+.mlbg-person-name { font-weight: 700; color: var(--text, #222); }
+.mlbg-person-count { color: var(--text-muted, #8a9aaa); }
+
+/* ---- Games Per Year chart ---- */
+.mlbg-year-chart-wrap { position: relative; }
+
+.mlbg-year-chart {
+  background: var(--surface, #fff);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px var(--shadow, rgba(0,0,0,0.07));
+  padding: 1rem;
+  position: relative;
+}
+
+.mlbg-year-svg { width: 100%; height: auto; display: block; }
+
+.mlbg-year-bar { fill: var(--section, #C8102E); opacity: 0.75; transition: opacity 0.15s; }
+.mlbg-year-bar-group:hover .mlbg-year-bar { opacity: 1; }
+
+.mlbg-year-axis {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 8px;
+  fill: var(--text-muted, #8a9aaa);
+  text-anchor: middle;
+}
+
+.mlbg-year-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: #1a2e3b;
+  color: #fff;
+  font-size: 0.78rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.12s, transform 0.12s;
+  white-space: nowrap;
+  z-index: 2;
+}
+.mlbg-year-tooltip.is-visible { opacity: 1; transform: translateY(0); }
+
+/* ---- Journey map ---- */
+.mlbg-journey-card {
+  background: var(--surface, #fff);
+  border-radius: 10px;
+  box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.08));
+  border-top: 5px solid var(--section, #C8102E);
+  overflow: hidden;
+}
+
+.mlbg-journey-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--border, #e3e7eb);
+}
+
+.mlbg-journey-btn {
+  font-family: 'Kreon', serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.35rem 0.9rem;
+  border-radius: 99px;
+  border: 2px solid var(--section, #C8102E);
+  background: transparent;
+  color: var(--section, #C8102E);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.mlbg-journey-btn:hover { background: rgba(200,16,46,0.1); }
+#mlbgPlayBtn { background: var(--section, #C8102E); color: #fff; }
+#mlbgPlayBtn:hover { opacity: 0.9; background: var(--section, #C8102E); }
+
+.mlbg-journey-field {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--text-muted, #8a9aaa);
+}
+.mlbg-journey-field select {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 0.82rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--border, #ccc);
+  background: var(--surface, #fff);
+  color: var(--text, #222);
+}
+
+.mlbg-journey-map-wrap { width: 100%; position: relative; }
+#mlbgJourneyMap { height: 380px; }
+
+/* Big, obvious invitation to hit Play, layered over the map itself --
+   the small pill button up in the controls bar is easy to miss on first
+   glance. Shown only in the "not started" state (idx === -1, including
+   right after Reset) via .is-shown; see stepTo()/resetToHome(). */
+.mlbg-journey-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.85);
+  z-index: 690; /* above the ball (650) and team markers, below the year badge (700) */
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(26, 46, 59, 0.72);
+  color: #fff;
+  font-size: 1.7rem;
+  line-height: 72px;
+  text-align: center;
+  padding-left: 6px; /* optically center the triangle glyph */
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, background 0.15s ease;
+}
+.mlbg-journey-play-overlay.is-shown { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }
+.mlbg-journey-play-overlay:hover { background: var(--section, #C8102E); }
+
+@media (max-width: 640px) {
+  .mlbg-journey-play-overlay { width: 56px; height: 56px; font-size: 1.3rem; line-height: 56px; }
+}
+
+.mlbg-journey-year {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 700; /* above the ball (650) and Leaflet's own panes */
+  background: rgba(200, 16, 46, 0.88);
+  color: #fff;
+  font-family: 'Kreon', serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.03em;
+  padding: 0.25em 0.7em;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0; /* hidden until the journey actually starts -- see .is-shown */
+  transition: transform 0.25s ease, opacity 0.25s ease, background 0.25s ease;
+}
+.mlbg-journey-year.is-shown { opacity: 1; }
+.mlbg-journey-year.is-shown.is-changing { transform: translateY(-6px) scale(1.08); opacity: 0.7; }
+/* Alternates every year change, on top of the pulse, for a clearer beat
+   than the zoom/fade alone. */
+.mlbg-journey-year.is-red  { background: rgba(200, 16, 46, 0.88); }
+.mlbg-journey-year.is-blue { background: rgba(0, 48, 135, 0.88); }
+
+/* Static ballpark markers on the map are deliberately small plain dots,
+   not team logos -- at this zoom level, parks that sit close together
+   (DC/Philly/NY, or St. Louis/Cincinnati/Pittsburgh) overlap badly as
+   30px logo icons and become unreadable. The full-color "collection" view
+   lives in the .mlbg-team-grid below the map instead, where a fixed grid
+   layout makes overlap impossible; clicking a map dot still pops up which
+   team/park it is. */
+.mlbg-team-marker-icon { background: none !important; border: none !important; }
+.mlbg-team-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #aab4bd;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.15);
+  transition: background 0.3s;
+}
+.mlbg-team-marker-icon.is-visited .mlbg-team-dot { background: var(--section, #C8102E); }
+
+/* Team collection grid -- one chip per ballpark, grayed out until the
+   journey reaches it for the first time (kept in sync with the map dots
+   and the animated ball, all driven off the same playback index). */
+/* .mlbg-subhead/.mlbg-team-grid sit directly in .mlbg-journey-card, which
+   (unlike .mlbg-journey-controls/.mlbg-journey-caption) has no padding of
+   its own -- add it here rather than on .mlbg-subhead globally, since
+   that class is also used inside panels that already have their own
+   padding (Overview, Players) and would end up double-padded. */
+.mlbg-journey-card .mlbg-subhead { padding: 0 1.25rem; }
+.mlbg-journey-card .mlbg-team-grid { padding: 0 1.25rem 1.1rem; }
+
+.mlbg-team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.mlbg-team-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--chip-bg, #edf2f7);
+  border: 1px solid var(--chip-border, #d7dee4);
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+}
+.mlbg-team-chip .team-logo {
+  flex-shrink: 0;
+  filter: grayscale(1);
+  opacity: 0.4;
+  transition: filter 0.4s, opacity 0.4s;
+}
+.mlbg-team-chip.is-visited .team-logo { filter: none; opacity: 1; }
+.mlbg-team-chip-count {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted, #8a9aaa);
+  min-width: 1.1em;
+  text-align: right;
+}
+.mlbg-team-chip.is-visited .mlbg-team-chip-count { color: var(--section, #C8102E); }
+
+.team-logo { background: url("../../../images/logos.png") no-repeat; width: 30px; height: 24px; display: inline-block; }
+.angels        { background-position: 0 0; }
+.diamondbacks  { background-position: 0 -55px; }
+.braves        { background-position: 0 -111px; }
+.orioles       { background-position: 0 -165px; }
+.redsox        { background-position: 0 -220px; }
+.cubs          { background-position: 0 -275px; }
+.reds          { background-position: 0 -330px; }
+.indians       { background-position: 0 -385px; }
+.rockies       { background-position: 0 -440px; }
+.whitesox      { background-position: 0 -495px; }
+.tigers        { background-position: 0 -550px; }
+.marlins       { background-position: 0 -606px; }
+.astros        { background-position: 0 -660px; }
+.royals        { background-position: 0 -715px; }
+.dodgers       { background-position: 0 -771px; }
+.brewers       { background-position: 0 -825px; }
+.twins         { background-position: 0 -880px; }
+.mets          { background-position: 0 -935px; }
+.yankees       { background-position: 0 -990px; }
+.athletics     { background-position: 0 -1045px; }
+.phillies      { background-position: 0 -1100px; }
+.pirates       { background-position: 0 -1155px; }
+.padres        { background-position: 0 -1210px; }
+.mariners      { background-position: 0 -1266px; }
+.giants        { background-position: 0 -1320px; }
+.cardinals     { background-position: 0 -1375px; }
+.rays          { background-position: 0 -1430px; }
+.rangers       { background-position: 0 -1486px; }
+.bluejays      { background-position: 0 -1540px; }
+.nationals     { background-position: 0 -1596px; }
+
+.mlbg-journey-ball {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 26px;
+  height: 26px;
+  margin-left: -13px;
+  margin-top: -13px;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  pointer-events: none;
+  z-index: 650; /* above Leaflet's tile/overlay panes, below its popup pane */
+  will-change: transform;
+}
+
+.mlbg-journey-caption {
+  padding: 0.85rem 1.25rem;
+  border-top: 1px solid var(--border, #e3e7eb);
+  background: var(--chip-bg, #f8f9fb);
+  font-size: 0.85rem;
+  color: var(--text, #222);
+  line-height: 1.5;
+}
+.mlbg-journey-progress strong { color: var(--section, #C8102E); }
+.mlbg-journey-venue { color: var(--text-muted, #8a9aaa); }
+.mlbg-journey-count {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted, #8a9aaa);
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 640px) {
+  #mlbgJourneyMap { height: 280px; }
+  .mlbg-journey-controls { gap: 0.5rem; padding: 0.7rem 1rem; }
+  .mlbg-journey-year { font-size: 1.1rem; padding: 0.2em 0.55em; bottom: 8px; left: 8px; }
+}
+
+/* ---- Person filter -- drives Journey/Overview/Games together ---- */
+.mlbg-person-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 0 1.5rem;
+  position: sticky;
+  /* Set by initStickyFilterOffset() in js/app.js -- the shared site
+     header's height isn't constant (its nav wraps at narrower widths),
+     so this can't be a fixed value; the 0px fallback just avoids a jump
+     before JS runs on first paint. */
+  top: var(--mlbg-filter-top, 0px);
+  z-index: 500; /* below the site header's 2000, above map/content */
+  background: var(--bg, #f0f2f5);
+  padding: 0.6rem 0;
+}
+.mlbg-person-filter-btn {
+  font-family: 'Kreon', serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.35rem 1rem;
+  border-radius: 99px;
+  border: 2px solid var(--person, var(--section, #C8102E));
+  background: transparent;
+  color: var(--person, var(--section, #C8102E));
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, opacity 0.15s;
+}
+.mlbg-person-filter-btn.active {
+  background: var(--person, var(--section, #C8102E));
+  color: #fff;
+}
+.mlbg-person-filter-btn:not(.active):hover { opacity: 0.65; }
+
+/* ---- Sort toggle (mirrors run's .race-sort-toggle) ---- */
+.mlbg-sort-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.mlbg-sort-btn {
+  font-family: 'Kreon', serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.3rem 0.9rem;
+  border-radius: 99px;
+  border: 2px solid rgba(200,16,46,0.4);
+  background: transparent;
+  color: var(--section, #C8102E);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.mlbg-sort-btn.active { background: var(--section, #C8102E); color: #fff; border-color: var(--section, #C8102E); }
+.mlbg-sort-btn:not(.active):hover { background: rgba(200,16,46,0.1); }
+
+.mlbg-games-list { transition: opacity 0.2s; }
+.mlbg-games-list.is-sorting { opacity: 0.3; }
+
+/* Collapsed by default (see index.html's `hidden` attribute) -- with 104+
+   games this section otherwise runs on long enough that Players below it
+   gets lost off-screen. Mirrors the "Show list / Hide list" pattern
+   already used for collapsible chip lists elsewhere on the site. */
+/* Each year's games are collapsed behind their own toggle -- with 100+
+   games across 17 years, this keeps the page short by default (Players
+   below stays reachable) while still letting a visitor jump straight to
+   one year instead of an all-or-nothing whole-list toggle. */
+.mlbg-year-group { margin-bottom: 0.6rem; }
+.mlbg-year-toggle {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 0.6rem;
+  padding: 0.6rem 0.9rem;
+  background: var(--surface, #fff);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px var(--shadow, rgba(0,0,0,0.06));
+  cursor: pointer;
+  text-align: left;
+}
+.mlbg-year-toggle-label {
+  font-family: 'Kreon', serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--section, #C8102E);
+}
+.mlbg-year-toggle-count {
+  flex: 1 1 auto;
+  font-size: 0.78rem;
+  color: var(--text-muted, #8a9aaa);
+}
+.mlbg-year-toggle-icon {
+  color: var(--text-muted, #8a9aaa);
+  transition: transform 0.15s;
+}
+.mlbg-year-toggle.is-open .mlbg-year-toggle-icon { transform: rotate(180deg); }
+.mlbg-year-games { padding-top: 0.6rem; }
+
+/* ---- Game cards ---- */
+.mlbg-game-card {
+  background: var(--surface, #fff);
+  border-radius: 8px;
+  box-shadow: 0 1px 6px var(--shadow, rgba(0,0,0,0.06));
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.6rem;
+  cursor: pointer;
+}
+
+.mlbg-game-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.mlbg-game-date {
+  font-family: 'Kreon', serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--section, #C8102E);
+  white-space: nowrap;
+  min-width: 9.5rem;
+}
+
+.mlbg-game-matchup { flex: 1 1 auto; font-size: 0.9rem; color: var(--text, #222); }
+.mlbg-at { color: var(--text-muted, #8a9aaa); font-size: 0.78rem; }
+
+.mlbg-game-score {
+  font-family: 'Kreon', serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text, #222);
+  white-space: nowrap;
+}
+
+.mlbg-game-dots { display: flex; gap: 0.25rem; }
+.mlbg-attendee-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--person);
+  display: inline-block;
+}
+
+.mlbg-game-sub {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+  color: var(--text-muted, #8a9aaa);
+}
+.mlbg-game-venue { font-weight: 700; }
+.mlbg-game-notes { font-style: italic; }
+
+.mlbg-badge {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15em 0.5em;
+  border-radius: 10px;
+}
+.mlbg-badge--postseason { background: var(--section, #C8102E); color: #fff; }
+
+.mlbg-game-detail {
+  margin-top: 0.7rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--border, #e3e7eb);
+}
+
+.mlbg-caveats { margin-bottom: 0.5rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.mlbg-caveat {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted, #64748b);
+  background: var(--chip-bg, #edf2f7);
+  padding: 0.15em 0.55em;
+  border-radius: 10px;
+}
+
+.mlbg-detail-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-bottom: 0.6rem;
+}
+.mlbg-detail-fact { font-size: 0.8rem; }
+.mlbg-detail-fact span { display: block; color: var(--text-muted, #8a9aaa); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.mlbg-detail-fact strong { color: var(--text, #222); }
+
+.mlbg-decisions { display: flex; gap: 1.5rem; margin-bottom: 0.6rem; flex-wrap: wrap; }
+.mlbg-decision { font-size: 0.8rem; }
+.mlbg-decision span { color: var(--text-muted, #8a9aaa); margin-right: 0.35rem; }
+.mlbg-decision strong { color: var(--text, #222); }
+
+/* Linescore table -- copied from baseball/css/styles.css's Timeline rules
+   so the per-game box score reads identically to baseball's own. */
+.tl-linescore-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.tl-linescore {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 0.75rem;
+  border-collapse: collapse;
+  width: 100%;
+}
+.tl-linescore th,
+.tl-linescore td {
+  text-align: center;
+  padding: 0.2rem 0.45rem;
+  border: 1px solid var(--border, #e3e7eb);
+  color: var(--text-muted, #4a5568);
+}
+.tl-linescore thead th { background: var(--chip-bg, #edf2f7); font-weight: 700; color: var(--text, #1a2e3b); }
+.tl-ls-team { text-align: left !important; font-weight: 700; white-space: nowrap; min-width: 7rem; }
+.tl-ls-rhe { font-weight: 700; background: var(--chip-bg, #edf2f7) !important; }
+
+/* ---- Players leaderboard ---- */
+.mlbg-leaderboard {
+  background: var(--surface, #fff);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px var(--shadow, rgba(0,0,0,0.07));
+  padding: 0.5rem 1.1rem;
+}
+
+.mlbg-leaderboard-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--border, #eef1f4);
+}
+.mlbg-leaderboard-row:last-child { border-bottom: none; }
+
+.mlbg-leaderboard-rank {
+  font-family: 'Kreon', serif;
+  font-weight: 700;
+  color: var(--text-muted, #b4bfc9);
+  width: 1.5rem;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.mlbg-leaderboard-main { flex: 1 1 auto; min-width: 0; }
+.mlbg-leaderboard-name { font-size: 0.85rem; color: var(--text, #222); margin-bottom: 0.25rem; }
+.mlbg-leaderboard-team { font-size: 0.7rem; color: var(--text-muted, #8a9aaa); }
+
+.mlbg-leaderboard-bar-wrap {
+  background: var(--chip-bg, #edf2f7);
+  border-radius: 4px;
+  height: 6px;
+  overflow: hidden;
+}
+.mlbg-leaderboard-bar { height: 100%; background: var(--section, #C8102E); border-radius: 4px; }
+
+.mlbg-leaderboard-count {
+  font-family: 'Kreon', serif;
+  font-weight: 700;
+  color: var(--section, #C8102E);
+  flex-shrink: 0;
+}
+
+.mlbg-empty { color: var(--text-muted, #8a9aaa); font-size: 0.85rem; padding: 1rem; text-align: center; }
+
+.mlbg-hof-summary {
+  font-size: 0.85rem;
+  color: var(--text-muted, #8a9aaa);
+  margin-bottom: 0.6rem;
+}
+.mlbg-hof-summary strong { color: var(--section, #C8102E); font-family: 'Kreon', serif; }
+.mlbg-hof-list { margin-bottom: 1.5rem; }

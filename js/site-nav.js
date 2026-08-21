@@ -27,7 +27,8 @@
     { key: 'disney',        label: 'Disney',        path: 'disney/index.html',       color: '#E0609C' },
     { key: 'stats',         label: 'By the Numbers', path: 'stats/index.html',        color: '#8B7EC8', hidden: true },
     { key: 'run',           label: 'Running',        path: 'run/index.html',          color: '#00AC4B', hidden: true },
-    { key: 'trapping',      label: 'Trapping',       path: 'trapping/index.html',     color: '#8C5A3B', hidden: true }
+    { key: 'trapping',      label: 'Trapping',       path: 'trapping/index.html',     color: '#8C5A3B', hidden: true },
+    { key: 'mlb-games',     label: 'MLB Games',      path: 'baseball/mlb-games/index.html', color: '#F07070', hidden: true }
   ];
 
   // Current section = the folder name in the path (e.g. "disney").
@@ -38,8 +39,10 @@
     currentKey = '';
   }
 
-  // prefix: '' on the homepage, '../' on any section page one level deep.
-  var prefix = currentKey === '' ? '' : '../';
+  // prefix: '' on the homepage, '../' one level deep, '../../' two levels
+  // deep (e.g. baseball/mlb-games/), etc. -- derived from actual path depth
+  // rather than hardcoded, so nested section pages resolve correctly too.
+  var prefix = parts.length ? new Array(parts.length + 1).join('../') : '';
   SECTIONS.forEach(function (s) { s.href = prefix + s.path; });
 
   // --- Desktop strip ---------------------------------------
