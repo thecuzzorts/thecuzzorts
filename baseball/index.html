@@ -66,16 +66,33 @@
       <div class="section-panel" id="story">
       <h2 class="section-group">Our Story</h2>
 
-      <div class="stats-banner">
-        <p class="bp-story">Our baseball story goes back to 2009. We made a trip to Busch Stadium that summer, and as Braves fans, we also road-tripped to Atlanta to catch an entire series. At the time, we weren't trying to visit every ballpark. We just liked baseball and liked taking baseball trips together.</p>
-        <div class="bp-story-more">
-          <p class="bp-story">Things really got rolling in 2012 when Josh gave Sam a baseball trip for their first anniversary gift. We went to a Brewers game and a Cubs game on the same trip, and somewhere along the way we started talking about how many ballparks we could knock off if we kept doing this every year.</p>
-          <p class="bp-story">Before long, Ellie, Tilly, and Poppy were coming along too. Somewhere along the way, baseball stopped being something we watched and became something we did as a family. We started planning vacations around games, keeping track of parks we'd visited, and looking for excuses to squeeze another stadium into a trip.</p>
-          <p class="bp-story">In June 2025, we finished all 30 active Major League ballparks. That's a pretty cool accomplishment, but it's only part of the story. Along the way we saw parks that no longer exist, added minor league and independent league stadiums to the list, got hooked on Banana Ball, and made enough baseball trips that we're usually talking about the next one before the current one is over.</p>
-          <p class="bp-story">This site is where we keep track of all of it. The parks, the teams, the games, the photos, and the memories. The list keeps growing, and honestly, we hope it always does.</p>
+      <div class="story-cards-row">
+        <div class="stats-banner">
+          <p class="bp-story">Our baseball story goes back to 2009. We made a trip to Busch Stadium that summer, and as Braves fans, we also road-tripped to Atlanta to catch an entire series. At the time, we weren't trying to visit every ballpark. We just liked baseball and liked taking baseball trips together.</p>
+          <div class="bp-story-more">
+            <p class="bp-story">Things really got rolling in 2012 when Josh gave Sam a baseball trip for their first anniversary gift. We went to a Brewers game and a Cubs game on the same trip, and somewhere along the way we started talking about how many ballparks we could knock off if we kept doing this every year.</p>
+            <p class="bp-story">Before long, Ellie, Tilly, and Poppy were coming along too. Somewhere along the way, baseball stopped being something we watched and became something we did as a family. We started planning vacations around games, keeping track of parks we'd visited, and looking for excuses to squeeze another stadium into a trip.</p>
+            <p class="bp-story">In June 2025, we finished all 30 active Major League ballparks. That's a pretty cool accomplishment, but it's only part of the story. Along the way we saw parks that no longer exist, added minor league and independent league stadiums to the list, got hooked on Banana Ball, and made enough baseball trips that we're usually talking about the next one before the current one is over.</p>
+            <p class="bp-story">This site is where we keep track of all of it. The parks, the teams, the games, the photos, and the memories. The list keeps growing, and honestly, we hope it always does.</p>
+          </div>
+          <button type="button" class="bp-story-toggle" aria-expanded="false">Read more &#9662;</button>
+          <p class="stat-strip"><strong>30/30</strong> active &middot; <strong>3</strong> historic</p>
         </div>
-        <button type="button" class="bp-story-toggle" aria-expanded="false">Read more &#9662;</button>
-        <p class="stat-strip"><strong>30/30</strong> active &middot; <strong>3</strong> historic</p>
+
+        <div class="split snip tl-card">
+          <div class="bp-journey-controls">
+            <button type="button" class="bp-journey-btn" id="bpJourneyPlayBtn">&#9654; Play</button>
+            <button type="button" class="bp-journey-btn" id="bpJourneyResetBtn">Reset</button>
+          </div>
+          <div class="bp-journey-map-wrap">
+            <div class="bp-journey-map" id="bpJourneyMap"></div>
+            <div class="bp-journey-year" id="bpJourneyYear"></div>
+            <button type="button" class="bp-journey-play-overlay" id="bpJourneyPlayOverlay" aria-label="Play the journey">&#9654;</button>
+          </div>
+          <div class="bp-journey-caption" id="bpJourneyCaption">Press Play to start the journey from Springfield, IL</div>
+          <div class="bp-journey-team-grid" id="bpJourneyTeamGrid"></div>
+          <a class="mlbg-callout-btn" href="mlb-games/index.html">See the full game log &rarr;</a>
+        </div>
       </div>
       </div><!-- /section-panel story -->
 
@@ -340,24 +357,6 @@
         </div>
 
       </div><!-- /closed-future-section -->
-
-      <!-- Timeline -->
-      <h3 class="section-heading" id="timeline">Timeline</h3>
-      <div class="split snip tl-card">
-        <div class="tl-intro">
-          <h4 class="tl-intro-title">The Journey to 30</h4>
-          <p class="tl-intro-body">From Turner Field in 2009 to Dodger Stadium in 2025 &mdash; 33 games, 30 ballparks, 16 years in the making. Every stop is a memory.</p>
-        </div>
-        <div class="bp-timeline" id="mlb-timeline-container"></div>
-      </div>
-
-      <!-- Game log callout -->
-      <div class="split snip mlbg-callout">
-        <div class="tl-intro">
-          <h4 class="tl-intro-title">Every Game, Logged</h4>
-          <p class="tl-intro-body">104 games and counting &mdash; box scores, decisions, and who was there for every one. <a class="mlbg-callout-link" href="mlb-games/index.html">See the full game log &rarr;</a></p>
-        </div>
-      </div>
 
       </div><!-- /section-panel mlb -->
 
@@ -739,6 +738,7 @@
   </footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/ballpark-journey.js"></script>
   <script>
     // Leaflet paints tiles at init time, so it can't react to a CSS media
     // query — read the effective theme once here instead (an explicit
@@ -850,200 +850,8 @@
         window.addEventListener('load', function () { map.invalidateSize(); });
       }
 
-      // --- MLB first-visit timeline (horizontal interactive) ---
-      (function () {
-        var container = document.getElementById('mlb-timeline-container');
-        if (!container) { return; }
-
-        var MONTHS = { jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11 };
-
-        var TEAM_ID = {
-          angels:108, diamondbacks:109, orioles:110, redsox:111, cubs:112,
-          reds:113, indians:114, rockies:115, tigers:116, astros:117,
-          royals:118, dodgers:119, nationals:120, mets:121, athletics:133,
-          pirates:134, padres:135, mariners:136, giants:137, cardinals:138,
-          rays:139, rangers:140, bluejays:141, twins:142, phillies:143,
-          whitesox:145, marlins:146, yankees:147, brewers:158, braves:144
-        };
-
-        function pad2(n) { return n < 10 ? '0' + n : String(n); }
-        function fmtApiDate(d) { return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate()); }
-
-        function parseVisitDate(bp) {
-          var raw = bp.note;
-          if (bp.status === 'closed') {
-            var m = bp.note.match(/Visited (.+?) ·/);
-            if (!m) { m = bp.note.match(/Visited (.+?) /); }
-            if (!m) { return null; }
-            raw = m[1];
-          }
-          var parts = raw.trim().match(/^(\d{1,2})\s+(\w+)\s+(\d{4})$/);
-          if (!parts) { return null; }
-          var mo = MONTHS[parts[2].toLowerCase().slice(0, 3)];
-          if (mo === undefined) { return null; }
-          return new Date(parseInt(parts[3], 10), mo, parseInt(parts[1], 10));
-        }
-
-        var entries = [];
-        BALLPARKS.forEach(function (bp) {
-          if (bp.status === 'future') { return; }
-          var d = parseVisitDate(bp);
-          if (!d || isNaN(d.getTime())) { return; }
-          entries.push({ bp: bp, d: d });
-        });
-        entries.sort(function (a, b) { return a.d - b.d; });
-        entries.forEach(function (e, i) { e.idx = i; });
-
-        var groups = [];
-        var cur = null;
-        entries.forEach(function (e) {
-          var y = e.d.getFullYear();
-          if (!cur || cur.year !== y) { cur = { year: y, items: [] }; groups.push(cur); }
-          cur.items.push(e);
-        });
-
-        var trackHTML = '';
-        groups.forEach(function (g) {
-          trackHTML += '<div class="tl-year-group">';
-          trackHTML += '<span class="tl-year-label">' + g.year + '</span>';
-          trackHTML += '<div class="tl-stops">';
-          g.items.forEach(function (e) {
-            var closed = e.bp.status === 'closed';
-            trackHTML +=
-              '<button class="tl-stop' + (closed ? ' tl-stop--closed' : '') + '"' +
-              ' data-idx="' + e.idx + '" aria-label="' + e.bp.stadium + '">' +
-              '<div class="team-logo ' + e.bp.slug + '"></div>' +
-              '<span class="tl-dot"></span>' +
-              '</button>';
-          });
-          trackHTML += '</div></div>';
-        });
-
-        container.innerHTML =
-          '<div class="tl-scroller">' +
-            '<div class="tl-track">' + trackHTML + '</div>' +
-          '</div>' +
-          '<div class="tl-detail tl-empty">Select a ballpark above</div>' +
-          '<div class="tl-game-data tl-game-hidden"></div>';
-
-        var detail    = container.querySelector('.tl-detail');
-        var gameData  = container.querySelector('.tl-game-data');
-        var stops     = Array.prototype.slice.call(container.querySelectorAll('.tl-stop'));
-        var gameCache = {};
-
-        function renderGame(data) {
-          if (!data) {
-            gameData.innerHTML = '<p class="tl-game-msg">Game data unavailable</p>';
-            gameData.classList.remove('tl-game-hidden');
-            return;
-          }
-          var away = data.teams.away, home = data.teams.home;
-          var awayName = away.team.teamName || away.team.name;
-          var homeName = home.team.teamName || home.team.name;
-          var awayScore = away.score != null ? away.score : '–';
-          var homeScore = home.score != null ? home.score : '–';
-          var awayWon = away.score > home.score;
-
-          var html =
-            '<div class="tl-score">' +
-              '<div class="tl-score-team' + (!awayWon ? ' tl-score-loser' : '') + '">' +
-                '<span class="tl-score-name">' + awayName + '</span>' +
-                '<span class="tl-score-runs">' + awayScore + '</span>' +
-              '</div>' +
-              '<span class="tl-score-at">@</span>' +
-              '<div class="tl-score-team tl-score-home' + (awayWon ? ' tl-score-loser' : '') + '">' +
-                '<span class="tl-score-runs">' + homeScore + '</span>' +
-                '<span class="tl-score-name">' + homeName + '</span>' +
-              '</div>' +
-            '</div>';
-
-          if (data.linescore && data.linescore.innings && data.linescore.innings.length) {
-            var innings = data.linescore.innings;
-            var ls = data.linescore;
-            var heads = '', awayRow = '', homeRow = '';
-            innings.forEach(function (inn) {
-              heads += '<th>' + inn.num + '</th>';
-              awayRow += '<td>' + (inn.away && inn.away.runs != null ? inn.away.runs : '-') + '</td>';
-              homeRow += '<td>' + (inn.home && inn.home.runs != null ? inn.home.runs : '-') + '</td>';
-            });
-            heads   += '<th class="tl-ls-rhe">R</th><th class="tl-ls-rhe">H</th><th class="tl-ls-rhe">E</th>';
-            awayRow += '<td class="tl-ls-rhe">' + (ls.teams.away.runs||0)   + '</td><td class="tl-ls-rhe">' + (ls.teams.away.hits||0)   + '</td><td class="tl-ls-rhe">' + (ls.teams.away.errors||0)   + '</td>';
-            homeRow += '<td class="tl-ls-rhe">' + (ls.teams.home.runs||0)   + '</td><td class="tl-ls-rhe">' + (ls.teams.home.hits||0)   + '</td><td class="tl-ls-rhe">' + (ls.teams.home.errors||0)   + '</td>';
-            html +=
-              '<div class="tl-linescore-wrap"><table class="tl-linescore">' +
-                '<thead><tr><th class="tl-ls-team"></th>' + heads + '</tr></thead>' +
-                '<tbody>' +
-                  '<tr><td class="tl-ls-team">' + awayName + '</td>' + awayRow + '</tr>' +
-                  '<tr><td class="tl-ls-team">' + homeName + '</td>' + homeRow + '</tr>' +
-                '</tbody>' +
-              '</table></div>';
-          }
-
-          gameData.innerHTML = html;
-          gameData.classList.remove('tl-game-hidden');
-        }
-
-        function fetchGame(entry) {
-          var idx = entry.idx;
-          if (gameCache.hasOwnProperty(idx)) { renderGame(gameCache[idx]); return; }
-
-          gameData.innerHTML = '<p class="tl-game-msg">Loading&hellip;</p>';
-          gameData.classList.remove('tl-game-hidden');
-
-          var teamId = TEAM_ID[entry.bp.slug];
-          if (!teamId) { gameCache[idx] = null; renderGame(null); return; }
-
-          var url = 'https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=' + fmtApiDate(entry.d) + '&teamId=' + teamId;
-          fetch(url)
-            .then(function (r) { return r.json(); })
-            .then(function (sched) {
-              var games = sched.dates && sched.dates[0] && sched.dates[0].games;
-              if (!games || !games.length) { gameCache[idx] = null; renderGame(null); return; }
-              var game = games[0];
-              var combined = { teams: game.teams };
-              fetch('https://statsapi.mlb.com/api/v1/game/' + game.gamePk + '/linescore')
-                .then(function (r) { return r.json(); })
-                .then(function (ls) { combined.linescore = ls; gameCache[idx] = combined; renderGame(combined); })
-                .catch(function ()  { gameCache[idx] = combined; renderGame(combined); });
-            })
-            .catch(function () { gameCache[idx] = null; renderGame(null); });
-        }
-
-        function activate(idx) {
-          var e = entries[idx], bp = e.bp;
-          var closed = bp.status === 'closed';
-          var dateStr = e.d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-          stops.forEach(function (b) { b.classList.remove('is-active'); });
-          stops[idx].classList.add('is-active');
-          detail.className = 'tl-detail' + (closed ? ' tl-detail-closed' : '');
-          detail.innerHTML =
-            '<div class="team-logo ' + bp.slug + '"></div>' +
-            '<div class="tl-detail-info">' +
-              '<strong>' + bp.stadium + (closed ? '<span class="tl-closed-badge">closed</span>' : '') + '</strong>' +
-              '<span>' + bp.name + '</span>' +
-            '</div>' +
-            '<time class="tl-detail-date">' + dateStr + '</time>';
-          fetchGame(e);
-        }
-
-        stops.forEach(function (btn) {
-          btn.addEventListener('click', function () { activate(parseInt(btn.dataset.idx, 10)); });
-        });
-
-        container.addEventListener('keydown', function (ev) {
-          var active = container.querySelector('.tl-stop.is-active');
-          if (!active) { return; }
-          var idx = parseInt(active.dataset.idx, 10);
-          var next = ev.key === 'ArrowRight' ? idx + 1 : ev.key === 'ArrowLeft' ? idx - 1 : -1;
-          if (next < 0 || next >= entries.length) { return; }
-          ev.preventDefault();
-          activate(next);
-          stops[next].focus();
-          stops[next].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
-        });
-
-        activate(0);
-      }());
+      // --- Ballpark Journey animation (scoped to the 30 active parks) ---
+      if (window.BallparkJourney) { window.BallparkJourney.init(BALLPARKS); }
 
     }());
   </script>

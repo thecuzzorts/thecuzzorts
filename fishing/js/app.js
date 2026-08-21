@@ -112,13 +112,18 @@
 
   // ---- Lightbox ---------------------------------------
   // Clicking any species photo opens it full-size, with prev/next to
-  // browse every photographed species in alphabetical order.
+  // browse every photographed species grouped saltwater-then-freshwater
+  // (matching the page's own grid order), alphabetized within each group.
   var lbPhotos = [];
   var lbIndex  = 0;
 
   function buildFlatPhotoList() {
     var photos = (typeof fishPhotos !== 'undefined') ? fishPhotos : {};
-    return Object.keys(photos).sort(function (a, b) { return a.localeCompare(b); })
+    var speciesInOrder = groupBySpecies(fishCaught.saltwater)
+      .concat(groupBySpecies(fishCaught.freshwater))
+      .map(function (g) { return g.species; });
+    return speciesInOrder
+      .filter(function (species) { return photos[species]; })
       .map(function (species) { return { src: photos[species], caption: species }; });
   }
 
