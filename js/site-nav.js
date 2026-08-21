@@ -20,11 +20,11 @@
   var SECTIONS = [
     { key: '',              label: 'Home',          path: 'index.html',              color: '#c8d8e4' },
     { key: 'baseball',      label: 'Baseball',      path: 'baseball/index.html',     color: '#F07070' },
-    { key: 'travels',       label: 'Travels',       path: 'travels/index.html',      color: '#E8A020' },
+    { key: 'travels',       label: 'Travels',       path: 'travels/index.html',      color: '#FF8200' },
+    { key: 'national-parks', label: 'National Parks', path: 'national-parks/index.html', color: '#F5C518' },
     { key: 'turkey-hunting', label: 'Turkey Hunting', path: 'turkey-hunting/index.html', color: '#57BD83' },
     { key: 'fishing',       label: 'Fishing',        path: 'fishing/index.html',      color: '#1C7C9C' },
-    { key: 'national-parks', label: 'National Parks', path: 'national-parks/index.html', color: '#C99A6A' },
-    { key: 'disney',        label: 'Disney',        path: 'disney/index.html',       color: '#E0609C' },
+    { key: 'disney',        label: 'Disney',        path: 'disney/index.html',       color: '#E060C6' },
     { key: 'stats',         label: 'By the Numbers', path: 'stats/index.html',        color: '#8B7EC8', hidden: true },
     { key: 'run',           label: 'Running',        path: 'run/index.html',          color: '#00AC4B', hidden: true },
     { key: 'trapping',      label: 'Trapping',       path: 'trapping/index.html',     color: '#8C5A3B', hidden: true },
@@ -151,7 +151,7 @@
       svg.setAttribute('class', 'site-end-ring');
       svg.setAttribute('viewBox', '0 0 1200 500');
       svg.setAttribute('preserveAspectRatio', 'xMidYMax slice');
-      var clrs = ['#F07070','#E8A020','#57BD83','#C99A6A','#E0609C','#1C7C9C'];
+      var clrs = ['#F07070','#FF8200','#F5C518','#57BD83','#1C7C9C','#E060C6'];
       for (var ci = 0; ci < 9; ci++) {
         var c = document.createElementNS(ns, 'circle');
         c.setAttribute('cx', (Math.random() * 1400 - 100).toFixed(0));

@@ -10,8 +10,8 @@
 html { font-size: 16px; -webkit-text-size-adjust: 100%; }
 
 body {
-  --section: #E8A020;
-  --section-on-dark: #E8A020;
+  --section: #D2600A;
+  --section-on-dark: #FF8200;
   font-family: 'Roboto Condensed', Arial, sans-serif;
   background: var(--bg, #f0f2f5);
   color: var(--text, #222);

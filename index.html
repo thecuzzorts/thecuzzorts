@@ -47,15 +47,15 @@
         linear-gradient(to right,
           #F07070 0%,                              #F07070 calc(16.66% - 2px),
           #1a2e3b calc(16.66% - 2px),              #1a2e3b calc(16.66% + 2px),
-          #E8A020 calc(16.66% + 2px),              #E8A020 calc(33.33% - 2px),
+          #FF8200 calc(16.66% + 2px),              #FF8200 calc(33.33% - 2px),
           #1a2e3b calc(33.33% - 2px),              #1a2e3b calc(33.33% + 2px),
-          #57BD83 calc(33.33% + 2px),              #57BD83 calc(50% - 2px),
+          #F5C518 calc(33.33% + 2px),              #F5C518 calc(50% - 2px),
           #1a2e3b calc(50% - 2px),                 #1a2e3b calc(50% + 2px),
-          #1C7C9C calc(50% + 2px),                 #1C7C9C calc(66.66% - 2px),
+          #57BD83 calc(50% + 2px),                 #57BD83 calc(66.66% - 2px),
           #1a2e3b calc(66.66% - 2px),              #1a2e3b calc(66.66% + 2px),
-          #C99A6A calc(66.66% + 2px),              #C99A6A calc(83.33% - 2px),
+          #1C7C9C calc(66.66% + 2px),               #1C7C9C calc(83.33% - 2px),
           #1a2e3b calc(83.33% - 2px),              #1a2e3b calc(83.33% + 2px),
-          #E0609C calc(83.33% + 2px),              #E0609C 100%
+          #E060C6 calc(83.33% + 2px),              #E060C6 100%
         ) top / 100% 4px no-repeat,
         #1a2e3b;
     }
@@ -285,10 +285,10 @@
     }
 
     .card-baseball { --accent: #F07070; }
-    .card-travels  { --accent: #E8A020; }
+    .card-travels  { --accent: #FF8200; }
     .card-turkeys  { --accent: #57BD83; }
-    .card-parks    { --accent: #C99A6A; }
-    .card-disney   { --accent: #E0609C; }
+    .card-parks    { --accent: #F5C518; }
+    .card-disney   { --accent: #E060C6; }
     .card-fishing  { --accent: #1C7C9C; }
 
     /* Large emblem as a faint same-colour watermark, fully inside the card */
@@ -645,42 +645,42 @@
           </g>
 
           <!-- Travels: 60°–120° -->
-          <g class="ring-slice" style="--clr:#E8A020" onclick="location.href='travels/index.html'">
+          <g class="ring-slice" style="--clr:#FF8200" onclick="location.href='travels/index.html'">
             <path class="ring-hit" d="M 130,130 L 242.6,65 A 130,130 0 0,1 242.6,195 Z"/>
             <path class="ring-arc" d="M 242.6,65 A 130,130 0 0,1 242.6,195 L 232.2,189 A 118,118 0 0,0 232.2,71 Z"/>
-            <circle class="ring-overlay" cx="130" cy="130" r="108" fill="#E8A020"/>
+            <circle class="ring-overlay" cx="130" cy="130" r="108" fill="#FF8200"/>
             <text class="ring-label" x="130" y="130">Travels</text>
           </g>
 
-          <!-- Turkey Hunting: 120°–180° -->
-          <g class="ring-slice" style="--clr:#57BD83" onclick="location.href='turkey-hunting/index.html'">
+          <!-- National Parks: 120°–180° -->
+          <g class="ring-slice" style="--clr:#F5C518" onclick="location.href='national-parks/index.html'">
             <path class="ring-hit" d="M 130,130 L 242.6,195 A 130,130 0 0,1 130,260 Z"/>
             <path class="ring-arc" d="M 242.6,195 A 130,130 0 0,1 130,260 L 130,248 A 118,118 0 0,0 232.2,189 Z"/>
+            <circle class="ring-overlay" cx="130" cy="130" r="108" fill="#F5C518"/>
+            <text class="ring-label" x="130" y="130">National Parks</text>
+          </g>
+
+          <!-- Turkey Hunting: 180°–240° -->
+          <g class="ring-slice" style="--clr:#57BD83" onclick="location.href='turkey-hunting/index.html'">
+            <path class="ring-hit" d="M 130,130 L 130,260 A 130,130 0 0,1 17.4,195 Z"/>
+            <path class="ring-arc" d="M 130,260 A 130,130 0 0,1 17.4,195 L 27.8,189 A 118,118 0 0,0 130,248 Z"/>
             <circle class="ring-overlay" cx="130" cy="130" r="108" fill="#57BD83"/>
             <text class="ring-label" x="130" y="130">Turkey Hunting</text>
           </g>
 
-          <!-- Fishing: 180°–240° -->
+          <!-- Fishing: 240°–300° -->
           <g class="ring-slice" style="--clr:#1C7C9C" onclick="location.href='fishing/index.html'">
-            <path class="ring-hit" d="M 130,130 L 130,260 A 130,130 0 0,1 17.4,195 Z"/>
-            <path class="ring-arc" d="M 130,260 A 130,130 0 0,1 17.4,195 L 27.8,189 A 118,118 0 0,0 130,248 Z"/>
+            <path class="ring-hit" d="M 130,130 L 17.4,195 A 130,130 0 0,1 17.4,65 Z"/>
+            <path class="ring-arc" d="M 17.4,195 A 130,130 0 0,1 17.4,65 L 27.8,71 A 118,118 0 0,0 27.8,189 Z"/>
             <circle class="ring-overlay" cx="130" cy="130" r="108" fill="#1C7C9C"/>
             <text class="ring-label" x="130" y="130">Fishing</text>
           </g>
 
-          <!-- National Parks: 240°–300° -->
-          <g class="ring-slice" style="--clr:#C99A6A" onclick="location.href='national-parks/index.html'">
-            <path class="ring-hit" d="M 130,130 L 17.4,195 A 130,130 0 0,1 17.4,65 Z"/>
-            <path class="ring-arc" d="M 17.4,195 A 130,130 0 0,1 17.4,65 L 27.8,71 A 118,118 0 0,0 27.8,189 Z"/>
-            <circle class="ring-overlay" cx="130" cy="130" r="108" fill="#C99A6A"/>
-            <text class="ring-label" x="130" y="130">National Parks</text>
-          </g>
-
           <!-- Disney Parks: 300°–360° -->
-          <g class="ring-slice" style="--clr:#E0609C" onclick="location.href='disney/index.html'">
+          <g class="ring-slice" style="--clr:#E060C6" onclick="location.href='disney/index.html'">
             <path class="ring-hit" d="M 130,130 L 17.4,65 A 130,130 0 0,1 130,0 Z"/>
             <path class="ring-arc" d="M 17.4,65 A 130,130 0 0,1 130,0 L 130,12 A 118,118 0 0,0 27.8,71 Z"/>
-            <circle class="ring-overlay" cx="130" cy="130" r="108" fill="#E0609C"/>
+            <circle class="ring-overlay" cx="130" cy="130" r="108" fill="#E060C6"/>
             <text class="ring-label" x="130" y="130">Disney Parks</text>
           </g>
 
@@ -761,6 +761,20 @@
         <span class="card-cta"><span class="card-cta-label">View</span><span class="card-cta-arrow" aria-hidden="true">&rarr;</span></span>
       </a>
 
+      <a class="card card-parks" href="national-parks/index.html">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M2.5 18L8 7l3.5 6.5L14 9.5 21.5 18"/>
+            <path d="M6.4 9.8L8 7l1.6 2.8"/>
+            <path d="M12.7 11.4L14 9.5l1.3 1.9"/>
+            <line x1="2.5" y1="18" x2="21.5" y2="18"/>
+          </svg>
+        </div>
+        <h2>National Parks</h2>
+        <p>All 63 US National Parks &mdash; map, photos &amp; bucket list</p>
+        <span class="card-cta"><span class="card-cta-label">View</span><span class="card-cta-arrow" aria-hidden="true">&rarr;</span></span>
+      </a>
+
       <a class="card card-turkeys" href="turkey-hunting/index.html">
         <div class="card-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -789,20 +803,6 @@
         </div>
         <h2>Fishing</h2>
         <p>Every species caught, freshwater and saltwater alike</p>
-        <span class="card-cta"><span class="card-cta-label">View</span><span class="card-cta-arrow" aria-hidden="true">&rarr;</span></span>
-      </a>
-
-      <a class="card card-parks" href="national-parks/index.html">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M2.5 18L8 7l3.5 6.5L14 9.5 21.5 18"/>
-            <path d="M6.4 9.8L8 7l1.6 2.8"/>
-            <path d="M12.7 11.4L14 9.5l1.3 1.9"/>
-            <line x1="2.5" y1="18" x2="21.5" y2="18"/>
-          </svg>
-        </div>
-        <h2>National Parks</h2>
-        <p>All 63 US National Parks &mdash; map, photos &amp; bucket list</p>
         <span class="card-cta"><span class="card-cta-label">View</span><span class="card-cta-arrow" aria-hidden="true">&rarr;</span></span>
       </a>
 
@@ -836,14 +836,19 @@
         <span class="qs-label">MLB Ballparks</span>
       </div>
       <div class="qs-divider"></div>
-      <div class="qs-item" style="--accent: #E8A020">
+      <div class="qs-item" style="--accent: #FF8200">
         <span class="qs-num" id="qs-states">—</span>
         <span class="qs-label">States</span>
       </div>
       <div class="qs-divider"></div>
-      <div class="qs-item" style="--accent: #E8A020">
+      <div class="qs-item" style="--accent: #FF8200">
         <span class="qs-num" id="qs-countries">—</span>
         <span class="qs-label">Countries</span>
+      </div>
+      <div class="qs-divider"></div>
+      <div class="qs-item" style="--accent: #F5C518">
+        <span class="qs-num" id="qs-parks">—</span>
+        <span class="qs-label">National Parks</span>
       </div>
       <div class="qs-divider"></div>
       <div class="qs-item" style="--accent: #57BD83">
@@ -856,12 +861,7 @@
         <span class="qs-label">Fish Species</span>
       </div>
       <div class="qs-divider"></div>
-      <div class="qs-item" style="--accent: #C99A6A">
-        <span class="qs-num" id="qs-parks">—</span>
-        <span class="qs-label">National Parks</span>
-      </div>
-      <div class="qs-divider"></div>
-      <div class="qs-item" style="--accent: #E0609C">
+      <div class="qs-item" style="--accent: #E060C6">
         <span class="qs-num" id="qs-disney">—</span>
         <span class="qs-label">Disney Parks</span>
       </div>
@@ -889,8 +889,8 @@
 
         <li class="activity-item">
           <time class="af-date">Aug 2026</time>
-          <span class="af-dot" style="background: #C99A6A"></span>
-          <span class="af-text">Whole family &middot; Everglades National Park <em class="af-tag" style="color: #C99A6A">National Parks</em></span>
+          <span class="af-dot" style="background: #F5C518"></span>
+          <span class="af-text">Whole family &middot; Everglades National Park <em class="af-tag" style="color: #F5C518">National Parks</em></span>
         </li>
 
         <li class="activity-item">
@@ -913,8 +913,8 @@
 
         <li class="activity-item">
           <time class="af-date">Mar 2026</time>
-          <span class="af-dot" style="background: #E8A020"></span>
-          <span class="af-text">Oasis of the Seas &middot; Puerto Rico &amp; Dominican Republic <em class="af-tag" style="color: #E8A020">Travels</em></span>
+          <span class="af-dot" style="background: #FF8200"></span>
+          <span class="af-text">Oasis of the Seas &middot; Puerto Rico &amp; Dominican Republic <em class="af-tag" style="color: #FF8200">Travels</em></span>
         </li>
 
         <li class="activity-item">
@@ -925,8 +925,8 @@
 
         <li class="activity-item">
           <time class="af-date">Jun 2025</time>
-          <span class="af-dot" style="background: #E0609C"></span>
-          <span class="af-text">Josh &amp; Sam &middot; Disneyland (first visit) <em class="af-tag" style="color: #E0609C">Disney</em></span>
+          <span class="af-dot" style="background: #E060C6"></span>
+          <span class="af-text">Josh &amp; Sam &middot; Disneyland (first visit) <em class="af-tag" style="color: #E060C6">Disney</em></span>
         </li>
 
         <li class="activity-item">
@@ -943,20 +943,20 @@
 
         <li class="activity-item">
           <time class="af-date">Mar 2025</time>
-          <span class="af-dot" style="background: #C99A6A"></span>
-          <span class="af-text">Virgin Islands National Park <em class="af-tag" style="color: #C99A6A">National Parks</em></span>
+          <span class="af-dot" style="background: #F5C518"></span>
+          <span class="af-text">Virgin Islands National Park <em class="af-tag" style="color: #F5C518">National Parks</em></span>
         </li>
 
         <li class="activity-item">
           <time class="af-date">Mar 2025</time>
-          <span class="af-dot" style="background: #E8A020"></span>
-          <span class="af-text">Wonder of the Seas &middot; Sint Maarten &amp; US Virgin Islands <em class="af-tag" style="color: #E8A020">Travels</em></span>
+          <span class="af-dot" style="background: #FF8200"></span>
+          <span class="af-text">Wonder of the Seas &middot; Sint Maarten &amp; US Virgin Islands <em class="af-tag" style="color: #FF8200">Travels</em></span>
         </li>
 
         <li class="activity-item">
           <time class="af-date">Jan 2025</time>
-          <span class="af-dot" style="background: #C99A6A"></span>
-          <span class="af-text">Mammoth Cave National Park <em class="af-tag" style="color: #C99A6A">National Parks</em></span>
+          <span class="af-dot" style="background: #F5C518"></span>
+          <span class="af-text">Mammoth Cave National Park <em class="af-tag" style="color: #F5C518">National Parks</em></span>
         </li>
 
       </ul>

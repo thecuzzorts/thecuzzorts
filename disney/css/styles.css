@@ -17,8 +17,8 @@ html {
 }
 
 body {
-  --section: #E0609C;          /* signature colour — used on light backgrounds */
-  --section-on-dark: #E0609C;  /* readable on the navy header/footer (bright pink reads fine) */
+  --section: #E060C6;          /* signature colour — used on light backgrounds */
+  --section-on-dark: #E060C6;  /* readable on the navy header/footer (bright pink reads fine) */
   font-family: 'Roboto Condensed', Arial, sans-serif;
   background: var(--bg, #f0f2f5);
   color: var(--text, #222);
@@ -42,7 +42,7 @@ body {
 
 /* --- Combined Card --------------------------------- */
 .combined-card {
-  --accent: #E0609C;
+  --accent: #E060C6;
   background: var(--surface, #fff);
   border-radius: 10px;
   box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.08));
@@ -441,7 +441,7 @@ body {
 .ss-progress-bar {
   height: 100%;
   width: 0;
-  background: var(--accent, #E0609C);
+  background: var(--accent, #E060C6);
 }
 
 .ss-progress-bar.is-running {
