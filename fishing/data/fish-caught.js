@@ -16,7 +16,6 @@ var fishCaught = {
     { species: 'Blue Catfish',     state: 'US-IL', date: null, weight: null, length: null, notes: '' },
     { species: 'Channel Catfish',  state: 'US-IL', date: null, weight: null, length: null, notes: '' },
     { species: 'Black Crappie',    state: 'US-IL', date: null, weight: null, length: null, notes: '' },
-    { species: 'White Crappie',    state: 'US-IL', date: null, weight: null, length: null, notes: '' },
     { species: 'Rainbow Trout',    state: 'US-IL', date: null, weight: null, length: null, notes: '' },
     { species: 'Rainbow Trout',    state: 'US-MO', date: null, weight: null, length: null, notes: '' },
     { species: 'Largemouth Bass',  state: 'US-MO', date: null, weight: null, length: null, notes: '' },

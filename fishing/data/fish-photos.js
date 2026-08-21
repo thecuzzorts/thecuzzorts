@@ -7,10 +7,12 @@
 
 var fishPhotos = {
   'Black Crappie': '../images/fishing/species/black-crappie.jpg',
+  'Blue Catfish': '../images/fishing/species/blue-catfish.jpg',
   'Bluegill': '../images/fishing/species/bluegill.jpg',
   'Bluestriped Grunt': '../images/fishing/species/bluestriped-grunt.jpg',
   'Brook Trout': '../images/fishing/species/brook-trout.jpg',
   'Candy Snapper': '../images/fishing/species/candy-snapper.jpg',
+  'Channel Catfish': '../images/fishing/species/channel-catfish.jpg',
   'Common Snook': '../images/fishing/species/common-snook.jpg',
   'Hardhead Catfish': '../images/fishing/species/hardhead-catfish.jpg',
   'Largemouth Bass': '../images/fishing/species/largemouth-bass.jpg',
