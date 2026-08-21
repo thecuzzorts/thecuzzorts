@@ -439,6 +439,24 @@
     });
   }
 
+  // Click a leaderboard row (Most Seen, either column) to reveal which
+  // attended games that player appeared in -- collapsed by default since
+  // a player can rack up dozens of appearances (Wainwright's at 29).
+  function initLeaderboardExpand(containerId) {
+    var el = document.getElementById(containerId);
+    if (!el) { return; }
+    el.addEventListener('click', function (e) {
+      if (e.target.closest('.bb-stat-detail-toggle')) { return; } // let the nested "+N more" toggle handle its own click
+      var row = e.target.closest('.mlbg-leaderboard-row');
+      if (!row) { return; }
+      var detail = row.querySelector('.bb-stat-detail');
+      if (!detail) { return; }
+      var willOpen = detail.hidden;
+      detail.hidden = !willOpen;
+      row.classList.toggle('is-open', willOpen);
+    });
+  }
+
   // getGames() is called fresh on every sort click (not a static array)
   // since the person filter can swap the underlying game set out from
   // under this control at any time.
@@ -560,24 +578,21 @@
 
     var ranked = ids.map(function (id) {
       return {
+        id: id,
         name: mlbPlayers[id] || 'Unknown',
         inductionYear: hofPlayers[id].inductionYear,
         count: tally[id].count,
         games: tally[id].games
       };
     }).sort(function (a, b) { return b.count - a.count; });
-    var max = ranked[0].count;
 
-    return ranked.map(function (p, i) {
-      var pct = Math.max((p.count / max) * 100, 6);
-      return '<div class="mlbg-leaderboard-row">' +
-        '<span class="mlbg-leaderboard-rank">' + (i + 1) + '</span>' +
-        '<div class="mlbg-leaderboard-main">' +
-          '<div class="mlbg-leaderboard-name">' + p.name + ' <span class="mlbg-leaderboard-team">HOF ' + p.inductionYear + '</span></div>' +
-          '<div class="mlbg-leaderboard-bar-wrap"><div class="mlbg-leaderboard-bar" style="width:' + pct + '%"></div></div>' +
-          '<div class="bb-stat-detail">' + statDetailHTML(p.games) + '</div>' +
-        '</div>' +
-        '<span class="mlbg-leaderboard-count">' + p.count + '</span>' +
+    return ranked.map(function (p) {
+      var photoUrl = 'https://img.mlbstatic.com/mlb-photos/image/upload/w_180,q_100/v1/people/' + p.id + '/headshot/67/current';
+      return '<div class="mlbg-hof-card">' +
+        '<img class="mlbg-hof-photo" src="' + photoUrl + '" alt="" loading="lazy" onerror="this.parentNode.removeChild(this)">' +
+        '<div class="mlbg-hof-name">' + p.name + '</div>' +
+        '<div class="mlbg-hof-meta">HOF ' + p.inductionYear + ' &middot; ' + p.count + ' ' + pluralize(p.count, 'game') + '</div>' +
+        '<div class="bb-stat-detail">' + statDetailHTML(p.games) + '</div>' +
       '</div>';
     }).join('');
   }
@@ -585,24 +600,13 @@
   // Tallies appearances only across `games` (the currently filtered set),
   // not every game in mlbGamePlayers -- so switching the person filter
   // correctly narrows this to who *that person* has seen the most.
-  function buildLeaderboardHTML(topN, games) {
-    if (typeof mlbGamePlayers === 'undefined' || typeof mlbPlayers === 'undefined') { return ''; }
-    var counts = {}, lastTeam = {};
-    games.forEach(function (g) {
-      var appearances = mlbGamePlayers[g.gamePk];
-      if (!appearances) { return; }
-      appearances.forEach(function (p) {
-        counts[p.id] = (counts[p.id] || 0) + 1;
-        lastTeam[p.id] = p.team;
-      });
-    });
-    var ranked = Object.keys(counts).map(function (id) {
-      return { id: id, name: mlbPlayers[id] || 'Unknown', team: lastTeam[id], count: counts[id] };
-    }).sort(function (a, b) { return b.count - a.count; }).slice(0, topN);
-
+  // Each row is collapsed until clicked -- with up to 25 rows per column,
+  // showing every player's full game list up front would run on far
+  // longer than the "roll it up until clicked" treatment used everywhere
+  // else on this page (year groups, stat tile detail, etc.).
+  function buildLeaderboardRowsHTML(ranked) {
     if (!ranked.length) { return '<p class="mlbg-empty">No player data yet.</p>'; }
     var max = ranked[0].count;
-
     return ranked.map(function (p, i) {
       var pct = Math.max((p.count / max) * 100, 6);
       return '<div class="mlbg-leaderboard-row">' +
@@ -610,10 +614,58 @@
         '<div class="mlbg-leaderboard-main">' +
           '<div class="mlbg-leaderboard-name">' + p.name + ' <span class="mlbg-leaderboard-team">' + p.team + '</span></div>' +
           '<div class="mlbg-leaderboard-bar-wrap"><div class="mlbg-leaderboard-bar" style="width:' + pct + '%"></div></div>' +
+          '<div class="bb-stat-detail" hidden>' + statDetailHTML(p.games) + '</div>' +
         '</div>' +
         '<span class="mlbg-leaderboard-count">' + p.count + '</span>' +
       '</div>';
     }).join('');
+  }
+
+  // Split into Pitchers vs. Others (position players) -- classified by
+  // each player's most-recently-seen position (mirrors how "team" is
+  // already tracked the same way). A player who's appeared as both
+  // (rare -- a position player pitching a blowout) lands wherever they
+  // were seen most recently; not worth a more elaborate rule for how
+  // infrequently that happens in practice.
+  // Starters vs. Relievers is decided by which role a pitcher shows up in
+  // *more often* across attended games (not just their most recent
+  // appearance) -- a career reliever who made one emergency spot start
+  // shouldn't flip buckets over that single game.
+  function buildLeaderboardHTML(topN, games) {
+    if (typeof mlbGamePlayers === 'undefined' || typeof mlbPlayers === 'undefined') { return { starters: '', relievers: '', others: '' }; }
+    var counts = {}, lastTeam = {}, lastPosition = {}, gamesByPlayer = {}, startCounts = {}, reliefCounts = {};
+    games.forEach(function (g) {
+      var appearances = mlbGamePlayers[g.gamePk];
+      if (!appearances) { return; }
+      appearances.forEach(function (p) {
+        counts[p.id] = (counts[p.id] || 0) + 1;
+        lastTeam[p.id] = p.team;
+        lastPosition[p.id] = p.position;
+        (gamesByPlayer[p.id] || (gamesByPlayer[p.id] = [])).push({ date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam });
+        if (p.position === 'P') {
+          if (p.gamesStarted) { startCounts[p.id] = (startCounts[p.id] || 0) + 1; }
+          else { reliefCounts[p.id] = (reliefCounts[p.id] || 0) + 1; }
+        }
+      });
+    });
+
+    function isStarter(id) { return (startCounts[id] || 0) > (reliefCounts[id] || 0); }
+
+    function rankGroup(filterFn) {
+      return Object.keys(counts)
+        .filter(filterFn)
+        .map(function (id) {
+          return { id: id, name: mlbPlayers[id] || 'Unknown', team: lastTeam[id], count: counts[id], games: gamesByPlayer[id] };
+        })
+        .sort(function (a, b) { return b.count - a.count; })
+        .slice(0, topN);
+    }
+
+    return {
+      starters: buildLeaderboardRowsHTML(rankGroup(function (id) { return lastPosition[id] === 'P' && isStarter(id); })),
+      relievers: buildLeaderboardRowsHTML(rankGroup(function (id) { return lastPosition[id] === 'P' && !isStarter(id); })),
+      others: buildLeaderboardRowsHTML(rankGroup(function (id) { return lastPosition[id] !== 'P'; }))
+    };
   }
 
   // =========================================================
@@ -987,7 +1039,10 @@
 
       document.getElementById('mlbgGamesList').innerHTML = buildGameListHTML(games, currentSort);
       document.getElementById('mlbgHofList').innerHTML = buildHofListHTML(games);
-      document.getElementById('mlbgLeaderboard').innerHTML = buildLeaderboardHTML(25, games);
+      var leaderboards = buildLeaderboardHTML(25, games);
+      document.getElementById('mlbgLeaderboardStarters').innerHTML = leaderboards.starters;
+      document.getElementById('mlbgLeaderboardRelievers').innerHTML = leaderboards.relievers;
+      document.getElementById('mlbgLeaderboardOthers').innerHTML = leaderboards.others;
 
       journeyApi.setStops(buildJourneyStops(games));
     }
@@ -998,6 +1053,12 @@
     initStickyFilterOffset();
     initStatDetailToggle('mlbgStatGrid');
     initStatDetailToggle('mlbgHofList');
+    initStatDetailToggle('mlbgLeaderboardStarters');
+    initStatDetailToggle('mlbgLeaderboardRelievers');
+    initStatDetailToggle('mlbgLeaderboardOthers');
+    initLeaderboardExpand('mlbgLeaderboardStarters');
+    initLeaderboardExpand('mlbgLeaderboardRelievers');
+    initLeaderboardExpand('mlbgLeaderboardOthers');
 
     renderForFilter();
   }

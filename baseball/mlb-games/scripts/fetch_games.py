@@ -113,11 +113,26 @@ def build_record(row, sched_game, box, feed):
     info = parse_info(live['boxscore'].get('info', []))
 
     def player_list(team_side, abbrev):
-        return [
-            {"id": pid_int, "name": p['person']['fullName'], "team": abbrev}
-            for pid_str, p in team_side['players'].items()
-            for pid_int in [p['person']['id']]
-        ]
+        # The boxscore's `players` dict includes everyone dressed for the
+        # game -- bench and bullpen included, whether they actually got in
+        # or not. A player who never recorded a batting or pitching stat
+        # line was never actually seen playing, so exclude them (confirmed
+        # via a real example: a pitcher who started game 1 of a
+        # doubleheader was listed on both games' rosters but only
+        # `stats.pitching`/`stats.batting` for the game he actually threw
+        # in were non-empty).
+        out = []
+        for pid_str, p in team_side['players'].items():
+            stats = p.get('stats', {})
+            pitching = stats.get('pitching')
+            if not stats.get('batting') and not pitching:
+                continue
+            out.append({
+                "id": p['person']['id'], "name": p['person']['fullName'], "team": abbrev,
+                "position": p.get('position', {}).get('abbreviation'),
+                "gamesStarted": pitching.get('gamesStarted') if pitching else None,
+            })
+        return out
 
     players = player_list(home, home['team']['abbreviation']) + player_list(away, away['team']['abbreviation'])
 

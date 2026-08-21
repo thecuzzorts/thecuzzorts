@@ -2,261 +2,172 @@
    recurs across many attended games (e.g. a long-tenured
    Cardinal) is stored once, not once per appearance. */
 var mlbPlayers = {
-  "453895": "Brendan Ryan",
-  "425487": "Todd Wellemeyer",
   "453198": "Chris Perez",
   "407871": "Joe Thurston",
   "405395": "Albert Pujols",
-  "458003": "Blake Hawksworth",
-  "425867": "Khalil Greene",
   "211041": "Ryan Franklin",
-  "150178": "Jason LaRue",
-  "449072": "Kyle McClellan",
-  "119125": "Trever Miller",
-  "334492": "Joel Pineiro",
   "408219": "Chris Duncan",
   "407886": "Ryan Ludwick",
   "425794": "Adam Wainwright",
   "458675": "Colby Rasmus",
-  "448337": "Josh Kinney",
-  "121096": "Dennys Reyes",
   "425877": "Yadier Molina",
-  "112020": "Chris Carpenter",
   "150449": "Rick Ankiel",
   "460022": "Tyler Greene",
-  "433581": "Brad Thompson",
-  "435400": "Jason Motte",
   "435401": "Skip Schumaker",
-  "430675": "Sean Henn",
-  "434538": "Francisco Liriano",
-  "133226": "Mike Redmond",
   "450282": "Glen Perkins",
-  "285079": "R.A. Dickey",
-  "448147": "Nick Blackburn",
   "430593": "Brendan Harris",
-  "430670": "Bob Keppel",
-  "458643": "Jose Morales",
   "408045": "Joe Mauer",
   "408047": "Justin Morneau",
   "150317": "Joe Crede",
-  "430927": "Brian Buscher",
   "452655": "Denard Span",
   "445196": "Matt Tolbert",
   "150212": "Michael Cuddyer",
   "430585": "Jason Kubel",
   "150274": "Joe Nathan",
-  "430321": "Delmon Young",
-  "458713": "Kevin Slowey",
   "460576": "Carlos G\u00f3mez",
   "407825": "Matt Guerrier",
   "467726": "Jose Mijares",
-  "435044": "Scott Baker",
-  "346857": "Nick Punto",
+  "453895": "Brendan Ryan",
+  "458003": "Blake Hawksworth",
+  "425867": "Khalil Greene",
   "136660": "Mark DeRosa",
+  "150178": "Jason LaRue",
+  "119125": "Trever Miller",
+  "334492": "Joel Pineiro",
+  "448337": "Josh Kinney",
+  "434538": "Francisco Liriano",
+  "285079": "R.A. Dickey",
+  "430927": "Brian Buscher",
   "429841": "Matt Diaz",
   "452671": "Diory Hernandez",
-  "283166": "Michael Gonzalez",
   "110236": "Garret Anderson",
   "116706": "Chipper Jones",
   "498568": "Barbaro Canizares",
-  "499877": "Kenshin Kawakami",
-  "457453": "Jair Jurrjens",
-  "424325": "David Ross",
   "407924": "Manny Acosta",
   "447714": "Eric O'Flaherty",
   "119853": "Greg Norton",
   "445988": "Mart\u00edn Prado",
-  "425508": "Ryan Church",
-  "488862": "Yunel Escobar",
   "435263": "Brian McCann",
-  "493247": "Peter Moylan",
   "462102": "Tommy Hanson",
   "434661": "Nate McLouth",
-  "134320": "Javier Vazquez",
   "430637": "Kelly Johnson",
-  "117955": "Derek Lowe",
   "450665": "Kris Medlen",
-  "457429": "Boone Logan",
-  "451532": "Chad Billingsley",
-  "112128": "Juan Castro",
   "431145": "Russell Martin",
   "425766": "James Loney",
-  "493133": "Hiroki Kuroda",
   "461314": "Matt Kemp",
-  "455092": "Scott Elbert",
   "279577": "Rafael Furcal",
   "444843": "Andre Ethier",
   "121834": "Jason Schmidt",
-  "150116": "Randy Wolf",
   "120903": "Manny Ramirez",
-  "455009": "Jonathan Broxton",
   "430941": "George Sherrill",
   "334393": "Juan Pierre",
   "457428": "James McDonald",
   "407861": "Orlando Hudson",
-  "117928": "Mark Loretta",
-  "213711": "Jeff Weaver",
   "470462": "Ramon Troncoso",
-  "425539": "Hung-Chih Kuo",
   "232694": "Casey Blake",
-  "477132": "Clayton Kershaw",
-  "150407": "Guillermo Mota",
-  "110385": "Brad Ausmus",
   "425560": "Adam LaRoche",
   "400089": "Rafael Soriano",
-  "346798": "Kyle Lohse",
-  "448802": "Jaime Garc\u00eda",
+  "493247": "Peter Moylan",
+  "283166": "Michael Gonzalez",
+  "424325": "David Ross",
+  "117955": "Derek Lowe",
+  "150116": "Randy Wolf",
+  "425539": "Hung-Chih Kuo",
+  "150407": "Guillermo Mota",
+  "457453": "Jair Jurrjens",
+  "457429": "Boone Logan",
+  "451532": "Chad Billingsley",
+  "112128": "Juan Castro",
+  "455092": "Scott Elbert",
+  "117928": "Mark Loretta",
   "407812": "Matt Holliday",
   "445055": "Jon Jay",
-  "207267": "Brad Penny",
-  "458036": "Nick Stavinoha",
+  "121096": "Dennys Reyes",
+  "112020": "Chris Carpenter",
   "501896": "David Freese",
+  "435400": "Jason Motte",
   "459939": "Mitchell Boggs",
-  "458628": "Joe Mather",
-  "458924": "Jonny Venters",
-  "218596": "Tim Hudson",
-  "445926": "Jesse Chavez",
   "462405": "Brooks Conrad",
+  "488862": "Yunel Escobar",
   "518792": "Jason Heyward",
   "136267": "Troy Glaus",
   "123790": "Billy Wagner",
-  "408299": "Omar Infante",
   "400134": "Eric Hinske",
-  "493416": "Takashi Saito",
   "466320": "Melky Cabrera",
   "434637": "Matt Lindstrom",
-  "448200": "Chris Sampson",
-  "400061": "Roy Oswalt",
   "456422": "Michael Bourn",
-  "408206": "Brett Myers",
   "279827": "Humberto Quintero",
-  "446641": "Wilton Lopez",
   "502032": "Bud Norris",
-  "434643": "Wandy Rodriguez",
-  "407193": "Brandon Lyon",
   "150398": "Geoff Blum",
   "433898": "Jeff Keppinger",
   "430622": "Cory Sullivan",
   "430565": "Kazuo Matsui",
   "452254": "Hunter Pence",
-  "407860": "Gustavo Chac\u00edn",
-  "408211": "Kevin Cash",
-  "462956": "Felipe Paulino",
-  "119215": "Brian Moehler",
-  "445246": "Jeff Fulchino",
   "150324": "Carlos Lee",
-  "346859": "Jason Michaels",
-  "446373": "Tommy Manzella",
   "204020": "Lance Berkman",
   "150268": "Pedro Feliz",
   "453236": "Mark Hamilton",
-  "518614": "Daniel Descalso",
   "477569": "Fernando Salas",
-  "447744": "Raul Valdes",
-  "458681": "Lance Lynn",
-  "505447": "Brandon Dickson",
   "444135": "Ryan Theriot",
-  "488810": "Tony Cruz",
-  "150414": "Jake Westbrook",
   "456501": "Johnny Cueto",
-  "456701": "Homer Bailey",
-  "502190": "Mike Leake",
   "453211": "Drew Stubbs",
-  "276520": "Bronson Arroyo",
-  "502317": "Chris Heisey",
-  "434665": "Nick Masset",
-  "430404": "Jonny Gomes",
-  "457926": "Paul Janish",
-  "446185": "Logan Ondrusek",
-  "435538": "Bill Bray",
   "457803": "Jay Bruce",
-  "452672": "Ryan Hanigan",
-  "459967": "Sam LeCure",
-  "450172": "Edinson Volquez",
   "458015": "Joey Votto",
-  "111867": "Miguel Cairo",
-  "461766": "Jose Arredondo",
   "121074": "Edgar Renteria",
   "408252": "Brandon Phillips",
   "121409": "Scott Rolen",
-  "150188": "Francisco Cordero",
-  "547973": "Aroldis Chapman",
   "150421": "Ramon Hernandez",
   "430930": "Fred Lewis",
-  "121125": "Arthur Rhodes",
-  "521055": "Maikel Cleto",
+  "518614": "Daniel Descalso",
+  "448802": "Jaime Garc\u00eda",
   "501800": "Allen Craig",
-  "408042": "Gerald Laird",
   "519240": "Marc Rzepczynski",
-  "453203": "Shane Robinson",
-  "429719": "Edwin Jackson",
-  "518545": "Adron Chambers",
   "279913": "Corey Patterson",
-  "136734": "Octavio Dotel",
-  "460322": "Antoan Richardson",
-  "468429": "Jose Constanza",
+  "346857": "Nick Punto",
   "460008": "Anthony Varvaro",
-  "400268": "J.C. Boscan",
-  "501985": "Mike Minor",
   "518692": "Freddie Freeman",
-  "136460": "\u00c1lex Gonz\u00e1lez",
-  "527054": "Julio Teheran",
-  "545404": "Brandon Beachy",
-  "527055": "Arodys Vizca\u00edno",
-  "450852": "Cristhian Martinez",
-  "276530": "Scott Linebrink",
-  "517414": "Randall Delgado",
-  "518886": "Craig Kimbrel",
   "462564": "Dan Uggla",
   "333292": "Jack Wilson",
-  "572761": "Matt Carpenter",
+  "121125": "Arthur Rhodes",
+  "150414": "Jake Westbrook",
+  "449072": "Kyle McClellan",
+  "518545": "Adron Chambers",
+  "136734": "Octavio Dotel",
+  "218596": "Tim Hudson",
+  "450852": "Cristhian Martinez",
   "136860": "Carlos Beltr\u00e1n",
   "240694": "J.C. Romero",
-  "469690": "Victor Marte",
-  "115817": "Livan Hernandez",
-  "239795": "Chad Durbin",
   "464433": "Juan Francisco",
+  "545404": "Brandon Beachy",
   "543629": "Tyler Pastornicky",
-  "500674": "Eduardo Sanchez",
-  "571431": "Matt Adams",
-  "518693": "Sam Freeman",
-  "523260": "Joe Kelly",
+  "458681": "Lance Lynn",
+  "572761": "Matt Carpenter",
+  "488810": "Tony Cruz",
+  "469690": "Victor Marte",
+  "458924": "Jonny Venters",
+  "239795": "Chad Durbin",
+  "453203": "Shane Robinson",
   "518858": "Nate Jones",
   "452121": "Brent Lillibridge",
   "458668": "Jordan Danks",
-  "543819": "Zach Stewart",
   "457477": "Alejandro De Aza",
   "493351": "Alexei Ramirez",
   "425567": "Alex Rios",
   "493596": "Gordon Beckham",
   "592665": "Addison Reed",
-  "500871": "Eduardo Escobar",
   "117244": "Paul Konerko",
-  "519242": "Chris Sale",
-  "408241": "Jake Peavy",
   "500779": "Jose Quintana",
   "430884": "Jesse Crain",
-  "458950": "Philip Humber",
   "276055": "Adam Dunn",
   "493364": "Dayan Viciedo",
-  "452095": "Tyler Flowers",
-  "425856": "Gavin Floyd",
-  "349193": "Will Ohman",
   "150229": "A.J. Pierzynski",
-  "502327": "H\u00e9ctor Santiago",
   "407819": "Matt Thornton",
   "488919": "Taylor Green",
   "455117": "Mart\u00edn Maldonado",
-  "451596": "Yovani Gallardo",
   "285131": "C\u00e9sar Izturis",
   "571666": "Mike Fiers",
-  "425844": "Zack Greinke",
-  "434180": "Kameron Loe",
   "460075": "Ryan Braun",
-  "408061": "Francisco Rodr\u00edguez",
-  "462136": "Marco Estrada",
   "435459": "George Kottaras",
-  "407842": "Jose Veras",
   "285068": "Cody Ransom",
   "430001": "Rickie Weeks Jr.",
   "457422": "Tim Dillard",
@@ -264,29 +175,18 @@ var mlbPlayers = {
   "460579": "Nyjer Morgan",
   "133380": "Aramis Ramirez",
   "493114": "Norichika Aoki",
-  "446099": "John Axford",
   "448170": "Travis Ishikawa",
   "430611": "Corey Hart",
   "452220": "Stephen Drew",
   "407489": "Lyle Overbay",
-  "456696": "David Hernandez",
-  "453178": "Ian Kennedy",
-  "217100": "Willie Bloomquist",
-  "407816": "J.J. Putz",
   "431094": "Aaron Hill",
-  "518567": "Josh Collmenter",
-  "571578": "Patrick Corbin",
   "471083": "Miguel Montero",
   "467827": "Gerardo Parra",
-  "111072": "Henry Blanco",
   "446899": "Brad Ziegler",
   "444520": "Craig Breslow",
   "440251": "Ryan Roberts",
-  "502239": "Trevor Cahill",
   "489119": "Wade Miley",
-  "489448": "Mike Zagurski",
   "457708": "Justin Upton",
-  "545333": "Trevor Bauer",
   "543766": "Bryan Shaw",
   "502671": "Paul Goldschmidt",
   "455759": "Chris Young",
@@ -294,112 +194,62 @@ var mlbPlayers = {
   "425861": "Shawn Camp",
   "519203": "Anthony Rizzo",
   "516770": "Starlin Castro",
-  "460701": "James Russell",
-  "490063": "Matt Garza",
-  "445933": "Bryan LaHair",
-  "503569": "Rafael Dolis",
-  "488787": "Casey Coleman",
-  "446003": "Jairo Asencio",
-  "430904": "Paul Maholm",
   "434567": "Geovany Soto",
   "446381": "Darwin Barney",
   "472528": "Luis Valbuena",
   "430203": "David DeJesus",
   "542999": "Tony Campana",
   "407862": "Reed Johnson",
-  "453186": "Scott Maine",
-  "502182": "Steve Clevenger",
-  "150093": "Alfonso Soriano",
   "425557": "Jeff Baker",
-  "466918": "Manny Corpas",
   "461791": "Carlos Marmol",
-  "502188": "Jeff Samardzija",
+  "458628": "Joe Mather",
   "449079": "Wesley Wright",
-  "472551": "Fernando Abad",
   "444448": "Brian Bixler",
-  "445599": "Scott Moore",
   "460131": "Brian Bogusevic",
   "476704": "Jed Lowrie",
+  "434643": "Wandy Rodriguez",
   "430965": "Chris Snyder",
   "502110": "J.D. Martinez",
-  "449173": "Lucas Harrell",
-  "453400": "Chris Johnson",
   "514888": "Jose Altuve",
-  "457788": "Jordan Schafer",
   "453303": "Matt Downs",
   "488771": "Jason Castro",
   "502304": "David Carpenter",
-  "572971": "Dallas Keuchel",
-  "543475": "Jordan Lyles",
-  "457918": "J.A. Happ",
-  "451775": "Fernando Rodriguez Jr.",
-  "462480": "Rhiner Cruz",
   "446135": "Barret Browning",
+  "523260": "Joe Kelly",
   "451594": "Dexter Fowler",
   "429783": "Rafael Betancourt",
   "279571": "Matt Belisle",
-  "425386": "Jeremy Guthrie",
-  "457574": "Jordan Pacheco",
   "571521": "Rex Brothers",
   "340192": "Marco Scutaro",
-  "493603": "Adam Ottavino",
   "502158": "Josh Roenicke",
-  "543022": "Tyler Chatwood",
-  "519186": "Matt Reynolds",
-  "543184": "Christian Friedrich",
-  "408242": "Wil Nieves",
-  "519141": "Drew Pomeranz",
   "501647": "Wilin Rosario",
-  "114739": "Jason Giambi",
   "455126": "Chris Nelson",
   "458913": "Eric Young Jr.",
-  "489189": "Josh Outman",
   "502125": "Tyler Colvin",
   "471865": "Carlos Gonz\u00e1lez",
   "468406": "Jonathan Herrera",
   "433585": "Jeff Francis",
   "115732": "Todd Helton",
-  "465629": "Edward Mujica",
-  "150118": "Brian Fuentes",
-  "453311": "Tim Lincecum",
   "518516": "Madison Bumgarner",
-  "489209": "Brett Pill",
-  "346793": "Jeremy Affeldt",
   "435078": "Joaquin Arias",
   "543063": "Brandon Crawford",
+  "207267": "Brad Penny",
   "453923": "Gr\u00e9gor Blanco",
-  "454535": "Clay Hensley",
   "516949": "H\u00e9ctor S\u00e1nchez",
   "457763": "Buster Posey",
-  "285064": "Ryan Vogelsong",
-  "217096": "Barry Zito",
   "425657": "Javier L\u00f3pez",
-  "502004": "George Kontos",
   "474832": "Brandon Belt",
-  "430912": "Matt Cain",
   "433586": "Santiago Casilla",
-  "489265": "Sergio Romo",
   "434636": "\u00c1ngel Pag\u00e1n",
   "518813": "Greg Holland",
   "429722": "Ervin Santana",
-  "448306": "James Shields",
-  "460051": "Chris Getz",
   "521692": "Salvador Perez",
-  "434641": "Juan Gutierrez",
-  "456715": "Lorenzo Cain",
   "456714": "Billy Butler",
-  "136600": "Bruce Chen",
-  "434669": "Luis Mendoza",
-  "123173": "Miguel Tejada",
-  "451584": "Wade Davis",
-  "516969": "Kelvin Herrera",
   "519058": "Mike Moustakas",
   "425796": "Jeff Francoeur",
   "444876": "Alcides Escobar",
   "460086": "Alex Gordon",
   "471107": "Elliot Johnson",
-  "543070": "Aaron Crow",
-  "460024": "Luke Hochevar",
   "543333": "Eric Hosmer",
   "525768": "Tim Collins",
   "502481": "Jarrod Dyson",
@@ -407,462 +257,327 @@ var mlbPlayers = {
   "400085": "Ichiro Suzuki",
   "455755": "Chris Stewart",
   "150484": "Vernon Wells",
-  "519222": "Austin Romine",
-  "461833": "Phil Hughes",
-  "518875": "Shawn Kelley",
-  "282332": "CC Sabathia",
-  "502011": "Preston Claiborne",
+  "493133": "Hiroki Kuroda",
   "434624": "Jayson Nix",
-  "453269": "Brennan Boesch",
   "400098": "Travis Hafner",
-  "475479": "David Phelps",
   "458731": "Brett Gardner",
-  "476589": "Adam Warren",
   "121250": "Mariano Rivera",
-  "120485": "Andy Pettitte",
-  "471868": "Alberto Gonzalez",
-  "573064": "Vidal Nu\u00f1o",
-  "450204": "Ben Francisco",
   "502085": "David Robertson",
-  "474256": "Ryan Reid",
   "459991": "Gaby Sanchez",
-  "425549": "Clint Barmes",
-  "276346": "Brandon Inge",
-  "476570": "Vin Mazzaro",
   "501983": "Travis Snider",
   "434540": "Garrett Jones",
   "474568": "Jordy Mercer",
   "502374": "Michael McKenry",
   "457705": "Andrew McCutchen",
-  "457768": "Bryan Morris",
   "476883": "Pedro \u00c1lvarez",
   "458677": "Justin Wilson",
-  "453265": "Tony Watson",
   "453343": "Mark Melancon",
   "516782": "Starling Marte",
   "276351": "Jason Grilli",
-  "592238": "Brandon Cumpton",
   "543037": "Gerrit Cole",
-  "450203": "Charlie Morton",
   "435522": "Neil Walker",
-  "502046": "Jeff Locke",
   "502100": "Alex Presley",
   "150020": "Jerry Hairston Jr.",
-  "346874": "Juan Uribe",
   "458501": "Luis Alfonso Cruz",
   "454560": "A.J. Ellis",
-  "434181": "Brandon League",
-  "572089": "Paco Rodr\u00edguez",
-  "434442": "J.P. Howell",
-  "445276": "Kenley Jansen",
+  "425844": "Zack Greinke",
   "543008": "Alex Castellanos",
-  "547943": "Hyun Jin Ryu",
   "543148": "Tim Federowicz",
   "407885": "Mark Ellis",
   "624577": "Yasiel Puig",
   "408236": "Adri\u00e1n Gonz\u00e1lez",
-  "519437": "Chris Withrow",
   "434670": "Hanley Ramirez",
-  "543155": "Stephen Fife",
   "430613": "Ronald Belisario",
-  "431148": "Scott Kazmir",
   "458006": "Matt Albers",
-  "592102": "Cody Allen",
   "448602": "Mark Reynolds",
-  "444935": "Nick Hagadone",
   "471911": "Carlos Carrasco",
-  "475416": "Justin Masterson",
   "430605": "Ryan Raburn",
-  "543228": "Yan Gomes",
-  "434622": "Ubaldo Jim\u00e9nez",
-  "543426": "Matt Langwell",
   "543401": "Jason Kipnis",
+  "114739": "Jason Giambi",
   "448179": "Rich Hill",
-  "501925": "Joe Smith",
   "449107": "Mike Aviles",
   "488726": "Michael Brantley",
   "150348": "John McDonald",
-  "502260": "Vinnie Pestano",
   "467793": "Carlos Santana",
-  "446372": "Corey Kluber",
-  "430897": "Nick Swisher",
+  "448306": "James Shields",
   "518953": "David Lough",
+  "460051": "Chris Getz",
+  "456715": "Lorenzo Cain",
+  "136600": "Bruce Chen",
+  "123173": "Miguel Tejada",
+  "543070": "Aaron Crow",
   "425783": "Shin-Soo Choo",
   "544371": "Donald Lutz",
-  "501961": "Derrick Robinson",
   "519023": "Devin Mesoraco",
   "489197": "Curtis Partch",
   "453943": "Todd Frazier",
   "435219": "Jack Hannahan",
-  "430580": "Alfredo Simon",
-  "571561": "Tony Cingrani",
   "446359": "Zack Cozart",
   "502009": "Mat Latos",
   "543331": "J.J. Hoover",
   "449082": "Xavier Paul",
+  "453265": "Tony Watson",
+  "450203": "Charlie Morton",
   "518902": "Pete Kozma",
-  "543779": "Kevin Siegrist",
-  "544928": "Tyler Lyons",
-  "421064": "Ty Wigginton",
-  "571946": "Shelby Miller",
-  "595307": "Seth Maness",
-  "572751": "Keith Butler",
+  "465629": "Edward Mujica",
   "572096": "Trevor Rosenthal",
-  "329092": "Randy Choate",
-  "425900": "Dioner Navarro",
-  "444857": "Scott Feldman",
-  "276514": "Kevin Gregg",
-  "444468": "H\u00e9ctor Rond\u00f3n",
   "474865": "Julio Borbon",
-  "430668": "Scott Hairston",
   "453646": "Carlos Villanueva",
+  "150093": "Alfonso Soriano",
   "456078": "Welington Castillo",
+  "429719": "Edwin Jackson",
   "453284": "Blake Parker",
-  "469159": "Henry Alberto Rodriguez",
   "435220": "Ryan Sweeney",
   "435625": "Nate Schierholtz",
   "493574": "Blake Tekotte",
   "489413": "Casper Wells",
+  "408241": "Jake Peavy",
   "543569": "Brent Morel",
-  "433579": "John Danks",
   "453264": "Donnie Veal",
-  "518420": "Dylan Axelrod",
   "572033": "Josh Phegley",
-  "543216": "Conor Gillaspie",
-  "453515": "David Purcey",
   "594828": "Evan Gattis",
   "519345": "Joey Terdoslavich",
   "592743": "Andrelton Simmons",
+  "468429": "Jose Constanza",
   "425646": "Luis Ayala",
+  "430904": "Paul Maholm",
+  "453400": "Chris Johnson",
+  "518886": "Craig Kimbrel",
   "477229": "Jordan Walden",
   "501593": "Luis Avil\u00e1n",
-  "622072": "Alex Wood",
-  "453531": "Rob Johnson",
+  "543779": "Kevin Siegrist",
+  "571946": "Shelby Miller",
+  "595307": "Seth Maness",
   "275933": "Scott Downs",
   "518934": "DJ LeMahieu",
   "572816": "Corey Dickerson",
   "571448": "Nolan Arenado",
+  "446641": "Wilton Lopez",
   "453568": "Charlie Blackmon",
-  "504379": "Juan Nicasio",
-  "150275": "Yorvit Torrealba",
   "518586": "Charlie Culberson",
   "453064": "Troy Tulowitzki",
+  "466918": "Manny Corpas",
   "407822": "Jorge De La Rosa",
-  "468504": "Jhoulys Chac\u00edn",
+  "489189": "Josh Outman",
   "467850": "Edgmer Escalona",
+  "622072": "Alex Wood",
   "592239": "Todd Cunningham",
-  "608379": "Michael Wacha",
+  "457926": "Paul Janish",
+  "504379": "Juan Nicasio",
+  "571431": "Matt Adams",
+  "518693": "Sam Freeman",
+  "329092": "Randy Choate",
   "518911": "Andrew Lambo",
-  "453172": "Jared Hughes",
+  "425549": "Clint Barmes",
+  "476570": "Vin Mazzaro",
   "543281": "Josh Harrison",
-  "491646": "Jeanmar G\u00f3mez",
   "150359": "A.J. Burnett",
   "506997": "Tony Sanchez",
+  "457768": "Bryan Morris",
   "467798": "Jose Tabata",
   "543939": "Kolten Wong",
-  "593372": "Carlos Martinez",
+  "408042": "Gerald Laird",
+  "527054": "Julio Teheran",
+  "457788": "Jordan Schafer",
   "425834": "B.J. Upton",
-  "150021": "Darnell McDonald",
-  "547939": "Chang-Yong Lim",
-  "573127": "Zac Rosscup",
+  "425900": "Dioner Navarro",
   "467008": "Pedro Strop",
-  "501227": "Alberto Cabrera",
   "430906": "Donnie Murphy",
   "516809": "Junior Lake",
-  "453268": "Daniel Bard",
-  "518748": "Justin Grimm",
-  "453562": "Jake Arrieta",
-  "548384": "Brooks Raley",
-  "543894": "Logan Watkins",
-  "543734": "Chris Rusin",
-  "150119": "Freddy Garcia",
-  "542194": "Christian Bethancourt",
-  "571735": "David Hale",
   "518794": "Brandon Hicks",
-  "466948": "Jean Machi",
+  "346793": "Jeremy Affeldt",
   "501303": "Ehire Adrianza",
-  "453307": "David Huff",
   "434604": "Michael Morse",
   "467055": "Pablo Sandoval",
   "433589": "Yusmeiro Petit",
   "408307": "Carl Crawford",
+  "346874": "Juan Uribe",
   "475100": "Scott Van Slyke",
-  "460077": "Drew Butera",
-  "124604": "Jamey Wright",
+  "445276": "Kenley Jansen",
+  "547943": "Hyun Jin Ryu",
   "543829": "Dee Strange-Gordon",
-  "408210": "Chone Figgins",
-  "429717": "Dan Haren",
-  "277417": "Josh Beckett",
   "451216": "Brian Wilson",
   "457759": "Justin Turner",
+  "472551": "Fernando Abad",
   "461235": "Brandon Moss",
   "424825": "Coco Crisp",
-  "519083": "Derek Norris",
   "430948": "Alberto Callaspo",
   "475857": "Ryan Cook",
   "543243": "Sonny Gray",
-  "435558": "Daric Barton",
-  "448281": "Sean Doolittle",
   "502210": "Josh Reddick",
   "518626": "Josh Donaldson",
-  "543548": "Tommy Milone",
   "519299": "Eric Sogard",
   "502226": "Craig Gentry",
-  "519096": "Dan Otero",
   "493316": "Yoenis Cespedes",
-  "462382": "Jim Johnson",
   "444379": "John Jaso",
-  "573185": "Dan Straily",
-  "502381": "Luke Gregerson",
   "474892": "Chris Carter",
   "518625": "Matt Dominguez",
   "543807": "George Springer",
-  "542914": "Anthony Bass",
-  "449786": "Carlos Corpor\u00e1n",
   "451661": "Josh Fields",
   "571868": "Marc Krauss",
-  "425532": "Jerome Williams",
-  "519085": "Brett Oberholtzer",
-  "503556": "Marwin Gonzalez",
+  "447744": "Raul Valdes",
   "518560": "Paul Clemens",
   "543054": "Jarred Cosart",
-  "502748": "Brad Peacock",
   "542340": "Jonathan Villar",
   "461882": "Jesus Guzman",
   "543321": "L.J. Hoes",
-  "430589": "Chad Qualls",
   "488721": "Peter Bourjos",
   "542994": "Joey Butler",
-  "450212": "Pat Neshek",
-  "504083": "Jorge Rondon",
   "425509": "Jhonny Peralta",
+  "608379": "Michael Wacha",
   "592609": "Mike Olt",
   "466988": "Emilio Bonif\u00e1cio",
   "458085": "Chris Coghlan",
   "501888": "Ryan Kalish",
   "519166": "Neil Ram\u00edrez",
-  "489295": "Brian Schlitter",
+  "407842": "Jose Veras",
   "434628": "Jason Hammel",
   "434633": "John Baker",
+  "593372": "Carlos Martinez",
   "421685": "Aaron Harang",
-  "455369": "Ramiro Pena",
-  "621962": "Ian Thomas",
   "425491": "Ryan Doumit",
   "429665": "Edwin Encarnaci\u00f3n",
   "456124": "Erik Kratz",
-  "571800": "Drew Hutchison",
-  "519169": "Rob Rasmussen",
   "571901": "Aaron Loup",
   "476270": "Steve Tolleson",
   "447755": "Steve Delabar",
-  "279824": "Mark Buehrle",
   "521230": "Liam Hendriks",
-  "445170": "Todd Redmond",
-  "452252": "Adam Lind",
-  "430661": "Dustin McGowan",
   "607680": "Kevin Pillar",
   "408314": "Jos\u00e9 Reyes",
-  "489365": "Josh Thole",
   "446399": "Brett Cecil",
   "445163": "Casey Janssen",
   "543238": "Anthony Gose",
   "430832": "Jos\u00e9 Bautista",
   "543434": "Brett Lawrie",
+  "431148": "Scott Kazmir",
+  "519083": "Derek Norris",
   "452035": "Kyle Blanks",
+  "462382": "Jim Johnson",
   "592407": "Bryan Holaday",
   "400121": "Victor Martinez",
-  "457435": "Phil Coke",
   "519445": "Danny Worth",
   "592206": "Nick Castellanos",
-  "592767": "Drew Smyly",
   "571871": "Ian Krol",
-  "608349": "Corey Knebel",
-  "519144": "Rick Porcello",
   "435079": "Ian Kinsler",
   "116338": "Torii Hunter",
   "457706": "Austin Jackson",
   "430603": "Don Kelly",
-  "453286": "Max Scherzer",
   "456379": "Al Alburquerque",
   "408234": "Miguel Cabrera",
   "461865": "Andrew Romine",
   "519175": "Evan Reed",
-  "434671": "An\u00edbal S\u00e1nchez",
   "501955": "Joba Chamberlain",
   "434378": "Justin Verlander",
   "488671": "Alex Avila",
   "434658": "Rajai Davis",
   "455139": "Robinson Chirinos",
-  "430630": "Jason Frasor",
   "519048": "Mitch Moreland",
-  "519344": "Nick Tepesch",
-  "425840": "Neal Cotts",
-  "460269": "Chris Gimenez",
-  "519145": "Aaron Poreda",
   "465657": "Joakim Soria",
   "134181": "Adrian Beltr\u00e9",
   "547982": "Leonys Martin",
-  "607259": "Nick Martinez",
   "596059": "Rougned Odor",
-  "506433": "Yu Darvish",
   "407890": "Colby Lewis",
-  "468396": "Alexi Ogando",
   "543726": "Robbie Ross Jr.",
-  "543706": "Daniel Robertson",
-  "474521": "Shawn Tolleson",
   "574831": "Michael Choice",
   "596143": "Luis Sardinas",
   "462101": "Elvis Andrus",
+  "450212": "Pat Neshek",
   "476454": "Dellin Betances",
-  "407893": "Mark Teixeira",
   "453056": "Jacoby Ellsbury",
   "500208": "Yangervis Solarte",
   "469686": "Alfredo Aceves",
   "501660": "Zoilo Almonte",
-  "547888": "Masahiro Tanaka",
+  "502011": "Preston Claiborne",
   "116539": "Derek Jeter",
   "406878": "Brian Roberts",
-  "571974": "John Ryan Murphy",
   "595032": "Chase Whitley",
-  "457935": "Matt Daley",
   "475582": "Ryan Zimmerman",
-  "519322": "Drew Storen",
   "425785": "Greg Dobbs",
-  "502578": "Aaron Barrett",
-  "489334": "Craig Stammen",
-  "446321": "Ross Detwiler",
   "543685": "Anthony Rendon",
-  "544931": "Stephen Strasburg",
-  "467092": "Wilson Ramos",
+  "430668": "Scott Hairston",
   "457787": "Danny Espinosa",
-  "519455": "Jordan Zimmermann",
   "461325": "Tyler Clippard",
   "450729": "Doug Fister",
-  "460283": "Jerry Blevins",
   "446653": "Jose Lobat\u00f3n",
-  "595014": "Blake Treinen",
-  "435622": "Ian Desmond",
   "150029": "Jayson Werth",
   "435623": "Kevin Frandsen",
-  "543699": "Tanner Roark",
   "518617": "Jake Diekman",
-  "449097": "Jonathan Papelbon",
   "400284": "Chase Utley",
   "448242": "Tony Gwynn Jr.",
   "429667": "Ryan Howard",
-  "455374": "Antonio Bastardo",
-  "571527": "David Buchanan",
   "458582": "Reid Brignac",
-  "571786": "Mario Hollands",
-  "462945": "Cesar Jimenez",
   "519184": "Ben Revere",
   "452718": "Kyle Kendrick",
   "460055": "John Mayberry Jr.",
+  "408242": "Wil Nieves",
   "276519": "Jimmy Rollins",
-  "430606": "Mike Adams",
-  "434563": "Carlos Ruiz",
   "518603": "Justin De Fratus",
-  "407781": "Marlon Byrd",
   "502126": "Domonic Brown",
-  "543495": "Ethan Martin",
-  "433584": "Roberto Hernandez",
-  "430935": "Cole Hamels",
-  "514917": "C\u00e9sar Hern\u00e1ndez",
-  "572889": "Nick Greenwood",
-  "477003": "Jonathon Niese",
-  "544925": "Matthew den Dekker",
-  "544727": "Jeurys Familia",
   "110029": "Bobby Abreu",
   "112526": "Bartolo Colon",
-  "514913": "Rub\u00e9n Tejada",
-  "493472": "Eric Campbell",
   "460003": "Taylor Teagarden",
-  "554430": "Zack Wheeler",
-  "572831": "Josh Edgin",
   "445968": "Dana Eveland",
   "502517": "Daniel Murphy",
-  "542674": "Gonzalez Germen",
-  "502195": "Vic Black",
   "446263": "Lucas Duda",
   "527038": "Wilmer Flores",
-  "489232": "Anthony Recker",
   "516769": "Jenrry Mejia",
   "431151": "David Wright",
-  "594798": "Jacob deGrom",
-  "448614": "Carlos Torres",
-  "493137": "Daisuke Matsuzaka",
   "434158": "Curtis Granderson",
-  "429781": "Kevin Correia",
-  "456488": "Eduardo N\u00fa\u00f1ez",
   "476633": "Chris Parmelee",
   "425545": "Josh Willingham",
-  "465679": "Samuel Deduno",
-  "573204": "Caleb Thielbar",
+  "461833": "Phil Hughes",
   "461858": "Trevor Plouffe",
-  "502272": "Casey Fien",
-  "454537": "Jared Burton",
+  "500871": "Eduardo Escobar",
   "542455": "Oswaldo Arcia",
   "435559": "Kurt Suzuki",
-  "499624": "Chris Colabello",
-  "464416": "Yohan Pino",
   "488846": "Brian Duensing",
-  "518700": "Eric Fryer",
   "572821": "Brian Dozier",
   "461872": "Anthony Swarzak",
   "453539": "Sam Fuld",
-  "502043": "Kyle Gibson",
   "434778": "Kendrys Morales",
-  "445060": "Ricky Nolasco",
-  "465041": "Francisco Cervelli",
-  "461848": "Jim Miller",
+  "407893": "Mark Teixeira",
+  "547888": "Masahiro Tanaka",
   "519412": "Zelous Wheeler",
+  "456488": "Eduardo N\u00fa\u00f1ez",
+  "465679": "Samuel Deduno",
+  "573204": "Caleb Thielbar",
+  "502272": "Casey Fien",
+  "499624": "Chris Colabello",
+  "502043": "Kyle Gibson",
+  "465041": "Francisco Cervelli",
+  "453307": "David Huff",
+  "476589": "Adam Warren",
   "543606": "Jake Odorizzi",
-  "346797": "Grant Balfour",
   "407853": "Erik Bedard",
-  "476451": "Jeremy Hellickson",
-  "457775": "Desmond Jennings",
-  "459987": "Ces\u00e1r Ramos",
-  "502171": "Alex Cobb",
   "459964": "Matt Joyce",
   "150040": "Jos\u00e9 Molina",
-  "456034": "David Price",
-  "502202": "Brad Boxberger",
   "502676": "Cole Figueroa",
-  "523253": "Logan Forsythe",
-  "489446": "Kirby Yates",
   "446334": "Evan Longoria",
   "407908": "Joel Peralta",
-  "502042": "Chris Archer",
   "450314": "Ben Zobrist",
   "446386": "Brandon Guyer",
   "434663": "Juan Carlos Oviedo",
   "446481": "Sean Rodr\u00edguez",
   "595281": "Kevin Kiermaier",
-  "554432": "Chad Jenkins",
+  "571800": "Drew Hutchison",
   "518991": "Darin Mastroianni",
-  "493128": "Munenori Kawasaki",
+  "445170": "Todd Redmond",
   "430681": "Dan Johnson",
-  "573186": "Marcus Stroman",
   "435045": "Sergio Santos",
-  "542669": "Roman Mendez",
-  "456387": "Ryan Feierabend",
-  "571945": "Miles Mikolas",
+  "457918": "J.A. Happ",
+  "425840": "Neal Cotts",
   "451192": "James Adduci",
   "491703": "Neftal\u00ed Feliz",
   "450317": "J.P. Arencibia",
+  "543706": "Daniel Robertson",
   "489267": "Adam Rosales",
-  "502264": "Nate Adcock",
   "452104": "Chase Headley",
-  "425626": "Chris Capuano",
-  "572888": "Shane Greene",
-  "435221": "Brandon McCarthy",
   "572138": "Jon Singleton",
   "448609": "Tony Sipp",
   "463610": "Gregorio Petit",
   "594772": "Jake Buchanan",
   "543257": "Robbie Grossman",
-  "543521": "Collin McHugh",
-  "445153": "Darin Downs",
+  "430589": "Chad Qualls",
   "572365": "Ryan Goins",
   "460099": "Nolan Reimold",
   "592717": "Aaron Sanchez",
@@ -870,146 +585,97 @@ var mlbPlayers = {
   "407793": "John Lackey",
   "518771": "Mitch Harris",
   "545341": "Randal Grichuk",
-  "446225": "Ed Easley",
   "516416": "Jean Segura",
   "595386": "Jason Rogers",
+  "608349": "Corey Knebel",
   "467143": "H\u00e9ctor G\u00f3mez",
+  "452252": "Adam Lind",
   "451089": "Shane Peterson",
   "518960": "Jonathan Lucroy",
-  "518468": "Michael Blazek",
   "519293": "Will Smith",
-  "502026": "Jeremy Jeffress",
-  "592341": "David Goforth",
   "519076": "Jimmy Nelson",
   "541650": "Hern\u00e1n P\u00e9rez",
-  "115629": "LaTroy Hawkins",
   "460026": "Nick Hundley",
-  "592454": "Tommy Kahnle",
-  "623184": "Scott Oberg",
-  "518452": "Chad Bettis",
-  "572019": "Ben Paulsen",
   "502522": "Justin Miller",
+  "543184": "Christian Friedrich",
+  "446099": "John Axford",
   "488681": "Brandon Barnes",
   "501255": "Rafael Ynoa",
-  "592826": "Vince Velasquez",
-  "474233": "Hank Conger",
-  "501789": "Will Harris",
+  "519085": "Brett Oberholtzer",
   "605512": "Preston Tucker",
-  "621121": "Lance McCullers Jr.",
-  "570267": "Domingo Santana",
   "621043": "Carlos Correa",
+  "503556": "Marwin Gonzalez",
   "545350": "Jake Marisnick",
   "491159": "Joe Thatcher",
+  "115629": "LaTroy Hawkins",
+  "571735": "David Hale",
+  "623184": "Scott Oberg",
+  "572019": "Ben Paulsen",
   "548357": "Christian Bergman",
-  "518553": "Steve Cishek",
+  "570267": "Domingo Santana",
+  "543521": "Collin McHugh",
   "572039": "Stephen Piscotty",
-  "592815": "Sam Tuivailala",
-  "462515": "Miguel Socolovich",
   "455976": "Nick Markakis",
   "516811": "Eury P\u00e9rez",
   "607054": "Jace Peterson",
-  "465674": "Pedro Ciriaco",
-  "605374": "Andrew McKirahan",
-  "593495": "Daniel Castro",
-  "543432": "Ryan Lavarnway",
   "611177": "Adonis Garc\u00eda",
-  "605538": "Matt Wisler",
-  "430911": "David Aardsma",
   "457727": "Cameron Maybin",
+  "544928": "Tyler Lyons",
+  "514913": "Rub\u00e9n Tejada",
   "621199": "Matt Bowman",
+  "455009": "Jonathan Broxton",
   "571757": "Jeremy Hazelbaker",
   "518883": "Dean Kiekhefer",
-  "493200": "Seunghwan Oh",
   "649557": "Aledmys D\u00edaz",
-  "576397": "Jedd Gyorko",
-  "594838": "Phil Gosselin",
-  "543339": "Daniel Hudson",
-  "571875": "Jake Lamb",
+  "518700": "Eric Fryer",
   "572008": "Chris Owings",
-  "605177": "Andrew Chafin",
   "630111": "Yasmany Tom\u00e1s",
   "592273": "Brandon Drury",
   "605113": "Nick Ahmed",
-  "545332": "Jake Barrett",
-  "592662": "Robbie Ray",
-  "605359": "Evan Marshall",
-  "657205": "Zac Curtis",
-  "543302": "Chris Herrmann",
+  "493200": "Seunghwan Oh",
+  "576397": "Jedd Gyorko",
   "624585": "Jorge Soler",
   "595879": "Javier B\u00e1ez",
   "608365": "Addison Russell",
+  "444468": "H\u00e9ctor Rond\u00f3n",
   "592178": "Kris Bryant",
-  "452657": "Jon Lester",
+  "518748": "Justin Grimm",
   "600303": "Tommy La Stella",
-  "453385": "Clayton Richard",
+  "453562": "Jake Arrieta",
   "519333": "Matt Szczur",
-  "543294": "Kyle Hendricks",
-  "593958": "Eduardo Rodriguez",
-  "453214": "Steven Wright",
   "120074": "David Ortiz",
+  "519144": "Rick Porcello",
   "547749": "Junichi Tazawa",
-  "592390": "Heath Hembree",
-  "453329": "Clay Buchholz",
-  "571918": "Deven Marrero",
   "543768": "Travis Shaw",
-  "518927": "Tommy Layne",
-  "593523": "Marco Hern\u00e1ndez",
   "605141": "Mookie Betts",
   "456030": "Dustin Pedroia",
   "593428": "Xander Bogaerts",
   "598265": "Jackie Bradley Jr.",
-  "534606": "Ryan LaMarre",
   "493157": "Koji Uehara",
-  "506702": "Sandy Le\u00f3n",
-  "598264": "Matt Barnes",
   "543877": "Christian V\u00e1zquez",
-  "493193": "Dae-Ho Lee",
-  "276542": "Joaqu\u00edn Benoit",
-  "608167": "Jonathan Aro",
   "572122": "Kyle Seager",
   "606466": "Ketel Marte",
-  "572020": "James Paxton",
-  "543883": "Nick Vincent",
   "592716": "Adrian Sampson",
-  "455104": "Chris Iannetta",
-  "592836": "Taijuan Walker",
   "429711": "Franklin Gutierrez",
+  "502182": "Steve Clevenger",
   "452234": "Seth Smith",
-  "621242": "Edwin D\u00edaz",
   "443558": "Nelson Cruz",
-  "502523": "Shawn O'Malley",
-  "547874": "Hisashi Iwakuma",
   "543557": "Mike Montgomery",
-  "501992": "Nate Karns",
-  "425784": "Ren\u00e9 Rivera",
   "624424": "Michael Conforto",
-  "571927": "Steven Matz",
-  "518774": "Matt Harvey",
+  "455374": "Antonio Bastardo",
+  "594798": "Jacob deGrom",
   "570663": "Hansel Robles",
-  "592789": "Noah Syndergaard",
   "571841": "Ty Kelly",
-  "592340": "Erik Goeddel",
   "608700": "Kevin Plawecki",
-  "608703": "Matt Reynolds",
   "452678": "Asdr\u00fabal Cabrera",
-  "516714": "Dario Alvarez",
   "488818": "Chase d'Arnaud",
-  "607231": "John Gant",
   "430947": "Erick Aybar",
   "542255": "Ender Inciarte",
-  "592433": "Tyrell Jenkins",
   "605480": "Mallex Smith",
-  "594760": "Aaron Blair",
-  "474319": "Brandon Snyder",
-  "543017": "Hunter Cervenka",
-  "621408": "Matt Marksberry",
-  "542432": "Jos\u00e9 Ram\u00edrez",
-  "503444": "Joel De La Cruz",
-  "543901": "Ryan Weber",
+  "452095": "Tyler Flowers",
+  "592433": "Tyrell Jenkins",
   "606291": "Mauricio Cabrera",
-  "592314": "Mike Foltynewicz",
-  "621107": "Zach Eflin",
-  "457732": "Andrew Bailey",
+  "592826": "Vince Velasquez",
   "571437": "Aaron Altherr",
   "593576": "H\u00e9ctor Neris",
   "595963": "Tyler Goeddel",
@@ -1017,307 +683,201 @@ var mlbPlayers = {
   "596748": "Maikel Franco",
   "519237": "Cameron Rupp",
   "520471": "Freddy Galvis",
-  "605894": "Severino Gonz\u00e1lez",
   "605125": "Cody Asche",
   "517370": "Jimmy Paredes",
   "591693": "Edubray Ramos",
-  "605227": "Taylor Featherston",
-  "595191": "Jerad Eickhoff",
   "546318": "Od\u00fabel Herrera",
+  "514917": "C\u00e9sar Hern\u00e1ndez",
+  "621408": "Matt Marksberry",
+  "542432": "Jos\u00e9 Ram\u00edrez",
+  "489232": "Anthony Recker",
+  "543901": "Ryan Weber",
+  "474319": "Brandon Snyder",
+  "543017": "Hunter Cervenka",
+  "476451": "Jeremy Hellickson",
+  "605894": "Severino Gonz\u00e1lez",
+  "491646": "Jeanmar G\u00f3mez",
+  "605227": "Taylor Featherston",
   "594824": "Greg Garcia",
   "502054": "Tommy Pham",
   "451705": "Alberto Rosario",
-  "594577": "Mike Mayers",
+  "425532": "Jerome Williams",
   "435043": "Zach Duke",
-  "594792": "Brandon Cunniff",
-  "547007": "Rob Whalen",
-  "605154": "John Brebbia",
-  "500874": "Jos\u00e9 A. Mart\u00ednez",
+  "433584": "Roberto Hernandez",
   "657557": "Paul DeJong",
   "621035": "Chris Taylor",
   "518735": "Yasmani Grandal",
   "605131": "Austin Barnes",
   "571771": "Enrique Hern\u00e1ndez",
   "608369": "Corey Seager",
+  "523253": "Logan Forsythe",
   "594795": "Grant Dayton",
-  "501822": "Chris Hatcher",
-  "520980": "Pedro B\u00e1ez",
   "453344": "Brandon Morrow",
   "518649": "Brett Eibner",
-  "628317": "Kenta Maeda",
   "641355": "Cody Bellinger",
-  "548389": "Ross Stripling",
+  "435221": "Brandon McCarthy",
+  "489265": "Sergio Romo",
   "519346": "Eric Thames",
-  "542908": "Jett Bandy",
-  "623352": "Josh Hader",
   "444489": "Manny Pi\u00f1a",
-  "503449": "Wily Peralta",
-  "502179": "Paolo Espino",
   "542979": "Keon Broxton",
   "621446": "Lewis Brinson",
-  "448855": "Junior Guerra",
-  "605200": "Zach Davies",
   "606115": "Orlando Arcia",
-  "606930": "Jacob Barnes",
-  "502624": "Chase Anderson",
-  "545338": "Nick Franklin",
-  "542583": "Jes\u00fas Aguilar",
-  "543118": "Oliver Drake",
   "620443": "Luis Torrens",
-  "622766": "Miguel D\u00edaz",
-  "517369": "Jos\u00e9 Pirela",
-  "595978": "Austin Hedges",
   "592669": "Hunter Renfroe",
   "642707": "Allen C\u00f3rdoba",
-  "659275": "Dinelson Lamet",
-  "600526": "Jos\u00e9 Torres",
+  "489334": "Craig Stammen",
   "614173": "Franchy Cordero",
-  "543506": "Brandon Maurer",
   "571976": "Wil Myers",
-  "488748": "Ryan Buchter",
-  "572308": "Jos\u00e9 A. V\u00e1ldez",
   "606131": "Luis Perdomo",
   "605486": "Cory Spangenberg",
-  "664208": "Phil Maton",
-  "543272": "Brad Hand",
   "571602": "Matt Davidson",
   "591994": "Willy Garc\u00eda",
   "607074": "Carlos Rod\u00f3n",
-  "502706": "Derek Holland",
   "553882": "Omar Narv\u00e1ez",
   "573589": "Michael Ynoa",
-  "571787": "David Holmberg",
   "570560": "Yolmer S\u00e1nchez",
   "571476": "Chris Beck",
   "547989": "Jos\u00e9 Abreu",
   "502593": "Jake Petricka",
   "541645": "Avisa\u00edl Garc\u00eda",
-  "460059": "Mike Pelfrey",
   "641313": "Tim Anderson",
   "593700": "Alen Hanson",
   "641553": "Adam Engel",
-  "607345": "Kevan Smith",
   "543359": "Dan Jennings",
-  "622663": "Luis Severino",
-  "622703": "Ronald Herrera",
   "592741": "Chasen Shreve",
-  "593334": "Domingo Germ\u00e1n",
-  "608701": "Rob Refsnyder",
+  "519222": "Austin Romine",
   "592450": "Aaron Judge",
-  "501381": "Michael Pineda",
   "609280": "Miguel Andujar",
   "643778": "Tyler Webb",
   "642180": "Tyler Wade",
   "643338": "Chad Green",
   "591720": "Ronald Torreyes",
-  "570666": "Luis Cessa",
   "596142": "Gary S\u00e1nchez",
-  "592122": "Tyler Austin",
-  "656756": "Jordan Montgomery",
   "544369": "Didi Gregorius",
-  "621058": "Andrew Moore",
   "571745": "Mitch Haniger",
-  "641941": "Emilio Pag\u00e1n",
   "592325": "Ben Gamel",
-  "664641": "Ar\u00edel Miranda",
-  "621471": "Boog Powell",
-  "572287": "Mike Zunino",
-  "572021": "James Pazos",
+  "434563": "Carlos Ruiz",
+  "543883": "Nick Vincent",
   "543964": "Tony Zych",
-  "600301": "Taylor Motter",
-  "628338": "Guillermo Heredia",
+  "621242": "Edwin D\u00edaz",
   "433587": "F\u00e9lix Hern\u00e1ndez",
-  "621112": "Paul Blackburn",
-  "594943": "Zach Neal",
-  "640455": "Sean Manaea",
   "595144": "Jaycob Brugman",
   "605254": "Daniel Gossett",
   "656305": "Matt Chapman",
   "543760": "Marcus Semien",
   "501981": "Khris Davis",
+  "448281": "Sean Doolittle",
   "425492": "Ryan Madson",
-  "572728": "Michael Brady",
   "622194": "Bruce Maxwell",
   "475174": "Yonder Alonso",
   "592387": "Ryon Healy",
-  "434672": "Chris Smith",
   "543056": "Danny Coulombe",
-  "643265": "Garrett Cooper",
-  "571951": "Bryan Mitchell",
+  "570666": "Luis Cessa",
   "543305": "Aaron Hicks",
-  "623149": "Paul Sewald",
   "642086": "Dominic Smith",
-  "573109": "AJ Ramos",
+  "425784": "Ren\u00e9 Rivera",
   "606160": "Rafael Montero",
-  "518595": "Travis d'Arnaud",
-  "641850": "Kevin McGowan",
-  "607043": "Brandon Nimmo",
-  "623167": "Chris Flexen",
-  "607473": "Chasen Bradford",
-  "519294": "Josh Smoker",
   "642708": "Amed Rosario",
+  "460283": "Jerry Blevins",
+  "592340": "Erik Goeddel",
   "501571": "Juan Lagares",
   "622666": "Johan Camargo",
   "475247": "Ryan Flaherty",
   "641438": "Shane Carle",
-  "595465": "Dan Winkler",
-  "621345": "A.J. Minter",
-  "640460": "Dustin Peterson",
-  "608371": "Lucas Sims",
   "645277": "Ozzie Albies",
   "621020": "Dansby Swanson",
   "608331": "Max Fried",
-  "656794": "Sean Newcomb",
   "592145": "Jesse Biddle",
   "641645": "Luis Guillorme",
-  "639373": "Gerson Bautista",
-  "595943": "Phillip Evans",
-  "642008": "Jacob Rhame",
-  "664869": "P.J. Conlon",
-  "607229": "Robert Gsellman",
+  "607043": "Brandon Nimmo",
   "607625": "Seth Lugo",
-  "450306": "Jason Vargas",
   "622168": "Yairo Mu\u00f1oz",
-  "664056": "Harrison Bader",
+  "571945": "Miles Mikolas",
   "572228": "Luke Voit",
-  "596133": "Luke Weaver",
+  "500874": "Jos\u00e9 A. Mart\u00ednez",
   "663855": "Jordan Hicks",
   "506747": "Francisco Pe\u00f1a",
-  "656427": "Jack Flaherty",
   "542303": "Marcell Ozuna",
-  "596295": "Austin Gomber",
   "518618": "Derek Dietrich",
   "656738": "Ben Meyer",
   "594027": "Tyron Guerrero",
-  "592663": "J.T. Realmuto",
   "571506": "Justin Bour",
-  "570632": "Jos\u00e9 Ure\u00f1a",
-  "607457": "Kyle Barraclough",
   "605119": "Brian Anderson",
   "543045": "Adam Conley",
   "670950": "Trevor Richards",
-  "622694": "Elieser Hern\u00e1ndez",
   "595375": "JT Riddle",
   "592680": "Yadiel Rivera",
   "500743": "Miguel Rojas",
-  "592761": "Caleb Smith",
-  "612672": "Wei-Yin Chen",
-  "607968": "Drew Rucinski",
-  "608716": "Drew Steckenrider",
   "543776": "JB Shuck",
+  "596295": "Austin Gomber",
+  "594577": "Mike Mayers",
+  "664056": "Harrison Bader",
   "592426": "Luke Jackson",
+  "595465": "Dan Winkler",
   "542454": "Danny Santana",
+  "621345": "A.J. Minter",
   "660670": "Ronald Acu\u00f1a Jr.",
-  "594965": "Daniel Ponce de Leon",
+  "605154": "John Brebbia",
+  "596133": "Luke Weaver",
+  "605538": "Matt Wisler",
   "621550": "Patrick Wisdom",
   "608348": "Carson Kelly",
   "641933": "Tyler O'Neill",
   "641712": "Dakota Hudson",
-  "475115": "Tyson Ross",
   "666969": "Adolis Garc\u00eda",
   "608678": "Dominic Leone",
+  "453172": "Jared Hughes",
   "593974": "Wandy Peralta",
   "592863": "Mason Williams",
   "571466": "Tucker Barnhart",
-  "664167": "Blake Trahan",
   "594988": "Scott Schebler",
-  "623451": "Jackson Stephens",
   "640447": "Phillip Ervin",
-  "607219": "Sal Romano",
   "543101": "Anthony DeSclafani",
-  "622491": "Luis Castillo",
   "553993": "Eugenio Su\u00e1rez",
+  "608371": "Lucas Sims",
   "571697": "Scooter Gennett",
-  "642003": "Cody Reed",
   "628452": "Raisel Iglesias",
   "606299": "Jos\u00e9 Peraza",
   "547179": "Michael Lorenzen",
   "571740": "Billy Hamilton",
   "592200": "Curt Casali",
   "641525": "Brandon Dixon",
-  "599096": "Dilson Herrera",
-  "453192": "Andrew Miller",
   "606149": "Giovanny Gallegos",
-  "446308": "Matt Wieters",
-  "657041": "Lane Thomas",
-  "592332": "Kevin Gausman",
-  "657053": "Touki Toussaint",
-  "657097": "Jacob Webb",
-  "647336": "Michael Soroka",
+  "592314": "Mike Foltynewicz",
   "663586": "Austin Riley",
-  "657140": "Kyle Wright",
-  "458708": "Josh Tomlin",
-  "624641": "Edmundo Sosa",
-  "668227": "Randy Arozarena",
-  "668800": "Andrew Knizner",
-  "621529": "Joe Hudson",
+  "656794": "Sean Newcomb",
+  "607231": "John Gant",
+  "656427": "Jack Flaherty",
   "669242": "Tommy Edman",
-  "664854": "Ryan Helsley",
-  "592660": "Rangel Ravelo",
-  "650893": "G\u00e9nesis Cabrera",
   "658551": "Junior Fern\u00e1ndez",
   "669374": "Keston Hiura",
   "621438": "Tyrone Taylor",
-  "592885": "Christian Yelich",
-  "592865": "Taylor Williams",
-  "642207": "Devin Williams",
-  "669203": "Corbin Burnes",
-  "461829": "Gio Gonzalez",
+  "623352": "Josh Hader",
+  "519141": "Drew Pomeranz",
   "571679": "David Freitas",
-  "642547": "Freddy Peralta",
-  "607188": "Jake Faria",
-  "605143": "Ray Black",
-  "605288": "Adrian Houser",
-  "641924": "Jacob Nottingham",
+  "448855": "Junior Guerra",
   "663757": "Trent Grisham",
   "543351": "Jay Jackson",
-  "592222": "Alex Claudio",
-  "608718": "Brent Suter",
-  "642092": "Riley Smith",
+  "543475": "Jordan Lyles",
   "668942": "Josh Rojas",
-  "518876": "Merrill Kelly",
   "573009": "Joe Mantiply",
-  "622065": "Alex Young",
-  "656464": "Kevin Ginkel",
   "592233": "Stefan Crichton",
   "545121": "Ildemaro Vargas",
   "444482": "David Peralta",
-  "656686": "Corbin Martin",
-  "641796": "Tim Locastro",
-  "668678": "Zac Gallen",
   "572233": "Christian Walker",
   "598287": "No\u00e9 Ramirez",
-  "519390": "Stephen Vogt",
-  "676840": "Matt Peacock",
-  "656976": "Pavin Smith",
-  "624647": "Victor Gonz\u00e1lez",
+  "592761": "Caleb Smith",
   "669257": "Will Smith",
-  "641360": "Phil Bickford",
-  "664062": "Tony Gonsolin",
-  "656716": "Zach McKinstry",
   "519306": "Steven Souza Jr.",
-  "621111": "Walker Buehler",
-  "669952": "Mitch White",
   "572041": "AJ Pollock",
   "542992": "Andy Burns",
-  "664076": "Garrett Cleavinger",
-  "628711": "Julio Ur\u00edas",
-  "607461": "Matt Beaty",
   "666158": "Gavin Lux",
-  "676969": "Brett de Geus",
+  "545333": "Trevor Bauer",
   "641680": "Jonah Heim",
   "669256": "Nick Solak",
-  "663770": "Demarcus Evans",
-  "570257": "Joely Rodr\u00edguez",
-  "641540": "Dane Dunning",
-  "571788": "Brock Holt",
   "663993": "Nathaniel Lowe",
-  "656685": "Brett Martin",
-  "607359": "Spencer Patton",
   "667463": "John King",
-  "621368": "Taylor Hearn",
   "643396": "Isiah Kiner-Falefa",
-  "622250": "Josh Sborz",
   "624431": "Jose Trevino",
   "641432": "Willie Calhoun",
   "642201": "Eli White",
@@ -1325,19 +885,9 @@ var mlbPlayers = {
   "641829": "Jason Martin",
   "608336": "Joey Gallo",
   "517008": "Alex Colom\u00e9",
-  "666163": "Ben Rortvedt",
-  "624503": "Nick Gordon",
   "593934": "Miguel San\u00f3",
-  "660896": "Jorge Alcala",
-  "608648": "Tyler Duffey",
-  "621244": "Jos\u00e9 Berr\u00edos",
-  "641598": "Mitch Garver",
   "680777": "Ryan Jeffers",
-  "533167": "Matt Shoemaker",
-  "666135": "Alex Kirilloff",
   "573124": "Taylor Rogers",
-  "608652": "Luke Farrell",
-  "641927": "Bailey Ober",
   "596146": "Max Kepler",
   "663616": "Trevor Larnach",
   "593871": "Jorge Polanco",
@@ -1346,129 +896,87 @@ var mlbPlayers = {
   "621439": "Byron Buxton",
   "666185": "Dylan Carlson",
   "663457": "Lars Nootbaar",
+  "624641": "Edmundo Sosa",
   "519008": "T.J. McFarland",
-  "547942": "Kwang Hyun Kim",
+  "452657": "Jon Lester",
   "602922": "Jos\u00e9 Rondon",
-  "453281": "Wade LeBlanc",
   "472610": "Luis Garc\u00eda",
   "594807": "Adam Duvall",
-  "554431": "Tyler Matzek",
-  "666205": "Kyle Muller",
+  "445926": "Jesse Chavez",
   "592626": "Joc Pederson",
-  "593144": "Richard Rodr\u00edguez",
+  "628338": "Guillermo Heredia",
   "650828": "Edgar Santana",
+  "607345": "Kevan Smith",
   "501659": "Abraham Almonte",
-  "455119": "Chris Martin",
+  "458708": "Josh Tomlin",
   "621052": "Alex Reyes",
-  "621573": "Austin Dean",
-  "664141": "JT Brubaker",
-  "665854": "Luis Oviedo",
+  "668800": "Andrew Knizner",
+  "453192": "Andrew Miller",
+  "453281": "Wade LeBlanc",
+  "650893": "G\u00e9nesis Cabrera",
+  "593144": "Richard Rodr\u00edguez",
+  "657053": "Touki Toussaint",
+  "519390": "Stephen Vogt",
   "668804": "Bryan Reynolds",
   "592567": "Colin Moran",
-  "666801": "Rodolfo Castro",
   "570256": "Gregory Polanco",
   "607455": "Anthony Banda",
   "664918": "Kyle Keller",
   "663647": "Ke'Bryan Hayes",
-  "607732": "Jacob Stallings",
   "594694": "Wilmer Difo",
-  "656605": "Mitch Keller",
-  "596071": "Dillon Peters",
   "643230": "Steven Brault",
   "621028": "Kevin Newman",
-  "621249": "Duane Underwood Jr.",
   "660294": "Yoshi Tsutsugo",
-  "640444": "Wil Crowe",
   "683232": "Nick Mears",
-  "641771": "Chad Kuhl",
   "605421": "Michael P\u00e9rez",
-  "670280": "David Bednar",
   "660829": "Hoy Park",
-  "608717": "Chris Stratton",
-  "621114": "Ryan Burr",
   "544725": "Leury Garc\u00eda",
-  "663853": "Romy Gonzalez",
   "660162": "Yo\u00e1n Moncada",
   "657757": "Gavin Sheets",
-  "656302": "Dylan Cease",
   "676979": "Garrett Crochet",
   "571718": "Brian Goodwin",
   "656629": "Michael Kopech",
-  "664874": "Seby Zavala",
   "607481": "Aaron Bummer",
-  "625643": "Reynaldo L\u00f3pez",
   "650391": "Eloy Jim\u00e9nez",
-  "605541": "Mike Wright Jr.",
-  "664901": "Danny Mendick",
   "572193": "Ryan Tepera",
-  "614179": "Jos\u00e9 Ruiz",
   "673357": "Luis Robert Jr.",
-  "624427": "Stephen Gonsalves",
   "593140": "Michael Feliz",
   "578428": "Jose Iglesias",
+  "493603": "Adam Ottavino",
   "650382": "Darwinzon Hern\u00e1ndez",
-  "672391": "Kaleb Ort",
   "657077": "Alex Verdugo",
   "657031": "Josh Taylor",
   "666915": "Bobby Dalbec",
-  "676477": "Garrett Whitlock",
   "656941": "Kyle Schwarber",
   "646240": "Rafael Devers",
-  "570488": "Phillips Valdez",
   "518489": "Ryan Brasier",
-  "572070": "Garrett Richards",
-  "543135": "Nathan Eovaldi",
   "656557": "Tanner Houck",
-  "666200": "Jes\u00fas Luzardo",
   "674944": "Sean Guenther",
   "669432": "Trevor Rogers",
-  "542947": "Richard Bleier",
   "650559": "Bryan De La Cruz",
-  "645261": "Sandy Alcantara",
   "657193": "Eddy Alvarez",
-  "665795": "Edward Cabrera",
-  "668721": "Payton Henry",
-  "595345": "Steven Okert",
-  "605412": "Joe Panik",
-  "571670": "Dylan Floro",
-  "669294": "Paul Campbell",
-  "647315": "Zach Pop",
+  "592865": "Taylor Williams",
+  "542914": "Anthony Bass",
   "663743": "Nick Fortes",
   "642423": "Magneuris Sierra",
-  "669622": "Anthony Bender",
   "665862": "Jazz Chisholm Jr.",
   "660821": "Jes\u00fas S\u00e1nchez",
-  "605507": "Zach Thompson",
   "656577": "Alex Jackson",
   "650331": "Lewin D\u00edaz",
-  "656180": "Riley Adams",
   "666168": "Mason Thompson",
-  "680686": "Josiah Gray",
-  "663432": "Tanner Rainey",
-  "608723": "Austin Voth",
   "605137": "Josh Bell",
-  "640448": "Kyle Finnegan",
-  "666198": "Carter Kieboom",
   "600921": "Andr\u00e9s Machado",
-  "621348": "Sam Clay",
   "642028": "Josh Rogers",
-  "607560": "Ryne Harper",
   "664057": "Andrew Stevenson",
   "665742": "Juan Soto",
-  "593604": "Alberto Baldonado",
   "628450": "Yadiel Hernandez",
-  "607200": "Erick Fedde",
   "660688": "Keibert Ruiz",
-  "543594": "Sean Nolin",
+  "657041": "Lane Thomas",
   "671277": "Luis Garc\u00eda Jr.",
-  "641907": "Patrick Murphy",
   "666120": "Ian Anderson",
-  "644433": "Chadwick Tromp",
-  "669276": "Dylan Lee",
-  "605253": "Terrance Gore",
+  "554431": "Tyler Matzek",
+  "518595": "Travis d'Arnaud",
   "592696": "Eddie Rosario",
-  "661388": "William Contreras",
-  "656353": "Tucker Davidson",
   "642350": "Jose Siri",
   "642130": "Blake Taylor",
   "663656": "Kyle Tucker",
@@ -1477,108 +985,71 @@ var mlbPlayers = {
   "493329": "Yuli Gurriel",
   "554340": "Yimi Garc\u00eda",
   "592773": "Ryne Stanek",
-  "664353": "Jos\u00e9 Urquidy",
-  "664299": "Cristian Javier",
-  "519151": "Ryan Pressly",
   "677651": "Luis Garcia",
-  "676801": "Chas McCormick",
+  "548384": "Brooks Raley",
   "670541": "Yordan Alvarez",
-  "624522": "Keegan Thompson",
-  "575929": "Willson Contreras",
-  "621074": "Michael Rucker",
   "663611": "Nick Madrigal",
   "643524": "Frank Schwindel",
   "664023": "Ian Happ",
-  "681799": "Ethan Roberts",
-  "664123": "Scott Effross",
   "641684": "Michael Hermosillo",
   "596057": "Daniel Norris",
+  "543228": "Yan Gomes",
   "673548": "Seiya Suzuki",
-  "592858": "Rowan Wick",
-  "571710": "Mychal Givens",
-  "643410": "Mark Leiter Jr.",
+  "573186": "Marcus Stroman",
   "663538": "Nico Hoerner",
   "542364": "Rafael Ortega",
-  "657006": "Justin Steele",
-  "642770": "Javy Guerra",
   "621433": "Brett Phillips",
   "670764": "Taylor Walls",
-  "623912": "Harold Ram\u00edrez",
   "664040": "Brandon Lowe",
-  "607391": "Chris Mazza",
-  "663556": "Shane McClanahan",
   "642336": "Francisco Mej\u00eda",
+  "668227": "Randy Arozarena",
   "596847": "Ji Man Choi",
-  "592094": "Jason Adam",
   "656222": "Jalen Beeks",
-  "656420": "J.P. Feyereisen",
-  "676596": "Josh Fleming",
-  "622534": "Manuel Margot",
-  "676637": "Phoenix Sanders",
   "666139": "Josh Lowe",
-  "552640": "Andrew Kittredge",
-  "650490": "Yandy D\u00edaz",
   "677551": "Wander Franco",
-  "605488": "Jeffrey Springs",
-  "657044": "Ryan Thompson",
   "656876": "Drew Rasmussen",
-  "669357": "Nolan Gorman",
   "621295": "Nick Wittgren",
-  "676050": "Packy Naughton",
   "676831": "Kodi Whitley",
-  "669467": "Andre Pallante",
-  "669461": "Matthew Liberatore",
   "680977": "Brendan Donovan",
   "572403": "Drew VerHagen",
   "660766": "Juan Yepez",
   "640492": "Jos\u00e9 Az\u00f3car",
   "622503": "Nabil Crismatt",
-  "663158": "Robert Suarez",
-  "621051": "Steven Wilson",
   "595777": "Jurickson Profar",
-  "605397": "Joe Musgrove",
-  "642727": "Sergio Alc\u00e1ntara",
-  "657612": "Tim Hill",
+  "506433": "Yu Darvish",
   "592518": "Manny Machado",
-  "669022": "MacKenzie Gore",
-  "605483": "Blake Snell",
   "630105": "Jake Cronenworth",
   "673490": "Ha-Seong Kim",
   "543592": "Austin Nola",
-  "595751": "Jorge Alfaro",
-  "664161": "Matt Swarmer",
+  "575929": "Willson Contreras",
   "666624": "Christopher Morel",
+  "664123": "Scott Effross",
   "663845": "Alfonso Rivas III",
-  "668873": "Caleb Kilian",
-  "676714": "Brandon Hughes",
-  "664731": "P.J. Higgins",
-  "621219": "Alec Mills",
-  "675911": "Spencer Strider",
+  "592858": "Rowan Wick",
+  "455119": "Chris Martin",
+  "657006": "Justin Steele",
   "671739": "Michael Harris II",
-  "503285": "Darren O'Day",
   "621566": "Matt Olson",
   "672911": "Jesus Cruz",
-  "476595": "Lucas Luetge",
-  "641482": "Nestor Cortes",
+  "661388": "William Contreras",
+  "657140": "Kyle Wright",
+  "676050": "Packy Naughton",
+  "664854": "Ryan Helsley",
+  "608717": "Chris Stratton",
   "642152": "Lou Trivino III",
   "656061": "Albert Abreu",
   "642528": "Jonathan Lo\u00e1isiga",
-  "592791": "Jameson Taillon",
-  "543309": "Kyle Higashioka",
   "650402": "Gleyber Torres",
   "593423": "Frankie Montas",
   "643217": "Andrew Benintendi",
-  "605280": "Clay Holmes",
-  "668868": "Zack Thompson",
+  "669357": "Nolan Gorman",
   "668941": "JoJo Romero",
-  "663765": "Jake Woodford",
+  "656756": "Jordan Montgomery",
   "687093": "Vaughn Grissom",
-  "665871": "Javier Assad",
+  "656716": "Zach McKinstry",
   "669713": "Hayden Wesneski",
-  "657272": "Erich Uelmen",
-  "669093": "Jeremiah Estrada",
+  "664731": "P.J. Higgins",
   "623520": "David Bote",
-  "655889": "Manuel Rodr\u00edguez",
   "614177": "Franmil Reyes",
   "676369": "Nelson Vel\u00e1zquez",
   "628708": "Yunior Marte",
@@ -1586,21942 +1057,18398 @@ var mlbPlayers = {
   "663698": "Joey Bart",
   "518397": "Scott Alexander",
   "642731": "Thairo Estrada",
-  "642851": "Austin Wynns",
+  "621573": "Austin Dean",
   "681584": "David Villar",
-  "657277": "Logan Webb",
-  "606424": "Jarl\u00edn Garc\u00eda",
   "643511": "Tyler Rogers",
   "641793": "Zack Littell",
-  "664774": "LaMonte Wade Jr.",
   "666808": "Camilo Doval",
-  "596001": "Jakob Junis",
-  "573262": "Mike Yastrzemski",
   "605204": "J.D. Davis",
-  "656814": "Luis Ortiz",
-  "611093": "Silvino Bracho",
   "682829": "Elly De La Cruz",
   "663697": "Jonathan India",
-  "682227": "Brandon Williamson",
   "641584": "Jake Fraley",
+  "622065": "Alex Young",
   "680574": "Matt McLain",
   "650960": "Daniel Duarte",
-  "666181": "Will Benson",
   "670770": "TJ Friedl",
-  "669222": "Nick Senzel",
   "668715": "Spencer Steer",
-  "518585": "Fernando Cruz",
   "664139": "Ian Gibaut",
   "571912": "Luke Maile",
   "663886": "Tyler Stephenson",
   "571656": "Buck Farmer",
   "664747": "Alexis D\u00edaz",
-  "641427": "Alan Busenitz",
-  "671096": "Andrew Abbott",
-  "543859": "Michael Tonkin",
-  "623433": "Nick Anderson",
   "700363": "AJ Smith-Shawver",
   "621294": "Ben Heller",
   "656541": "Sam Hilliard",
-  "694363": "Jared Shuster",
-  "669221": "Sean Murphy",
   "641729": "Joe Jim\u00e9nez",
-  "693821": "Bryce Elder",
-  "571948": "Hoby Milner",
-  "605170": "Victor Caratini",
-  "686894": "Joey Wiemer",
-  "663330": "Jahmai Jones",
+  "489446": "Kirby Yates",
+  "592885": "Christian Yelich",
   "608385": "Jesse Winker",
   "686217": "Sal Frelick",
-  "682842": "Abner Uribe",
   "606303": "Joel Payamps",
+  "642207": "Devin Williams",
   "655316": "Andruw Monasterio",
   "680911": "Owen Miller",
   "663368": "Blake Perkins",
   "665625": "Elvis Peguero",
-  "607067": "Colin Rea",
   "668930": "Brice Turang",
+  "605288": "Adrian Houser",
   "642715": "Willy Adames",
-  "669060": "Bryse Wilson",
-  "656730": "Trevor Megill",
-  "650496": "J.C. Mej\u00eda",
+  "543859": "Michael Tonkin",
   "642216": "Allan Winans",
+  "669221": "Sean Murphy",
   "657088": "Forrest Wall",
-  "605446": "Dereck Rodr\u00edguez",
   "669016": "Brandon Marsh",
-  "650911": "Cristopher S\u00e1nchez",
   "547180": "Bryce Harper",
+  "592663": "J.T. Realmuto",
   "664761": "Alec Bohm",
-  "592229": "Dylan Covey",
-  "642397": "Gregory Soto",
-  "607755": "Andrew Vasquez",
   "681082": "Bryson Stott",
-  "656546": "Jeff Hoffman",
-  "622554": "Seranthony Dom\u00ednguez",
-  "595909": "Jake Cave",
+  "592836": "Taijuan Walker",
   "621381": "Matt Strahm",
-  "624133": "Ranger Suarez",
-  "596117": "Garrett Stubbs",
-  "656793": "Nick Nelson",
-  "605400": "Aaron Nola",
   "679032": "Johan Rojas",
   "607208": "Trea Turner",
   "624428": "Adam Frazier",
-  "665152": "Dean Kremer",
-  "669330": "Tyler Wells",
-  "657508": "Mike Baumann",
   "660261": "Shintaro Fujinami",
   "683002": "Gunnar Henderson",
   "622761": "Jorge Mateo",
   "623993": "Anthony Santander",
   "663630": "Ryan McKenna",
-  "608344": "Cole Irvin",
   "663624": "Ryan Mountcastle",
   "668939": "Adley Rutschman",
-  "680570": "Grayson Rodriguez",
   "676059": "Jordan Westburg",
-  "672335": "Cionel P\u00e9rez",
   "669720": "Austin Hays",
-  "602104": "Ram\u00f3n Ur\u00edas",
-  "642585": "F\u00e9lix Bautista",
   "666974": "Yennier Cano",
   "681297": "Colton Cowser",
-  "641329": "Bryan Baker",
-  "543510": "James McCann",
   "656811": "Ryan O'Hearn",
+  "680570": "Grayson Rodriguez",
+  "602104": "Ram\u00f3n Ur\u00edas",
+  "642585": "F\u00e9lix Bautista",
   "650633": "Michael King",
+  "666163": "Ben Rortvedt",
   "641343": "Jake Bauers",
-  "657376": "Clarke Schmidt",
-  "656185": "Greg Allen",
   "641856": "Billy McKinney",
-  "641656": "Ian Hamilton",
+  "543309": "Kyle Higashioka",
+  "592454": "Tommy Kahnle",
   "683011": "Anthony Volpe",
   "519317": "Giancarlo Stanton",
-  "676760": "Ron Marinaccio",
-  "598286": "Nick Ramirez",
+  "675911": "Spencer Strider",
   "572955": "Pierce Johnson",
   "672284": "Jarred Kelenic",
   "543518": "Scott McGough",
-  "694297": "Brandon Pfaadt",
-  "669459": "Kyle Nelson",
   "664983": "Jake McCarthy",
-  "666818": "Luis Fr\u00edas",
+  "656464": "Kevin Ginkel",
   "674072": "Tommy Henry",
-  "686826": "Bryce Jarvis",
   "677942": "Blaze Alexander",
-  "669194": "Ryne Nelson",
   "672515": "Gabriel Moreno",
   "682998": "Corbin Carroll",
   "666971": "Lourdes Gurriel Jr.",
   "612434": "Miguel Castro",
-  "681517": "Kyle Leahy",
+  "657044": "Ryan Thompson",
   "665877": "Jos\u00e9 Ferm\u00edn",
   "681676": "Ryan Fernandez",
   "676475": "Alec Burleson",
   "672279": "Michael Siani",
-  "686780": "Pedro Pag\u00e9s",
-  "687798": "Nick Robertson",
+  "552640": "Andrew Kittredge",
   "691026": "Masyn Winn",
   "671056": "Iv\u00e1n Herrera",
+  "621051": "Steven Wilson",
   "682868": "Bryan Ramos",
   "686676": "Korey Lee",
   "669699": "Braden Shewmake",
   "683734": "Andrew Vaughn",
   "670032": "Nicky Lopez",
+  "657612": "Tim Hill",
   "673929": "Jordan Leasure",
   "621383": "Tanner Banks",
-  "641745": "Brad Keller",
+  "607200": "Erick Fedde",
   "688297": "Chris Roycroft",
-  "694973": "Paul Skenes",
-  "682847": "Luis Ortiz",
+  "669461": "Matthew Liberatore",
+  "686780": "Pedro Pag\u00e9s",
   "665833": "Oneil Cruz",
-  "683003": "Jared Jones",
   "642133": "Rowdy Tellez",
   "658668": "Edward Olivares",
-  "656582": "Connor Joe",
   "669707": "Jared Triolo",
   "677865": "Justin Bruihl",
-  "670059": "Colin Holderman",
-  "693312": "Kyle Nicolas",
-  "669387": "Carmen Mlodzinski",
+  "656605": "Mitch Keller",
   "642701": "Dennis Santana",
-  "680779": "Henry Davis",
-  "641511": "Jason Delay",
-  "663559": "Bailey Falter",
   "572191": "Michael A. Taylor",
   "669261": "Jack Suwinski",
-  "693304": "Nick Gonzales",
   "676702": "Hunter Stratton",
-  "695596": "Nick Raposo",
+  "681517": "Kyle Leahy",
   "671218": "Heliot Ramos",
-  "678495": "Randy Rodr\u00edguez",
-  "676254": "Ryan Walker",
-  "670092": "Trenton Brooks",
   "672275": "Patrick Bailey",
-  "675921": "Spencer Howard",
   "702352": "Spencer Bivens",
   "689172": "Brett Wisely",
   "663546": "Sean Hjelle",
   "682641": "Luis Matos",
-  "596103": "Austin Slater",
-  "669062": "Erik Miller",
   "680885": "Spencer Schwellenbach",
   "670097": "Zack Short",
   "657656": "Ram\u00f3n Laureano",
-  "656550": "Grant Holmes",
   "678226": "Daysbel Hern\u00e1ndez",
+  "669276": "Dylan Lee",
+  "625643": "Reynaldo L\u00f3pez",
   "663897": "Luke Williams",
-  "671732": "Lawrence Butler",
+  "656550": "Grant Holmes",
+  "693821": "Bryce Elder",
+  "622663": "Luis Severino",
   "649966": "Luis Ur\u00edas",
-  "695243": "Mason Miller",
   "667670": "Brent Rooker",
-  "669372": "J.T. Ginn",
+  "642851": "Austin Wynns",
   "621053": "Tyler Ferguson",
-  "680862": "Willie MacIver",
-  "687765": "Mitch Spence",
   "680474": "Max Schuemann",
-  "547184": "Michael Kelly",
-  "674370": "Osvaldo Bido",
-  "682052": "Jacob Lopez",
   "570482": "Gio Urshela",
   "691777": "Max Muncy",
   "672016": "Denzel Clarke",
-  "691016": "Tyler Soderstrom",
   "701762": "Nick Kurtz",
   "663687": "Hogan Harris",
   "668709": "JJ Bleday",
-  "676664": "JP Sears",
   "805779": "Jacob Wilson",
   "664285": "Framber Valdez",
   "694376": "Shay Whitcomb",
   "670623": "Isaac Paredes",
-  "650556": "Bryan Abreu",
   "669450": "Cooper Hummel",
+  "605170": "Victor Caratini",
   "701358": "Cam Smith",
-  "687888": "Brandon Walter",
-  "686613": "Hunter Brown",
   "643289": "Mauricio Dub\u00f3n",
   "676694": "Jake Meyers",
-  "663967": "C\u00e9sar Salazar",
-  "656986": "Bennett Sousa",
-  "687473": "Ryan Gusto",
   "665161": "Jeremy Pe\u00f1a",
   "681869": "Shawn Dubin",
-  "687911": "Bryan King",
   "663321": "Nick Hernandez",
-  "676467": "Colton Gordon",
   "673237": "Yainer Diaz",
-  "673513": "Yuki Matsui",
   "688158": "David Morgan",
+  "592094": "Jason Adam",
+  "670092": "Trenton Brooks",
   "663604": "Brandon Lockridge",
-  "670970": "Adrian Morejon",
-  "669200": "Mason McCoy",
   "601713": "Nick Pivetta",
-  "663568": "Stephen Kolek",
   "669308": "Sean Reynolds",
   "665487": "Fernando Tatis Jr.",
-  "686701": "Ryan Bergert",
-  "669369": "Bryce Johnson",
   "553869": "Elias D\u00edaz",
-  "681190": "Randy V\u00e1squez",
   "666023": "Freddy Fermin",
-  "669674": "Sam Long",
   "686475": "Tyler Tolbert",
   "679845": "Nick Loftin",
   "670231": "John Rave",
   "671221": "Drew Waters",
-  "592192": "Mark Canha",
   "668674": "Lucas Erceg",
-  "663460": "Kris Bubic",
-  "664199": "Taylor Clarke",
   "608032": "Carlos Est\u00e9vez",
   "686469": "Vinnie Pasquantino",
   "664728": "Kyle Isbel",
-  "663738": "Daniel Lynch IV",
   "672580": "Maikel Garcia",
-  "702070": "Noah Cameron",
   "672582": "Angel Zerpa",
   "695506": "Jac Caglianone",
   "674444": "Steven Cruz",
-  "670167": "John Schreiber",
   "677951": "Bobby Witt Jr.",
   "650859": "Luis Rengifo",
   "672569": "Gustavo Campero",
   "695681": "Christian Moore",
   "687263": "Zach Neto",
-  "641401": "Connor Brogdon",
-  "664068": "Scott Kingery",
   "667755": "Jos\u00e9 Soriano",
-  "519326": "Hunter Strickland",
   "621493": "Taylor Ward",
-  "686799": "Jack Kochanowicz",
   "545361": "Mike Trout",
   "666176": "Jo Adell",
   "696147": "Sam Bachman",
-  "666171": "Ryan Zeferjahn",
   "694384": "Nolan Schanuel",
-  "579328": "Yusei Kikuchi",
+  "664774": "LaMonte Wade Jr.",
   "681351": "Logan O'Hoppe",
-  "656271": "Brock Burke",
-  "672282": "Reid Detmers",
-  "542881": "Tyler Anderson",
+  "687888": "Brandon Walter",
+  "672391": "Kaleb Ort",
+  "663967": "C\u00e9sar Salazar",
   "676508": "Ben Casparius",
   "687221": "Dalton Rushing",
   "681911": "Alex Vesia",
   "571970": "Max Muncy",
   "808975": "Hyeseong Kim",
-  "656945": "Tanner Scott",
   "660271": "Shohei Ohtani",
-  "694361": "Will Klein",
-  "680736": "Justin Wrobleski",
-  "606192": "Teoscar Hern\u00e1ndez",
   "681624": "Andy Pages",
-  "676263": "Jack Dreyer",
-  "669160": "Dustin May",
-  "808967": "Yoshinobu Yamamoto",
   "691781": "Brady House",
   "678606": "Jos\u00e9 A. Ferrer",
   "682928": "CJ Abrams",
-  "694350": "Zach Brzykcy",
-  "665953": "Andr\u00e9s Chaparro",
-  "592866": "Trevor Williams",
   "669371": "Cole Henry",
-  "695418": "Brad Lord",
   "695734": "Daylen Lile",
   "695578": "James Wood",
   "702795": "Ryan Loutos",
+  "647336": "Michael Soroka",
   "696285": "Jacob Young",
-  "663623": "Jake Irvin",
   "669743": "Alex Call",
-  "680730": "Mitchell Parker",
-  "674285": "Eduardo Salazar",
   "671131": "Jackson Rutledge",
   "694335": "Matt Svanson",
   "687363": "Victor Scott II",
-  "641658": "Garrett Hampson",
   "695336": "Thomas Saggese",
   "676617": "Riley O'Brien",
   "650968": "Yohel Pozo",
+  "664208": "Phil Maton",
   "669397": "Nick Allen",
   "660853": "Enyel De Los Santos",
   "686948": "Drake Baldwin",
   "680735": "Austin Cox",
-  "686249": "Nathan Wiles",
-  "656413": "Stuart Fairchild",
+  "571927": "Steven Matz",
   "700669": "Gordon Graceffo",
   "593833": "Wander Suero",
   "805373": "Nacho Alvarez Jr.",
   "669721": "Davis Daniel",
-  "666214": "Joey Wentz",
-  "700241": "Michael McGreevy",
   "691023": "Jordan Walker",
-  "701552": "Andre Granillo",
+  "641658": "Garrett Hampson",
+  "673513": "Yuki Matsui",
   "701538": "Jackson Merrill",
+  "669093": "Jeremiah Estrada",
+  "669369": "Bryce Johnson",
   "606996": "Kyle Hart",
   "701675": "Nathan Church",
-  "699625": "Jimmy Crooks",
   "669477": "Casey Schmitt",
   "678906": "Kai-Wei Teng",
   "676130": "Jos\u00e9 Butt\u00f3",
-  "676775": "Keaton Winn",
-  "693313": "Carson Seymour",
   "687551": "Drew Gilbert",
   "808982": "Jung Hoo Lee",
-  "664192": "Joey Lucchesi",
   "666711": "Joel Peguero",
-  "663941": "Tristan Beck",
-  "687529": "Grant McCray",
   "683766": "Christian Koss",
   "657424": "Matt Gage",
-  "690155": "Matt Pushard",
   "802139": "JJ Wetherholt",
   "666277": "George Soriano",
   "693409": "C\u00e9sar Prieto",
   "687462": "Spencer Horwitz",
   "682848": "Endy Rodr\u00edguez",
   "681895": "Evan Sisk",
+  "642397": "Gregory Soto",
   "682254": "Mason Montgomery",
   "663968": "Jake Mangum",
-  "670990": "Yohan Ram\u00edrez",
-  "676755": "Isaac Mattson",
-  "696149": "Bubba Chandler",
   "691373": "Jhostynxon Garcia",
-  "695257": "Billy Cook",
-  "664875": "Justin Lawrence",
+  "680779": "Henry Davis",
   "684049": "Brandan Bidois",
   "804606": "Konnor Griffin",
-  "677952": "Braxton Ashcraft",
+  "693304": "Nick Gonzales",
   "663494": "Bryan Torres",
   "691458": "Blaze Jordan",
-  "703725": "Luis Gastelum",
-  "689266": "Dylan Dodd",
-  "675916": "James Karinchak",
+  "699625": "Jimmy Crooks",
   "682989": "Victor Mederos",
   "800311": "Didier Fuentes",
+  "519242": "Chris Sale",
   "805347": "Jim Jarvis",
-  "702275": "JR Ritchie",
-  "571657": "Kyle Farmer",
   "641755": "Tyler Kinley",
   "664849": "Danny Young",
+  "573262": "Mike Yastrzemski",
+  "703725": "Luis Gastelum",
   "702566": "Owen Murphy",
-  "676551": "Brewer Hicklen",
-  "690928": "Hunter Dobbins",
-  "666661": "Juan Morillo",
+  "700241": "Michael McGreevy",
   "694374": "Tim Tawa",
+  "694297": "Brandon Pfaadt",
   "680728": "Adrian Del Castillo",
-  "672629": "Gerardo Carrillo",
   "682988": "Tyler Locklear",
   "814439": "Ryan Waldschmidt",
   "672695": "Geraldo Perdomo",
-  "683352": "Mitch Bratt",
-  "684442": "Kohl Drake",
+  "664199": "Taylor Clarke",
   "805299": "Brandyn Garcia",
-  "678489": "Jorge Barrosa",
-  "641816": "Tyler Mahle",
-  "527048": "Mart\u00edn P\u00e9rez",
+  "689266": "Dylan Dodd",
   "694795": "Josh Ekness",
-  "676604": "Tyler Zuber",
   "665052": "Griffin Conine",
-  "664126": "Pete Fairbanks",
   "681715": "Heriberto Hern\u00e1ndez",
-  "680767": "Victor Vodnik",
-  "663969": "Tyler Phillips",
-  "665923": "Esteury Ruiz",
   "805300": "Jakob Marsee",
   "676534": "Calvin Faucher",
   "691594": "Javier Sanoja",
   "806188": "Cade Gibson",
   "669364": "Xavier Edwards",
-  "656848": "Michael Petersen",
   "669065": "Kyle Stowers",
   "683357": "Owen Caissie",
   "682663": "Agust\u00edn Ram\u00edrez",
-  "677870": "Leo Jim\u00e9nez",
-  "676083": "Janson Junk",
-  "640459": "Brian Navarreto",
   "691788": "Joe Mack",
   "691587": "Eury P\u00e9rez",
   "672640": "Otto Lopez"
 };
 
 /* gamePk -> array of that game's participants (both teams,
-   batters + pitchers), id+team only -- full per-player stat lines
+   batters + pitchers), id+team+position only -- full per-player stat lines
    are intentionally not stored here to keep this file's size
    sane. Look up mlbPlayers[id] for the name. */
 var mlbGamePlayers = {
   "245294": [
     {
-      "id": 453895,
-      "team": "STL"
-    },
-    {
-      "id": 425487,
-      "team": "STL"
-    },
-    {
       "id": 453198,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 407871,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 405395,
-      "team": "STL"
-    },
-    {
-      "id": 458003,
-      "team": "STL"
-    },
-    {
-      "id": 425867,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 211041,
-      "team": "STL"
-    },
-    {
-      "id": 150178,
-      "team": "STL"
-    },
-    {
-      "id": 449072,
-      "team": "STL"
-    },
-    {
-      "id": 119125,
-      "team": "STL"
-    },
-    {
-      "id": 334492,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 408219,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 407886,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 425794,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 458675,
-      "team": "STL"
-    },
-    {
-      "id": 448337,
-      "team": "STL"
-    },
-    {
-      "id": 121096,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 425877,
-      "team": "STL"
-    },
-    {
-      "id": 112020,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 150449,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 460022,
-      "team": "STL"
-    },
-    {
-      "id": 433581,
-      "team": "STL"
-    },
-    {
-      "id": 435400,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 435401,
-      "team": "STL"
-    },
-    {
-      "id": 430675,
-      "team": "MIN"
-    },
-    {
-      "id": 434538,
-      "team": "MIN"
-    },
-    {
-      "id": 133226,
-      "team": "MIN"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 450282,
-      "team": "MIN"
-    },
-    {
-      "id": 285079,
-      "team": "MIN"
-    },
-    {
-      "id": 448147,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 430593,
-      "team": "MIN"
-    },
-    {
-      "id": 430670,
-      "team": "MIN"
-    },
-    {
-      "id": 458643,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 408045,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 408047,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 150317,
-      "team": "MIN"
-    },
-    {
-      "id": 430927,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 452655,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 445196,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 150212,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 430585,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 150274,
-      "team": "MIN"
-    },
-    {
-      "id": 430321,
-      "team": "MIN"
-    },
-    {
-      "id": 458713,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 460576,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 407825,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 467726,
-      "team": "MIN"
-    },
-    {
-      "id": 435044,
-      "team": "MIN"
-    },
-    {
-      "id": 346857,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "245324": [
     {
       "id": 453895,
-      "team": "STL"
-    },
-    {
-      "id": 425487,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 407871,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 405395,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 458003,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 425867,
-      "team": "STL"
-    },
-    {
-      "id": 211041,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 136660,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 150178,
-      "team": "STL"
-    },
-    {
-      "id": 449072,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 119125,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 334492,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 408219,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 407886,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 458675,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 448337,
-      "team": "STL"
-    },
-    {
-      "id": 121096,
-      "team": "STL"
-    },
-    {
-      "id": 425877,
-      "team": "STL"
-    },
-    {
-      "id": 112020,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 150449,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 460022,
-      "team": "STL"
-    },
-    {
-      "id": 433581,
-      "team": "STL"
-    },
-    {
-      "id": 435400,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 435401,
-      "team": "STL"
-    },
-    {
-      "id": 430675,
-      "team": "MIN"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 434538,
-      "team": "MIN"
-    },
-    {
-      "id": 133226,
-      "team": "MIN"
-    },
-    {
-      "id": 450282,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 285079,
-      "team": "MIN"
-    },
-    {
-      "id": 448147,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 430593,
-      "team": "MIN"
-    },
-    {
-      "id": 430670,
-      "team": "MIN"
-    },
-    {
-      "id": 458643,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 408045,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 408047,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 150317,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 430927,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 452655,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 445196,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 150212,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 430585,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 150274,
-      "team": "MIN"
-    },
-    {
-      "id": 430321,
-      "team": "MIN"
-    },
-    {
-      "id": 458713,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 460576,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 407825,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 467726,
-      "team": "MIN"
-    },
-    {
-      "id": 435044,
-      "team": "MIN"
-    },
-    {
-      "id": 346857,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "245733": [
     {
       "id": 429841,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 452671,
-      "team": "ATL"
-    },
-    {
-      "id": 283166,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 110236,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 116706,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 498568,
-      "team": "ATL"
-    },
-    {
-      "id": 499877,
-      "team": "ATL"
-    },
-    {
-      "id": 457453,
-      "team": "ATL"
-    },
-    {
-      "id": 424325,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 407924,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 447714,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 119853,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 445988,
-      "team": "ATL"
-    },
-    {
-      "id": 425508,
-      "team": "ATL"
-    },
-    {
-      "id": 488862,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 435263,
-      "team": "ATL"
-    },
-    {
-      "id": 493247,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 462102,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 434661,
-      "team": "ATL"
-    },
-    {
-      "id": 134320,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 430637,
-      "team": "ATL"
-    },
-    {
-      "id": 117955,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 450665,
-      "team": "ATL"
-    },
-    {
-      "id": 457429,
-      "team": "ATL"
-    },
-    {
-      "id": 451532,
-      "team": "LAD"
-    },
-    {
-      "id": 112128,
-      "team": "LAD"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 431145,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 425766,
-      "team": "LAD"
-    },
-    {
-      "id": 493133,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 461314,
-      "team": "LAD"
-    },
-    {
-      "id": 455092,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 279577,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 444843,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 121834,
-      "team": "LAD"
-    },
-    {
-      "id": 150116,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 120903,
-      "team": "LAD"
-    },
-    {
-      "id": 455009,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 430941,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 334393,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 457428,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 407861,
-      "team": "LAD"
-    },
-    {
-      "id": 117928,
-      "team": "LAD"
-    },
-    {
-      "id": 213711,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 470462,
-      "team": "LAD"
-    },
-    {
-      "id": 425539,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 232694,
-      "team": "LAD"
-    },
-    {
-      "id": 477132,
-      "team": "LAD"
-    },
-    {
-      "id": 150407,
-      "team": "LAD"
-    },
-    {
-      "id": 110385,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "3B",
+      "gamesStarted": null
     }
   ],
   "245748": [
     {
       "id": 425560,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 429841,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 116706,
-      "team": "ATL"
-    },
-    {
-      "id": 499877,
-      "team": "ATL"
-    },
-    {
-      "id": 457453,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 400089,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 447714,
-      "team": "ATL"
-    },
-    {
-      "id": 488862,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 493247,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 434661,
-      "team": "ATL"
-    },
-    {
-      "id": 134320,
-      "team": "ATL"
-    },
-    {
-      "id": 457429,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 452671,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 283166,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 110236,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 424325,
-      "team": "ATL"
-    },
-    {
-      "id": 407924,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 119853,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 445988,
-      "team": "ATL"
-    },
-    {
-      "id": 425508,
-      "team": "ATL"
-    },
-    {
-      "id": 435263,
-      "team": "ATL"
-    },
-    {
-      "id": 462102,
-      "team": "ATL"
-    },
-    {
-      "id": 430637,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 117955,
-      "team": "ATL"
-    },
-    {
-      "id": 450665,
-      "team": "ATL"
-    },
-    {
-      "id": 451532,
-      "team": "LAD"
-    },
-    {
-      "id": 112128,
-      "team": "LAD"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 431145,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 425766,
-      "team": "LAD"
-    },
-    {
-      "id": 493133,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 461314,
-      "team": "LAD"
-    },
-    {
-      "id": 455092,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 279577,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 444843,
-      "team": "LAD"
-    },
-    {
-      "id": 121834,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 150116,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 120903,
-      "team": "LAD"
-    },
-    {
-      "id": 455009,
-      "team": "LAD"
-    },
-    {
-      "id": 430941,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 334393,
-      "team": "LAD"
-    },
-    {
-      "id": 457428,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 407861,
-      "team": "LAD"
-    },
-    {
-      "id": 117928,
-      "team": "LAD"
-    },
-    {
-      "id": 213711,
-      "team": "LAD"
-    },
-    {
-      "id": 470462,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 425539,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 232694,
-      "team": "LAD"
-    },
-    {
-      "id": 477132,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 150407,
-      "team": "LAD"
-    },
-    {
-      "id": 110385,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "245763": [
     {
       "id": 425560,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 429841,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 452671,
-      "team": "ATL"
-    },
-    {
-      "id": 283166,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 110236,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 116706,
-      "team": "ATL"
-    },
-    {
-      "id": 499877,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 457453,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 424325,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 407924,
-      "team": "ATL"
-    },
-    {
-      "id": 447714,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 119853,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 445988,
-      "team": "ATL"
-    },
-    {
-      "id": 425508,
-      "team": "ATL"
-    },
-    {
-      "id": 488862,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 435263,
-      "team": "ATL"
-    },
-    {
-      "id": 493247,
-      "team": "ATL"
-    },
-    {
-      "id": 462102,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 434661,
-      "team": "ATL"
-    },
-    {
-      "id": 134320,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 430637,
-      "team": "ATL"
-    },
-    {
-      "id": 117955,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 450665,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 457429,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 451532,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 112128,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 431145,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 425766,
-      "team": "LAD"
-    },
-    {
-      "id": 493133,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 461314,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 455092,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 279577,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 444843,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 121834,
-      "team": "LAD"
-    },
-    {
-      "id": 150116,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 120903,
-      "team": "LAD"
-    },
-    {
-      "id": 455009,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 430941,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 334393,
-      "team": "LAD"
-    },
-    {
-      "id": 457428,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 407861,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 117928,
-      "team": "LAD"
-    },
-    {
-      "id": 213711,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 470462,
-      "team": "LAD"
-    },
-    {
-      "id": 425539,
-      "team": "LAD"
-    },
-    {
-      "id": 232694,
-      "team": "LAD"
-    },
-    {
-      "id": 477132,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 150407,
-      "team": "LAD"
-    },
-    {
-      "id": 110385,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "264112": [
     {
       "id": 453895,
-      "team": "STL"
-    },
-    {
-      "id": 346798,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 405395,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 458003,
-      "team": "STL"
-    },
-    {
-      "id": 448802,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 407812,
-      "team": "STL"
-    },
-    {
-      "id": 211041,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 445055,
-      "team": "STL"
-    },
-    {
-      "id": 207267,
-      "team": "STL"
-    },
-    {
-      "id": 150178,
-      "team": "STL"
-    },
-    {
-      "id": 449072,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 119125,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 407886,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 458675,
-      "team": "STL"
-    },
-    {
-      "id": 458036,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 121096,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 112020,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 501896,
-      "team": "STL"
-    },
-    {
-      "id": 460022,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 435400,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 435401,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 459939,
-      "team": "STL"
-    },
-    {
-      "id": 458628,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 429841,
-      "team": "ATL"
-    },
-    {
-      "id": 458924,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 116706,
-      "team": "ATL"
-    },
-    {
-      "id": 218596,
-      "team": "ATL"
-    },
-    {
-      "id": 499877,
-      "team": "ATL"
-    },
-    {
-      "id": 457453,
-      "team": "ATL"
-    },
-    {
-      "id": 445926,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 462405,
-      "team": "ATL"
-    },
-    {
-      "id": 447714,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 488862,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 518792,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 493247,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 434661,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 136267,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 123790,
-      "team": "ATL"
-    },
-    {
-      "id": 408299,
-      "team": "ATL"
-    },
-    {
-      "id": 424325,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 400134,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 445988,
-      "team": "ATL"
-    },
-    {
-      "id": 493416,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 466320,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 435263,
-      "team": "ATL"
-    },
-    {
-      "id": 462102,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 117955,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 450665,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "264325": [
     {
-      "id": 453895,
-      "team": "STL"
-    },
-    {
-      "id": 346798,
-      "team": "STL"
-    },
-    {
       "id": 405395,
-      "team": "STL"
-    },
-    {
-      "id": 458003,
-      "team": "STL"
-    },
-    {
-      "id": 448802,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 407812,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 211041,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 445055,
-      "team": "STL"
-    },
-    {
-      "id": 207267,
-      "team": "STL"
-    },
-    {
-      "id": 150178,
-      "team": "STL"
-    },
-    {
-      "id": 449072,
-      "team": "STL"
-    },
-    {
-      "id": 119125,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 407886,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 458675,
-      "team": "STL"
-    },
-    {
-      "id": 458036,
-      "team": "STL"
-    },
-    {
-      "id": 121096,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 112020,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 501896,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 460022,
-      "team": "STL"
-    },
-    {
-      "id": 435400,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 435401,
-      "team": "STL"
-    },
-    {
-      "id": 459939,
-      "team": "STL"
-    },
-    {
-      "id": 458628,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 434637,
-      "team": "HOU"
-    },
-    {
-      "id": 448200,
-      "team": "HOU"
-    },
-    {
-      "id": 400061,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 456422,
-      "team": "HOU"
-    },
-    {
-      "id": 408206,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 279827,
-      "team": "HOU"
-    },
-    {
-      "id": 446641,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 502032,
-      "team": "HOU"
-    },
-    {
-      "id": 434643,
-      "team": "HOU"
-    },
-    {
-      "id": 407193,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 150398,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 433898,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 430622,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 430565,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 452254,
-      "team": "HOU"
-    },
-    {
-      "id": 407860,
-      "team": "HOU"
-    },
-    {
-      "id": 408211,
-      "team": "HOU"
-    },
-    {
-      "id": 462956,
-      "team": "HOU"
-    },
-    {
-      "id": 119215,
-      "team": "HOU"
-    },
-    {
-      "id": 445246,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 150324,
-      "team": "HOU"
-    },
-    {
-      "id": 346859,
-      "team": "HOU"
-    },
-    {
-      "id": 446373,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 204020,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 150268,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "3B",
+      "gamesStarted": null
     }
   ],
   "288175": [
     {
       "id": 453236,
-      "team": "STL"
-    },
-    {
-      "id": 518614,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 477569,
-      "team": "STL"
-    },
-    {
-      "id": 346798,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 458675,
-      "team": "STL"
-    },
-    {
-      "id": 447744,
-      "team": "STL"
-    },
-    {
-      "id": 448802,
-      "team": "STL"
-    },
-    {
-      "id": 458681,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 407812,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 112020,
-      "team": "STL"
-    },
-    {
-      "id": 505447,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 501896,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 444135,
-      "team": "STL"
-    },
-    {
-      "id": 488810,
-      "team": "STL"
-    },
-    {
-      "id": 435400,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 445055,
-      "team": "STL"
-    },
-    {
-      "id": 346857,
-      "team": "STL"
-    },
-    {
-      "id": 150414,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 435401,
-      "team": "STL"
-    },
-    {
-      "id": 459939,
-      "team": "STL"
-    },
-    {
-      "id": 449072,
-      "team": "STL"
-    },
-    {
-      "id": 119125,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 204020,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 456501,
-      "team": "CIN"
-    },
-    {
-      "id": 456701,
-      "team": "CIN"
-    },
-    {
-      "id": 502190,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 453211,
-      "team": "CIN"
-    },
-    {
-      "id": 276520,
-      "team": "CIN"
-    },
-    {
-      "id": 502317,
-      "team": "CIN"
-    },
-    {
-      "id": 434665,
-      "team": "CIN"
-    },
-    {
-      "id": 430404,
-      "team": "CIN"
-    },
-    {
-      "id": 457926,
-      "team": "CIN"
-    },
-    {
-      "id": 446185,
-      "team": "CIN"
-    },
-    {
-      "id": 435538,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 457803,
-      "team": "CIN"
-    },
-    {
-      "id": 452672,
-      "team": "CIN"
-    },
-    {
-      "id": 459967,
-      "team": "CIN"
-    },
-    {
-      "id": 450172,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 458015,
-      "team": "CIN"
-    },
-    {
-      "id": 111867,
-      "team": "CIN"
-    },
-    {
-      "id": 461766,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 121074,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 408252,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 121409,
-      "team": "CIN"
-    },
-    {
-      "id": 150188,
-      "team": "CIN"
-    },
-    {
-      "id": 547973,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 150421,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 430930,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "LF",
+      "gamesStarted": null
     }
   ],
   "289064": [
     {
       "id": 518614,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 477569,
-      "team": "STL"
-    },
-    {
-      "id": 346798,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 405395,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 279577,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 448802,
-      "team": "STL"
-    },
-    {
-      "id": 121125,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 407812,
-      "team": "STL"
-    },
-    {
-      "id": 521055,
-      "team": "STL"
-    },
-    {
-      "id": 505447,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 501800,
-      "team": "STL"
-    },
-    {
-      "id": 408042,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 519240,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 445055,
-      "team": "STL"
-    },
-    {
-      "id": 150414,
-      "team": "STL"
-    },
-    {
-      "id": 449072,
-      "team": "STL"
-    },
-    {
-      "id": 453203,
-      "team": "STL"
-    },
-    {
-      "id": 429719,
-      "team": "STL"
-    },
-    {
-      "id": 518545,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 425877,
-      "team": "STL"
-    },
-    {
-      "id": 112020,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 501896,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 279913,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 460022,
-      "team": "STL"
-    },
-    {
-      "id": 488810,
-      "team": "STL"
+      "team": "STL",
+      "position": "PR",
+      "gamesStarted": null
     },
     {
       "id": 435400,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 346857,
-      "team": "STL"
-    },
-    {
-      "id": 435401,
-      "team": "STL"
-    },
-    {
-      "id": 136734,
-      "team": "STL"
-    },
-    {
-      "id": 459939,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 204020,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 429841,
-      "team": "ATL"
-    },
-    {
-      "id": 458924,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 116706,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 456422,
-      "team": "ATL"
-    },
-    {
-      "id": 218596,
-      "team": "ATL"
-    },
-    {
-      "id": 457453,
-      "team": "ATL"
-    },
-    {
-      "id": 460322,
-      "team": "ATL"
-    },
-    {
-      "id": 468429,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 460008,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 462405,
-      "team": "ATL"
-    },
-    {
-      "id": 447714,
-      "team": "ATL"
-    },
-    {
-      "id": 400268,
-      "team": "ATL"
-    },
-    {
-      "id": 501985,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 518792,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 518692,
-      "team": "ATL"
-    },
-    {
-      "id": 136460,
-      "team": "ATL"
-    },
-    {
-      "id": 493247,
-      "team": "ATL"
-    },
-    {
-      "id": 527054,
-      "team": "ATL"
-    },
-    {
-      "id": 545404,
-      "team": "ATL"
-    },
-    {
-      "id": 527055,
-      "team": "ATL"
-    },
-    {
-      "id": 450852,
-      "team": "ATL"
-    },
-    {
-      "id": 424325,
-      "team": "ATL"
-    },
-    {
-      "id": 276530,
-      "team": "ATL"
-    },
-    {
-      "id": 517414,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 400134,
-      "team": "ATL"
-    },
-    {
-      "id": 518886,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 445988,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 462564,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 435263,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 333292,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 117955,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     }
   ],
   "289079": [
     {
       "id": 518614,
-      "team": "STL"
-    },
-    {
-      "id": 477569,
-      "team": "STL"
-    },
-    {
-      "id": 346798,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 405395,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 279577,
-      "team": "STL"
-    },
-    {
-      "id": 448802,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 121125,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 407812,
-      "team": "STL"
-    },
-    {
-      "id": 521055,
-      "team": "STL"
-    },
-    {
-      "id": 505447,
-      "team": "STL"
-    },
-    {
-      "id": 501800,
-      "team": "STL"
-    },
-    {
-      "id": 408042,
-      "team": "STL"
-    },
-    {
-      "id": 519240,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 445055,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 150414,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 449072,
-      "team": "STL"
-    },
-    {
-      "id": 453203,
-      "team": "STL"
-    },
-    {
-      "id": 429719,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518545,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 425877,
-      "team": "STL"
-    },
-    {
-      "id": 112020,
-      "team": "STL"
-    },
-    {
-      "id": 501896,
-      "team": "STL"
-    },
-    {
-      "id": 279913,
-      "team": "STL"
-    },
-    {
-      "id": 460022,
-      "team": "STL"
-    },
-    {
-      "id": 488810,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 435400,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 346857,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 435401,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 136734,
-      "team": "STL"
-    },
-    {
-      "id": 459939,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 204020,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 429841,
-      "team": "ATL"
-    },
-    {
-      "id": 458924,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 116706,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 456422,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 218596,
-      "team": "ATL"
-    },
-    {
-      "id": 457453,
-      "team": "ATL"
-    },
-    {
-      "id": 460322,
-      "team": "ATL"
-    },
-    {
-      "id": 468429,
-      "team": "ATL"
-    },
-    {
-      "id": 460008,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 462405,
-      "team": "ATL"
-    },
-    {
-      "id": 447714,
-      "team": "ATL"
-    },
-    {
-      "id": 400268,
-      "team": "ATL"
-    },
-    {
-      "id": 501985,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 518792,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 518692,
-      "team": "ATL"
-    },
-    {
-      "id": 136460,
-      "team": "ATL"
-    },
-    {
-      "id": 493247,
-      "team": "ATL"
-    },
-    {
-      "id": 527054,
-      "team": "ATL"
-    },
-    {
-      "id": 545404,
-      "team": "ATL"
-    },
-    {
-      "id": 527055,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 450852,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 424325,
-      "team": "ATL"
-    },
-    {
-      "id": 276530,
-      "team": "ATL"
-    },
-    {
-      "id": 517414,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 400134,
-      "team": "ATL"
-    },
-    {
-      "id": 518886,
-      "team": "ATL"
-    },
-    {
-      "id": 445988,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 462564,
-      "team": "ATL"
-    },
-    {
-      "id": 435263,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 333292,
-      "team": "ATL"
-    },
-    {
-      "id": 117955,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     }
   ],
   "318223": [
     {
       "id": 518614,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 477569,
-      "team": "STL"
-    },
-    {
-      "id": 346798,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 279577,
-      "team": "STL"
-    },
-    {
-      "id": 448802,
-      "team": "STL"
-    },
-    {
-      "id": 458681,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 407812,
-      "team": "STL"
-    },
-    {
-      "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 501800,
-      "team": "STL"
-    },
-    {
-      "id": 519240,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 445055,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 136860,
-      "team": "STL"
-    },
-    {
-      "id": 150414,
-      "team": "STL"
-    },
-    {
-      "id": 449072,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 240694,
-      "team": "STL"
-    },
-    {
-      "id": 453203,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 425794,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 501896,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 460022,
-      "team": "STL"
-    },
-    {
-      "id": 488810,
-      "team": "STL"
-    },
-    {
-      "id": 435400,
-      "team": "STL"
-    },
-    {
-      "id": 435401,
-      "team": "STL"
-    },
-    {
-      "id": 469690,
-      "team": "STL"
-    },
-    {
-      "id": 459939,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 429841,
-      "team": "ATL"
-    },
-    {
-      "id": 458924,
-      "team": "ATL"
-    },
-    {
-      "id": 115817,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 116706,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 456422,
-      "team": "ATL"
-    },
-    {
-      "id": 218596,
-      "team": "ATL"
-    },
-    {
-      "id": 447714,
-      "team": "ATL"
-    },
-    {
-      "id": 239795,
-      "team": "ATL"
-    },
-    {
-      "id": 501985,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 518792,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 518692,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 464433,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 545404,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 450852,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543629,
-      "team": "ATL"
-    },
-    {
-      "id": 424325,
-      "team": "ATL"
-    },
-    {
-      "id": 517414,
-      "team": "ATL"
-    },
-    {
-      "id": 400134,
-      "team": "ATL"
-    },
-    {
-      "id": 518886,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 445988,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 462564,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 435263,
-      "team": "ATL"
-    },
-    {
-      "id": 462102,
-      "team": "ATL"
-    },
-    {
-      "id": 333292,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 450665,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "318238": [
     {
       "id": 518614,
-      "team": "STL"
-    },
-    {
-      "id": 477569,
-      "team": "STL"
-    },
-    {
-      "id": 346798,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 279577,
-      "team": "STL"
-    },
-    {
-      "id": 448802,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 458681,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 407812,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 501800,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 519240,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 445055,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 136860,
-      "team": "STL"
-    },
-    {
-      "id": 150414,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 449072,
-      "team": "STL"
-    },
-    {
-      "id": 240694,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
-    },
-    {
-      "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 501896,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 460022,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 488810,
-      "team": "STL"
-    },
-    {
-      "id": 435400,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 435401,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 469690,
-      "team": "STL"
-    },
-    {
-      "id": 459939,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 204020,
-      "team": "STL"
-    },
-    {
-      "id": 429841,
-      "team": "ATL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 458924,
-      "team": "ATL"
-    },
-    {
-      "id": 115817,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 116706,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 456422,
-      "team": "ATL"
-    },
-    {
-      "id": 218596,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 447714,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 239795,
-      "team": "ATL"
-    },
-    {
-      "id": 501985,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518792,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 518692,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 464433,
-      "team": "ATL"
-    },
-    {
-      "id": 545404,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 450852,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543629,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 424325,
-      "team": "ATL"
-    },
-    {
-      "id": 517414,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 400134,
-      "team": "ATL"
-    },
-    {
-      "id": 518886,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 445988,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 462564,
-      "team": "ATL"
-    },
-    {
-      "id": 435263,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 462102,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 333292,
-      "team": "ATL"
-    },
-    {
-      "id": 450665,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     }
   ],
   "318645": [
     {
-      "id": 518614,
-      "team": "STL"
-    },
-    {
       "id": 477569,
-      "team": "STL"
-    },
-    {
-      "id": 346798,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 279577,
-      "team": "STL"
-    },
-    {
-      "id": 458681,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 407812,
-      "team": "STL"
-    },
-    {
-      "id": 500674,
-      "team": "STL"
-    },
-    {
-      "id": 571431,
-      "team": "STL"
-    },
-    {
-      "id": 521055,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 501800,
-      "team": "STL"
-    },
-    {
-      "id": 518693,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 519240,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 136860,
-      "team": "STL"
-    },
-    {
-      "id": 150414,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 453203,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 425794,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 518545,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 501896,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 460022,
-      "team": "STL"
-    },
-    {
-      "id": 488810,
-      "team": "STL"
-    },
-    {
-      "id": 523260,
-      "team": "STL"
-    },
-    {
-      "id": 435400,
-      "team": "STL"
-    },
-    {
-      "id": 469690,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 459939,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518858,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 452121,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 458668,
-      "team": "CWS"
-    },
-    {
-      "id": 543819,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 457477,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 493351,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 425567,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 493596,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 592665,
-      "team": "CWS"
-    },
-    {
-      "id": 500871,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 117244,
-      "team": "CWS"
-    },
-    {
-      "id": 519242,
-      "team": "CWS"
-    },
-    {
-      "id": 408241,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 500779,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 430884,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 407861,
-      "team": "CWS"
-    },
-    {
-      "id": 458950,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 276055,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 493364,
-      "team": "CWS"
-    },
-    {
-      "id": 452095,
-      "team": "CWS"
-    },
-    {
-      "id": 425856,
-      "team": "CWS"
-    },
-    {
-      "id": 349193,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 150229,
-      "team": "CWS"
-    },
-    {
-      "id": 502327,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 407819,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "318888": [
     {
       "id": 488919,
-      "team": "MIL"
-    },
-    {
-      "id": 115817,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 455117,
-      "team": "MIL"
-    },
-    {
-      "id": 451596,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 285131,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 571666,
-      "team": "MIL"
-    },
-    {
-      "id": 425844,
-      "team": "MIL"
-    },
-    {
-      "id": 434180,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 460075,
-      "team": "MIL"
-    },
-    {
-      "id": 408061,
-      "team": "MIL"
-    },
-    {
-      "id": 462136,
-      "team": "MIL"
-    },
-    {
-      "id": 150116,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 435459,
-      "team": "MIL"
-    },
-    {
-      "id": 407842,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 285068,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 430001,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 457422,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 460576,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 448159,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 460579,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 133380,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 493114,
-      "team": "MIL"
-    },
-    {
-      "id": 446099,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 448170,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 430611,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 452220,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 430585,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 407489,
-      "team": "AZ"
-    },
-    {
-      "id": 456696,
-      "team": "AZ"
-    },
-    {
-      "id": 453178,
-      "team": "AZ"
-    },
-    {
-      "id": 217100,
-      "team": "AZ"
-    },
-    {
-      "id": 407816,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 431094,
-      "team": "AZ"
-    },
-    {
-      "id": 518567,
-      "team": "AZ"
-    },
-    {
-      "id": 571578,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 471083,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 467827,
-      "team": "AZ"
-    },
-    {
-      "id": 111072,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 446899,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 444520,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 440251,
-      "team": "AZ"
-    },
-    {
-      "id": 502239,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 489119,
-      "team": "AZ"
-    },
-    {
-      "id": 489448,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 457708,
-      "team": "AZ"
-    },
-    {
-      "id": 545333,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 543766,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 502671,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 455759,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "CF",
+      "gamesStarted": null
     }
   ],
   "318909": [
     {
       "id": 475243,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 425861,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 519203,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 516770,
-      "team": "CHC"
-    },
-    {
-      "id": 460701,
-      "team": "CHC"
-    },
-    {
-      "id": 490063,
-      "team": "CHC"
-    },
-    {
-      "id": 445933,
-      "team": "CHC"
-    },
-    {
-      "id": 503569,
-      "team": "CHC"
-    },
-    {
-      "id": 488787,
-      "team": "CHC"
-    },
-    {
-      "id": 446003,
-      "team": "CHC"
-    },
-    {
-      "id": 430904,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 434567,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 446381,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 472528,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 430203,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 542999,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 407862,
-      "team": "CHC"
-    },
-    {
-      "id": 453186,
-      "team": "CHC"
-    },
-    {
-      "id": 502182,
-      "team": "CHC"
-    },
-    {
-      "id": 150093,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 425557,
-      "team": "CHC"
-    },
-    {
-      "id": 466918,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 461791,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 458628,
-      "team": "CHC"
-    },
-    {
-      "id": 502188,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 449079,
-      "team": "HOU"
-    },
-    {
-      "id": 472551,
-      "team": "HOU"
-    },
-    {
-      "id": 408206,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 444448,
-      "team": "HOU"
-    },
-    {
-      "id": 445599,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 460131,
-      "team": "HOU"
-    },
-    {
-      "id": 502032,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 476704,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 434643,
-      "team": "HOU"
-    },
-    {
-      "id": 407193,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 430965,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 502110,
-      "team": "HOU"
-    },
-    {
-      "id": 449173,
-      "team": "HOU"
-    },
-    {
-      "id": 453400,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 514888,
-      "team": "HOU"
-    },
-    {
-      "id": 457788,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 453303,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 488771,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 502304,
-      "team": "HOU"
-    },
-    {
-      "id": 572971,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 150324,
-      "team": "HOU"
-    },
-    {
-      "id": 543475,
-      "team": "HOU"
-    },
-    {
-      "id": 457918,
-      "team": "HOU"
-    },
-    {
-      "id": 451775,
-      "team": "HOU"
-    },
-    {
-      "id": 462480,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "1B",
+      "gamesStarted": null
     }
   ],
   "318934": [
     {
       "id": 518614,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 477569,
-      "team": "STL"
-    },
-    {
-      "id": 346798,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 279577,
-      "team": "STL"
-    },
-    {
-      "id": 458681,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 407812,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 572761,
-      "team": "STL"
-    },
-    {
-      "id": 521055,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 501800,
-      "team": "STL"
-    },
-    {
-      "id": 519240,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 445055,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 136860,
-      "team": "STL"
-    },
-    {
-      "id": 150414,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 453203,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
+      "team": "STL",
+      "position": "PR",
+      "gamesStarted": null
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 501896,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 460022,
-      "team": "STL"
-    },
-    {
-      "id": 488810,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 446135,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 523260,
-      "team": "STL"
-    },
-    {
-      "id": 435400,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 435401,
-      "team": "STL"
-    },
-    {
-      "id": 469690,
-      "team": "STL"
-    },
-    {
-      "id": 459939,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 451594,
-      "team": "COL"
+      "team": "COL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 429783,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 279571,
-      "team": "COL"
-    },
-    {
-      "id": 425386,
-      "team": "COL"
-    },
-    {
-      "id": 457574,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571521,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 340192,
-      "team": "COL"
-    },
-    {
-      "id": 493603,
-      "team": "COL"
+      "team": "COL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 502158,
-      "team": "COL"
-    },
-    {
-      "id": 543022,
-      "team": "COL"
-    },
-    {
-      "id": 519186,
-      "team": "COL"
-    },
-    {
-      "id": 543184,
-      "team": "COL"
-    },
-    {
-      "id": 408242,
-      "team": "COL"
-    },
-    {
-      "id": 519141,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 501647,
-      "team": "COL"
+      "team": "COL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 150212,
-      "team": "COL"
-    },
-    {
-      "id": 114739,
-      "team": "COL"
+      "team": "COL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 455126,
-      "team": "COL"
+      "team": "COL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 458913,
-      "team": "COL"
-    },
-    {
-      "id": 489189,
-      "team": "COL"
+      "team": "COL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 502125,
-      "team": "COL"
+      "team": "COL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 471865,
-      "team": "COL"
+      "team": "COL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 468406,
-      "team": "COL"
+      "team": "COL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 433585,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 115732,
-      "team": "COL"
+      "team": "COL",
+      "position": "1B",
+      "gamesStarted": null
     }
   ],
   "319404": [
     {
-      "id": 453203,
-      "team": "STL"
-    },
-    {
       "id": 518614,
-      "team": "STL"
-    },
-    {
-      "id": 477569,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 425794,
-      "team": "STL"
-    },
-    {
-      "id": 346798,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 279577,
-      "team": "STL"
-    },
-    {
-      "id": 458681,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 407812,
-      "team": "STL"
-    },
-    {
-      "id": 465629,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 501896,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 501800,
-      "team": "STL"
-    },
-    {
-      "id": 488810,
-      "team": "STL"
-    },
-    {
-      "id": 446135,
-      "team": "STL"
-    },
-    {
-      "id": 523260,
-      "team": "STL"
-    },
-    {
-      "id": 519240,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 435400,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 445055,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 136860,
-      "team": "STL"
-    },
-    {
-      "id": 150414,
-      "team": "STL"
-    },
-    {
-      "id": 150118,
-      "team": "STL"
-    },
-    {
-      "id": 435401,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 459939,
-      "team": "STL"
-    },
-    {
-      "id": 453311,
-      "team": "SF"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518516,
-      "team": "SF"
-    },
-    {
-      "id": 489209,
-      "team": "SF"
-    },
-    {
-      "id": 346793,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 340192,
-      "team": "SF"
+      "team": "SF",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 435078,
-      "team": "SF"
+      "team": "SF",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 543063,
-      "team": "SF"
+      "team": "SF",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 207267,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 453923,
-      "team": "SF"
+      "team": "SF",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 452254,
-      "team": "SF"
-    },
-    {
-      "id": 454535,
-      "team": "SF"
+      "team": "SF",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 516949,
-      "team": "SF"
+      "team": "SF",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 457763,
-      "team": "SF"
-    },
-    {
-      "id": 285064,
-      "team": "SF"
-    },
-    {
-      "id": 217096,
-      "team": "SF"
-    },
-    {
-      "id": 467726,
-      "team": "SF"
+      "team": "SF",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 425657,
-      "team": "SF"
-    },
-    {
-      "id": 502004,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 466320,
-      "team": "SF"
-    },
-    {
-      "id": 444135,
-      "team": "SF"
+      "team": "SF",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 474832,
-      "team": "SF"
-    },
-    {
-      "id": 430912,
-      "team": "SF"
+      "team": "SF",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 433586,
-      "team": "SF"
-    },
-    {
-      "id": 489265,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 434636,
-      "team": "SF"
+      "team": "SF",
+      "position": "CF",
+      "gamesStarted": null
     }
   ],
   "347300": [
     {
       "id": 518813,
-      "team": "KC"
+      "team": "KC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 429722,
-      "team": "KC"
-    },
-    {
-      "id": 425386,
-      "team": "KC"
-    },
-    {
-      "id": 448306,
-      "team": "KC"
-    },
-    {
-      "id": 460051,
-      "team": "KC"
+      "team": "KC",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 521692,
-      "team": "KC"
-    },
-    {
-      "id": 434641,
-      "team": "KC"
-    },
-    {
-      "id": 456715,
-      "team": "KC"
-    },
-    {
-      "id": 435459,
-      "team": "KC"
+      "team": "KC",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 456714,
-      "team": "KC"
-    },
-    {
-      "id": 136600,
-      "team": "KC"
-    },
-    {
-      "id": 434669,
-      "team": "KC"
-    },
-    {
-      "id": 123173,
-      "team": "KC"
-    },
-    {
-      "id": 451584,
-      "team": "KC"
-    },
-    {
-      "id": 516969,
-      "team": "KC"
+      "team": "KC",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 519058,
-      "team": "KC"
+      "team": "KC",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 425796,
-      "team": "KC"
+      "team": "KC",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 444876,
-      "team": "KC"
+      "team": "KC",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 460086,
-      "team": "KC"
+      "team": "KC",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 471107,
-      "team": "KC"
-    },
-    {
-      "id": 543070,
-      "team": "KC"
-    },
-    {
-      "id": 460024,
-      "team": "KC"
+      "team": "KC",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 543333,
-      "team": "KC"
+      "team": "KC",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 525768,
-      "team": "KC"
+      "team": "KC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 502481,
-      "team": "KC"
+      "team": "KC",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 429664,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 400085,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 455755,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 150484,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 493133,
-      "team": "NYY"
-    },
-    {
-      "id": 519222,
-      "team": "NYY"
-    },
-    {
-      "id": 461833,
-      "team": "NYY"
-    },
-    {
-      "id": 518875,
-      "team": "NYY"
-    },
-    {
-      "id": 282332,
-      "team": "NYY"
-    },
-    {
-      "id": 502011,
-      "team": "NYY"
-    },
-    {
-      "id": 457429,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 434624,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 455126,
-      "team": "NYY"
-    },
-    {
-      "id": 453269,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 400098,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 407489,
-      "team": "NYY"
-    },
-    {
-      "id": 475479,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 458731,
-      "team": "NYY"
-    },
-    {
-      "id": 476589,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 121250,
-      "team": "NYY"
-    },
-    {
-      "id": 120485,
-      "team": "NYY"
-    },
-    {
-      "id": 471868,
-      "team": "NYY"
-    },
-    {
-      "id": 573064,
-      "team": "NYY"
-    },
-    {
-      "id": 450204,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 502085,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "347779": [
     {
-      "id": 434538,
-      "team": "PIT"
-    },
-    {
-      "id": 431145,
-      "team": "PIT"
-    },
-    {
-      "id": 474256,
-      "team": "PIT"
-    },
-    {
       "id": 459991,
-      "team": "PIT"
-    },
-    {
-      "id": 425549,
-      "team": "PIT"
-    },
-    {
-      "id": 276346,
-      "team": "PIT"
-    },
-    {
-      "id": 476570,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 501983,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 434540,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 474568,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 502374,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 457705,
-      "team": "PIT"
-    },
-    {
-      "id": 457768,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 476883,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 458677,
-      "team": "PIT"
-    },
-    {
-      "id": 453265,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 453343,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 516782,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 276351,
-      "team": "PIT"
-    },
-    {
-      "id": 592238,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543037,
-      "team": "PIT"
-    },
-    {
-      "id": 450203,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 435522,
-      "team": "PIT"
-    },
-    {
-      "id": 502046,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 502100,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 150020,
-      "team": "LAD"
-    },
-    {
-      "id": 346874,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 458501,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 454560,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 425844,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 444843,
-      "team": "LAD"
-    },
-    {
-      "id": 434181,
-      "team": "LAD"
-    },
-    {
-      "id": 572089,
-      "team": "LAD"
-    },
-    {
-      "id": 493247,
-      "team": "LAD"
-    },
-    {
-      "id": 434442,
-      "team": "LAD"
-    },
-    {
-      "id": 445276,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 543008,
-      "team": "LAD"
-    },
-    {
-      "id": 547943,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 543148,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 407885,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 624577,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 408236,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 407825,
-      "team": "LAD"
-    },
-    {
-      "id": 477132,
-      "team": "LAD"
-    },
-    {
-      "id": 519437,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 434670,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 346857,
-      "team": "LAD"
-    },
-    {
-      "id": 543155,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 435401,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 430613,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "347790": [
     {
-      "id": 431148,
-      "team": "CLE"
-    },
-    {
       "id": 458006,
-      "team": "CLE"
+      "team": "CLE",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 456422,
-      "team": "CLE"
-    },
-    {
-      "id": 453211,
-      "team": "CLE"
-    },
-    {
-      "id": 592102,
-      "team": "CLE"
+      "team": "CLE",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 448602,
-      "team": "CLE"
-    },
-    {
-      "id": 444935,
-      "team": "CLE"
+      "team": "CLE",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 471911,
-      "team": "CLE"
-    },
-    {
-      "id": 475416,
-      "team": "CLE"
+      "team": "CLE",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 430605,
-      "team": "CLE"
-    },
-    {
-      "id": 543228,
-      "team": "CLE"
-    },
-    {
-      "id": 434622,
-      "team": "CLE"
-    },
-    {
-      "id": 543426,
-      "team": "CLE"
+      "team": "CLE",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 543766,
-      "team": "CLE"
+      "team": "CLE",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543401,
-      "team": "CLE"
+      "team": "CLE",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 114739,
-      "team": "CLE"
+      "team": "CLE",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 448179,
-      "team": "CLE"
-    },
-    {
-      "id": 501925,
-      "team": "CLE"
+      "team": "CLE",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 449107,
-      "team": "CLE"
+      "team": "CLE",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 488726,
-      "team": "CLE"
+      "team": "CLE",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 150348,
-      "team": "CLE"
-    },
-    {
-      "id": 502260,
-      "team": "CLE"
+      "team": "CLE",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 467793,
-      "team": "CLE"
-    },
-    {
-      "id": 446372,
-      "team": "CLE"
-    },
-    {
-      "id": 430897,
-      "team": "CLE"
+      "team": "CLE",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 518813,
-      "team": "KC"
-    },
-    {
-      "id": 429722,
-      "team": "KC"
-    },
-    {
-      "id": 425386,
-      "team": "KC"
+      "team": "KC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 448306,
-      "team": "KC"
+      "team": "KC",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 518953,
-      "team": "KC"
+      "team": "KC",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 460051,
-      "team": "KC"
+      "team": "KC",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 521692,
-      "team": "KC"
-    },
-    {
-      "id": 434641,
-      "team": "KC"
+      "team": "KC",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 456715,
-      "team": "KC"
-    },
-    {
-      "id": 435459,
-      "team": "KC"
+      "team": "KC",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 456714,
-      "team": "KC"
+      "team": "KC",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 136600,
-      "team": "KC"
-    },
-    {
-      "id": 434669,
-      "team": "KC"
+      "team": "KC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 123173,
-      "team": "KC"
-    },
-    {
-      "id": 451584,
-      "team": "KC"
-    },
-    {
-      "id": 516969,
-      "team": "KC"
+      "team": "KC",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 519058,
-      "team": "KC"
-    },
-    {
-      "id": 425796,
-      "team": "KC"
+      "team": "KC",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 444876,
-      "team": "KC"
+      "team": "KC",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 460086,
-      "team": "KC"
+      "team": "KC",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 471107,
-      "team": "KC"
+      "team": "KC",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 543070,
-      "team": "KC"
-    },
-    {
-      "id": 460024,
-      "team": "KC"
+      "team": "KC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543333,
-      "team": "KC"
-    },
-    {
-      "id": 525768,
-      "team": "KC"
+      "team": "KC",
+      "position": "1B",
+      "gamesStarted": null
     }
   ],
   "347808": [
     {
-      "id": 456501,
-      "team": "CIN"
-    },
-    {
-      "id": 456701,
-      "team": "CIN"
-    },
-    {
       "id": 425783,
-      "team": "CIN"
-    },
-    {
-      "id": 285131,
-      "team": "CIN"
-    },
-    {
-      "id": 502190,
-      "team": "CIN"
-    },
-    {
-      "id": 276520,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 544371,
-      "team": "CIN"
-    },
-    {
-      "id": 501961,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 519023,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 489197,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 453943,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 457803,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 435219,
-      "team": "CIN"
-    },
-    {
-      "id": 452672,
-      "team": "CIN"
-    },
-    {
-      "id": 459967,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 458015,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 448159,
-      "team": "CIN"
-    },
-    {
-      "id": 430580,
-      "team": "CIN"
-    },
-    {
-      "id": 571561,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 446359,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 408252,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 502009,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 543331,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 449082,
-      "team": "CIN"
-    },
-    {
-      "id": 547973,
-      "team": "CIN"
-    },
-    {
-      "id": 434538,
-      "team": "PIT"
+      "team": "CIN",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 431145,
-      "team": "PIT"
-    },
-    {
-      "id": 474256,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 459991,
-      "team": "PIT"
-    },
-    {
-      "id": 425549,
-      "team": "PIT"
-    },
-    {
-      "id": 276346,
-      "team": "PIT"
-    },
-    {
-      "id": 476570,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 501983,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 434540,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 474568,
-      "team": "PIT"
-    },
-    {
-      "id": 502374,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 457705,
-      "team": "PIT"
-    },
-    {
-      "id": 457768,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 476883,
-      "team": "PIT"
-    },
-    {
-      "id": 458677,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 453265,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 453343,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 516782,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 276351,
-      "team": "PIT"
-    },
-    {
-      "id": 592238,
-      "team": "PIT"
-    },
-    {
-      "id": 543037,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 450203,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 435522,
-      "team": "PIT"
-    },
-    {
-      "id": 502046,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 502100,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "PH",
+      "gamesStarted": null
     }
   ],
   "347829": [
     {
       "id": 518902,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 453203,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 518614,
-      "team": "STL"
-    },
-    {
-      "id": 543779,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
-    },
-    {
-      "id": 544928,
-      "team": "STL"
-    },
-    {
-      "id": 421064,
-      "team": "STL"
-    },
-    {
-      "id": 571946,
-      "team": "STL"
-    },
-    {
-      "id": 458681,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 407812,
-      "team": "STL"
-    },
-    {
-      "id": 595307,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 465629,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 572761,
-      "team": "STL"
-    },
-    {
-      "id": 572751,
-      "team": "STL"
-    },
-    {
-      "id": 501896,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 501800,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 572096,
-      "team": "STL"
-    },
-    {
-      "id": 329092,
-      "team": "STL"
-    },
-    {
-      "id": 488810,
-      "team": "STL"
-    },
-    {
-      "id": 523260,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 445055,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 136860,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 150414,
-      "team": "STL"
-    },
-    {
-      "id": 475243,
-      "team": "CHC"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 425861,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 519203,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 516770,
-      "team": "CHC"
-    },
-    {
-      "id": 460701,
-      "team": "CHC"
-    },
-    {
-      "id": 490063,
-      "team": "CHC"
-    },
-    {
-      "id": 425900,
-      "team": "CHC"
-    },
-    {
-      "id": 444857,
-      "team": "CHC"
-    },
-    {
-      "id": 276514,
-      "team": "CHC"
-    },
-    {
-      "id": 444468,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 474865,
-      "team": "CHC"
-    },
-    {
-      "id": 430668,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 453646,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 446381,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 472528,
-      "team": "CHC"
-    },
-    {
-      "id": 285068,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 150093,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 456078,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 429719,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 453284,
-      "team": "CHC"
-    },
-    {
-      "id": 461791,
-      "team": "CHC"
-    },
-    {
-      "id": 469159,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 435220,
-      "team": "CHC"
-    },
-    {
-      "id": 502188,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 435625,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "RF",
+      "gamesStarted": null
     }
   ],
   "348187": [
     {
       "id": 434637,
-      "team": "CWS"
-    },
-    {
-      "id": 518858,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 457477,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 493351,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 425567,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 493596,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 592665,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 493574,
-      "team": "CWS"
-    },
-    {
-      "id": 519242,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 489413,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 408241,
-      "team": "CWS"
-    },
-    {
-      "id": 500779,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 543569,
-      "team": "CWS"
-    },
-    {
-      "id": 433579,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 433898,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 453264,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 470462,
-      "team": "CWS"
-    },
-    {
-      "id": 518420,
-      "team": "CWS"
-    },
-    {
-      "id": 276055,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 493364,
-      "team": "CWS"
-    },
-    {
-      "id": 452095,
-      "team": "CWS"
-    },
-    {
-      "id": 502327,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 572033,
-      "team": "CWS"
-    },
-    {
-      "id": 543216,
-      "team": "CWS"
-    },
-    {
-      "id": 453515,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 594828,
-      "team": "ATL"
-    },
-    {
-      "id": 218596,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 519345,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 592743,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 468429,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 460008,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 425646,
-      "team": "ATL"
-    },
-    {
-      "id": 501985,
-      "team": "ATL"
-    },
-    {
-      "id": 518792,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518692,
-      "team": "ATL"
-    },
-    {
-      "id": 408042,
-      "team": "ATL"
-    },
-    {
-      "id": 527054,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 430904,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 457708,
-      "team": "ATL"
-    },
-    {
-      "id": 457926,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 453400,
-      "team": "ATL"
-    },
-    {
-      "id": 407862,
-      "team": "ATL"
-    },
-    {
-      "id": 543629,
-      "team": "ATL"
-    },
-    {
-      "id": 518886,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 502304,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 462564,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 435263,
-      "team": "ATL"
-    },
-    {
-      "id": 450665,
-      "team": "ATL"
-    },
-    {
-      "id": 477229,
-      "team": "ATL"
-    },
-    {
-      "id": 501593,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "DH",
+      "gamesStarted": null
     }
   ],
   "348313": [
     {
       "id": 453400,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 594828,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 407862,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 519345,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 592743,
-      "team": "ATL"
-    },
-    {
-      "id": 622072,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 468429,
-      "team": "ATL"
-    },
-    {
-      "id": 460008,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 518886,
-      "team": "ATL"
-    },
-    {
-      "id": 425646,
-      "team": "ATL"
-    },
-    {
-      "id": 434180,
-      "team": "ATL"
-    },
-    {
-      "id": 502304,
-      "team": "ATL"
-    },
-    {
-      "id": 501985,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518792,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 462564,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 518692,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 435263,
-      "team": "ATL"
-    },
-    {
-      "id": 527054,
-      "team": "ATL"
-    },
-    {
-      "id": 430904,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 450665,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 457708,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 477229,
-      "team": "ATL"
-    },
-    {
-      "id": 457926,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 501593,
-      "team": "ATL"
-    },
-    {
-      "id": 453531,
-      "team": "STL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518902,
-      "team": "STL"
-    },
-    {
-      "id": 453203,
-      "team": "STL"
-    },
-    {
-      "id": 518614,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 543779,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 477569,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571946,
-      "team": "STL"
-    },
-    {
-      "id": 458681,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 407812,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 595307,
-      "team": "STL"
-    },
-    {
-      "id": 465629,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 501896,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 501800,
-      "team": "STL"
-    },
-    {
-      "id": 572096,
-      "team": "STL"
-    },
-    {
-      "id": 329092,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 488810,
-      "team": "STL"
-    },
-    {
-      "id": 523260,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 519240,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 445055,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 136860,
-      "team": "STL"
-    },
-    {
-      "id": 150414,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     }
   ],
   "348322": [
     {
       "id": 453400,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 594828,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 519345,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 592743,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 275933,
-      "team": "ATL"
-    },
-    {
-      "id": 622072,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 468429,
-      "team": "ATL"
-    },
-    {
-      "id": 460008,
-      "team": "ATL"
-    },
-    {
-      "id": 518886,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 425646,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 502304,
-      "team": "ATL"
-    },
-    {
-      "id": 501985,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518792,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 462564,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 518692,
-      "team": "ATL"
-    },
-    {
-      "id": 435263,
-      "team": "ATL"
-    },
-    {
-      "id": 527054,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 545404,
-      "team": "ATL"
-    },
-    {
-      "id": 450665,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 457708,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 477229,
-      "team": "ATL"
-    },
-    {
-      "id": 457926,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 501593,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 451594,
-      "team": "COL"
+      "team": "COL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 518934,
-      "team": "COL"
+      "team": "COL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 572816,
-      "team": "COL"
+      "team": "COL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 279571,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571448,
-      "team": "COL"
-    },
-    {
-      "id": 571521,
-      "team": "COL"
-    },
-    {
-      "id": 493603,
-      "team": "COL"
-    },
-    {
-      "id": 543022,
-      "team": "COL"
+      "team": "COL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 446641,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 501647,
-      "team": "COL"
+      "team": "COL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 453568,
-      "team": "COL"
-    },
-    {
-      "id": 504379,
-      "team": "COL"
+      "team": "COL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 150212,
-      "team": "COL"
-    },
-    {
-      "id": 150275,
-      "team": "COL"
+      "team": "COL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 518586,
-      "team": "COL"
+      "team": "COL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 453064,
-      "team": "COL"
+      "team": "COL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 466918,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 407822,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 489189,
-      "team": "COL"
-    },
-    {
-      "id": 468504,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 471865,
-      "team": "COL"
-    },
-    {
-      "id": 468406,
-      "team": "COL"
+      "team": "COL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 467850,
-      "team": "COL"
-    },
-    {
-      "id": 433585,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 115732,
-      "team": "COL"
+      "team": "COL",
+      "position": "1B",
+      "gamesStarted": null
     }
   ],
   "348331": [
     {
       "id": 453400,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 594828,
-      "team": "ATL"
-    },
-    {
-      "id": 519345,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 592743,
-      "team": "ATL"
-    },
-    {
-      "id": 275933,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 622072,
-      "team": "ATL"
-    },
-    {
-      "id": 468429,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 592239,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 460008,
-      "team": "ATL"
-    },
-    {
-      "id": 518886,
-      "team": "ATL"
-    },
-    {
-      "id": 425646,
-      "team": "ATL"
-    },
-    {
-      "id": 502304,
-      "team": "ATL"
-    },
-    {
-      "id": 501985,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518792,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 462564,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 518692,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 435263,
-      "team": "ATL"
-    },
-    {
-      "id": 527054,
-      "team": "ATL"
-    },
-    {
-      "id": 545404,
-      "team": "ATL"
-    },
-    {
-      "id": 450665,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 457708,
-      "team": "ATL"
-    },
-    {
-      "id": 477229,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 457926,
-      "team": "ATL"
-    },
-    {
-      "id": 501593,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 451594,
-      "team": "COL"
+      "team": "COL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 518934,
-      "team": "COL"
+      "team": "COL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 572816,
-      "team": "COL"
-    },
-    {
-      "id": 279571,
-      "team": "COL"
+      "team": "COL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 571448,
-      "team": "COL"
-    },
-    {
-      "id": 571521,
-      "team": "COL"
-    },
-    {
-      "id": 493603,
-      "team": "COL"
-    },
-    {
-      "id": 543022,
-      "team": "COL"
+      "team": "COL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 446641,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 501647,
-      "team": "COL"
+      "team": "COL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 453568,
-      "team": "COL"
+      "team": "COL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 504379,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 150212,
-      "team": "COL"
-    },
-    {
-      "id": 150275,
-      "team": "COL"
+      "team": "COL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 518586,
-      "team": "COL"
+      "team": "COL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 453064,
-      "team": "COL"
-    },
-    {
-      "id": 466918,
-      "team": "COL"
-    },
-    {
-      "id": 407822,
-      "team": "COL"
-    },
-    {
-      "id": 489189,
-      "team": "COL"
-    },
-    {
-      "id": 468504,
-      "team": "COL"
+      "team": "COL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 471865,
-      "team": "COL"
+      "team": "COL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 468406,
-      "team": "COL"
+      "team": "COL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 467850,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 433585,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 115732,
-      "team": "COL"
+      "team": "COL",
+      "position": "1B",
+      "gamesStarted": null
     }
   ],
   "348551": [
     {
-      "id": 453531,
-      "team": "STL"
-    },
-    {
       "id": 518614,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 543779,
-      "team": "STL"
-    },
-    {
-      "id": 571946,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 458681,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 407812,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 571431,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 501800,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 518693,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 329092,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 445055,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 136860,
-      "team": "STL"
-    },
-    {
-      "id": 150414,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 518902,
-      "team": "STL"
-    },
-    {
-      "id": 453203,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 518545,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 595307,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 465629,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 501896,
-      "team": "STL"
-    },
-    {
-      "id": 608379,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 572096,
-      "team": "STL"
-    },
-    {
-      "id": 523260,
-      "team": "STL"
-    },
-    {
-      "id": 434538,
-      "team": "PIT"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518911,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 431145,
-      "team": "PIT"
-    },
-    {
-      "id": 453172,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 459991,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 425549,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 476570,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543281,
-      "team": "PIT"
-    },
-    {
-      "id": 491646,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 434540,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 474568,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 150359,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 506997,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 457705,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 457768,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 476883,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 458677,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 453265,
-      "team": "PIT"
-    },
-    {
-      "id": 453343,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 516782,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 467798,
-      "team": "PIT"
-    },
-    {
-      "id": 543037,
-      "team": "PIT"
-    },
-    {
-      "id": 450203,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 435522,
-      "team": "PIT"
-    },
-    {
-      "id": 502046,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "2B",
+      "gamesStarted": null
     }
   ],
   "348665": [
     {
-      "id": 453531,
-      "team": "STL"
-    },
-    {
       "id": 518614,
-      "team": "STL"
-    },
-    {
-      "id": 543779,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 543939,
-      "team": "STL"
-    },
-    {
-      "id": 544928,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 571946,
-      "team": "STL"
-    },
-    {
-      "id": 458681,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 407812,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 571431,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 501800,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 329092,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 445055,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 136860,
-      "team": "STL"
-    },
-    {
-      "id": 518902,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 453203,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 595307,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 465629,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 425877,
-      "team": "STL"
-    },
-    {
-      "id": 501896,
-      "team": "STL"
-    },
-    {
-      "id": 593372,
-      "team": "STL"
-    },
-    {
-      "id": 608379,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 572096,
-      "team": "STL"
-    },
-    {
-      "id": 523260,
-      "team": "STL"
-    },
-    {
-      "id": 594828,
-      "team": "ATL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 519345,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 592743,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 460008,
-      "team": "ATL"
-    },
-    {
-      "id": 425646,
-      "team": "ATL"
-    },
-    {
-      "id": 501985,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518692,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 408042,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 527054,
-      "team": "ATL"
-    },
-    {
-      "id": 430904,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 457708,
-      "team": "ATL"
-    },
-    {
-      "id": 457926,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 453400,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 457788,
-      "team": "ATL"
-    },
-    {
-      "id": 275933,
-      "team": "ATL"
-    },
-    {
-      "id": 622072,
-      "team": "ATL"
-    },
-    {
-      "id": 592239,
-      "team": "ATL"
-    },
-    {
-      "id": 518886,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 425834,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 502304,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 471107,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 435263,
-      "team": "ATL"
-    },
-    {
-      "id": 450665,
-      "team": "ATL"
-    },
-    {
-      "id": 477229,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 501593,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "349050": [
     {
-      "id": 150021,
-      "team": "CHC"
-    },
-    {
       "id": 475243,
-      "team": "CHC"
-    },
-    {
-      "id": 547939,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 519203,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 516770,
-      "team": "CHC"
-    },
-    {
-      "id": 460701,
-      "team": "CHC"
-    },
-    {
-      "id": 573127,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 425900,
-      "team": "CHC"
-    },
-    {
-      "id": 400268,
-      "team": "CHC"
-    },
-    {
-      "id": 276514,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 467008,
-      "team": "CHC"
-    },
-    {
-      "id": 444468,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 460131,
-      "team": "CHC"
-    },
-    {
-      "id": 501227,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 430906,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 516809,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 453646,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 446381,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 472528,
-      "team": "CHC"
-    },
-    {
-      "id": 453268,
-      "team": "CHC"
-    },
-    {
-      "id": 518748,
-      "team": "CHC"
-    },
-    {
-      "id": 453562,
-      "team": "CHC"
-    },
-    {
-      "id": 429719,
-      "team": "CHC"
-    },
-    {
-      "id": 453284,
-      "team": "CHC"
-    },
-    {
-      "id": 435044,
-      "team": "CHC"
-    },
-    {
-      "id": 548384,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 435220,
-      "team": "CHC"
-    },
-    {
-      "id": 543894,
-      "team": "CHC"
-    },
-    {
-      "id": 543734,
-      "team": "CHC"
-    },
-    {
-      "id": 502188,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 435625,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 594828,
-      "team": "ATL"
-    },
-    {
-      "id": 519345,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 592743,
-      "team": "ATL"
-    },
-    {
-      "id": 468429,
-      "team": "ATL"
-    },
-    {
-      "id": 460008,
-      "team": "ATL"
-    },
-    {
-      "id": 425646,
-      "team": "ATL"
-    },
-    {
-      "id": 434180,
-      "team": "ATL"
-    },
-    {
-      "id": 501985,
-      "team": "ATL"
-    },
-    {
-      "id": 150119,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 518792,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 518692,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 408042,
-      "team": "ATL"
-    },
-    {
-      "id": 542194,
-      "team": "ATL"
-    },
-    {
-      "id": 527054,
-      "team": "ATL"
-    },
-    {
-      "id": 430904,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 457708,
-      "team": "ATL"
-    },
-    {
-      "id": 457926,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 453400,
-      "team": "ATL"
-    },
-    {
-      "id": 457788,
-      "team": "ATL"
-    },
-    {
-      "id": 407862,
-      "team": "ATL"
-    },
-    {
-      "id": 571735,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 275933,
-      "team": "ATL"
-    },
-    {
-      "id": 622072,
-      "team": "ATL"
-    },
-    {
-      "id": 518886,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 425834,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 502304,
-      "team": "ATL"
-    },
-    {
-      "id": 471107,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 462564,
-      "team": "ATL"
-    },
-    {
-      "id": 435263,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 450665,
-      "team": "ATL"
-    },
-    {
-      "id": 477229,
-      "team": "ATL"
-    },
-    {
-      "id": 501593,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     }
   ],
   "380769": [
     {
-      "id": 453311,
-      "team": "SF"
-    },
-    {
       "id": 518516,
-      "team": "SF"
-    },
-    {
-      "id": 218596,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 518794,
-      "team": "SF"
+      "team": "SF",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 346793,
-      "team": "SF"
-    },
-    {
-      "id": 466948,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 501303,
-      "team": "SF"
+      "team": "SF",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 435078,
-      "team": "SF"
+      "team": "SF",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 543063,
-      "team": "SF"
-    },
-    {
-      "id": 434641,
-      "team": "SF"
+      "team": "SF",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 453923,
-      "team": "SF"
-    },
-    {
-      "id": 453307,
-      "team": "SF"
+      "team": "SF",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 434604,
-      "team": "SF"
+      "team": "SF",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 452254,
-      "team": "SF"
+      "team": "SF",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 516949,
-      "team": "SF"
+      "team": "SF",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 457763,
-      "team": "SF"
-    },
-    {
-      "id": 285064,
-      "team": "SF"
-    },
-    {
-      "id": 425657,
-      "team": "SF"
+      "team": "SF",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 474832,
-      "team": "SF"
-    },
-    {
-      "id": 430912,
-      "team": "SF"
-    },
-    {
-      "id": 433586,
-      "team": "SF"
+      "team": "SF",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 467055,
-      "team": "SF"
+      "team": "SF",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 433589,
-      "team": "SF"
-    },
-    {
-      "id": 489265,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 434636,
-      "team": "SF"
+      "team": "SF",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 408307,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 346874,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 475100,
-      "team": "LAD"
-    },
-    {
-      "id": 453198,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 461314,
-      "team": "LAD"
-    },
-    {
-      "id": 425844,
-      "team": "LAD"
-    },
-    {
-      "id": 444843,
-      "team": "LAD"
-    },
-    {
-      "id": 434181,
-      "team": "LAD"
-    },
-    {
-      "id": 460077,
-      "team": "LAD"
-    },
-    {
-      "id": 124604,
-      "team": "LAD"
-    },
-    {
-      "id": 434442,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 445276,
-      "team": "LAD"
-    },
-    {
-      "id": 430904,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 547943,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 543148,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 624577,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 543829,
-      "team": "LAD"
-    },
-    {
-      "id": 408210,
-      "team": "LAD"
-    },
-    {
-      "id": 429717,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 408236,
-      "team": "LAD"
-    },
-    {
-      "id": 519437,
-      "team": "LAD"
-    },
-    {
-      "id": 277417,
-      "team": "LAD"
-    },
-    {
-      "id": 434670,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 451216,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 457759,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "SS",
+      "gamesStarted": null
     }
   ],
   "380781": [
     {
-      "id": 431148,
-      "team": "OAK"
-    },
-    {
       "id": 472551,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 461235,
-      "team": "OAK"
-    },
-    {
-      "id": 445926,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 424825,
-      "team": "OAK"
-    },
-    {
-      "id": 519083,
-      "team": "OAK"
-    },
-    {
-      "id": 519141,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 430948,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 475857,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 476704,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 543243,
-      "team": "OAK"
-    },
-    {
-      "id": 435558,
-      "team": "OAK"
-    },
-    {
-      "id": 448281,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 502210,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 518626,
-      "team": "OAK"
-    },
-    {
-      "id": 543548,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 519299,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 502226,
-      "team": "OAK"
-    },
-    {
-      "id": 519096,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 493316,
-      "team": "OAK"
-    },
-    {
-      "id": 462382,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 444379,
-      "team": "OAK"
-    },
-    {
-      "id": 573185,
-      "team": "OAK"
-    },
-    {
-      "id": 502381,
-      "team": "OAK"
-    },
-    {
-      "id": 346857,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 451594,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 514888,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 474892,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 518625,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 458006,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543807,
-      "team": "HOU"
-    },
-    {
-      "id": 542914,
-      "team": "HOU"
-    },
-    {
-      "id": 449786,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 451661,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571868,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 447744,
-      "team": "HOU"
-    },
-    {
-      "id": 425532,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 488771,
-      "team": "HOU"
-    },
-    {
-      "id": 519085,
-      "team": "HOU"
-    },
-    {
-      "id": 503556,
-      "team": "HOU"
-    },
-    {
-      "id": 572971,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 518560,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543054,
-      "team": "HOU"
-    },
-    {
-      "id": 502748,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 542340,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 461882,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 543321,
-      "team": "HOU"
-    },
-    {
-      "id": 430589,
-      "team": "HOU"
-    },
-    {
-      "id": 502100,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "LF",
+      "gamesStarted": null
     }
   ],
   "381147": [
     {
-      "id": 518614,
-      "team": "STL"
-    },
-    {
       "id": 543779,
-      "team": "STL"
-    },
-    {
-      "id": 543939,
-      "team": "STL"
-    },
-    {
-      "id": 571946,
-      "team": "STL"
-    },
-    {
-      "id": 458681,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 407812,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 571431,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 501800,
-      "team": "STL"
-    },
-    {
-      "id": 518693,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 488721,
-      "team": "STL"
-    },
-    {
-      "id": 329092,
-      "team": "STL"
-    },
-    {
-      "id": 445055,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 542994,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 407885,
-      "team": "STL"
-    },
-    {
-      "id": 450212,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
-    },
-    {
-      "id": 504083,
-      "team": "STL"
-    },
-    {
-      "id": 595307,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 425509,
-      "team": "STL"
-    },
-    {
-      "id": 593372,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 608379,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 572096,
-      "team": "STL"
-    },
-    {
-      "id": 488810,
-      "team": "STL"
-    },
-    {
-      "id": 475243,
-      "team": "CHC"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 449079,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 592609,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 519203,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 466988,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 516770,
-      "team": "CHC"
-    },
-    {
-      "id": 460701,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 458085,
-      "team": "CHC"
-    },
-    {
-      "id": 444468,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 501888,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 519166,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 516809,
-      "team": "CHC"
-    },
-    {
-      "id": 489295,
-      "team": "CHC"
-    },
-    {
-      "id": 453646,
-      "team": "CHC"
-    },
-    {
-      "id": 446381,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 472528,
-      "team": "CHC"
-    },
-    {
-      "id": 518748,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 407842,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 434628,
-      "team": "CHC"
-    },
-    {
-      "id": 453562,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 456078,
-      "team": "CHC"
-    },
-    {
-      "id": 429719,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 434633,
-      "team": "CHC"
-    },
-    {
-      "id": 502188,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 435625,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "PH",
+      "gamesStarted": null
     }
   ],
   "381169": [
     {
       "id": 518614,
-      "team": "STL"
-    },
-    {
-      "id": 543779,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 543939,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 571946,
-      "team": "STL"
-    },
-    {
-      "id": 458681,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 407812,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 571431,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 501800,
-      "team": "STL"
-    },
-    {
-      "id": 518693,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 488721,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 329092,
-      "team": "STL"
-    },
-    {
-      "id": 445055,
-      "team": "STL"
-    },
-    {
-      "id": 542994,
-      "team": "STL"
-    },
-    {
-      "id": 407885,
-      "team": "STL"
-    },
-    {
-      "id": 450212,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
-    },
-    {
-      "id": 504083,
-      "team": "STL"
-    },
-    {
-      "id": 595307,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 425509,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 593372,
-      "team": "STL"
-    },
-    {
-      "id": 608379,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 572096,
-      "team": "STL"
-    },
-    {
-      "id": 488810,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 594828,
-      "team": "ATL"
-    },
-    {
-      "id": 429722,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 421685,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 592743,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 460008,
-      "team": "ATL"
-    },
-    {
-      "id": 501985,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518792,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 518692,
-      "team": "ATL"
-    },
-    {
-      "id": 408042,
-      "team": "ATL"
-    },
-    {
-      "id": 527054,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 457708,
-      "team": "ATL"
-    },
-    {
-      "id": 455369,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 453400,
-      "team": "ATL"
-    },
-    {
-      "id": 621962,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 457788,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 425491,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 543629,
-      "team": "ATL"
-    },
-    {
-      "id": 571735,
-      "team": "ATL"
-    },
-    {
-      "id": 622072,
-      "team": "ATL"
-    },
-    {
-      "id": 425856,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 518886,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 425834,
-      "team": "ATL"
-    },
-    {
-      "id": 502304,
-      "team": "ATL"
-    },
-    {
-      "id": 462564,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 501593,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "381258": [
     {
       "id": 429665,
-      "team": "TOR"
-    },
-    {
-      "id": 285079,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 456124,
-      "team": "TOR"
-    },
-    {
-      "id": 571800,
-      "team": "TOR"
-    },
-    {
-      "id": 519169,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 571901,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 476270,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 447755,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 425900,
-      "team": "TOR"
-    },
-    {
-      "id": 279824,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 521230,
-      "team": "TOR"
-    },
-    {
-      "id": 464433,
-      "team": "TOR"
-    },
-    {
-      "id": 445170,
-      "team": "TOR"
-    },
-    {
-      "id": 452252,
-      "team": "TOR"
-    },
-    {
-      "id": 430661,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 607680,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 408314,
-      "team": "TOR"
-    },
-    {
-      "id": 489365,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 466320,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 446399,
-      "team": "TOR"
-    },
-    {
-      "id": 457918,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 445163,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543238,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 430832,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 543434,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 431148,
-      "team": "OAK"
-    },
-    {
-      "id": 472551,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 461235,
-      "team": "OAK"
-    },
-    {
-      "id": 445926,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 424825,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 519083,
-      "team": "OAK"
-    },
-    {
-      "id": 519141,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 430948,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 476704,
-      "team": "OAK"
-    },
-    {
-      "id": 543243,
-      "team": "OAK"
-    },
-    {
-      "id": 448281,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 502210,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 518626,
-      "team": "OAK"
-    },
-    {
-      "id": 543548,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 452035,
-      "team": "OAK"
-    },
-    {
-      "id": 519299,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 502226,
-      "team": "OAK"
-    },
-    {
-      "id": 519096,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 493316,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 462382,
-      "team": "OAK"
-    },
-    {
-      "id": 444379,
-      "team": "OAK"
-    },
-    {
-      "id": 433585,
-      "team": "OAK"
-    },
-    {
-      "id": 502381,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 346857,
-      "team": "OAK"
-    },
-    {
-      "id": 451775,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "2B",
+      "gamesStarted": null
     }
   ],
   "381290": [
     {
       "id": 592407,
-      "team": "DET"
+      "team": "DET",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 400121,
-      "team": "DET"
-    },
-    {
-      "id": 457435,
-      "team": "DET"
+      "team": "DET",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 519445,
-      "team": "DET"
+      "team": "DET",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 592206,
-      "team": "DET"
-    },
-    {
-      "id": 592767,
-      "team": "DET"
+      "team": "DET",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 571871,
-      "team": "DET"
-    },
-    {
-      "id": 608349,
-      "team": "DET"
-    },
-    {
-      "id": 519144,
-      "team": "DET"
+      "team": "DET",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 435079,
-      "team": "DET"
+      "team": "DET",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 116338,
-      "team": "DET"
+      "team": "DET",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 457706,
-      "team": "DET"
+      "team": "DET",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 430603,
-      "team": "DET"
+      "team": "DET",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 502110,
-      "team": "DET"
+      "team": "DET",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 150274,
-      "team": "DET"
-    },
-    {
-      "id": 453286,
-      "team": "DET"
+      "team": "DET",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 456379,
-      "team": "DET"
+      "team": "DET",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 408234,
-      "team": "DET"
+      "team": "DET",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 461865,
-      "team": "DET"
+      "team": "DET",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 519175,
-      "team": "DET"
-    },
-    {
-      "id": 434671,
-      "team": "DET"
+      "team": "DET",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 501955,
-      "team": "DET"
+      "team": "DET",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 434378,
-      "team": "DET"
+      "team": "DET",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 488671,
-      "team": "DET"
+      "team": "DET",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 434658,
-      "team": "DET"
+      "team": "DET",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 455139,
-      "team": "TEX"
-    },
-    {
-      "id": 430630,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 425783,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 519048,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 425567,
-      "team": "TEX"
-    },
-    {
-      "id": 519344,
-      "team": "TEX"
-    },
-    {
-      "id": 425840,
-      "team": "TEX"
-    },
-    {
-      "id": 460269,
-      "team": "TEX"
-    },
-    {
-      "id": 519145,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 465657,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 134181,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 547982,
-      "team": "TEX"
-    },
-    {
-      "id": 607259,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 430906,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 596059,
-      "team": "TEX"
-    },
-    {
-      "id": 506433,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 407890,
-      "team": "TEX"
-    },
-    {
-      "id": 468396,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 543726,
-      "team": "TEX"
-    },
-    {
-      "id": 543706,
-      "team": "TEX"
-    },
-    {
-      "id": 474521,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 574831,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 596143,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 462101,
-      "team": "TEX"
-    },
-    {
-      "id": 435044,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "SS",
+      "gamesStarted": null
     }
   ],
   "381302": [
     {
       "id": 518614,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 543939,
-      "team": "STL"
-    },
-    {
-      "id": 571946,
-      "team": "STL"
-    },
-    {
-      "id": 448802,
-      "team": "STL"
-    },
-    {
-      "id": 458681,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 407812,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 571431,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 501800,
-      "team": "STL"
-    },
-    {
-      "id": 518693,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 488721,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 329092,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 445055,
-      "team": "STL"
-    },
-    {
-      "id": 407885,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 453203,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 450212,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
-    },
-    {
-      "id": 595307,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 425509,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 593372,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 608379,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 572096,
-      "team": "STL"
-    },
-    {
-      "id": 488810,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 435400,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 400085,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 453895,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 476454,
-      "team": "NYY"
-    },
-    {
-      "id": 407893,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 453056,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 500208,
-      "team": "NYY"
-    },
-    {
-      "id": 493133,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 469686,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 501660,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 502011,
-      "team": "NYY"
-    },
-    {
-      "id": 547888,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 150093,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 116539,
-      "team": "NYY"
-    },
-    {
-      "id": 475479,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 458731,
-      "team": "NYY"
-    },
-    {
-      "id": 476589,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 406878,
-      "team": "NYY"
-    },
-    {
-      "id": 571974,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 595032,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 435263,
-      "team": "NYY"
-    },
-    {
-      "id": 573064,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 407819,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 430637,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 502085,
-      "team": "NYY"
-    },
-    {
-      "id": 457935,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "381435": [
     {
       "id": 425560,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 475582,
-      "team": "WSH"
-    },
-    {
-      "id": 519322,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 425785,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 400089,
-      "team": "WSH"
-    },
-    {
-      "id": 502578,
-      "team": "WSH"
-    },
-    {
-      "id": 489334,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 434661,
-      "team": "WSH"
-    },
-    {
-      "id": 446321,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 543685,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 452655,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 430668,
-      "team": "WSH"
-    },
-    {
-      "id": 544931,
-      "team": "WSH"
-    },
-    {
-      "id": 467092,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 457787,
-      "team": "WSH"
-    },
-    {
-      "id": 519455,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 461325,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 450729,
-      "team": "WSH"
-    },
-    {
-      "id": 460283,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 446653,
-      "team": "WSH"
-    },
-    {
-      "id": 595014,
-      "team": "WSH"
-    },
-    {
-      "id": 435622,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 150029,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 435623,
-      "team": "WSH"
-    },
-    {
-      "id": 543699,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 518617,
-      "team": "PHI"
-    },
-    {
-      "id": 449097,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 400284,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 448242,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 429667,
-      "team": "PHI"
-    },
-    {
-      "id": 455374,
-      "team": "PHI"
-    },
-    {
-      "id": 571527,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 458582,
-      "team": "PHI"
-    },
-    {
-      "id": 571786,
-      "team": "PHI"
-    },
-    {
-      "id": 462945,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 519184,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 452718,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 460055,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 408242,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 276519,
-      "team": "PHI"
-    },
-    {
-      "id": 430606,
-      "team": "PHI"
-    },
-    {
-      "id": 434563,
-      "team": "PHI"
-    },
-    {
-      "id": 150359,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 518603,
-      "team": "PHI"
-    },
-    {
-      "id": 407781,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 502126,
-      "team": "PHI"
-    },
-    {
-      "id": 543495,
-      "team": "PHI"
-    },
-    {
-      "id": 433584,
-      "team": "PHI"
-    },
-    {
-      "id": 430935,
-      "team": "PHI"
-    },
-    {
-      "id": 514917,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "LF",
+      "gamesStarted": null
     }
   ],
   "381617": [
     {
       "id": 407885,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 518614,
-      "team": "STL"
-    },
-    {
-      "id": 450212,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 543939,
-      "team": "STL"
-    },
-    {
-      "id": 572889,
-      "team": "STL"
-    },
-    {
-      "id": 571946,
-      "team": "STL"
-    },
-    {
-      "id": 448802,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 458681,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 407812,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 595307,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 425509,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 571431,
-      "team": "STL"
-    },
-    {
-      "id": 593372,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 501800,
-      "team": "STL"
-    },
-    {
-      "id": 518693,
-      "team": "STL"
-    },
-    {
-      "id": 572096,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 488721,
-      "team": "STL"
+      "team": "STL",
+      "position": "PR",
+      "gamesStarted": null
     },
     {
       "id": 329092,
-      "team": "STL"
-    },
-    {
-      "id": 488810,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 435400,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 445055,
-      "team": "STL"
-    },
-    {
-      "id": 477003,
-      "team": "NYM"
-    },
-    {
-      "id": 544925,
-      "team": "NYM"
-    },
-    {
-      "id": 544727,
-      "team": "NYM"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 110029,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 112526,
-      "team": "NYM"
-    },
-    {
-      "id": 514913,
-      "team": "NYM"
-    },
-    {
-      "id": 493472,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 460003,
-      "team": "NYM"
-    },
-    {
-      "id": 554430,
-      "team": "NYM"
-    },
-    {
-      "id": 572831,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 445968,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 502517,
-      "team": "NYM"
-    },
-    {
-      "id": 542674,
-      "team": "NYM"
-    },
-    {
-      "id": 502195,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 446263,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 527038,
-      "team": "NYM"
-    },
-    {
-      "id": 489232,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 516769,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 458913,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 431151,
-      "team": "NYM"
-    },
-    {
-      "id": 594798,
-      "team": "NYM"
-    },
-    {
-      "id": 448614,
-      "team": "NYM"
-    },
-    {
-      "id": 493137,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 434158,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 455759,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "CF",
+      "gamesStarted": null
     }
   ],
   "381819": [
     {
-      "id": 450282,
-      "team": "MIN"
-    },
-    {
-      "id": 429781,
-      "team": "MIN"
-    },
-    {
-      "id": 456488,
-      "team": "MIN"
-    },
-    {
       "id": 476633,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 425545,
-      "team": "MIN"
-    },
-    {
-      "id": 465679,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 461833,
-      "team": "MIN"
-    },
-    {
-      "id": 573204,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 461858,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 500871,
-      "team": "MIN"
-    },
-    {
-      "id": 502272,
-      "team": "MIN"
-    },
-    {
-      "id": 454537,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 542455,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 435559,
-      "team": "MIN"
-    },
-    {
-      "id": 499624,
-      "team": "MIN"
-    },
-    {
-      "id": 464416,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 488846,
-      "team": "MIN"
-    },
-    {
-      "id": 407825,
-      "team": "MIN"
-    },
-    {
-      "id": 518700,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 572821,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 461872,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 453539,
-      "team": "MIN"
-    },
-    {
-      "id": 502043,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 434778,
-      "team": "MIN"
-    },
-    {
-      "id": 445060,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 400085,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 453895,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 476454,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 407893,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 453056,
-      "team": "NYY"
-    },
-    {
-      "id": 493133,
-      "team": "NYY"
-    },
-    {
-      "id": 518875,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 136860,
-      "team": "NYY"
-    },
-    {
-      "id": 465041,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 547888,
-      "team": "NYY"
-    },
-    {
-      "id": 453307,
-      "team": "NYY"
-    },
-    {
-      "id": 461848,
-      "team": "NYY"
-    },
-    {
-      "id": 150093,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 116539,
-      "team": "NYY"
-    },
-    {
-      "id": 475479,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 458731,
-      "team": "NYY"
-    },
-    {
-      "id": 476589,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 519412,
-      "team": "NYY"
-    },
-    {
-      "id": 406878,
-      "team": "NYY"
-    },
-    {
-      "id": 595032,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 435263,
-      "team": "NYY"
-    },
-    {
-      "id": 573064,
-      "team": "NYY"
-    },
-    {
-      "id": 407819,
-      "team": "NYY"
-    },
-    {
-      "id": 430637,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 502085,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "381833": [
     {
       "id": 450282,
-      "team": "MIN"
-    },
-    {
-      "id": 429781,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 456488,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 476633,
-      "team": "MIN"
-    },
-    {
-      "id": 425545,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 465679,
-      "team": "MIN"
-    },
-    {
-      "id": 461833,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 573204,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 461858,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 500871,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 502272,
-      "team": "MIN"
-    },
-    {
-      "id": 454537,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 542455,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 435559,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 499624,
-      "team": "MIN"
-    },
-    {
-      "id": 464416,
-      "team": "MIN"
-    },
-    {
-      "id": 488846,
-      "team": "MIN"
-    },
-    {
-      "id": 407825,
-      "team": "MIN"
-    },
-    {
-      "id": 518700,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 572821,
-      "team": "MIN"
-    },
-    {
-      "id": 461872,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 453539,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 502043,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 434778,
-      "team": "MIN"
-    },
-    {
-      "id": 445060,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 400085,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 453895,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 476454,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 407893,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 453056,
-      "team": "NYY"
-    },
-    {
-      "id": 493133,
-      "team": "NYY"
-    },
-    {
-      "id": 518875,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 136860,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 465041,
-      "team": "NYY"
-    },
-    {
-      "id": 547888,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 453307,
-      "team": "NYY"
-    },
-    {
-      "id": 461848,
-      "team": "NYY"
-    },
-    {
-      "id": 150093,
-      "team": "NYY"
-    },
-    {
-      "id": 116539,
-      "team": "NYY"
-    },
-    {
-      "id": 475479,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 458731,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 476589,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 519412,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 406878,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 595032,
-      "team": "NYY"
-    },
-    {
-      "id": 435263,
-      "team": "NYY"
-    },
-    {
-      "id": 573064,
-      "team": "NYY"
-    },
-    {
-      "id": 407819,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 430637,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 502085,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "381954": [
     {
       "id": 543606,
-      "team": "TB"
-    },
-    {
-      "id": 346797,
-      "team": "TB"
+      "team": "TB",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 407853,
-      "team": "TB"
-    },
-    {
-      "id": 476451,
-      "team": "TB"
-    },
-    {
-      "id": 457775,
-      "team": "TB"
-    },
-    {
-      "id": 459987,
-      "team": "TB"
-    },
-    {
-      "id": 502171,
-      "team": "TB"
+      "team": "TB",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 459964,
-      "team": "TB"
+      "team": "TB",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 150040,
-      "team": "TB"
+      "team": "TB",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 425766,
-      "team": "TB"
-    },
-    {
-      "id": 456034,
-      "team": "TB"
-    },
-    {
-      "id": 502202,
-      "team": "TB"
+      "team": "TB",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 488862,
-      "team": "TB"
+      "team": "TB",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 502676,
-      "team": "TB"
-    },
-    {
-      "id": 523253,
-      "team": "TB"
-    },
-    {
-      "id": 489446,
-      "team": "TB"
+      "team": "TB",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 446334,
-      "team": "TB"
+      "team": "TB",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 407908,
-      "team": "TB"
-    },
-    {
-      "id": 502042,
-      "team": "TB"
+      "team": "TB",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 450314,
-      "team": "TB"
+      "team": "TB",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 446386,
-      "team": "TB"
+      "team": "TB",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 434663,
-      "team": "TB"
+      "team": "TB",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 446481,
-      "team": "TB"
+      "team": "TB",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 595281,
-      "team": "TB"
-    },
-    {
-      "id": 285079,
-      "team": "TOR"
+      "team": "TB",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 456124,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 571800,
-      "team": "TOR"
-    },
-    {
-      "id": 571901,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 476270,
-      "team": "TOR"
-    },
-    {
-      "id": 554432,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 518991,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 425900,
-      "team": "TOR"
-    },
-    {
-      "id": 279824,
-      "team": "TOR"
-    },
-    {
-      "id": 493128,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 464433,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 445170,
-      "team": "TOR"
-    },
-    {
-      "id": 430661,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 458675,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 430681,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 408314,
-      "team": "TOR"
-    },
-    {
-      "id": 489365,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 466320,
-      "team": "TOR"
-    },
-    {
-      "id": 573186,
-      "team": "TOR"
-    },
-    {
-      "id": 446399,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 435045,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 457918,
-      "team": "TOR"
-    },
-    {
-      "id": 445163,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543238,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 430832,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "1B",
+      "gamesStarted": null
     }
   ],
   "382147": [
     {
       "id": 455139,
-      "team": "TEX"
-    },
-    {
-      "id": 542669,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 425783,
-      "team": "TEX"
-    },
-    {
-      "id": 456387,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 425567,
-      "team": "TEX"
-    },
-    {
-      "id": 571945,
-      "team": "TEX"
-    },
-    {
-      "id": 519344,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 425840,
-      "team": "TEX"
-    },
-    {
-      "id": 460269,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 451192,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 134181,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 547982,
-      "team": "TEX"
-    },
-    {
-      "id": 607259,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 596059,
-      "team": "TEX"
-    },
-    {
-      "id": 506433,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 407890,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 491703,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 450317,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 543706,
-      "team": "TEX"
-    },
-    {
-      "id": 474521,
-      "team": "TEX"
-    },
-    {
-      "id": 425532,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 489267,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 462101,
-      "team": "TEX"
-    },
-    {
-      "id": 435044,
-      "team": "TEX"
-    },
-    {
-      "id": 502264,
-      "team": "TEX"
-    },
-    {
-      "id": 400085,
-      "team": "NYY"
+      "team": "TEX",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 453895,
-      "team": "NYY"
-    },
-    {
-      "id": 476454,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 452104,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 407893,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 453056,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 493133,
-      "team": "NYY"
-    },
-    {
-      "id": 425626,
-      "team": "NYY"
-    },
-    {
-      "id": 518875,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 136860,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 501660,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 465041,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 453307,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 116539,
-      "team": "NYY"
-    },
-    {
-      "id": 475479,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 458731,
-      "team": "NYY"
-    },
-    {
-      "id": 476589,
-      "team": "NYY"
-    },
-    {
-      "id": 519412,
-      "team": "NYY"
-    },
-    {
-      "id": 406878,
-      "team": "NYY"
-    },
-    {
-      "id": 572888,
-      "team": "NYY"
-    },
-    {
-      "id": 595032,
-      "team": "NYY"
-    },
-    {
-      "id": 435263,
-      "team": "NYY"
-    },
-    {
-      "id": 435221,
-      "team": "NYY"
-    },
-    {
-      "id": 407819,
-      "team": "NYY"
-    },
-    {
-      "id": 502085,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "LF",
+      "gamesStarted": null
     }
   ],
   "382165": [
     {
       "id": 407842,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 514888,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 474892,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 518625,
-      "team": "HOU"
-    },
-    {
-      "id": 449786,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 451661,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571868,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 572138,
-      "team": "HOU"
-    },
-    {
-      "id": 444857,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 488771,
-      "team": "HOU"
-    },
-    {
-      "id": 519085,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 448609,
-      "team": "HOU"
-    },
-    {
-      "id": 503556,
-      "team": "HOU"
-    },
-    {
-      "id": 572971,
-      "team": "HOU"
-    },
-    {
-      "id": 518560,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 463610,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 594772,
-      "team": "HOU"
-    },
-    {
-      "id": 461882,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 543257,
-      "team": "HOU"
-    },
-    {
-      "id": 543521,
-      "team": "HOU"
-    },
-    {
-      "id": 445153,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 543321,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 430589,
-      "team": "HOU"
-    },
-    {
-      "id": 285079,
-      "team": "TOR"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571800,
-      "team": "TOR"
-    },
-    {
-      "id": 571901,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 476270,
-      "team": "TOR"
-    },
-    {
-      "id": 554432,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 425900,
-      "team": "TOR"
-    },
-    {
-      "id": 279824,
-      "team": "TOR"
-    },
-    {
-      "id": 493128,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 572365,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 460099,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 464433,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 445170,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 592717,
-      "team": "TOR"
-    },
-    {
-      "id": 430661,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 458675,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 408314,
-      "team": "TOR"
-    },
-    {
-      "id": 489365,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 466320,
-      "team": "TOR"
-    },
-    {
-      "id": 573186,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 446399,
-      "team": "TOR"
-    },
-    {
-      "id": 457918,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 445163,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543238,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 502143,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 430832,
-      "team": "TOR"
+      "team": "TOR",
+      "position": "RF",
+      "gamesStarted": null
     }
   ],
   "414443": [
     {
-      "id": 543779,
-      "team": "STL"
-    },
-    {
       "id": 543939,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 407793,
-      "team": "STL"
-    },
-    {
-      "id": 279571,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 518771,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 448602,
-      "team": "STL"
-    },
-    {
-      "id": 448802,
-      "team": "STL"
-    },
-    {
-      "id": 458681,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 407812,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 545341,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 518792,
-      "team": "STL"
-    },
-    {
-      "id": 488721,
-      "team": "STL"
-    },
-    {
-      "id": 329092,
-      "team": "STL"
-    },
-    {
-      "id": 446225,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 445055,
-      "team": "STL"
-    },
-    {
-      "id": 453646,
-      "team": "STL"
-    },
-    {
-      "id": 518902,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 595307,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 425509,
-      "team": "STL"
-    },
-    {
-      "id": 593372,
-      "team": "STL"
-    },
-    {
-      "id": 608379,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 572096,
-      "team": "STL"
-    },
-    {
-      "id": 488810,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 516416,
-      "team": "MIL"
-    },
-    {
-      "id": 455117,
-      "team": "MIL"
-    },
-    {
-      "id": 346798,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 425840,
-      "team": "MIL"
-    },
-    {
-      "id": 571666,
-      "team": "MIL"
-    },
-    {
-      "id": 490063,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 595386,
-      "team": "MIL"
-    },
-    {
-      "id": 460075,
-      "team": "MIL"
-    },
-    {
-      "id": 408061,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 608349,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 467143,
-      "team": "MIL"
-    },
-    {
-      "id": 455009,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 452252,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 451089,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 460576,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 518960,
-      "team": "MIL"
-    },
-    {
-      "id": 518468,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 467827,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 519293,
-      "team": "MIL"
-    },
-    {
-      "id": 502026,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 596143,
-      "team": "MIL"
-    },
-    {
-      "id": 592341,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 133380,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 519076,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 541650,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "3B",
+      "gamesStarted": null
     }
   ],
   "414633": [
     {
       "id": 518934,
-      "team": "COL"
-    },
-    {
-      "id": 518614,
-      "team": "COL"
-    },
-    {
-      "id": 115629,
-      "team": "COL"
+      "team": "COL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 571448,
-      "team": "COL"
+      "team": "COL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 460026,
-      "team": "COL"
-    },
-    {
-      "id": 571735,
-      "team": "COL"
-    },
-    {
-      "id": 592454,
-      "team": "COL"
-    },
-    {
-      "id": 623184,
-      "team": "COL"
-    },
-    {
-      "id": 518452,
-      "team": "COL"
+      "team": "COL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 453064,
-      "team": "COL"
-    },
-    {
-      "id": 407822,
-      "team": "COL"
-    },
-    {
-      "id": 572019,
-      "team": "COL"
+      "team": "COL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 471865,
-      "team": "COL"
+      "team": "COL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 452718,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 502522,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543184,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 501647,
-      "team": "COL"
+      "team": "COL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 446099,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 453568,
-      "team": "COL"
+      "team": "COL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 488681,
-      "team": "COL"
+      "team": "COL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 457429,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 502374,
-      "team": "COL"
+      "team": "COL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 501255,
-      "team": "COL"
-    },
-    {
-      "id": 592826,
-      "team": "HOU"
+      "team": "COL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 474892,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 594828,
-      "team": "HOU"
-    },
-    {
-      "id": 474233,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 519085,
-      "team": "HOU"
-    },
-    {
-      "id": 501789,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 605512,
-      "team": "HOU"
-    },
-    {
-      "id": 543521,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 430589,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 472528,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 514888,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 450212,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543807,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 451661,
-      "team": "HOU"
-    },
-    {
-      "id": 621121,
-      "team": "HOU"
-    },
-    {
-      "id": 570267,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 621043,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 488771,
-      "team": "HOU"
-    },
-    {
-      "id": 448609,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 503556,
-      "team": "HOU"
-    },
-    {
-      "id": 572971,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 545350,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 491159,
-      "team": "HOU"
-    },
-    {
-      "id": 433584,
-      "team": "HOU"
-    },
-    {
-      "id": 502381,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "414648": [
     {
       "id": 518934,
-      "team": "COL"
-    },
-    {
-      "id": 518614,
-      "team": "COL"
+      "team": "COL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 115629,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571448,
-      "team": "COL"
-    },
-    {
-      "id": 460026,
-      "team": "COL"
+      "team": "COL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 571735,
-      "team": "COL"
-    },
-    {
-      "id": 592454,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 623184,
-      "team": "COL"
-    },
-    {
-      "id": 518452,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 453064,
-      "team": "COL"
-    },
-    {
-      "id": 407822,
-      "team": "COL"
+      "team": "COL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 572019,
-      "team": "COL"
+      "team": "COL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 548357,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 471865,
-      "team": "COL"
-    },
-    {
-      "id": 452718,
-      "team": "COL"
+      "team": "COL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 502522,
-      "team": "COL"
-    },
-    {
-      "id": 543184,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 501647,
-      "team": "COL"
-    },
-    {
-      "id": 446099,
-      "team": "COL"
+      "team": "COL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 453568,
-      "team": "COL"
+      "team": "COL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 488681,
-      "team": "COL"
+      "team": "COL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 457429,
-      "team": "COL"
+      "team": "COL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 502374,
-      "team": "COL"
+      "team": "COL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 501255,
-      "team": "COL"
-    },
-    {
-      "id": 592826,
-      "team": "HOU"
-    },
-    {
-      "id": 514888,
-      "team": "HOU"
+      "team": "COL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 474892,
-      "team": "HOU"
-    },
-    {
-      "id": 474233,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 450212,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543807,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 451661,
-      "team": "HOU"
-    },
-    {
-      "id": 621121,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 570267,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 621043,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 488771,
-      "team": "HOU"
-    },
-    {
-      "id": 519085,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 448609,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 503556,
-      "team": "HOU"
-    },
-    {
-      "id": 572971,
-      "team": "HOU"
-    },
-    {
-      "id": 501789,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 605512,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 545350,
-      "team": "HOU"
-    },
-    {
-      "id": 491159,
-      "team": "HOU"
-    },
-    {
-      "id": 433584,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 543521,
-      "team": "HOU"
-    },
-    {
-      "id": 502381,
-      "team": "HOU"
-    },
-    {
-      "id": 430589,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 472528,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "3B",
+      "gamesStarted": null
     }
   ],
   "415099": [
     {
-      "id": 543779,
-      "team": "STL"
-    },
-    {
       "id": 543939,
-      "team": "STL"
-    },
-    {
-      "id": 407793,
-      "team": "STL"
-    },
-    {
-      "id": 518553,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 448602,
-      "team": "STL"
-    },
-    {
-      "id": 458681,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 572039,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 407812,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 545341,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 518792,
-      "team": "STL"
-    },
-    {
-      "id": 488721,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 329092,
-      "team": "STL"
-    },
-    {
-      "id": 453646,
-      "team": "STL"
-    },
-    {
-      "id": 592815,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518902,
-      "team": "STL"
+      "team": "STL",
+      "position": "PR",
+      "gamesStarted": null
     },
     {
       "id": 430681,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 595307,
-      "team": "STL"
-    },
-    {
-      "id": 462515,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 425509,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 593372,
-      "team": "STL"
-    },
-    {
-      "id": 608379,
-      "team": "STL"
-    },
-    {
-      "id": 572096,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 488810,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 453400,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 455976,
-      "team": "ATL"
-    },
-    {
-      "id": 430630,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 516811,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 592743,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 571946,
-      "team": "ATL"
-    },
-    {
-      "id": 622072,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 607054,
-      "team": "ATL"
-    },
-    {
-      "id": 465674,
-      "team": "ATL"
-    },
-    {
-      "id": 605374,
-      "team": "ATL"
-    },
-    {
-      "id": 462382,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 150229,
-      "team": "ATL"
-    },
-    {
-      "id": 593495,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 518692,
-      "team": "ATL"
-    },
-    {
-      "id": 446321,
-      "team": "ATL"
-    },
-    {
-      "id": 527054,
-      "team": "ATL"
-    },
-    {
-      "id": 543432,
-      "team": "ATL"
-    },
-    {
-      "id": 527055,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 611177,
-      "team": "ATL"
-    },
-    {
-      "id": 605538,
-      "team": "ATL"
-    },
-    {
-      "id": 430404,
-      "team": "ATL"
-    },
-    {
-      "id": 430911,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 501593,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 457727,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     }
   ],
   "447516": [
     {
-      "id": 543779,
-      "team": "STL"
-    },
-    {
       "id": 543939,
-      "team": "STL"
-    },
-    {
-      "id": 502190,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 544928,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 514913,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 461235,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 621199,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 448802,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 572039,
-      "team": "STL"
-    },
-    {
-      "id": 407812,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 545341,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 571431,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 455009,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571757,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 518883,
-      "team": "STL"
-    },
-    {
-      "id": 493200,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 649557,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 518700,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 425877,
-      "team": "STL"
-    },
-    {
-      "id": 593372,
-      "team": "STL"
-    },
-    {
-      "id": 608379,
-      "team": "STL"
-    },
-    {
-      "id": 572096,
-      "team": "STL"
-    },
-    {
-      "id": 576397,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 516416,
-      "team": "AZ"
-    },
-    {
-      "id": 594838,
-      "team": "AZ"
-    },
-    {
-      "id": 543339,
-      "team": "AZ"
-    },
-    {
-      "id": 430001,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 456422,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 456078,
-      "team": "AZ"
-    },
-    {
-      "id": 461325,
-      "team": "AZ"
-    },
-    {
-      "id": 571946,
-      "team": "AZ"
-    },
-    {
-      "id": 517414,
-      "team": "AZ"
-    },
-    {
-      "id": 571578,
-      "team": "AZ"
-    },
-    {
-      "id": 571875,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 425844,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 572008,
-      "team": "AZ"
-    },
-    {
-      "id": 605177,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 630111,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 592273,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 446899,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 605113,
-      "team": "AZ"
-    },
-    {
-      "id": 545332,
-      "team": "AZ"
-    },
-    {
-      "id": 592662,
-      "team": "AZ"
-    },
-    {
-      "id": 605359,
-      "team": "AZ"
-    },
-    {
-      "id": 657205,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 502671,
-      "team": "AZ"
-    },
-    {
-      "id": 543302,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "1B",
+      "gamesStarted": null
     }
   ],
   "447557": [
     {
       "id": 543779,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543939,
-      "team": "STL"
-    },
-    {
-      "id": 502190,
-      "team": "STL"
-    },
-    {
-      "id": 544928,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 514913,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 461235,
-      "team": "STL"
-    },
-    {
-      "id": 621199,
-      "team": "STL"
-    },
-    {
-      "id": 448802,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 572039,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 407812,
-      "team": "STL"
-    },
-    {
-      "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 545341,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 571431,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 455009,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571757,
-      "team": "STL"
-    },
-    {
-      "id": 518883,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 493200,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 649557,
-      "team": "STL"
-    },
-    {
-      "id": 518700,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 593372,
-      "team": "STL"
-    },
-    {
-      "id": 608379,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 572096,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 576397,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 451594,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 475243,
-      "team": "CHC"
-    },
-    {
-      "id": 407793,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 519203,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 624585,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 595879,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 608365,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 471083,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 467008,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 444468,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518792,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 592178,
-      "team": "CHC"
-    },
-    {
-      "id": 502239,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 450314,
-      "team": "CHC"
-    },
-    {
-      "id": 452657,
-      "team": "CHC"
-    },
-    {
-      "id": 543148,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 518748,
-      "team": "CHC"
-    },
-    {
-      "id": 434628,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 600303,
-      "team": "CHC"
-    },
-    {
-      "id": 453385,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 453562,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 476589,
-      "team": "CHC"
-    },
-    {
-      "id": 424325,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 519333,
-      "team": "CHC"
-    },
-    {
-      "id": 543294,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "PH",
+      "gamesStarted": null
     }
   ],
   "447893": [
     {
-      "id": 593958,
-      "team": "BOS"
-    },
-    {
-      "id": 453214,
-      "team": "BOS"
-    },
-    {
       "id": 120074,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 519144,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 547749,
-      "team": "BOS"
-    },
-    {
-      "id": 592390,
-      "team": "BOS"
-    },
-    {
-      "id": 453329,
-      "team": "BOS"
-    },
-    {
-      "id": 571918,
-      "team": "BOS"
-    },
-    {
-      "id": 543726,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543768,
-      "team": "BOS"
-    },
-    {
-      "id": 518927,
-      "team": "BOS"
-    },
-    {
-      "id": 456034,
-      "team": "BOS"
-    },
-    {
-      "id": 593523,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 605141,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 518886,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 456030,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 593428,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 598265,
-      "team": "BOS"
-    },
-    {
-      "id": 534606,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 493157,
-      "team": "BOS"
-    },
-    {
-      "id": 506702,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 434670,
-      "team": "BOS"
-    },
-    {
-      "id": 598264,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 543877,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 455759,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 429664,
-      "team": "SEA"
-    },
-    {
-      "id": 518553,
-      "team": "SEA"
-    },
-    {
-      "id": 493193,
-      "team": "SEA"
-    },
-    {
-      "id": 276542,
-      "team": "SEA"
-    },
-    {
-      "id": 608167,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 572122,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 606466,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 547982,
-      "team": "SEA"
-    },
-    {
-      "id": 572020,
-      "team": "SEA"
-    },
-    {
-      "id": 543883,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 592716,
-      "team": "SEA"
-    },
-    {
-      "id": 455104,
-      "team": "SEA"
-    },
-    {
-      "id": 592836,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 452252,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 429711,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 502182,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 452234,
-      "team": "SEA"
-    },
-    {
-      "id": 621242,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 443558,
-      "team": "SEA"
-    },
-    {
-      "id": 502523,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 493114,
-      "team": "SEA"
-    },
-    {
-      "id": 573064,
-      "team": "SEA"
-    },
-    {
-      "id": 547874,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 543557,
-      "team": "SEA"
-    },
-    {
-      "id": 501992,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "447898": [
     {
-      "id": 544727,
-      "team": "NYM"
-    },
-    {
-      "id": 425784,
-      "team": "NYM"
-    },
-    {
       "id": 624424,
-      "team": "NYM"
-    },
-    {
-      "id": 571927,
-      "team": "NYM"
-    },
-    {
-      "id": 112526,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 457477,
-      "team": "NYM"
-    },
-    {
-      "id": 518774,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 425766,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 455374,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 594798,
-      "team": "NYM"
-    },
-    {
-      "id": 592665,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 570663,
-      "team": "NYM"
-    },
-    {
-      "id": 592789,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571841,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 493316,
-      "team": "NYM"
-    },
-    {
-      "id": 460283,
-      "team": "NYM"
-    },
-    {
-      "id": 592340,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 608700,
-      "team": "NYM"
-    },
-    {
-      "id": 608703,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 452678,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 434158,
-      "team": "NYM"
-    },
-    {
-      "id": 430637,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 435522,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 527038,
-      "team": "NYM"
-    },
-    {
-      "id": 516714,
-      "team": "ATL"
+      "team": "NYM",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 455976,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 607054,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 488818,
-      "team": "ATL"
-    },
-    {
-      "id": 607231,
-      "team": "ATL"
-    },
-    {
-      "id": 571871,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 518692,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 430947,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 542255,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 527054,
-      "team": "ATL"
-    },
-    {
-      "id": 502032,
-      "team": "ATL"
-    },
-    {
-      "id": 468396,
-      "team": "ATL"
-    },
-    {
-      "id": 527055,
-      "team": "ATL"
-    },
-    {
-      "id": 611177,
-      "team": "ATL"
-    },
-    {
-      "id": 605538,
-      "team": "ATL"
-    },
-    {
-      "id": 592433,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 425796,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 605480,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 452095,
-      "team": "ATL"
-    },
-    {
-      "id": 519437,
-      "team": "ATL"
-    },
-    {
-      "id": 462382,
-      "team": "ATL"
-    },
-    {
-      "id": 150229,
-      "team": "ATL"
-    },
-    {
-      "id": 594760,
-      "team": "ATL"
-    },
-    {
-      "id": 474319,
-      "team": "ATL"
-    },
-    {
-      "id": 543017,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     }
   ],
   "448403": [
     {
       "id": 455976,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 493596,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 607054,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 488818,
-      "team": "ATL"
-    },
-    {
-      "id": 447714,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 571871,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518692,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 430947,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 542255,
-      "team": "ATL"
-    },
-    {
-      "id": 621408,
-      "team": "ATL"
-    },
-    {
-      "id": 527054,
-      "team": "ATL"
-    },
-    {
-      "id": 542432,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 611177,
-      "team": "ATL"
-    },
-    {
-      "id": 503444,
-      "team": "ATL"
-    },
-    {
-      "id": 489232,
-      "team": "ATL"
-    },
-    {
-      "id": 543901,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 592433,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 606291,
-      "team": "ATL"
-    },
-    {
-      "id": 592314,
-      "team": "ATL"
-    },
-    {
-      "id": 425796,
-      "team": "ATL"
-    },
-    {
-      "id": 519437,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 462382,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 150229,
-      "team": "ATL"
-    },
-    {
-      "id": 474319,
-      "team": "ATL"
-    },
-    {
-      "id": 543017,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 592826,
-      "team": "PHI"
-    },
-    {
-      "id": 476451,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 429667,
-      "team": "PHI"
-    },
-    {
-      "id": 621107,
-      "team": "PHI"
-    },
-    {
-      "id": 456696,
-      "team": "PHI"
-    },
-    {
-      "id": 457732,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 571437,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 593576,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 595963,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "PR",
+      "gamesStarted": null
     },
     {
       "id": 571830,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 596748,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 519237,
-      "team": "PHI"
-    },
-    {
-      "id": 519085,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 520471,
-      "team": "PHI"
-    },
-    {
-      "id": 605894,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 605125,
-      "team": "PHI"
-    },
-    {
-      "id": 491646,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 517370,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 591693,
-      "team": "PHI"
-    },
-    {
-      "id": 605227,
-      "team": "PHI"
-    },
-    {
-      "id": 434563,
-      "team": "PHI"
-    },
-    {
-      "id": 595191,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 546318,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 514917,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "2B",
+      "gamesStarted": null
     }
   ],
   "448418": [
     {
       "id": 455976,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 493596,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 607054,
-      "team": "ATL"
-    },
-    {
-      "id": 488818,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 447714,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571871,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518692,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 430947,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 542255,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 621408,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 527054,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 542432,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 611177,
-      "team": "ATL"
-    },
-    {
-      "id": 503444,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 489232,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 543901,
-      "team": "ATL"
-    },
-    {
-      "id": 592433,
-      "team": "ATL"
-    },
-    {
-      "id": 606291,
-      "team": "ATL"
-    },
-    {
-      "id": 592314,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 425796,
-      "team": "ATL"
-    },
-    {
-      "id": 519437,
-      "team": "ATL"
-    },
-    {
-      "id": 462382,
-      "team": "ATL"
-    },
-    {
-      "id": 150229,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 474319,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 543017,
-      "team": "ATL"
-    },
-    {
-      "id": 592826,
-      "team": "PHI"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 476451,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 429667,
-      "team": "PHI"
-    },
-    {
-      "id": 621107,
-      "team": "PHI"
-    },
-    {
-      "id": 456696,
-      "team": "PHI"
-    },
-    {
-      "id": 457732,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 571437,
-      "team": "PHI"
-    },
-    {
-      "id": 593576,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 595963,
-      "team": "PHI"
-    },
-    {
-      "id": 571830,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 596748,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 519237,
-      "team": "PHI"
-    },
-    {
-      "id": 519085,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 520471,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 605894,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 605125,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 491646,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 517370,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 591693,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 605227,
-      "team": "PHI"
-    },
-    {
-      "id": 434563,
-      "team": "PHI"
-    },
-    {
-      "id": 595191,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 546318,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 514917,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "2B",
+      "gamesStarted": null
     }
   ],
   "448503": [
     {
-      "id": 543779,
-      "team": "STL"
-    },
-    {
       "id": 543939,
-      "team": "STL"
-    },
-    {
-      "id": 502190,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 461235,
-      "team": "STL"
-    },
-    {
-      "id": 621199,
-      "team": "STL"
-    },
-    {
-      "id": 448802,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 572039,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 407812,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 594824,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 571431,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 502054,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 451705,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 455009,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571757,
-      "team": "STL"
-    },
-    {
-      "id": 594577,
-      "team": "STL"
-    },
-    {
-      "id": 493200,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 425532,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 595307,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 425509,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 593372,
-      "team": "STL"
-    },
-    {
-      "id": 608379,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 435043,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 576397,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 455976,
-      "team": "ATL"
-    },
-    {
-      "id": 592433,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 606291,
-      "team": "ATL"
-    },
-    {
-      "id": 592314,
-      "team": "ATL"
-    },
-    {
-      "id": 493596,
-      "team": "ATL"
-    },
-    {
-      "id": 425796,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 461314,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 607054,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 488818,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 447714,
-      "team": "ATL"
-    },
-    {
-      "id": 594792,
-      "team": "ATL"
-    },
-    {
-      "id": 462382,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571871,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 150229,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 518692,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 430947,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 433584,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 542255,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 542432,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 611177,
-      "team": "ATL"
-    },
-    {
-      "id": 503444,
-      "team": "ATL"
-    },
-    {
-      "id": 474319,
-      "team": "ATL"
-    },
-    {
-      "id": 489232,
-      "team": "ATL"
-    },
-    {
-      "id": 547007,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     }
   ],
   "490907": [
     {
       "id": 451594,
-      "team": "STL"
-    },
-    {
-      "id": 543779,
-      "team": "STL"
-    },
-    {
-      "id": 502190,
-      "team": "STL"
-    },
-    {
-      "id": 544928,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 621199,
-      "team": "STL"
-    },
-    {
-      "id": 458681,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 572039,
-      "team": "STL"
-    },
-    {
-      "id": 607231,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 594824,
-      "team": "STL"
-    },
-    {
-      "id": 605154,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 572761,
-      "team": "STL"
-    },
-    {
-      "id": 500874,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 502054,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 657557,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 425794,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 493200,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 649557,
-      "team": "STL"
-    },
-    {
-      "id": 518700,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 425509,
-      "team": "STL"
-    },
-    {
-      "id": 593372,
-      "team": "STL"
-    },
-    {
-      "id": 608379,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 572096,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 576397,
-      "team": "STL"
-    },
-    {
-      "id": 446399,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 400284,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 621035,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 518735,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 605131,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 571771,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 608369,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 523253,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 594795,
-      "team": "LAD"
-    },
-    {
-      "id": 501822,
-      "team": "LAD"
-    },
-    {
-      "id": 445276,
-      "team": "LAD"
-    },
-    {
-      "id": 520980,
-      "team": "LAD"
-    },
-    {
-      "id": 547943,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 453344,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518649,
-      "team": "LAD"
-    },
-    {
-      "id": 429711,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 624577,
-      "team": "LAD"
-    },
-    {
-      "id": 448179,
-      "team": "LAD"
-    },
-    {
-      "id": 628317,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 451661,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 641355,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 408236,
-      "team": "LAD"
-    },
-    {
-      "id": 477132,
-      "team": "LAD"
-    },
-    {
-      "id": 548389,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 435221,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 489265,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "491139": [
     {
       "id": 519346,
-      "team": "MIL"
-    },
-    {
-      "id": 453172,
-      "team": "MIL"
-    },
-    {
-      "id": 542908,
-      "team": "MIL"
-    },
-    {
-      "id": 490063,
-      "team": "MIL"
-    },
-    {
-      "id": 623352,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 444489,
-      "team": "MIL"
-    },
-    {
-      "id": 608349,
-      "team": "MIL"
-    },
-    {
-      "id": 503449,
-      "team": "MIL"
-    },
-    {
-      "id": 502179,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 542979,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 543768,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 621446,
-      "team": "MIL"
-    },
-    {
-      "id": 448855,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 519299,
-      "team": "MIL"
-    },
-    {
-      "id": 570267,
-      "team": "MIL"
-    },
-    {
-      "id": 448614,
-      "team": "MIL"
-    },
-    {
-      "id": 605200,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 606115,
-      "team": "MIL"
-    },
-    {
-      "id": 606930,
-      "team": "MIL"
-    },
-    {
-      "id": 502624,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 519076,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 541650,
-      "team": "MIL"
-    },
-    {
-      "id": 545338,
-      "team": "MIL"
-    },
-    {
-      "id": 542583,
-      "team": "MIL"
-    },
-    {
-      "id": 543118,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 620443,
-      "team": "SD"
-    },
-    {
-      "id": 622766,
-      "team": "SD"
+      "team": "SD",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 500208,
-      "team": "SD"
-    },
-    {
-      "id": 517369,
-      "team": "SD"
-    },
-    {
-      "id": 488818,
-      "team": "SD"
-    },
-    {
-      "id": 595978,
-      "team": "SD"
+      "team": "SD",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 592669,
-      "team": "SD"
+      "team": "SD",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 642707,
-      "team": "SD"
+      "team": "SD",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 489334,
-      "team": "SD"
+      "team": "SD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 430947,
-      "team": "SD"
-    },
-    {
-      "id": 659275,
-      "team": "SD"
-    },
-    {
-      "id": 600526,
-      "team": "SD"
+      "team": "SD",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 614173,
-      "team": "SD"
-    },
-    {
-      "id": 543506,
-      "team": "SD"
-    },
-    {
-      "id": 453385,
-      "team": "SD"
+      "team": "SD",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 571976,
-      "team": "SD"
-    },
-    {
-      "id": 488748,
-      "team": "SD"
+      "team": "SD",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 519333,
-      "team": "SD"
-    },
-    {
-      "id": 572308,
-      "team": "SD"
+      "team": "SD",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 606131,
-      "team": "SD"
-    },
-    {
-      "id": 468504,
-      "team": "SD"
+      "team": "SD",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 605486,
-      "team": "SD"
-    },
-    {
-      "id": 664208,
-      "team": "SD"
-    },
-    {
-      "id": 489446,
-      "team": "SD"
-    },
-    {
-      "id": 543272,
-      "team": "SD"
+      "team": "SD",
+      "position": "3B",
+      "gamesStarted": null
     }
   ],
   "491274": [
     {
       "id": 571602,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 591994,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 607074,
-      "team": "CWS"
-    },
-    {
-      "id": 502706,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 553882,
-      "team": "CWS"
-    },
-    {
-      "id": 448306,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 573589,
-      "team": "CWS"
-    },
-    {
-      "id": 571787,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 570560,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 571476,
-      "team": "CWS"
-    },
-    {
-      "id": 500779,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 547989,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 502593,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 453943,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 541645,
-      "team": "CWS"
-    },
-    {
-      "id": 460059,
-      "team": "CWS"
-    },
-    {
-      "id": 592454,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 641313,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 593700,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 641553,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 466320,
-      "team": "CWS"
-    },
-    {
-      "id": 607345,
-      "team": "CWS"
-    },
-    {
-      "id": 461872,
-      "team": "CWS"
-    },
-    {
-      "id": 502085,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 543359,
-      "team": "CWS"
-    },
-    {
-      "id": 476454,
-      "team": "NYY"
-    },
-    {
-      "id": 622663,
-      "team": "NYY"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 452104,
-      "team": "NYY"
-    },
-    {
-      "id": 622703,
-      "team": "NYY"
-    },
-    {
-      "id": 453056,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 592741,
-      "team": "NYY"
-    },
-    {
-      "id": 593334,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 519222,
-      "team": "NYY"
-    },
-    {
-      "id": 608701,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 592450,
-      "team": "NYY"
-    },
-    {
-      "id": 501381,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 547888,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 609280,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 643778,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 458731,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 642180,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 643338,
-      "team": "NYY"
-    },
-    {
-      "id": 461325,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 591720,
-      "team": "NYY"
-    },
-    {
-      "id": 570666,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 596142,
-      "team": "NYY"
-    },
-    {
-      "id": 592122,
-      "team": "NYY"
-    },
-    {
-      "id": 656756,
-      "team": "NYY"
-    },
-    {
-      "id": 547973,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 544369,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "SS",
+      "gamesStarted": null
     }
   ],
   "491431": [
     {
       "id": 429664,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 516416,
-      "team": "SEA"
-    },
-    {
-      "id": 621058,
-      "team": "SEA"
-    },
-    {
-      "id": 451596,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 571745,
-      "team": "SEA"
-    },
-    {
-      "id": 518553,
-      "team": "SEA"
-    },
-    {
-      "id": 641941,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 592325,
-      "team": "SEA"
-    },
-    {
-      "id": 664641,
-      "team": "SEA"
-    },
-    {
-      "id": 621471,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 572122,
-      "team": "SEA"
-    },
-    {
-      "id": 572287,
-      "team": "SEA"
-    },
-    {
-      "id": 572020,
-      "team": "SEA"
-    },
-    {
-      "id": 572021,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 519240,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 434563,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 543883,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543964,
-      "team": "SEA"
-    },
-    {
-      "id": 600301,
-      "team": "SEA"
-    },
-    {
-      "id": 628338,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 621242,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 443558,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 502481,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 433587,
-      "team": "SEA"
+      "team": "SEA",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 502143,
-      "team": "SEA"
-    },
-    {
-      "id": 621112,
-      "team": "OAK"
-    },
-    {
-      "id": 594943,
-      "team": "OAK"
-    },
-    {
-      "id": 640455,
-      "team": "OAK"
-    },
-    {
-      "id": 521230,
-      "team": "OAK"
+      "team": "SEA",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 595144,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 605254,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 476704,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 656305,
-      "team": "OAK"
-    },
-    {
-      "id": 543243,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 543760,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 501981,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 448281,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 425492,
-      "team": "OAK"
-    },
-    {
-      "id": 572728,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 459964,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 622194,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 475174,
-      "team": "OAK"
-    },
-    {
-      "id": 489267,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 592387,
-      "team": "OAK"
-    },
-    {
-      "id": 572033,
-      "team": "OAK"
-    },
-    {
-      "id": 434672,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 446099,
-      "team": "OAK"
-    },
-    {
-      "id": 433586,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543056,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 434658,
-      "team": "OAK"
+      "team": "OAK",
+      "position": "RF",
+      "gamesStarted": null
     }
   ],
   "491869": [
     {
-      "id": 643265,
-      "team": "NYY"
-    },
-    {
       "id": 476454,
-      "team": "NYY"
-    },
-    {
-      "id": 622663,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 452104,
-      "team": "NYY"
-    },
-    {
-      "id": 453056,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 458731,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 642180,
-      "team": "NYY"
-    },
-    {
-      "id": 476589,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 643338,
-      "team": "NYY"
-    },
-    {
-      "id": 592454,
-      "team": "NYY"
-    },
-    {
-      "id": 519222,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 591720,
-      "team": "NYY"
-    },
-    {
-      "id": 448802,
-      "team": "NYY"
-    },
-    {
-      "id": 571951,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 570666,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 596142,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 592450,
-      "team": "NYY"
-    },
-    {
-      "id": 543243,
-      "team": "NYY"
-    },
-    {
-      "id": 656756,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 502085,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543305,
-      "team": "NYY"
-    },
-    {
-      "id": 547973,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 453943,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 544369,
-      "team": "NYY"
-    },
-    {
-      "id": 623149,
-      "team": "NYM"
+      "team": "NYY",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 642086,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 425784,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 624424,
-      "team": "NYM"
-    },
-    {
-      "id": 571927,
-      "team": "NYM"
-    },
-    {
-      "id": 573109,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 606160,
-      "team": "NYM"
-    },
-    {
-      "id": 518595,
-      "team": "NYM"
-    },
-    {
-      "id": 594798,
-      "team": "NYM"
-    },
-    {
-      "id": 641850,
-      "team": "NYM"
-    },
-    {
-      "id": 607043,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 570663,
-      "team": "NYM"
-    },
-    {
-      "id": 623167,
-      "team": "NYM"
-    },
-    {
-      "id": 607473,
-      "team": "NYM"
-    },
-    {
-      "id": 519294,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 493316,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 642708,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 460283,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 592340,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 452678,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 434158,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 501571,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 527038,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "3B",
+      "gamesStarted": null
     }
   ],
   "530206": [
     {
       "id": 622666,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 455976,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 475247,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 518693,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518692,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 641438,
-      "team": "ATL"
-    },
-    {
-      "id": 493247,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 605512,
-      "team": "ATL"
-    },
-    {
-      "id": 595465,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 542255,
-      "team": "ATL"
-    },
-    {
-      "id": 527054,
-      "team": "ATL"
-    },
-    {
-      "id": 527055,
-      "team": "ATL"
-    },
-    {
-      "id": 605538,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 435559,
-      "team": "ATL"
-    },
-    {
-      "id": 621345,
-      "team": "ATL"
-    },
-    {
-      "id": 640460,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 518586,
-      "team": "ATL"
-    },
-    {
-      "id": 592314,
-      "team": "ATL"
-    },
-    {
-      "id": 608371,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 452095,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 645277,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 621020,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 608331,
-      "team": "ATL"
-    },
-    {
-      "id": 656794,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 592145,
-      "team": "ATL"
-    },
-    {
-      "id": 435221,
-      "team": "ATL"
-    },
-    {
-      "id": 544727,
-      "team": "NYM"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 624424,
-      "team": "NYM"
-    },
-    {
-      "id": 571927,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 641645,
-      "team": "NYM"
-    },
-    {
-      "id": 554430,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 642708,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 519023,
-      "team": "NYM"
-    },
-    {
-      "id": 608700,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 452678,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 457803,
-      "team": "NYM"
-    },
-    {
-      "id": 623149,
-      "team": "NYM"
-    },
-    {
-      "id": 639373,
-      "team": "NYM"
-    },
-    {
-      "id": 595943,
-      "team": "NYM"
-    },
-    {
-      "id": 642008,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 594798,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 408236,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 607043,
-      "team": "NYM"
-    },
-    {
-      "id": 570663,
-      "team": "NYM"
-    },
-    {
-      "id": 408314,
-      "team": "NYM"
-    },
-    {
-      "id": 460283,
-      "team": "NYM"
-    },
-    {
-      "id": 664869,
-      "team": "NYM"
-    },
-    {
-      "id": 607229,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 607625,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 430832,
-      "team": "NYM"
-    },
-    {
-      "id": 450306,
-      "team": "NYM"
+      "team": "NYM",
+      "position": "LF",
+      "gamesStarted": null
     }
   ],
   "530340": [
     {
       "id": 451594,
-      "team": "STL"
-    },
-    {
-      "id": 592815,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 622168,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 543939,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 571945,
-      "team": "STL"
-    },
-    {
-      "id": 664056,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 594824,
-      "team": "STL"
-    },
-    {
-      "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 572228,
-      "team": "STL"
-    },
-    {
-      "id": 605154,
-      "team": "STL"
-    },
-    {
-      "id": 596133,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 500874,
-      "team": "STL"
-    },
-    {
-      "id": 593372,
-      "team": "STL"
-    },
-    {
-      "id": 608379,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 663855,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 576397,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 506747,
-      "team": "STL"
-    },
-    {
-      "id": 446399,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 502032,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 502054,
-      "team": "STL"
-    },
-    {
-      "id": 656427,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 542303,
-      "team": "STL"
-    },
-    {
-      "id": 596295,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 592407,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 518618,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 656738,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 594027,
-      "team": "MIA"
-    },
-    {
-      "id": 592663,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571506,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 516770,
-      "team": "MIA"
-    },
-    {
-      "id": 570632,
-      "team": "MIA"
-    },
-    {
-      "id": 607457,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 605119,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 543045,
-      "team": "MIA"
-    },
-    {
-      "id": 457727,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 670950,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 621446,
-      "team": "MIA"
-    },
-    {
-      "id": 622694,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 595375,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 592680,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 446899,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 500743,
-      "team": "MIA"
-    },
-    {
-      "id": 573185,
-      "team": "MIA"
-    },
-    {
-      "id": 592761,
-      "team": "MIA"
-    },
-    {
-      "id": 612672,
-      "team": "MIA"
-    },
-    {
-      "id": 607968,
-      "team": "MIA"
-    },
-    {
-      "id": 608716,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 543776,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "PH",
+      "gamesStarted": null
     }
   ],
   "530623": [
     {
-      "id": 451594,
-      "team": "STL"
-    },
-    {
       "id": 518813,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 622168,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 543939,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 571945,
-      "team": "STL"
-    },
-    {
-      "id": 607231,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 594824,
-      "team": "STL"
-    },
-    {
-      "id": 605154,
-      "team": "STL"
-    },
-    {
-      "id": 596133,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 500874,
-      "team": "STL"
-    },
-    {
-      "id": 502032,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 502054,
-      "team": "STL"
-    },
-    {
-      "id": 656427,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 596295,
-      "team": "STL"
-    },
-    {
-      "id": 592815,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 594577,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 664056,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 425877,
-      "team": "STL"
-    },
-    {
-      "id": 593372,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 663855,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 576397,
-      "team": "STL"
-    },
-    {
-      "id": 506747,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 446399,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 542303,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 622666,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 455976,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 475247,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 592426,
-      "team": "ATL"
-    },
-    {
-      "id": 518693,
-      "team": "ATL"
-    },
-    {
-      "id": 488721,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518692,
-      "team": "ATL"
-    },
-    {
-      "id": 641438,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 493247,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 595465,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 542255,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 527054,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 542454,
-      "team": "ATL"
-    },
-    {
-      "id": 605538,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 435559,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 621345,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 660670,
-      "team": "ATL"
-    },
-    {
-      "id": 518586,
-      "team": "ATL"
-    },
-    {
-      "id": 592314,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 452095,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 645277,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 621020,
-      "team": "ATL"
-    },
-    {
-      "id": 656794,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 592145,
-      "team": "ATL"
-    },
-    {
-      "id": 434671,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "530638": [
     {
       "id": 451594,
-      "team": "STL"
-    },
-    {
-      "id": 518813,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 622168,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 543939,
-      "team": "STL"
-    },
-    {
-      "id": 571945,
-      "team": "STL"
-    },
-    {
-      "id": 607231,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 594824,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 605154,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 596133,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 500874,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 502032,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 502054,
-      "team": "STL"
-    },
-    {
-      "id": 656427,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 596295,
-      "team": "STL"
-    },
-    {
-      "id": 592815,
-      "team": "STL"
-    },
-    {
-      "id": 594577,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 664056,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 425877,
-      "team": "STL"
-    },
-    {
-      "id": 593372,
-      "team": "STL"
-    },
-    {
-      "id": 663855,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 576397,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 506747,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 446399,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 542303,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 622666,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 455976,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 475247,
-      "team": "ATL"
-    },
-    {
-      "id": 592426,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 518693,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518692,
-      "team": "ATL"
-    },
-    {
-      "id": 641438,
-      "team": "ATL"
-    },
-    {
-      "id": 493247,
-      "team": "ATL"
-    },
-    {
-      "id": 595465,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 542255,
-      "team": "ATL"
-    },
-    {
-      "id": 527054,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 542454,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 605538,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 435559,
-      "team": "ATL"
-    },
-    {
-      "id": 621345,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 660670,
-      "team": "ATL"
-    },
-    {
-      "id": 518586,
-      "team": "ATL"
-    },
-    {
-      "id": 592314,
-      "team": "ATL"
-    },
-    {
-      "id": 452095,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 645277,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 621020,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 608331,
-      "team": "ATL"
-    },
-    {
-      "id": 656794,
-      "team": "ATL"
-    },
-    {
-      "id": 592145,
-      "team": "ATL"
-    },
-    {
-      "id": 434671,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     }
   ],
   "531451": [
     {
       "id": 622168,
-      "team": "STL"
-    },
-    {
-      "id": 592741,
-      "team": "STL"
-    },
-    {
-      "id": 594965,
-      "team": "STL"
-    },
-    {
-      "id": 571945,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 621550,
-      "team": "STL"
-    },
-    {
-      "id": 607231,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 594824,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 596133,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 571431,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 500874,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 608348,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 641933,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 641712,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 502032,
-      "team": "STL"
-    },
-    {
-      "id": 656427,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 657557,
-      "team": "STL"
-    },
-    {
-      "id": 596295,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 643778,
-      "team": "STL"
-    },
-    {
-      "id": 475115,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 664056,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 593372,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 666969,
-      "team": "STL"
-    },
-    {
-      "id": 663855,
-      "team": "STL"
+      "team": "STL",
+      "position": "PR",
+      "gamesStarted": null
     },
     {
       "id": 608678,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 506747,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 446399,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 542303,
-      "team": "STL"
-    },
-    {
-      "id": 456701,
-      "team": "CIN"
-    },
-    {
-      "id": 518774,
-      "team": "CIN"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 453172,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 593974,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 592863,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 571466,
-      "team": "CIN"
-    },
-    {
-      "id": 664167,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 594988,
-      "team": "CIN"
-    },
-    {
-      "id": 623451,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 640447,
-      "team": "CIN"
-    },
-    {
-      "id": 607219,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 543101,
-      "team": "CIN"
-    },
-    {
-      "id": 605538,
-      "team": "CIN"
-    },
-    {
-      "id": 456696,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 458015,
-      "team": "CIN"
-    },
-    {
-      "id": 622491,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 553993,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 608371,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571697,
-      "team": "CIN"
-    },
-    {
-      "id": 642003,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 628452,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 606299,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 547179,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571740,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 592200,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 641525,
-      "team": "CIN"
-    },
-    {
-      "id": 599096,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "RF",
+      "gamesStarted": null
     }
   ],
   "566592": [
     {
       "id": 451594,
-      "team": "STL"
-    },
-    {
-      "id": 622168,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 543939,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 571945,
-      "team": "STL"
-    },
-    {
-      "id": 607231,
-      "team": "STL"
-    },
-    {
-      "id": 453192,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 605154,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 500874,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 606149,
-      "team": "STL"
-    },
-    {
-      "id": 641712,
-      "team": "STL"
-    },
-    {
-      "id": 656427,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 657557,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 502671,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 643778,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 664056,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 425877,
-      "team": "STL"
-    },
-    {
-      "id": 446308,
-      "team": "STL"
-    },
-    {
-      "id": 593372,
-      "team": "STL"
-    },
-    {
-      "id": 608379,
-      "team": "STL"
-    },
-    {
-      "id": 663855,
-      "team": "STL"
-    },
-    {
-      "id": 576397,
-      "team": "STL"
-    },
-    {
-      "id": 657041,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 542303,
-      "team": "STL"
-    },
-    {
-      "id": 622666,
-      "team": "ATL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 455976,
-      "team": "ATL"
-    },
-    {
-      "id": 592426,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 518692,
-      "team": "ATL"
-    },
-    {
-      "id": 592332,
-      "team": "ATL"
-    },
-    {
-      "id": 657053,
-      "team": "ATL"
-    },
-    {
-      "id": 657097,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 595465,
-      "team": "ATL"
-    },
-    {
-      "id": 527054,
-      "team": "ATL"
-    },
-    {
-      "id": 647336,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518626,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 660670,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 518586,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 592314,
-      "team": "ATL"
-    },
-    {
-      "id": 452095,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 645277,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 621020,
-      "team": "ATL"
-    },
-    {
-      "id": 608331,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 663586,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 656794,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 460283,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 435263,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 461872,
-      "team": "ATL"
-    },
-    {
-      "id": 657140,
-      "team": "ATL"
-    },
-    {
-      "id": 458708,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "566640": [
     {
       "id": 451594,
-      "team": "STL"
-    },
-    {
-      "id": 622168,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 543939,
-      "team": "STL"
-    },
-    {
-      "id": 594965,
-      "team": "STL"
-    },
-    {
-      "id": 571945,
-      "team": "STL"
-    },
-    {
-      "id": 624641,
-      "team": "STL"
-    },
-    {
-      "id": 668227,
-      "team": "STL"
-    },
-    {
-      "id": 668800,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 607231,
-      "team": "STL"
-    },
-    {
-      "id": 453192,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 605154,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 572761,
-      "team": "STL"
-    },
-    {
-      "id": 500874,
-      "team": "STL"
-    },
-    {
-      "id": 606149,
-      "team": "STL"
-    },
-    {
-      "id": 641933,
-      "team": "STL"
-    },
-    {
-      "id": 641712,
-      "team": "STL"
-    },
-    {
-      "id": 621529,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 656427,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 657557,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 502671,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 669242,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 643778,
-      "team": "STL"
-    },
-    {
-      "id": 664854,
-      "team": "STL"
-    },
-    {
-      "id": 594577,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 664056,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 425877,
-      "team": "STL"
-    },
-    {
-      "id": 446308,
-      "team": "STL"
-    },
-    {
-      "id": 593372,
-      "team": "STL"
-    },
-    {
-      "id": 608379,
-      "team": "STL"
-    },
-    {
-      "id": 592660,
-      "team": "STL"
-    },
-    {
-      "id": 608678,
-      "team": "STL"
-    },
-    {
-      "id": 650893,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 658551,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 542303,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 518735,
-      "team": "MIL"
-    },
-    {
-      "id": 458006,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 669374,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 621438,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 519346,
-      "team": "MIL"
-    },
-    {
-      "id": 592325,
-      "team": "MIL"
-    },
-    {
-      "id": 592885,
-      "team": "MIL"
-    },
-    {
-      "id": 592865,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 623352,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 460075,
-      "team": "MIL"
-    },
-    {
-      "id": 444489,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 519141,
-      "team": "MIL"
-    },
-    {
-      "id": 642207,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 456715,
-      "team": "MIL"
-    },
-    {
-      "id": 669203,
-      "team": "MIL"
-    },
-    {
-      "id": 461829,
-      "team": "MIL"
-    },
-    {
-      "id": 543768,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 571679,
-      "team": "MIL"
-    },
-    {
-      "id": 642547,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 519058,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 448855,
-      "team": "MIL"
-    },
-    {
-      "id": 607188,
-      "team": "MIL"
-    },
-    {
-      "id": 605143,
-      "team": "MIL"
-    },
-    {
-      "id": 605200,
-      "team": "MIL"
-    },
-    {
-      "id": 605288,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 605486,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 606115,
-      "team": "MIL"
-    },
-    {
-      "id": 641924,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 663757,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 543351,
-      "team": "MIL"
-    },
-    {
-      "id": 502624,
-      "team": "MIL"
-    },
-    {
-      "id": 592222,
-      "team": "MIL"
-    },
-    {
-      "id": 519076,
-      "team": "MIL"
-    },
-    {
-      "id": 592122,
-      "team": "MIL"
-    },
-    {
-      "id": 541650,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543475,
-      "team": "MIL"
-    },
-    {
-      "id": 608718,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "P",
+      "gamesStarted": 1
     }
   ],
   "633604": [
     {
-      "id": 642092,
-      "team": "AZ"
-    },
-    {
       "id": 465657,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 668942,
-      "team": "AZ"
-    },
-    {
-      "id": 518876,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 573009,
-      "team": "AZ"
-    },
-    {
-      "id": 622065,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 500871,
-      "team": "AZ"
-    },
-    {
-      "id": 656464,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 605113,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 606466,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 608348,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 592233,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 545121,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 452678,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 444482,
-      "team": "AZ"
-    },
-    {
-      "id": 656686,
-      "team": "AZ"
-    },
-    {
-      "id": 502210,
-      "team": "AZ"
-    },
-    {
-      "id": 488748,
-      "team": "AZ"
-    },
-    {
-      "id": 641796,
-      "team": "AZ"
-    },
-    {
-      "id": 668678,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 572233,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 598287,
-      "team": "AZ"
-    },
-    {
-      "id": 519390,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 592761,
-      "team": "AZ"
-    },
-    {
-      "id": 676840,
-      "team": "AZ"
-    },
-    {
-      "id": 656976,
-      "team": "AZ"
-    },
-    {
-      "id": 624647,
-      "team": "LAD"
+      "team": "AZ",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 669257,
-      "team": "LAD"
-    },
-    {
-      "id": 641360,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 621035,
-      "team": "LAD"
-    },
-    {
-      "id": 664062,
-      "team": "LAD"
-    },
-    {
-      "id": 656716,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 405395,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 519306,
-      "team": "LAD"
-    },
-    {
-      "id": 621111,
-      "team": "LAD"
-    },
-    {
-      "id": 669952,
-      "team": "LAD"
-    },
-    {
-      "id": 605131,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 572041,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 542992,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 445276,
-      "team": "LAD"
-    },
-    {
-      "id": 664076,
-      "team": "LAD"
-    },
-    {
-      "id": 628711,
-      "team": "LAD"
-    },
-    {
-      "id": 456034,
-      "team": "LAD"
-    },
-    {
-      "id": 607461,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 666158,
-      "team": "LAD"
-    },
-    {
-      "id": 477132,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 605141,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 519076,
-      "team": "LAD"
-    },
-    {
-      "id": 523260,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 545333,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 457759,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "3B",
+      "gamesStarted": null
     }
   ],
   "633594": [
     {
-      "id": 676969,
-      "team": "TEX"
-    },
-    {
       "id": 641680,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 669256,
-      "team": "TEX"
-    },
-    {
-      "id": 453178,
-      "team": "TEX"
-    },
-    {
-      "id": 663770,
-      "team": "TEX"
-    },
-    {
-      "id": 570257,
-      "team": "TEX"
-    },
-    {
-      "id": 641540,
-      "team": "TEX"
-    },
-    {
-      "id": 571788,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 663993,
-      "team": "TEX"
-    },
-    {
-      "id": 656685,
-      "team": "TEX"
-    },
-    {
-      "id": 607359,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 667463,
-      "team": "TEX"
-    },
-    {
-      "id": 621368,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 643396,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 518586,
-      "team": "TEX"
-    },
-    {
-      "id": 622250,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 624431,
-      "team": "TEX"
-    },
-    {
-      "id": 592314,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 641432,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 642201,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 663465,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 641829,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "PR",
+      "gamesStarted": null
     },
     {
       "id": 608336,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 666969,
-      "team": "TEX"
-    },
-    {
-      "id": 502043,
-      "team": "TEX"
-    },
-    {
-      "id": 543475,
-      "team": "TEX"
+      "team": "TEX",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 517008,
-      "team": "MIN"
-    },
-    {
-      "id": 666163,
-      "team": "MIN"
-    },
-    {
-      "id": 624503,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 592743,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 573204,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 593934,
-      "team": "MIN"
-    },
-    {
-      "id": 660896,
-      "team": "MIN"
-    },
-    {
-      "id": 608648,
-      "team": "MIN"
-    },
-    {
-      "id": 621244,
-      "team": "MIN"
-    },
-    {
-      "id": 518626,
-      "team": "MIN"
-    },
-    {
-      "id": 628317,
-      "team": "MIN"
-    },
-    {
-      "id": 641598,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 680777,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 570663,
-      "team": "MIN"
-    },
-    {
-      "id": 533167,
-      "team": "MIN"
-    },
-    {
-      "id": 666135,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 443558,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 573124,
-      "team": "MIN"
-    },
-    {
-      "id": 608652,
-      "team": "MIN"
-    },
-    {
-      "id": 641927,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 596146,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 663616,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 593871,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 650333,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 677976,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 621439,
-      "team": "MIN"
-    },
-    {
-      "id": 457918,
-      "team": "MIN"
+      "team": "MIN",
+      "position": "CF",
+      "gamesStarted": null
     }
   ],
   "633032": [
     {
       "id": 666185,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 571448,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 663457,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 624641,
-      "team": "STL"
-    },
-    {
-      "id": 668800,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 519008,
-      "team": "STL"
-    },
-    {
-      "id": 453192,
-      "team": "STL"
-    },
-    {
-      "id": 572761,
-      "team": "STL"
-    },
-    {
-      "id": 606149,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 641933,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 452657,
-      "team": "STL"
-    },
-    {
-      "id": 657557,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 502671,
-      "team": "STL"
-    },
-    {
-      "id": 547942,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 602922,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 669242,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
-    },
-    {
-      "id": 453281,
-      "team": "STL"
-    },
-    {
-      "id": 664854,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 664056,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 502522,
-      "team": "STL"
-    },
-    {
-      "id": 650893,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 472610,
-      "team": "STL"
-    },
-    {
-      "id": 457918,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 594807,
-      "team": "ATL"
-    },
-    {
-      "id": 554431,
-      "team": "ATL"
-    },
-    {
-      "id": 666205,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 624585,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 445926,
-      "team": "ATL"
-    },
-    {
-      "id": 592426,
-      "team": "ATL"
-    },
-    {
-      "id": 592767,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 592626,
-      "team": "ATL"
-    },
-    {
-      "id": 501303,
-      "team": "ATL"
-    },
-    {
-      "id": 593144,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 518692,
-      "team": "ATL"
-    },
-    {
-      "id": 657053,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 628338,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 650828,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 645277,
-      "team": "ATL"
-    },
-    {
-      "id": 572888,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 621020,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 608331,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 663586,
-      "team": "ATL"
-    },
-    {
-      "id": 519293,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 607345,
-      "team": "ATL"
-    },
-    {
-      "id": 519390,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 501659,
-      "team": "ATL"
-    },
-    {
-      "id": 450203,
-      "team": "ATL"
-    },
-    {
-      "id": 455119,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 458708,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "633043": [
     {
       "id": 666185,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 571448,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 621052,
-      "team": "STL"
-    },
-    {
-      "id": 663457,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 624641,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 668800,
-      "team": "STL"
-    },
-    {
-      "id": 519008,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 453192,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 606149,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 641933,
-      "team": "STL"
-    },
-    {
-      "id": 452657,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 657557,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 502671,
-      "team": "STL"
-    },
-    {
-      "id": 547942,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 602922,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 669242,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 453281,
-      "team": "STL"
-    },
-    {
-      "id": 664854,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 664056,
-      "team": "STL"
-    },
-    {
-      "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 502522,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 650893,
-      "team": "STL"
-    },
-    {
-      "id": 472610,
-      "team": "STL"
-    },
-    {
-      "id": 457918,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 594807,
-      "team": "ATL"
-    },
-    {
-      "id": 554431,
-      "team": "ATL"
-    },
-    {
-      "id": 666205,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 624585,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 445926,
-      "team": "ATL"
-    },
-    {
-      "id": 592426,
-      "team": "ATL"
-    },
-    {
-      "id": 592767,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 592626,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 501303,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 593144,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518692,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 657053,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 628338,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 650828,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 645277,
-      "team": "ATL"
-    },
-    {
-      "id": 572888,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 621020,
-      "team": "ATL"
-    },
-    {
-      "id": 608331,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 663586,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 519293,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 607345,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 519390,
-      "team": "ATL"
-    },
-    {
-      "id": 501659,
-      "team": "ATL"
-    },
-    {
-      "id": 450203,
-      "team": "ATL"
-    },
-    {
-      "id": 455119,
-      "team": "ATL"
-    },
-    {
-      "id": 458708,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     }
   ],
   "632794": [
     {
       "id": 571448,
-      "team": "STL"
-    },
-    {
-      "id": 594965,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 621052,
-      "team": "STL"
-    },
-    {
-      "id": 571945,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 663457,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 624641,
-      "team": "STL"
-    },
-    {
-      "id": 621573,
-      "team": "STL"
-    },
-    {
-      "id": 668800,
-      "team": "STL"
-    },
-    {
-      "id": 519008,
-      "team": "STL"
-    },
-    {
-      "id": 453192,
-      "team": "STL"
-    },
-    {
-      "id": 572761,
-      "team": "STL"
-    },
-    {
-      "id": 606149,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 641933,
-      "team": "STL"
-    },
-    {
-      "id": 452657,
-      "team": "STL"
-    },
-    {
-      "id": 656427,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 657557,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 502671,
-      "team": "STL"
-    },
-    {
-      "id": 547942,
-      "team": "STL"
-    },
-    {
-      "id": 602922,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 669242,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 425794,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 664056,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 425877,
-      "team": "STL"
-    },
-    {
-      "id": 650893,
-      "team": "STL"
-    },
-    {
-      "id": 472610,
-      "team": "STL"
-    },
-    {
-      "id": 457918,
-      "team": "STL"
-    },
-    {
-      "id": 664141,
-      "team": "PIT"
-    },
-    {
-      "id": 665854,
-      "team": "PIT"
-    },
-    {
-      "id": 592741,
-      "team": "PIT"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 668804,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 592325,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 592567,
-      "team": "PIT"
-    },
-    {
-      "id": 666801,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 570256,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 607455,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 664918,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 663647,
-      "team": "PIT"
-    },
-    {
-      "id": 607732,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 594694,
-      "team": "PIT"
-    },
-    {
-      "id": 656605,
-      "team": "PIT"
-    },
-    {
-      "id": 596071,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 643230,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 621028,
-      "team": "PIT"
-    },
-    {
-      "id": 621249,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 660294,
-      "team": "PIT"
-    },
-    {
-      "id": 640444,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 683232,
-      "team": "PIT"
-    },
-    {
-      "id": 641771,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 605421,
-      "team": "PIT"
-    },
-    {
-      "id": 670280,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 660829,
-      "team": "PIT"
-    },
-    {
-      "id": 608717,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "2B",
+      "gamesStarted": null
     }
   ],
   "632559": [
     {
-      "id": 621114,
-      "team": "CWS"
-    },
-    {
       "id": 544725,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 518735,
-      "team": "CWS"
-    },
-    {
-      "id": 663853,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 660162,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 607074,
-      "team": "CWS"
-    },
-    {
-      "id": 458681,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 521230,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 547989,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 657757,
-      "team": "CWS"
-    },
-    {
-      "id": 656302,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 676979,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571718,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 656629,
-      "team": "CWS"
-    },
-    {
-      "id": 664874,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 607481,
-      "team": "CWS"
-    },
-    {
-      "id": 625643,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518886,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 650391,
-      "team": "CWS"
-    },
-    {
-      "id": 605541,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 571740,
-      "team": "CWS"
-    },
-    {
-      "id": 572971,
-      "team": "CWS"
-    },
-    {
-      "id": 664901,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 572193,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 514917,
-      "team": "CWS"
-    },
-    {
-      "id": 614179,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 673357,
-      "team": "CWS"
-    },
-    {
-      "id": 624427,
-      "team": "BOS"
-    },
-    {
-      "id": 593958,
-      "team": "BOS"
+      "team": "CWS",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 592669,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 593140,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 578428,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 571771,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 493603,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 650382,
-      "team": "BOS"
-    },
-    {
-      "id": 672391,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 657077,
-      "team": "BOS"
-    },
-    {
-      "id": 608700,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 657031,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 666915,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 542454,
-      "team": "BOS"
-    },
-    {
-      "id": 676477,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 656941,
-      "team": "BOS"
-    },
-    {
-      "id": 502110,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 543768,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 646240,
-      "team": "BOS"
-    },
-    {
-      "id": 570663,
-      "team": "BOS"
-    },
-    {
-      "id": 570488,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 593428,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 518489,
-      "team": "BOS"
-    },
-    {
-      "id": 502748,
-      "team": "BOS"
-    },
-    {
-      "id": 572070,
-      "team": "BOS"
-    },
-    {
-      "id": 543135,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 656557,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 543877,
-      "team": "BOS"
+      "team": "BOS",
+      "position": "C",
+      "gamesStarted": null
     }
   ],
   "632379": [
     {
-      "id": 666200,
-      "team": "MIA"
-    },
-    {
       "id": 674944,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 669432,
-      "team": "MIA"
-    },
-    {
-      "id": 542947,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 650559,
-      "team": "MIA"
-    },
-    {
-      "id": 645261,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 657193,
-      "team": "MIA"
-    },
-    {
-      "id": 665795,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 592865,
-      "team": "MIA"
-    },
-    {
-      "id": 668721,
-      "team": "MIA"
-    },
-    {
-      "id": 595345,
-      "team": "MIA"
-    },
-    {
-      "id": 605412,
-      "team": "MIA"
-    },
-    {
-      "id": 571670,
-      "team": "MIA"
-    },
-    {
-      "id": 669294,
-      "team": "MIA"
-    },
-    {
-      "id": 647315,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 542914,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 621446,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 663743,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 642423,
-      "team": "MIA"
-    },
-    {
-      "id": 622694,
-      "team": "MIA"
-    },
-    {
-      "id": 669622,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 665862,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 660821,
-      "team": "MIA"
-    },
-    {
-      "id": 506702,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 500743,
-      "team": "MIA"
-    },
-    {
-      "id": 605507,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 656577,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 650331,
-      "team": "MIA"
-    },
-    {
-      "id": 475582,
-      "team": "WSH"
-    },
-    {
-      "id": 656180,
-      "team": "WSH"
+      "team": "MIA",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 666168,
-      "team": "WSH"
-    },
-    {
-      "id": 680686,
-      "team": "WSH"
-    },
-    {
-      "id": 663432,
-      "team": "WSH"
-    },
-    {
-      "id": 608723,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 605137,
-      "team": "WSH"
-    },
-    {
-      "id": 640448,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 474568,
-      "team": "WSH"
-    },
-    {
-      "id": 502179,
-      "team": "WSH"
-    },
-    {
-      "id": 666198,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 600921,
-      "team": "WSH"
-    },
-    {
-      "id": 621348,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 642028,
-      "team": "WSH"
-    },
-    {
-      "id": 607560,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 664057,
-      "team": "WSH"
-    },
-    {
-      "id": 571578,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 665742,
-      "team": "WSH"
-    },
-    {
-      "id": 593604,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 444876,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 628450,
-      "team": "WSH"
-    },
-    {
-      "id": 607200,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 660688,
-      "team": "WSH"
-    },
-    {
-      "id": 543594,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 657041,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 671277,
-      "team": "WSH"
-    },
-    {
-      "id": 488671,
-      "team": "WSH"
-    },
-    {
-      "id": 641907,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "2B",
+      "gamesStarted": null
     }
   ],
   "660910": [
     {
       "id": 594807,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 666120,
-      "team": "ATL"
-    },
-    {
-      "id": 644433,
-      "team": "ATL"
-    },
-    {
-      "id": 669276,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 554431,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 624585,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 518595,
-      "team": "ATL"
-    },
-    {
-      "id": 445926,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 592426,
-      "team": "ATL"
-    },
-    {
-      "id": 592767,
-      "team": "ATL"
-    },
-    {
-      "id": 592626,
-      "team": "ATL"
-    },
-    {
-      "id": 605253,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 501303,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 518692,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 621345,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 628338,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 592696,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 645277,
-      "team": "ATL"
-    },
-    {
-      "id": 661388,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 621020,
-      "team": "ATL"
-    },
-    {
-      "id": 608331,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 663586,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 519293,
-      "team": "ATL"
-    },
-    {
-      "id": 656353,
-      "team": "ATL"
-    },
-    {
-      "id": 606115,
-      "team": "ATL"
-    },
-    {
-      "id": 657140,
-      "team": "ATL"
-    },
-    {
-      "id": 455119,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 642350,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "PR",
+      "gamesStarted": null
     },
     {
       "id": 642130,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 455117,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 663656,
-      "team": "HOU"
-    },
-    {
-      "id": 425844,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 608324,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 608665,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 493329,
-      "team": "HOU"
-    },
-    {
-      "id": 520980,
-      "team": "HOU"
-    },
-    {
-      "id": 543606,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 514888,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 554340,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 592773,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 488726,
-      "team": "HOU"
-    },
-    {
-      "id": 664353,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 649557,
-      "team": "HOU"
-    },
-    {
-      "id": 664299,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 621043,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 488771,
-      "team": "HOU"
-    },
-    {
-      "id": 519151,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 677651,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 503556,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 548384,
-      "team": "HOU"
-    },
-    {
-      "id": 664208,
-      "team": "HOU"
-    },
-    {
-      "id": 676801,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 670541,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "LF",
+      "gamesStarted": null
     }
   ],
   "663146": [
     {
-      "id": 624522,
-      "team": "CHC"
-    },
-    {
-      "id": 575929,
-      "team": "CHC"
-    },
-    {
-      "id": 621074,
-      "team": "CHC"
-    },
-    {
       "id": 663611,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 643524,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 664023,
-      "team": "CHC"
-    },
-    {
-      "id": 681799,
-      "team": "CHC"
-    },
-    {
-      "id": 592767,
-      "team": "CHC"
-    },
-    {
-      "id": 621550,
-      "team": "CHC"
-    },
-    {
-      "id": 664123,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 641684,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 596057,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518792,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 543228,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 673548,
-      "team": "CHC"
-    },
-    {
-      "id": 592858,
-      "team": "CHC"
-    },
-    {
-      "id": 571710,
-      "team": "CHC"
-    },
-    {
-      "id": 643410,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 573186,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 542340,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 663538,
-      "team": "CHC"
-    },
-    {
-      "id": 543294,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 542364,
-      "team": "CHC"
-    },
-    {
-      "id": 502085,
-      "team": "CHC"
-    },
-    {
-      "id": 455119,
-      "team": "CHC"
-    },
-    {
-      "id": 657006,
-      "team": "CHC"
-    },
-    {
-      "id": 642770,
-      "team": "TB"
+      "team": "CHC",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 621433,
-      "team": "TB"
+      "team": "TB",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 670764,
-      "team": "TB"
-    },
-    {
-      "id": 623912,
-      "team": "TB"
+      "team": "TB",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 664040,
-      "team": "TB"
-    },
-    {
-      "id": 607391,
-      "team": "TB"
-    },
-    {
-      "id": 663556,
-      "team": "TB"
+      "team": "TB",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 642336,
-      "team": "TB"
+      "team": "TB",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 668227,
-      "team": "TB"
+      "team": "TB",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 596847,
-      "team": "TB"
-    },
-    {
-      "id": 572287,
-      "team": "TB"
-    },
-    {
-      "id": 592094,
-      "team": "TB"
+      "team": "TB",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 656222,
-      "team": "TB"
-    },
-    {
-      "id": 656420,
-      "team": "TB"
-    },
-    {
-      "id": 605538,
-      "team": "TB"
-    },
-    {
-      "id": 676596,
-      "team": "TB"
+      "team": "TB",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 595281,
-      "team": "TB"
-    },
-    {
-      "id": 622534,
-      "team": "TB"
-    },
-    {
-      "id": 676637,
-      "team": "TB"
+      "team": "TB",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 666139,
-      "team": "TB"
-    },
-    {
-      "id": 552640,
-      "team": "TB"
-    },
-    {
-      "id": 650490,
-      "team": "TB"
+      "team": "TB",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 677551,
-      "team": "TB"
-    },
-    {
-      "id": 548384,
-      "team": "TB"
-    },
-    {
-      "id": 605488,
-      "team": "TB"
-    },
-    {
-      "id": 657044,
-      "team": "TB"
-    },
-    {
-      "id": 446372,
-      "team": "TB"
+      "team": "TB",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 656876,
-      "team": "TB"
+      "team": "TB",
+      "position": "P",
+      "gamesStarted": 1
     }
   ],
   "661982": [
     {
-      "id": 669357,
-      "team": "STL"
-    },
-    {
       "id": 572816,
-      "team": "STL"
-    },
-    {
-      "id": 405395,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 571448,
-      "team": "STL"
-    },
-    {
-      "id": 571945,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 663457,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 624641,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 668800,
-      "team": "STL"
-    },
-    {
-      "id": 519008,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 621295,
-      "team": "STL"
-    },
-    {
-      "id": 676050,
-      "team": "STL"
-    },
-    {
-      "id": 606149,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 641712,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 502671,
-      "team": "STL"
+      "team": "STL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 676831,
-      "team": "STL"
-    },
-    {
-      "id": 669467,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 669242,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
-    },
-    {
-      "id": 669461,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 680977,
-      "team": "STL"
-    },
-    {
-      "id": 664854,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 664056,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 572403,
-      "team": "STL"
-    },
-    {
-      "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 660766,
-      "team": "STL"
-    },
-    {
-      "id": 650893,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 640492,
-      "team": "SD"
+      "team": "SD",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 429664,
-      "team": "SD"
+      "team": "SD",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 622503,
-      "team": "SD"
-    },
-    {
-      "id": 663158,
-      "team": "SD"
-    },
-    {
-      "id": 621051,
-      "team": "SD"
-    },
-    {
-      "id": 640455,
-      "team": "SD"
+      "team": "SD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 595777,
-      "team": "SD"
-    },
-    {
-      "id": 605397,
-      "team": "SD"
-    },
-    {
-      "id": 489334,
-      "team": "SD"
-    },
-    {
-      "id": 642727,
-      "team": "SD"
-    },
-    {
-      "id": 607259,
-      "team": "SD"
+      "team": "SD",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 506433,
-      "team": "SD"
-    },
-    {
-      "id": 657612,
-      "team": "SD"
+      "team": "SD",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 592518,
-      "team": "SD"
-    },
-    {
-      "id": 669022,
-      "team": "SD"
-    },
-    {
-      "id": 605483,
-      "team": "SD"
+      "team": "SD",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 572228,
-      "team": "SD"
-    },
-    {
-      "id": 573124,
-      "team": "SD"
+      "team": "SD",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 663757,
-      "team": "SD"
+      "team": "SD",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 630105,
-      "team": "SD"
+      "team": "SD",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 673490,
-      "team": "SD"
+      "team": "SD",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 543592,
-      "team": "SD"
-    },
-    {
-      "id": 595751,
-      "team": "SD"
-    },
-    {
-      "id": 472610,
-      "team": "SD"
+      "team": "SD",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 543333,
-      "team": "SD"
+      "team": "SD",
+      "position": "1B",
+      "gamesStarted": null
     }
   ],
   "663239": [
     {
-      "id": 624522,
-      "team": "CHC"
-    },
-    {
       "id": 575929,
-      "team": "CHC"
-    },
-    {
-      "id": 664161,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 666624,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 592743,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 664023,
-      "team": "CHC"
-    },
-    {
-      "id": 621550,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 664123,
-      "team": "CHC"
-    },
-    {
-      "id": 596057,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518792,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 663845,
-      "team": "CHC"
-    },
-    {
-      "id": 543228,
-      "team": "CHC"
-    },
-    {
-      "id": 592716,
-      "team": "CHC"
-    },
-    {
-      "id": 668873,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 592858,
-      "team": "CHC"
-    },
-    {
-      "id": 676714,
-      "team": "CHC"
-    },
-    {
-      "id": 664731,
-      "team": "CHC"
-    },
-    {
-      "id": 571710,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 542340,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 663538,
-      "team": "CHC"
-    },
-    {
-      "id": 543294,
-      "team": "CHC"
-    },
-    {
-      "id": 621219,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 542364,
-      "team": "CHC"
-    },
-    {
-      "id": 502085,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 455119,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 657006,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 594807,
-      "team": "ATL"
-    },
-    {
-      "id": 666120,
-      "team": "ATL"
-    },
-    {
-      "id": 675911,
-      "team": "ATL"
-    },
-    {
-      "id": 669276,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 671739,
-      "team": "ATL"
-    },
-    {
-      "id": 518595,
-      "team": "ATL"
-    },
-    {
-      "id": 445926,
-      "team": "ATL"
-    },
-    {
-      "id": 623451,
-      "team": "ATL"
-    },
-    {
-      "id": 445276,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 543521,
-      "team": "ATL"
-    },
-    {
-      "id": 503285,
-      "team": "ATL"
-    },
-    {
-      "id": 621345,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 621566,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 672911,
-      "team": "ATL"
-    },
-    {
-      "id": 594838,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 660670,
-      "team": "ATL"
-    },
-    {
-      "id": 628338,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 661388,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 621020,
-      "team": "ATL"
-    },
-    {
-      "id": 608331,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 663586,
-      "team": "ATL"
-    },
-    {
-      "id": 519293,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 606115,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 657140,
-      "team": "ATL"
-    },
-    {
-      "id": 450203,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 542303,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "DH",
+      "gamesStarted": null
     }
   ],
   "661948": [
     {
-      "id": 669357,
-      "team": "STL"
-    },
-    {
-      "id": 572816,
-      "team": "STL"
-    },
-    {
       "id": 666185,
-      "team": "STL"
-    },
-    {
-      "id": 405395,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 571448,
-      "team": "STL"
-    },
-    {
-      "id": 571945,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 663457,
-      "team": "STL"
-    },
-    {
-      "id": 668800,
-      "team": "STL"
-    },
-    {
-      "id": 519008,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 676050,
-      "team": "STL"
-    },
-    {
-      "id": 606149,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 641933,
-      "team": "STL"
-    },
-    {
-      "id": 500779,
-      "team": "STL"
-    },
-    {
-      "id": 641712,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 657557,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 502671,
-      "team": "STL"
-    },
-    {
-      "id": 669467,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 669242,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 425794,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 680977,
-      "team": "STL"
+      "team": "STL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 664854,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 663855,
-      "team": "STL"
-    },
-    {
-      "id": 650893,
-      "team": "STL"
-    },
-    {
-      "id": 656756,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 608717,
-      "team": "STL"
-    },
-    {
-      "id": 476595,
-      "team": "NYY"
-    },
-    {
-      "id": 641482,
-      "team": "NYY"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518934,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 642152,
-      "team": "NYY"
-    },
-    {
-      "id": 666163,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 656061,
-      "team": "NYY"
-    },
-    {
-      "id": 519203,
-      "team": "NYY"
-    },
-    {
-      "id": 593334,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 593974,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 664123,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 572761,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 592450,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 642528,
-      "team": "NYY"
-    },
-    {
-      "id": 592791,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543305,
-      "team": "NYY"
-    },
-    {
-      "id": 543309,
-      "team": "NYY"
-    },
-    {
-      "id": 643396,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 518626,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 650402,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 593423,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 643217,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 624431,
-      "team": "NYY"
-    },
-    {
-      "id": 605280,
-      "team": "NYY"
-    },
-    {
-      "id": 641796,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 503556,
-      "team": "NYY"
-    },
-    {
-      "id": 543037,
-      "team": "NYY"
-    },
-    {
-      "id": 547973,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "SS",
+      "gamesStarted": null
     }
   ],
   "661939": [
     {
       "id": 669357,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 572816,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 666185,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 405395,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 571448,
-      "team": "STL"
-    },
-    {
-      "id": 571945,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 663457,
-      "team": "STL"
-    },
-    {
-      "id": 668868,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 668800,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 668941,
-      "team": "STL"
-    },
-    {
-      "id": 606149,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 641933,
-      "team": "STL"
-    },
-    {
-      "id": 500779,
-      "team": "STL"
-    },
-    {
-      "id": 641712,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 657557,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 502671,
-      "team": "STL"
-    },
-    {
-      "id": 669467,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 669242,
-      "team": "STL"
-    },
-    {
-      "id": 425794,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 680977,
-      "team": "STL"
+      "team": "STL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 664854,
-      "team": "STL"
-    },
-    {
-      "id": 663765,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 425877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 663855,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 656756,
-      "team": "STL"
-    },
-    {
-      "id": 608717,
-      "team": "STL"
-    },
-    {
-      "id": 675911,
-      "team": "ATL"
-    },
-    {
-      "id": 669276,
-      "team": "ATL"
-    },
-    {
-      "id": 554431,
-      "team": "ATL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 671739,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 518595,
-      "team": "ATL"
-    },
-    {
-      "id": 501303,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 445276,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543521,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 621345,
-      "team": "ATL"
-    },
-    {
-      "id": 543606,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 621566,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 687093,
-      "team": "ATL"
-    },
-    {
-      "id": 660670,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 628338,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 592696,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 661388,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 628452,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 621020,
-      "team": "ATL"
-    },
-    {
-      "id": 608331,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 663586,
-      "team": "ATL"
-    },
-    {
-      "id": 543351,
-      "team": "ATL"
-    },
-    {
-      "id": 489446,
-      "team": "ATL"
-    },
-    {
-      "id": 657140,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 543257,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 450203,
-      "team": "ATL"
-    },
-    {
-      "id": 542303,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     }
   ],
   "663130": [
     {
       "id": 656716,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 666624,
-      "team": "CHC"
-    },
-    {
-      "id": 621074,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 664023,
-      "team": "CHC"
-    },
-    {
-      "id": 592767,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 621550,
-      "team": "CHC"
-    },
-    {
-      "id": 665871,
-      "team": "CHC"
-    },
-    {
-      "id": 641684,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 669713,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 663845,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 489119,
-      "team": "CHC"
-    },
-    {
-      "id": 657272,
-      "team": "CHC"
-    },
-    {
-      "id": 669093,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 543228,
-      "team": "CHC"
-    },
-    {
-      "id": 592716,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 673548,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 592858,
-      "team": "CHC"
-    },
-    {
-      "id": 676714,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 664731,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 623520,
-      "team": "CHC"
-    },
-    {
-      "id": 643410,
-      "team": "CHC"
-    },
-    {
-      "id": 656794,
-      "team": "CHC"
-    },
-    {
-      "id": 573186,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 663538,
-      "team": "CHC"
-    },
-    {
-      "id": 655889,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 542364,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 614177,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 676369,
-      "team": "CHC"
+      "team": "CHC",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 628708,
-      "team": "SF"
-    },
-    {
-      "id": 502171,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 670768,
-      "team": "SF"
+      "team": "SF",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 663698,
-      "team": "SF"
-    },
-    {
-      "id": 607074,
-      "team": "SF"
+      "team": "SF",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 518397,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 642731,
-      "team": "SF"
-    },
-    {
-      "id": 642851,
-      "team": "SF"
+      "team": "SF",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 621573,
-      "team": "SF"
-    },
-    {
-      "id": 592626,
-      "team": "SF"
-    },
-    {
-      "id": 622065,
-      "team": "SF"
+      "team": "SF",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 605154,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 681584,
-      "team": "SF"
-    },
-    {
-      "id": 657277,
-      "team": "SF"
-    },
-    {
-      "id": 606424,
-      "team": "SF"
-    },
-    {
-      "id": 543063,
-      "team": "SF"
+      "team": "SF",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 527038,
-      "team": "SF"
+      "team": "SF",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 621446,
-      "team": "SF"
+      "team": "SF",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 643511,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 641793,
-      "team": "SF"
-    },
-    {
-      "id": 664774,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 666808,
-      "team": "SF"
-    },
-    {
-      "id": 596001,
-      "team": "SF"
-    },
-    {
-      "id": 573262,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 605204,
-      "team": "SF"
+      "team": "SF",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 446334,
-      "team": "SF"
-    },
-    {
-      "id": 656814,
-      "team": "SF"
+      "team": "SF",
+      "position": "3B",
+      "gamesStarted": null
     }
   ],
   "717650": [
     {
-      "id": 611093,
-      "team": "CIN"
-    },
-    {
       "id": 682829,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 663697,
-      "team": "CIN"
-    },
-    {
-      "id": 682227,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 641584,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 622065,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 596133,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 680574,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 650960,
-      "team": "CIN"
-    },
-    {
-      "id": 666181,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 670770,
-      "team": "CIN"
-    },
-    {
-      "id": 669222,
-      "team": "CIN"
-    },
-    {
-      "id": 621028,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 458015,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 668715,
-      "team": "CIN"
-    },
-    {
-      "id": 518585,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 664139,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571912,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 663886,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 608371,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571656,
-      "team": "CIN"
+      "team": "CIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 664747,
-      "team": "CIN"
-    },
-    {
-      "id": 641427,
-      "team": "CIN"
-    },
-    {
-      "id": 592200,
-      "team": "CIN"
-    },
-    {
-      "id": 671096,
-      "team": "CIN"
-    },
-    {
-      "id": 543859,
-      "team": "ATL"
-    },
-    {
-      "id": 644433,
-      "team": "ATL"
-    },
-    {
-      "id": 623433,
-      "team": "ATL"
-    },
-    {
-      "id": 675911,
-      "team": "ATL"
+      "team": "CIN",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 700363,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 671739,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 621294,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518595,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 656541,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PR",
+      "gamesStarted": null
     },
     {
       "id": 543521,
-      "team": "ATL"
-    },
-    {
-      "id": 621345,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 621566,
-      "team": "ATL"
-    },
-    {
-      "id": 694363,
-      "team": "ATL"
-    },
-    {
-      "id": 669221,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 660670,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 592696,
-      "team": "ATL"
-    },
-    {
-      "id": 607680,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 645277,
-      "team": "ATL"
-    },
-    {
-      "id": 628452,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 663586,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 641729,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 606115,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 489446,
-      "team": "ATL"
-    },
-    {
-      "id": 450203,
-      "team": "ATL"
-    },
-    {
-      "id": 693821,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 542303,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "DH",
+      "gamesStarted": null
     }
   ],
   "717296": [
     {
-      "id": 571948,
-      "team": "MIL"
-    },
-    {
-      "id": 621438,
-      "team": "MIL"
-    },
-    {
-      "id": 605170,
-      "team": "MIL"
-    },
-    {
-      "id": 686894,
-      "team": "MIL"
-    },
-    {
       "id": 592885,
-      "team": "MIL"
-    },
-    {
-      "id": 663330,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 608385,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 686217,
-      "team": "MIL"
-    },
-    {
-      "id": 682842,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 606303,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 642207,
-      "team": "MIL"
-    },
-    {
-      "id": 527054,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 655316,
-      "team": "MIL"
-    },
-    {
-      "id": 669203,
-      "team": "MIL"
-    },
-    {
-      "id": 642547,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 680911,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 663368,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 665625,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 661388,
-      "team": "MIL"
-    },
-    {
-      "id": 607067,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 668930,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 605288,
-      "team": "MIL"
+      "team": "MIL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 642715,
-      "team": "MIL"
-    },
-    {
-      "id": 669060,
-      "team": "MIL"
-    },
-    {
-      "id": 656730,
-      "team": "MIL"
-    },
-    {
-      "id": 650496,
-      "team": "MIL"
-    },
-    {
-      "id": 476595,
-      "team": "ATL"
+      "team": "MIL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 543859,
-      "team": "ATL"
-    },
-    {
-      "id": 675911,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 671739,
-      "team": "ATL"
-    },
-    {
-      "id": 621294,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 642216,
-      "team": "ATL"
-    },
-    {
-      "id": 518595,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 543521,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 621566,
-      "team": "ATL"
-    },
-    {
-      "id": 647336,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 669221,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 660670,
-      "team": "ATL"
-    },
-    {
-      "id": 518586,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 592696,
-      "team": "ATL"
-    },
-    {
-      "id": 607680,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 645277,
-      "team": "ATL"
-    },
-    {
-      "id": 628452,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 663586,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 641729,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 606115,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 657088,
-      "team": "ATL"
-    },
-    {
-      "id": 489446,
-      "team": "ATL"
-    },
-    {
-      "id": 605446,
-      "team": "ATL"
-    },
-    {
-      "id": 450203,
-      "team": "ATL"
-    },
-    {
-      "id": 693821,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PR",
+      "gamesStarted": null
     },
     {
       "id": 542303,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "DH",
+      "gamesStarted": null
     }
   ],
   "717267": [
     {
       "id": 628708,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 669016,
-      "team": "PHI"
-    },
-    {
-      "id": 650911,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 547180,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 592663,
-      "team": "PHI"
-    },
-    {
-      "id": 554430,
-      "team": "PHI"
-    },
-    {
-      "id": 624641,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 592206,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 664761,
-      "team": "PHI"
-    },
-    {
-      "id": 592229,
-      "team": "PHI"
-    },
-    {
-      "id": 642397,
-      "team": "PHI"
-    },
-    {
-      "id": 543281,
-      "team": "PHI"
-    },
-    {
-      "id": 607755,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 681082,
-      "team": "PHI"
-    },
-    {
-      "id": 656546,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 656941,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 592836,
-      "team": "PHI"
-    },
-    {
-      "id": 622554,
-      "team": "PHI"
-    },
-    {
-      "id": 595909,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 621381,
-      "team": "PHI"
-    },
-    {
-      "id": 624133,
-      "team": "PHI"
-    },
-    {
-      "id": 596117,
-      "team": "PHI"
-    },
-    {
-      "id": 518886,
-      "team": "PHI"
-    },
-    {
-      "id": 656793,
-      "team": "PHI"
-    },
-    {
-      "id": 605400,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 679032,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 607208,
-      "team": "PHI"
+      "team": "PHI",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 624428,
-      "team": "BAL"
-    },
-    {
-      "id": 665152,
-      "team": "BAL"
-    },
-    {
-      "id": 669330,
-      "team": "BAL"
-    },
-    {
-      "id": 657508,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 660261,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 683002,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 622761,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 623993,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 663630,
-      "team": "BAL"
-    },
-    {
-      "id": 608344,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 663624,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 668939,
-      "team": "BAL"
-    },
-    {
-      "id": 680570,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 676059,
-      "team": "BAL"
-    },
-    {
-      "id": 672335,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 669720,
-      "team": "BAL"
-    },
-    {
-      "id": 602104,
-      "team": "BAL"
-    },
-    {
-      "id": 642585,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 666974,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 681297,
-      "team": "BAL"
-    },
-    {
-      "id": 641329,
-      "team": "BAL"
-    },
-    {
-      "id": 543510,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 502043,
-      "team": "BAL"
-    },
-    {
-      "id": 543056,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 656811,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "1B",
+      "gamesStarted": null
     }
   ],
   "717237": [
     {
       "id": 624428,
-      "team": "BAL"
-    },
-    {
-      "id": 665152,
-      "team": "BAL"
-    },
-    {
-      "id": 669330,
-      "team": "BAL"
-    },
-    {
-      "id": 657508,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 660261,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 683002,
-      "team": "BAL"
-    },
-    {
-      "id": 622761,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 623993,
-      "team": "BAL"
-    },
-    {
-      "id": 663630,
-      "team": "BAL"
-    },
-    {
-      "id": 608344,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 663624,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 668939,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 680570,
-      "team": "BAL"
-    },
-    {
-      "id": 676059,
-      "team": "BAL"
-    },
-    {
-      "id": 672335,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 669720,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 602104,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 642585,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 666974,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 681297,
-      "team": "BAL"
-    },
-    {
-      "id": 641329,
-      "team": "BAL"
-    },
-    {
-      "id": 543510,
-      "team": "BAL"
-    },
-    {
-      "id": 502043,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 543056,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 656811,
-      "team": "BAL"
+      "team": "BAL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 518934,
-      "team": "NYY"
-    },
-    {
-      "id": 622663,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 650633,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 666163,
-      "team": "NYY"
-    },
-    {
-      "id": 656061,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 519203,
-      "team": "NYY"
-    },
-    {
-      "id": 593334,
-      "team": "NYY"
-    },
-    {
-      "id": 607074,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 593974,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 641343,
-      "team": "NYY"
-    },
-    {
-      "id": 657376,
-      "team": "NYY"
-    },
-    {
-      "id": 656185,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 592450,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 641856,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 543309,
-      "team": "NYY"
-    },
-    {
-      "id": 643396,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 650402,
-      "team": "NYY"
-    },
-    {
-      "id": 641656,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 592454,
-      "team": "NYY"
-    },
-    {
-      "id": 605280,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 683011,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 664056,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 519317,
-      "team": "NYY"
-    },
-    {
-      "id": 676760,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 543037,
-      "team": "NYY"
-    },
-    {
-      "id": 598286,
-      "team": "NYY"
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 1
     }
   ],
   "747143": [
     {
       "id": 594807,
-      "team": "ATL"
-    },
-    {
-      "id": 644433,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 675911,
-      "team": "ATL"
-    },
-    {
-      "id": 669276,
-      "team": "ATL"
-    },
-    {
-      "id": 641645,
-      "team": "ATL"
-    },
-    {
-      "id": 554431,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 671739,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 572955,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518595,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 445926,
-      "team": "ATL"
-    },
-    {
-      "id": 519242,
-      "team": "ATL"
-    },
-    {
-      "id": 621345,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 621566,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 660670,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 607481,
-      "team": "ATL"
-    },
-    {
-      "id": 625643,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 645277,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 628452,
-      "team": "ATL"
-    },
-    {
-      "id": 608331,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 663586,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 641729,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 606115,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 657088,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PR",
+      "gamesStarted": null
     },
     {
       "id": 672284,
-      "team": "ATL"
-    },
-    {
-      "id": 450203,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 542303,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 543518,
-      "team": "AZ"
-    },
-    {
-      "id": 694297,
-      "team": "AZ"
-    },
-    {
-      "id": 571466,
-      "team": "AZ"
-    },
-    {
-      "id": 669459,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 607054,
-      "team": "AZ"
-    },
-    {
-      "id": 518876,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 573009,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 592626,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 664983,
-      "team": "AZ"
-    },
-    {
-      "id": 666818,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 656464,
-      "team": "AZ"
-    },
-    {
-      "id": 545341,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 674072,
-      "team": "AZ"
-    },
-    {
-      "id": 686826,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 606466,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 677942,
-      "team": "AZ"
-    },
-    {
-      "id": 669194,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 672515,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 553993,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 682998,
-      "team": "AZ"
-    },
-    {
-      "id": 668678,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 666971,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 572233,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 612434,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 657044,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "745183": [
     {
       "id": 669357,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 575929,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 571448,
-      "team": "STL"
-    },
-    {
-      "id": 681517,
-      "team": "STL"
-    },
-    {
-      "id": 571945,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 663457,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 665877,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 458681,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 681676,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 668941,
-      "team": "STL"
-    },
-    {
-      "id": 606149,
-      "team": "STL"
-    },
-    {
-      "id": 543063,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 676475,
-      "team": "STL"
-    },
-    {
-      "id": 543243,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 502671,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 672279,
-      "team": "STL"
-    },
-    {
-      "id": 667463,
-      "team": "STL"
-    },
-    {
-      "id": 669461,
-      "team": "STL"
-    },
-    {
-      "id": 686780,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 680977,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 664854,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 552640,
-      "team": "STL"
-    },
-    {
-      "id": 687798,
-      "team": "STL"
-    },
-    {
-      "id": 502043,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 691026,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 671056,
-      "team": "STL"
-    },
-    {
-      "id": 455117,
-      "team": "CWS"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 621051,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 682868,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 686676,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 669699,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 605154,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 683734,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 502054,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 670032,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 657757,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 657557,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 657612,
-      "team": "CWS"
-    },
-    {
-      "id": 647336,
-      "team": "CWS"
-    },
-    {
-      "id": 676979,
-      "team": "CWS"
-    },
-    {
-      "id": 694363,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 656629,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 643217,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 673929,
-      "team": "CWS"
-    },
-    {
-      "id": 623167,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 621383,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 607200,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 650391,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 608678,
-      "team": "CWS"
-    },
-    {
-      "id": 641745,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543257,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 542364,
-      "team": "CWS"
+      "team": "CWS",
+      "position": "CF",
+      "gamesStarted": null
     }
   ],
   "745168": [
     {
       "id": 669357,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 666185,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 688297,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571448,
-      "team": "STL"
-    },
-    {
-      "id": 681517,
-      "team": "STL"
-    },
-    {
-      "id": 571945,
-      "team": "STL"
+      "team": "STL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 665877,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 458681,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 681676,
-      "team": "STL"
-    },
-    {
-      "id": 668941,
-      "team": "STL"
-    },
-    {
-      "id": 572761,
-      "team": "STL"
-    },
-    {
-      "id": 543063,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 676475,
-      "team": "STL"
-    },
-    {
-      "id": 543243,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 502671,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 672279,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 667463,
-      "team": "STL"
-    },
-    {
-      "id": 669467,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 669461,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 686780,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 680977,
-      "team": "STL"
-    },
-    {
-      "id": 664854,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 552640,
-      "team": "STL"
-    },
-    {
-      "id": 502043,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 691026,
-      "team": "STL"
-    },
-    {
-      "id": 671056,
-      "team": "STL"
-    },
-    {
-      "id": 694973,
-      "team": "PIT"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 518735,
-      "team": "PIT"
-    },
-    {
-      "id": 682847,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 668804,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 665833,
-      "team": "PIT"
-    },
-    {
-      "id": 683003,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 642133,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 658668,
-      "team": "PIT"
-    },
-    {
-      "id": 656582,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 663647,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 669707,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 677865,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 656605,
-      "team": "PIT"
-    },
-    {
-      "id": 457705,
-      "team": "PIT"
-    },
-    {
-      "id": 670059,
-      "team": "PIT"
-    },
-    {
-      "id": 693312,
-      "team": "PIT"
-    },
-    {
-      "id": 669387,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 642701,
-      "team": "PIT"
-    },
-    {
-      "id": 680779,
-      "team": "PIT"
-    },
-    {
-      "id": 641511,
-      "team": "PIT"
-    },
-    {
-      "id": 663559,
-      "team": "PIT"
-    },
-    {
-      "id": 670280,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 572191,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 669261,
-      "team": "PIT"
-    },
-    {
-      "id": 693304,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 676702,
-      "team": "PIT"
-    },
-    {
-      "id": 547973,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "745163": [
     {
       "id": 669357,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 666185,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 571448,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 681517,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571945,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 665877,
-      "team": "STL"
-    },
-    {
-      "id": 458681,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 681676,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 668941,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 572761,
-      "team": "STL"
-    },
-    {
-      "id": 606149,
-      "team": "STL"
-    },
-    {
-      "id": 543063,
-      "team": "STL"
+      "team": "STL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 676475,
-      "team": "STL"
-    },
-    {
-      "id": 543243,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 502671,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 672279,
-      "team": "STL"
-    },
-    {
-      "id": 667463,
-      "team": "STL"
-    },
-    {
-      "id": 669467,
-      "team": "STL"
-    },
-    {
-      "id": 695596,
-      "team": "STL"
-    },
-    {
-      "id": 669461,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 686780,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 680977,
-      "team": "STL"
-    },
-    {
-      "id": 664854,
-      "team": "STL"
-    },
-    {
-      "id": 552640,
-      "team": "STL"
-    },
-    {
-      "id": 502043,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 691026,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 624424,
-      "team": "SF"
+      "team": "SF",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 671218,
-      "team": "SF"
+      "team": "SF",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 624585,
-      "team": "SF"
+      "team": "SF",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 642731,
-      "team": "SF"
+      "team": "SF",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 592426,
-      "team": "SF"
-    },
-    {
-      "id": 678495,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 681584,
-      "team": "SF"
-    },
-    {
-      "id": 657277,
-      "team": "SF"
-    },
-    {
-      "id": 605113,
-      "team": "SF"
-    },
-    {
-      "id": 676254,
-      "team": "SF"
-    },
-    {
-      "id": 670092,
-      "team": "SF"
+      "team": "SF",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 672275,
-      "team": "SF"
+      "team": "SF",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 656305,
-      "team": "SF"
-    },
-    {
-      "id": 675921,
-      "team": "SF"
-    },
-    {
-      "id": 527038,
-      "team": "SF"
+      "team": "SF",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 702352,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 689172,
-      "team": "SF"
+      "team": "SF",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 663546,
-      "team": "SF"
-    },
-    {
-      "id": 643511,
-      "team": "SF"
-    },
-    {
-      "id": 666808,
-      "team": "SF"
-    },
-    {
-      "id": 573124,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 682641,
-      "team": "SF"
+      "team": "SF",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 663855,
-      "team": "SF"
-    },
-    {
-      "id": 592200,
-      "team": "SF"
-    },
-    {
-      "id": 596103,
-      "team": "SF"
-    },
-    {
-      "id": 669062,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 1
     }
   ],
   "745160": [
     {
       "id": 669357,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 666185,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 575929,
-      "team": "STL"
-    },
-    {
-      "id": 571448,
-      "team": "STL"
-    },
-    {
-      "id": 681517,
-      "team": "STL"
-    },
-    {
-      "id": 571945,
-      "team": "STL"
-    },
-    {
-      "id": 665877,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 458681,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 681676,
-      "team": "STL"
-    },
-    {
-      "id": 668941,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 572761,
-      "team": "STL"
-    },
-    {
-      "id": 606149,
-      "team": "STL"
+      "team": "STL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 543063,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 676475,
-      "team": "STL"
-    },
-    {
-      "id": 543243,
-      "team": "STL"
-    },
-    {
-      "id": 502671,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 672279,
-      "team": "STL"
-    },
-    {
-      "id": 667463,
-      "team": "STL"
-    },
-    {
-      "id": 669467,
-      "team": "STL"
-    },
-    {
-      "id": 669461,
-      "team": "STL"
-    },
-    {
-      "id": 686780,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 680977,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 664854,
-      "team": "STL"
-    },
-    {
-      "id": 552640,
-      "team": "STL"
-    },
-    {
-      "id": 502043,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 691026,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 594807,
-      "team": "ATL"
-    },
-    {
-      "id": 669276,
-      "team": "ATL"
-    },
-    {
-      "id": 572955,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PR",
+      "gamesStarted": null
     },
     {
       "id": 518595,
-      "team": "ATL"
-    },
-    {
-      "id": 445926,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 680885,
-      "team": "ATL"
-    },
-    {
-      "id": 519242,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 670097,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 657656,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 621566,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 669221,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 607481,
-      "team": "ATL"
-    },
-    {
-      "id": 625643,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 645277,
-      "team": "ATL"
-    },
-    {
-      "id": 628452,
-      "team": "ATL"
-    },
-    {
-      "id": 608331,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 663586,
-      "team": "ATL"
-    },
-    {
-      "id": 641729,
-      "team": "ATL"
-    },
-    {
-      "id": 656550,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 606115,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 657088,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 672284,
-      "team": "ATL"
-    },
-    {
-      "id": 450203,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 542303,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 678226,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "745157": [
     {
       "id": 669357,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 666185,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 575929,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 571448,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 681517,
-      "team": "STL"
-    },
-    {
-      "id": 571945,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 665877,
-      "team": "STL"
-    },
-    {
-      "id": 458681,
-      "team": "STL"
-    },
-    {
-      "id": 681676,
-      "team": "STL"
-    },
-    {
-      "id": 668941,
-      "team": "STL"
+      "team": "STL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 572761,
-      "team": "STL"
+      "team": "STL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 606149,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543063,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 676475,
-      "team": "STL"
-    },
-    {
-      "id": 543243,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 502671,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 672279,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 667463,
-      "team": "STL"
-    },
-    {
-      "id": 669467,
-      "team": "STL"
-    },
-    {
-      "id": 669461,
-      "team": "STL"
-    },
-    {
-      "id": 686780,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 680977,
-      "team": "STL"
-    },
-    {
-      "id": 664854,
-      "team": "STL"
-    },
-    {
-      "id": 552640,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 502043,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 691026,
-      "team": "STL"
-    },
-    {
-      "id": 594807,
-      "team": "ATL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 669276,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 572955,
-      "team": "ATL"
-    },
-    {
-      "id": 663897,
-      "team": "ATL"
-    },
-    {
-      "id": 518595,
-      "team": "ATL"
-    },
-    {
-      "id": 445926,
-      "team": "ATL"
-    },
-    {
-      "id": 680885,
-      "team": "ATL"
-    },
-    {
-      "id": 519242,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 670097,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 657656,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 621566,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 669221,
-      "team": "ATL"
-    },
-    {
-      "id": 607481,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 625643,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 645277,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 628452,
-      "team": "ATL"
-    },
-    {
-      "id": 608331,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 663586,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 641729,
-      "team": "ATL"
-    },
-    {
-      "id": 656550,
-      "team": "ATL"
-    },
-    {
-      "id": 606115,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 657088,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 672284,
-      "team": "ATL"
-    },
-    {
-      "id": 450203,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 542303,
-      "team": "ATL"
-    },
-    {
-      "id": 678226,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "DH",
+      "gamesStarted": null
     }
   ],
   "745158": [
     {
       "id": 669357,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 666185,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 575929,
-      "team": "STL"
+      "team": "STL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 688297,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571448,
-      "team": "STL"
-    },
-    {
-      "id": 681517,
-      "team": "STL"
-    },
-    {
-      "id": 571945,
-      "team": "STL"
-    },
-    {
-      "id": 665877,
-      "team": "STL"
-    },
-    {
-      "id": 458681,
-      "team": "STL"
-    },
-    {
-      "id": 681676,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 668941,
-      "team": "STL"
-    },
-    {
-      "id": 572761,
-      "team": "STL"
-    },
-    {
-      "id": 606149,
-      "team": "STL"
-    },
-    {
-      "id": 543063,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 676475,
-      "team": "STL"
-    },
-    {
-      "id": 543243,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 502671,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 672279,
-      "team": "STL"
-    },
-    {
-      "id": 667463,
-      "team": "STL"
-    },
-    {
-      "id": 669467,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 669461,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 686780,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 680977,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 664854,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 552640,
-      "team": "STL"
-    },
-    {
-      "id": 502043,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 691026,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 594807,
-      "team": "ATL"
-    },
-    {
-      "id": 669276,
-      "team": "ATL"
-    },
-    {
-      "id": 572955,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 663897,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 518595,
-      "team": "ATL"
-    },
-    {
-      "id": 445926,
-      "team": "ATL"
-    },
-    {
-      "id": 680885,
-      "team": "ATL"
-    },
-    {
-      "id": 519242,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 670097,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 657656,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 621566,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 669221,
-      "team": "ATL"
-    },
-    {
-      "id": 607481,
-      "team": "ATL"
-    },
-    {
-      "id": 625643,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 645277,
-      "team": "ATL"
-    },
-    {
-      "id": 628452,
-      "team": "ATL"
-    },
-    {
-      "id": 608331,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 663586,
-      "team": "ATL"
-    },
-    {
-      "id": 641729,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 656550,
-      "team": "ATL"
-    },
-    {
-      "id": 606115,
-      "team": "ATL"
-    },
-    {
-      "id": 657088,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 672284,
-      "team": "ATL"
-    },
-    {
-      "id": 450203,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 693821,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 542303,
-      "team": "ATL"
-    },
-    {
-      "id": 678226,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "DH",
+      "gamesStarted": null
     }
   ],
   "777456": [
     {
-      "id": 671732,
-      "team": "ATH"
-    },
-    {
       "id": 622663,
-      "team": "ATH"
+      "team": "ATH",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 649966,
-      "team": "ATH"
-    },
-    {
-      "id": 695243,
-      "team": "ATH"
+      "team": "ATH",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 667670,
-      "team": "ATH"
-    },
-    {
-      "id": 669372,
-      "team": "ATH"
+      "team": "ATH",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 642851,
-      "team": "ATH"
-    },
-    {
-      "id": 519008,
-      "team": "ATH"
+      "team": "ATH",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 621053,
-      "team": "ATH"
-    },
-    {
-      "id": 680862,
-      "team": "ATH"
-    },
-    {
-      "id": 687765,
-      "team": "ATH"
+      "team": "ATH",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 680474,
-      "team": "ATH"
-    },
-    {
-      "id": 547184,
-      "team": "ATH"
-    },
-    {
-      "id": 674370,
-      "team": "ATH"
-    },
-    {
-      "id": 682052,
-      "team": "ATH"
+      "team": "ATH",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 570482,
-      "team": "ATH"
+      "team": "ATH",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 691777,
-      "team": "ATH"
+      "team": "ATH",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 672016,
-      "team": "ATH"
-    },
-    {
-      "id": 691016,
-      "team": "ATH"
+      "team": "ATH",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 701762,
-      "team": "ATH"
+      "team": "ATH",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 663687,
-      "team": "ATH"
+      "team": "ATH",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 656794,
-      "team": "ATH"
-    },
-    {
-      "id": 605488,
-      "team": "ATH"
+      "team": "ATH",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 668709,
-      "team": "ATH"
-    },
-    {
-      "id": 676664,
-      "team": "ATH"
+      "team": "ATH",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 805779,
-      "team": "ATH"
+      "team": "ATH",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 664285,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 694376,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 670623,
-      "team": "HOU"
-    },
-    {
-      "id": 650556,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 669450,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 641645,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 605170,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 701358,
-      "team": "HOU"
-    },
-    {
-      "id": 687888,
-      "team": "HOU"
-    },
-    {
-      "id": 686613,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 643289,
-      "team": "HOU"
-    },
-    {
-      "id": 623352,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 676694,
-      "team": "HOU"
-    },
-    {
-      "id": 595345,
-      "team": "HOU"
-    },
-    {
-      "id": 672391,
-      "team": "HOU"
-    },
-    {
-      "id": 663967,
-      "team": "HOU"
-    },
-    {
-      "id": 656986,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 514888,
-      "team": "HOU"
-    },
-    {
-      "id": 687473,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 665161,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 681869,
-      "team": "HOU"
-    },
-    {
-      "id": 687911,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 663321,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 572233,
-      "team": "HOU"
-    },
-    {
-      "id": 676467,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 673237,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "C",
+      "gamesStarted": null
     }
   ],
   "777426": [
     {
-      "id": 673513,
-      "team": "SD"
-    },
-    {
       "id": 455117,
-      "team": "SD"
-    },
-    {
-      "id": 663158,
-      "team": "SD"
+      "team": "SD",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 688158,
-      "team": "SD"
+      "team": "SD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 593974,
-      "team": "SD"
+      "team": "SD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 578428,
-      "team": "SD"
+      "team": "SD",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 592094,
-      "team": "SD"
+      "team": "SD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 670092,
-      "team": "SD"
+      "team": "SD",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 663604,
-      "team": "SD"
-    },
-    {
-      "id": 669093,
-      "team": "SD"
+      "team": "SD",
+      "position": "PR",
+      "gamesStarted": null
     },
     {
       "id": 657757,
-      "team": "SD"
-    },
-    {
-      "id": 656302,
-      "team": "SD"
-    },
-    {
-      "id": 670970,
-      "team": "SD"
+      "team": "SD",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 592518,
-      "team": "SD"
-    },
-    {
-      "id": 669200,
-      "team": "SD"
+      "team": "SD",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 601713,
-      "team": "SD"
+      "team": "SD",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 642180,
-      "team": "SD"
-    },
-    {
-      "id": 663568,
-      "team": "SD"
+      "team": "SD",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 669308,
-      "team": "SD"
+      "team": "SD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 665487,
-      "team": "SD"
-    },
-    {
-      "id": 686701,
-      "team": "SD"
-    },
-    {
-      "id": 669369,
-      "team": "SD"
+      "team": "SD",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 593428,
-      "team": "SD"
+      "team": "SD",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 553869,
-      "team": "SD"
+      "team": "SD",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 630105,
-      "team": "SD"
+      "team": "SD",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 650333,
-      "team": "SD"
-    },
-    {
-      "id": 681190,
-      "team": "SD"
+      "team": "SD",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 666023,
-      "team": "KC"
-    },
-    {
-      "id": 669674,
-      "team": "KC"
+      "team": "KC",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 663697,
-      "team": "KC"
+      "team": "KC",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 686475,
-      "team": "KC"
+      "team": "KC",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 521692,
-      "team": "KC"
+      "team": "KC",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 679845,
-      "team": "KC"
+      "team": "KC",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 670231,
-      "team": "KC"
+      "team": "KC",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 671221,
-      "team": "KC"
-    },
-    {
-      "id": 592192,
-      "team": "KC"
+      "team": "KC",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 668674,
-      "team": "KC"
-    },
-    {
-      "id": 663460,
-      "team": "KC"
-    },
-    {
-      "id": 664199,
-      "team": "KC"
+      "team": "KC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 608032,
-      "team": "KC"
+      "team": "KC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 686469,
-      "team": "KC"
+      "team": "KC",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 664728,
-      "team": "KC"
-    },
-    {
-      "id": 663738,
-      "team": "KC"
+      "team": "KC",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 547179,
-      "team": "KC"
-    },
-    {
-      "id": 608379,
-      "team": "KC"
+      "team": "KC",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 672580,
-      "team": "KC"
-    },
-    {
-      "id": 607625,
-      "team": "KC"
-    },
-    {
-      "id": 702070,
-      "team": "KC"
+      "team": "KC",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 672582,
-      "team": "KC"
+      "team": "KC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 695506,
-      "team": "KC"
+      "team": "KC",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 674444,
-      "team": "KC"
-    },
-    {
-      "id": 670167,
-      "team": "KC"
+      "team": "KC",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 677951,
-      "team": "KC"
+      "team": "KC",
+      "position": "SS",
+      "gamesStarted": null
     }
   ],
   "777414": [
     {
       "id": 650859,
-      "team": "LAA"
+      "team": "LAA",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 672569,
-      "team": "LAA"
+      "team": "LAA",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 695681,
-      "team": "LAA"
+      "team": "LAA",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 687263,
-      "team": "LAA"
+      "team": "LAA",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 593576,
-      "team": "LAA"
-    },
-    {
-      "id": 641401,
-      "team": "LAA"
-    },
-    {
-      "id": 518595,
-      "team": "LAA"
-    },
-    {
-      "id": 664068,
-      "team": "LAA"
+      "team": "LAA",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 667755,
-      "team": "LAA"
-    },
-    {
-      "id": 519326,
-      "team": "LAA"
+      "team": "LAA",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 621493,
-      "team": "LAA"
-    },
-    {
-      "id": 686799,
-      "team": "LAA"
+      "team": "LAA",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 545361,
-      "team": "LAA"
-    },
-    {
-      "id": 445276,
-      "team": "LAA"
+      "team": "LAA",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 666176,
-      "team": "LAA"
+      "team": "LAA",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 696147,
-      "team": "LAA"
-    },
-    {
-      "id": 666171,
-      "team": "LAA"
+      "team": "LAA",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 621028,
-      "team": "LAA"
+      "team": "LAA",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 694384,
-      "team": "LAA"
-    },
-    {
-      "id": 579328,
-      "team": "LAA"
+      "team": "LAA",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 664774,
-      "team": "LAA"
+      "team": "LAA",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 681351,
-      "team": "LAA"
-    },
-    {
-      "id": 656271,
-      "team": "LAA"
-    },
-    {
-      "id": 672282,
-      "team": "LAA"
-    },
-    {
-      "id": 543294,
-      "team": "LAA"
-    },
-    {
-      "id": 542881,
-      "team": "LAA"
-    },
-    {
-      "id": 664285,
-      "team": "HOU"
+      "team": "LAA",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 694376,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 670623,
-      "team": "HOU"
-    },
-    {
-      "id": 650556,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 669450,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 641645,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 605170,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 701358,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 687888,
-      "team": "HOU"
-    },
-    {
-      "id": 686613,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 643289,
-      "team": "HOU"
-    },
-    {
-      "id": 623352,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 676694,
-      "team": "HOU"
-    },
-    {
-      "id": 595345,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 672391,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 663967,
-      "team": "HOU"
-    },
-    {
-      "id": 656986,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 514888,
-      "team": "HOU"
-    },
-    {
-      "id": 687473,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 665161,
-      "team": "HOU"
-    },
-    {
-      "id": 687911,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 663321,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 572233,
-      "team": "HOU"
-    },
-    {
-      "id": 676467,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 673237,
-      "team": "HOU"
+      "team": "HOU",
+      "position": "C",
+      "gamesStarted": null
     }
   ],
   "777398": [
     {
       "id": 676508,
-      "team": "LAD"
-    },
-    {
-      "id": 669257,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 642152,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 624424,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 687221,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 681911,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571771,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 571970,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 607455,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 518692,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 808975,
-      "team": "LAD"
-    },
-    {
-      "id": 656945,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 669242,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 660271,
-      "team": "LAD"
-    },
-    {
-      "id": 694361,
-      "team": "LAD"
-    },
-    {
-      "id": 656629,
-      "team": "LAD"
-    },
-    {
-      "id": 680736,
-      "team": "LAD"
-    },
-    {
-      "id": 606192,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "DH",
+      "gamesStarted": 1
     },
     {
       "id": 681624,
-      "team": "LAD"
-    },
-    {
-      "id": 477132,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 605141,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 500743,
-      "team": "LAD"
-    },
-    {
-      "id": 489446,
-      "team": "LAD"
-    },
-    {
-      "id": 676263,
-      "team": "LAD"
-    },
-    {
-      "id": 669160,
-      "team": "LAD"
-    },
-    {
-      "id": 808967,
-      "team": "LAD"
+      "team": "LAD",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 691781,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 678606,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 682928,
-      "team": "WSH"
-    },
-    {
-      "id": 694350,
-      "team": "WSH"
-    },
-    {
-      "id": 665953,
-      "team": "WSH"
-    },
-    {
-      "id": 656180,
-      "team": "WSH"
-    },
-    {
-      "id": 592866,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 663993,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 642708,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 605137,
-      "team": "WSH"
-    },
-    {
-      "id": 640448,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 669371,
-      "team": "WSH"
-    },
-    {
-      "id": 695418,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 695734,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 695578,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 702795,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 647336,
-      "team": "WSH"
-    },
-    {
-      "id": 669022,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 696285,
-      "team": "WSH"
-    },
-    {
-      "id": 663623,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 669743,
-      "team": "WSH"
-    },
-    {
-      "id": 680730,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 660688,
-      "team": "WSH"
-    },
-    {
-      "id": 674285,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 671131,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 671277,
-      "team": "WSH"
+      "team": "WSH",
+      "position": "2B",
+      "gamesStarted": null
     }
   ],
   "777147": [
     {
       "id": 669357,
-      "team": "STL"
+      "team": "STL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 694335,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 687363,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 575929,
-      "team": "STL"
-    },
-    {
-      "id": 571927,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 571448,
-      "team": "STL"
-    },
-    {
-      "id": 681517,
-      "team": "STL"
-    },
-    {
-      "id": 571945,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 663457,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 665877,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 668941,
-      "team": "STL"
-    },
-    {
-      "id": 641658,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 676475,
-      "team": "STL"
-    },
-    {
-      "id": 543243,
-      "team": "STL"
-    },
-    {
-      "id": 667463,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 695336,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 676617,
-      "team": "STL"
-    },
-    {
-      "id": 669467,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 650968,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 669461,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 686780,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 680977,
-      "team": "STL"
-    },
-    {
-      "id": 664854,
-      "team": "STL"
-    },
-    {
-      "id": 607200,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 664208,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 691026,
-      "team": "STL"
-    },
-    {
-      "id": 675911,
-      "team": "ATL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 669397,
-      "team": "ATL"
-    },
-    {
-      "id": 669276,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 671739,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 572955,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 606160,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 663897,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 595777,
-      "team": "ATL"
-    },
-    {
-      "id": 445926,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 660853,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 686948,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 621566,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 669221,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 660670,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 680735,
-      "team": "ATL"
-    },
-    {
-      "id": 607481,
-      "team": "ATL"
-    },
-    {
-      "id": 642201,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 645277,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 628452,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 663586,
-      "team": "ATL"
-    },
-    {
-      "id": 686249,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 656550,
-      "team": "ATL"
-    },
-    {
-      "id": 693821,
-      "team": "ATL"
-    },
-    {
-      "id": 542303,
-      "team": "ATL"
-    },
-    {
-      "id": 656413,
-      "team": "ATL"
-    },
-    {
-      "id": 678226,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     }
   ],
   "777118": [
     {
       "id": 687363,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 575929,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 571927,
-      "team": "STL"
-    },
-    {
-      "id": 571448,
-      "team": "STL"
-    },
-    {
-      "id": 681517,
-      "team": "STL"
-    },
-    {
-      "id": 571945,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 665877,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 700669,
-      "team": "STL"
-    },
-    {
-      "id": 668941,
-      "team": "STL"
-    },
-    {
-      "id": 641658,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 676475,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 543243,
-      "team": "STL"
-    },
-    {
-      "id": 667463,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 695336,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 676617,
-      "team": "STL"
-    },
-    {
-      "id": 669467,
-      "team": "STL"
-    },
-    {
-      "id": 650968,
-      "team": "STL"
-    },
-    {
-      "id": 669461,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 686780,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 680977,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 664854,
-      "team": "STL"
-    },
-    {
-      "id": 607200,
-      "team": "STL"
-    },
-    {
-      "id": 664208,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 691026,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 671056,
-      "team": "STL"
-    },
-    {
-      "id": 675911,
-      "team": "ATL"
+      "team": "STL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 669397,
-      "team": "ATL"
-    },
-    {
-      "id": 669276,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 671739,
-      "team": "ATL"
-    },
-    {
-      "id": 572955,
-      "team": "ATL"
-    },
-    {
-      "id": 606160,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 663897,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PR",
+      "gamesStarted": null
     },
     {
       "id": 595777,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 445926,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 593833,
-      "team": "ATL"
-    },
-    {
-      "id": 660853,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 686948,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 621566,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 669221,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 805373,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 660670,
-      "team": "ATL"
-    },
-    {
-      "id": 607481,
-      "team": "ATL"
-    },
-    {
-      "id": 642201,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 645277,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 669721,
-      "team": "ATL"
-    },
-    {
-      "id": 628452,
-      "team": "ATL"
-    },
-    {
-      "id": 666214,
-      "team": "ATL"
-    },
-    {
-      "id": 656550,
-      "team": "ATL"
-    },
-    {
-      "id": 693821,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 542303,
-      "team": "ATL"
-    },
-    {
-      "id": 656413,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     }
   ],
   "777023": [
     {
-      "id": 700241,
-      "team": "STL"
-    },
-    {
       "id": 691023,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 687363,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 575929,
-      "team": "STL"
-    },
-    {
-      "id": 701552,
-      "team": "STL"
-    },
-    {
-      "id": 571927,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 571448,
-      "team": "STL"
-    },
-    {
-      "id": 681517,
-      "team": "STL"
-    },
-    {
-      "id": 571945,
-      "team": "STL"
-    },
-    {
-      "id": 665877,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 668941,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 641658,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 676475,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 543243,
-      "team": "STL"
-    },
-    {
-      "id": 667463,
-      "team": "STL"
-    },
-    {
-      "id": 695336,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 676617,
-      "team": "STL"
-    },
-    {
-      "id": 669467,
-      "team": "STL"
-    },
-    {
-      "id": 650968,
-      "team": "STL"
-    },
-    {
-      "id": 669461,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 686780,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 680977,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 664854,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 664208,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 691026,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 671056,
-      "team": "STL"
+      "team": "STL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 673513,
-      "team": "SD"
+      "team": "SD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 455117,
-      "team": "SD"
-    },
-    {
-      "id": 663158,
-      "team": "SD"
-    },
-    {
-      "id": 688158,
-      "team": "SD"
+      "team": "SD",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 593974,
-      "team": "SD"
+      "team": "SD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 701538,
-      "team": "SD"
+      "team": "SD",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 578428,
-      "team": "SD"
-    },
-    {
-      "id": 592094,
-      "team": "SD"
-    },
-    {
-      "id": 670092,
-      "team": "SD"
+      "team": "SD",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 506433,
-      "team": "SD"
+      "team": "SD",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 669093,
-      "team": "SD"
+      "team": "SD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 657757,
-      "team": "SD"
-    },
-    {
-      "id": 656302,
-      "team": "SD"
-    },
-    {
-      "id": 670970,
-      "team": "SD"
+      "team": "SD",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 592518,
-      "team": "SD"
-    },
-    {
-      "id": 669200,
-      "team": "SD"
-    },
-    {
-      "id": 642180,
-      "team": "SD"
-    },
-    {
-      "id": 663568,
-      "team": "SD"
+      "team": "SD",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 665487,
-      "team": "SD"
+      "team": "SD",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 669369,
-      "team": "SD"
+      "team": "SD",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 593428,
-      "team": "SD"
+      "team": "SD",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 553869,
-      "team": "SD"
+      "team": "SD",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 606996,
-      "team": "SD"
+      "team": "SD",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 630105,
-      "team": "SD"
+      "team": "SD",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 650333,
-      "team": "SD"
-    },
-    {
-      "id": 681190,
-      "team": "SD"
+      "team": "SD",
+      "position": "1B",
+      "gamesStarted": null
     }
   ],
   "776416": [
     {
-      "id": 700241,
-      "team": "STL"
-    },
-    {
       "id": 669357,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 694335,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 691023,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 701675,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 687363,
-      "team": "STL"
-    },
-    {
-      "id": 701552,
-      "team": "STL"
-    },
-    {
-      "id": 688297,
-      "team": "STL"
-    },
-    {
-      "id": 681517,
-      "team": "STL"
-    },
-    {
-      "id": 571945,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 663457,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 665877,
-      "team": "STL"
-    },
-    {
-      "id": 681676,
-      "team": "STL"
-    },
-    {
-      "id": 700669,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 668941,
-      "team": "STL"
-    },
-    {
-      "id": 660896,
-      "team": "STL"
-    },
-    {
-      "id": 641658,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 543243,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 695336,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 676617,
-      "team": "STL"
-    },
-    {
-      "id": 669467,
-      "team": "STL"
-    },
-    {
-      "id": 650968,
-      "team": "STL"
-    },
-    {
-      "id": 669461,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 686780,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 691026,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 671056,
-      "team": "STL"
-    },
-    {
-      "id": 699625,
-      "team": "STL"
+      "team": "STL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 669477,
-      "team": "SF"
-    },
-    {
-      "id": 664141,
-      "team": "SF"
+      "team": "SF",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 671218,
-      "team": "SF"
+      "team": "SF",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 678906,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 668800,
-      "team": "SF"
-    },
-    {
-      "id": 657277,
-      "team": "SF"
-    },
-    {
-      "id": 676254,
-      "team": "SF"
+      "team": "SF",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 676130,
-      "team": "SF"
-    },
-    {
-      "id": 676775,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 672275,
-      "team": "SF"
+      "team": "SF",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 656305,
-      "team": "SF"
+      "team": "SF",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 527038,
-      "team": "SF"
-    },
-    {
-      "id": 693313,
-      "team": "SF"
+      "team": "SF",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 702352,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 642086,
-      "team": "SF"
+      "team": "SF",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 687551,
-      "team": "SF"
+      "team": "SF",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 808982,
-      "team": "SF"
-    },
-    {
-      "id": 664192,
-      "team": "SF"
+      "team": "SF",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 646240,
-      "team": "SF"
+      "team": "SF",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 666711,
-      "team": "SF"
-    },
-    {
-      "id": 663941,
-      "team": "SF"
-    },
-    {
-      "id": 687529,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 683766,
-      "team": "SF"
-    },
-    {
-      "id": 682641,
-      "team": "SF"
+      "team": "SF",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 642715,
-      "team": "SF"
-    },
-    {
-      "id": 592662,
-      "team": "SF"
-    },
-    {
-      "id": 434378,
-      "team": "SF"
+      "team": "SF",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 657424,
-      "team": "SF"
+      "team": "SF",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "823059": [
     {
-      "id": 700241,
-      "team": "STL"
-    },
-    {
       "id": 669357,
-      "team": "STL"
-    },
-    {
-      "id": 694335,
-      "team": "STL"
-    },
-    {
-      "id": 690155,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 691023,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 701675,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 687363,
-      "team": "STL"
-    },
-    {
-      "id": 681517,
-      "team": "STL"
-    },
-    {
-      "id": 665877,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 700669,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 668941,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 802139,
-      "team": "STL"
-    },
-    {
-      "id": 677865,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 676475,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 695336,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 676617,
-      "team": "STL"
-    },
-    {
-      "id": 669467,
-      "team": "STL"
-    },
-    {
-      "id": 650968,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 666277,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 669461,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 686780,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 592773,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 693409,
-      "team": "STL"
-    },
-    {
-      "id": 669160,
-      "team": "STL"
-    },
-    {
-      "id": 691026,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 671056,
-      "team": "STL"
-    },
-    {
-      "id": 694973,
-      "team": "PIT"
+      "team": "STL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 687462,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 664040,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 682848,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 668804,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 665833,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 681895,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 642397,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 682254,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 669707,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 663968,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 656605,
-      "team": "PIT"
-    },
-    {
-      "id": 670990,
-      "team": "PIT"
-    },
-    {
-      "id": 676755,
-      "team": "PIT"
-    },
-    {
-      "id": 696149,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 691373,
-      "team": "PIT"
-    },
-    {
-      "id": 695257,
-      "team": "PIT"
-    },
-    {
-      "id": 669387,
-      "team": "PIT"
-    },
-    {
-      "id": 642701,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 680779,
-      "team": "PIT"
-    },
-    {
-      "id": 664875,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 684049,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 804606,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 693304,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 542303,
-      "team": "PIT"
-    },
-    {
-      "id": 677952,
-      "team": "PIT"
+      "team": "PIT",
+      "position": "DH",
+      "gamesStarted": null
     }
   ],
   "823033": [
     {
-      "id": 700241,
-      "team": "STL"
-    },
-    {
-      "id": 694335,
-      "team": "STL"
+      "id": 663494,
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 691023,
-      "team": "STL"
-    },
-    {
-      "id": 663494,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 701675,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 681517,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 663457,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 665877,
-      "team": "STL"
-    },
-    {
-      "id": 700669,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 668941,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 802139,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 677865,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 691458,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 676475,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 676617,
-      "team": "STL"
-    },
-    {
-      "id": 669467,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 666277,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 686780,
-      "team": "STL"
-    },
-    {
-      "id": 669461,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 592773,
-      "team": "STL"
-    },
-    {
-      "id": 703725,
-      "team": "STL"
-    },
-    {
-      "id": 669160,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 691026,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 671056,
-      "team": "STL"
-    },
-    {
-      "id": 676369,
-      "team": "STL"
+      "team": "STL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 699625,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
-      "id": 689266,
-      "team": "ATL"
-    },
-    {
-      "id": 669276,
-      "team": "ATL"
-    },
-    {
-      "id": 675916,
-      "team": "ATL"
-    },
-    {
-      "id": 671739,
-      "team": "ATL"
+      "id": 676369,
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 663698,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
+    },
+    {
+      "id": 671739,
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 682989,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 622761,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 643289,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 800311,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 686948,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 519242,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 805347,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 621566,
-      "team": "ATL"
-    },
-    {
-      "id": 702275,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 642086,
-      "team": "ATL"
-    },
-    {
-      "id": 571657,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 641755,
-      "team": "ATL"
-    },
-    {
-      "id": 625643,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 642201,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 645277,
-      "team": "ATL"
-    },
-    {
-      "id": 628452,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 663586,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 664849,
-      "team": "ATL"
-    },
-    {
-      "id": 656550,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 573262,
-      "team": "ATL"
-    },
-    {
-      "id": 693821,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     }
   ],
   "823030": [
     {
-      "id": 700241,
-      "team": "STL"
-    },
-    {
-      "id": 694335,
-      "team": "STL"
-    },
-    {
       "id": 663494,
-      "team": "STL"
+      "team": "STL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 691023,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 701675,
-      "team": "STL"
-    },
-    {
-      "id": 681517,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 663457,
-      "team": "STL"
-    },
-    {
-      "id": 665877,
-      "team": "STL"
-    },
-    {
-      "id": 700669,
-      "team": "STL"
-    },
-    {
-      "id": 668941,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 802139,
-      "team": "STL"
-    },
-    {
-      "id": 677865,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 691458,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 676475,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 676617,
-      "team": "STL"
-    },
-    {
-      "id": 669467,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 666277,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 669461,
-      "team": "STL"
-    },
-    {
-      "id": 686780,
-      "team": "STL"
-    },
-    {
-      "id": 592773,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 703725,
-      "team": "STL"
-    },
-    {
-      "id": 669160,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 691026,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 671056,
-      "team": "STL"
-    },
-    {
-      "id": 699625,
-      "team": "STL"
-    },
-    {
-      "id": 676369,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 702566,
-      "team": "ATL"
-    },
-    {
-      "id": 689266,
-      "team": "ATL"
-    },
-    {
-      "id": 669276,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 663698,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 671739,
-      "team": "ATL"
-    },
-    {
-      "id": 682989,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 622761,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 643289,
-      "team": "ATL"
-    },
-    {
-      "id": 800311,
-      "team": "ATL"
-    },
-    {
-      "id": 676551,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 686948,
-      "team": "ATL"
-    },
-    {
-      "id": 519242,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 805347,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 621566,
-      "team": "ATL"
-    },
-    {
-      "id": 702275,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 642086,
-      "team": "ATL"
-    },
-    {
-      "id": 571657,
-      "team": "ATL"
-    },
-    {
-      "id": 641755,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 625643,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 642201,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 645277,
-      "team": "ATL"
-    },
-    {
-      "id": 628452,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 663586,
-      "team": "ATL"
-    },
-    {
-      "id": 664849,
-      "team": "ATL"
-    },
-    {
-      "id": 656550,
-      "team": "ATL"
-    },
-    {
-      "id": 693821,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     }
   ],
   "823042": [
     {
       "id": 700241,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 694335,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 691023,
-      "team": "STL"
+      "team": "STL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 663494,
-      "team": "STL"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 701675,
-      "team": "STL"
-    },
-    {
-      "id": 681517,
-      "team": "STL"
+      "team": "STL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 663457,
-      "team": "STL"
+      "team": "STL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 665877,
-      "team": "STL"
+      "team": "STL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 700669,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 802139,
-      "team": "STL"
-    },
-    {
-      "id": 690928,
-      "team": "STL"
+      "team": "STL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 677865,
-      "team": "STL"
+      "team": "STL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 691458,
-      "team": "STL"
+      "team": "STL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 676475,
-      "team": "STL"
-    },
-    {
-      "id": 676617,
-      "team": "STL"
-    },
-    {
-      "id": 669467,
-      "team": "STL"
-    },
-    {
-      "id": 666277,
-      "team": "STL"
+      "team": "STL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 686780,
-      "team": "STL"
-    },
-    {
-      "id": 669461,
-      "team": "STL"
-    },
-    {
-      "id": 592773,
-      "team": "STL"
-    },
-    {
-      "id": 703725,
-      "team": "STL"
-    },
-    {
-      "id": 669160,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 691026,
-      "team": "STL"
-    },
-    {
-      "id": 671056,
-      "team": "STL"
+      "team": "STL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 699625,
-      "team": "STL"
+      "team": "STL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 676369,
-      "team": "STL"
-    },
-    {
-      "id": 593958,
-      "team": "AZ"
-    },
-    {
-      "id": 666661,
-      "team": "AZ"
+      "team": "STL",
+      "position": "PH",
+      "gamesStarted": null
     },
     {
       "id": 694374,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 694297,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 680728,
-      "team": "AZ"
-    },
-    {
-      "id": 672629,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 571448,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 682988,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 814439,
-      "team": "AZ"
-    },
-    {
-      "id": 518876,
-      "team": "AZ"
-    },
-    {
-      "id": 656464,
-      "team": "AZ"
-    },
-    {
-      "id": 606466,
-      "team": "AZ"
-    },
-    {
-      "id": 642528,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 545121,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 672695,
-      "team": "AZ"
-    },
-    {
-      "id": 623149,
-      "team": "AZ"
-    },
-    {
-      "id": 647336,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 672515,
-      "team": "AZ"
-    },
-    {
-      "id": 683352,
-      "team": "AZ"
-    },
-    {
-      "id": 684442,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 682998,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 664199,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 657044,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 596146,
-      "team": "AZ"
-    },
-    {
-      "id": 543510,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 805299,
-      "team": "AZ"
-    },
-    {
-      "id": 678489,
-      "team": "AZ"
+      "team": "AZ",
+      "position": "P",
+      "gamesStarted": 0
     }
   ],
   "824889": [
     {
       "id": 689266,
-      "team": "ATL"
-    },
-    {
-      "id": 669276,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 671739,
-      "team": "ATL"
-    },
-    {
-      "id": 682989,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 643289,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "SS",
+      "gamesStarted": null
     },
     {
       "id": 800311,
-      "team": "ATL"
-    },
-    {
-      "id": 641816,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 686948,
-      "team": "ATL"
-    },
-    {
-      "id": 519242,
-      "team": "ATL"
-    },
-    {
-      "id": 805347,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 621566,
-      "team": "ATL"
-    },
-    {
-      "id": 642086,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 669221,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 660670,
-      "team": "ATL"
-    },
-    {
-      "id": 641755,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 645277,
-      "team": "ATL"
-    },
-    {
-      "id": 628452,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 663586,
-      "team": "ATL"
-    },
-    {
-      "id": 664849,
-      "team": "ATL"
-    },
-    {
-      "id": 656550,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 573262,
-      "team": "ATL"
-    },
-    {
-      "id": 673490,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 657041,
-      "team": "ATL"
-    },
-    {
-      "id": 608718,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 693821,
-      "team": "ATL"
-    },
-    {
-      "id": 527048,
-      "team": "ATL"
+      "team": "ATL",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 694795,
-      "team": "MIA"
-    },
-    {
-      "id": 676604,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 665052,
-      "team": "MIA"
-    },
-    {
-      "id": 664126,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "RF",
+      "gamesStarted": null
     },
     {
       "id": 681715,
-      "team": "MIA"
-    },
-    {
-      "id": 645261,
-      "team": "MIA"
-    },
-    {
-      "id": 680767,
-      "team": "MIA"
-    },
-    {
-      "id": 663969,
-      "team": "MIA"
-    },
-    {
-      "id": 665923,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "LF",
+      "gamesStarted": null
     },
     {
       "id": 805300,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "CF",
+      "gamesStarted": null
     },
     {
       "id": 676534,
-      "team": "MIA"
-    },
-    {
-      "id": 667463,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 691594,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "3B",
+      "gamesStarted": null
     },
     {
       "id": 806188,
-      "team": "MIA"
-    },
-    {
-      "id": 687473,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "P",
+      "gamesStarted": 0
     },
     {
       "id": 669364,
-      "team": "MIA"
-    },
-    {
-      "id": 656848,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "2B",
+      "gamesStarted": null
     },
     {
       "id": 669065,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "1B",
+      "gamesStarted": null
     },
     {
       "id": 683357,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "DH",
+      "gamesStarted": null
     },
     {
       "id": 682663,
-      "team": "MIA"
-    },
-    {
-      "id": 677870,
-      "team": "MIA"
-    },
-    {
-      "id": 676083,
-      "team": "MIA"
-    },
-    {
-      "id": 640459,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 691788,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "C",
+      "gamesStarted": null
     },
     {
       "id": 691587,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "P",
+      "gamesStarted": 1
     },
     {
       "id": 672640,
-      "team": "MIA"
+      "team": "MIA",
+      "position": "SS",
+      "gamesStarted": null
     }
   ]
 };

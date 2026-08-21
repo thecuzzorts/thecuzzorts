@@ -97,7 +97,7 @@ def main():
         appearances = []
         for p in g['players']:
             players[str(p['id'])] = p['name']
-            appearances.append({"id": p['id'], "team": p['team']})
+            appearances.append({"id": p['id'], "team": p['team'], "position": p.get('position'), "gamesStarted": p.get('gamesStarted')})
         game_players[str(g['gamePk'])] = appearances
 
     players_js = (
@@ -106,7 +106,7 @@ def main():
         "   Cardinal) is stored once, not once per appearance. */\n"
         f"var mlbPlayers = {js_literal(players)};\n\n"
         "/* gamePk -> array of that game's participants (both teams,\n"
-        "   batters + pitchers), id+team only -- full per-player stat lines\n"
+        "   batters + pitchers), id+team+position only -- full per-player stat lines\n"
         "   are intentionally not stored here to keep this file's size\n"
         "   sane. Look up mlbPlayers[id] for the name. */\n"
         f"var mlbGamePlayers = {js_literal(game_players)};\n"

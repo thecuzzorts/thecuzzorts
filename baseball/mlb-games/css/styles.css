@@ -649,6 +649,27 @@ body {
 .tl-ls-rhe { font-weight: 700; background: var(--chip-bg, #edf2f7) !important; }
 
 /* ---- Players leaderboard ---- */
+.mlbg-leaderboard-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.mlbg-leaderboard-col-label {
+  font-family: 'Kreon', serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted, #8a9aaa);
+  margin: 0 0 0.4rem;
+}
+@media (max-width: 1000px) {
+  .mlbg-leaderboard-cols { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .mlbg-leaderboard-cols { grid-template-columns: 1fr; }
+}
+
 .mlbg-leaderboard {
   background: var(--surface, #fff);
   border-radius: 10px;
@@ -662,8 +683,11 @@ body {
   gap: 0.75rem;
   padding: 0.55rem 0;
   border-bottom: 1px solid var(--border, #eef1f4);
+  cursor: pointer;
 }
 .mlbg-leaderboard-row:last-child { border-bottom: none; }
+.mlbg-leaderboard-row:hover { background: var(--chip-bg, #f8f9fb); }
+.mlbg-leaderboard-row.is-open { background: var(--chip-bg, #f8f9fb); }
 
 .mlbg-leaderboard-rank {
   font-family: 'Kreon', serif;
@@ -701,4 +725,40 @@ body {
   margin-bottom: 0.6rem;
 }
 .mlbg-hof-summary strong { color: var(--section, #C8102E); font-family: 'Kreon', serif; }
-.mlbg-hof-list { margin-bottom: 1.5rem; }
+
+.mlbg-hof-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 900px) { .mlbg-hof-list { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .mlbg-hof-list { grid-template-columns: 1fr; } }
+
+.mlbg-hof-card {
+  background: var(--surface, #fff);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px var(--shadow, rgba(0,0,0,0.07));
+  padding: 1rem;
+  text-align: center;
+  border-top: 4px solid var(--section, #C8102E);
+}
+.mlbg-hof-photo {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--chip-bg, #edf2f7);
+  margin-bottom: 0.6rem;
+}
+.mlbg-hof-name {
+  font-family: 'Kreon', serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text, #222);
+}
+.mlbg-hof-meta {
+  font-size: 0.72rem;
+  color: var(--text-muted, #8a9aaa);
+  margin-top: 0.2rem;
+}
