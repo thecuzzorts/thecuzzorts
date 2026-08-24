@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SNE2PKC43Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SNE2PKC43Y');
+  </script>
+  <meta charset="utf-8">
+  <title>Hunting | The Cuzzorts</title>
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      try {
+        var t = window.localStorage.getItem('theme');
+        if (t === 'dark' || t === 'light') { document.documentElement.setAttribute('data-theme', t); }
+      } catch (e) {}
+    }());
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../css/site-chrome.css">
+  <link rel="stylesheet" href="../css/section-labels.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <p class="site-title"><a class="home-link" href="../index.html">The Cuzzorts</a> &mdash; Hunting</p>
+    <p class="site-tagline">Species checklist &mdash; Josh &amp; Sam, one harvest at a time</p>
+    <div role="navigation">
+      <nav>
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="page-intro">
+      <h1>Hunting</h1>
+      <p>Every species harvested, cataloged by category &mdash; plus a running watch list of what's still out there</p>
+    </div>
+
+    <div class="person-filter" id="huntingPersonFilter">
+      <button type="button" class="person-filter-btn active" data-person="all">All</button>
+      <button type="button" class="person-filter-btn" data-person="Josh" style="--person:#00AC4B">Josh</button>
+      <button type="button" class="person-filter-btn" data-person="Sam" style="--person:#662684">Sam</button>
+    </div>
+
+    <div class="section-panel" id="overview">
+      <div class="stats-strip">
+        <div class="stat"><span class="stat-num" id="huntingSpeciesTotal">0</span><span class="stat-label">Species Harvested</span></div>
+        <div class="stat"><span class="stat-num" id="huntingLocationsTotal">0</span><span class="stat-label">Locations</span></div>
+      </div>
+    </div>
+
+    <div id="huntingCategories"></div>
+
+  </main>
+
+  <footer>
+    <p><script>document.write(new Date().getFullYear())</script> &copy; The Cuzzorts &mdash; <a href="../index.html">Home</a></p>
+  </footer>
+
+  <script src="../turkey-hunting/js/turkey-derive.js"></script>
+  <script src="../turkey-hunting/data/turkey-harvests-josh.js"></script>
+  <script src="../turkey-hunting/data/turkey-harvests-sam.js"></script>
+  <script src="../turkey-hunting/data/turkey-harvests-tilly.js"></script>
+  <script src="../trapping/data/furbearers-trapped-josh.js"></script>
+
+  <script src="data/hunts.js"></script>
+  <script src="data/species-reference.js"></script>
+  <script src="data/hunt-photos.js"></script>
+  <script src="js/app.js"></script>
+
+  <script src="../js/site-nav.js"></script>
+  <script src="../js/section-labels.js"></script>
+
+</body>
+</html>

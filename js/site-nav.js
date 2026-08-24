@@ -28,7 +28,8 @@
     { key: 'stats',         label: 'By the Numbers', path: 'stats/index.html',        color: '#8B7EC8', hidden: true },
     { key: 'run',           label: 'Running',        path: 'run/index.html',          color: '#00AC4B', hidden: true },
     { key: 'trapping',      label: 'Trapping',       path: 'trapping/index.html',     color: '#8C5A3B', hidden: true },
-    { key: 'mlb-games',     label: 'MLB Games',      path: 'baseball/mlb-games/index.html', color: '#F07070', hidden: true }
+    { key: 'mlb-games',     label: 'MLB Games',      path: 'baseball/mlb-games/index.html', color: '#F07070', hidden: true },
+    { key: 'hunting',       label: 'Hunting',        path: 'hunting/index.html',      color: '#C9A66B', hidden: true }
   ];
 
   // Current section = the folder name in the path (e.g. "disney").
