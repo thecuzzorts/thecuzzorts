@@ -1,0 +1,361 @@
+/* ===================================================
+   TheCuzzorts — Hunting (species checklist)
+   Hidden page, Josh & Sam only. Card-with-chips pattern mirrors
+   /fishing; category grouping, person filter, and watch-list chips
+   are new here.
+   =================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Kreon:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
+
+/* --- Reset & Base ---------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+
+body {
+  --section: #6B4F2A;
+  --section-on-dark: #C9A66B;
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+  background: var(--bg, #f0f2f5);
+  color: var(--text, #222);
+  min-height: 100vh;
+}
+
+/* --- Section panels (anchor-nav targets) ----------- */
+.section-panel {
+  scroll-margin-top: 4rem;
+}
+
+.section-panel + .section-panel {
+  margin-top: 2rem;
+}
+
+/* --- Stats strip -------------------------------------- */
+.stats-strip {
+  max-width: 700px;
+  margin: 0.5rem auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border, #c6cfd7);
+  border: 1px solid var(--border, #c6cfd7);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.stat {
+  background: var(--surface, #fff);
+  text-align: center;
+  padding: 0.9rem 1rem;
+}
+
+.stat-num {
+  display: block;
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--section);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted, #7d8a97);
+  margin-top: 0.15rem;
+}
+
+.privacy-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  color: var(--text-muted, #7d8a97);
+  background: var(--chip-bg, #eaeef2);
+  border: 1px solid var(--border, #c6cfd7);
+  padding: 0.4rem 0.8rem;
+  border-radius: 99px;
+}
+
+/* --- Person filter (mirrors /turkey-hunting + /mlb-games -- /fishing
+   has no per-catch attribution, so it has no filter to mirror) ------ */
+.person-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.1rem 0 1.4rem;
+}
+
+.person-filter-btn {
+  font-family: 'Kreon', Georgia, serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.35rem 1rem;
+  border-radius: 99px;
+  border: 2px solid var(--person, var(--section));
+  background: transparent;
+  color: var(--person, var(--section));
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, opacity 0.15s;
+}
+.person-filter-btn.active {
+  background: var(--person, var(--section));
+  color: #fff;
+}
+.person-filter-btn:not(.active):hover { opacity: 0.7; }
+
+/* --- Category sections ------------------------------ */
+.category { margin-bottom: 2.2rem; }
+.category:last-child { margin-bottom: 0; }
+
+.category-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  border-bottom: 2px solid var(--section);
+  padding-bottom: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.category-head h2 {
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text, #1a2e3b);
+}
+
+.category-count {
+  font-size: 0.78rem;
+  color: var(--text-muted, #7d8a97);
+}
+
+.species-subnote {
+  display: block;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--text-muted, #7d8a97);
+  margin: -0.4rem 0 0.9rem;
+}
+
+/* --- Species cards ----------------------------------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.species-card {
+  background: var(--surface, #fff);
+  border-radius: 10px;
+  box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.08));
+  border-top: 3px solid var(--section);
+  overflow: hidden;
+}
+
+.species-media {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--chip-bg, #eaeef2);
+}
+
+.species-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.species-photo:hover { opacity: 0.88; transform: scale(1.02); }
+
+.species-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--section);
+}
+.species-placeholder svg { width: 38%; height: 38%; }
+
+.species-body { padding: 0.7rem 0.75rem; }
+
+.species-name {
+  font-family: 'Kreon', Georgia, serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  line-height: 1.2;
+  color: var(--text, #1a2e3b);
+  margin-bottom: 0.45rem;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.loc-chip {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 0.12rem 0.55rem;
+  border-radius: 8px;
+  font-size: 0.72rem;
+  background: var(--chip-bg, #eaeef2);
+  border: 1px solid var(--chip-border, #c6cfd7);
+  color: var(--chip-text, #28333d);
+}
+.loc-chip strong { display: flex; align-items: center; font-weight: 700; }
+.loc-chip small { color: var(--text-muted, #5a6a7a); font-weight: 400; font-style: italic; }
+
+.hunter-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-right: 0.35em;
+  flex-shrink: 0;
+}
+
+/* --- Watch list -------------------------------------- */
+.watchlist-row {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.watchlist-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted, #7d8a97);
+  margin-right: 0.3rem;
+}
+
+.watch-chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px dashed var(--chip-unv-border, #c9a66b);
+  color: var(--chip-unv-text, #8a7654);
+  background: var(--chip-unv-bg, transparent);
+  border-radius: 99px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.78rem;
+  font-style: italic;
+}
+
+/* --- Lightbox (same pattern as /fishing) ------------ */
+body.lb-open { overflow: hidden; }
+
+.lb-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lb-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  cursor: pointer;
+}
+
+.lb-frame {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 90vw;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+}
+
+.lb-img {
+  max-width: 90vw;
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+}
+
+.lb-close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.5rem;
+  background: rgba(0,0,0,0.45);
+  border: none;
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  opacity: 0.85;
+  z-index: 2;
+  transition: opacity 0.15s;
+}
+.lb-close:hover { opacity: 1; }
+
+.lb-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.9rem 0.6rem;
+  background: #1a2e3b;
+}
+
+.lb-prev,
+.lb-next {
+  flex: 0 0 auto;
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(255,255,255,0.7);
+  background: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 5px;
+  padding: 0.25rem 0.8rem;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.lb-prev:hover,
+.lb-next:hover { color: var(--section-on-dark); border-color: var(--section-on-dark); }
+
+.lb-caption {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: center;
+  color: #fff;
+  font-family: 'Kreon', Georgia, serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- Mobile ---------------------------------------- */
+@media (max-width: 640px) {
+  .card-grid { grid-template-columns: repeat(auto-fill, minmax(115px, 1fr)); gap: 0.55rem; }
+  .species-body { padding: 0.55rem 0.6rem; }
+  .hunting-stat-num { font-size: 1.45rem; }
+  .hunting-stats { gap: 1.25rem; }
+}
