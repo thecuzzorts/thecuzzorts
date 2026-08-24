@@ -28,8 +28,8 @@
     'parks':        '30 / 30',
     'milb-parks':   '4 / 153',
     'indie-parks':  '4',
-    'banana-games': '2',
-    'banana-teams': '2 / 6'
+    'banana-games': '3',
+    'banana-teams': '3 / 6'
   };
 
   // --- H3 sub-section enrichment ---
