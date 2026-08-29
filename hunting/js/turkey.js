@@ -1,5 +1,14 @@
 /* ===================================================
-   TheCuzzorts — Turkey Hunting app.js
+   TheCuzzorts — Hunting: Turkey section
+   Ported from /turkey-hunting's own app.js when that page was retired
+   and folded into /hunting. Self-contained jQuery IIFE, independent of
+   hunting/js/app.js's vanilla-JS module for the other categories -- the
+   two never share state directly, though this listens for the
+   'hunting:personchange' event app.js broadcasts from the single
+   page-level #huntingPersonFilter (see applyPersonFilter() below) since
+   Turkey has no filter UI of its own anymore. Lightbox class/id names
+   are still prefixed (#turkeyLightbox, .tlb-*) to avoid colliding with
+   hunting/js/app.js's own #huntingLightbox.
    =================================================== */
 
 (function ($) {
@@ -14,6 +23,25 @@
     (storedTheme !== 'light' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
   var UNVISITED_HEAT   = IS_DARK ? '#2a323b' : '#f0f2f5';
   var UNVISITED_PERSON = IS_DARK ? '#3a4550' : '#d0d4d8';
+
+  // Met-slam chips are tinted with the person's color, same mix-toward-
+  // white(light)/dark-surface(dark) approach as /disney's applyChipColors()
+  // -- a pastel tint reads better than the raw brand hex directly as a
+  // chip background. Same load-once-at-boot convention as the rest of
+  // this file's dark-mode-aware colors (no live theme-change reactivity).
+  function personChipColors(hex) {
+    if (IS_DARK && hex === '#662684') { hex = '#AB88BB'; } // Sam's purple is too dark to mix legibly in dark mode
+    var r = parseInt(hex.slice(1, 3), 16);
+    var g = parseInt(hex.slice(3, 5), 16);
+    var b = parseInt(hex.slice(5, 7), 16);
+    var base = IS_DARK ? [42, 50, 59] : [255, 255, 255];
+    var bgPct = IS_DARK ? 0.22 : 0.14;
+    var borderPct = IS_DARK ? 0.45 : 0.30;
+    return {
+      bg: 'rgb(' + Math.round(r*bgPct+base[0]*(1-bgPct)) + ',' + Math.round(g*bgPct+base[1]*(1-bgPct)) + ',' + Math.round(b*bgPct+base[2]*(1-bgPct)) + ')',
+      border: 'rgb(' + Math.round(r*borderPct+base[0]*(1-borderPct)) + ',' + Math.round(g*borderPct+base[1]*(1-borderPct)) + ',' + Math.round(b*borderPct+base[2]*(1-borderPct)) + ')'
+    };
+  }
 
   // ---- People config --------------------------------
   var PEOPLE = [
@@ -223,18 +251,29 @@
     return html + '</div>';
   }
 
-  function buildSlamsSection() {
+  // personId: 'family' shows everyone with progress; a specific id scopes
+  // to just that person. Rebuilt on every filter change, not just at boot.
+  function buildSlamsSection(personId) {
     var $container = $('#slamsContent');
+    $container.empty();
+
+    var people = personId === 'family' ? PEOPLE : PEOPLE.filter(function (p) { return p.id === personId; });
+
     var $grid = $('<div class="slams-grid"></div>');
     var any = false;
 
-    PEOPLE.forEach(function (p) {
+    people.forEach(function (p) {
       var progress = computeSlamProgress(p);
       if (!progress.length) return;
       any = true;
       var $col = $('<div class="slam-person-col"></div>');
       $col.append('<div class="person-gallery-header" style="--person-color:' + p.color + '">' + p.name + '</div>');
-      var $cards = $('<div class="slam-cards"></div>');
+      // Overrides the same --chip-bg/--chip-border tokens .slam-chip--met
+      // reads (with a var() fallback), scoped to this person's cards only
+      // -- unmet chips use the separate --chip-unv-* tokens, so they're
+      // untouched by this.
+      var chipColors = personChipColors(p.color);
+      var $cards = $('<div class="slam-cards" style="--chip-bg:' + chipColors.bg + ';--chip-border:' + chipColors.border + '"></div>');
       progress.forEach(function (entry) { $cards.append(buildSlamCardHTML(p, entry)); });
       $col.append($cards);
       $grid.append($col);
@@ -244,25 +283,7 @@
     $container.append($grid);
   }
 
-  // ---- Build filter row + map card (DOM) -----------
-
-  function buildFilterRow() {
-    var $row = $('#harvestsFilters');
-
-    var $all = $('<button class="person-filter active" data-person="family"></button>');
-    $all[0].style.setProperty('--filter-color', FAMILY_COLOR);
-    $all.append('<span class="filter-name">All</span>');
-    $all.append('<span class="filter-count">' + getCount('family') + '</span>');
-    $row.append($all);
-
-    PEOPLE.forEach(function (p) {
-      var $btn = $('<button class="person-filter" data-person="' + p.id + '"></button>');
-      $btn[0].style.setProperty('--filter-color', p.color);
-      $btn.append('<span class="filter-name">' + p.name + '</span>');
-      $btn.append('<span class="filter-count">' + getCount(p.id) + '</span>');
-      $row.append($btn);
-    });
-  }
+  // ---- Build map card (DOM) -------------------------
 
   function buildMapCard() {
     var $card = $('#harvestsMapCard');
@@ -286,12 +307,17 @@
   var mapInst  = {};
   var mapReady = {};
 
-  function injectList(mapElId, listHTML) {
+  // expanded: family's list starts open (the "everyone at a glance" view
+  // is more useful shown by default); a single person's list starts
+  // collapsed behind the toggle, same as before.
+  function injectList(mapElId, listHTML, expanded) {
     if (!listHTML) return;
     var $container = $(mapElId).closest('.map-container');
     if ($container.next('.list-toggle').length) return;
-    $('<button class="list-toggle" aria-expanded="false">Show list &#9662;</button>').insertAfter($container);
-    $(listHTML).insertAfter($container.next('.list-toggle'));
+    var $btn = $('<button class="list-toggle" aria-expanded="' + (expanded ? 'true' : 'false') + '">' +
+      (expanded ? 'Hide list &#9652;' : 'Show list &#9662;') + '</button>').insertAfter($container);
+    var $list = $(listHTML).insertAfter($btn);
+    if (expanded) { $list.addClass('open'); }
   }
 
   function initMap(personId) {
@@ -327,7 +353,7 @@
       });
 
       mapInst[personId] = $(mapElId).vectorMap('get', 'mapObject');
-      injectList(mapElId, buildTurkeyListHTML(listData));
+      injectList(mapElId, buildTurkeyListHTML(listData), true);
 
     } else {
       var p = findPerson(personId);
@@ -414,7 +440,7 @@
   function buildGallery() {
     var $container = $('<div class="photos-gallery-card"></div>');
 
-    // "All" view — one featured photo per person
+    // "Anyone" view — one featured photo per person
     $container.append(
       '<div class="gallery-view active" data-view="family">' +
       buildFamilyGalleryHTML() +
@@ -452,8 +478,8 @@
   function showLightboxPhoto() {
     var item = lbPhotos[lbIndex];
     if (!item) return;
-    $('#lbImg').attr('src', item.src).attr('alt', item.caption);
-    $('#lbCaption').text(item.caption);
+    $('#tlbImg').attr('src', item.src).attr('alt', item.caption);
+    $('#tlbCaption').text(item.caption);
     $('#lbPrev').css('visibility', lbIndex > 0 ? 'visible' : 'hidden');
     $('#lbNext').css('visibility', lbIndex < lbPhotos.length - 1 ? 'visible' : 'hidden');
   }
@@ -467,26 +493,26 @@
       if (lbPhotos[i].src === src) { lbIndex = i; break; }
     }
     showLightboxPhoto();
-    $('#photoLightbox').fadeIn(150);
-    $('body').addClass('lb-open');
+    $('#turkeyLightbox').fadeIn(150);
+    $('body').addClass('tlb-open');
   }
 
   function closeLightbox() {
-    $('#photoLightbox').fadeOut(150);
-    $('body').removeClass('lb-open');
+    $('#turkeyLightbox').fadeOut(150);
+    $('body').removeClass('tlb-open');
   }
 
   function initLightbox() {
     $('body').append(
-      '<div id="photoLightbox" class="lb-overlay" style="display:none">' +
-        '<div class="lb-backdrop"></div>' +
-        '<div class="lb-frame">' +
-          '<button class="lb-close" aria-label="Close">&times;</button>' +
-          '<img id="lbImg" class="lb-img" src="" alt="">' +
-          '<div class="lb-controls">' +
-            '<button class="lb-prev" aria-label="Previous">&#8592;</button>' +
-            '<div id="lbCaption" class="lb-caption"></div>' +
-            '<button class="lb-next" aria-label="Next">&#8594;</button>' +
+      '<div id="turkeyLightbox" class="tlb-overlay" style="display:none">' +
+        '<div class="tlb-backdrop"></div>' +
+        '<div class="tlb-frame">' +
+          '<button class="tlb-close" aria-label="Close">&times;</button>' +
+          '<img id="tlbImg" class="tlb-img" src="" alt="">' +
+          '<div class="tlb-controls">' +
+            '<button class="tlb-prev" aria-label="Previous">&#8592;</button>' +
+            '<div id="tlbCaption" class="tlb-caption"></div>' +
+            '<button class="tlb-next" aria-label="Next">&#8594;</button>' +
           '</div>' +
         '</div>' +
       '</div>'
@@ -496,40 +522,53 @@
       openLightbox($(this).data('person'), $(this).data('src'));
     });
 
-    $(document).on('click', '.lb-backdrop, .lb-close', closeLightbox);
+    $(document).on('click', '.tlb-backdrop, .tlb-close', closeLightbox);
 
-    $(document).on('click', '.lb-prev', function () {
+    $(document).on('click', '.tlb-prev', function () {
       if (lbIndex > 0) { lbIndex--; showLightboxPhoto(); }
     });
 
-    $(document).on('click', '.lb-next', function () {
+    $(document).on('click', '.tlb-next', function () {
       if (lbIndex < lbPhotos.length - 1) { lbIndex++; showLightboxPhoto(); }
     });
 
     $(document).on('keydown', function (e) {
-      if (!$('#photoLightbox').is(':visible')) return;
+      if (!$('#turkeyLightbox').is(':visible')) return;
       if (e.key === 'ArrowLeft'  && lbIndex > 0)                      { lbIndex--; showLightboxPhoto(); }
       if (e.key === 'ArrowRight' && lbIndex < lbPhotos.length - 1)   { lbIndex++; showLightboxPhoto(); }
       if (e.key === 'Escape') closeLightbox();
     });
   }
 
-  // ---- Filter clicks --------------------------------
-  function initFilters() {
-    $(document).on('click', '.person-filter', function () {
-      var $btn   = $(this);
-      var person = $btn.data('person');
+  // ---- Person filter -- driven by the page-level filter ----------------
+  // Turkey has no filter UI of its own; hunting/js/app.js's single
+  // #huntingPersonFilter (Anyone/Josh/Sam/Tilly) governs the whole page and
+  // broadcasts a 'hunting:personchange' event on document, which this
+  // section (and hunting/js/deer.js) listen for. 'anyone' maps to Turkey's
+  // internal 'family' id -- everything else lowercases straight through.
+  function toTurkeyId(pageValue) {
+    return pageValue === 'anyone' ? 'family' : pageValue.toLowerCase();
+  }
 
-      $('#harvestsFilters .person-filter').removeClass('active');
-      $btn.addClass('active');
+  function applyPersonFilter(pageValue) {
+    var person = toTurkeyId(pageValue);
 
-      $('#harvests .map-view').removeClass('active');
-      $('#harvests .map-view[data-view="' + person + '"]').addClass('active');
+    $('#harvestsMapCard .map-view').removeClass('active');
+    $('#harvestsMapCard .map-view[data-view="' + person + '"]').addClass('active');
 
-      $('#photos .gallery-view').removeClass('active');
-      $('#photos .gallery-view[data-view="' + person + '"]').addClass('active');
+    $('#photosGallery .gallery-view').removeClass('active');
+    $('#photosGallery .gallery-view[data-view="' + person + '"]').addClass('active');
 
-      setTimeout(function () { initMap(person); }, 0);
+    initMap(person);
+    buildSlamsSection(person);
+
+    var countEl = document.getElementById('turkeyCategoryCount');
+    if (countEl) { countEl.textContent = getCount(person) + ' states harvested'; }
+  }
+
+  function initPersonFilterSync() {
+    document.addEventListener('hunting:personchange', function (e) {
+      applyPersonFilter(e.detail.person);
     });
   }
 
@@ -557,22 +596,15 @@
   // ---- Boot -----------------------------------------
   $(document).ready(function () {
     computeFamilyData();
-    buildFilterRow();
     buildMapCard();
-
-    initMap('family');
-
-    buildSlamsSection();
-
     buildGallery();
     initLightbox();
 
-    initFilters();
+    initPersonFilterSync();
     initListToggles();
     initResize();
 
-    var yearEl = document.getElementById('currentYear');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
+    applyPersonFilter('anyone');
   });
 
 }(jQuery));

@@ -1,8 +1,12 @@
 /* ===================================================
    TheCuzzorts — Hunting app.js
-   Species checklist: Josh & Sam only, no dates. Turkey and trapped
-   Furbearer species are auto-derived from /turkey-hunting and
-   /trapping respectively -- see deriveTurkeyRecords()/
+   Renders the six plain species-checklist categories (Big Game, Upland
+   Bird, Waterfowl, Small Game, Furbearer, Reptile/Amphibian) plus the
+   page-level Anyone/Josh/Sam/Tilly person filter. Turkey and Whitetail
+   Deer are NOT handled here -- they're prominent, self-contained
+   sections rendered by hunting/js/turkey.js and hunting/js/deer.js
+   respectively, with their own independent filter/state. Trapped
+   Furbearer species are still auto-derived from /trapping here -- see
    deriveFurbearerRecords() below. Never hand-add those to hunts.js.
    =================================================== */
 (function () {
@@ -30,18 +34,20 @@
 
   var CATEGORY_ORDER = ['Big Game', 'Upland Bird', 'Waterfowl', 'Small Game', 'Furbearer', 'Reptile/Amphibian'];
 
-  // Generic placeholder shown when a species has no photo yet — keeps
-  // every card's media slot filled instead of leaving it blank, same
-  // role as fishing's FISH_ICON.
-  var HUNT_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" ' +
-    'stroke-linecap="round" stroke-linejoin="round">' +
-    '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/>' +
-    '<line x1="12" y1="1" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="23"/>' +
-    '<line x1="1" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="23" y2="12"/>' +
-    '</svg>';
+  // Anchor ids for the "On This Page" shortcut cards in hunting/index.html
+  // to jump to -- these sections are JS-rendered, so nothing to link to
+  // existed before those cards needed it.
+  var CATEGORY_IDS = {
+    'Big Game': 'big-game',
+    'Upland Bird': 'upland-bird',
+    'Waterfowl': 'waterfowl',
+    'Small Game': 'small-game',
+    'Furbearer': 'furbearer',
+    'Reptile/Amphibian': 'reptile-amphibian'
+  };
 
-  // Same person colors used site-wide (travels/national-parks/disney/
-  // turkey-hunting) -- Ellie/Poppy omitted, this page is Josh & Sam only.
+  // Same person colors used site-wide (travels/national-parks/disney) --
+  // Ellie/Poppy omitted, the plain categories below are Josh/Sam/Tilly.
   var PERSON_COLORS = { Josh: '#00AC4B', Sam: '#662684', Tilly: '#0898ff' };
 
   function locationName(loc) { return loc ? (STATE_NAMES[loc] || loc) : ''; }
@@ -57,40 +63,6 @@
     if (!hunters || !hunters.length) { return ''; }
     if (hunters.length === 1) { return hunters[0]; }
     return hunters.slice(0, -1).join(', ') + ' &amp; ' + hunters[hunters.length - 1];
-  }
-
-  // ---- Turkey auto-derivation (from /turkey-hunting) ----------------
-  // Reduces the three hunters' raw harvest/hunted-only arrays into
-  // hunts.js-shaped records. Not a reuse of turkey-derive.js's
-  // deriveTurkeyStateMap, which produces a different 0/0.001/1 map
-  // shape for the turkey page's own map visualization -- this needs
-  // per-state hunter attribution instead.
-  // Only harvested states are derived -- hunted-only states are NOT
-  // folded into the Upland Bird watch list. Turkey already has its own
-  // dedicated hunted-only display on /turkey-hunting; repeating it here
-  // as a watch-list chip was redundant.
-  function deriveTurkeyRecords() {
-    var HUNTERS = [
-      { name: 'Josh', harvests: typeof turkeyHarvestsJosh !== 'undefined' ? turkeyHarvestsJosh : [] },
-      { name: 'Sam',  harvests: typeof turkeyHarvestsSam  !== 'undefined' ? turkeyHarvestsSam  : [] },
-      { name: 'Tilly', harvests: typeof turkeyHarvestsTilly !== 'undefined' ? turkeyHarvestsTilly : [] }
-    ];
-
-    var harvestedByState = {};
-
-    HUNTERS.forEach(function (h) {
-      h.harvests.forEach(function (rec) {
-        if (rec.country !== 'USA' || !rec.state) { return; }
-        if (!harvestedByState[rec.state]) { harvestedByState[rec.state] = []; }
-        if (harvestedByState[rec.state].indexOf(h.name) === -1) { harvestedByState[rec.state].push(h.name); }
-      });
-    });
-
-    var harvested = Object.keys(harvestedByState).map(function (state) {
-      return { species: 'Turkey', hunters: harvestedByState[state], location: state, category: 'Upland Bird' };
-    });
-
-    return { harvested: harvested };
   }
 
   // ---- Furbearer auto-derivation (from /trapping) --------------------
@@ -116,10 +88,9 @@
   }
 
   // ---- Combine all sources once at load ------------------------------
-  var turkeyDerived = deriveTurkeyRecords();
   var furbearerDerived = deriveFurbearerRecords();
 
-  var allLogged = huntsLogged.concat(turkeyDerived.harvested, furbearerDerived.harvested);
+  var allLogged = huntsLogged.concat(furbearerDerived.harvested);
 
   function speciesNamesIn(records) {
     var seen = {};
@@ -149,6 +120,10 @@
   var allWatch = huntsWatchList.concat(furbearerWatch, buildWaterfowlReferenceWatch());
 
   // ---- Grouping + chip/card builders ---------------------------------
+  // Species with a photo sort before those without (alphabetical within
+  // each group) -- matches photosForSpecies()'s own per-person filtering,
+  // so this reflects whichever photo (if any) the card is about to show
+  // for the current filter, not just whether the species has one at all.
   function groupBySpecies(records) {
     var order = [];
     var bySpeciesName = {};
@@ -156,7 +131,12 @@
       if (!bySpeciesName[r.species]) { bySpeciesName[r.species] = []; order.push(r.species); }
       bySpeciesName[r.species].push(r);
     });
-    order.sort(function (a, b) { return a.localeCompare(b); });
+    order.sort(function (a, b) {
+      var aHasPhoto = photosForSpecies(a).length > 0;
+      var bHasPhoto = photosForSpecies(b).length > 0;
+      if (aHasPhoto !== bHasPhoto) { return aHasPhoto ? -1 : 1; }
+      return a.localeCompare(b);
+    });
     return order.map(function (species) { return { species: species, records: bySpeciesName[species] }; });
   }
 
@@ -177,20 +157,23 @@
   // no photo for that species, rather than showing someone else's photo.
   function photosForSpecies(species) {
     var photos = (typeof huntPhotos !== 'undefined' && huntPhotos[species]) || [];
-    if (currentPerson === 'all') { return photos; }
+    if (currentPerson === 'anyone') { return photos; }
     var needle = currentPerson.toLowerCase();
     return photos.filter(function (src) { return src.toLowerCase().indexOf(needle) !== -1; });
   }
 
+  // No-photo species render as a compact text-only card (no media box at
+  // all) rather than a full-size placeholder-icon box -- with most
+  // species now photographed, a big empty square next to real photos
+  // reads as a broken/missing image, not a deliberate design choice.
   function buildSpeciesCardHTML(group) {
-    var photos = photosForSpecies(group.species);
-    var photo = photos[0];
+    var photo = photosForSpecies(group.species)[0];
     var media = photo
-      ? '<img class="species-photo" src="' + photo + '" alt="' + group.species + '" loading="lazy">'
-      : '<div class="species-placeholder">' + HUNT_ICON + '</div>';
+      ? '<div class="species-media"><img class="species-photo" src="' + photo + '" alt="' + group.species + '" loading="lazy"></div>'
+      : '';
     var chips = group.records.map(buildLocationChipHTML).join('');
 
-    return '<div class="species-card"><div class="species-media">' + media + '</div>' +
+    return '<div class="species-card' + (photo ? '' : ' species-card--no-photo') + '">' + media +
       '<div class="species-body">' +
       '<div class="species-name">' + group.species + '</div>' +
       '<div class="chip-row">' + chips + '</div>' +
@@ -207,8 +190,23 @@
     return '<div class="watchlist-row"><span class="watchlist-label">Watch List</span>' + chips + '</div>';
   }
 
+  // Keeps the <section id="..."> present even when there's nothing to
+  // show for the current person filter (just hidden), rather than
+  // omitting it -- so the "On This Page" shortcut card's #big-game-style
+  // anchor always has something to jump to, same approach deer.js uses
+  // for its own section when a filtered person has zero bucks.
   function buildCategoryHTML(category, loggedRecords, watchRecords) {
-    if (!loggedRecords.length && !watchRecords.length) { return ''; }
+    // watchRecords is family-wide (huntsWatchList/furbearerWatch/Waterfowl's
+    // reference list are never filtered by person -- see filteredLogged()),
+    // so it can't keep a section visible once a specific person is
+    // selected: a watch-list species nobody in particular is pursuing
+    // shouldn't make e.g. "Big Game" show up under Tilly's filter when she
+    // has zero actual harvests there. The "anyone" view keeps the original
+    // either-or check, since there the watch list legitimately is that
+    // view's own content.
+    var isEmpty = currentPerson === 'anyone'
+      ? (!loggedRecords.length && !watchRecords.length)
+      : !loggedRecords.length;
     var groups = groupBySpecies(loggedRecords);
     var watchGroups = groupBySpecies(watchRecords);
     var cards = groups.map(buildSpeciesCardHTML).join('');
@@ -216,7 +214,7 @@
     var countText = groups.length + ' species' +
       (watchGroups.length ? ' &middot; ' + watchGroups.length + ' on the list' : '');
 
-    return '<section class="category">' +
+    return '<section class="category" id="' + CATEGORY_IDS[category] + '"' + (isEmpty ? ' style="display:none"' : '') + '>' +
       '<div class="category-head"><h2>' + category + '</h2><span class="category-count">' + countText + '</span></div>' +
       cardGrid +
       buildWatchListHTML(watchRecords) +
@@ -224,11 +222,41 @@
   }
 
   // ---- Person filter --------------------------------------------------
-  var currentPerson = 'all';
+  var currentPerson = 'anyone';
 
   function filteredLogged() {
-    if (currentPerson === 'all') { return allLogged; }
+    if (currentPerson === 'anyone') { return allLogged; }
     return allLogged.filter(function (r) { return r.hunters.indexOf(currentPerson) !== -1; });
+  }
+
+  // One filter for the whole page: this fires 'hunting:personchange' on
+  // every change (plus once at boot, see bottom) so hunting/js/turkey.js
+  // and hunting/js/deer.js -- which have no filter UI of their own --
+  // can stay in sync without any direct coupling between the 3 modules.
+  function broadcastPersonChange() {
+    document.dispatchEvent(new CustomEvent('hunting:personchange', { detail: { person: currentPerson } }));
+  }
+
+  // Keeps the "On This Page" shortcut cards AND the sticky header's own
+  // [role="navigation"] links in sync with whichever sections the current
+  // person filter actually shows -- no point linking to e.g. #big-game
+  // (from either spot) if that section just hid itself because the
+  // filtered person has zero harvests there. [role="navigation"] scopes
+  // to just this page's own <nav> -- js/site-nav.js's cross-site
+  // .global-nav-strip/.global-nav-select are separate elements it
+  // inserts as header's first child, siblings of this div, not inside
+  // it. Reads each link's own href rather than a separate id list, so
+  // this stays correct if a section is ever added/removed. Safe to call
+  // right after broadcastPersonChange(): dispatchEvent is synchronous,
+  // so turkey.js's/deer.js's own 'hunting:personchange' listeners (which
+  // hide/show #turkey/#deer) have already run by the time it returns.
+  function syncSectionLinks() {
+    var links = document.querySelectorAll('.shortcut-card, [role="navigation"] nav a');
+    links.forEach(function (link) {
+      var target = document.getElementById(link.getAttribute('href').slice(1));
+      var hidden = target && getComputedStyle(target).display === 'none';
+      link.style.display = hidden ? 'none' : '';
+    });
   }
 
   function initPersonFilter() {
@@ -241,21 +269,73 @@
       btn.classList.add('active');
       currentPerson = btn.dataset.person;
       renderForFilter();
+      broadcastPersonChange();
+      syncSectionLinks();
     });
   }
 
   // ---- Stats ------------------------------------------------------------
-  function distinctCount(records, key) {
-    var seen = {};
-    records.forEach(function (r) { if (r[key]) { seen[r[key]] = true; } });
-    return Object.keys(seen).length;
+  // Turkey and Whitetail Deer are intentionally excluded from hunts.js
+  // (each is its own section -- see that file's header), so `logged`
+  // alone under-counts the page-level totals. Reading their raw data
+  // globals directly here (turkeysHarvested[Name]/deerHarvests[Name],
+  // already loaded before this script -- see script order in
+  // hunting/index.html) keeps turkey.js/deer.js themselves untouched and
+  // still independent of app.js; this only reads their public data, the
+  // same way deer.js itself reads deerFirstHarvest.
+  var PEOPLE_NAMES = ['Josh', 'Sam', 'Tilly'];
+
+  // Only US states are tracked in turkeysHarvested[Name] (deriveTurkeyStateMap
+  // in turkey-derive.js only sets a state for country === 'USA' harvests),
+  // so an international harvest wouldn't be reflected here -- moot today
+  // since nobody has one yet, but worth knowing if that changes.
+  function turkeyLocationsFor(person) {
+    var names = person === 'anyone' ? PEOPLE_NAMES : [person];
+    var codes = {};
+    names.forEach(function (name) {
+      var data = window['turkeysHarvested' + name];
+      if (!data) { return; }
+      Object.keys(data).forEach(function (code) {
+        if (Math.round(Number(data[code])) >= 1) { codes[code] = true; }
+      });
+    });
+    return codes;
+  }
+
+  function deerLocationsFor(person) {
+    var names = person === 'anyone' ? PEOPLE_NAMES : [person];
+    var codes = {};
+    names.forEach(function (name) {
+      var harvests = window['deerHarvests' + name];
+      if (!harvests) { return; }
+      harvests.forEach(function (rec) { if (rec.gender === 'Buck') { codes[rec.state] = true; } });
+    });
+    return codes;
   }
 
   function renderStats(logged) {
     var speciesEl = document.getElementById('huntingSpeciesTotal');
     var locationsEl = document.getElementById('huntingLocationsTotal');
-    if (speciesEl) { speciesEl.textContent = distinctCount(logged, 'species'); }
-    if (locationsEl) { locationsEl.textContent = distinctCount(logged, 'location'); }
+
+    var speciesSeen = {};
+    var locationSeen = {};
+    logged.forEach(function (r) {
+      if (r.species) { speciesSeen[r.species] = true; }
+      if (r.location) { locationSeen[r.location] = true; }
+    });
+
+    var turkeyLocs = turkeyLocationsFor(currentPerson);
+    var deerLocs = deerLocationsFor(currentPerson);
+    if (Object.keys(turkeyLocs).length) { speciesSeen['Turkey'] = true; }
+    if (Object.keys(deerLocs).length) { speciesSeen['Whitetail Deer'] = true; }
+    Object.keys(turkeyLocs).forEach(function (code) { locationSeen[code] = true; });
+    Object.keys(deerLocs).forEach(function (code) { locationSeen[code] = true; });
+
+    var locationCount = Object.keys(locationSeen).length;
+    if (speciesEl) { speciesEl.textContent = Object.keys(speciesSeen).length; }
+    if (locationsEl) { locationsEl.textContent = locationCount; }
+    var locationsLabelEl = document.getElementById('huntingLocationsLabel');
+    if (locationsLabelEl) { locationsLabelEl.textContent = locationCount === 1 ? 'Location' : 'Locations'; }
   }
 
   // ---- Main render ------------------------------------------------------
@@ -363,6 +443,7 @@
 
   initPersonFilter();
   renderForFilter();
+  syncSectionLinks();
   initLightbox();
 
 }());

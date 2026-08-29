@@ -1,12 +1,12 @@
 /* ===================================================
    TheCuzzorts — Turkey Hunting: derived-state-map helper
-   Loaded by turkey-hunting/index.html, stats/index.html, and the
-   homepage index.html — all three read the turkeysHarvested[Name]
-   global directly. Plain vanilla JS: the homepage never loads
-   jQuery, so this can't depend on it.
+   Loaded by hunting/index.html (its Turkey section, hunting/js/turkey.js),
+   stats/index.html, and the homepage index.html — all three read the
+   turkeysHarvested[Name] global directly. Plain vanilla JS: the
+   homepage never loads jQuery, so this can't depend on it.
    =================================================== */
 
-// Matches STATE_NAMES keys in turkey-hunting/js/app.js exactly
+// Matches STATE_NAMES keys in hunting/js/turkey.js exactly
 // (50 states + DC = 51 keys; the "/49" denominator used elsewhere
 // is a display convention — Alaska and DC aren't turkey states —
 // not a filter on this list).

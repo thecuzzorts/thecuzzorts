@@ -22,14 +22,13 @@
     { key: 'baseball',      label: 'Baseball',      path: 'baseball/index.html',     color: '#F07070' },
     { key: 'travels',       label: 'Travels',       path: 'travels/index.html',      color: '#FF8200' },
     { key: 'national-parks', label: 'National Parks', path: 'national-parks/index.html', color: '#F5C518' },
-    { key: 'turkey-hunting', label: 'Turkey Hunting', path: 'turkey-hunting/index.html', color: '#57BD83' },
+    { key: 'hunting',       label: 'Hunting',        path: 'hunting/index.html',      color: '#57BD83' },
     { key: 'fishing',       label: 'Fishing',        path: 'fishing/index.html',      color: '#1C7C9C' },
     { key: 'disney',        label: 'Disney',        path: 'disney/index.html',       color: '#E060C6' },
     { key: 'stats',         label: 'By the Numbers', path: 'stats/index.html',        color: '#8B7EC8', hidden: true },
     { key: 'run',           label: 'Running',        path: 'run/index.html',          color: '#00AC4B', hidden: true },
     { key: 'trapping',      label: 'Trapping',       path: 'trapping/index.html',     color: '#8C5A3B', hidden: true },
-    { key: 'mlb-games',     label: 'MLB Games',      path: 'baseball/mlb-games/index.html', color: '#F07070', hidden: true },
-    { key: 'hunting',       label: 'Hunting',        path: 'hunting/index.html',      color: '#C9A66B', hidden: true }
+    { key: 'mlb-games',     label: 'MLB Games',      path: 'baseball/mlb-games/index.html', color: '#F07070', hidden: true }
   ];
 
   // Current section = the folder name in the path (e.g. "disney").

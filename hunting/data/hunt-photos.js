@@ -1,44 +1,23 @@
 /* Optional photos per species, keyed by exact species name as used in
-   hunts.js (or the auto-derived Turkey/Furbearer species names). Sparse
-   by design -- only species with real photos appear here; species
-   without an entry render as a plain placeholder-icon card. Unlike
+   hunts.js (or the auto-derived Furbearer species names). Sparse by
+   design -- only species with real photos appear here; species without
+   an entry render as a plain placeholder-icon card. Unlike
    fishing/data/fish-photos.js (one photo per species), each species here
    maps to an ARRAY of photo paths, so a species can carry multiple
    photos -- the card thumbnail uses the first, and the lightbox pages
    through all of them. Images live in
    images/hunting/species/[slug]-N.jpg (slug = species name, lowercased,
    spaces -> hyphens, punctuation stripped), matching the /fishing and
-   /trapping species-photo convention. */
+   /trapping species-photo convention.
+
+   Turkey has its own full photo gallery (hunting/js/turkey.js, sourced
+   directly from turkey-photos-{josh,sam,tilly}.js) and Whitetail Deer
+   has no photos in its public bucks catalog -- neither goes through
+   this map or the plain-category card renderer, so neither belongs
+   here. */
 
 var huntPhotos = {
-  // Reused directly from /turkey-hunting's existing per-state photos
-  // (turkey-photos-{josh,sam,tilly}.js) rather than duplicating image
-  // files here -- paths are relative to hunting/index.html (the page
-  // that actually sets <img src>, not this data file), same convention
-  // fish-photos.js's own paths already use. If a new turkey photo is
-  // added over there, add its path here too -- this isn't auto-derived
-  // like the harvest data itself, since photos are a manual step
-  // everywhere else on this page too; Turkey stays consistent with that.
-  Turkey: [
-    '../turkey-hunting/img/josh/florida.jpg',
-    '../turkey-hunting/img/josh/illinois.jpg',
-    '../turkey-hunting/img/sam/illinois.jpg',
-    '../turkey-hunting/img/tilly/illinois.jpg',
-    '../turkey-hunting/img/josh/kansas.jpg',
-    '../turkey-hunting/img/josh/michigan.jpg',
-    '../turkey-hunting/img/josh/missouri.jpg',
-    '../turkey-hunting/img/josh/nebraska.jpg',
-    '../turkey-hunting/img/josh/south-dakota.jpg',
-    '../turkey-hunting/img/sam/texas.jpg'
-  ],
-
   // Big Game
-  'Whitetail Deer': [
-    '../images/hunting/species/whitetail-deer-illinois-josh-1.jpg',
-    '../images/hunting/species/whitetail-deer-illinois-josh-2.jpg',
-    '../images/hunting/species/whitetail-deer-illinois-josh-3.jpg',
-    '../images/hunting/species/whitetail-deer-kentucky-josh.jpg'
-  ],
   'Fallow Deer': [
     '../images/hunting/species/fallow-deer-ireland-sam-1.jpg',
     '../images/hunting/species/fallow-deer-ireland-sam-2.jpg'
@@ -85,6 +64,8 @@ var huntPhotos = {
   'Bobcat': ['../images/hunting/species/bobcat-florida-hunt-josh.jpg'],
   'Red Fox': ['../images/hunting/species/red-fox-illinois-trap-josh.jpg'],
   'Beaver': ['../images/hunting/species/beaver-illinois-josh.jpg'],
+  'Groundhog': ['../images/hunting/species/groundhog-illinois-trap-josh.jpg'],
+  'Raccoon': ['../images/hunting/species/raccoon-illinois-trap-josh.jpg'],
   'River Otter': ['../images/hunting/species/river-otter-illinois-trap-josh.jpg'],
   'Striped Skunk': ['../images/hunting/species/striped-skunk-illinois-trap-josh.jpg'],
 

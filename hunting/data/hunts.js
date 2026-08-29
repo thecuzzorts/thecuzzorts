@@ -12,18 +12,18 @@
    records derived from /trapping's data (see js/app.js), never hand-set
    here.
 
-   Turkey is intentionally NOT listed here -- it's auto-derived from
-   /turkey-hunting's existing harvest data (see js/app.js) so the two
-   can never drift. Do not add a manual Turkey entry to this file.
+   Turkey and Whitetail Deer are intentionally NOT listed here -- Turkey
+   is a fully self-contained section (hunting/js/turkey.js, ported from
+   the retired /turkey-hunting) and Whitetail Deer is its own bucks
+   catalog (hunting/js/deer.js, backed by hunting/data/deer-harvests-
+   josh.js). Do not add manual entries for either species to this file.
 
    Trapped furbearers are intentionally NOT listed here either -- they're
    auto-derived from /trapping/data/furbearers-trapped-josh.js (see
    js/app.js). Only add a Furbearer entry here for something taken by
    hunting (gun/bow), not trapping. */
 var huntsLogged = [
-  // Big Game
-  { species: 'Whitetail Deer',            hunters: ['Josh', 'Sam'], location: 'US-IL',  category: 'Big Game' },
-  { species: 'Whitetail Deer',            hunters: ['Josh'],        location: 'US-KY',  category: 'Big Game' },
+  // Big Game (Whitetail Deer excluded -- its own dedicated section, see app.js)
   { species: 'Fallow Deer',               hunters: ['Sam'],         location: 'Ireland', category: 'Big Game' },
   { species: 'Wild Hog',                  hunters: ['Sam'],         location: 'US-FL',  category: 'Big Game' },
 
