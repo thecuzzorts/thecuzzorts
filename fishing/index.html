@@ -33,7 +33,6 @@
     <div role="navigation">
       <nav>
         <ul>
-          <li><a href="#overview">Overview</a></li>
           <li><a href="#saltwater">Saltwater</a></li>
           <li><a href="#freshwater">Freshwater</a></li>
         </ul>
@@ -48,25 +47,13 @@
       <p>Every species caught, freshwater and saltwater alike</p>
     </div>
 
-    <!-- Overview -->
-    <div class="section-panel" id="overview">
-      <h3 class="section-heading">Overview</h3>
-      <div class="fishing-overview-card">
-        <div class="fishing-stats">
-          <div class="fishing-stat">
-            <span class="fishing-stat-num" id="catchTotal">0</span>
-            <span class="fishing-stat-label">Catches</span>
-          </div>
-          <div class="fishing-stat">
-            <span class="fishing-stat-num" id="speciesTotal">0</span>
-            <span class="fishing-stat-label">Species</span>
-          </div>
-          <div class="fishing-stat">
-            <span class="fishing-stat-num" id="stateTotal">0</span>
-            <span class="fishing-stat-label">States</span>
-          </div>
-        </div>
-      </div>
+    <!-- Quick-glance totals -- same treatment as /hunting's stats-strip,
+         placed right after the intro rather than in its own nav-linked
+         section. -->
+    <div class="stats-strip">
+      <div class="stat"><span class="stat-num" id="catchTotal">0</span><span class="stat-label">Catches</span></div>
+      <div class="stat"><span class="stat-num" id="speciesTotal">0</span><span class="stat-label">Species</span></div>
+      <div class="stat"><span class="stat-num" id="stateTotal">0</span><span class="stat-label">States</span></div>
     </div>
 
     <!-- Saltwater -->

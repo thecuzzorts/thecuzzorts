@@ -1,10 +1,10 @@
 (function () {
   'use strict';
 
-  // ---- Dark-mode-aware map tiles -------------------------
-  // Leaflet paints tiles at init time, so it can't react to a CSS media
-  // query — read the effective theme once here instead (an explicit
-  // toggle override in localStorage wins over the OS setting).
+  // ---- Dark-mode-aware map style ---------------------------
+  // MapLibre picks its CARTO vector style at init time, so it can't react
+  // to a CSS media query — read the effective theme once here instead
+  // (an explicit toggle override in localStorage wins over the OS setting).
   var storedTheme = null;
   try { storedTheme = window.localStorage.getItem('theme'); } catch (e) {}
   var IS_DARK = storedTheme === 'dark' ||
@@ -693,19 +693,50 @@
 
     // `stops` is reassignable (not a frozen parameter) so the person
     // filter can swap in a new game subset via setStops() below without
-    // recreating the Leaflet map/tile layer/event listeners -- everything
-    // that depends on `stops` just closes over this var and re-derives
-    // itself on demand.
+    // recreating the map/style/event listeners -- everything that depends
+    // on `stops` just closes over this var and re-derives itself on demand.
     var stops = initialStops;
 
     // Start zoomed out to the whole continental US (same center/zoom baseball's
     // own ballparksMap uses) rather than snapping straight into the first
     // stop's city -- much less jarring on first paint.
-    var map = L.map('mlbgJourneyMap', { scrollWheelZoom: false }).setView([38.5, -97], 4);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/' + (IS_DARK ? 'dark_all' : 'light_all') + '/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
-      maxZoom: 12
-    }).addTo(map);
+    // MapLibre GL JS + CARTO vector basemap -- ported from Leaflet since
+    // CARTO now watermarks unauthenticated *raster* tile requests and
+    // recommends vector instead (https://docs.carto.com/faqs/carto-basemaps).
+    // MapLibre takes [lng, lat] -- the opposite order from Leaflet's [lat, lng].
+    var map = new maplibregl.Map({
+      container: 'mlbgJourneyMap',
+      style: 'https://basemaps.cartocdn.com/gl/' + (IS_DARK ? 'dark-matter' : 'positron') + '-gl-style/style.json?key=cb1_2jdq_1_6d79969636549968efce8740',
+      center: [-97, 38.5],
+      zoom: 3,
+      scrollZoom: false
+    });
+    map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left');
+    // The trail is a GeoJSON source + line layer (not a Leaflet-style
+    // vector overlay object), so it can't exist until the style finishes
+    // loading -- setTrailCoords() below no-ops safely if called first.
+    var trailReady = false;
+    map.on('load', function () {
+      map.addSource('mlbg-journey-trail', {
+        type: 'geojson',
+        data: { type: 'Feature', geometry: { type: 'LineString', coordinates: [] } }
+      });
+      map.addLayer({
+        id: 'mlbg-journey-trail',
+        type: 'line',
+        source: 'mlbg-journey-trail',
+        paint: { 'line-color': '#C8102E', 'line-width': 2, 'line-opacity': 0.55 }
+      });
+      trailReady = true;
+    });
+    // commit() always resends the *entire* trail-so-far (not incrementally),
+    // so if this fires before trailReady, the very next commit() call
+    // (the next step) naturally catches the line up -- no separate
+    // "replay on load" logic needed.
+    function setTrailCoords(lngLats) {
+      if (!trailReady) { return; }
+      map.getSource('mlbg-journey-trail').setData({ type: 'Feature', geometry: { type: 'LineString', coordinates: lngLats } });
+    }
 
     // Static team markers, one per distinct ballpark, plotted for context
     // alongside the animated ball -- same team-logo sprite baseball's own
@@ -748,14 +779,13 @@
           '<em style="color:#888">' + v.venue + '</em><br>' +
           '<span style="font-size:0.82em;color:#555">' + v.count + (v.count === 1 ? ' game' : ' games') + ' attended</span>';
 
-        var dotIcon = L.divIcon({
-          className: 'mlbg-team-marker-icon',
-          html: '<div class="mlbg-team-dot"></div>',
-          iconSize: [10, 10],
-          iconAnchor: [5, 5],
-          popupAnchor: [0, -6]
-        });
-        markersByKey[key] = L.marker([v.lat, v.lng], { icon: dotIcon }).addTo(map).bindPopup(popupHTML);
+        var dotEl = document.createElement('div');
+        dotEl.className = 'mlbg-team-marker-icon';
+        var dot = document.createElement('div');
+        dot.className = 'mlbg-team-dot';
+        dotEl.appendChild(dot);
+        var popup = new maplibregl.Popup({ offset: 6 }).setHTML(popupHTML);
+        markersByKey[key] = new maplibregl.Marker({ element: dotEl }).setLngLat([v.lng, v.lat]).setPopup(popup).addTo(map);
 
         var chip = document.createElement('div');
         chip.className = 'mlbg-team-chip';
@@ -772,7 +802,7 @@
     var teamViews = null;
     function clearTeamViews() {
       if (teamViews) {
-        Object.keys(teamViews.markers).forEach(function (key) { map.removeLayer(teamViews.markers[key]); });
+        Object.keys(teamViews.markers).forEach(function (key) { teamViews.markers[key].remove(); });
       }
       document.getElementById('mlbgTeamGrid').innerHTML = '';
     }
@@ -805,29 +835,25 @@
       });
     }
 
-    var trail = L.polyline([], { color: '#C8102E', weight: 2, opacity: 0.55 }).addTo(map);
-
     // The ball is a plain DOM element positioned in pixel space (via
-    // map.latLngToContainerPoint), not a Leaflet marker -- since the camera
-    // never pans or zooms after init, pixel coordinates for a given stop
+    // map.project()), not a maplibregl.Marker -- since the camera never
+    // pans or zooms after init, pixel coordinates for a given stop
     // are stable, which lets us animate a simple parabolic "hop" arc
-    // between two pixel points with plain JS instead of fighting Leaflet's
-    // own lat/lng-based marker positioning. The arc's vertical bounce is
-    // visible even when the start and end point are identical (repeat
-    // visits to the same ballpark), so every stop gets a clear "another
-    // game happened here" beat instead of the marker looking frozen
-    // through a long run of, say, Busch Stadium games.
-    // Appended directly to the map container (not a Leaflet pane) --
-    // latLngToContainerPoint is relative to the container's top-left
-    // corner, while Leaflet's internal panes carry their own transform
-    // offset that would double-apply if we anchored there instead.
+    // between two pixel points with plain JS instead of fighting
+    // MapLibre's own lng/lat-based marker positioning. The arc's vertical
+    // bounce is visible even when the start and end point are identical
+    // (repeat visits to the same ballpark), so every stop gets a clear
+    // "another game happened here" beat instead of the marker looking
+    // frozen through a long run of, say, Busch Stadium games.
+    // Appended directly to the map container -- map.project() returns
+    // coordinates relative to that same container's top-left corner.
     var ballEl = document.createElement('div');
     ballEl.className = 'mlbg-journey-ball';
     ballEl.innerHTML = '&#9918;';
     mapEl.style.position = 'relative';
     mapEl.appendChild(ballEl);
 
-    function pixelFor(stop) { return map.latLngToContainerPoint([stop.lat, stop.lng]); }
+    function pixelFor(stop) { return map.project([stop.lng, stop.lat]); }
     function placeBallAtPixel(p) { ballEl.style.transform = 'translate(' + p.x + 'px,' + p.y + 'px)'; }
     function placeBallAt(stopIdx) { placeBallAtPixel(pixelFor(posFor(stopIdx))); }
 
@@ -840,9 +866,9 @@
     var idx = -1, playing = false, timer = null;
 
     if (window.ResizeObserver) {
-      new ResizeObserver(function () { map.invalidateSize(); placeBallAt(idx); }).observe(mapEl);
+      new ResizeObserver(function () { map.resize(); placeBallAt(idx); }).observe(mapEl);
     } else {
-      window.addEventListener('load', function () { map.invalidateSize(); placeBallAt(idx); });
+      window.addEventListener('load', function () { map.resize(); placeBallAt(idx); });
     }
     var speedSelect = document.getElementById('mlbgSpeedSelect');
     var playBtn = document.getElementById('mlbgPlayBtn');
@@ -898,7 +924,7 @@
     // dropping a stop from the trail and making the line jump/disappear.
     function commit(i) {
       idx = Math.max(0, Math.min(stops.length - 1, i));
-      trail.setLatLngs(stops.slice(0, idx + 1).map(function (s) { return [s.lat, s.lng]; }));
+      setTrailCoords(stops.slice(0, idx + 1).map(function (s) { return [s.lng, s.lat]; }));
       caption(stops[idx], idx);
       updateYearBadge(stops[idx]);
       updateVisitedMarkers();
@@ -963,7 +989,7 @@
     function resetToHome() {
       if (animFrame) { cancelAnimationFrame(animFrame); animFrame = null; }
       idx = -1;
-      trail.setLatLngs([]);
+      setTrailCoords([]);
       placeBallAtPixel(pixelFor(HOME));
       progressEl.innerHTML = 'Press Play to start the journey from Springfield, IL';
       lastYear = null;

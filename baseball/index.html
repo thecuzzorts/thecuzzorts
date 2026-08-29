@@ -33,7 +33,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Kreon:wght@400;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../css/main.min.css?v=2">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.8.0/dist/maplibre-gl.css">
   <link rel="stylesheet" href="../css/site-chrome.css">
   <link rel="stylesheet" href="../css/section-labels.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -739,7 +739,7 @@
     <p><script>document.write(new Date().getFullYear())</script> &copy; The Cuzzorts &mdash; <a href="../index.html">Home</a></p>
   </footer>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/maplibre-gl@5.8.0/dist/maplibre-gl.js"></script>
   <script src="js/ballpark-journey.js"></script>
   <script>
     // Leaflet paints tiles at init time, so it can't react to a CSS media
@@ -796,31 +796,40 @@
         { status: 'future',  slug: 'royals',       name: 'Kansas City Royals',    stadium: 'New Downtown Ballpark (planned)', lat: 39.1004, lng:  -94.5785, note: 'Opening: ~2030' }
       ];
 
-      var map = L.map('ballparksMap', { scrollWheelZoom: false })
-        .setView([38.5, -97], 3);
+      // MapLibre GL JS + CARTO vector basemap -- ported from Leaflet since
+      // CARTO now watermarks unauthenticated *raster* tile requests and
+      // recommends vector instead (https://docs.carto.com/faqs/carto-basemaps).
+      // Vector tiles aren't gated behind the API key today. MapLibre takes
+      // [lng, lat] -- the opposite order from Leaflet's [lat, lng].
+      var CARTO_KEY = 'cb1_2jdq_1_6d79969636549968efce8740';
+      var cartoStyle = 'https://basemaps.cartocdn.com/gl/' + (window.CUZZ_IS_DARK ? 'dark-matter' : 'positron') + '-gl-style/style.json?key=' + CARTO_KEY;
 
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/' + (window.CUZZ_IS_DARK ? 'dark_all' : 'light_all') + '/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
-        maxZoom: 14
-      }).addTo(map);
+      var map = new maplibregl.Map({
+        container: 'ballparksMap',
+        style: cartoStyle,
+        center: [-97, 38.5],
+        zoom: 2,
+        scrollZoom: false
+      });
+      map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left');
 
       var markerEntries = [];
 
       BALLPARKS.forEach(function (bp) {
         var labelMap = { current: 'First visit', closed: 'Visited', future: 'Status' };
-        var icon = L.divIcon({
-          className: 'team-marker-icon status-' + bp.status,
-          html: '<div class="team-logo ' + bp.slug + '"></div>',
-          iconSize: [30, 24],
-          iconAnchor: [15, 12],
-          popupAnchor: [0, -14]
-        });
-        var marker = L.marker([bp.lat, bp.lng], { icon: icon })
-          .bindPopup(
-            '<strong>' + bp.name + '</strong><br>' +
-            '<em style="color:#888">' + bp.stadium + '</em><br>' +
-            '<span style="font-size:0.82em;color:#555">' + (labelMap[bp.status] || '') + ': ' + bp.note + '</span>'
-          )
+        var el = document.createElement('div');
+        el.className = 'team-marker-icon status-' + bp.status;
+        var logo = document.createElement('div');
+        logo.className = 'team-logo ' + bp.slug;
+        el.appendChild(logo);
+        var popup = new maplibregl.Popup({ offset: 14 }).setHTML(
+          '<strong>' + bp.name + '</strong><br>' +
+          '<em style="color:#888">' + bp.stadium + '</em><br>' +
+          '<span style="font-size:0.82em;color:#555">' + (labelMap[bp.status] || '') + ': ' + bp.note + '</span>'
+        );
+        var marker = new maplibregl.Marker({ element: el })
+          .setLngLat([bp.lng, bp.lat])
+          .setPopup(popup)
           .addTo(map);
         markerEntries.push({ marker: marker, status: bp.status });
       });
@@ -847,9 +856,9 @@
       // photo image loads — re-measure whenever the container size actually changes.
       var mapEl = document.getElementById('ballparksMap');
       if (window.ResizeObserver) {
-        new ResizeObserver(function () { map.invalidateSize(); }).observe(mapEl);
+        new ResizeObserver(function () { map.resize(); }).observe(mapEl);
       } else {
-        window.addEventListener('load', function () { map.invalidateSize(); });
+        window.addEventListener('load', function () { map.resize(); });
       }
 
       // --- Ballpark Journey animation (scoped to the 30 active parks) ---
@@ -1036,31 +1045,46 @@
         { team: 'Normal CornBelters',     league: 'prospect', note: 'Prospect League',                    park: 'The Corn Crib',         city: 'Normal, IL',       lat: 40.5640, lng: -88.9937, date: 'Jun 18, 2023',                color: '#2C8C3C' }
       ];
 
-      var tileOpts = {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
-        maxZoom: 14
-      };
-      var tileTheme = window.CUZZ_IS_DARK ? 'dark_all' : 'light_all';
+      // Same MapLibre/CARTO-vector setup as the MLB map above -- CARTO_KEY
+      // is already declared in that script block, but this is a separate
+      // top-level IIFE, so it needs its own copy.
+      var CARTO_KEY = 'cb1_2jdq_1_6d79969636549968efce8740';
+      var cartoStyle = 'https://basemaps.cartocdn.com/gl/' + (window.CUZZ_IS_DARK ? 'dark-matter' : 'positron') + '-gl-style/style.json?key=' + CARTO_KEY;
+
+      // Leaflet's fitBounds() accepts a plain array of [lat,lng] points and
+      // computes the envelope itself; MapLibre's wants an actual
+      // LngLatBounds (or [[west,south],[east,north]]) and takes a single
+      // numeric padding rather than Leaflet's [x,y] pair -- this wraps both
+      // differences so the call sites below read the same as before.
+      function fitToPoints(map, lngLatPoints, opts) {
+        if (!lngLatPoints.length) { return; }
+        var bounds = new maplibregl.LngLatBounds(lngLatPoints[0], lngLatPoints[0]);
+        lngLatPoints.forEach(function (p) { bounds.extend(p); });
+        map.fitBounds(bounds, opts);
+      }
 
       // ---- MiLB map ----
       (function () {
         var el = document.getElementById('milbMap');
         if (!el) return;
 
-        var map = L.map('milbMap', { scrollWheelZoom: false });
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/' + tileTheme + '/{z}/{x}/{y}{r}.png', tileOpts).addTo(map);
+        var map = new maplibregl.Map({ container: 'milbMap', style: cartoStyle, scrollZoom: false });
+        map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left');
 
         var milbMarkers = [];
 
         function addMilbMarker(isV, color, levels, lat, lng, popup) {
-          var icon = L.divIcon({
-            className: 'milb-marker-icon',
-            html: '<div class="' + (isV ? 'milb-dot' : 'milb-dot milb-dot--unvisited') + '"' + (isV ? ' style="background:' + color + '"' : '') + '></div>',
-            iconSize:   isV ? [14, 14] : [10, 10],
-            iconAnchor: isV ? [7,  7]  : [5,  5],
-            popupAnchor: [0, -8]
-          });
-          var marker = L.marker([lat, lng], { icon: icon }).bindPopup(popup);
+          var markerEl = document.createElement('div');
+          markerEl.className = 'milb-marker-icon';
+          var dot = document.createElement('div');
+          dot.className = isV ? 'milb-dot' : 'milb-dot milb-dot--unvisited';
+          if (isV) { dot.style.background = color; }
+          markerEl.appendChild(dot);
+          // Not added to the map here -- applyMilbFilter() below decides
+          // per-marker addTo()/remove(), same lazy pattern as the original.
+          var marker = new maplibregl.Marker({ element: markerEl })
+            .setLngLat([lng, lat])
+            .setPopup(new maplibregl.Popup({ offset: 8 }).setHTML(popup));
           milbMarkers.push({ marker: marker, visited: isV, levels: levels, lat: lat, lng: lng });
         }
 
@@ -1119,16 +1143,21 @@
               f === 'a'         ? m.levels.indexOf('A') !== -1 :
               f === 'fcl'       ? m.levels.indexOf('FCL') !== -1 :
               f === 'acl'       ? m.levels.indexOf('ACL') !== -1 : false;
-            if (show) { m.marker.addTo(map); latLngs.push([m.lat, m.lng]); }
-            else { map.removeLayer(m.marker); }
+            if (show) { m.marker.addTo(map); latLngs.push([m.lng, m.lat]); }
+            else { m.marker.remove(); }
           });
           if (latLngs.length) {
             var tight = (f === 'visited' || f === 'unvisited');
-            map.fitBounds(latLngs, { padding: tight ? [40, 40] : [30, 30], maxZoom: tight ? 7 : 5 });
+            fitToPoints(map, latLngs, { padding: tight ? 40 : 30, maxZoom: tight ? 7 : 5 });
           }
         }
 
-        applyMilbFilter('visited');
+        // Deferred to 'load': fitBounds() run immediately after construction
+        // computes against the map's pre-layout container size (before its
+        // first real resize pass), which was fitting to the whole world
+        // instead of the visited markers -- waiting for 'load' guarantees
+        // the container's real dimensions are in place first.
+        map.on('load', function () { applyMilbFilter('visited'); });
 
         // Build full affiliate directory — grouped by org across all levels, visited ones fill in solid
         var bucketEl = document.getElementById('milbBucketList');
@@ -1212,7 +1241,7 @@
         });
 
         if (window.ResizeObserver) {
-          new ResizeObserver(function () { map.invalidateSize(); }).observe(el);
+          new ResizeObserver(function () { map.resize(); }).observe(el);
         }
       }());
 
@@ -1221,28 +1250,34 @@
         var el = document.getElementById('indieMap');
         if (!el) return;
 
-        var map = L.map('indieMap', { scrollWheelZoom: false });
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/' + tileTheme + '/{z}/{x}/{y}{r}.png', tileOpts).addTo(map);
+        var map = new maplibregl.Map({ container: 'indieMap', style: cartoStyle, scrollZoom: false });
+        map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left');
 
         var markers = [];
         INDIE.forEach(function (p) {
-          var icon = L.divIcon({
-            className: 'milb-marker-icon',
-            html: '<div class="milb-dot milb-dot--' + p.league + '"></div>',
-            iconSize: [14, 14], iconAnchor: [7, 7], popupAnchor: [0, -8]
-          });
-          var marker = L.marker([p.lat, p.lng], { icon: icon })
-            .bindPopup(
-              '<strong>' + p.team + '</strong><br>' +
-              '<em style="color:#888">' + p.park + '</em><br>' +
-              '<span style="font-size:0.82em;color:#555">' + p.city + ' &middot; ' + p.note + ' &middot; ' + p.date + '</span>'
-            )
+          var el = document.createElement('div');
+          el.className = 'milb-marker-icon';
+          var dot = document.createElement('div');
+          dot.className = 'milb-dot milb-dot--' + p.league;
+          el.appendChild(dot);
+          var popup = new maplibregl.Popup({ offset: 8 }).setHTML(
+            '<strong>' + p.team + '</strong><br>' +
+            '<em style="color:#888">' + p.park + '</em><br>' +
+            '<span style="font-size:0.82em;color:#555">' + p.city + ' &middot; ' + p.note + ' &middot; ' + p.date + '</span>'
+          );
+          var marker = new maplibregl.Marker({ element: el })
+            .setLngLat([p.lng, p.lat])
+            .setPopup(popup)
             .addTo(map);
-          markers.push({ marker: marker, league: p.league, latlng: [p.lat, p.lng] });
+          markers.push({ marker: marker, league: p.league, lnglat: [p.lng, p.lat] });
         });
 
-        var allLatLngs = markers.map(function (m) { return m.latlng; });
-        map.fitBounds(allLatLngs, { padding: [40, 40], maxZoom: 7 });
+        var allLngLats = markers.map(function (m) { return m.lnglat; });
+        // Deferred to 'load' -- see the matching comment on the MiLB map
+        // above: fitBounds() run immediately after construction computes
+        // against the pre-layout container size and was zooming to the
+        // whole world instead of the actual markers.
+        map.on('load', function () { fitToPoints(map, allLngLats, { padding: 40, maxZoom: 7 }); });
 
         var indieFilterBtns = document.getElementById('indie-filters').querySelectorAll('.bp-filter-btn');
         indieFilterBtns.forEach(function (btn) {
@@ -1254,17 +1289,17 @@
             markers.forEach(function (m) {
               if (filter === 'all' || m.league === filter) {
                 m.marker.addTo(map);
-                visible.push(m.latlng);
+                visible.push(m.lnglat);
               } else {
                 m.marker.remove();
               }
             });
-            if (visible.length) { map.fitBounds(visible, { padding: [40, 40], maxZoom: 7 }); }
+            if (visible.length) { fitToPoints(map, visible, { padding: 40, maxZoom: 7 }); }
           });
         });
 
         if (window.ResizeObserver) {
-          new ResizeObserver(function () { map.invalidateSize(); }).observe(el);
+          new ResizeObserver(function () { map.resize(); }).observe(el);
         }
       }());
 

@@ -41,18 +41,51 @@
 
   function init(ballparks) {
     var mapEl = document.getElementById('bpJourneyMap');
-    if (!mapEl || typeof L === 'undefined') { return; }
+    if (!mapEl || typeof maplibregl === 'undefined') { return; }
 
     var stops = buildStops(ballparks);
     if (!stops.length) { return; }
 
-    var map = L.map('bpJourneyMap', { scrollWheelZoom: false }).setView([38.5, -97], 3);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/' + (window.CUZZ_IS_DARK ? 'dark_all' : 'light_all') + '/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
-      maxZoom: 12
-    }).addTo(map);
+    // MapLibre GL JS + CARTO vector basemap -- ported from Leaflet since
+    // CARTO now watermarks unauthenticated *raster* tile requests and
+    // recommends vector instead (https://docs.carto.com/faqs/carto-basemaps).
+    // MapLibre takes [lng, lat] -- the opposite order from Leaflet's [lat, lng].
+    var map = new maplibregl.Map({
+      container: 'bpJourneyMap',
+      style: 'https://basemaps.cartocdn.com/gl/' + (window.CUZZ_IS_DARK ? 'dark-matter' : 'positron') + '-gl-style/style.json?key=cb1_2jdq_1_6d79969636549968efce8740',
+      center: [-97, 38.5],
+      zoom: 2,
+      scrollZoom: false
+    });
+    map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left');
 
-    var trail = L.polyline([], { color: '#C8102E', weight: 2, opacity: 0.55 }).addTo(map);
+    // The trail is a GeoJSON source + line layer (not a Leaflet-style
+    // vector overlay object), so it can't exist until the style finishes
+    // loading. Markers/ball/controls below don't have that dependency, so
+    // only this is gated -- gating the whole feature on 'load' would leave
+    // Play/Reset dead until the style round-trips, for no reason.
+    var trailReady = false;
+    map.on('load', function () {
+      map.addSource('bp-journey-trail', {
+        type: 'geojson',
+        data: { type: 'Feature', geometry: { type: 'LineString', coordinates: [] } }
+      });
+      map.addLayer({
+        id: 'bp-journey-trail',
+        type: 'line',
+        source: 'bp-journey-trail',
+        paint: { 'line-color': '#C8102E', 'line-width': 2, 'line-opacity': 0.55 }
+      });
+      trailReady = true;
+    });
+    // commit() always resends the *entire* trail-so-far (not incrementally),
+    // so if this fires before trailReady, the very next commit() call (the
+    // next step) naturally catches the line up -- no separate "replay on
+    // load" logic needed.
+    function setTrailCoords(lngLats) {
+      if (!trailReady) { return; }
+      map.getSource('bp-journey-trail').setData({ type: 'Feature', geometry: { type: 'LineString', coordinates: lngLats } });
+    }
 
     // One small static dot per stop, for context -- without these the
     // trail is just a tangle of lines with no visible endpoints. Starts
@@ -61,13 +94,12 @@
     // no counts, no below-map grid) since #mlb's division chip lists
     // already own the full "have we been here" collection view.
     var markers = stops.map(function (stop) {
-      var icon = L.divIcon({
-        className: 'bp-journey-marker-icon',
-        html: '<div class="bp-journey-dot"></div>',
-        iconSize: [10, 10],
-        iconAnchor: [5, 5]
-      });
-      return L.marker([stop.lat, stop.lng], { icon: icon }).addTo(map);
+      var el = document.createElement('div');
+      el.className = 'bp-journey-marker-icon';
+      var dot = document.createElement('div');
+      dot.className = 'bp-journey-dot';
+      el.appendChild(dot);
+      return new maplibregl.Marker({ element: el }).setLngLat([stop.lng, stop.lat]).addTo(map);
     });
     // One grayed-out team-logo chip per stop, below the map -- lights up
     // in sync with the map dots the moment the journey reaches it. Same
@@ -92,18 +124,18 @@
       chips.forEach(function (chip, i) { chip.classList.toggle('is-visited', i <= idx); });
     }
 
-    // Plain DOM element positioned in pixel space, not a Leaflet marker --
+    // Plain DOM element positioned in pixel space, not a maplibregl.Marker --
     // same approach /mlb-games's journey ball uses, for the same reason:
     // the camera never pans/zooms after init, so pixel coordinates for a
     // given stop are stable, letting a simple parabolic hop animate with
-    // plain JS instead of fighting Leaflet's lat/lng marker positioning.
+    // plain JS instead of fighting MapLibre's lng/lat marker positioning.
     var ballEl = document.createElement('div');
     ballEl.className = 'bp-journey-ball';
     ballEl.innerHTML = '&#9918;';
     mapEl.style.position = 'relative';
     mapEl.appendChild(ballEl);
 
-    function pixelFor(stop) { return map.latLngToContainerPoint([stop.lat, stop.lng]); }
+    function pixelFor(stop) { return map.project([stop.lng, stop.lat]); }
     function placeBallAtPixel(p) { ballEl.style.transform = 'translate(' + p.x + 'px,' + p.y + 'px)'; }
     function placeBallAt(stopIdx) { placeBallAtPixel(pixelFor(posFor(stopIdx))); }
 
@@ -117,9 +149,9 @@
     var STEP_MS = 500;
 
     if (window.ResizeObserver) {
-      new ResizeObserver(function () { map.invalidateSize(); placeBallAt(idx); }).observe(mapEl);
+      new ResizeObserver(function () { map.resize(); placeBallAt(idx); }).observe(mapEl);
     } else {
-      window.addEventListener('load', function () { map.invalidateSize(); placeBallAt(idx); });
+      window.addEventListener('load', function () { map.resize(); placeBallAt(idx); });
     }
 
     var playBtn = document.getElementById('bpJourneyPlayBtn');
@@ -159,7 +191,7 @@
     // synchronously -- the arc animation is purely cosmetic.
     function commit(i) {
       idx = Math.max(0, Math.min(stops.length - 1, i));
-      trail.setLatLngs(stops.slice(0, idx + 1).map(function (s) { return [s.lat, s.lng]; }));
+      setTrailCoords(stops.slice(0, idx + 1).map(function (s) { return [s.lng, s.lat]; }));
       caption(stops[idx], idx);
       updateYearBadge(stops[idx]);
       updateVisitedMarkers();
@@ -213,7 +245,7 @@
     function resetToHome() {
       if (animFrame) { cancelAnimationFrame(animFrame); animFrame = null; }
       idx = -1;
-      trail.setLatLngs([]);
+      setTrailCoords([]);
       placeBallAtPixel(pixelFor(HOME));
       captionEl.textContent = 'Press Play to start the journey from Springfield, IL';
       lastYear = null;

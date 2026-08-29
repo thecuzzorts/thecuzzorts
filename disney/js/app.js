@@ -504,18 +504,30 @@
     badge.textContent = text;
   }
 
-  // ---- Disney map (Leaflet) — one marker per resort -
+  // ---- Disney map (MapLibre GL JS + CARTO vector basemap) — one marker
+  // per resort. Ported from Leaflet: CARTO now watermarks unauthenticated
+  // *raster* tile requests and recommends vector instead (see
+  // https://docs.carto.com/faqs/carto-basemaps) -- vector tiles aren't
+  // gated behind the API key today, and CARTO says raster cartography
+  // itself may stop getting updates. MapLibre's API differs from
+  // Leaflet's in a few load-bearing ways, noted inline below.
+  var CARTO_KEY = 'cb1_2jdq_1_6d79969636549968efce8740';
+
   function initDisneyMap() {
     var mapEl = document.getElementById('disneyMap');
-    if (!mapEl || typeof L === 'undefined') return;
+    if (!mapEl || typeof maplibregl === 'undefined') return;
 
-    var map = L.map('disneyMap', { scrollWheelZoom: false, worldCopyJump: true })
-      .setView([25, 30], 1);
-
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/' + (IS_DARK ? 'dark_all' : 'light_all') + '/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
-      maxZoom: 14
-    }).addTo(map);
+    // MapLibre takes [lng, lat] -- the opposite order from Leaflet's
+    // [lat, lng] -- everywhere a coordinate pair is used below.
+    var map = new maplibregl.Map({
+      container: 'disneyMap',
+      style: 'https://basemaps.cartocdn.com/gl/' + (IS_DARK ? 'dark-matter' : 'positron') + '-gl-style/style.json?key=' + CARTO_KEY,
+      center: [30, 25],
+      zoom: 0,
+      scrollZoom: false,
+      attributionControl: { compact: false }
+    });
+    map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left');
 
     var activeFilter = 'whole-family';
     var markerEntries = [];
@@ -538,15 +550,19 @@
       return resortVisitedBy(resort, activeFilter) ? person.color : '#64748b';
     }
 
-    function makeMarkerIcon(color) {
+    // Builds the marker's DOM element by hand (same .milb-marker-icon/
+    // .milb-dot classes the old L.divIcon HTML produced, so the existing
+    // CSS needs no changes) -- MapLibre markers are plain DOM overlays
+    // you own, not a library-managed icon object like Leaflet's divIcon.
+    function makeMarkerElement(color) {
       var isV = color !== '#64748b';
-      return L.divIcon({
-        className: 'milb-marker-icon',
-        html: '<div class="' + (isV ? 'milb-dot' : 'milb-dot milb-dot--unvisited') + '"' + (isV ? ' style="background:' + color + '"' : '') + '></div>',
-        iconSize:   isV ? [14, 14] : [10, 10],
-        iconAnchor: isV ? [7,  7]  : [5,  5],
-        popupAnchor: [0, -8]
-      });
+      var el = document.createElement('div');
+      el.className = 'milb-marker-icon';
+      var dot = document.createElement('div');
+      dot.className = isV ? 'milb-dot' : 'milb-dot milb-dot--unvisited';
+      if (isV) { dot.style.background = color; }
+      el.appendChild(dot);
+      return el;
     }
 
     function getPopupContent(resort) {
@@ -570,10 +586,16 @@
       return html;
     }
 
+    // Markers are DOM overlays independent of the style/tiles, so they
+    // don't need to wait for the map's 'load' event the way style-layer
+    // changes would.
     DISNEY_RESORTS.forEach(function (resort) {
-      var marker = L.marker([resort.lat, resort.lng], { icon: makeMarkerIcon(getMarkerColor(resort)) })
-        .bindPopup(getPopupContent(resort));
-      marker.addTo(map);
+      var el = makeMarkerElement(getMarkerColor(resort));
+      var popup = new maplibregl.Popup({ offset: 10 }).setHTML(getPopupContent(resort));
+      var marker = new maplibregl.Marker({ element: el })
+        .setLngLat([resort.lng, resort.lat])
+        .setPopup(popup)
+        .addTo(map);
       markerEntries.push({ marker: marker, resort: resort });
     });
 
@@ -586,8 +608,15 @@
       } else {
         visitedColor = PEOPLE.filter(function (p) { return p.id === activeFilter; })[0].color;
       }
+      // No setIcon() equivalent -- mutate the dot in place instead of
+      // touching MapLibre's own element reference (Marker has no public
+      // API to swap it, and reaching into its internals would be fragile).
       markerEntries.forEach(function (m) {
-        m.marker.setIcon(makeMarkerIcon(getMarkerColor(m.resort)));
+        var color = getMarkerColor(m.resort);
+        var isV = color !== '#64748b';
+        var dot = m.marker.getElement().firstChild;
+        dot.className = isV ? 'milb-dot' : 'milb-dot milb-dot--unvisited';
+        dot.style.background = isV ? color : '';
       });
       var legendDot = document.getElementById('legendVisited');
       if (legendDot) legendDot.style.background = visitedColor;
@@ -607,7 +636,7 @@
       });
     });
 
-    function refreshMapSize() { map.invalidateSize(); }
+    function refreshMapSize() { map.resize(); }
     setTimeout(refreshMapSize, 0);
     window.addEventListener('load', refreshMapSize);
     window.addEventListener('resize', refreshMapSize);
