@@ -55,6 +55,15 @@
       <p>Theme parks around the world &mdash; tracked by family member</p>
     </div>
 
+    <!-- Quick-glance totals -- same treatment as /fishing's, /hunting's,
+         and /trapping's stats-strip. Reacts to the map/parks-list
+         person filter below (see applyChipColors() in js/app.js), same
+         as /hunting's stats-strip already does for its own filter. -->
+    <div class="stats-strip">
+      <div class="stat"><span class="stat-num" id="disneyVisitedTotal">0</span><span class="stat-label">Parks Visited</span></div>
+      <div class="stat"><span class="stat-num" id="disneyRemainingTotal">0</span><span class="stat-label">Remaining</span></div>
+    </div>
+
     <!-- Photos + Map share a row on desktop, stack on mobile -->
     <div class="photos-map-row">
 
@@ -64,10 +73,14 @@
         <div class="combined-card" id="photos-card">
           <div class="slideshow-wrap">
             <!-- Add more photos by dropping images in images/disney/ and copying an
-                 <img> line below. The alt text becomes the caption. -->
+                 <img> line below. The alt text becomes the caption. Filenames are
+                 tagged with who's in the photo -- [description]-[year]-[person(s)].jpg,
+                 e.g. disneyland-california-2026-josh-sam-tilly.jpg -- matching
+                 /hunting's species-photo convention; disney/js/photos.js filters
+                 the slideshow by checking each src for the active person's name. -->
             <div class="disney-slideshow" id="disneySlideshow">
-              <img class="is-active" loading="lazy" src="../images/disney/Disneyland-Park-California.jpg" alt="Disneyland Park, California">
-              <img loading="lazy" src="../images/disney/Disneyland-California-Adventure.jpg" alt="Disney California Adventure">
+              <img class="is-active" loading="lazy" src="../images/disney/disneyland-park-california-2025-josh-sam.jpg" alt="Disneyland Park, California &mdash; Josh &amp; Sam, 2025">
+              <img loading="lazy" src="../images/disney/disneyland-california-adventure-2025-josh-sam.jpg" alt="Disney California Adventure &mdash; Josh &amp; Sam, 2025">
             </div>
             <div class="ss-progress"><div class="ss-progress-bar"></div></div>
             <div class="slideshow-controls">

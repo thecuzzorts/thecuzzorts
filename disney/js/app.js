@@ -37,6 +37,14 @@
 
   function applyChipColors(filterValue) {
     currentChipFilter = filterValue;
+    // Pub/sub, not a direct call -- mirrors /hunting's 'hunting:personchange'
+    // event so disney/js/photos.js can react without app.js knowing it
+    // exists. Fires on every real filter change (map click, parks-list
+    // click, and the initial boot default) plus harmlessly again on a
+    // theme-toggle recompute, since re-filtering to the same person is a
+    // no-op for the photo gallery.
+    document.dispatchEvent(new CustomEvent('disney:personchange', { detail: { person: filterValue } }));
+    updateStatsStrip(filterValue);
     var card = document.getElementById('parksCard');
     if (!card) return;
     var hex = filterColors[filterValue] || '#8a9aaa';
@@ -325,6 +333,40 @@
     return DISNEY_RESORTS.reduce(function (total, resort) {
       return total + resort.parks.filter(notVisitedByWholeFamily).length;
     }, 0);
+  }
+
+  // Whole-family total (every person has visited -- the complement of
+  // countBucketList's "not visited by whole family" set), matching the
+  // homepage quick-stat's existing "All" semantics for this same number
+  // (see index.html's qs-disney) -- not the "Anyone" union.
+  function familyVisitedCount() {
+    return TOTAL_PARKS - countBucketList();
+  }
+
+  // Drives the page-top stats-strip -- reacts to whichever of the 7
+  // filter values (whole-family/anyone/josh/sam/ellie/tilly/poppy) is
+  // currently active, same as /hunting's stats-strip already does for
+  // its own single-filter setup.
+  function visitedCountForFilter(filterValue) {
+    if (filterValue === 'whole-family') { return familyVisitedCount(); }
+    if (filterValue === 'anyone') {
+      var visited = {};
+      PEOPLE.forEach(function (p) {
+        var v = getPersonData(p.id).visited;
+        Object.keys(v).forEach(function (k) { if (v[k]) visited[k] = true; });
+      });
+      return Object.keys(visited).length;
+    }
+    var data = getPersonData(filterValue);
+    return data ? countVisited(data.visited) : 0;
+  }
+
+  function updateStatsStrip(filterValue) {
+    var visitedTotal = visitedCountForFilter(filterValue);
+    var visitedEl = document.getElementById('disneyVisitedTotal');
+    var remainingEl = document.getElementById('disneyRemainingTotal');
+    if (visitedEl) { visitedEl.textContent = visitedTotal; }
+    if (remainingEl) { remainingEl.textContent = TOTAL_PARKS - visitedTotal; }
   }
 
   function buildBucketForFilter(filterValue) {
@@ -644,6 +686,8 @@
 
   // ---- Init -----------------------------------------
   function init() {
+    // Quick-glance totals strip is populated by applyChipColors() below,
+    // which fires for the initial 'whole-family' default too.
     buildParksFilterRow();
     buildParksCard();
     initParkFilters();

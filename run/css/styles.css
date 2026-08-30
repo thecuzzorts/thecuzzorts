@@ -272,12 +272,21 @@ body {
   margin-top: 0.4rem;
   font-size: 0.82rem;
   font-style: italic;
-  color: #7a530a;
+  color: var(--race-notes-text, #7a530a);
   background: rgba(232,160,32,0.12);
   border-left: 3px solid #E8A020;
   padding: 0.2rem 0.55rem;
   border-radius: 0 4px 4px 0;
 }
+
+/* The dark-brown text above is tuned for the light amber background --
+   on the dark theme's near-black surface it goes low-contrast, so swap
+   in the site's standard gold instead (already proven legible on dark
+   navy elsewhere, e.g. the header's hover state). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --race-notes-text: #E8A020; }
+}
+:root[data-theme="dark"] { --race-notes-text: #E8A020; }
 
 /* --- 5K Trend Chart -------------------------------- */
 .trend-card {

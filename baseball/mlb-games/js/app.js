@@ -48,6 +48,7 @@
       postseason: 0, postseasonGames: [],
       cycles: 0, cycleGames: [],
       crowdTotal: 0, crowdCount: 0,
+      conditionCounts: {}, tempTotal: 0, tempCount: 0,
       byPerson: { josh: 0, sam: 0, ellie: 0, tilly: 0, poppy: 0 },
       byYear: {}
     };
@@ -58,6 +59,7 @@
     var durationList = [];
     var inningsList = [];
     var crowdList = [];
+    var tempList = [];
 
     games.forEach(function (g) {
       var full = mergeDetail(g);
@@ -126,6 +128,15 @@
         stats.crowdCount++;
         crowdList.push({ date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam, crowd: full.crowdSize });
       }
+      if (full.weather && full.weather.condition) {
+        stats.conditionCounts[full.weather.condition] = (stats.conditionCounts[full.weather.condition] || 0) + 1;
+        var temp = parseInt(full.weather.temp, 10);
+        if (!isNaN(temp)) {
+          stats.tempTotal += temp;
+          stats.tempCount++;
+          tempList.push({ date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam, temp: temp });
+        }
+      }
       if (full.duration) {
         // Some games carry a trailing delay note -- "2:23 (:56 delay)" --
         // rather than a plain "H:MM"; match just the leading duration so
@@ -156,6 +167,19 @@
     stats.homeWinPct = decided ? Math.round((stats.homeWins / decided) * 100) : 0;
     stats.awayWinPct = decided ? 100 - stats.homeWinPct : 0;
     stats.avgCrowd = stats.crowdCount ? Math.round(stats.crowdTotal / stats.crowdCount) : null;
+    stats.avgTemp = stats.tempCount ? Math.round(stats.tempTotal / stats.tempCount) : null;
+
+    // Mode of conditionCounts -- ties keep whichever condition sorts
+    // first alphabetically, same "just pick one, deterministically"
+    // approach as everywhere else ties aren't otherwise broken here.
+    stats.mostCommonCondition = null;
+    var topConditionCount = 0;
+    Object.keys(stats.conditionCounts).sort().forEach(function (c) {
+      if (stats.conditionCounts[c] > topConditionCount) {
+        topConditionCount = stats.conditionCounts[c];
+        stats.mostCommonCondition = c;
+      }
+    });
 
     // Resolve max/min from a flat list, keeping every tied game rather
     // than silently keeping only whichever happened to be seen first.
@@ -185,6 +209,32 @@
     stats.highestCrowdGames = crowdExtremes.maxItems;
     stats.lowestCrowd = crowdExtremes.minItems[0] || null;
     stats.lowestCrowdGames = crowdExtremes.minItems;
+
+    var tempExtremes = pickExtremes(tempList, 'temp');
+    stats.hottest = tempExtremes.maxItems[0] || null;
+    stats.hottestGames = tempExtremes.maxItems;
+    stats.coldest = tempExtremes.minItems[0] || null;
+    stats.coldestGames = tempExtremes.minItems;
+
+    // Most games attended in a single day -- e.g. both games of a
+    // doubleheader plus a separate game squeezed in between (Sam's
+    // 8/29/2026, the real-world case this stat exists for). Grouped by
+    // date only within this already-person-filtered `games` list, so it
+    // naturally narrows per filter for free.
+    var gamesByDate = {};
+    games.forEach(function (g) { (gamesByDate[g.date] || (gamesByDate[g.date] = [])).push(g); });
+    stats.mostGamesInADay = 0;
+    Object.keys(gamesByDate).forEach(function (d) {
+      if (gamesByDate[d].length > stats.mostGamesInADay) { stats.mostGamesInADay = gamesByDate[d].length; }
+    });
+    stats.mostGamesInADayGames = [];
+    Object.keys(gamesByDate).sort().forEach(function (d) {
+      if (gamesByDate[d].length === stats.mostGamesInADay) {
+        gamesByDate[d].forEach(function (g) {
+          stats.mostGamesInADayGames.push({ date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam });
+        });
+      }
+    });
 
     return stats;
   }
@@ -251,6 +301,14 @@
       tileIfNonZero(stats.uniquePlayers, tile(stats.uniquePlayers.toLocaleString(), pluralize(stats.uniquePlayers, 'Unique Player Seen', 'Unique Players Seen'))) +
       tile(stats.day + ' / ' + stats.night, 'Day / Night Games') +
       tile(stats.avgCrowd != null ? stats.avgCrowd.toLocaleString() : '&ndash;', 'Avg. Crowd Size') +
+      tile(stats.avgTemp != null ? stats.avgTemp + '&deg;' : '&ndash;', 'Avg. Game-Day Temp') +
+      tile(stats.hottest ? stats.hottest.temp + '&deg;' : '&ndash;', 'Hottest Game', null,
+        statDetailHTML(stats.hottestGames, function (g) { return g.temp + '&deg;F'; })) +
+      tile(stats.coldest ? stats.coldest.temp + '&deg;' : '&ndash;', 'Coldest Game', null,
+        statDetailHTML(stats.coldestGames, function (g) { return g.temp + '&deg;F'; })) +
+      (stats.mostCommonCondition ? tile(stats.mostCommonCondition, 'Most Common Weather') : '') +
+      (stats.mostGamesInADay > 1 ? tile(stats.mostGamesInADay, pluralize(stats.mostGamesInADay, 'Game', 'Games') + ' in One Day', null,
+        statDetailHTML(stats.mostGamesInADayGames)) : '') +
       tileIfNonZero(stats.postseason, tile(stats.postseason, pluralize(stats.postseason, 'Postseason Game'), null, statDetailHTML(stats.postseasonGames))) +
       tileIfNonZero(stats.cycles, tile(stats.cycles, pluralize(stats.cycles, 'Cycle Witnessed', 'Cycles Witnessed'), null,
         statDetailHTML(stats.cycleGames, function (g) { return g.player; }, 1))) +

@@ -55,6 +55,15 @@
       <p>All 63 US National Parks &mdash; tracked by family member</p>
     </div>
 
+    <!-- Quick-glance totals -- same treatment as /fishing's, /hunting's,
+         and /trapping's stats-strip. Reacts to the map/parks-list
+         person filter below (see applyChipColors() in js/app.js), same
+         as /hunting's stats-strip already does for its own filter. -->
+    <div class="stats-strip">
+      <div class="stat"><span class="stat-num" id="parksVisitedTotal">0</span><span class="stat-label">Parks Visited</span></div>
+      <div class="stat"><span class="stat-num" id="parksRemainingTotal">0</span><span class="stat-label">Remaining</span></div>
+    </div>
+
     <!-- Photos + Map share a row on desktop, stack on mobile -->
     <div class="photos-map-row">
 

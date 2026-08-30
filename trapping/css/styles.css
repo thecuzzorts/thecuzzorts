@@ -12,69 +12,65 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; }
 body {
   --section: #8C5A3B;
   --section-on-dark: #C99A6A;
+  --trapped-color: #2E7D46;
   font-family: 'Roboto Condensed', Arial, sans-serif;
   background: var(--bg, #f0f2f5);
   color: var(--text, #222);
   min-height: 100vh;
 }
 
+/* --trapped-color is a semantic status green, not a neutral surface
+   tone, so it doesn't map to one of site-chrome's shared tokens --
+   needs its own lightened dark-mode variant instead, same pattern as
+   site-chrome.css's --sam-on-dark. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --trapped-color: #57BD83; }
+}
+:root[data-theme="dark"] { --trapped-color: #57BD83; }
+
 /* --- Section panels (anchor-nav targets) ----------- */
 .section-panel {
   scroll-margin-top: 4rem;
 }
 
-/* --- Overview card ---------------------------------- */
-.trapping-overview-card {
-  background: var(--surface, #fff);
+/* --- Quick-glance totals -- same treatment as /fishing's and
+   /hunting's stats-strip. ---------------------------- */
+.stats-strip {
+  max-width: 700px;
+  margin: 0.5rem auto 2.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border, #c6cfd7);
+  border: 1px solid var(--border, #c6cfd7);
   border-radius: 10px;
-  box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.08));
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.trapping-overview-card p {
-  color: var(--text-muted, #5a6a7a);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.trapping-stats {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  flex-wrap: wrap;
-}
-
-.trapping-stat-num {
-  font-family: 'Kreon', Georgia, serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--section);
-  line-height: 1;
-}
-
-.trapping-stat-label {
-  font-size: 0.78rem;
-  color: var(--text-muted, #7d8a97);
-  letter-spacing: 0.03em;
-}
-
-.trapping-progress-track {
-  flex: 1;
-  min-width: 140px;
-  height: 10px;
-  border-radius: 99px;
-  background: var(--chip-bg, #eaeef2);
   overflow: hidden;
 }
 
-.trapping-progress-bar {
-  height: 100%;
-  width: 0;
-  background: var(--section);
-  border-radius: 99px;
-  transition: width 0.4s ease;
+.stat {
+  background: var(--surface, #fff);
+  text-align: center;
+  padding: 0.9rem 1rem;
+}
+
+.stat-num {
+  display: block;
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--section);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted, #7d8a97);
+  margin-top: 0.15rem;
 }
 
 /* --- Species subtitle --------------------------------- */
@@ -145,7 +141,7 @@ body {
   margin: 0 auto 0.6rem;
   border-radius: 50%;
   overflow: hidden;
-  background: #F3EEDF;
+  background: var(--chip-bg, #F3EEDF);
   border: 3px solid var(--species, var(--section));
   box-shadow: 0 2px 10px var(--shadow, rgba(0,0,0,0.1));
   transition: border-color 0.15s;
@@ -202,7 +198,7 @@ body {
   flex-shrink: 0;
 }
 
-.species-dot--trapped { background: #2E7D46; }
+.species-dot--trapped { background: var(--trapped-color); }
 .species-dot--untrapped { background: var(--chip-unv-border, #9AA3AB); }
 
 .species-status-text {
@@ -211,7 +207,7 @@ body {
   font-weight: 700;
 }
 
-.species-card.is-trapped .species-status-text { color: #2E7D46; }
+.species-card.is-trapped .species-status-text { color: var(--trapped-color); }
 
 .species-status small {
   font-style: italic;
@@ -232,5 +228,4 @@ body {
   .species-grid { gap: 0.75rem; }
   .species-card { width: 120px; }
   .species-portrait { width: 108px; height: 108px; }
-  .trapping-stat-num { font-size: 1.45rem; }
 }

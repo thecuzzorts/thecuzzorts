@@ -33,7 +33,6 @@
     <div role="navigation">
       <nav>
         <ul>
-          <li><a href="#overview">Overview</a></li>
           <li><a href="#species">Species</a></li>
         </ul>
       </nav>
@@ -44,22 +43,16 @@
 
     <div class="page-intro">
       <h1>Trapping</h1>
-      <p>Working the trapline &mdash; Illinois furbearers, one season at a time</p>
+      <p>Working the trapline &mdash; Illinois furbearer season runs through the winter months, tracking every legally trappable species</p>
     </div>
 
-    <!-- Overview -->
-    <div class="section-panel" id="overview">
-      <h3 class="section-heading">Overview</h3>
-      <div class="trapping-overview-card">
-        <p>Illinois furbearer season runs through the winter months. This tracks every legally trappable species and whether I've caught one yet.</p>
-        <div class="trapping-stats">
-          <span class="trapping-stat-num"><span id="trappedCount">0</span>&nbsp;/&nbsp;<span id="speciesTotal">0</span></span>
-          <span class="trapping-stat-label">Species Trapped</span>
-          <div class="trapping-progress-track">
-            <div class="trapping-progress-bar" id="trappingProgressBar"></div>
-          </div>
-        </div>
-      </div>
+    <!-- Quick-glance totals -- same treatment as /fishing's and /hunting's
+         stats-strip, placed right after the intro rather than in its own
+         nav-linked Overview section (which used to repeat this same
+         number inside a bigger progress-bar card). -->
+    <div class="stats-strip">
+      <div class="stat"><span class="stat-num" id="trappingTrappedTotal">0</span><span class="stat-label">Species Trapped</span></div>
+      <div class="stat"><span class="stat-num" id="trappingRemainingTotal">0</span><span class="stat-label">Remaining</span></div>
     </div>
 
     <!-- Species -->

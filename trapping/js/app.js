@@ -260,14 +260,12 @@
     var total = SPECIES.length;
     var trappedCount = countTrapped(furbearersTrapped);
 
-    var countEl = document.getElementById('trappedCount');
-    var totalEl = document.getElementById('speciesTotal');
-    var barEl = document.getElementById('trappingProgressBar');
+    var trappedEl = document.getElementById('trappingTrappedTotal');
+    var remainingEl = document.getElementById('trappingRemainingTotal');
     var subtitleEl = document.getElementById('speciesSubtitle');
 
-    if (countEl) { countEl.textContent = trappedCount; }
-    if (totalEl) { totalEl.textContent = total; }
-    if (barEl) { barEl.style.width = (total ? (trappedCount / total * 100) : 0) + '%'; }
+    if (trappedEl) { trappedEl.textContent = trappedCount; }
+    if (remainingEl) { remainingEl.textContent = total - trappedCount; }
     if (subtitleEl) { subtitleEl.textContent = total + ' Legally Trappable Species'; }
   }
 

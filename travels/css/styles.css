@@ -156,6 +156,13 @@ body {
   border: 1px solid var(--chip-border, #c6cfd7);
   color: var(--chip-text, #28333d);
   white-space: nowrap;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+
+.visit-chip:hover {
+  border-color: var(--section);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px var(--shadow, rgba(0,0,0,0.1));
 }
 
 /* Chip tooltip */

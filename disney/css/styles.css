@@ -184,6 +184,46 @@ body {
   margin-bottom: 0.35rem;
 }
 
+/* --- Quick-glance totals -- same treatment as /fishing's, /hunting's,
+   and /trapping's stats-strip. ------------------------ */
+.stats-strip {
+  max-width: 700px;
+  margin: 0.5rem auto 2.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border, #c6cfd7);
+  border: 1px solid var(--border, #c6cfd7);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.stat {
+  background: var(--surface, #fff);
+  text-align: center;
+  padding: 0.9rem 1rem;
+}
+
+.stat-num {
+  display: block;
+  font-family: 'Kreon', Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--section);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted, #7d8a97);
+  margin-top: 0.15rem;
+}
+
 .visit-chips {
   display: flex;
   flex-wrap: wrap;
@@ -201,7 +241,13 @@ body {
   border: 1px solid var(--chip-border, #c6cfd7);
   color: var(--chip-text, #28333d);
   white-space: nowrap;
-  transition: background 0.3s, border-color 0.3s;
+  transition: background 0.3s, border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+
+.visit-chip:hover {
+  border-color: var(--section);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px var(--shadow, rgba(0,0,0,0.1));
 }
 
 /* Unvisited / bucket-list chip */
@@ -282,12 +328,17 @@ body {
 .map-filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
   margin-bottom: 4px;
 }
 
 .map-filter-btn {
-  padding: 0.3rem 0.85rem;
+  /* Narrower horizontal padding (was 0.85rem) and tighter letter-spacing
+     (was 0.02em) than the same button used full-width elsewhere (e.g.
+     /hunting, /mlb-games) -- this row lives inside a 50%-width card, so
+     all 7 buttons need to survive on one line without shrinking the
+     font itself. */
+  padding: 0.3rem 0.55rem;
   border: 2px solid var(--filter-color, #888);
   border-radius: 999px;
   background: transparent;
@@ -296,7 +347,7 @@ body {
   font-family: 'Kreon', Georgia, serif;
   font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   transition: border-color 0.15s, color 0.15s, background 0.15s;
 }
 

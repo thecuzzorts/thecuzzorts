@@ -398,6 +398,50 @@
       line-height: 1;
     }
 
+    /* Radial progress ring -- every quick-stat gets one. Stats with a
+       real fixed total (MLB Ballparks, States, Countries, National
+       Parks, Turkey States, Disney Parks) fill to that fraction and show
+       "N/total" text; Fish Species has no natural ceiling, so its ring
+       is just drawn fully complete for visual consistency and its
+       number stays a bare count (a fake "N/N" would misleadingly imply
+       nothing's left to catch). */
+    .qs-ring-wrap {
+      position: relative;
+      width: 68px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .qs-ring {
+      position: absolute;
+      inset: 0;
+      transform: rotate(-90deg);
+    }
+
+    .qs-ring-track {
+      fill: none;
+      stroke: var(--border, #e3e7eb);
+      stroke-width: 4;
+    }
+
+    .qs-ring-fill {
+      fill: none;
+      stroke: var(--accent);
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-dasharray: 169.6;
+      stroke-dashoffset: calc(169.6 * (1 - var(--pct, 0)));
+      transition: stroke-dashoffset 0.8s ease;
+    }
+
+    .qs-ring-wrap .qs-num {
+      position: relative;
+      font-size: 0.98rem;
+      white-space: nowrap;
+    }
+
     .qs-label {
       font-size: 0.7rem;
       font-weight: 700;
@@ -833,37 +877,79 @@
     <!-- Quick stats -->
     <div class="quick-stats">
       <div class="qs-item" style="--accent: #F07070">
-        <span class="qs-num">30/30</span>
+        <span class="qs-ring-wrap">
+          <svg class="qs-ring" viewBox="0 0 68 68" aria-hidden="true">
+            <circle class="qs-ring-track" cx="34" cy="34" r="27"></circle>
+            <circle class="qs-ring-fill" cx="34" cy="34" r="27" style="--pct: 1"></circle>
+          </svg>
+          <span class="qs-num">30/30</span>
+        </span>
         <span class="qs-label">MLB Ballparks</span>
       </div>
       <div class="qs-divider"></div>
       <div class="qs-item" style="--accent: #FF8200">
-        <span class="qs-num" id="qs-states">—</span>
+        <span class="qs-ring-wrap">
+          <svg class="qs-ring" viewBox="0 0 68 68" aria-hidden="true">
+            <circle class="qs-ring-track" cx="34" cy="34" r="27"></circle>
+            <circle class="qs-ring-fill" id="qs-states-ring" cx="34" cy="34" r="27" style="--pct: 0"></circle>
+          </svg>
+          <span class="qs-num" id="qs-states">&mdash;</span>
+        </span>
         <span class="qs-label">States</span>
       </div>
       <div class="qs-divider"></div>
       <div class="qs-item" style="--accent: #FF8200">
-        <span class="qs-num" id="qs-countries">—</span>
+        <span class="qs-ring-wrap">
+          <svg class="qs-ring" viewBox="0 0 68 68" aria-hidden="true">
+            <circle class="qs-ring-track" cx="34" cy="34" r="27"></circle>
+            <circle class="qs-ring-fill" id="qs-countries-ring" cx="34" cy="34" r="27" style="--pct: 0"></circle>
+          </svg>
+          <span class="qs-num" id="qs-countries">&mdash;</span>
+        </span>
         <span class="qs-label">Countries</span>
       </div>
       <div class="qs-divider"></div>
       <div class="qs-item" style="--accent: #F5C518">
-        <span class="qs-num" id="qs-parks">—</span>
+        <span class="qs-ring-wrap">
+          <svg class="qs-ring" viewBox="0 0 68 68" aria-hidden="true">
+            <circle class="qs-ring-track" cx="34" cy="34" r="27"></circle>
+            <circle class="qs-ring-fill" id="qs-parks-ring" cx="34" cy="34" r="27" style="--pct: 0"></circle>
+          </svg>
+          <span class="qs-num" id="qs-parks">&mdash;</span>
+        </span>
         <span class="qs-label">National Parks</span>
       </div>
       <div class="qs-divider"></div>
       <div class="qs-item" style="--accent: #57BD83">
-        <span class="qs-num" id="qs-turkey">—</span>
-        <span class="qs-label">States Harvested</span>
+        <span class="qs-ring-wrap">
+          <svg class="qs-ring" viewBox="0 0 68 68" aria-hidden="true">
+            <circle class="qs-ring-track" cx="34" cy="34" r="27"></circle>
+            <circle class="qs-ring-fill" id="qs-turkey-ring" cx="34" cy="34" r="27" style="--pct: 0"></circle>
+          </svg>
+          <span class="qs-num" id="qs-turkey">&mdash;</span>
+        </span>
+        <span class="qs-label">Turkey States</span>
       </div>
       <div class="qs-divider"></div>
       <div class="qs-item" style="--accent: #1C7C9C">
-        <span class="qs-num" id="qs-fishing">—</span>
+        <span class="qs-ring-wrap">
+          <svg class="qs-ring" viewBox="0 0 68 68" aria-hidden="true">
+            <circle class="qs-ring-track" cx="34" cy="34" r="27"></circle>
+            <circle class="qs-ring-fill" id="qs-fishing-ring" cx="34" cy="34" r="27" style="--pct: 0"></circle>
+          </svg>
+          <span class="qs-num" id="qs-fishing">&mdash;</span>
+        </span>
         <span class="qs-label">Fish Species</span>
       </div>
       <div class="qs-divider"></div>
       <div class="qs-item" style="--accent: #E060C6">
-        <span class="qs-num" id="qs-disney">—</span>
+        <span class="qs-ring-wrap">
+          <svg class="qs-ring" viewBox="0 0 68 68" aria-hidden="true">
+            <circle class="qs-ring-track" cx="34" cy="34" r="27"></circle>
+            <circle class="qs-ring-fill" id="qs-disney-ring" cx="34" cy="34" r="27" style="--pct: 0"></circle>
+          </svg>
+          <span class="qs-num" id="qs-disney">&mdash;</span>
+        </span>
         <span class="qs-label">Disney Parks</span>
       </div>
     </div>
@@ -1030,38 +1116,57 @@
         if (el) el.textContent = val;
       }
 
-      set('qs-states', intersection(
+      // For quick-stats with a real fixed total (MLB Ballparks is static
+      // "30/30" straight in the HTML) -- shows "N/total" as text and
+      // fills the matching .qs-ring-fill circle to the same fraction.
+      function setRing(id, count, total) {
+        set(id, count + '/' + total);
+        var ring = document.getElementById(id + '-ring');
+        if (ring) { ring.style.setProperty('--pct', total ? (count / total) : 0); }
+      }
+
+      // Fish Species has no natural ceiling -- ring is just drawn fully
+      // complete so every tile matches visually, but the number stays a
+      // bare count (a fake "N/N" would misleadingly imply nothing's left
+      // to catch).
+      function setCompleteRing(id, count) {
+        set(id, count);
+        var ring = document.getElementById(id + '-ring');
+        if (ring) { ring.style.setProperty('--pct', 1); }
+      }
+
+      setRing('qs-states', intersection(
         [statesVisitedJosh, statesVisitedSam, statesVisitedEllie, statesVisitedTilly, statesVisitedPoppy],
         function (k, v) { return k !== 'US-DC' && v === 1; }
-      ));
+      ), 50);
 
-      set('qs-countries', intersection(
+      setRing('qs-countries', intersection(
         [countriesVisitedJosh, countriesVisitedSam, countriesVisitedEllie, countriesVisitedTilly, countriesVisitedPoppy],
         function (k, v) { return !TERRITORIES[k] && v === 1; }
-      ));
+      ), 197);
 
-      set('qs-turkey', union(
+      setRing('qs-turkey', union(
         [turkeysHarvestedJosh, turkeysHarvestedSam, turkeysHarvestedTilly],
         function (k, v) { return Math.round(v) >= 1; }
-      ));
+      ), 49);
 
       // Matches the NP page "All" filter: parks every family member has visited.
-      set('qs-parks', intersection(
+      setRing('qs-parks', intersection(
         [parksVisitedJosh, parksVisitedSam, parksVisitedEllie, parksVisitedTilly, parksVisitedPoppy],
         function (k, v) { return v === 1; }
-      ));
+      ), 63);
 
-      set('qs-disney', intersection(
+      setRing('qs-disney', intersection(
         [disneyVisitedJosh, disneyVisitedSam, disneyVisitedEllie, disneyVisitedTilly, disneyVisitedPoppy],
         function (k, v) { return v === 1; }
-      ));
+      ), 12);
 
       function distinctCount(records, key) {
         var seen = {};
         records.forEach(function (r) { seen[r[key]] = true; });
         return Object.keys(seen).length;
       }
-      set('qs-fishing', distinctCount(fishCaught.freshwater.concat(fishCaught.saltwater), 'species'));
+      setCompleteRing('qs-fishing', distinctCount(fishCaught.freshwater.concat(fishCaught.saltwater), 'species'));
     }());
   </script>
 

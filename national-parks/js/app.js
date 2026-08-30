@@ -346,6 +346,40 @@
     }, 0);
   }
 
+  // Whole-family total (every person has visited -- the complement of
+  // countBucketList's "not visited by whole family" set), matching the
+  // homepage quick-stat's existing "All" semantics for this same number
+  // (see index.html's qs-parks comment) -- not the "Anyone" union.
+  function familyVisitedCount() {
+    return TOTAL_PARKS - countBucketList();
+  }
+
+  // Drives the page-top stats-strip -- reacts to whichever of the 7
+  // filter values (whole-family/anyone/josh/sam/ellie/tilly/poppy) is
+  // currently active, same as /hunting's stats-strip already does for
+  // its own single-filter setup.
+  function visitedCountForFilter(filterValue) {
+    if (filterValue === 'whole-family') { return familyVisitedCount(); }
+    if (filterValue === 'anyone') {
+      var visited = {};
+      PEOPLE.forEach(function (p) {
+        var v = getPersonData(p.id).visited;
+        Object.keys(v).forEach(function (k) { if (v[k]) visited[k] = true; });
+      });
+      return Object.keys(visited).length;
+    }
+    var data = getPersonData(filterValue);
+    return data ? countVisited(data.visited) : 0;
+  }
+
+  function updateStatsStrip(filterValue) {
+    var visitedTotal = visitedCountForFilter(filterValue);
+    var visitedEl = document.getElementById('parksVisitedTotal');
+    var remainingEl = document.getElementById('parksRemainingTotal');
+    if (visitedEl) { visitedEl.textContent = visitedTotal; }
+    if (remainingEl) { remainingEl.textContent = TOTAL_PARKS - visitedTotal; }
+  }
+
   function buildBucketForFilter(filterValue) {
     if (filterValue === 'whole-family') { return buildBucketListHTML(); }
     var visited;
@@ -415,6 +449,7 @@
 
   function applyChipColors(filterValue) {
     currentChipFilter = filterValue;
+    updateStatsStrip(filterValue);
     var card = document.getElementById('parksCard');
     if (!card) return;
     var hex = filterColors[filterValue] || '#8a9aaa';
@@ -726,6 +761,9 @@
 
   // ---- Init -----------------------------------------
   function init() {
+    // Quick-glance totals strip is populated by applyChipColors() below,
+    // which fires for the initial 'whole-family' default too.
+
     // Parks filter row + card
     buildParksFilterRow();
     buildParksCard();

@@ -10,10 +10,17 @@
   var slideshow = document.getElementById('disneySlideshow');
   if (!slideshow) { return; }
 
-  var slides = Array.prototype.slice.call(slideshow.querySelectorAll('img'));
-  if (!slides.length) { return; }
+  var allSlides = Array.prototype.slice.call(slideshow.querySelectorAll('img'));
+  if (!allSlides.length) { return; }
+
+  // Currently-visible subset -- starts as everyone, narrowed by
+  // applyPersonFilter() below. Kept as a single shared `var` (not a
+  // const) so every function in this file that closes over `slides`
+  // sees the same live reference after a filter change reassigns it.
+  var slides = allSlides.slice();
 
   var wrap = slideshow.closest('.slideshow-wrap');
+  var photosCol = slideshow.closest('.pm-col');
   var caption = wrap ? wrap.querySelector('.cycle-caption') : null;
   var prevBtn = wrap ? wrap.querySelector('.prev') : null;
   var nextBtn = wrap ? wrap.querySelector('.next') : null;
@@ -89,6 +96,40 @@
   slideshow.addEventListener('mouseenter', stopAuto);
   slideshow.addEventListener('mouseleave', startAuto);
   startAuto();
+
+  // --- Person filter --------------------------------
+  // Mirrors hunting/js/app.js's photosForSpecies(): a photo's filename
+  // already encodes who's in it (e.g. "...-josh-sam.jpg"), so filtering
+  // is just a substring check against the active person -- no separate
+  // photo-to-person data mapping needed. "whole-family"/"anyone" (and
+  // boot, before any filter has fired) show every photo -- the gallery
+  // doesn't distinguish those two the way visited-park counts do.
+  function applyPersonFilter(person) {
+    var filtered = (!person || person === 'whole-family' || person === 'anyone')
+      ? allSlides.slice()
+      : allSlides.filter(function (img) {
+          return img.getAttribute('src').toLowerCase().indexOf(person.toLowerCase()) !== -1;
+        });
+
+    if (!filtered.length) {
+      // Only show what has content -- same convention as /hunting hiding
+      // its whole Whitetail Deer section for a filter with no bucks.
+      stopAuto();
+      if (photosCol) { photosCol.style.display = 'none'; }
+      allSlides.forEach(function (img) { img.classList.remove('is-active'); });
+      slides = filtered;
+      return;
+    }
+
+    if (photosCol) { photosCol.style.display = ''; }
+    slides = filtered;
+    showSlide(0);
+    startAuto();
+  }
+
+  document.addEventListener('disney:personchange', function (e) {
+    applyPersonFilter(e.detail && e.detail.person);
+  });
 
   // --- Lightbox (full-screen) ----------------------
   var overlay = document.createElement('div');
