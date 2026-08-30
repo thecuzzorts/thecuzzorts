@@ -1875,5 +1875,59 @@ var mlbGames = [
       "tilly": 1,
       "poppy": 1
     }
+  },
+  {
+    "gamePk": 823501,
+    "date": "2026-08-29",
+    "homeTeam": "New York Yankees",
+    "awayTeam": "Boston Red Sox",
+    "homeScore": 9,
+    "awayScore": 2,
+    "venue": "Yankee Stadium",
+    "gameType": "R",
+    "notes": "Second game of double header.",
+    "attendedBy": {
+      "josh": 0,
+      "sam": 1,
+      "ellie": 0,
+      "tilly": 0,
+      "poppy": 0
+    }
+  },
+  {
+    "gamePk": 823539,
+    "date": "2026-08-29",
+    "homeTeam": "New York Yankees",
+    "awayTeam": "Boston Red Sox",
+    "homeScore": 0,
+    "awayScore": 6,
+    "venue": "Yankee Stadium",
+    "gameType": "R",
+    "notes": "First game of double header.",
+    "attendedBy": {
+      "josh": 0,
+      "sam": 1,
+      "ellie": 0,
+      "tilly": 0,
+      "poppy": 0
+    }
+  },
+  {
+    "gamePk": 823582,
+    "date": "2026-08-29",
+    "homeTeam": "New York Mets",
+    "awayTeam": "Houston Astros",
+    "homeScore": 6,
+    "awayScore": 2,
+    "venue": "Citi Field",
+    "gameType": "R",
+    "notes": "Squeezed in between games of the Yankees doubleheader -- 3 games in one day!",
+    "attendedBy": {
+      "josh": 0,
+      "sam": 1,
+      "ellie": 0,
+      "tilly": 0,
+      "poppy": 0
+    }
   }
 ];

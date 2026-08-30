@@ -8037,5 +8037,230 @@ var mlbGameDetail = {
       }
     ],
     "cycles": []
+  },
+  "823501": {
+    "status": "Final",
+    "statusReason": null,
+    "homeHits": 13,
+    "awayHits": 6,
+    "homeHR": 0,
+    "awayHR": 1,
+    "homeDoubles": 0,
+    "awayDoubles": 1,
+    "homeTriples": 0,
+    "awayTriples": 1,
+    "homeStrikeouts": 5,
+    "awayStrikeouts": 10,
+    "homeWalks": 1,
+    "awayWalks": 2,
+    "winPitcher": {
+      "id": 621112,
+      "name": "Paul Blackburn"
+    },
+    "lossPitcher": {
+      "id": 678394,
+      "name": "Brayan Bello"
+    },
+    "savePitcher": null,
+    "weather": {
+      "condition": "Clear",
+      "temp": "75",
+      "wind": "4 mph, In From LF"
+    },
+    "crowdSize": 44266,
+    "duration": "3:07",
+    "dayNight": "night",
+    "doubleheader": true,
+    "extraInnings": false,
+    "inningsPlayed": 9,
+    "innings": [
+      {
+        "away": 0,
+        "home": 0
+      },
+      {
+        "away": 0,
+        "home": 0
+      },
+      {
+        "away": 1,
+        "home": 3
+      },
+      {
+        "away": 0,
+        "home": 0
+      },
+      {
+        "away": 0,
+        "home": 0
+      },
+      {
+        "away": 0,
+        "home": 1
+      },
+      {
+        "away": 0,
+        "home": 0
+      },
+      {
+        "away": 1,
+        "home": 5
+      },
+      {
+        "away": 0,
+        "home": null
+      }
+    ],
+    "cycles": []
+  },
+  "823539": {
+    "status": "Final",
+    "statusReason": null,
+    "homeHits": 4,
+    "awayHits": 9,
+    "homeHR": 0,
+    "awayHR": 1,
+    "homeDoubles": 1,
+    "awayDoubles": 1,
+    "homeTriples": 0,
+    "awayTriples": 0,
+    "homeStrikeouts": 9,
+    "awayStrikeouts": 8,
+    "homeWalks": 0,
+    "awayWalks": 3,
+    "winPitcher": {
+      "id": 687562,
+      "name": "Jake Bennett"
+    },
+    "lossPitcher": {
+      "id": 607074,
+      "name": "Carlos Rod\u00f3n"
+    },
+    "savePitcher": null,
+    "weather": {
+      "condition": "Sunny",
+      "temp": "76",
+      "wind": "5 mph, In From CF"
+    },
+    "crowdSize": 47314,
+    "duration": "2:52",
+    "dayNight": "day",
+    "doubleheader": true,
+    "extraInnings": false,
+    "inningsPlayed": 9,
+    "innings": [
+      {
+        "away": 1,
+        "home": 0
+      },
+      {
+        "away": 0,
+        "home": 0
+      },
+      {
+        "away": 0,
+        "home": 0
+      },
+      {
+        "away": 0,
+        "home": 0
+      },
+      {
+        "away": 1,
+        "home": 0
+      },
+      {
+        "away": 0,
+        "home": 0
+      },
+      {
+        "away": 0,
+        "home": 0
+      },
+      {
+        "away": 0,
+        "home": 0
+      },
+      {
+        "away": 4,
+        "home": 0
+      }
+    ],
+    "cycles": []
+  },
+  "823582": {
+    "status": "Final",
+    "statusReason": null,
+    "homeHits": 11,
+    "awayHits": 4,
+    "homeHR": 0,
+    "awayHR": 1,
+    "homeDoubles": 3,
+    "awayDoubles": 2,
+    "homeTriples": 1,
+    "awayTriples": 0,
+    "homeStrikeouts": 6,
+    "awayStrikeouts": 6,
+    "homeWalks": 2,
+    "awayWalks": 3,
+    "winPitcher": {
+      "id": 690997,
+      "name": "Nolan McLean"
+    },
+    "lossPitcher": {
+      "id": 664299,
+      "name": "Cristian Javier"
+    },
+    "savePitcher": null,
+    "weather": {
+      "condition": "Sunny",
+      "temp": "79",
+      "wind": "4 mph, In From LF"
+    },
+    "crowdSize": 29183,
+    "duration": "2:36",
+    "dayNight": "day",
+    "doubleheader": false,
+    "extraInnings": false,
+    "inningsPlayed": 9,
+    "innings": [
+      {
+        "away": 1,
+        "home": 1
+      },
+      {
+        "away": 0,
+        "home": 0
+      },
+      {
+        "away": 0,
+        "home": 0
+      },
+      {
+        "away": 0,
+        "home": 0
+      },
+      {
+        "away": 0,
+        "home": 3
+      },
+      {
+        "away": 0,
+        "home": 0
+      },
+      {
+        "away": 0,
+        "home": 0
+      },
+      {
+        "away": 1,
+        "home": 2
+      },
+      {
+        "away": 0,
+        "home": null
+      }
+    ],
+    "cycles": []
   }
 };

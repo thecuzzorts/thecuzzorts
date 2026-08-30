@@ -38,6 +38,7 @@
       totalGames: games.length,
       firstYear: null, lastYear: null,
       venues: {},
+      players: {},
       homeWins: 0, awayWins: 0,
       totalRuns: 0, totalHits: 0, totalHR: 0,
       totalDoubles: 0, totalTriples: 0, totalStrikeouts: 0, totalWalks: 0,
@@ -71,6 +72,11 @@
       // counts distinct physical ballparks instead of distinct name strings.
       var venueCoord = (typeof mlbVenues !== 'undefined' && mlbVenues[g.venue]) || null;
       stats.venues[venueCoord ? (venueCoord.lat + ',' + venueCoord.lng) : g.venue] = true;
+
+      var appearances = (typeof mlbGamePlayers !== 'undefined') && mlbGamePlayers[g.gamePk];
+      if (appearances) {
+        appearances.forEach(function (p) { stats.players[p.id] = true; });
+      }
 
       if (typeof g.homeScore === 'number' && typeof g.awayScore === 'number') {
         stats.totalRuns += g.homeScore + g.awayScore;
@@ -144,6 +150,7 @@
     stats.totalSingles = stats.totalHits - stats.totalDoubles - stats.totalTriples - stats.totalHR;
 
     stats.venueCount = Object.keys(stats.venues).length;
+    stats.uniquePlayers = Object.keys(stats.players).length;
     stats.doubleheaders = Object.keys(stats.doubleheaderDates).length;
     var decided = stats.homeWins + stats.awayWins;
     stats.homeWinPct = decided ? Math.round((stats.homeWins / decided) * 100) : 0;
@@ -241,6 +248,7 @@
       tileIfNonZero(stats.totalTriples, tile(stats.totalTriples, pluralize(stats.totalTriples, 'Total Triple'))) +
       tileIfNonZero(stats.totalStrikeouts, tile(stats.totalStrikeouts.toLocaleString(), pluralize(stats.totalStrikeouts, 'Total Strikeout'))) +
       tileIfNonZero(stats.totalWalks, tile(stats.totalWalks.toLocaleString(), pluralize(stats.totalWalks, 'Total Walk'))) +
+      tileIfNonZero(stats.uniquePlayers, tile(stats.uniquePlayers.toLocaleString(), pluralize(stats.uniquePlayers, 'Unique Player Seen', 'Unique Players Seen'))) +
       tile(stats.day + ' / ' + stats.night, 'Day / Night Games') +
       tile(stats.avgCrowd != null ? stats.avgCrowd.toLocaleString() : '&ndash;', 'Avg. Crowd Size') +
       tileIfNonZero(stats.postseason, tile(stats.postseason, pluralize(stats.postseason, 'Postseason Game'), null, statDetailHTML(stats.postseasonGames))) +
@@ -476,8 +484,8 @@
     });
   }
 
-  // Person filter -- All / Josh / Sam / Ellie / Tilly / Poppy -- drives
-  // the Journey map, Overview stats, and Games list together (the Players
+  // Person filter -- All / Anyone / Josh / Sam / Ellie / Tilly / Poppy --
+  // drives the Journey map, Overview stats, and Games list together (the Players
   // leaderboard intentionally stays as the full all-time list).
   function initPersonFilter(onChange) {
     var el = document.getElementById('mlbgPersonFilter');
@@ -1039,25 +1047,38 @@
     var allGames = typeof mlbGames !== 'undefined' ? mlbGames : [];
     if (!allGames.length) { return; }
 
-    var currentPerson = 'all';
+    var currentPerson = 'anyone';
     var currentSort = 'recent';
 
+    // "anyone" = at least one tracked family member attended -- since
+    // every game in the log exists because someone did, this is just the
+    // full list (same as /disney's and /national-parks' "Anyone" filter).
+    // "whole-family" = every tracked person attended the same game --
+    // the actual "All" concept, which the old single "All" filter never
+    // distinguished from "anyone" (it just returned allGames, unfiltered).
     function filteredGames() {
-      if (currentPerson === 'all') { return allGames; }
+      if (currentPerson === 'anyone') { return allGames; }
+      if (currentPerson === 'whole-family') {
+        return allGames.filter(function (g) {
+          return Object.keys(g.attendedBy).every(function (p) { return g.attendedBy[p] === 1; });
+        });
+      }
       return allGames.filter(function (g) { return g.attendedBy[currentPerson] === 1; });
     }
 
     // Starts empty -- renderForFilter() below does the one real populate,
-    // so the initial "all" filter doesn't get built twice.
+    // so the initial "anyone" filter doesn't get built twice.
     var journeyApi = initJourneyMap([]);
 
     function renderForFilter() {
       var games = filteredGames();
 
       var gameWord = pluralize(games.length, 'game');
-      document.getElementById('mlbgIntroCount').textContent = currentPerson === 'all'
+      document.getElementById('mlbgIntroCount').textContent = currentPerson === 'anyone'
         ? games.length + ' ' + gameWord + ' and counting — every box score, every ballpark, every trip'
-        : games.length + ' ' + gameWord + ' with ' + PERSON_LABELS[currentPerson] + ' — every box score, every ballpark, every trip';
+        : currentPerson === 'whole-family'
+          ? games.length + ' ' + gameWord + ' with the whole family — every box score, every ballpark, every trip'
+          : games.length + ' ' + gameWord + ' with ' + PERSON_LABELS[currentPerson] + ' — every box score, every ballpark, every trip';
 
       var stats = computeStats(games);
       buildStatsHTML(stats);

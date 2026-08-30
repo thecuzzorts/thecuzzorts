@@ -109,6 +109,9 @@ GAMES = [
     ("7/11/2026", "Cardinals", "Green seats with Jack and Tilly.", 1,1,0,1,0),
     ("7/23/2026", "Cardinals", "Green seats with Ashley and Jack.", 1,1,0,0,0),
     ("8/5/2026", "Braves", "First Truist Park visit for all the girls!", 1,1,1,1,1),
+    ("8/29/2026", "Yankees", "First game of double header.", 0,1,0,0,0),
+    ("8/29/2026", "Mets", "Squeezed in between games of the Yankees doubleheader -- 3 games in one day!", 0,1,0,0,0),
+    ("8/29/2026", "Yankees", "Second game of double header.", 0,1,0,0,0),
 ]
 
 print("Total games:", len(GAMES))

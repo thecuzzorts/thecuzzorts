@@ -269,16 +269,21 @@ def main():
 
         print(f"[{fetched}] fetched {iso} {sched_game['teams']['home']['team']['name']} (gamePk {sched_game['gamePk']})")
 
-    # doubleheader flag: any date with >1 record -- recomputed fully every
-    # run (explicitly set False too, not just True) so a stale flag can't
-    # survive a date correction. A prior version of this only ever set
-    # True and never cleared it, which is exactly how 2022-08-07 stayed
-    # flagged as a doubleheader after its duplicate row got corrected to
-    # 2022-08-27 -- the other row's flag was never reset.
-    by_date = defaultdict(list)
+    # doubleheader flag: any (date, venue) with >1 record -- recomputed
+    # fully every run (explicitly set False too, not just True) so a stale
+    # flag can't survive a date correction. A prior version of this only
+    # ever set True and never cleared it, which is exactly how 2022-08-07
+    # stayed flagged as a doubleheader after its duplicate row got
+    # corrected to 2022-08-27 -- the other row's flag was never reset.
+    # Grouped by (date, venue), not just date -- two unrelated single
+    # games attended at different parks on the same calendar day (first
+    # happened 8/29/2026: both games of a Yankees DH plus a separate Mets
+    # game at Citi Field) are not a doubleheader just because they share a
+    # date.
+    by_date_venue = defaultdict(list)
     for r in cache:
-        by_date[r['date']].append(r)
-    for recs in by_date.values():
+        by_date_venue[(r['date'], r['venue'])].append(r)
+    for recs in by_date_venue.values():
         is_dh = len(recs) > 1
         for r in recs:
             r['doubleheader'] = is_dh
