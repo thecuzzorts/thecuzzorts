@@ -445,7 +445,7 @@
 
   // Remembered so the theme-change listener below can recompute the same
   // chip tint after a manual light/dark toggle, without a page reload.
-  var currentChipFilter = 'whole-family';
+  var currentChipFilter = 'anyone';
 
   function applyChipColors(filterValue) {
     currentChipFilter = filterValue;
@@ -498,11 +498,11 @@
       container.appendChild(btn);
     }
 
-    makeBtn('whole-family', 'All',    WHOLE_FAMILY_COLOR, countWholeFamilyVisited(), true);
-    makeBtn('anyone',       'Anyone', ANYONE_COLOR,       countFamilyVisited(),      false);
+    makeBtn('anyone',       'Anyone', ANYONE_COLOR,       countFamilyVisited(),      true);
     PEOPLE.forEach(function (p) {
       makeBtn(p.id, p.name, p.color, countVisited(getPersonData(p.id).visited), false);
     });
+    makeBtn('whole-family', 'All',    WHOLE_FAMILY_COLOR, countWholeFamilyVisited(), false);
   }
 
   function buildParksCard() {
@@ -627,7 +627,7 @@
     });
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left');
 
-    var activeFilter = 'whole-family';
+    var activeFilter = 'anyone';
     var markerEntries = [];
 
     function isAnyoneVisited(parkId) {
@@ -672,14 +672,14 @@
       var visitedBy = PEOPLE.filter(function (p) {
         return getPersonData(p.id).visited[park.id];
       });
-      var html = '<strong>' + park.name + '</strong><br><em style="color:#888">' + park.state + '</em>';
+      var html = '<strong>' + park.name + '</strong><br><em class="popup-sub">' + park.state + '</em>';
       if (visitedBy.length) {
-        html += '<br><span style="font-size:0.82em;color:#555">Visited by: ' +
+        html += '<br><span class="popup-meta">Visited by: ' +
           visitedBy.map(function (p) {
             return '<span style="color:' + p.color + '">&#9679;</span>&nbsp;' + p.name;
           }).join(', ') + '</span>';
       } else {
-        html += '<br><span style="font-size:0.82em;color:#bbb">Not yet visited</span>';
+        html += '<br><span class="popup-meta">Not yet visited</span>';
       }
       return html;
     }
@@ -762,13 +762,13 @@
   // ---- Init -----------------------------------------
   function init() {
     // Quick-glance totals strip is populated by applyChipColors() below,
-    // which fires for the initial 'whole-family' default too.
+    // which fires for the initial 'anyone' default too.
 
     // Parks filter row + card
     buildParksFilterRow();
     buildParksCard();
     initParkFilters();
-    applyChipColors('whole-family');
+    applyChipColors('anyone');
 
     // Bucket list card
     setHeadingCount('bucket', countBucketList() + ' / ' + TOTAL_PARKS);

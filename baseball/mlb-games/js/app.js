@@ -16,6 +16,13 @@
   var PERSON_LABELS = { josh: 'Josh', sam: 'Sam', ellie: 'Ellie', tilly: 'Tilly', poppy: 'Poppy' };
   var PERSON_ORDER = ['josh', 'sam', 'ellie', 'tilly', 'poppy'];
 
+  // Franchise renames -- same class of problem mlbVenues already solves
+  // for ballparks that changed sponsor names over the years. "Oakland
+  // Athletics" dropped "Oakland" after relocating away; without this,
+  // the same 30-team franchise count would come out to 31.
+  var TEAM_ALIASES = { 'Oakland Athletics': 'Athletics' };
+  function canonicalTeam(name) { return TEAM_ALIASES[name] || name; }
+
   function mergeDetail(game) {
     var detail = (typeof mlbGameDetail !== 'undefined' && mlbGameDetail[game.gamePk]) || {};
     var merged = {};
@@ -39,7 +46,9 @@
       firstYear: null, lastYear: null,
       venues: {},
       players: {},
+      teams: {},
       homeWins: 0, awayWins: 0,
+      totalMinutes: 0,
       totalRuns: 0, totalHits: 0, totalHR: 0,
       totalDoubles: 0, totalTriples: 0, totalStrikeouts: 0, totalWalks: 0,
       extraInnings: 0, extraInningsGames: [],
@@ -60,6 +69,9 @@
     var inningsList = [];
     var crowdList = [];
     var tempList = [];
+    var runDiffList = [];
+    var winPitcherCounts = {}, winPitcherNames = {};
+    var lossPitcherCounts = {}, lossPitcherNames = {};
 
     games.forEach(function (g) {
       var full = mergeDetail(g);
@@ -80,10 +92,18 @@
         appearances.forEach(function (p) { stats.players[p.id] = true; });
       }
 
+      stats.teams[canonicalTeam(g.homeTeam)] = true;
+      stats.teams[canonicalTeam(g.awayTeam)] = true;
+
       if (typeof g.homeScore === 'number' && typeof g.awayScore === 'number') {
         stats.totalRuns += g.homeScore + g.awayScore;
         if (g.homeScore > g.awayScore) { stats.homeWins++; }
         else if (g.awayScore > g.homeScore) { stats.awayWins++; }
+        runDiffList.push({
+          date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam,
+          diff: Math.abs(g.homeScore - g.awayScore),
+          score: Math.max(g.homeScore, g.awayScore) + '-' + Math.min(g.homeScore, g.awayScore)
+        });
       }
       if (typeof full.homeHits === 'number') { stats.totalHits += full.homeHits; }
       if (typeof full.awayHits === 'number') { stats.totalHits += full.awayHits; }
@@ -145,7 +165,16 @@
         if (durMatch) {
           var mins = parseInt(durMatch[1], 10) * 60 + parseInt(durMatch[2], 10);
           durationList.push({ date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam, mins: mins, duration: durMatch[1] + ':' + durMatch[2] });
+          stats.totalMinutes += mins;
         }
+      }
+      if (full.winPitcher) {
+        winPitcherCounts[full.winPitcher.id] = (winPitcherCounts[full.winPitcher.id] || 0) + 1;
+        winPitcherNames[full.winPitcher.id] = full.winPitcher.name;
+      }
+      if (full.lossPitcher) {
+        lossPitcherCounts[full.lossPitcher.id] = (lossPitcherCounts[full.lossPitcher.id] || 0) + 1;
+        lossPitcherNames[full.lossPitcher.id] = full.lossPitcher.name;
       }
       if (typeof full.inningsPlayed === 'number') {
         inningsList.push({ date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam, innings: full.inningsPlayed });
@@ -159,6 +188,27 @@
     // Singles aren't a field the box score reports directly -- they're
     // just every hit that wasn't a double, triple, or home run.
     stats.totalSingles = stats.totalHits - stats.totalDoubles - stats.totalTriples - stats.totalHR;
+
+    stats.uniqueTeams = Object.keys(stats.teams).length;
+
+    var totalH = Math.floor(stats.totalMinutes / 60);
+    var totalM = stats.totalMinutes % 60;
+    stats.totalTimeDisplay = stats.totalMinutes ? (totalH + 'h ' + totalM + 'm') : null;
+
+    // Ties keep every name tied at the top count -- rendered as one detail
+    // line per pitcher (see statDetailHTML-style tiles below), not joined
+    // into a single string, so `names` stays a list.
+    function topPitcher(counts, names) {
+      var bestCount = 0, bestIds = [];
+      Object.keys(counts).forEach(function (id) {
+        if (counts[id] > bestCount) { bestCount = counts[id]; bestIds = [id]; }
+        else if (counts[id] === bestCount) { bestIds.push(id); }
+      });
+      if (!bestIds.length) { return null; }
+      return { names: bestIds.map(function (id) { return names[id]; }), count: bestCount };
+    }
+    stats.topWinPitcher = topPitcher(winPitcherCounts, winPitcherNames);
+    stats.topLossPitcher = topPitcher(lossPitcherCounts, lossPitcherNames);
 
     stats.venueCount = Object.keys(stats.venues).length;
     stats.uniquePlayers = Object.keys(stats.players).length;
@@ -216,6 +266,12 @@
     stats.coldest = tempExtremes.minItems[0] || null;
     stats.coldestGames = tempExtremes.minItems;
 
+    var runDiffExtremes = pickExtremes(runDiffList, 'diff');
+    stats.biggestBlowout = runDiffExtremes.maxItems[0] || null;
+    stats.biggestBlowoutGames = runDiffExtremes.maxItems;
+    stats.closestGame = runDiffExtremes.minItems[0] || null;
+    stats.closestGameGames = runDiffExtremes.minItems;
+
     // Most games attended in a single day -- e.g. both games of a
     // doubleheader plus a separate game squeezed in between (Sam's
     // 8/29/2026, the real-world case this stat exists for). Grouped by
@@ -260,6 +316,15 @@
       '<div class="bb-stat-detail-more" hidden>' + rest.map(line).join('') + '</div>' +
       '<button type="button" class="bb-stat-detail-toggle">+' + rest.length + ' more</button>';
   }
+  // Same one-line-per-item convention as statDetailHTML(), but for a
+  // {count, names} pitcher leader instead of a list of games -- every tied
+  // pitcher gets their own line, count included, e.g. "Adam Wainwright -- 3 wins".
+  function pitcherDetailHTML(topPitcher, singular, plural) {
+    if (!topPitcher) { return ''; }
+    return topPitcher.names.map(function (name) {
+      return '<div>' + name + ' &mdash; ' + topPitcher.count + ' ' + pluralize(topPitcher.count, singular, plural) + '</div>';
+    }).join('');
+  }
   function tile(num, label, denom, detail) {
     return '<div class="bb-stat' + (detail ? ' has-detail' : '') + '">' +
       '<div class="bb-num">' + num + (denom ? '<span class="bb-denom">' + denom + '</span>' : '') + '</div>' +
@@ -274,6 +339,15 @@
   // show a bare "0".
   function tileIfNonZero(count, html) { return count > 0 ? html : ''; }
   function pluralize(count, singular, plural) { return count === 1 ? singular : (plural || singular + 's'); }
+
+  // Labels the actual margin rather than a static "Closest Game" -- with
+  // one-run games this common, a static label doesn't say how close it
+  // actually was, and a filtered person's own closest game won't always
+  // land on the family-wide margin (e.g. a 1-run game for "Anyone" isn't
+  // guaranteed to be a 1-run game for Poppy specifically).
+  function marginLabel(diff) {
+    return diff === 0 ? 'Tie Game' : diff + '-Run Game';
+  }
 
   function buildStatsHTML(stats) {
     var headline =
@@ -299,6 +373,8 @@
       tileIfNonZero(stats.totalStrikeouts, tile(stats.totalStrikeouts.toLocaleString(), pluralize(stats.totalStrikeouts, 'Total Strikeout'))) +
       tileIfNonZero(stats.totalWalks, tile(stats.totalWalks.toLocaleString(), pluralize(stats.totalWalks, 'Total Walk'))) +
       tileIfNonZero(stats.uniquePlayers, tile(stats.uniquePlayers.toLocaleString(), pluralize(stats.uniquePlayers, 'Unique Player Seen', 'Unique Players Seen'))) +
+      tileIfNonZero(stats.uniqueTeams, tile(stats.uniqueTeams, pluralize(stats.uniqueTeams, 'Unique MLB Team Seen', 'Unique MLB Teams Seen'), '/30')) +
+      tile(stats.totalTimeDisplay || '&ndash;', 'Time at the Ballpark') +
       tile(stats.day + ' / ' + stats.night, 'Day / Night Games') +
       tile(stats.avgCrowd != null ? stats.avgCrowd.toLocaleString() : '&ndash;', 'Avg. Crowd Size') +
       tile(stats.avgTemp != null ? stats.avgTemp + '&deg;' : '&ndash;', 'Avg. Game-Day Temp') +
@@ -314,6 +390,13 @@
         statDetailHTML(stats.cycleGames, function (g) { return g.player; }, 1))) +
       tile(stats.longest ? stats.longest.duration : '&ndash;', 'Longest Game', null, statDetailHTML(stats.longestGames)) +
       tile(stats.shortest ? stats.shortest.duration : '&ndash;', 'Shortest Game', null, statDetailHTML(stats.shortestGames)) +
+      tile(stats.biggestBlowout ? stats.biggestBlowout.score : '&ndash;', 'Biggest Blowout', null, statDetailHTML(stats.biggestBlowoutGames)) +
+      tile(stats.closestGame ? stats.closestGame.score : '&ndash;',
+        stats.closestGame ? marginLabel(stats.closestGame.diff) : 'Closest Game', null, statDetailHTML(stats.closestGameGames)) +
+      tile(stats.topWinPitcher ? stats.topWinPitcher.count : '&ndash;', 'Most Wins Seen', null,
+        pitcherDetailHTML(stats.topWinPitcher, 'win', 'wins')) +
+      tile(stats.topLossPitcher ? stats.topLossPitcher.count : '&ndash;', 'Most Losses Seen', null,
+        pitcherDetailHTML(stats.topLossPitcher, 'loss', 'losses')) +
       tile(stats.highestCrowd ? stats.highestCrowd.crowd.toLocaleString() : '&ndash;', 'Highest Attendance', null,
         statDetailHTML(stats.highestCrowdGames, function (g) { return g.crowd.toLocaleString(); })) +
       tile(stats.lowestCrowd ? stats.lowestCrowd.crowd.toLocaleString() : '&ndash;', 'Lowest Attendance', null,
@@ -842,8 +925,8 @@
         var v = byLocation[key];
         var popupHTML =
           '<strong>' + v.team + '</strong><br>' +
-          '<em style="color:#888">' + v.venue + '</em><br>' +
-          '<span style="font-size:0.82em;color:#555">' + v.count + (v.count === 1 ? ' game' : ' games') + ' attended</span>';
+          '<em class="popup-sub">' + v.venue + '</em><br>' +
+          '<span class="popup-meta">' + v.count + (v.count === 1 ? ' game' : ' games') + ' attended</span>';
 
         var dotEl = document.createElement('div');
         dotEl.className = 'mlbg-team-marker-icon';

@@ -37,9 +37,10 @@
         <li><a href="#per-person">Per Person</a></li>
         <li><a href="#baseball">Baseball</a></li>
         <li><a href="#travels">Travels</a></li>
-        <li><a href="#turkey">Turkey Hunting</a></li>
-        <li><a href="#fishing">Fishing</a></li>
         <li><a href="#national-parks">National Parks</a></li>
+        <li><a href="#turkey">Turkey Hunting</a></li>
+        <li><a href="#deer">Whitetail Deer</a></li>
+        <li><a href="#fishing">Fishing</a></li>
         <li><a href="#disney">Disney</a></li>
       </ul>
     </nav>
@@ -52,31 +53,68 @@
       <p>Everything we've done, counted up.</p>
     </div>
 
+    <!-- Combines the per-year groupings the Baseball/Travels/National
+         Parks/Turkey charts below already compute -- see renderBestYear()
+         in js/app.js. Hidden until JS has real data to show. -->
+    <div class="best-year-callout" id="best-year-callout" style="display: none">
+      <span class="best-year-label">Best Year Ever</span>
+      <span class="best-year-num" id="best-year-num">—</span>
+      <span class="best-year-detail" id="best-year-detail"></span>
+    </div>
+
     <!-- ---- Family headline stats ---- -->
     <div class="hero-grid">
 
       <div class="hero-card" style="--a: var(--mlb-red-on-dark, #C8102E)">
-        <div class="hero-num">30<span class="hero-denom">/30</span></div>
+        <span class="ring-wrap">
+          <svg class="ring-svg" viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="ring-track" cx="60" cy="60" r="48"></circle>
+            <circle class="ring-fill" cx="60" cy="60" r="48" style="--pct: 1"></circle>
+          </svg>
+          <div class="hero-num">30<span class="hero-denom">/30</span></div>
+        </span>
         <span class="hero-badge">&#10003; Complete</span>
         <span class="hero-label">Active MLB Ballparks</span>
       </div>
 
-      <div class="hero-card" style="--a: #E8A020">
-        <div class="hero-num"><span id="h-states">—</span><span class="hero-denom">/50</span></div>
+      <div class="hero-card" style="--a: var(--travels-orange-on-dark, #FF8200)">
+        <span class="ring-wrap">
+          <svg class="ring-svg" viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="ring-track" cx="60" cy="60" r="48"></circle>
+            <circle class="ring-fill" id="h-states-ring" cx="60" cy="60" r="48" style="--pct: 0"></circle>
+          </svg>
+          <div class="hero-num"><span id="h-states">—</span><span class="hero-denom">/50</span></div>
+        </span>
         <div class="hero-sub" id="h-states-sub"></div>
         <span class="hero-label">States (Family)</span>
       </div>
 
-      <div class="hero-card" style="--a: var(--parks-brown-on-dark, #8B5E3C)">
-        <div class="hero-num"><span id="h-parks">—</span><span class="hero-denom">/63</span></div>
-        <div class="hero-sub" id="h-parks-sub"></div>
-        <span class="hero-label">National Parks (Family)</span>
-      </div>
-
-      <div class="hero-card" style="--a: #E0609C">
-        <div class="hero-num"><span id="h-countries">—</span></div>
+      <!-- Was wrongly styled with Disney's pink -- Countries is a
+           Travels metric, placed next to States since both share that
+           identity. Ceiling of 197 matches the homepage quick-stat's
+           Countries ring. -->
+      <div class="hero-card" style="--a: var(--travels-orange-on-dark, #FF8200)">
+        <span class="ring-wrap">
+          <svg class="ring-svg" viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="ring-track" cx="60" cy="60" r="48"></circle>
+            <circle class="ring-fill" id="h-countries-ring" cx="60" cy="60" r="48" style="--pct: 0"></circle>
+          </svg>
+          <div class="hero-num"><span id="h-countries">—</span><span class="hero-denom">/197</span></div>
+        </span>
         <div class="hero-sub" id="h-countries-sub"></div>
         <span class="hero-label">Countries (Family)</span>
+      </div>
+
+      <div class="hero-card" style="--a: var(--parks-gold-on-dark, #F5C518)">
+        <span class="ring-wrap">
+          <svg class="ring-svg" viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="ring-track" cx="60" cy="60" r="48"></circle>
+            <circle class="ring-fill" id="h-parks-ring" cx="60" cy="60" r="48" style="--pct: 0"></circle>
+          </svg>
+          <div class="hero-num"><span id="h-parks">—</span><span class="hero-denom">/63</span></div>
+        </span>
+        <div class="hero-sub" id="h-parks-sub"></div>
+        <span class="hero-label">National Parks (Family)</span>
       </div>
 
     </div><!-- /hero-grid -->
@@ -228,7 +266,13 @@
     <div class="bb-grid">
 
       <div class="bb-stat" style="--a: var(--mlb-red-on-dark, #C8102E)">
-        <div class="bb-num">30<span class="bb-denom">/30</span></div>
+        <span class="ring-wrap">
+          <svg class="ring-svg" viewBox="0 0 84 84" aria-hidden="true">
+            <circle class="ring-track" cx="42" cy="42" r="34"></circle>
+            <circle class="ring-fill" cx="42" cy="42" r="34" style="--pct: 1"></circle>
+          </svg>
+          <div class="bb-num">30<span class="bb-denom">/30</span></div>
+        </span>
         <span class="bb-badge">&#10003; Complete</span>
         <span class="bb-label">Active MLB Parks</span>
       </div>
@@ -255,31 +299,86 @@
 
     </div><!-- /bb-grid -->
 
+    <h3 class="stats-year-heading">MLB Games Attended Per Year</h3>
+    <div class="stats-year-chart-wrap">
+      <div class="stats-year-chart" id="baseball-year-chart"></div>
+    </div>
+
     <!-- ---- Travels ---- -->
-    <h2 class="stat-head" id="travels" style="--sh-color: #E8A020">Travels</h2>
+    <h2 class="stat-head" id="travels" style="--sh-color: #FF8200">Travels</h2>
 
     <div class="bb-grid" style="grid-template-columns: repeat(4, 1fr)">
 
-      <div class="bb-stat" style="--a: #E8A020">
-        <div class="bb-num"><span id="trav-states">—</span><span class="bb-denom">/50</span></div>
+      <div class="bb-stat" style="--a: var(--travels-orange-on-dark, #FF8200)">
+        <span class="ring-wrap">
+          <svg class="ring-svg" viewBox="0 0 84 84" aria-hidden="true">
+            <circle class="ring-track" cx="42" cy="42" r="34"></circle>
+            <circle class="ring-fill" id="trav-states-ring" cx="42" cy="42" r="34" style="--pct: 0"></circle>
+          </svg>
+          <div class="bb-num"><span id="trav-states">—</span><span class="bb-denom">/50</span></div>
+        </span>
         <span class="bb-label">States (Family)</span>
       </div>
 
-      <div class="bb-stat" style="--a: #E8A020">
-        <div class="bb-num"><span id="trav-countries">—</span></div>
+      <div class="bb-stat" style="--a: var(--travels-orange-on-dark, #FF8200)">
+        <span class="ring-wrap">
+          <svg class="ring-svg" viewBox="0 0 84 84" aria-hidden="true">
+            <circle class="ring-track" cx="42" cy="42" r="34"></circle>
+            <circle class="ring-fill" id="trav-countries-ring" cx="42" cy="42" r="34" style="--pct: 0"></circle>
+          </svg>
+          <div class="bb-num"><span id="trav-countries">—</span><span class="bb-denom">/197</span></div>
+        </span>
         <span class="bb-label">Countries (Family)</span>
       </div>
 
-      <div class="bb-stat" style="--a: #E8A020">
+      <div class="bb-stat" style="--a: var(--travels-orange-on-dark, #FF8200)">
         <div class="bb-num"><span id="trav-territories">—</span></div>
         <span class="bb-label">Territories (Family)</span>
       </div>
 
-      <div class="bb-stat" style="--a: #E8A020">
+      <div class="bb-stat" style="--a: var(--travels-orange-on-dark, #FF8200)">
         <div class="bb-num"><span id="trav-max-num">—</span></div>
         <span class="bb-label">Most States (<span id="trav-max-name">—</span>)</span>
       </div>
 
+    </div>
+
+    <h3 class="stats-year-heading">States &amp; Countries Visited Per Year</h3>
+    <div class="stats-year-chart-wrap">
+      <div class="stats-year-chart" id="travels-year-chart"></div>
+    </div>
+
+    <!-- ---- National Parks ---- -->
+    <h2 class="stat-head" id="national-parks" style="--sh-color: #F5C518">National Parks</h2>
+
+    <div class="bb-grid" style="grid-template-columns: repeat(3, 1fr)">
+
+      <div class="bb-stat" style="--a: var(--parks-gold-on-dark, #F5C518)">
+        <span class="ring-wrap">
+          <svg class="ring-svg" viewBox="0 0 84 84" aria-hidden="true">
+            <circle class="ring-track" cx="42" cy="42" r="34"></circle>
+            <circle class="ring-fill" id="np-family-ring" cx="42" cy="42" r="34" style="--pct: 0"></circle>
+          </svg>
+          <div class="bb-num"><span id="np-family">—</span><span class="bb-denom">/63</span></div>
+        </span>
+        <span class="bb-label">Parks Visited (Family)</span>
+      </div>
+
+      <div class="bb-stat" style="--a: var(--parks-gold-on-dark, #F5C518)">
+        <div class="bb-num"><span id="np-remaining">—</span></div>
+        <span class="bb-label">On the Bucket List</span>
+      </div>
+
+      <div class="bb-stat" style="--a: var(--parks-gold-on-dark, #F5C518)">
+        <div class="bb-num"><span id="np-max-num">—</span></div>
+        <span class="bb-label">Most Visited (<span id="np-max-name">—</span>)</span>
+      </div>
+
+    </div>
+
+    <h3 class="stats-year-heading">National Parks Visited Per Year</h3>
+    <div class="stats-year-chart-wrap">
+      <div class="stats-year-chart" id="parks-year-chart"></div>
     </div>
 
     <!-- ---- Turkey Hunting ---- -->
@@ -308,17 +407,53 @@
 
     </div><!-- /turkey-grid -->
 
+    <div class="bb-grid" style="grid-template-columns: repeat(2, 1fr)">
+
+      <div class="bb-stat" style="--a: var(--turkey-green-on-dark, #57BD83)">
+        <div class="bb-num"><span id="turkey-nwtf-avg">—</span></div>
+        <span class="bb-label">Avg. NWTF Score</span>
+      </div>
+
+      <div class="bb-stat" style="--a: var(--turkey-green-on-dark, #57BD83)">
+        <div class="bb-num"><span id="turkey-nwtf-max">—</span></div>
+        <span class="bb-label">Highest NWTF Score</span>
+      </div>
+
+    </div>
+
+    <h3 class="stats-year-heading">Turkeys Harvested Per Year</h3>
+    <div class="stats-year-chart-wrap">
+      <div class="stats-year-chart" id="turkey-year-chart"></div>
+    </div>
+
+    <!-- ---- Whitetail Deer ---- -->
+    <!-- Same narrow public surface as /hunting's bucks catalog
+         (hunting/js/deer.js's deriveBucks()) -- aggregate counts only,
+         never license/tag numbers or notes from the private log. -->
+    <h2 class="stat-head" id="deer" style="--sh-color: #57BD83">Whitetail Deer</h2>
+
+    <div class="turkey-grid" style="grid-template-columns: 1fr; max-width: 340px">
+
+      <div class="turkey-card" style="--pc: #00AC4B">
+        <span class="tc-name">Josh</span>
+        <div class="tc-num" id="deer-josh-num">—</div>
+        <span class="tc-label">Bucks Harvested</span>
+        <div class="tc-sub" id="deer-josh-sub"></div>
+      </div>
+
+    </div><!-- /turkey-grid -->
+
     <!-- ---- Fishing ---- -->
     <h2 class="stat-head" id="fishing" style="--sh-color: #1C7C9C">Fishing</h2>
 
     <div class="bb-grid" style="grid-template-columns: repeat(4, 1fr)">
 
-      <div class="bb-stat" style="--a: #1C7C9C">
+      <div class="bb-stat" style="--a: var(--fishing-teal-on-dark, #1C7C9C)">
         <div class="bb-num"><span id="fish-species">—</span></div>
         <span class="bb-label">Species Caught</span>
       </div>
 
-      <div class="bb-stat" style="--a: #1C7C9C">
+      <div class="bb-stat" style="--a: var(--fishing-teal-on-dark, #1C7C9C)">
         <div class="bb-num"><span id="fish-catches">—</span></div>
         <span class="bb-label">Total Catches</span>
       </div>
@@ -335,44 +470,28 @@
 
     </div>
 
-    <!-- ---- National Parks ---- -->
-    <h2 class="stat-head" id="national-parks" style="--sh-color: #C99A6A">National Parks</h2>
-
-    <div class="bb-grid" style="grid-template-columns: repeat(3, 1fr)">
-
-      <div class="bb-stat" style="--a: var(--parks-brown-on-dark, #8B5E3C)">
-        <div class="bb-num"><span id="np-family">—</span><span class="bb-denom">/63</span></div>
-        <span class="bb-label">Parks Visited (Family)</span>
-      </div>
-
-      <div class="bb-stat" style="--a: var(--parks-brown-on-dark, #8B5E3C)">
-        <div class="bb-num"><span id="np-remaining">—</span></div>
-        <span class="bb-label">On the Bucket List</span>
-      </div>
-
-      <div class="bb-stat" style="--a: var(--parks-brown-on-dark, #8B5E3C)">
-        <div class="bb-num"><span id="np-max-num">—</span></div>
-        <span class="bb-label">Most Visited (<span id="np-max-name">—</span>)</span>
-      </div>
-
-    </div>
-
     <!-- ---- Disney ---- -->
-    <h2 class="stat-head" id="disney" style="--sh-color: #E0609C">Disney Parks</h2>
+    <h2 class="stat-head" id="disney" style="--sh-color: #E060C6">Disney Parks</h2>
 
     <div class="bb-grid" style="grid-template-columns: repeat(3, 1fr)">
 
-      <div class="bb-stat" style="--a: #E0609C">
-        <div class="bb-num"><span id="dis-family">—</span><span class="bb-denom">/12</span></div>
+      <div class="bb-stat" style="--a: var(--disney-pink-on-dark, #E060C6)">
+        <span class="ring-wrap">
+          <svg class="ring-svg" viewBox="0 0 84 84" aria-hidden="true">
+            <circle class="ring-track" cx="42" cy="42" r="34"></circle>
+            <circle class="ring-fill" id="dis-family-ring" cx="42" cy="42" r="34" style="--pct: 0"></circle>
+          </svg>
+          <div class="bb-num"><span id="dis-family">—</span><span class="bb-denom">/12</span></div>
+        </span>
         <span class="bb-label">Parks Visited (Family)</span>
       </div>
 
-      <div class="bb-stat" style="--a: #E0609C">
+      <div class="bb-stat" style="--a: var(--disney-pink-on-dark, #E060C6)">
         <div class="bb-num"><span id="dis-remaining">—</span></div>
         <span class="bb-label">Still to Visit</span>
       </div>
 
-      <div class="bb-stat" style="--a: #E0609C">
+      <div class="bb-stat" style="--a: var(--disney-pink-on-dark, #E060C6)">
         <div class="bb-num"><span id="dis-max-num">—</span></div>
         <span class="bb-label">Most Visited (<span id="dis-max-name">—</span>)</span>
       </div>
@@ -405,196 +524,16 @@
   <script src="../turkey-hunting/data/turkey-harvests-josh.js"></script>
   <script src="../turkey-hunting/data/turkey-harvests-sam.js"></script>
   <script src="../turkey-hunting/data/turkey-harvests-tilly.js"></script>
+  <script src="../hunting/data/deer-harvests-josh.js"></script>
   <script src="../disney/data/disney-visited-josh.js"></script>
   <script src="../disney/data/disney-visited-sam.js"></script>
   <script src="../disney/data/disney-visited-ellie.js"></script>
   <script src="../disney/data/disney-visited-tilly.js"></script>
   <script src="../disney/data/disney-visited-poppy.js"></script>
   <script src="../fishing/data/fish-caught.js"></script>
+  <script src="../baseball/mlb-games/data/games.js"></script>
 
-  <script>
-    (function () {
-      var TERRITORIES = { PR:1, VI:1, SX:1, GU:1, AS:1, MP:1 };
-      var TOTAL_STATES = 50;
-      var TOTAL_PARKS  = 63;
-
-      function countStates(data) {
-        var n = 0;
-        for (var k in data) { if (k !== 'US-DC' && data[k] === 1) n++; }
-        return n;
-      }
-
-      function countCountries(data) {
-        var countries = 0, terr = 0;
-        for (var k in data) {
-          if (data[k] === 1) { TERRITORIES[k] ? terr++ : countries++; }
-        }
-        return { countries: countries, territories: terr };
-      }
-
-      function countVisited(data) {
-        var n = 0;
-        for (var k in data) { if (data[k] === 1) n++; }
-        return n;
-      }
-
-      function countHarvested(data) {
-        var harvested = 0, huntedOnly = 0;
-        for (var k in data) {
-          var v = data[k];
-          if (Math.round(v) >= 1) harvested++;
-          else if (v > 0) huntedOnly++;
-        }
-        return { harvested: harvested, huntedOnly: huntedOnly };
-      }
-
-      function familyUnionStates() {
-        // Matches the /travels page "All" filter: states every family member has visited.
-        var count = 0;
-        for (var k in statesVisitedJosh) {
-          if (k === 'US-DC') continue;
-          if (statesVisitedJosh[k] === 1 && statesVisitedSam[k] === 1 &&
-              statesVisitedEllie[k] === 1 && statesVisitedTilly[k] === 1 && statesVisitedPoppy[k] === 1) count++;
-        }
-        return count;
-      }
-
-      function familyUnionCountries() {
-        // Matches the /travels page "All" filter: countries every family member has visited.
-        var countries = 0, terr = 0;
-        for (var k in countriesVisitedJosh) {
-          if (countriesVisitedJosh[k] === 1 && countriesVisitedSam[k] === 1 &&
-              countriesVisitedEllie[k] === 1 && countriesVisitedTilly[k] === 1 && countriesVisitedPoppy[k] === 1) {
-            TERRITORIES[k] ? terr++ : countries++;
-          }
-        }
-        return { countries: countries, territories: terr };
-      }
-
-      function familyUnionParks() {
-        // Matches the NP page "All" filter: parks every family member has visited.
-        var count = 0;
-        for (var k in parksVisitedJosh) {
-          if (parksVisitedJosh[k] === 1 && parksVisitedSam[k] === 1 &&
-              parksVisitedEllie[k] === 1 && parksVisitedTilly[k] === 1 && parksVisitedPoppy[k] === 1) count++;
-        }
-        return count;
-      }
-
-      function set(id, val) {
-        var el = document.getElementById(id);
-        if (el) el.textContent = val;
-      }
-
-      function familyUnionDisney() {
-        // Matches the Disney page "All" filter: parks every family member has visited.
-        var count = 0;
-        for (var k in disneyVisitedJosh) {
-          if (disneyVisitedJosh[k] === 1 && disneyVisitedSam[k] === 1 &&
-              disneyVisitedEllie[k] === 1 && disneyVisitedTilly[k] === 1 && disneyVisitedPoppy[k] === 1) count++;
-        }
-        return count;
-      }
-
-      // --- Family headline ---
-      var famStates    = familyUnionStates();
-      var famCountries = familyUnionCountries();
-      var famParks     = familyUnionParks();
-      var famDisney    = familyUnionDisney();
-      var DISNEY_TOTAL = 12;
-
-      set('h-states',       famStates);
-      set('h-states-sub',   (TOTAL_STATES - famStates) + ' states remaining');
-      set('h-parks',        famParks);
-      set('h-parks-sub',    (TOTAL_PARKS - famParks) + ' on the bucket list');
-      set('h-countries',    famCountries.countries);
-      set('h-countries-sub', '+ ' + famCountries.territories + ' territories');
-
-      // --- Travels section ---
-      set('trav-states',      famStates);
-      set('trav-countries',   famCountries.countries);
-      set('trav-territories', famCountries.territories);
-
-      // --- National Parks section ---
-      set('np-family',    famParks);
-      set('np-remaining', TOTAL_PARKS - famParks);
-
-      // --- Disney section ---
-      set('dis-family',    famDisney);
-      set('dis-remaining', DISNEY_TOTAL - famDisney);
-
-      // --- Per person ---
-      var people = [
-        { id: 'josh',  states: statesVisitedJosh,  countries: countriesVisitedJosh,  parks: parksVisitedJosh,  disney: disneyVisitedJosh  },
-        { id: 'sam',   states: statesVisitedSam,   countries: countriesVisitedSam,   parks: parksVisitedSam,   disney: disneyVisitedSam   },
-        { id: 'ellie', states: statesVisitedEllie, countries: countriesVisitedEllie, parks: parksVisitedEllie, disney: disneyVisitedEllie },
-        { id: 'tilly', states: statesVisitedTilly, countries: countriesVisitedTilly, parks: parksVisitedTilly, disney: disneyVisitedTilly },
-        { id: 'poppy', states: statesVisitedPoppy, countries: countriesVisitedPoppy, parks: parksVisitedPoppy, disney: disneyVisitedPoppy }
-      ];
-
-      people.forEach(function (p) {
-        var c = countCountries(p.countries);
-        set('p-' + p.id + '-states',         countStates(p.states));
-        set('p-' + p.id + '-countries',      c.countries);
-        set('p-' + p.id + '-countries-note', c.territories ? ' + ' + c.territories + ' territories' : '');
-        set('p-' + p.id + '-parks',          countVisited(p.parks));
-        set('p-' + p.id + '-disney',         countVisited(p.disney));
-      });
-
-      // --- Most visited (individual leader) per category ---
-      function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
-
-      function mostVisited(list, countFn, key) {
-        var maxCount = -1, leaders = [];
-        list.forEach(function (p) {
-          var n = countFn(p[key]);
-          if (n > maxCount) { maxCount = n; leaders = [p.id]; }
-          else if (n === maxCount) { leaders.push(p.id); }
-        });
-        return { count: maxCount, names: leaders.map(cap).join(' & ') };
-      }
-
-      var mostStates = mostVisited(people, countStates, 'states');
-      set('trav-max-num',  mostStates.count);
-      set('trav-max-name', mostStates.names);
-
-      var mostParks = mostVisited(people, countVisited, 'parks');
-      set('np-max-num',  mostParks.count);
-      set('np-max-name', mostParks.names);
-
-      var mostDisney = mostVisited(people, countVisited, 'disney');
-      set('dis-max-num',  mostDisney.count);
-      set('dis-max-name', mostDisney.names);
-
-      // --- Fishing ---
-      function distinctCount(records, key) {
-        var seen = {};
-        records.forEach(function (r) { seen[r[key]] = true; });
-        return Object.keys(seen).length;
-      }
-      var allFish = fishCaught.freshwater.concat(fishCaught.saltwater);
-      set('fish-species', distinctCount(allFish, 'species'));
-      set('fish-catches', allFish.length);
-      set('fish-species-fresh', distinctCount(fishCaught.freshwater, 'species'));
-      set('fish-species-salt', distinctCount(fishCaught.saltwater, 'species'));
-
-      // --- Turkey Hunting ---
-      var turkeyPeople = [
-        { id: 'josh',  data: turkeysHarvestedJosh  },
-        { id: 'sam',   data: turkeysHarvestedSam   },
-        { id: 'tilly', data: turkeysHarvestedTilly }
-      ];
-
-      turkeyPeople.forEach(function (p) {
-        var t = countHarvested(p.data);
-        set('t-' + p.id + '-num', t.harvested);
-        if (t.huntedOnly > 0) {
-          set('t-' + p.id + '-sub', '+ ' + t.huntedOnly + ' state' + (t.huntedOnly > 1 ? 's' : '') + ' hunted, not harvested');
-        }
-      });
-
-    }());
-  </script>
+  <script src="js/app.js"></script>
 
   <script src="../js/site-nav.js"></script>
 

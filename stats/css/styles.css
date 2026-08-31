@@ -4,29 +4,66 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-/* Several hero/bb-stat cards borrow another section's brand color for
-   their --a accent (baseball red, national-parks brown, indie-ball
-   brown). Those colors read fine on white but are too dark to read as
-   a big number directly on the dark card surface — lighten them for
-   dark mode only, reusing each section's own already-tuned "on dark"
-   variant where one exists (matches --section-on-dark elsewhere). */
+/* ---- Header: six-section color bar (same technique/colors as the
+   homepage's .site-header override in index.html) -- this page spans
+   every section, so the single --section-on-dark stripe every other
+   page uses (css/site-chrome.css) doesn't fit; replaced with one equal
+   band per section in nav order, separated by thin navy cuts. ---- */
+.site-header {
+  border-top: none;
+  padding-top: calc(0.55em + 4px);
+  background:
+    linear-gradient(to right,
+      #F07070 0%,                              #F07070 calc(16.66% - 2px),
+      #1a2e3b calc(16.66% - 2px),              #1a2e3b calc(16.66% + 2px),
+      #FF8200 calc(16.66% + 2px),              #FF8200 calc(33.33% - 2px),
+      #1a2e3b calc(33.33% - 2px),              #1a2e3b calc(33.33% + 2px),
+      #F5C518 calc(33.33% + 2px),              #F5C518 calc(50% - 2px),
+      #1a2e3b calc(50% - 2px),                 #1a2e3b calc(50% + 2px),
+      #57BD83 calc(50% + 2px),                 #57BD83 calc(66.66% - 2px),
+      #1a2e3b calc(66.66% - 2px),              #1a2e3b calc(66.66% + 2px),
+      #1C7C9C calc(66.66% + 2px),               #1C7C9C calc(83.33% - 2px),
+      #1a2e3b calc(83.33% - 2px),              #1a2e3b calc(83.33% + 2px),
+      #E060C6 calc(83.33% + 2px),              #E060C6 100%
+    ) top / 100% 4px no-repeat,
+    #1a2e3b;
+}
+
+/* Every hero-card/bb-stat --a accent on this page is one of these
+   tokens -- each is that section's own real --section (light-mode
+   default, since these cards sit on the theme-adaptive --surface) /
+   --section-on-dark (dark-mode override) pair, kept in exact sync with
+   that section's own page so a future rebrand there can't quietly go
+   stale here again (this is what happened to travels/national-parks/
+   disney after commit 388b1bc rebranded them sitewide but left these
+   copies behind). NOT used for .stat-head's --sh-color, which stays a
+   plain hardcoded on-dark hex -- that bar's background is a fixed navy
+   regardless of site theme, so it always wants the bright variant. */
 :root {
   --mlb-red-on-dark:      #C8102E;
-  --parks-brown-on-dark:  #8B5E3C;
+  --travels-orange-on-dark: #D2600A;
+  --turkey-green-on-dark: #22703D;
+  --fishing-teal-on-dark: #1C7C9C;
+  --parks-gold-on-dark:   #B8860B;
+  --disney-pink-on-dark:  #E060C6;
   --indie-brown-on-dark:  #7B4F2E;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --mlb-red-on-dark:      #F07070;
-    --parks-brown-on-dark:  #C99A6A;
+    --travels-orange-on-dark: #FF8200;
+    --turkey-green-on-dark: #57BD83;
+    --parks-gold-on-dark:   #F5C518;
     --indie-brown-on-dark:  #A2846C;
   }
 }
 
 :root[data-theme="dark"] {
   --mlb-red-on-dark:      #F07070;
-  --parks-brown-on-dark:  #C99A6A;
+  --travels-orange-on-dark: #FF8200;
+  --turkey-green-on-dark: #57BD83;
+  --parks-gold-on-dark:   #F5C518;
   --indie-brown-on-dark:  #A2846C;
 }
 
@@ -50,9 +87,13 @@ main {
   padding: 2.5rem 0 2rem;
 }
 
+/* Font-size matches every other page's shared .page-intro h1 rule in
+   css/site-chrome.css -- only the color diverges here (plain text
+   instead of that rule's var(--section, ...) accent), since /stats
+   spans every section rather than belonging to just one. */
 .page-intro h1 {
   font-family: 'Kreon', serif;
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-size: clamp(1.5rem, 4vw, 2rem);
   color: var(--text, #1a2e3b);
   margin-bottom: 0.35rem;
 }
@@ -78,6 +119,46 @@ main {
   scroll-margin-top: 5rem;
 }
 
+/* ---- Best Year Ever callout -- cross-section, so it gets the site's
+   general gold accent rather than any one section's color. Combines the
+   per-year groupings the Baseball/Travels/National Parks/Turkey charts
+   below already compute (see renderBestYear() in js/app.js). ---- */
+.best-year-callout {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto 2rem;
+  padding: 0.9rem 1.5rem;
+  background: var(--surface, #fff);
+  border-radius: 10px;
+  box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.08));
+  border-left: 5px solid #E8A020;
+}
+
+.best-year-label {
+  font-family: 'Kreon', serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #E8A020;
+  white-space: nowrap;
+}
+
+.best-year-num {
+  font-family: 'Kreon', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text, #1a2e3b);
+}
+
+.best-year-detail {
+  font-size: 0.88rem;
+  color: var(--text-muted, #6b7682);
+}
+
 /* ---- Hero family stats ---- */
 .hero-grid {
   display: grid;
@@ -92,24 +173,87 @@ main {
   border-top: 5px solid var(--a);
   padding: 1.75rem 1.25rem 1.5rem;
   text-align: center;
+  transition: transform 0.15s, box-shadow 0.15s;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Sized to match the ringed cards' numbers (30/30, 15/50, 6/63) so the
+   one card with no fixed ceiling (Countries) doesn't look oversized
+   sitting next to them in the same row. */
 .hero-num {
   font-family: 'Kreon', serif;
-  font-size: clamp(2.8rem, 4.5vw, 3.75rem);
+  font-size: 1.7rem;
   font-weight: 700;
   color: var(--a);
   line-height: 1;
 }
 
 .hero-denom {
-  font-size: 1.5rem;
+  font-size: 0.95rem;
   font-weight: 400;
   opacity: 0.45;
 }
+
+/* ---- Progress rings -- fixed-denominator tiles only (same technique
+   as the homepage's quick-stats rings), two sizes for the two card
+   contexts. Ring color reuses the card's own --a accent. ---- */
+.ring-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ring-svg {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-90deg);
+}
+
+.ring-track {
+  fill: none;
+  stroke: var(--border, #e3e7eb);
+  stroke-width: 4;
+}
+
+.ring-fill {
+  fill: none;
+  stroke: var(--a);
+  stroke-width: 4;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.8s ease;
+}
+
+.hero-card .ring-wrap {
+  width: 120px;
+  height: 120px;
+}
+
+.hero-card .ring-fill {
+  stroke-dasharray: 301.6;
+  stroke-dashoffset: calc(301.6 * (1 - var(--pct, 0)));
+}
+
+/* Sits above the absolutely-positioned ring SVG behind it. */
+.hero-card .ring-wrap .hero-num {
+  position: relative;
+}
+
+.bb-stat .ring-wrap {
+  width: 84px;
+  height: 84px;
+}
+
+.bb-stat .ring-fill {
+  stroke-width: 3.5;
+  stroke-dasharray: 213.6;
+  stroke-dashoffset: calc(213.6 * (1 - var(--pct, 0)));
+}
+
+/* Sits above the absolutely-positioned ring SVG behind it. */
+.bb-stat .bb-num { position: relative; }
 
 .hero-badge {
   display: inline-block;
@@ -140,6 +284,11 @@ main {
   margin-top: 0.8rem;
 }
 
+.hero-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px var(--shadow, rgba(0,0,0,0.14));
+}
+
 /* ---- Per-person cards ---- */
 .person-grid {
   display: grid;
@@ -155,6 +304,12 @@ main {
   box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,0.08));
   overflow: hidden;
   border-top: 5px solid var(--pc);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.person-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px var(--shadow, rgba(0,0,0,0.14));
 }
 
 .person-card-name {
@@ -222,18 +377,28 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: transform 0.15s, box-shadow 0.15s;
 }
 
+.bb-stat:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px var(--shadow, rgba(0,0,0,0.14));
+}
+
+/* Sized to match the ringed tiles' numbers (30/30, 15/50, 6/63, 3/12),
+   which need to be small enough to clear the ring's stroke -- so the
+   plain-number tiles sharing the same bb-grid row don't look oversized
+   next to them. */
 .bb-num {
   font-family: 'Kreon', serif;
-  font-size: 2.2rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--a, #C8102E);
   line-height: 1;
 }
 
 .bb-denom {
-  font-size: 1rem;
+  font-size: 0.68rem;
   opacity: 0.45;
 }
 
@@ -274,6 +439,12 @@ main {
   border-top: 5px solid var(--pc);
   padding: 1.35rem 1rem;
   text-align: center;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.turkey-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px var(--shadow, rgba(0,0,0,0.14));
 }
 
 .tc-name {
@@ -318,6 +489,58 @@ main {
   color: var(--text-muted, #b4bfc9);
   margin-top: 0.3rem;
   font-style: italic;
+}
+
+/* ---- Per-year bar charts -- same hand-rolled SVG technique as
+   /baseball/mlb-games's buildYearChartSVG, generalized here (see
+   buildYearBarChart() in js/app.js) since this page needs one per
+   section rather than just one. ---- */
+.stats-year-chart-wrap { position: relative; margin-top: 1.25rem; }
+
+.stats-year-chart {
+  background: var(--surface, #fff);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px var(--shadow, rgba(0,0,0,0.07));
+  padding: 1rem;
+  position: relative;
+}
+
+.stats-year-svg { width: 100%; height: auto; display: block; }
+
+.stats-year-bar { opacity: 0.75; transition: opacity 0.15s; }
+.stats-year-bar-group:hover .stats-year-bar { opacity: 1; }
+
+.stats-year-axis {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 8px;
+  fill: var(--text-muted, #8a9aaa);
+  text-anchor: middle;
+}
+
+.stats-year-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: #1a2e3b;
+  color: #fff;
+  font-size: 0.78rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.12s, transform 0.12s;
+  z-index: 5;
+}
+
+.stats-year-tooltip.is-visible { opacity: 1; transform: translateY(0); }
+
+.stats-year-heading {
+  font-family: 'Kreon', serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-muted, #6b7682);
+  margin: 1.75rem 0 0.5rem;
 }
 
 /* ---- Responsive ---- */

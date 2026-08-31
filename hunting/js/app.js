@@ -271,8 +271,68 @@
       renderForFilter();
       broadcastPersonChange();
       syncSectionLinks();
+      syncScrollspy();
     });
   }
+
+  // Every other page (fishing/travels/national-parks/disney/baseball)
+  // gets this "highlight the nav link for whatever section is currently
+  // in view" behavior for free from baseball/js/section-labels.js -- but
+  // that script only watches h2.section-group/h3.section-heading
+  // elements, neither of which this page uses (its own sections are
+  // <h2> inside .category-head, <h3 class="turkey-subhead">, etc.), so
+  // it silently no-ops here. Reimplemented directly against this page's
+  // own nav hrefs/section ids instead of retrofitting its markup to
+  // match a convention built for a different page shape.
+  function syncScrollspy() {
+    var navLinks = {};
+    document.querySelectorAll('[role="navigation"] nav a[href^="#"]').forEach(function (a) {
+      navLinks[a.getAttribute('href').slice(1)] = a;
+    });
+    var header = document.querySelector('.site-header');
+    var line = window.pageYOffset + (header ? header.offsetHeight : 60) + 40;
+    var nearBottom = (window.pageYOffset + window.innerHeight) >= (document.body.scrollHeight - 4);
+
+    var activeId = null, activeTop = null;
+    Object.keys(navLinks).forEach(function (id) {
+      var el = document.getElementById(id);
+      // Skip sections the current person filter has hidden (same
+      // display:none convention syncSectionLinks() already checks) --
+      // otherwise a hidden section's zeroed getBoundingClientRect()
+      // would look like it's scrolled to the top of the page.
+      if (!el || getComputedStyle(el).display === 'none') { return; }
+      var top = el.getBoundingClientRect().top + window.pageYOffset;
+      if (top <= line && (activeTop === null || top > activeTop)) { activeTop = top; activeId = id; }
+    });
+    if (activeId === null) {
+      var firstVisible = Object.keys(navLinks).filter(function (id) {
+        var el = document.getElementById(id);
+        return el && getComputedStyle(el).display !== 'none';
+      })[0];
+      activeId = firstVisible || null;
+    }
+    if (nearBottom) {
+      var visibleIds = Object.keys(navLinks).filter(function (id) {
+        var el = document.getElementById(id);
+        return el && getComputedStyle(el).display !== 'none';
+      });
+      if (visibleIds.length) { activeId = visibleIds[visibleIds.length - 1]; }
+    }
+
+    Object.keys(navLinks).forEach(function (id) {
+      navLinks[id].classList.toggle('active', id === activeId);
+    });
+  }
+
+  (function initScrollspyListeners() {
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (ticking) { return; }
+      ticking = true;
+      window.requestAnimationFrame(function () { syncScrollspy(); ticking = false; });
+    }, { passive: true });
+    window.addEventListener('resize', syncScrollspy);
+  }());
 
   // ---- Stats ------------------------------------------------------------
   // Turkey and Whitetail Deer are intentionally excluded from hunts.js
@@ -444,6 +504,7 @@
   initPersonFilter();
   renderForFilter();
   syncSectionLinks();
+  syncScrollspy();
   initLightbox();
 
 }());

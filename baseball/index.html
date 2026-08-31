@@ -351,7 +351,7 @@
             </span>
             <p>
               <span class="team"><span class="team-logo athletics" style="top:-0.25em"></span><span class="team-name" style="height:57px">Athletics<br><small><i>Las Vegas Ballpark</i></small><br><small><i>(under construction, opening ~2028)</i></small></span></span>
-              <span class="team"><span class="team-logo rays" style="top:-0.25em"></span><span class="team-name" style="height:57px">Tampa Bay Rays<br><small><i>New Tropicana Field</i></small><br><small><i>(planning phase)</i></small></span></span>
+              <span class="team"><span class="team-logo rays" style="top:-0.25em"></span><span class="team-name" style="height:57px">Tampa Bay Rays<br><small><i>New Tropicana Field</i></small><br><small><i>(approved, opening 2029)</i></small></span></span>
               <span class="team"><span class="team-logo royals" style="top:-0.25em"></span><span class="team-name" style="height:57px">Kansas City Royals<br><small><i>New Downtown Ballpark</i></small><br><small><i>(planned, opening ~2030)</i></small></span></span>
             </p>
           </div>
@@ -792,7 +792,7 @@
         { status: 'closed',  slug: 'rangers',      name: 'Texas Rangers',         stadium: 'Globe Life Park',                      lat: 32.7512, lng:  -97.0833, note: 'Visited 30 July 2014 · Closed Sep 2019' },
         // ---- Future stadiums ----
         { status: 'future',  slug: 'athletics',    name: 'Athletics',             stadium: 'Las Vegas Ballpark (under construction)', lat: 36.0978, lng: -115.1727, note: 'Opening: ~2028' },
-        { status: 'future',  slug: 'rays',         name: 'Tampa Bay Rays',        stadium: 'New Tropicana Field (planned)',  lat: 27.7700, lng:  -82.6520, note: 'Planning phase' },
+        { status: 'future',  slug: 'rays',         name: 'Tampa Bay Rays',        stadium: 'New Tropicana Field (approved)', lat: 27.7700, lng:  -82.6520, note: 'Opening: 2029' },
         { status: 'future',  slug: 'royals',       name: 'Kansas City Royals',    stadium: 'New Downtown Ballpark (planned)', lat: 39.1004, lng:  -94.5785, note: 'Opening: ~2030' }
       ];
 
@@ -824,8 +824,8 @@
         el.appendChild(logo);
         var popup = new maplibregl.Popup({ offset: 14 }).setHTML(
           '<strong>' + bp.name + '</strong><br>' +
-          '<em style="color:#888">' + bp.stadium + '</em><br>' +
-          '<span style="font-size:0.82em;color:#555">' + (labelMap[bp.status] || '') + ': ' + bp.note + '</span>'
+          '<em class="popup-sub">' + bp.stadium + '</em><br>' +
+          '<span class="popup-meta">' + (labelMap[bp.status] || '') + ': ' + bp.note + '</span>'
         );
         var marker = new maplibregl.Marker({ element: el })
           .setLngLat([bp.lng, bp.lat])
@@ -1115,15 +1115,15 @@
             var p = teams[0];
             popup =
               '<strong>' + p.team + '</strong><br>' +
-              '<em style="color:#888">' + p.park + '</em><br>' +
-              '<span style="font-size:0.82em;color:#555">' + p.city + ' &middot; ' + p.level + ' &middot; ' + p.affiliate + '</span>' +
-              (p.visited ? '<br><span style="font-size:0.82em;color:#555">Visited ' + p.date + '</span>' : '');
+              '<em class="popup-sub">' + p.park + '</em><br>' +
+              '<span class="popup-meta">' + p.city + ' &middot; ' + p.level + ' &middot; ' + p.affiliate + '</span>' +
+              (p.visited ? '<br><span class="popup-meta">Visited ' + p.date + '</span>' : '');
           } else {
             popup =
               '<strong>' + teams[0].park + '</strong><br>' +
-              '<span style="font-size:0.82em;color:#555">' + teams[0].city + '</span><br>' +
+              '<span class="popup-meta">' + teams[0].city + '</span><br>' +
               teams.map(function (p) {
-                return '<span style="font-size:0.82em;color:#555">' + p.team + ' &middot; ' + p.level + ' (' + p.affiliate + ')' +
+                return '<span class="popup-meta">' + p.team + ' &middot; ' + p.level + ' (' + p.affiliate + ')' +
                   (p.visited ? ' &mdash; Visited ' + p.date : '') + '</span>';
               }).join('<br>');
           }
@@ -1262,8 +1262,8 @@
           el.appendChild(dot);
           var popup = new maplibregl.Popup({ offset: 8 }).setHTML(
             '<strong>' + p.team + '</strong><br>' +
-            '<em style="color:#888">' + p.park + '</em><br>' +
-            '<span style="font-size:0.82em;color:#555">' + p.city + ' &middot; ' + p.note + ' &middot; ' + p.date + '</span>'
+            '<em class="popup-sub">' + p.park + '</em><br>' +
+            '<span class="popup-meta">' + p.city + ' &middot; ' + p.note + ' &middot; ' + p.date + '</span>'
           );
           var marker = new maplibregl.Marker({ element: el })
             .setLngLat([p.lng, p.lat])
