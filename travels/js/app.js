@@ -467,13 +467,7 @@
   function buildFilterRow(tab) {
     var $row = $('#' + tab + 'Filters');
 
-    var $whole = $('<button class="person-filter active" data-tab="' + tab + '" data-person="whole-family"></button>');
-    $whole[0].style.setProperty('--filter-color', WHOLE_FAMILY_COLOR);
-    $whole.append('<span class="filter-name">All</span>');
-    $whole.append('<span class="filter-count">' + getCount(tab, 'whole-family') + '</span>');
-    $row.append($whole);
-
-    var $anyone = $('<button class="person-filter" data-tab="' + tab + '" data-person="anyone"></button>');
+    var $anyone = $('<button class="person-filter active" data-tab="' + tab + '" data-person="anyone"></button>');
     $anyone[0].style.setProperty('--filter-color', ANYONE_COLOR);
     $anyone.append('<span class="filter-name">Anyone</span>');
     $anyone.append('<span class="filter-count">' + getCount(tab, 'anyone') + '</span>');
@@ -486,25 +480,31 @@
       $btn.append('<span class="filter-count">' + getCount(tab, p.id) + '</span>');
       $row.append($btn);
     });
+
+    var $whole = $('<button class="person-filter" data-tab="' + tab + '" data-person="whole-family"></button>');
+    $whole[0].style.setProperty('--filter-color', WHOLE_FAMILY_COLOR);
+    $whole.append('<span class="filter-name">All</span>');
+    $whole.append('<span class="filter-count">' + getCount(tab, 'whole-family') + '</span>');
+    $row.append($whole);
   }
 
   function buildMapCard(tab) {
     var $card    = $('#' + tab + 'MapCard');
     var mapClass = tab === 'states' ? 'us-map' : tab === 'provinces' ? 'ca-map' : 'world-map';
 
-    // Whole-family "All" view — active by default
+    // Anyone view — active by default
     $card.append(
-      '<div class="map-view active" data-view="whole-family">' +
+      '<div class="map-view active" data-view="anyone">' +
         '<div class="map-container ' + mapClass + '">' +
-          '<div id="' + tab + 'MapWholeFamily" class="map"></div>' +
+          '<div id="' + tab + 'MapAnyone" class="map"></div>' +
         '</div>' +
       '</div>'
     );
 
     $card.append(
-      '<div class="map-view" data-view="anyone">' +
+      '<div class="map-view" data-view="whole-family">' +
         '<div class="map-container ' + mapClass + '">' +
-          '<div id="' + tab + 'MapAnyone" class="map"></div>' +
+          '<div id="' + tab + 'MapWholeFamily" class="map"></div>' +
         '</div>' +
       '</div>'
     );
@@ -666,9 +666,9 @@
       buildMapCard(tab);
     });
 
-    initMap('states', 'whole-family');
-    setTimeout(function () { initMap('provinces', 'whole-family'); }, 50);
-    setTimeout(function () { initMap('countries', 'whole-family'); }, 100);
+    initMap('states', 'anyone');
+    setTimeout(function () { initMap('provinces', 'anyone'); }, 50);
+    setTimeout(function () { initMap('countries', 'anyone'); }, 100);
 
     initFilters();
     initListToggles();
