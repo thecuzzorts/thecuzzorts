@@ -56,6 +56,7 @@
       day: 0, night: 0,
       postseason: 0, postseasonGames: [],
       cycles: 0, cycleGames: [],
+      calledEarly: 0, calledEarlyGames: [],
       crowdTotal: 0, crowdCount: 0,
       conditionCounts: {}, tempTotal: 0, tempCount: 0,
       byPerson: { josh: 0, sam: 0, ellie: 0, tilly: 0, poppy: 0 },
@@ -69,9 +70,11 @@
     var inningsList = [];
     var crowdList = [];
     var tempList = [];
+    var windList = [];
     var runDiffList = [];
     var winPitcherCounts = {}, winPitcherNames = {};
     var lossPitcherCounts = {}, lossPitcherNames = {};
+    var savePitcherCounts = {}, savePitcherNames = {};
 
     games.forEach(function (g) {
       var full = mergeDetail(g);
@@ -157,6 +160,14 @@
           tempList.push({ date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam, temp: temp });
         }
       }
+      if (full.weather && full.weather.wind) {
+        // e.g. "14 mph, Out To LF" -- same leading-number extraction
+        // approach as duration's "2:23 (:56 delay)" parsing above.
+        var windMatch = full.weather.wind.match(/^(\d+)\s*mph/i);
+        if (windMatch) {
+          windList.push({ date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam, mph: parseInt(windMatch[1], 10), windText: full.weather.wind });
+        }
+      }
       if (full.duration) {
         // Some games carry a trailing delay note -- "2:23 (:56 delay)" --
         // rather than a plain "H:MM"; match just the leading duration so
@@ -175,6 +186,14 @@
       if (full.lossPitcher) {
         lossPitcherCounts[full.lossPitcher.id] = (lossPitcherCounts[full.lossPitcher.id] || 0) + 1;
         lossPitcherNames[full.lossPitcher.id] = full.lossPitcher.name;
+      }
+      if (full.savePitcher) {
+        savePitcherCounts[full.savePitcher.id] = (savePitcherCounts[full.savePitcher.id] || 0) + 1;
+        savePitcherNames[full.savePitcher.id] = full.savePitcher.name;
+      }
+      if (full.status === 'Completed Early') {
+        stats.calledEarly++;
+        stats.calledEarlyGames.push({ date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam, reason: full.statusReason });
       }
       if (typeof full.inningsPlayed === 'number') {
         inningsList.push({ date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam, innings: full.inningsPlayed });
@@ -209,13 +228,19 @@
     }
     stats.topWinPitcher = topPitcher(winPitcherCounts, winPitcherNames);
     stats.topLossPitcher = topPitcher(lossPitcherCounts, lossPitcherNames);
+    stats.topSavePitcher = topPitcher(savePitcherCounts, savePitcherNames);
 
     stats.venueCount = Object.keys(stats.venues).length;
     stats.uniquePlayers = Object.keys(stats.players).length;
     stats.doubleheaders = Object.keys(stats.doubleheaderDates).length;
     var decided = stats.homeWins + stats.awayWins;
-    stats.homeWinPct = decided ? Math.round((stats.homeWins / decided) * 100) : 0;
-    stats.awayWinPct = decided ? 100 - stats.homeWinPct : 0;
+    // Traditional baseball win-rate notation -- a leading-zero-stripped
+    // 3-decimal figure (".571"), not a percentage.
+    function winPct(wins, total) {
+      if (!total) { return '&ndash;'; }
+      return (wins / total).toFixed(3).replace(/^0/, '');
+    }
+    stats.homeWinPctDisplay = winPct(stats.homeWins, decided);
     stats.avgCrowd = stats.crowdCount ? Math.round(stats.crowdTotal / stats.crowdCount) : null;
     stats.avgTemp = stats.tempCount ? Math.round(stats.tempTotal / stats.tempCount) : null;
 
@@ -265,6 +290,10 @@
     stats.hottestGames = tempExtremes.maxItems;
     stats.coldest = tempExtremes.minItems[0] || null;
     stats.coldestGames = tempExtremes.minItems;
+
+    var windExtremes = pickExtremes(windList, 'mph');
+    stats.windiest = windExtremes.maxItems[0] || null;
+    stats.windiestGames = windExtremes.maxItems;
 
     var runDiffExtremes = pickExtremes(runDiffList, 'diff');
     stats.biggestBlowout = runDiffExtremes.maxItems[0] || null;
@@ -354,7 +383,7 @@
       tile(stats.totalGames, pluralize(stats.totalGames, 'Game Attended', 'Games Attended')) +
       tile(stats.firstYear + '&ndash;' + stats.lastYear, 'Years Spanned') +
       tile(stats.venueCount, pluralize(stats.venueCount, 'Ballpark')) +
-      tile(stats.homeWinPct + '%', 'Home Team Win Rate');
+      tile(stats.homeWinPctDisplay, 'Home Team Win Rate');
 
     var doubleheaderList = Object.keys(stats.doubleheaderDates).map(function (d) { return stats.doubleheaderDates[d]; });
 
@@ -382,12 +411,16 @@
         statDetailHTML(stats.hottestGames, function (g) { return g.temp + '&deg;F'; })) +
       tile(stats.coldest ? stats.coldest.temp + '&deg;' : '&ndash;', 'Coldest Game', null,
         statDetailHTML(stats.coldestGames, function (g) { return g.temp + '&deg;F'; })) +
+      tile(stats.windiest ? stats.windiest.mph + ' mph' : '&ndash;', 'Windiest Game', null,
+        statDetailHTML(stats.windiestGames, function (g) { return g.windText; })) +
       (stats.mostCommonCondition ? tile(stats.mostCommonCondition, 'Most Common Weather') : '') +
       (stats.mostGamesInADay > 1 ? tile(stats.mostGamesInADay, pluralize(stats.mostGamesInADay, 'Game', 'Games') + ' in One Day', null,
         statDetailHTML(stats.mostGamesInADayGames)) : '') +
       tileIfNonZero(stats.postseason, tile(stats.postseason, pluralize(stats.postseason, 'Postseason Game'), null, statDetailHTML(stats.postseasonGames))) +
       tileIfNonZero(stats.cycles, tile(stats.cycles, pluralize(stats.cycles, 'Cycle Witnessed', 'Cycles Witnessed'), null,
         statDetailHTML(stats.cycleGames, function (g) { return g.player; }, 1))) +
+      tileIfNonZero(stats.calledEarly, tile(stats.calledEarly, pluralize(stats.calledEarly, 'Game Called Early', 'Games Called Early'), null,
+        statDetailHTML(stats.calledEarlyGames, function (g) { return g.reason || ''; }))) +
       tile(stats.longest ? stats.longest.duration : '&ndash;', 'Longest Game', null, statDetailHTML(stats.longestGames)) +
       tile(stats.shortest ? stats.shortest.duration : '&ndash;', 'Shortest Game', null, statDetailHTML(stats.shortestGames)) +
       tile(stats.biggestBlowout ? stats.biggestBlowout.score : '&ndash;', 'Biggest Blowout', null, statDetailHTML(stats.biggestBlowoutGames)) +
@@ -397,6 +430,8 @@
         pitcherDetailHTML(stats.topWinPitcher, 'win', 'wins')) +
       tile(stats.topLossPitcher ? stats.topLossPitcher.count : '&ndash;', 'Most Losses Seen', null,
         pitcherDetailHTML(stats.topLossPitcher, 'loss', 'losses')) +
+      tile(stats.topSavePitcher ? stats.topSavePitcher.count : '&ndash;', 'Most Saves Seen', null,
+        pitcherDetailHTML(stats.topSavePitcher, 'save', 'saves')) +
       tile(stats.highestCrowd ? stats.highestCrowd.crowd.toLocaleString() : '&ndash;', 'Highest Attendance', null,
         statDetailHTML(stats.highestCrowdGames, function (g) { return g.crowd.toLocaleString(); })) +
       tile(stats.lowestCrowd ? stats.lowestCrowd.crowd.toLocaleString() : '&ndash;', 'Lowest Attendance', null,
