@@ -1076,6 +1076,24 @@ h2.section-group.sec-reveal.in-view { opacity: 1; transform: none; }
   margin-left: 0.3rem;
 }
 
+/* Flags a team-name chip's stadium as having a retractable roof --
+   same pill shape as .tl-closed-badge, distinct color so the two
+   badges read as different facts (closed park vs. roof type) if a
+   team ever needed both. */
+.tl-roof-badge {
+  display: inline-block;
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background: #1C7C9C;
+  padding: 0.1em 0.45em;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-left: 0.3rem;
+}
+
 /* --- Memories --------------------------------------------- */
 
 /* Shared photo placeholder — replaced with real img when photos are added */

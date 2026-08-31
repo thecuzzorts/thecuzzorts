@@ -57,6 +57,7 @@
       postseason: 0, postseasonGames: [],
       cycles: 0, cycleGames: [],
       calledEarly: 0, calledEarlyGames: [],
+      roofOpen: 0, roofOpenGames: [], roofClosed: 0, roofClosedGames: [],
       crowdTotal: 0, crowdCount: 0,
       conditionCounts: {}, tempTotal: 0, tempCount: 0,
       byPerson: { josh: 0, sam: 0, ellie: 0, tilly: 0, poppy: 0 },
@@ -89,6 +90,22 @@
       // counts distinct physical ballparks instead of distinct name strings.
       var venueCoord = (typeof mlbVenues !== 'undefined' && mlbVenues[g.venue]) || null;
       stats.venues[venueCoord ? (venueCoord.lat + ',' + venueCoord.lng) : g.venue] = true;
+
+      // Roof status is only meaningful at parks that actually have a
+      // retractable roof -- a normal weather condition there means the
+      // roof was open, while games-detail.js records "Roof Closed" as
+      // the condition string itself when it wasn't. Can't capture a
+      // mid-game change (one string per game), but that's rare enough
+      // not to matter here.
+      if (venueCoord && venueCoord.retractableRoof) {
+        if (full.weather && full.weather.condition === 'Roof Closed') {
+          stats.roofClosed++;
+          stats.roofClosedGames.push({ date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam });
+        } else if (full.weather && full.weather.condition) {
+          stats.roofOpen++;
+          stats.roofOpenGames.push({ date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam, condition: full.weather.condition });
+        }
+      }
 
       var appearances = (typeof mlbGamePlayers !== 'undefined') && mlbGamePlayers[g.gamePk];
       if (appearances) {
@@ -413,6 +430,11 @@
         statDetailHTML(stats.coldestGames, function (g) { return g.temp + '&deg;F'; })) +
       tile(stats.windiest ? stats.windiest.mph + ' mph' : '&ndash;', 'Windiest Game', null,
         statDetailHTML(stats.windiestGames, function (g) { return g.windText; })) +
+      tileIfNonZero(stats.roofOpen + stats.roofClosed,
+        tile(stats.roofClosed + ' / ' + stats.roofOpen, 'Retractable-Roof Games (Closed / Open)', null,
+          statDetailHTML(stats.roofClosedGames.map(function (g) { return { date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam, note: 'Closed' }; })
+            .concat(stats.roofOpenGames.map(function (g) { return { date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam, note: 'Open, ' + g.condition }; })),
+            function (g) { return g.note; }))) +
       (stats.mostCommonCondition ? tile(stats.mostCommonCondition, 'Most Common Weather') : '') +
       (stats.mostGamesInADay > 1 ? tile(stats.mostGamesInADay, pluralize(stats.mostGamesInADay, 'Game', 'Games') + ' in One Day', null,
         statDetailHTML(stats.mostGamesInADayGames)) : '') +
@@ -512,6 +534,15 @@
   function buildGameCardHTML(game) {
     var badges = '';
     if (game.gameType && game.gameType !== 'R') { badges += '<span class="mlbg-badge mlbg-badge--postseason">Postseason</span>'; }
+    var venueInfo = (typeof mlbVenues !== 'undefined' && mlbVenues[game.venue]) || null;
+    if (venueInfo && venueInfo.retractableRoof) {
+      var full = mergeDetail(game);
+      if (full.weather && full.weather.condition === 'Roof Closed') {
+        badges += '<span class="mlbg-badge mlbg-badge--roof-closed">Roof Closed</span>';
+      } else if (full.weather && full.weather.condition) {
+        badges += '<span class="mlbg-badge mlbg-badge--roof-open">Roof Open</span>';
+      }
+    }
     return '<div class="mlbg-game-card" data-gamepk="' + game.gamePk + '">' +
       '<div class="mlbg-game-row">' +
         '<time class="mlbg-game-date">' + fmtDate(game.date) + '</time>' +

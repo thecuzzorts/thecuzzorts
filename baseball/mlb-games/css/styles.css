@@ -594,6 +594,8 @@ body {
   border-radius: 10px;
 }
 .mlbg-badge--postseason { background: var(--section, #C8102E); color: #fff; }
+.mlbg-badge--roof-closed { background: var(--chip-bg, #eaeef2); color: var(--chip-text, #28333d); }
+.mlbg-badge--roof-open { background: #1C7C9C; color: #fff; }
 
 .mlbg-game-detail {
   margin-top: 0.7rem;
