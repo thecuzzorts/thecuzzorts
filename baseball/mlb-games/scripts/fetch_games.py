@@ -105,6 +105,10 @@ def build_record(row, sched_game, box, feed):
     away = box['teams']['away']
     home_bat = home['teamStats']['batting']
     away_bat = away['teamStats']['batting']
+    home_pitch = home['teamStats']['pitching']
+    away_pitch = away['teamStats']['pitching']
+    home_field = home['teamStats'].get('fielding', {})
+    away_field = away['teamStats'].get('fielding', {})
 
     game_data = feed['gameData']
     live = feed['liveData']
@@ -169,6 +173,7 @@ def build_record(row, sched_game, box, feed):
     return {
         "gamePk": sched_game['gamePk'],
         "date": iso,
+        "gameDate": sched_game.get('gameDate'),
         "homeTeam": sched_game['teams']['home']['team']['name'],
         "awayTeam": sched_game['teams']['away']['team']['name'],
         "homeScore": sched_game['teams']['home'].get('score'),
@@ -191,6 +196,48 @@ def build_record(row, sched_game, box, feed):
         "awayStrikeouts": away_bat.get('strikeOuts'),
         "homeWalks": home_bat.get('baseOnBalls'),
         "awayWalks": away_bat.get('baseOnBalls'),
+        "homeAtBats": home_bat.get('atBats'),
+        "awayAtBats": away_bat.get('atBats'),
+        "homePlateAppearances": home_bat.get('plateAppearances'),
+        "awayPlateAppearances": away_bat.get('plateAppearances'),
+        "homeStolenBases": home_bat.get('stolenBases'),
+        "awayStolenBases": away_bat.get('stolenBases'),
+        "homeCaughtStealing": home_bat.get('caughtStealing'),
+        "awayCaughtStealing": away_bat.get('caughtStealing'),
+        "homeHitByPitch": home_bat.get('hitByPitch'),
+        "awayHitByPitch": away_bat.get('hitByPitch'),
+        "homeSacBunts": home_bat.get('sacBunts'),
+        "awaySacBunts": away_bat.get('sacBunts'),
+        "homeSacFlies": home_bat.get('sacFlies'),
+        "awaySacFlies": away_bat.get('sacFlies'),
+        "homeLeftOnBase": home_bat.get('leftOnBase'),
+        "awayLeftOnBase": away_bat.get('leftOnBase'),
+        "homeGroundIntoDoublePlay": home_bat.get('groundIntoDoublePlay'),
+        "awayGroundIntoDoublePlay": away_bat.get('groundIntoDoublePlay'),
+        "homeRbi": home_bat.get('rbi'),
+        "awayRbi": away_bat.get('rbi'),
+        "homeTotalBases": home_bat.get('totalBases'),
+        "awayTotalBases": away_bat.get('totalBases'),
+        "homePitchStrikeouts": home_pitch.get('strikeOuts'),
+        "awayPitchStrikeouts": away_pitch.get('strikeOuts'),
+        "homePitchWalks": home_pitch.get('baseOnBalls'),
+        "awayPitchWalks": away_pitch.get('baseOnBalls'),
+        "homeEarnedRuns": home_pitch.get('earnedRuns'),
+        "awayEarnedRuns": away_pitch.get('earnedRuns'),
+        "homeNumberOfPitches": home_pitch.get('numberOfPitches'),
+        "awayNumberOfPitches": away_pitch.get('numberOfPitches'),
+        "homeWildPitches": home_pitch.get('wildPitches'),
+        "awayWildPitches": away_pitch.get('wildPitches'),
+        "homeBalks": home_pitch.get('balks'),
+        "awayBalks": away_pitch.get('balks'),
+        "homeHitBatsmen": home_pitch.get('hitBatsmen'),
+        "awayHitBatsmen": away_pitch.get('hitBatsmen'),
+        "homeErrors": home_field.get('errors'),
+        "awayErrors": away_field.get('errors'),
+        "homeAssists": home_field.get('assists'),
+        "awayAssists": away_field.get('assists'),
+        "homePutOuts": home_field.get('putOuts'),
+        "awayPutOuts": away_field.get('putOuts'),
         "winPitcher": decision_person('winner'),
         "lossPitcher": decision_person('loser'),
         "savePitcher": decision_person('save'),

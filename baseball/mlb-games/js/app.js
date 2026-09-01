@@ -67,6 +67,10 @@
       totalMinutes: 0,
       totalRuns: 0, totalHits: 0, totalHR: 0,
       totalDoubles: 0, totalTriples: 0, totalStrikeouts: 0, totalWalks: 0,
+      totalPA: 0, totalSB: 0, totalPitches: 0, totalErrors: 0,
+      totalRbi: 0, totalBases: 0, totalEarnedRuns: 0, totalCaughtStealing: 0,
+      totalHBP: 0, totalSacBunts: 0, totalSacFlies: 0, totalWildPitches: 0,
+      totalBalks: 0, totalGIDP: 0,
       extraInnings: 0, extraInningsGames: [],
       doubleheaderDates: {},
       day: 0, night: 0,
@@ -153,6 +157,34 @@
       if (typeof full.awayStrikeouts === 'number') { stats.totalStrikeouts += full.awayStrikeouts; }
       if (typeof full.homeWalks === 'number') { stats.totalWalks += full.homeWalks; }
       if (typeof full.awayWalks === 'number') { stats.totalWalks += full.awayWalks; }
+      if (typeof full.homePlateAppearances === 'number') { stats.totalPA += full.homePlateAppearances; }
+      if (typeof full.awayPlateAppearances === 'number') { stats.totalPA += full.awayPlateAppearances; }
+      if (typeof full.homeStolenBases === 'number') { stats.totalSB += full.homeStolenBases; }
+      if (typeof full.awayStolenBases === 'number') { stats.totalSB += full.awayStolenBases; }
+      if (typeof full.homeNumberOfPitches === 'number') { stats.totalPitches += full.homeNumberOfPitches; }
+      if (typeof full.awayNumberOfPitches === 'number') { stats.totalPitches += full.awayNumberOfPitches; }
+      if (typeof full.homeErrors === 'number') { stats.totalErrors += full.homeErrors; }
+      if (typeof full.awayErrors === 'number') { stats.totalErrors += full.awayErrors; }
+      if (typeof full.homeRbi === 'number') { stats.totalRbi += full.homeRbi; }
+      if (typeof full.awayRbi === 'number') { stats.totalRbi += full.awayRbi; }
+      if (typeof full.homeTotalBases === 'number') { stats.totalBases += full.homeTotalBases; }
+      if (typeof full.awayTotalBases === 'number') { stats.totalBases += full.awayTotalBases; }
+      if (typeof full.homeEarnedRuns === 'number') { stats.totalEarnedRuns += full.homeEarnedRuns; }
+      if (typeof full.awayEarnedRuns === 'number') { stats.totalEarnedRuns += full.awayEarnedRuns; }
+      if (typeof full.homeCaughtStealing === 'number') { stats.totalCaughtStealing += full.homeCaughtStealing; }
+      if (typeof full.awayCaughtStealing === 'number') { stats.totalCaughtStealing += full.awayCaughtStealing; }
+      if (typeof full.homeHitByPitch === 'number') { stats.totalHBP += full.homeHitByPitch; }
+      if (typeof full.awayHitByPitch === 'number') { stats.totalHBP += full.awayHitByPitch; }
+      if (typeof full.homeSacBunts === 'number') { stats.totalSacBunts += full.homeSacBunts; }
+      if (typeof full.awaySacBunts === 'number') { stats.totalSacBunts += full.awaySacBunts; }
+      if (typeof full.homeSacFlies === 'number') { stats.totalSacFlies += full.homeSacFlies; }
+      if (typeof full.awaySacFlies === 'number') { stats.totalSacFlies += full.awaySacFlies; }
+      if (typeof full.homeWildPitches === 'number') { stats.totalWildPitches += full.homeWildPitches; }
+      if (typeof full.awayWildPitches === 'number') { stats.totalWildPitches += full.awayWildPitches; }
+      if (typeof full.homeBalks === 'number') { stats.totalBalks += full.homeBalks; }
+      if (typeof full.awayBalks === 'number') { stats.totalBalks += full.awayBalks; }
+      if (typeof full.homeGroundIntoDoublePlay === 'number') { stats.totalGIDP += full.homeGroundIntoDoublePlay; }
+      if (typeof full.awayGroundIntoDoublePlay === 'number') { stats.totalGIDP += full.awayGroundIntoDoublePlay; }
 
       var ref = { date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam };
 
@@ -501,7 +533,11 @@
       tileIfNonZero(stats.totalDoubles, tile(stats.totalDoubles, pluralize(stats.totalDoubles, 'Total Double'))) +
       tileIfNonZero(stats.totalTriples, tile(stats.totalTriples, pluralize(stats.totalTriples, 'Total Triple'))) +
       tileIfNonZero(stats.totalStrikeouts, tile(stats.totalStrikeouts.toLocaleString(), pluralize(stats.totalStrikeouts, 'Total Strikeout'))) +
-      tileIfNonZero(stats.totalWalks, tile(stats.totalWalks.toLocaleString(), pluralize(stats.totalWalks, 'Total Walk')));
+      tileIfNonZero(stats.totalWalks, tile(stats.totalWalks.toLocaleString(), pluralize(stats.totalWalks, 'Total Walk'))) +
+      tileIfNonZero(stats.totalPA, tile(stats.totalPA.toLocaleString(), pluralize(stats.totalPA, 'Plate Appearance'))) +
+      tileIfNonZero(stats.totalSB, tile(stats.totalSB, pluralize(stats.totalSB, 'Stolen Base'))) +
+      tileIfNonZero(stats.totalRbi, tile(stats.totalRbi.toLocaleString(), pluralize(stats.totalRbi, 'Total RBI', 'Total RBIs'))) +
+      tileIfNonZero(stats.totalBases, tile(stats.totalBases.toLocaleString(), 'Total Bases'));
 
     var weatherTiles =
       tile(stats.avgTemp != null ? stats.avgTemp + '&deg;' : '&ndash;', 'Avg. Game-Day Temp') +
@@ -535,7 +571,14 @@
         statDetailHTML(stats.cycleGames, function (g) { return g.player; }, 1))) +
       tileIfNonZero(stats.calledEarly, tile(stats.calledEarly, pluralize(stats.calledEarly, 'Game Called Early', 'Games Called Early'), null,
         statDetailHTML(stats.calledEarlyGames, function (g) { return g.reason || ''; }))) +
-      tileIfNonZero(stats.doubleheaders, tile(stats.doubleheaders, pluralize(stats.doubleheaders, 'Doubleheader'), null, statDetailHTML(doubleheaderList)));
+      tileIfNonZero(stats.doubleheaders, tile(stats.doubleheaders, pluralize(stats.doubleheaders, 'Doubleheader'), null, statDetailHTML(doubleheaderList))) +
+      tileIfNonZero(stats.totalErrors, tile(stats.totalErrors, pluralize(stats.totalErrors, 'Error Witnessed', 'Errors Witnessed'))) +
+      tileIfNonZero(stats.totalHBP, tile(stats.totalHBP, pluralize(stats.totalHBP, 'Hit By Pitch', 'Hit By Pitches'))) +
+      tileIfNonZero(stats.totalSacBunts, tile(stats.totalSacBunts, pluralize(stats.totalSacBunts, 'Sac Bunt'))) +
+      tileIfNonZero(stats.totalSacFlies, tile(stats.totalSacFlies, pluralize(stats.totalSacFlies, 'Sac Fly', 'Sac Flies'))) +
+      tileIfNonZero(stats.totalWildPitches, tile(stats.totalWildPitches, pluralize(stats.totalWildPitches, 'Wild Pitch', 'Wild Pitches'))) +
+      tileIfNonZero(stats.totalBalks, tile(stats.totalBalks, pluralize(stats.totalBalks, 'Balk'))) +
+      tileIfNonZero(stats.totalGIDP, tile(stats.totalGIDP, pluralize(stats.totalGIDP, 'Double Play Witnessed', 'Double Plays Witnessed')));
 
     var lengthTiles =
       tile(stats.longest ? stats.longest.duration : '&ndash;', 'Longest Game', null, statDetailHTML(stats.longestGames)) +
@@ -556,7 +599,10 @@
       tile(stats.topLossPitcher ? stats.topLossPitcher.count : '&ndash;', 'Most Losses Seen', null,
         pitcherDetailHTML(stats.topLossPitcher, 'loss', 'losses')) +
       tile(stats.topSavePitcher ? stats.topSavePitcher.count : '&ndash;', 'Most Saves Seen', null,
-        pitcherDetailHTML(stats.topSavePitcher, 'save', 'saves'));
+        pitcherDetailHTML(stats.topSavePitcher, 'save', 'saves')) +
+      tileIfNonZero(stats.totalPitches, tile(stats.totalPitches.toLocaleString(), 'Total Pitches Thrown')) +
+      tileIfNonZero(stats.totalEarnedRuns, tile(stats.totalEarnedRuns.toLocaleString(), pluralize(stats.totalEarnedRuns, 'Total Earned Run'))) +
+      tileIfNonZero(stats.totalCaughtStealing, tile(stats.totalCaughtStealing, pluralize(stats.totalCaughtStealing, 'Caught Stealing', 'Caught Stealing')));
 
     var statLine =
       statGroup(groupById('hitting'), hittingTiles) +
@@ -721,8 +767,13 @@
   // behind one all-or-nothing click. Per-year groups keep the page short
   // by default while still letting a visitor jump straight to one year.
   function buildGameListHTML(games, sortKey) {
+    // gameDate (exact UTC start time) breaks ties within a single date --
+    // a doubleheader plus an unrelated third game elsewhere that day
+    // don't otherwise have a stable order (date alone can't tell "First
+    // game" from "Second game" from a same-day game at another park).
     var sorted = games.slice().sort(function (a, b) {
-      return sortKey === 'oldest' ? (a.date < b.date ? -1 : 1) : (a.date > b.date ? -1 : 1);
+      var ak = a.date + (a.gameDate || ''), bk = b.date + (b.gameDate || '');
+      return sortKey === 'oldest' ? (ak < bk ? -1 : 1) : (ak > bk ? -1 : 1);
     });
 
     var order = [];

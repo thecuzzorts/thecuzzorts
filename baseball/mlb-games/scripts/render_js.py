@@ -21,13 +21,19 @@ def main():
     with open(CACHE_PATH) as f:
         games = json.load(f)
 
-    games.sort(key=lambda g: (g['date'], g.get('gamePk', 0)))
+    # gameDate (exact UTC start time) is the real tiebreaker for same-day
+    # games -- a doubleheader plus an unrelated third game at a different
+    # park don't otherwise have a stable chronological order (gamePk
+    # isn't sequential by start time). Falls back to gamePk for any
+    # older record somehow still missing it.
+    games.sort(key=lambda g: (g['date'], g.get('gameDate') or '', g.get('gamePk', 0)))
 
     # ---- games.js: lean, drives the game list + overview stats ----
     lean = [
         {
             "gamePk": g['gamePk'],
             "date": g['date'],
+            "gameDate": g.get('gameDate'),
             "homeTeam": g['homeTeam'],
             "awayTeam": g['awayTeam'],
             "homeScore": g['homeScore'],
@@ -68,6 +74,48 @@ def main():
             "awayStrikeouts": g['awayStrikeouts'],
             "homeWalks": g['homeWalks'],
             "awayWalks": g['awayWalks'],
+            "homeAtBats": g.get('homeAtBats'),
+            "awayAtBats": g.get('awayAtBats'),
+            "homePlateAppearances": g.get('homePlateAppearances'),
+            "awayPlateAppearances": g.get('awayPlateAppearances'),
+            "homeStolenBases": g.get('homeStolenBases'),
+            "awayStolenBases": g.get('awayStolenBases'),
+            "homeCaughtStealing": g.get('homeCaughtStealing'),
+            "awayCaughtStealing": g.get('awayCaughtStealing'),
+            "homeHitByPitch": g.get('homeHitByPitch'),
+            "awayHitByPitch": g.get('awayHitByPitch'),
+            "homeSacBunts": g.get('homeSacBunts'),
+            "awaySacBunts": g.get('awaySacBunts'),
+            "homeSacFlies": g.get('homeSacFlies'),
+            "awaySacFlies": g.get('awaySacFlies'),
+            "homeLeftOnBase": g.get('homeLeftOnBase'),
+            "awayLeftOnBase": g.get('awayLeftOnBase'),
+            "homeGroundIntoDoublePlay": g.get('homeGroundIntoDoublePlay'),
+            "awayGroundIntoDoublePlay": g.get('awayGroundIntoDoublePlay'),
+            "homeRbi": g.get('homeRbi'),
+            "awayRbi": g.get('awayRbi'),
+            "homeTotalBases": g.get('homeTotalBases'),
+            "awayTotalBases": g.get('awayTotalBases'),
+            "homePitchStrikeouts": g.get('homePitchStrikeouts'),
+            "awayPitchStrikeouts": g.get('awayPitchStrikeouts'),
+            "homePitchWalks": g.get('homePitchWalks'),
+            "awayPitchWalks": g.get('awayPitchWalks'),
+            "homeEarnedRuns": g.get('homeEarnedRuns'),
+            "awayEarnedRuns": g.get('awayEarnedRuns'),
+            "homeNumberOfPitches": g.get('homeNumberOfPitches'),
+            "awayNumberOfPitches": g.get('awayNumberOfPitches'),
+            "homeWildPitches": g.get('homeWildPitches'),
+            "awayWildPitches": g.get('awayWildPitches'),
+            "homeBalks": g.get('homeBalks'),
+            "awayBalks": g.get('awayBalks'),
+            "homeHitBatsmen": g.get('homeHitBatsmen'),
+            "awayHitBatsmen": g.get('awayHitBatsmen'),
+            "homeErrors": g.get('homeErrors'),
+            "awayErrors": g.get('awayErrors'),
+            "homeAssists": g.get('homeAssists'),
+            "awayAssists": g.get('awayAssists'),
+            "homePutOuts": g.get('homePutOuts'),
+            "awayPutOuts": g.get('awayPutOuts'),
             "winPitcher": g['winPitcher'],
             "lossPitcher": g['lossPitcher'],
             "savePitcher": g['savePitcher'],

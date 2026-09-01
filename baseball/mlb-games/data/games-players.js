@@ -1350,32 +1350,22 @@ var mlbPlayers = {
   "691788": "Joe Mack",
   "691587": "Eury P\u00e9rez",
   "672640": "Otto Lopez",
-  "621112": "Paul Blackburn",
+  "645305": "Ali S\u00e1nchez",
   "676609": "Jos\u00e9 Caballero",
+  "623437": "Justin Topa",
   "682987": "Spencer Jones",
+  "642232": "Ryan Yarbrough",
   "669224": "Austin Wells",
   "700250": "Ben Rice",
-  "694341": "Brendan Beck",
-  "687396": "Brent Headrick",
-  "605242": "Michael Fulmer",
   "660787": "Yerry De los Santos",
   "806146": "George Lombard Jr.",
-  "670103": "Raymond Burgos",
+  "687562": "Jake Bennett",
   "663330": "Jahmai Jones",
-  "687941": "Alec Gamboa",
-  "657136": "Connor Wong",
-  "678394": "Brayan Bello",
   "677800": "Wilyer Abreu",
-  "681508": "Mickey Gasper",
+  "676477": "Garrett Whitlock",
   "702332": "Caleb Durbin",
   "686765": "Nick Sogard",
-  "680776": "Jarren Duran",
   "678882": "Ceddanne Rafaela",
-  "645305": "Ali S\u00e1nchez",
-  "623437": "Justin Topa",
-  "642232": "Ryan Yarbrough",
-  "687562": "Jake Bennett",
-  "676477": "Garrett Whitlock",
   "663558": "Jovani Mor\u00e1n",
   "666182": "Bo Bichette",
   "682626": "Francisco Alvarez",
@@ -1390,7 +1380,17 @@ var mlbPlayers = {
   "662139": "Daulton Varsho",
   "656986": "Bennett Sousa",
   "666211": "Taylor Trammell",
-  "664299": "Cristian Javier"
+  "664299": "Cristian Javier",
+  "621112": "Paul Blackburn",
+  "694341": "Brendan Beck",
+  "687396": "Brent Headrick",
+  "605242": "Michael Fulmer",
+  "670103": "Raymond Burgos",
+  "687941": "Alec Gamboa",
+  "657136": "Connor Wong",
+  "678394": "Brayan Bello",
+  "681508": "Mickey Gasper",
+  "680776": "Jarren Duran"
 };
 
 /* gamePk -> array of that game's participants (both teams,
@@ -19492,200 +19492,6 @@ var mlbGamePlayers = {
       "gamesStarted": null
     }
   ],
-  "823501": [
-    {
-      "id": 621112,
-      "team": "NYY",
-      "position": "P",
-      "gamesStarted": 0
-    },
-    {
-      "id": 671218,
-      "team": "NYY",
-      "position": "RF",
-      "gamesStarted": null
-    },
-    {
-      "id": 676609,
-      "team": "NYY",
-      "position": "SS",
-      "gamesStarted": null
-    },
-    {
-      "id": 682987,
-      "team": "NYY",
-      "position": "RF",
-      "gamesStarted": null
-    },
-    {
-      "id": 642708,
-      "team": "NYY",
-      "position": "3B",
-      "gamesStarted": null
-    },
-    {
-      "id": 657612,
-      "team": "NYY",
-      "position": "P",
-      "gamesStarted": 0
-    },
-    {
-      "id": 669224,
-      "team": "NYY",
-      "position": "C",
-      "gamesStarted": null
-    },
-    {
-      "id": 700250,
-      "team": "NYY",
-      "position": "DH",
-      "gamesStarted": null
-    },
-    {
-      "id": 694341,
-      "team": "NYY",
-      "position": "P",
-      "gamesStarted": 0
-    },
-    {
-      "id": 687396,
-      "team": "NYY",
-      "position": "P",
-      "gamesStarted": 0
-    },
-    {
-      "id": 641355,
-      "team": "NYY",
-      "position": "LF",
-      "gamesStarted": null
-    },
-    {
-      "id": 665862,
-      "team": "NYY",
-      "position": "2B",
-      "gamesStarted": null
-    },
-    {
-      "id": 608331,
-      "team": "NYY",
-      "position": "P",
-      "gamesStarted": 1
-    },
-    {
-      "id": 605242,
-      "team": "NYY",
-      "position": "P",
-      "gamesStarted": 0
-    },
-    {
-      "id": 660787,
-      "team": "NYY",
-      "position": "P",
-      "gamesStarted": 0
-    },
-    {
-      "id": 663757,
-      "team": "NYY",
-      "position": "CF",
-      "gamesStarted": null
-    },
-    {
-      "id": 806146,
-      "team": "NYY",
-      "position": "SS",
-      "gamesStarted": null
-    },
-    {
-      "id": 671277,
-      "team": "NYY",
-      "position": "1B",
-      "gamesStarted": null
-    },
-    {
-      "id": 670103,
-      "team": "BOS",
-      "position": "P",
-      "gamesStarted": 0
-    },
-    {
-      "id": 575929,
-      "team": "BOS",
-      "position": "1B",
-      "gamesStarted": null
-    },
-    {
-      "id": 663330,
-      "team": "BOS",
-      "position": "DH",
-      "gamesStarted": null
-    },
-    {
-      "id": 687941,
-      "team": "BOS",
-      "position": "P",
-      "gamesStarted": 1
-    },
-    {
-      "id": 657136,
-      "team": "BOS",
-      "position": "C",
-      "gamesStarted": null
-    },
-    {
-      "id": 678394,
-      "team": "BOS",
-      "position": "P",
-      "gamesStarted": 0
-    },
-    {
-      "id": 677800,
-      "team": "BOS",
-      "position": "RF",
-      "gamesStarted": null
-    },
-    {
-      "id": 655316,
-      "team": "BOS",
-      "position": "SS",
-      "gamesStarted": null
-    },
-    {
-      "id": 681508,
-      "team": "BOS",
-      "position": "DH",
-      "gamesStarted": null
-    },
-    {
-      "id": 702332,
-      "team": "BOS",
-      "position": "3B",
-      "gamesStarted": null
-    },
-    {
-      "id": 686765,
-      "team": "BOS",
-      "position": "2B",
-      "gamesStarted": null
-    },
-    {
-      "id": 680776,
-      "team": "BOS",
-      "position": "LF",
-      "gamesStarted": null
-    },
-    {
-      "id": 642201,
-      "team": "BOS",
-      "position": "LF",
-      "gamesStarted": null
-    },
-    {
-      "id": 678882,
-      "team": "BOS",
-      "position": "CF",
-      "gamesStarted": null
-    }
-  ],
   "823539": [
     {
       "id": 645305,
@@ -20041,6 +19847,200 @@ var mlbGamePlayers = {
       "id": 670541,
       "team": "HOU",
       "position": "LF",
+      "gamesStarted": null
+    }
+  ],
+  "823501": [
+    {
+      "id": 621112,
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
+    },
+    {
+      "id": 671218,
+      "team": "NYY",
+      "position": "RF",
+      "gamesStarted": null
+    },
+    {
+      "id": 676609,
+      "team": "NYY",
+      "position": "SS",
+      "gamesStarted": null
+    },
+    {
+      "id": 682987,
+      "team": "NYY",
+      "position": "RF",
+      "gamesStarted": null
+    },
+    {
+      "id": 642708,
+      "team": "NYY",
+      "position": "3B",
+      "gamesStarted": null
+    },
+    {
+      "id": 657612,
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
+    },
+    {
+      "id": 669224,
+      "team": "NYY",
+      "position": "C",
+      "gamesStarted": null
+    },
+    {
+      "id": 700250,
+      "team": "NYY",
+      "position": "DH",
+      "gamesStarted": null
+    },
+    {
+      "id": 694341,
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
+    },
+    {
+      "id": 687396,
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
+    },
+    {
+      "id": 641355,
+      "team": "NYY",
+      "position": "LF",
+      "gamesStarted": null
+    },
+    {
+      "id": 665862,
+      "team": "NYY",
+      "position": "2B",
+      "gamesStarted": null
+    },
+    {
+      "id": 608331,
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 1
+    },
+    {
+      "id": 605242,
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
+    },
+    {
+      "id": 660787,
+      "team": "NYY",
+      "position": "P",
+      "gamesStarted": 0
+    },
+    {
+      "id": 663757,
+      "team": "NYY",
+      "position": "CF",
+      "gamesStarted": null
+    },
+    {
+      "id": 806146,
+      "team": "NYY",
+      "position": "SS",
+      "gamesStarted": null
+    },
+    {
+      "id": 671277,
+      "team": "NYY",
+      "position": "1B",
+      "gamesStarted": null
+    },
+    {
+      "id": 670103,
+      "team": "BOS",
+      "position": "P",
+      "gamesStarted": 0
+    },
+    {
+      "id": 575929,
+      "team": "BOS",
+      "position": "1B",
+      "gamesStarted": null
+    },
+    {
+      "id": 663330,
+      "team": "BOS",
+      "position": "DH",
+      "gamesStarted": null
+    },
+    {
+      "id": 687941,
+      "team": "BOS",
+      "position": "P",
+      "gamesStarted": 1
+    },
+    {
+      "id": 657136,
+      "team": "BOS",
+      "position": "C",
+      "gamesStarted": null
+    },
+    {
+      "id": 678394,
+      "team": "BOS",
+      "position": "P",
+      "gamesStarted": 0
+    },
+    {
+      "id": 677800,
+      "team": "BOS",
+      "position": "RF",
+      "gamesStarted": null
+    },
+    {
+      "id": 655316,
+      "team": "BOS",
+      "position": "SS",
+      "gamesStarted": null
+    },
+    {
+      "id": 681508,
+      "team": "BOS",
+      "position": "DH",
+      "gamesStarted": null
+    },
+    {
+      "id": 702332,
+      "team": "BOS",
+      "position": "3B",
+      "gamesStarted": null
+    },
+    {
+      "id": 686765,
+      "team": "BOS",
+      "position": "2B",
+      "gamesStarted": null
+    },
+    {
+      "id": 680776,
+      "team": "BOS",
+      "position": "LF",
+      "gamesStarted": null
+    },
+    {
+      "id": 642201,
+      "team": "BOS",
+      "position": "LF",
+      "gamesStarted": null
+    },
+    {
+      "id": 678882,
+      "team": "BOS",
+      "position": "CF",
       "gamesStarted": null
     }
   ]

@@ -7,6 +7,7 @@ var mlbGames = [
   {
     "gamePk": 245294,
     "date": "2009-06-26",
+    "gameDate": "2009-06-27T00:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Minnesota Twins",
     "homeScore": 1,
@@ -25,6 +26,7 @@ var mlbGames = [
   {
     "gamePk": 245324,
     "date": "2009-06-28",
+    "gameDate": "2009-06-28T18:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Minnesota Twins",
     "homeScore": 2,
@@ -43,6 +45,7 @@ var mlbGames = [
   {
     "gamePk": 245733,
     "date": "2009-07-31",
+    "gameDate": "2009-07-31T23:30:00Z",
     "homeTeam": "Atlanta Braves",
     "awayTeam": "Los Angeles Dodgers",
     "homeScore": 0,
@@ -61,6 +64,7 @@ var mlbGames = [
   {
     "gamePk": 245748,
     "date": "2009-08-01",
+    "gameDate": "2009-08-01T20:00:00Z",
     "homeTeam": "Atlanta Braves",
     "awayTeam": "Los Angeles Dodgers",
     "homeScore": 4,
@@ -79,6 +83,7 @@ var mlbGames = [
   {
     "gamePk": 245763,
     "date": "2009-08-02",
+    "gameDate": "2009-08-03T00:00:00Z",
     "homeTeam": "Atlanta Braves",
     "awayTeam": "Los Angeles Dodgers",
     "homeScore": 1,
@@ -97,6 +102,7 @@ var mlbGames = [
   {
     "gamePk": 264112,
     "date": "2010-04-27",
+    "gameDate": "2010-04-28T00:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 5,
@@ -115,6 +121,7 @@ var mlbGames = [
   {
     "gamePk": 264325,
     "date": "2010-05-13",
+    "gameDate": "2010-05-13T17:40:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Houston Astros",
     "homeScore": 1,
@@ -133,6 +140,7 @@ var mlbGames = [
   {
     "gamePk": 288175,
     "date": "2011-07-04",
+    "gameDate": "2011-07-04T22:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Cincinnati Reds",
     "homeScore": 1,
@@ -151,6 +159,7 @@ var mlbGames = [
   {
     "gamePk": 289064,
     "date": "2011-09-10",
+    "gameDate": "2011-09-10T23:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 4,
@@ -169,6 +178,7 @@ var mlbGames = [
   {
     "gamePk": 289079,
     "date": "2011-09-11",
+    "gameDate": "2011-09-11T18:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 6,
@@ -187,6 +197,7 @@ var mlbGames = [
   {
     "gamePk": 318223,
     "date": "2012-05-12",
+    "gameDate": "2012-05-12T23:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 2,
@@ -205,6 +216,7 @@ var mlbGames = [
   {
     "gamePk": 318238,
     "date": "2012-05-13",
+    "gameDate": "2012-05-13T18:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 4,
@@ -223,6 +235,7 @@ var mlbGames = [
   {
     "gamePk": 318645,
     "date": "2012-06-12",
+    "gameDate": "2012-06-13T00:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Chicago White Sox",
     "homeScore": 1,
@@ -241,6 +254,7 @@ var mlbGames = [
   {
     "gamePk": 318888,
     "date": "2012-06-30",
+    "gameDate": "2012-06-30T23:15:00Z",
     "homeTeam": "Milwaukee Brewers",
     "awayTeam": "Arizona Diamondbacks",
     "homeScore": 10,
@@ -259,6 +273,7 @@ var mlbGames = [
   {
     "gamePk": 318909,
     "date": "2012-07-01",
+    "gameDate": "2012-07-01T18:20:00Z",
     "homeTeam": "Chicago Cubs",
     "awayTeam": "Houston Astros",
     "homeScore": 3,
@@ -277,6 +292,7 @@ var mlbGames = [
   {
     "gamePk": 318934,
     "date": "2012-07-03",
+    "gameDate": "2012-07-04T00:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Colorado Rockies",
     "homeScore": 2,
@@ -295,6 +311,7 @@ var mlbGames = [
   {
     "gamePk": 319404,
     "date": "2012-08-09",
+    "gameDate": "2012-08-09T17:45:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "San Francisco Giants",
     "homeScore": 3,
@@ -313,6 +330,7 @@ var mlbGames = [
   {
     "gamePk": 347300,
     "date": "2013-05-12",
+    "gameDate": "2013-05-12T18:10:00Z",
     "homeTeam": "Kansas City Royals",
     "awayTeam": "New York Yankees",
     "homeScore": 2,
@@ -331,6 +349,7 @@ var mlbGames = [
   {
     "gamePk": 347779,
     "date": "2013-06-16",
+    "gameDate": "2013-06-16T17:35:00Z",
     "homeTeam": "Pittsburgh Pirates",
     "awayTeam": "Los Angeles Dodgers",
     "homeScore": 6,
@@ -349,6 +368,7 @@ var mlbGames = [
   {
     "gamePk": 347790,
     "date": "2013-06-17",
+    "gameDate": "2013-06-17T23:05:00Z",
     "homeTeam": "Cleveland Indians",
     "awayTeam": "Kansas City Royals",
     "homeScore": 1,
@@ -367,6 +387,7 @@ var mlbGames = [
   {
     "gamePk": 347808,
     "date": "2013-06-18",
+    "gameDate": "2013-06-18T23:10:00Z",
     "homeTeam": "Cincinnati Reds",
     "awayTeam": "Pittsburgh Pirates",
     "homeScore": 0,
@@ -385,6 +406,7 @@ var mlbGames = [
   {
     "gamePk": 347829,
     "date": "2013-06-19",
+    "gameDate": "2013-06-20T00:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Chicago Cubs",
     "homeScore": 4,
@@ -403,6 +425,7 @@ var mlbGames = [
   {
     "gamePk": 348187,
     "date": "2013-07-20",
+    "gameDate": "2013-07-20T20:05:00Z",
     "homeTeam": "Chicago White Sox",
     "awayTeam": "Atlanta Braves",
     "homeScore": 10,
@@ -421,6 +444,7 @@ var mlbGames = [
   {
     "gamePk": 348313,
     "date": "2013-07-28",
+    "gameDate": "2013-07-29T00:05:00Z",
     "homeTeam": "Atlanta Braves",
     "awayTeam": "St. Louis Cardinals",
     "homeScore": 5,
@@ -439,6 +463,7 @@ var mlbGames = [
   {
     "gamePk": 348322,
     "date": "2013-07-29",
+    "gameDate": "2013-07-29T23:10:00Z",
     "homeTeam": "Atlanta Braves",
     "awayTeam": "Colorado Rockies",
     "homeScore": 9,
@@ -457,6 +482,7 @@ var mlbGames = [
   {
     "gamePk": 348331,
     "date": "2013-07-30",
+    "gameDate": "2013-07-30T23:10:00Z",
     "homeTeam": "Atlanta Braves",
     "awayTeam": "Colorado Rockies",
     "homeScore": 11,
@@ -475,6 +501,7 @@ var mlbGames = [
   {
     "gamePk": 348551,
     "date": "2013-08-15",
+    "gameDate": "2013-08-15T17:45:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Pittsburgh Pirates",
     "homeScore": 6,
@@ -493,6 +520,7 @@ var mlbGames = [
   {
     "gamePk": 348665,
     "date": "2013-08-24",
+    "gameDate": "2013-08-24T23:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 6,
@@ -511,6 +539,7 @@ var mlbGames = [
   {
     "gamePk": 349050,
     "date": "2013-09-21",
+    "gameDate": "2013-09-21T20:05:00Z",
     "homeTeam": "Chicago Cubs",
     "awayTeam": "Atlanta Braves",
     "homeScore": 3,
@@ -529,6 +558,7 @@ var mlbGames = [
   {
     "gamePk": 380769,
     "date": "2014-04-17",
+    "gameDate": "2014-04-17T19:45:00Z",
     "homeTeam": "San Francisco Giants",
     "awayTeam": "Los Angeles Dodgers",
     "homeScore": 1,
@@ -547,6 +577,7 @@ var mlbGames = [
   {
     "gamePk": 380781,
     "date": "2014-04-18",
+    "gameDate": "2014-04-19T02:05:00Z",
     "homeTeam": "Oakland Athletics",
     "awayTeam": "Houston Astros",
     "homeScore": 11,
@@ -565,6 +596,7 @@ var mlbGames = [
   {
     "gamePk": 381147,
     "date": "2014-05-15",
+    "gameDate": "2014-05-15T17:45:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Chicago Cubs",
     "homeScore": 5,
@@ -583,6 +615,7 @@ var mlbGames = [
   {
     "gamePk": 381169,
     "date": "2014-05-17",
+    "gameDate": "2014-05-17T18:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 4,
@@ -601,6 +634,7 @@ var mlbGames = [
   {
     "gamePk": 381258,
     "date": "2014-05-23",
+    "gameDate": "2014-05-23T23:07:00Z",
     "homeTeam": "Toronto Blue Jays",
     "awayTeam": "Oakland Athletics",
     "homeScore": 3,
@@ -619,6 +653,7 @@ var mlbGames = [
   {
     "gamePk": 381290,
     "date": "2014-05-25",
+    "gameDate": "2014-05-25T17:08:00Z",
     "homeTeam": "Detroit Tigers",
     "awayTeam": "Texas Rangers",
     "homeScore": 4,
@@ -637,6 +672,7 @@ var mlbGames = [
   {
     "gamePk": 381302,
     "date": "2014-05-26",
+    "gameDate": "2014-05-26T20:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "New York Yankees",
     "homeScore": 4,
@@ -655,6 +691,7 @@ var mlbGames = [
   {
     "gamePk": 381435,
     "date": "2014-06-05",
+    "gameDate": "2014-06-05T20:05:00Z",
     "homeTeam": "Washington Nationals",
     "awayTeam": "Philadelphia Phillies",
     "homeScore": 4,
@@ -673,6 +710,7 @@ var mlbGames = [
   {
     "gamePk": 381617,
     "date": "2014-06-18",
+    "gameDate": "2014-06-18T17:45:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "New York Mets",
     "homeScore": 2,
@@ -691,6 +729,7 @@ var mlbGames = [
   {
     "gamePk": 381819,
     "date": "2014-07-03",
+    "gameDate": "2014-07-04T00:10:00Z",
     "homeTeam": "Minnesota Twins",
     "awayTeam": "New York Yankees",
     "homeScore": 4,
@@ -709,6 +748,7 @@ var mlbGames = [
   {
     "gamePk": 381833,
     "date": "2014-07-04",
+    "gameDate": "2014-07-04T19:10:00Z",
     "homeTeam": "Minnesota Twins",
     "awayTeam": "New York Yankees",
     "homeScore": 5,
@@ -727,6 +767,7 @@ var mlbGames = [
   {
     "gamePk": 381954,
     "date": "2014-07-12",
+    "gameDate": "2014-07-12T20:10:00Z",
     "homeTeam": "Tampa Bay Rays",
     "awayTeam": "Toronto Blue Jays",
     "homeScore": 10,
@@ -745,6 +786,7 @@ var mlbGames = [
   {
     "gamePk": 382147,
     "date": "2014-07-30",
+    "gameDate": "2014-07-31T00:05:00Z",
     "homeTeam": "Texas Rangers",
     "awayTeam": "New York Yankees",
     "homeScore": 3,
@@ -763,6 +805,7 @@ var mlbGames = [
   {
     "gamePk": 382165,
     "date": "2014-07-31",
+    "gameDate": "2014-08-01T00:10:00Z",
     "homeTeam": "Houston Astros",
     "awayTeam": "Toronto Blue Jays",
     "homeScore": 5,
@@ -781,6 +824,7 @@ var mlbGames = [
   {
     "gamePk": 414443,
     "date": "2015-06-03",
+    "gameDate": "2015-06-03T17:45:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Milwaukee Brewers",
     "homeScore": 7,
@@ -799,6 +843,7 @@ var mlbGames = [
   {
     "gamePk": 414633,
     "date": "2015-06-17",
+    "gameDate": "2015-06-18T00:40:00Z",
     "homeTeam": "Colorado Rockies",
     "awayTeam": "Houston Astros",
     "homeScore": 4,
@@ -817,6 +862,7 @@ var mlbGames = [
   {
     "gamePk": 414648,
     "date": "2015-06-18",
+    "gameDate": "2015-06-18T19:10:00Z",
     "homeTeam": "Colorado Rockies",
     "awayTeam": "Houston Astros",
     "homeScore": 4,
@@ -835,6 +881,7 @@ var mlbGames = [
   {
     "gamePk": 415099,
     "date": "2015-07-25",
+    "gameDate": "2015-07-25T23:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 1,
@@ -853,6 +900,7 @@ var mlbGames = [
   {
     "gamePk": 447516,
     "date": "2016-05-22",
+    "gameDate": "2016-05-22T18:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Arizona Diamondbacks",
     "homeScore": 2,
@@ -871,6 +919,7 @@ var mlbGames = [
   {
     "gamePk": 447557,
     "date": "2016-05-25",
+    "gameDate": "2016-05-25T17:45:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Chicago Cubs",
     "homeScore": 8,
@@ -889,6 +938,7 @@ var mlbGames = [
   {
     "gamePk": 447893,
     "date": "2016-06-18",
+    "gameDate": "2016-06-18T20:05:00Z",
     "homeTeam": "Boston Red Sox",
     "awayTeam": "Seattle Mariners",
     "homeScore": 6,
@@ -907,6 +957,7 @@ var mlbGames = [
   {
     "gamePk": 447898,
     "date": "2016-06-19",
+    "gameDate": "2016-06-19T17:10:00Z",
     "homeTeam": "New York Mets",
     "awayTeam": "Atlanta Braves",
     "homeScore": 0,
@@ -925,6 +976,7 @@ var mlbGames = [
   {
     "gamePk": 448403,
     "date": "2016-07-29",
+    "gameDate": "2016-07-29T23:35:00Z",
     "homeTeam": "Atlanta Braves",
     "awayTeam": "Philadelphia Phillies",
     "homeScore": 2,
@@ -943,6 +995,7 @@ var mlbGames = [
   {
     "gamePk": 448418,
     "date": "2016-07-30",
+    "gameDate": "2016-07-30T23:10:00Z",
     "homeTeam": "Atlanta Braves",
     "awayTeam": "Philadelphia Phillies",
     "homeScore": 5,
@@ -961,6 +1014,7 @@ var mlbGames = [
   {
     "gamePk": 448503,
     "date": "2016-08-06",
+    "gameDate": "2016-08-06T23:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 5,
@@ -979,6 +1033,7 @@ var mlbGames = [
   {
     "gamePk": 490907,
     "date": "2017-06-01",
+    "gameDate": "2017-06-01T17:45:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Los Angeles Dodgers",
     "homeScore": 2,
@@ -997,6 +1052,7 @@ var mlbGames = [
   {
     "gamePk": 491139,
     "date": "2017-06-18",
+    "gameDate": "2017-06-18T18:10:00Z",
     "homeTeam": "Milwaukee Brewers",
     "awayTeam": "San Diego Padres",
     "homeScore": 2,
@@ -1015,6 +1071,7 @@ var mlbGames = [
   {
     "gamePk": 491274,
     "date": "2017-06-28",
+    "gameDate": "2017-06-29T00:10:00Z",
     "homeTeam": "Chicago White Sox",
     "awayTeam": "New York Yankees",
     "homeScore": 3,
@@ -1033,6 +1090,7 @@ var mlbGames = [
   {
     "gamePk": 491431,
     "date": "2017-07-09",
+    "gameDate": "2017-07-09T20:10:00Z",
     "homeTeam": "Seattle Mariners",
     "awayTeam": "Oakland Athletics",
     "homeScore": 4,
@@ -1051,6 +1109,7 @@ var mlbGames = [
   {
     "gamePk": 491869,
     "date": "2017-08-14",
+    "gameDate": "2017-08-14T23:05:00Z",
     "homeTeam": "New York Yankees",
     "awayTeam": "New York Mets",
     "homeScore": 4,
@@ -1069,6 +1128,7 @@ var mlbGames = [
   {
     "gamePk": 530206,
     "date": "2018-05-28",
+    "gameDate": "2018-05-28T17:10:00Z",
     "homeTeam": "Atlanta Braves",
     "awayTeam": "New York Mets",
     "homeScore": 4,
@@ -1087,6 +1147,7 @@ var mlbGames = [
   {
     "gamePk": 530340,
     "date": "2018-06-07",
+    "gameDate": "2018-06-07T17:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Miami Marlins",
     "homeScore": 4,
@@ -1105,6 +1166,7 @@ var mlbGames = [
   {
     "gamePk": 530623,
     "date": "2018-06-29",
+    "gameDate": "2018-06-30T00:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 1,
@@ -1123,6 +1185,7 @@ var mlbGames = [
   {
     "gamePk": 530638,
     "date": "2018-06-30",
+    "gameDate": "2018-06-30T23:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 4,
@@ -1141,6 +1204,7 @@ var mlbGames = [
   {
     "gamePk": 531451,
     "date": "2018-09-02",
+    "gameDate": "2018-09-02T18:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Cincinnati Reds",
     "homeScore": 4,
@@ -1159,6 +1223,7 @@ var mlbGames = [
   {
     "gamePk": 566592,
     "date": "2019-05-24",
+    "gameDate": "2019-05-25T00:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 2,
@@ -1177,6 +1242,7 @@ var mlbGames = [
   {
     "gamePk": 566640,
     "date": "2019-09-14",
+    "gameDate": "2019-09-14T23:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Milwaukee Brewers",
     "homeScore": 2,
@@ -1195,6 +1261,7 @@ var mlbGames = [
   {
     "gamePk": 633604,
     "date": "2021-06-18",
+    "gameDate": "2021-06-19T01:40:00Z",
     "homeTeam": "Arizona Diamondbacks",
     "awayTeam": "Los Angeles Dodgers",
     "homeScore": 0,
@@ -1213,6 +1280,7 @@ var mlbGames = [
   {
     "gamePk": 633594,
     "date": "2021-06-19",
+    "gameDate": "2021-06-19T20:05:00Z",
     "homeTeam": "Texas Rangers",
     "awayTeam": "Minnesota Twins",
     "homeScore": 2,
@@ -1231,6 +1299,7 @@ var mlbGames = [
   {
     "gamePk": 633032,
     "date": "2021-08-03",
+    "gameDate": "2021-08-04T00:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 1,
@@ -1249,6 +1318,7 @@ var mlbGames = [
   {
     "gamePk": 633043,
     "date": "2021-08-05",
+    "gameDate": "2021-08-06T00:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 4,
@@ -1267,6 +1337,7 @@ var mlbGames = [
   {
     "gamePk": 632794,
     "date": "2021-08-22",
+    "gameDate": "2021-08-22T18:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Pittsburgh Pirates",
     "homeScore": 3,
@@ -1285,6 +1356,7 @@ var mlbGames = [
   {
     "gamePk": 632559,
     "date": "2021-09-10",
+    "gameDate": "2021-09-11T00:10:00Z",
     "homeTeam": "Chicago White Sox",
     "awayTeam": "Boston Red Sox",
     "homeScore": 4,
@@ -1303,6 +1375,7 @@ var mlbGames = [
   {
     "gamePk": 632379,
     "date": "2021-09-21",
+    "gameDate": "2021-09-21T22:40:00Z",
     "homeTeam": "Miami Marlins",
     "awayTeam": "Washington Nationals",
     "homeScore": 1,
@@ -1321,6 +1394,7 @@ var mlbGames = [
   {
     "gamePk": 660910,
     "date": "2021-10-29",
+    "gameDate": "2021-10-30T00:09:00Z",
     "homeTeam": "Atlanta Braves",
     "awayTeam": "Houston Astros",
     "homeScore": 2,
@@ -1339,6 +1413,7 @@ var mlbGames = [
   {
     "gamePk": 663146,
     "date": "2022-04-20",
+    "gameDate": "2022-04-20T22:30:00Z",
     "homeTeam": "Chicago Cubs",
     "awayTeam": "Tampa Bay Rays",
     "homeScore": 2,
@@ -1357,6 +1432,7 @@ var mlbGames = [
   {
     "gamePk": 661982,
     "date": "2022-06-01",
+    "gameDate": "2022-06-01T17:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "San Diego Padres",
     "homeScore": 5,
@@ -1375,6 +1451,7 @@ var mlbGames = [
   {
     "gamePk": 663239,
     "date": "2022-06-18",
+    "gameDate": "2022-06-18T18:20:00Z",
     "homeTeam": "Chicago Cubs",
     "awayTeam": "Atlanta Braves",
     "homeScore": 6,
@@ -1393,6 +1470,7 @@ var mlbGames = [
   {
     "gamePk": 661948,
     "date": "2022-08-07",
+    "gameDate": "2022-08-07T18:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "New York Yankees",
     "homeScore": 12,
@@ -1411,6 +1489,7 @@ var mlbGames = [
   {
     "gamePk": 661939,
     "date": "2022-08-27",
+    "gameDate": "2022-08-27T23:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 6,
@@ -1429,6 +1508,7 @@ var mlbGames = [
   {
     "gamePk": 663130,
     "date": "2022-09-11",
+    "gameDate": "2022-09-12T00:08:00Z",
     "homeTeam": "Chicago Cubs",
     "awayTeam": "San Francisco Giants",
     "homeScore": 2,
@@ -1447,6 +1527,7 @@ var mlbGames = [
   {
     "gamePk": 717650,
     "date": "2023-06-23",
+    "gameDate": "2023-06-23T22:40:00Z",
     "homeTeam": "Cincinnati Reds",
     "awayTeam": "Atlanta Braves",
     "homeScore": 11,
@@ -1465,6 +1546,7 @@ var mlbGames = [
   {
     "gamePk": 717296,
     "date": "2023-07-22",
+    "gameDate": "2023-07-22T23:15:00Z",
     "homeTeam": "Milwaukee Brewers",
     "awayTeam": "Atlanta Braves",
     "homeScore": 4,
@@ -1483,6 +1565,7 @@ var mlbGames = [
   {
     "gamePk": 717267,
     "date": "2023-07-25",
+    "gameDate": "2023-07-25T22:40:00Z",
     "homeTeam": "Philadelphia Phillies",
     "awayTeam": "Baltimore Orioles",
     "homeScore": 4,
@@ -1501,6 +1584,7 @@ var mlbGames = [
   {
     "gamePk": 717237,
     "date": "2023-07-28",
+    "gameDate": "2023-07-28T23:05:00Z",
     "homeTeam": "Baltimore Orioles",
     "awayTeam": "New York Yankees",
     "homeScore": 1,
@@ -1519,6 +1603,7 @@ var mlbGames = [
   {
     "gamePk": 747143,
     "date": "2024-04-05",
+    "gameDate": "2024-04-05T23:20:00Z",
     "homeTeam": "Atlanta Braves",
     "awayTeam": "Arizona Diamondbacks",
     "homeScore": 6,
@@ -1537,6 +1622,7 @@ var mlbGames = [
   {
     "gamePk": 745183,
     "date": "2024-05-04",
+    "gameDate": "2024-05-04T18:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Chicago White Sox",
     "homeScore": 5,
@@ -1555,6 +1641,7 @@ var mlbGames = [
   {
     "gamePk": 745168,
     "date": "2024-06-13",
+    "gameDate": "2024-06-13T18:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Pittsburgh Pirates",
     "homeScore": 4,
@@ -1573,6 +1660,7 @@ var mlbGames = [
   {
     "gamePk": 745163,
     "date": "2024-06-22",
+    "gameDate": "2024-06-22T18:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "San Francisco Giants",
     "homeScore": 9,
@@ -1591,6 +1679,7 @@ var mlbGames = [
   {
     "gamePk": 745160,
     "date": "2024-06-24",
+    "gameDate": "2024-06-24T23:45:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 4,
@@ -1609,6 +1698,7 @@ var mlbGames = [
   {
     "gamePk": 745157,
     "date": "2024-06-26",
+    "gameDate": "2024-06-26T17:45:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 2,
@@ -1627,6 +1717,7 @@ var mlbGames = [
   {
     "gamePk": 745158,
     "date": "2024-06-26",
+    "gameDate": "2024-06-26T23:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 4,
@@ -1645,6 +1736,7 @@ var mlbGames = [
   {
     "gamePk": 777456,
     "date": "2025-06-18",
+    "gameDate": "2025-06-19T02:05:00Z",
     "homeTeam": "Athletics",
     "awayTeam": "Houston Astros",
     "homeScore": 4,
@@ -1663,6 +1755,7 @@ var mlbGames = [
   {
     "gamePk": 777426,
     "date": "2025-06-20",
+    "gameDate": "2025-06-21T01:40:00Z",
     "homeTeam": "San Diego Padres",
     "awayTeam": "Kansas City Royals",
     "homeScore": 5,
@@ -1681,6 +1774,7 @@ var mlbGames = [
   {
     "gamePk": 777414,
     "date": "2025-06-21",
+    "gameDate": "2025-06-22T01:38:00Z",
     "homeTeam": "Los Angeles Angels",
     "awayTeam": "Houston Astros",
     "homeScore": 9,
@@ -1699,6 +1793,7 @@ var mlbGames = [
   {
     "gamePk": 777398,
     "date": "2025-06-22",
+    "gameDate": "2025-06-22T20:10:00Z",
     "homeTeam": "Los Angeles Dodgers",
     "awayTeam": "Washington Nationals",
     "homeScore": 13,
@@ -1717,6 +1812,7 @@ var mlbGames = [
   {
     "gamePk": 777147,
     "date": "2025-07-11",
+    "gameDate": "2025-07-12T00:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 5,
@@ -1735,6 +1831,7 @@ var mlbGames = [
   {
     "gamePk": 777118,
     "date": "2025-07-13",
+    "gameDate": "2025-07-13T18:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 5,
@@ -1753,6 +1850,7 @@ var mlbGames = [
   {
     "gamePk": 777023,
     "date": "2025-07-24",
+    "gameDate": "2025-07-24T23:45:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "San Diego Padres",
     "homeScore": 9,
@@ -1771,6 +1869,7 @@ var mlbGames = [
   {
     "gamePk": 776416,
     "date": "2025-09-07",
+    "gameDate": "2025-09-07T18:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "San Francisco Giants",
     "homeScore": 4,
@@ -1789,6 +1888,7 @@ var mlbGames = [
   {
     "gamePk": 823059,
     "date": "2026-05-19",
+    "gameDate": "2026-05-19T23:45:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Pittsburgh Pirates",
     "homeScore": 9,
@@ -1807,6 +1907,7 @@ var mlbGames = [
   {
     "gamePk": 823033,
     "date": "2026-07-10",
+    "gameDate": "2026-07-11T00:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 2,
@@ -1825,6 +1926,7 @@ var mlbGames = [
   {
     "gamePk": 823030,
     "date": "2026-07-11",
+    "gameDate": "2026-07-11T23:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Atlanta Braves",
     "homeScore": 4,
@@ -1843,6 +1945,7 @@ var mlbGames = [
   {
     "gamePk": 823042,
     "date": "2026-07-23",
+    "gameDate": "2026-07-23T21:15:00Z",
     "homeTeam": "St. Louis Cardinals",
     "awayTeam": "Arizona Diamondbacks",
     "homeScore": 6,
@@ -1861,6 +1964,7 @@ var mlbGames = [
   {
     "gamePk": 824889,
     "date": "2026-08-05",
+    "gameDate": "2026-08-05T23:15:00Z",
     "homeTeam": "Atlanta Braves",
     "awayTeam": "Miami Marlins",
     "homeScore": 4,
@@ -1877,26 +1981,9 @@ var mlbGames = [
     }
   },
   {
-    "gamePk": 823501,
-    "date": "2026-08-29",
-    "homeTeam": "New York Yankees",
-    "awayTeam": "Boston Red Sox",
-    "homeScore": 9,
-    "awayScore": 2,
-    "venue": "Yankee Stadium",
-    "gameType": "R",
-    "notes": "Second game of double header.",
-    "attendedBy": {
-      "josh": 0,
-      "sam": 1,
-      "ellie": 0,
-      "tilly": 0,
-      "poppy": 0
-    }
-  },
-  {
     "gamePk": 823539,
     "date": "2026-08-29",
+    "gameDate": "2026-08-29T17:05:00Z",
     "homeTeam": "New York Yankees",
     "awayTeam": "Boston Red Sox",
     "homeScore": 0,
@@ -1915,6 +2002,7 @@ var mlbGames = [
   {
     "gamePk": 823582,
     "date": "2026-08-29",
+    "gameDate": "2026-08-29T20:10:00Z",
     "homeTeam": "New York Mets",
     "awayTeam": "Houston Astros",
     "homeScore": 6,
@@ -1922,6 +2010,25 @@ var mlbGames = [
     "venue": "Citi Field",
     "gameType": "R",
     "notes": "Squeezed in between games of the Yankees doubleheader -- 3 games in one day!",
+    "attendedBy": {
+      "josh": 0,
+      "sam": 1,
+      "ellie": 0,
+      "tilly": 0,
+      "poppy": 0
+    }
+  },
+  {
+    "gamePk": 823501,
+    "date": "2026-08-29",
+    "gameDate": "2026-08-29T23:15:00Z",
+    "homeTeam": "New York Yankees",
+    "awayTeam": "Boston Red Sox",
+    "homeScore": 9,
+    "awayScore": 2,
+    "venue": "Yankee Stadium",
+    "gameType": "R",
+    "notes": "Second game of double header.",
     "attendedBy": {
       "josh": 0,
       "sam": 1,
