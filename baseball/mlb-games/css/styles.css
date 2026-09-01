@@ -44,6 +44,11 @@ body {
 }
 
 .mlbg-stat-grid--headline .bb-num { font-size: 2.1rem; }
+/* Page-summary tiles (Games Attended, Years Spanned, etc.) aren't part
+   of any one Stat Sheet group/filter below, so they get a neutral
+   accent instead of borrowing Hitting's red -- otherwise they read as
+   if they belong to that group. */
+.mlbg-stat-grid--headline { --a: var(--text-muted, #64748b); }
 
 .bb-stat {
   background: var(--surface, #fff);
@@ -51,7 +56,7 @@ body {
   box-shadow: 0 2px 8px var(--shadow, rgba(0,0,0,0.07));
   padding: 1.1rem 0.9rem;
   text-align: center;
-  border-top: 4px solid var(--section, #C8102E);
+  border-top: 4px solid var(--a, var(--section, #C8102E));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,7 +66,7 @@ body {
   font-family: 'Kreon', serif;
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--section, #C8102E);
+  color: var(--a, var(--section, #C8102E));
   line-height: 1;
 }
 
@@ -113,6 +118,52 @@ body {
 @media (max-width: 900px) {
   .mlbg-stat-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ---- Stat Sheet groups + filter -----------------------------
+   With ~35 tiles all sharing one red accent, nothing but label text
+   distinguished a hitting stat from a weather stat. display:contents
+   lets each .mlbg-stat-group carry its own --a color (inherited down
+   to its .bb-stat children, see .bb-stat/.bb-num above) and a
+   data-group attribute for the filter below, while its .bb-stat tiles
+   remain direct children of .mlbg-stat-grid -- so the existing 4-col/
+   2-col grid flow is untouched; the group is otherwise invisible to
+   layout except for its label row. */
+.mlbg-stat-group { display: contents; }
+.mlbg-stat-group.is-hidden { display: none; }
+
+.mlbg-stat-group-label {
+  grid-column: 1 / -1;
+  font-family: 'Kreon', serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--a, var(--section, #C8102E));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0.5rem 0 -0.2rem;
+}
+.mlbg-stat-group:first-child .mlbg-stat-group-label { margin-top: 0; }
+
+.mlbg-group-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.mlbg-group-filter-btn {
+  font-family: 'Kreon', serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.3rem 0.9rem;
+  border-radius: 99px;
+  border: 2px solid var(--a, var(--section, #C8102E));
+  background: transparent;
+  color: var(--a, var(--section, #C8102E));
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, opacity 0.15s;
+}
+.mlbg-group-filter-btn.active { background: var(--a, var(--section, #C8102E)); color: #fff; }
+.mlbg-group-filter-btn:not(.active) { opacity: 0.5; }
 
 /* ---- Per-person attendance row ---- */
 .mlbg-person-row {

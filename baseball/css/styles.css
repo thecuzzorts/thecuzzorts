@@ -1076,22 +1076,65 @@ h2.section-group.sec-reveal.in-view { opacity: 1; transform: none; }
   margin-left: 0.3rem;
 }
 
-/* Flags a team-name chip's stadium as having a retractable roof --
-   same pill shape as .tl-closed-badge, distinct color so the two
-   badges read as different facts (closed park vs. roof type) if a
-   team ever needed both. */
+/* Redesigned status-icon cluster for each Parks-grid team row, replacing
+   the legacy plain-colored-dot .visited + emoji .first-visit (both still
+   defined and floated right in css/main.min.css) with a consistent
+   family of hand-drawn SVG glyphs -- same viewBox="0 0 24 24" stroke
+   convention as js/site-nav.js's sun/moon theme-toggle icons. One
+   container replaces the two independently-floated legacy elements so
+   a 2-icon row (visited + date) and a 3-icon row (+ retractable roof)
+   both align consistently regardless of icon count. */
+.team-icons {
+  float: right;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  position: relative;
+  top: 4px;
+}
+/* .first-visit's legacy float/positioning (css/main.min.css) fights the
+   new flex cluster it's now nested inside -- neutralize just enough to
+   sit as a flex child, while its ::before emoji and :hover .date
+   tooltip mechanism keep working unchanged. */
+.team-icons .first-visit { float: none; top: 0; width: auto; margin: 0; }
+.team-icons .visited { display: none; }
+
+/* Visited-status icon: checkmark (visited), dash (not yet), clock
+   (planned) -- .team.no/.team.planned have no live markup yet (every
+   row today is "yes"), but the visuals are ready for when they do. */
+.tl-visited-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  color: #32cd32;
+}
+.tl-visited-icon svg { display: block; width: 100%; height: 100%; }
+.team.no .tl-visited-icon { color: #94a3b8; }
+.team.planned .tl-visited-icon { color: #E8C547; }
+
+/* Flags a team's stadium as having a retractable roof -- icon-only
+   (not a text pill) so the grid stays compact, with the actual
+   open/closed history in a native title-attribute tooltip. A
+   hand-drawn stadium-roof glyph (not a padlock -- open/closed locks
+   read as near-identical at this size) makes the shape itself carry
+   the fact: a solid cap for closed, a visibly parted roof for open.
+   Color reinforces the same distinction so it still reads before the
+   shape registers: muted gray for "only ever seen closed" (matches
+   .tl-closed-badge's neutral treatment), gold for "seen open at
+   least once". */
 .tl-roof-badge {
   display: inline-block;
-  font-size: 0.55rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #fff;
-  background: #1C7C9C;
-  padding: 0.1em 0.45em;
-  border-radius: 3px;
-  vertical-align: middle;
-  margin-left: 0.3rem;
+  width: 16px;
+  height: 16px;
+  cursor: help;
+  color: var(--text-muted, #8a9aaa);
+}
+.tl-roof-badge svg { display: block; width: 100%; height: 100%; }
+.tl-roof-badge--open-seen { color: #E8C547; }
+
+@media (max-width: 480px) {
+  .team-icons { gap: 0.25rem; }
+  .tl-visited-icon, .tl-roof-badge { width: 15px; height: 15px; }
 }
 
 /* --- Memories --------------------------------------------- */

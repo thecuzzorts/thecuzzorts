@@ -16,6 +16,22 @@
   var PERSON_LABELS = { josh: 'Josh', sam: 'Sam', ellie: 'Ellie', tilly: 'Tilly', poppy: 'Poppy' };
   var PERSON_ORDER = ['josh', 'sam', 'ellie', 'tilly', 'poppy'];
 
+  // Stat Sheet groups -- every tile used the page's single red accent
+  // regardless of subject, so with ~35 tiles nothing but label text told
+  // a hitting stat apart from a weather stat. Order here is the display
+  // order (thematic clusters instead of the old layout-height-driven
+  // flat order); color is applied via --a on each .mlbg-stat-group
+  // wrapper (see .bb-stat/.bb-num in css/styles.css) and reused for
+  // this group's filter chip.
+  var STAT_GROUPS = [
+    { id: 'hitting',    label: 'Hitting',                     color: '#C8102E' },
+    { id: 'weather',    label: 'Weather & Conditions',        color: '#1C7C9C' },
+    { id: 'attendance', label: 'People & Attendance',         color: '#D4A017' },
+    { id: 'milestones', label: 'Milestones & Rare Events',    color: '#7B4FA0' },
+    { id: 'length',     label: 'Game Length & Score Records', color: '#4A5C7A' },
+    { id: 'pitchers',   label: 'Pitcher Decisions',           color: '#22703D' }
+  ];
+
   // Franchise renames -- same class of problem mlbVenues already solves
   // for ballparks that changed sponsor names over the years. "Oakland
   // Athletics" dropped "Oakland" after relocating away; without this,
@@ -100,10 +116,10 @@
       if (venueCoord && venueCoord.retractableRoof) {
         if (full.weather && full.weather.condition === 'Roof Closed') {
           stats.roofClosed++;
-          stats.roofClosedGames.push({ date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam });
+          stats.roofClosedGames.push({ date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam, venue: g.venue });
         } else if (full.weather && full.weather.condition) {
           stats.roofOpen++;
-          stats.roofOpenGames.push({ date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam, condition: full.weather.condition });
+          stats.roofOpenGames.push({ date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam, venue: g.venue, condition: full.weather.condition });
         }
       }
 
@@ -371,12 +387,57 @@
       return '<div>' + name + ' &mdash; ' + topPitcher.count + ' ' + pluralize(topPitcher.count, singular, plural) + '</div>';
     }).join('');
   }
+  // One line per distinct park rather than one line per game -- with
+  // most retractable-roof parks visited only once so far, a flat
+  // per-game list buries the actually-interesting fact ("never seen
+  // open here") among dates. Aliased venue names (Minute Maid Park /
+  // Daikin Park, etc.) are folded together the same way stats.venues
+  // already dedupes by lat/lng elsewhere in this file.
+  function buildRoofDetailHTML(closedGames, openGames) {
+    var byPark = {};
+    function key(venue) {
+      var v = (typeof mlbVenues !== 'undefined' && mlbVenues[venue]) || null;
+      return v ? (v.lat + ',' + v.lng) : venue;
+    }
+    closedGames.concat(openGames).forEach(function (g) {
+      var k = key(g.venue);
+      if (!byPark[k]) { byPark[k] = { venue: g.venue, open: 0, closed: 0 }; }
+    });
+    closedGames.forEach(function (g) { byPark[key(g.venue)].closed++; });
+    openGames.forEach(function (g) { byPark[key(g.venue)].open++; });
+
+    var lines = Object.keys(byPark).map(function (k) {
+      var p = byPark[k];
+      var total = p.open + p.closed;
+      var summary = !p.open ? 'Closed only (' + total + ' ' + pluralize(total, 'visit') + ')'
+        : !p.closed ? 'Open only (' + total + ' ' + pluralize(total, 'visit') + ')'
+        : p.open + ' Open, ' + p.closed + ' Closed';
+      return '<div>' + p.venue + ' &mdash; ' + summary + '</div>';
+    });
+    return lines.join('');
+  }
   function tile(num, label, denom, detail) {
     return '<div class="bb-stat' + (detail ? ' has-detail' : '') + '">' +
       '<div class="bb-num">' + num + (denom ? '<span class="bb-denom">' + denom + '</span>' : '') + '</div>' +
       '<span class="bb-label">' + label + '</span>' +
       (detail ? '<div class="bb-stat-detail">' + detail + '</div>' : '') +
     '</div>';
+  }
+  // Wraps a group's tiles for the Stat Sheet -- display:contents (see CSS)
+  // keeps the tiles themselves as direct .mlbg-stat-grid children so the
+  // existing column layout is untouched, while --a here cascades down to
+  // color every child .bb-stat's border/number, and data-group drives the
+  // filter chips' show/hide toggle.
+  function statGroup(groupDef, tilesHtml) {
+    if (!tilesHtml) { return ''; }
+    return '<div class="mlbg-stat-group" data-group="' + groupDef.id + '" style="--a:' + groupDef.color + '">' +
+      '<h4 class="mlbg-stat-group-label">' + groupDef.label + '</h4>' +
+      tilesHtml +
+    '</div>';
+  }
+  function groupById(id) {
+    for (var i = 0; i < STAT_GROUPS.length; i++) { if (STAT_GROUPS[i].id === id) { return STAT_GROUPS[i]; } }
+    return null;
   }
   // For count-style tiles (as opposed to averages/extremes, which already
   // have their own "&ndash;" no-data fallback) -- when filtered to a
@@ -391,8 +452,32 @@
   // actually was, and a filtered person's own closest game won't always
   // land on the family-wide margin (e.g. a 1-run game for "Anyone" isn't
   // guaranteed to be a 1-run game for Poppy specifically).
-  function marginLabel(diff) {
-    return diff === 0 ? 'Tie Game' : diff + '-Run Game';
+  function marginLabel(diff, count) {
+    var noun = diff === 0 ? 'Tie Game' : diff + '-Run Game';
+    return count > 1 ? pluralize(count, noun) : noun;
+  }
+
+  // "Biggest Blowout" stays a static label when there's one standout
+  // game (the score alone is self-explanatory as the headline), but
+  // once several games tie for the biggest margin the headline becomes
+  // a count instead of a score (see runDiffHeadline) -- a bare count
+  // under "Biggest Blowout" no longer says what the blowout margin
+  // actually was, so the label needs to carry the run differential too
+  // (e.g. "8-Run Blowouts") whenever it's not a single unique game.
+  function blowoutLabel(diff, count) {
+    return count > 1 ? pluralize(count, diff + '-Run Blowout') : 'Biggest Blowout';
+  }
+
+  // A single score misrepresents "Biggest Blowout"/"Closest Game" once
+  // more than one game ties at that margin -- e.g. 35 different games
+  // tied at a 1-run margin, so showing any one of their scores as the
+  // headline (the first-found one) is arbitrary and misleading. Show a
+  // count instead whenever there's a tie; the actual score per game
+  // still appears in the detail list below (see the tile() call sites).
+  function runDiffHeadline(games) {
+    if (!games.length) { return '&ndash;'; }
+    if (games.length === 1) { return games[0].score; }
+    return games.length;
   }
 
   function buildStatsHTML(stats) {
@@ -404,12 +489,11 @@
 
     var doubleheaderList = Object.keys(stats.doubleheaderDates).map(function (d) { return stats.doubleheaderDates[d]; });
 
-    // Ordered so the plain, always-compact tiles fill the earlier rows
-    // and stay even, while tiles carrying a detail list -- especially
-    // Extra-Inning Games, the one most likely to keep growing as more
-    // games get added over time -- land in the trailing row(s), where a
-    // taller card doesn't force short siblings in the same row to stretch.
-    var statLine =
+    // Grouped into six themed clusters (see STAT_GROUPS) instead of one
+    // flat layout-height-driven list -- every tile call below is
+    // unchanged from before, just reordered and wrapped per group so
+    // color-coding and the group filter have something to key off.
+    var hittingTiles =
       tileIfNonZero(stats.totalRuns, tile(stats.totalRuns.toLocaleString(), pluralize(stats.totalRuns, 'Total Run Scored', 'Total Runs Scored'))) +
       tileIfNonZero(stats.totalHits, tile(stats.totalHits.toLocaleString(), pluralize(stats.totalHits, 'Total Hit'))) +
       tileIfNonZero(stats.totalHR, tile(stats.totalHR, pluralize(stats.totalHR, 'Total Home Run'))) +
@@ -417,12 +501,9 @@
       tileIfNonZero(stats.totalDoubles, tile(stats.totalDoubles, pluralize(stats.totalDoubles, 'Total Double'))) +
       tileIfNonZero(stats.totalTriples, tile(stats.totalTriples, pluralize(stats.totalTriples, 'Total Triple'))) +
       tileIfNonZero(stats.totalStrikeouts, tile(stats.totalStrikeouts.toLocaleString(), pluralize(stats.totalStrikeouts, 'Total Strikeout'))) +
-      tileIfNonZero(stats.totalWalks, tile(stats.totalWalks.toLocaleString(), pluralize(stats.totalWalks, 'Total Walk'))) +
-      tileIfNonZero(stats.uniquePlayers, tile(stats.uniquePlayers.toLocaleString(), pluralize(stats.uniquePlayers, 'Unique Player Seen', 'Unique Players Seen'))) +
-      tileIfNonZero(stats.uniqueTeams, tile(stats.uniqueTeams, pluralize(stats.uniqueTeams, 'Unique MLB Team Seen', 'Unique MLB Teams Seen'), '/30')) +
-      tile(stats.totalTimeDisplay || '&ndash;', 'Time at the Ballpark') +
-      tile(stats.day + ' / ' + stats.night, 'Day / Night Games') +
-      tile(stats.avgCrowd != null ? stats.avgCrowd.toLocaleString() : '&ndash;', 'Avg. Crowd Size') +
+      tileIfNonZero(stats.totalWalks, tile(stats.totalWalks.toLocaleString(), pluralize(stats.totalWalks, 'Total Walk')));
+
+    var weatherTiles =
       tile(stats.avgTemp != null ? stats.avgTemp + '&deg;' : '&ndash;', 'Avg. Game-Day Temp') +
       tile(stats.hottest ? stats.hottest.temp + '&deg;' : '&ndash;', 'Hottest Game', null,
         statDetailHTML(stats.hottestGames, function (g) { return g.temp + '&deg;F'; })) +
@@ -432,10 +513,21 @@
         statDetailHTML(stats.windiestGames, function (g) { return g.windText; })) +
       tileIfNonZero(stats.roofOpen + stats.roofClosed,
         tile(stats.roofClosed + ' / ' + stats.roofOpen, 'Retractable-Roof Games (Closed / Open)', null,
-          statDetailHTML(stats.roofClosedGames.map(function (g) { return { date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam, note: 'Closed' }; })
-            .concat(stats.roofOpenGames.map(function (g) { return { date: g.date, homeTeam: g.homeTeam, awayTeam: g.awayTeam, note: 'Open, ' + g.condition }; })),
-            function (g) { return g.note; }))) +
+          buildRoofDetailHTML(stats.roofClosedGames, stats.roofOpenGames))) +
       (stats.mostCommonCondition ? tile(stats.mostCommonCondition, 'Most Common Weather') : '') +
+      tile(stats.day + ' / ' + stats.night, 'Day / Night Games');
+
+    var attendanceTiles =
+      tileIfNonZero(stats.uniquePlayers, tile(stats.uniquePlayers.toLocaleString(), pluralize(stats.uniquePlayers, 'Unique Player Seen', 'Unique Players Seen'))) +
+      tileIfNonZero(stats.uniqueTeams, tile(stats.uniqueTeams, pluralize(stats.uniqueTeams, 'Unique MLB Team Seen', 'Unique MLB Teams Seen'), '/30')) +
+      tile(stats.totalTimeDisplay || '&ndash;', 'Time at the Ballpark') +
+      tile(stats.avgCrowd != null ? stats.avgCrowd.toLocaleString() : '&ndash;', 'Avg. Crowd Size') +
+      tile(stats.highestCrowd ? stats.highestCrowd.crowd.toLocaleString() : '&ndash;', 'Highest Attendance', null,
+        statDetailHTML(stats.highestCrowdGames, function (g) { return g.crowd.toLocaleString(); })) +
+      tile(stats.lowestCrowd ? stats.lowestCrowd.crowd.toLocaleString() : '&ndash;', 'Lowest Attendance', null,
+        statDetailHTML(stats.lowestCrowdGames, function (g) { return g.crowd.toLocaleString(); }));
+
+    var milestonesTiles =
       (stats.mostGamesInADay > 1 ? tile(stats.mostGamesInADay, pluralize(stats.mostGamesInADay, 'Game', 'Games') + ' in One Day', null,
         statDetailHTML(stats.mostGamesInADayGames)) : '') +
       tileIfNonZero(stats.postseason, tile(stats.postseason, pluralize(stats.postseason, 'Postseason Game'), null, statDetailHTML(stats.postseasonGames))) +
@@ -443,31 +535,46 @@
         statDetailHTML(stats.cycleGames, function (g) { return g.player; }, 1))) +
       tileIfNonZero(stats.calledEarly, tile(stats.calledEarly, pluralize(stats.calledEarly, 'Game Called Early', 'Games Called Early'), null,
         statDetailHTML(stats.calledEarlyGames, function (g) { return g.reason || ''; }))) +
+      tileIfNonZero(stats.doubleheaders, tile(stats.doubleheaders, pluralize(stats.doubleheaders, 'Doubleheader'), null, statDetailHTML(doubleheaderList)));
+
+    var lengthTiles =
       tile(stats.longest ? stats.longest.duration : '&ndash;', 'Longest Game', null, statDetailHTML(stats.longestGames)) +
       tile(stats.shortest ? stats.shortest.duration : '&ndash;', 'Shortest Game', null, statDetailHTML(stats.shortestGames)) +
-      tile(stats.biggestBlowout ? stats.biggestBlowout.score : '&ndash;', 'Biggest Blowout', null, statDetailHTML(stats.biggestBlowoutGames)) +
-      tile(stats.closestGame ? stats.closestGame.score : '&ndash;',
-        stats.closestGame ? marginLabel(stats.closestGame.diff) : 'Closest Game', null, statDetailHTML(stats.closestGameGames)) +
+      tile(runDiffHeadline(stats.biggestBlowoutGames),
+        stats.biggestBlowout ? blowoutLabel(stats.biggestBlowout.diff, stats.biggestBlowoutGames.length) : 'Biggest Blowout', null,
+        statDetailHTML(stats.biggestBlowoutGames, function (g) { return g.score; })) +
+      tile(runDiffHeadline(stats.closestGameGames),
+        stats.closestGame ? marginLabel(stats.closestGame.diff, stats.closestGameGames.length) : 'Closest Game', null,
+        statDetailHTML(stats.closestGameGames, function (g) { return g.score; })) +
+      tile(stats.mostInnings || '&ndash;', 'Most Innings', null, statDetailHTML(stats.mostInningsGames)) +
+      tileIfNonZero(stats.extraInnings, tile(stats.extraInnings, pluralize(stats.extraInnings, 'Extra-Inning Game'), null,
+        statDetailHTML(stats.extraInningsGames, function (g) { return g.innings + ' innings'; }, 1)));
+
+    var pitchersTiles =
       tile(stats.topWinPitcher ? stats.topWinPitcher.count : '&ndash;', 'Most Wins Seen', null,
         pitcherDetailHTML(stats.topWinPitcher, 'win', 'wins')) +
       tile(stats.topLossPitcher ? stats.topLossPitcher.count : '&ndash;', 'Most Losses Seen', null,
         pitcherDetailHTML(stats.topLossPitcher, 'loss', 'losses')) +
       tile(stats.topSavePitcher ? stats.topSavePitcher.count : '&ndash;', 'Most Saves Seen', null,
-        pitcherDetailHTML(stats.topSavePitcher, 'save', 'saves')) +
-      tile(stats.highestCrowd ? stats.highestCrowd.crowd.toLocaleString() : '&ndash;', 'Highest Attendance', null,
-        statDetailHTML(stats.highestCrowdGames, function (g) { return g.crowd.toLocaleString(); })) +
-      tile(stats.lowestCrowd ? stats.lowestCrowd.crowd.toLocaleString() : '&ndash;', 'Lowest Attendance', null,
-        statDetailHTML(stats.lowestCrowdGames, function (g) { return g.crowd.toLocaleString(); })) +
-      tileIfNonZero(stats.doubleheaders, tile(stats.doubleheaders, pluralize(stats.doubleheaders, 'Doubleheader'), null, statDetailHTML(doubleheaderList))) +
-      tile(stats.mostInnings || '&ndash;', 'Most Innings', null, statDetailHTML(stats.mostInningsGames)) +
-      tileIfNonZero(stats.extraInnings, tile(stats.extraInnings, pluralize(stats.extraInnings, 'Extra-Inning Game'), null,
-        statDetailHTML(stats.extraInningsGames, function (g) { return g.innings + ' innings'; }, 1)));
+        pitcherDetailHTML(stats.topSavePitcher, 'save', 'saves'));
+
+    var statLine =
+      statGroup(groupById('hitting'), hittingTiles) +
+      statGroup(groupById('weather'), weatherTiles) +
+      statGroup(groupById('attendance'), attendanceTiles) +
+      statGroup(groupById('milestones'), milestonesTiles) +
+      statGroup(groupById('length'), lengthTiles) +
+      statGroup(groupById('pitchers'), pitchersTiles);
 
     document.getElementById('mlbgHeadlineStats').innerHTML = headline;
     document.getElementById('mlbgStatGrid').innerHTML = statLine;
     // no re-init needed here -- the toggle listener is delegated on the
     // stable #mlbgStatGrid container itself (see initStatDetailToggle),
-    // so it keeps working across every innerHTML rebuild above.
+    // so it keeps working across every innerHTML rebuild above. Group
+    // filter visibility (is-hidden) is likewise delegated and reapplied
+    // below so a person-filter change doesn't reset which groups the
+    // user had toggled off.
+    applyGroupFilterVisibility();
 
     var personHTML = PERSON_ORDER.map(function (p) {
       return '<div class="mlbg-person-chip" style="--person:' + PERSON_COLORS[p] + '">' +
@@ -669,6 +776,45 @@
       var willOpen = detail.hidden;
       detail.hidden = !willOpen;
       row.classList.toggle('is-open', willOpen);
+    });
+  }
+
+  // Stat Sheet group filter -- multi-select chips (unlike the sort
+  // toggle's exclusive pair above), all groups visible by default.
+  // Hidden state lives here at module scope, not in the DOM, since
+  // #mlbgStatGrid's innerHTML is fully rebuilt on every person-filter
+  // change (buildStatsHTML), which would otherwise silently reset any
+  // group the user had toggled off.
+  var hiddenStatGroups = {};
+
+  function buildGroupFilterHTML() {
+    return STAT_GROUPS.map(function (g) {
+      var active = !hiddenStatGroups[g.id];
+      return '<button type="button" class="mlbg-group-filter-btn' + (active ? ' active' : '') +
+        '" data-group="' + g.id + '" style="--a:' + g.color + '">' + g.label + '</button>';
+    }).join('');
+  }
+
+  // Re-applies is-hidden to the freshly-rendered #mlbgStatGrid groups
+  // after every buildStatsHTML() rebuild, so a person-filter change
+  // doesn't silently reset which groups were toggled off.
+  function applyGroupFilterVisibility() {
+    document.querySelectorAll('#mlbgStatGrid .mlbg-stat-group').forEach(function (el) {
+      el.classList.toggle('is-hidden', !!hiddenStatGroups[el.dataset.group]);
+    });
+  }
+
+  function initStatGroupFilter() {
+    var el = document.getElementById('mlbgGroupFilter');
+    if (!el) { return; }
+    el.innerHTML = buildGroupFilterHTML();
+    el.addEventListener('click', function (e) {
+      var btn = e.target.closest('.mlbg-group-filter-btn');
+      if (!btn) { return; }
+      var id = btn.dataset.group;
+      hiddenStatGroups[id] = !hiddenStatGroups[id];
+      btn.classList.toggle('active', !hiddenStatGroups[id]);
+      applyGroupFilterVisibility();
     });
   }
 
@@ -1305,6 +1451,7 @@
     initGameExpand();
     initPersonFilter(function (person) { currentPerson = person; renderForFilter(); });
     initStickyFilterOffset();
+    initStatGroupFilter();
     initStatDetailToggle('mlbgStatGrid');
     initStatDetailToggle('mlbgHofList');
     initStatDetailToggle('mlbgLeaderboardStarters');
