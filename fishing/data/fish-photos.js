@@ -23,5 +23,7 @@ var fishPhotos = {
   'Rainbow Trout': '../images/fishing/species/rainbow-trout.jpg',
   'Redear Sunfish': '../images/fishing/species/redear-sunfish.jpg',
   "Sailor's Choice Grunt": '../images/fishing/species/sailors-choice-grunt.jpg',
-  'Yellow Bass': '../images/fishing/species/yellow-bass.jpg'
+  'Yellow Bass': '../images/fishing/species/yellow-bass.jpg',
+  'Walleye': '../images/fishing/species/walleye.jpg',
+  'Northern Pike': '../images/fishing/species/northern-pike.jpg'
 };

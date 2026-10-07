@@ -22,7 +22,9 @@
     'US-RI': 'Rhode Island',   'US-SC': 'South Carolina', 'US-SD': 'South Dakota',
     'US-TN': 'Tennessee',      'US-TX': 'Texas',          'US-UT': 'Utah',
     'US-VA': 'Virginia',       'US-VT': 'Vermont',        'US-WA': 'Washington',
-    'US-WI': 'Wisconsin',      'US-WV': 'West Virginia',  'US-WY': 'Wyoming'
+    'US-WI': 'Wisconsin',      'US-WV': 'West Virginia',  'US-WY': 'Wyoming',
+    // Canadian provinces use the same ISO 3166-2 style (CA-XX)
+    'CA-SK': 'Saskatchewan'
   };
 
   // Generic fish silhouette shown when a species has no photo yet —

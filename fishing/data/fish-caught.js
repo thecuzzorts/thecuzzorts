@@ -22,7 +22,9 @@ var fishCaught = {
     { species: 'Rainbow Trout',    state: 'US-VA', date: null, weight: null, length: null, notes: '' },
     { species: 'Brook Trout',      state: 'US-VA', date: null, weight: null, length: null, notes: '' },
     { species: 'Redear Sunfish',   state: 'US-IL', date: null, weight: null, length: null, notes: '' },
-    { species: 'Yellow Bass',      state: 'US-IL', date: null, weight: null, length: null, notes: '' }
+    { species: 'Yellow Bass',      state: 'US-IL', date: null, weight: null, length: null, notes: '' },
+    { species: 'Walleye',          state: 'CA-SK', date: null, weight: null, length: null, notes: '' },
+    { species: 'Northern Pike',    state: 'CA-SK', date: null, weight: null, length: null, notes: '' }
   ],
   saltwater: [
     { species: 'Mangrove Snapper',        state: 'US-FL', date: null, weight: null, length: null, notes: '' },
