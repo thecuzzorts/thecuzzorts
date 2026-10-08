@@ -34,6 +34,7 @@ var huntPhotos = {
   'Northern Bobwhite Quail': ['../images/hunting/species/northern-bobwhite-quail-illinois-josh.jpg'],
   'Sharptail Grouse': ['../images/hunting/species/sharptail-grouse-south-dakota-josh.jpg'],
   'Greater Prairie-Chicken': ['../images/hunting/species/greater-prairie-chicken-south-dakota-josh.jpg'],
+  'Ruffed Grouse': ['../images/hunting/species/ruffed-grouse-saskatchewan-josh.jpg'],
 
   // Waterfowl
   'Wood Duck': ['../images/hunting/species/wood-duck-illinois-josh.jpg'],
@@ -43,6 +44,7 @@ var huntPhotos = {
     '../images/hunting/species/canada-goose-illinois-josh.jpg',
     '../images/hunting/species/canada-goose-illinois-sam.jpg'
   ],
+  'Greater White-fronted Goose (Specklebelly)': ['../images/hunting/species/greater-white-fronted-goose-specklebelly-saskatchewan-josh.jpg'],
 
   // Small Game
   'Gray Squirrel': ['../images/hunting/species/gray-squirrel-illinois-josh.jpg'],

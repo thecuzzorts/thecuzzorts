@@ -34,6 +34,7 @@ var huntsLogged = [
   { species: 'Northern Bobwhite Quail',   hunters: ['Josh', 'Sam'], location: 'US-IL',  category: 'Upland Bird' },
   { species: 'Sharptail Grouse',          hunters: ['Josh'],        location: 'US-SD',  category: 'Upland Bird' },
   { species: "Greater Prairie-Chicken",   hunters: ['Josh', 'Sam'], location: 'US-SD',  category: 'Upland Bird' },
+  { species: 'Ruffed Grouse',             hunters: ['Josh'],        location: 'CA-SK',  category: 'Upland Bird' },
 
   // Waterfowl -- rendered exactly like every other category (a card per
   // harvested species). A Ducks/Geese entry here is also what removes
@@ -46,6 +47,7 @@ var huntsLogged = [
   { species: 'Canada Goose',              hunters: ['Josh', 'Sam'], location: 'US-IL',  category: 'Waterfowl' },
   { species: 'Snow Goose',                hunters: ['Josh'],        location: 'US-IL',  category: 'Waterfowl' },
   { species: "Ross's Goose",              hunters: ['Josh'],        location: 'US-IL',  category: 'Waterfowl' },
+  { species: 'Greater White-fronted Goose (Specklebelly)', hunters: ['Josh'], location: 'CA-SK', category: 'Waterfowl' },
 
   // Small Game
   { species: 'Fox Squirrel',              hunters: ['Josh', 'Sam'], location: 'US-IL',  category: 'Small Game' },
@@ -93,7 +95,6 @@ var huntsWatchList = [
   { species: 'Gray (Hungarian) Partridge', hunters: [], location: null, category: 'Upland Bird' },
   { species: 'American Woodcock',          hunters: [], location: null, category: 'Upland Bird' },
   { species: 'Chukar Partridge',           hunters: [], location: null, category: 'Upland Bird' },
-  { species: 'Ruffed Grouse',              hunters: [], location: null, category: 'Upland Bird' },
   { species: 'Spruce Grouse',              hunters: [], location: null, category: 'Upland Bird' },
   { species: 'Dusky Grouse',               hunters: [], location: null, category: 'Upland Bird' },
 
