@@ -286,6 +286,6 @@ body.lb-open { overflow: hidden; }
 
 /* --- Mobile ---------------------------------------- */
 @media (max-width: 640px) {
-  .catch-grid { grid-template-columns: repeat(auto-fill, minmax(115px, 1fr)); gap: 0.55rem; }
+  .catch-grid { grid-template-columns: repeat(2, 1fr); gap: 0.55rem; }
   .catch-card-body { padding: 0.55rem 0.6rem; }
 }

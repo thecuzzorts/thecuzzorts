@@ -1007,7 +1007,7 @@ body.dlb-open { overflow: hidden; }
 /* --- Mobile ---------------------------------------- */
 @media (max-width: 640px) {
   .section-shortcuts { grid-template-columns: repeat(2, 1fr); }
-  .card-grid { grid-template-columns: repeat(auto-fill, minmax(115px, 1fr)); gap: 0.55rem; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); gap: 0.55rem; }
   .species-body { padding: 0.55rem 0.6rem; }
   .hunting-stat-num { font-size: 1.45rem; }
   .hunting-stats { gap: 1.25rem; }
