@@ -56,6 +56,7 @@ var huntPhotos = {
   ],
   'Common Pigeon': ['../images/hunting/species/common-pigeon-illinois-josh.jpg'],
   'Jackrabbit': ['../images/hunting/species/jackrabbit-south-dakota-josh.jpg'],
+  'Black-tailed Prairie Dog': ['../images/hunting/species/black-tailed-prairie-dog-south-dakota-josh.jpg'],
 
   // Furbearer -- Coyote is both hunted and trapped, so it gets one photo
   // per method; everything else here only has one.

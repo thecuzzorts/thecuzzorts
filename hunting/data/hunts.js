@@ -56,6 +56,7 @@ var huntsLogged = [
   { species: 'Mourning Dove',             hunters: ['Josh', 'Sam'], location: 'US-IL',  category: 'Small Game' },
   { species: 'Mourning Dove',             hunters: ['Josh'],        location: 'US-KY',  category: 'Small Game' },
   { species: 'Jackrabbit',                hunters: ['Josh'],        location: 'US-SD',  category: 'Small Game' },
+  { species: 'Black-tailed Prairie Dog',  hunters: ['Josh'],        location: 'US-SD',  category: 'Small Game' },
   { species: 'Common Pigeon',             hunters: ['Josh'],        location: 'US-IL',  category: 'Small Game' },
   { species: 'European Starling',         hunters: ['Josh'],        location: 'US-IL',  category: 'Small Game' },
   { species: 'European Starling',         hunters: ['Josh'],        location: 'US-SD',  category: 'Small Game' },
@@ -101,8 +102,5 @@ var huntsWatchList = [
   // Waterfowl
   { species: 'American Coot',              hunters: [], location: null, category: 'Waterfowl' },
   { species: "Wilson's Snipe",             hunters: [], location: null, category: 'Waterfowl' },
-  { species: 'Sandhill Crane',             hunters: [], location: null, category: 'Waterfowl' },
-
-  // Small Game
-  { species: 'Black-tailed Prairie Dog',   hunters: [], location: null, category: 'Small Game' }
+  { species: 'Sandhill Crane',             hunters: [], location: null, category: 'Waterfowl' }
 ];
