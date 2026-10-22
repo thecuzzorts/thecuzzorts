@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "locations": [
+    {
+      "id": "pin-mvk03bh9-0jvydz",
+      "name": "Home",
+      "latitude": 39.79699,
+      "longitude": -89.74422,
+      "timezone": "America/Chicago"
+    },
+    {
+      "id": "pin-mvk04cgp-e4mw12",
+      "name": "Morgan Cabin",
+      "latitude": 39.81425,
+      "longitude": -90.07888,
+      "timezone": "America/Chicago"
+    },
+    {
+      "id": "pin-mvk05m3r-4l0wnw",
+      "name": "Big Menard",
+      "latitude": 40.04141,
+      "longitude": -89.83941,
+      "timezone": "America/Chicago"
+    },
+    {
+      "id": "pin-mvk06uow-xakqdi",
+      "name": "Andy's Farm",
+      "latitude": 40.04156,
+      "longitude": -89.95777,
+      "timezone": "America/Chicago"
+    },
+    {
+      "id": "pin-mvk0801a-2mpdaw",
+      "name": "Pike Cabin",
+      "latitude": 39.50308,
+      "longitude": -90.75484,
+      "timezone": "America/Chicago"
+    },
+    {
+      "id": "pin-mvk08v3b-iy4vj7",
+      "name": "South Dakota Cabin",
+      "latitude": 43.55943,
+      "longitude": -99.83731,
+      "timezone": "America/Chicago"
+    }
+  ]
+}

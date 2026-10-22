@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rainfall</title>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  >
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <div class="map-frame">
+      <div id="map" role="region" aria-label="Map of precipitation locations"></div>
+      <header class="topbar">
+        <div class="title-block">
+          <p class="eyebrow">Precipitation</p>
+          <h1>Rainfall</h1>
+        </div>
+        <div class="topbar-actions">
+          <p id="status" class="status" role="status" aria-live="polite"></p>
+          <button id="refresh" type="button">Refresh</button>
+          <button id="edit-open" type="button">Edit locations</button>
+        </div>
+      </header>
+    </div>
+
+    <section class="board" aria-label="Precipitation totals">
+      <div class="board-scroll">
+        <table>
+          <caption>Inches of precipitation. The 7-day, 30-day, 180-day, and 365-day totals end at 12 UTC.</caption>
+          <thead>
+            <tr>
+              <th class="pin" scope="col">Location</th>
+              <th scope="col">24 hours</th>
+              <th scope="col">7 days</th>
+              <th scope="col">30 days</th>
+              <th scope="col">180 days</th>
+              <th scope="col">365 days</th>
+            </tr>
+          </thead>
+          <tbody id="totals"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <details class="about">
+      <summary>About these totals</summary>
+      <p>
+        Totals are NOAA precipitation estimates on about a 4 km grid. A pin reads the cell around that point.
+        The 24-hour column is the latest hourly product. The longer columns are daily accumulations that end at 12 UTC, which is 7 a.m. CDT or 6 a.m. CST in central Illinois.
+        Thirty, 180, and 365 days are day counts. The time under a location is when this browser received the value.
+      </p>
+    </details>
+  </div>
+
+  <div class="sheet-root" id="sheet-root" hidden>
+    <div id="sheet-scrim" class="scrim" aria-hidden="true"></div>
+    <div
+      id="sheet"
+      class="sheet"
+      role="dialog"
+      aria-modal="false"
+      aria-labelledby="sheet-title"
+    >
+      <div id="sheet-grab" class="sheet-grab" aria-hidden="true"><span></span></div>
+      <div class="sheet-head">
+        <h2 id="sheet-title">Locations</h2>
+        <button id="sheet-close" type="button">Done</button>
+      </div>
+      <p class="sheet-copy">
+        Everyone who opens this page sees <span class="path">rain/data/locations.json</span>.
+        Download that file, replace it in the site, and publish. This editor is only for setting the list up.
+      </p>
+      <p id="sheet-status" class="sheet-status" role="status"></p>
+
+      <form id="pin-form" class="pin-form" hidden>
+        <label>
+          <span id="pin-form-label">Name this pin</span>
+          <input id="pin-name" name="pin-name" type="text" maxlength="80" autocomplete="off" required>
+        </label>
+        <div class="form-actions">
+          <button class="primary" type="submit">Save pin</button>
+          <button id="pin-cancel" type="button">Cancel</button>
+        </div>
+      </form>
+
+      <ul id="editor-list" class="editor-list"></ul>
+
+      <div class="sheet-footer">
+        <button id="download" class="primary" type="button">Download locations.json</button>
+        <button id="import" type="button">Import</button>
+        <button id="discard" type="button">Discard unpublished edits</button>
+        <input id="import-file" type="file" accept="application/json,.json" hidden>
+      </div>
+    </div>
+  </div>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
