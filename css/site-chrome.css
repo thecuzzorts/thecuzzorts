@@ -148,7 +148,7 @@
    root font-size (e.g. baseball sets html { font-size: 17px }). */
 .site-header {
   font-size: 16px;
-  background: #1a2e3b;
+  background: rgba(26, 46, 59, 0.9);
   color: #fff;
   /* Thin per-section colour stripe (falls back to brand gold on pages
      that don't set --section, e.g. the home page). */
@@ -158,7 +158,20 @@
   position: sticky;
   top: 0;
   z-index: 2000;            /* above Leaflet panes/controls (~1000) */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+}
+
+/* Scroll edge under the floating bar, instead of a hard shadow. */
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -16px;
+  height: 16px;
+  background: linear-gradient(to bottom, rgba(26, 46, 59, 0.28), rgba(26, 46, 59, 0));
+  pointer-events: none;
 }
 
 .site-title,
@@ -178,7 +191,7 @@
   font-weight: 700;
   color: var(--section, #E8A020);
   margin: 0 0 0.3rem;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.02em;
 }
 
 .page-intro p {
@@ -186,7 +199,7 @@
   font-size: 0.95rem;
   color: var(--text-muted, #8a9baa);
   margin: 0;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
 }
 
 /* Main content area — shared layout for all section pages */
@@ -404,3 +417,97 @@ footer a:focus {
    popup box itself went dark-mode-aware above. */
 .popup-sub  { color: var(--text-muted, #888); }
 .popup-meta { font-size: 0.82em; color: var(--text-muted, #555); }
+
+/* --- Press feedback --------------------------------------
+   Instant scale on the way down. Hover-only feedback never reaches a phone. */
+.theme-toggle:active,
+.global-nav-link:active,
+.site-header nav a:active,
+.person-filter:active,
+.person-filter-btn:active,
+.mlbg-person-filter-btn:active,
+.shortcut-card:active,
+.list-toggle:active,
+.map-filter-btn:active,
+.bp-filter-btn:active,
+.visit-chip:active,
+.card:active,
+.hero-card:active,
+.person-card:active,
+.bb-stat:active,
+.turkey-card:active {
+  transform: scale(0.97);
+}
+
+/* Visit lists reveal under their toggle instead of popping in. */
+.visit-list {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 0;
+  opacity: 0;
+  transition: max-height 0.32s ease, opacity 0.22s ease, margin-top 0.32s ease;
+}
+.visit-list.open {
+  opacity: 1;
+  margin-top: 0.5rem;
+}
+
+/* Lifts are for a real pointer. A finger should not leave a card raised. */
+@media (hover: none), (pointer: coarse) {
+  .card:hover,
+  .card:hover .card-icon,
+  .card:hover .card-cta-arrow,
+  .shortcut-card:hover,
+  .visit-chip:hover,
+  .hero-card:hover,
+  .person-card:hover,
+  .bb-stat:hover,
+  .turkey-card:hover,
+  .buck-photo:hover,
+  .photo-item:hover .photo-thumb,
+  .catch-card-photo:hover,
+  .race-photo-thumb:hover {
+    transform: none !important;
+  }
+}
+
+/* Theme switch eases color instead of flashing. The class is removed
+   by site-nav.js when the fade finishes. */
+html.theme-changing * {
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, fill 0.35s ease, stroke 0.35s ease !important;
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .site-header {
+    background-color: #1a2e3b;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .site-header::after { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ring-arc,
+  .card,
+  .card-icon,
+  .card-cta-arrow,
+  .shortcut-card,
+  .qs-ring-fill,
+  .ring-fill,
+  .ss-progress-bar,
+  .visit-chip,
+  .visit-list,
+  .hero-card,
+  .person-card,
+  .bb-stat,
+  .turkey-card,
+  .lb-frame,
+  .tlb-frame,
+  .dlb-frame,
+  .lb-figure,
+  .race-lb-frame {
+    animation: none !important;
+    transition: none !important;
+  }
+}

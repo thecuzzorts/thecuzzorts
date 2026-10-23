@@ -58,7 +58,7 @@
           #1a2e3b calc(83.33% - 2px),              #1a2e3b calc(83.33% + 2px),
           #E060C6 calc(83.33% + 2px),              #E060C6 100%
         ) top / 100% 4px no-repeat,
-        #1a2e3b;
+        rgba(26, 46, 59, 0.9);
     }
 
     body {
@@ -109,7 +109,7 @@
       font-family: 'Kreon', serif;
       font-size: clamp(2.2rem, 7vw, 3.8rem);
       font-weight: 700;
-      letter-spacing: 0.02em;
+      letter-spacing: -0.02em;
       line-height: 1.05;
       margin-bottom: 0.5rem;
     }
@@ -283,6 +283,10 @@
     .card:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.13);
+    }
+
+    .card:active {
+      transform: scale(0.97);
     }
 
     .card-baseball { --accent: #F07070; }

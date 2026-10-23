@@ -571,9 +571,7 @@ body.lb-open { overflow: hidden; }
 
 .list-toggle:hover { color: var(--text, #555); }
 
-/* --- Visit List ------------------------------------ */
-.visit-list { display: none; margin-top: 0.5rem; }
-.visit-list.open { display: block; }
+/* Visit lists reveal from css/site-chrome.css */
 
 .turkey-group { margin-bottom: 0.55rem; }
 
