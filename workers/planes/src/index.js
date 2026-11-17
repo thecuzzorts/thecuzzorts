@@ -62,7 +62,22 @@ async function livePoll(env) {
   return liveInFlight;
 }
 
+// Creates the table on first use, so a fresh D1 database needs no setup step.
+let tableReady = null;
+function ensureTable(env) {
+  tableReady ||= env.DB.prepare(
+    "CREATE TABLE IF NOT EXISTS kv (key TEXT PRIMARY KEY, value TEXT NOT NULL, updated INTEGER NOT NULL)",
+  )
+    .run()
+    .catch((error) => {
+      tableReady = null;
+      throw error;
+    });
+  return tableReady;
+}
+
 async function readDb(env) {
+  await ensureTable(env);
   const row = await env.DB.prepare("SELECT value FROM kv WHERE key = 'planes'").first();
   if (row) {
     try {
@@ -151,6 +166,7 @@ async function planes(env) {
 
 async function track(env, id) {
   if (!/^[A-Z0-9]+-\d{8}-\d{4}$/.test(id)) return json({ error: "bad id" }, 400);
+  await ensureTable(env);
   const row = await env.DB.prepare("SELECT value FROM kv WHERE key = ?1").bind(`track:${id}`).first();
   if (!row) return json({ error: "not found" }, 404);
   return new Response(row.value, {

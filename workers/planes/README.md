@@ -9,24 +9,19 @@ Backs [/planes](../../planes/). A Cloudflare Worker on the free plan:
   The page polls this every 10 s while a plane is flying.
 - **`GET /tracks/<id>.json`:** one finished flight's track.
 
-## Deploy (one time)
+## Deploy
 
-You need a free Cloudflare account and an API token with **Workers Scripts: Edit**,
-**D1: Edit** and **Account Settings: Read** (the "Edit Cloudflare Workers" template plus D1).
+The Worker **thecuzzorts** in Cloudflare is connected to this GitHub repo (Workers Builds).
+Every push to `main` builds and deploys it, using **Root directory** `workers/planes` and the
+deploy command `npx wrangler deploy`. The `name` in `wrangler.toml` must match the Worker's
+name in Cloudflare.
 
-```bash
-cd workers/planes
-npm install
-export CLOUDFLARE_API_TOKEN=...   # the token above
-npx wrangler d1 create planes    # paste the database_id it prints into wrangler.toml
-npx wrangler d1 execute planes --remote --file schema.sql
-npx wrangler deploy              # prints https://planes.<your-subdomain>.workers.dev
-```
+The D1 database `planes` is created in the dashboard (Storage & Databases → D1), and its ID
+goes in `wrangler.toml`. The Worker creates its table on first use, so no schema step is needed
+(`schema.sql` is kept for reference).
 
-Put that URL in `planes/js/data.js` (the `BASE` default) and publish the site.
-
-To add or remove a plane, edit `planes/data/aircraft.json` and run `npx wrangler deploy`
-again (the Worker bundles that file).
+To add or remove a plane, edit `planes/data/aircraft.json` and push to `main`; the Worker
+bundles that file and redeploys.
 
 ## Local testing
 
