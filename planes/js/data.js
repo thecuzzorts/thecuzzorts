@@ -2,7 +2,7 @@
 // ?data=<url> points the page somewhere else for testing.
 
 const params = new URLSearchParams(location.search);
-const BASE = (params.get("data") || "__WORKER_URL__").replace(/\/?$/, "/");
+const BASE = (params.get("data") || "https://thecuzzorts.thecuzzorts.workers.dev/").replace(/\/?$/, "/");
 const CACHE_KEY = "planes:v1";
 const tracks = new Map();
 
