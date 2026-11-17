@@ -3,6 +3,7 @@
 //   cron, every minute   poll the ADS-B feeds, run the flight logic, store the db in D1
 //   GET /planes.json      the stored db with a fresh (<= 10 s old) poll applied on top
 //   GET /tracks/<id>.json a finished flight's track
+//   GET /status           what the last collection did, for debugging
 //
 // The positions are public ADS-B data, so responses are open to any origin.
 
@@ -15,10 +16,16 @@ const LIVE_TTL_MS = 10_000;
 const SEED_URL = "https://raw.githubusercontent.com/thecuzzorts/thecuzzorts/planes-data/planes.json";
 const UA = "thecuzzorts-planes/2.0 (+https://www.thecuzzorts.com/planes/)";
 
+// All serve the same readsb-style JSON. Some refuse or rate-limit Cloudflare's shared
+// outbound addresses some of the time, so each is tried in turn.
 const SOURCES = [
-  { name: "adsb.fi", url: (hexes) => `https://opendata.adsb.fi/api/v2/hex/${hexes.join(",")}` },
   { name: "adsb.lol", url: (hexes) => `https://api.adsb.lol/v2/hex/${hexes.join(",")}` },
+  { name: "airplanes.live", url: (hexes) => `https://api.airplanes.live/v2/hex/${hexes.join(",")}` },
+  { name: "adsb.one", url: (hexes) => `https://api.adsb.one/v2/hex/${hexes.join(",")}` },
+  { name: "adsb.fi", url: (hexes) => `https://opendata.adsb.fi/api/v2/hex/${hexes.join(",")}` },
 ];
+// The stored data is refreshed by viewers too, at most this often.
+const SAVE_EVERY_MS = 50_000;
 
 // Built once when the isolate starts, so it doesn't count against each run's CPU time.
 const airportIndex = createAirportIndex(airports);
@@ -37,7 +44,7 @@ async function poll(env) {
     try {
       const response = await fetch(source.url(hexes), {
         headers: { "user-agent": UA, accept: "application/json" },
-        signal: AbortSignal.timeout(8_000),
+        signal: AbortSignal.timeout(5_000),
       });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const body = await response.json();
@@ -50,6 +57,22 @@ async function poll(env) {
     }
   }
   throw new Error(errors.join("; "));
+}
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+// For the cron: a few rounds, since a refusal is often gone a few seconds later.
+async function pollWithRetry(env, rounds = 3) {
+  const errors = [];
+  for (let round = 0; round < rounds; round += 1) {
+    try {
+      return await poll(env);
+    } catch (error) {
+      errors.push(error.message);
+      if (round < rounds - 1) await sleep(4_000 * (round + 1));
+    }
+  }
+  throw new Error(errors[errors.length - 1]);
 }
 
 async function livePoll(env) {
@@ -110,15 +133,15 @@ function withFleet(db) {
   return db;
 }
 
-async function collect(env) {
-  const db = (await readDb(env)) || (await seedDb(env));
-  const result = await poll(env);
-  db.source = result.source;
-  const { finished, events } = step(db, fleet, result.records, result.now, index());
+async function save(env, db, finished, now, via) {
   const statements = [
     env.DB.prepare("INSERT OR REPLACE INTO kv (key, value, updated) VALUES ('planes', ?1, ?2)").bind(
       JSON.stringify(withFleet(compact(db, db.updated))),
-      result.now,
+      now,
+    ),
+    env.DB.prepare("INSERT OR REPLACE INTO kv (key, value, updated) VALUES ('status', ?1, ?2)").bind(
+      JSON.stringify({ ok: true, at: now, via, source: db.source }),
+      now,
     ),
   ];
   for (const track of finished) {
@@ -126,11 +149,31 @@ async function collect(env) {
       env.DB.prepare("INSERT OR REPLACE INTO kv (key, value, updated) VALUES (?1, ?2, ?3)").bind(
         `track:${track.id}`,
         JSON.stringify(track),
-        result.now,
+        now,
       ),
     );
   }
   await env.DB.batch(statements);
+}
+
+async function recordFailure(env, error) {
+  try {
+    await ensureTable(env);
+    await env.DB.prepare("INSERT OR REPLACE INTO kv (key, value, updated) VALUES ('status', ?1, ?2)")
+      .bind(JSON.stringify({ ok: false, at: Date.now(), via: "cron", error: error.message }), Date.now())
+      .run();
+  } catch {
+    // nothing more to do
+  }
+}
+
+async function collect(env) {
+  const db = (await readDb(env)) || (await seedDb(env));
+  const result = await pollWithRetry(env);
+  if (result.now <= (db.updated || 0)) return db; // a viewer already saved something newer
+  db.source = result.source;
+  const { finished, events } = step(db, fleet, result.records, result.now, index());
+  await save(env, db, finished, result.now, "cron");
   live = { ...result, fetchedAt: Date.now() };
   for (const e of events) console.log(`${e.type} ${e.tail} ${e.from || e.to || ""}`.trim());
   return db;
@@ -149,19 +192,37 @@ function json(body, status = 200) {
   });
 }
 
-async function planes(env) {
-  const db = (await readDb(env)) || withFleet(emptyDb());
+async function planes(env, ctx) {
+  const stored = await readDb(env);
+  const db = stored || withFleet(emptyDb());
+  const storedAt = stored ? stored.updated || 0 : 0;
   try {
     const result = await livePoll(env);
-    if (result.now > (db.updated || 0)) {
-      // Apply the fresh poll to a copy. Only the cron writes to storage.
+    if (result.now > storedAt) {
       db.source = result.source;
-      step(db, fleet, result.records, result.now, index());
+      const { finished } = step(db, fleet, result.records, result.now, index());
+      // If the cron has been failing, a viewer's successful poll keeps the history going.
+      if (result.now - storedAt >= SAVE_EVERY_MS || finished.length) {
+        const copy = JSON.parse(JSON.stringify(db));
+        ctx.waitUntil(save(env, copy, finished, result.now, "viewer").catch(() => {}));
+      }
     }
   } catch (error) {
     db.liveError = error.message;
   }
   return json(withFleet(compact(db, db.updated)));
+}
+
+async function status(env) {
+  await ensureTable(env);
+  const row = await env.DB.prepare("SELECT value FROM kv WHERE key = 'status'").first();
+  const stored = await env.DB.prepare("SELECT updated FROM kv WHERE key = 'planes'").first();
+  return json({
+    now: Date.now(),
+    last: row ? JSON.parse(row.value) : null,
+    storedUpdated: stored ? stored.updated : null,
+    storedAgeSeconds: stored ? Math.round((Date.now() - stored.updated) / 1000) : null,
+  });
 }
 
 async function track(env, id) {
@@ -175,21 +236,23 @@ async function track(env, id) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
     if (request.method !== "GET") return json({ error: "method not allowed" }, 405);
     const { pathname } = new URL(request.url);
-    if (pathname === "/planes.json") return planes(env);
+    if (pathname === "/planes.json") return planes(env, ctx);
+    if (pathname === "/status") return status(env);
     const match = pathname.match(/^\/tracks\/([^/]+)\.json$/);
     if (match) return track(env, decodeURIComponent(match[1]));
-    if (pathname === "/") return json({ ok: true, endpoints: ["/planes.json", "/tracks/<id>.json"] });
+    if (pathname === "/") return json({ ok: true, endpoints: ["/planes.json", "/tracks/<id>.json", "/status"] });
     return json({ error: "not found" }, 404);
   },
 
   async scheduled(_controller, env, ctx) {
     ctx.waitUntil(
-      collect(env).catch((error) => {
+      collect(env).catch(async (error) => {
         console.error(`collect failed: ${error.message}`);
+        await recordFailure(env, error);
       }),
     );
   },
