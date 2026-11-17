@@ -9,7 +9,7 @@ crons = ["* * * * *"]
 [[d1_databases]]
 binding = "DB"
 database_name = "planes"
-database_id = "REPLACE_WITH_D1_ID"
+database_id = "b4b7fbc8-1907-4b5c-bf2f-f704425f9e22"
 
 [observability]
 enabled = true
