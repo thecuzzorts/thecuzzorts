@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "fleet": "LRS fleet",
+  "aircraft": [
+    { "tail": "N65RL", "hex": "a88be3", "type": "Citation V", "model": "C560", "year": 1992, "color": "#ff9f0a" },
+    { "tail": "N15RL", "hex": "a0c958", "type": "Citation X", "model": "C750", "year": 2001, "color": "#0a84ff" },
+    { "tail": "N347RL", "hex": "a3d8d1", "type": "Citation X", "model": "C750", "year": 2007, "color": "#bf5af2" }
+  ]
+}
