@@ -1,0 +1,15 @@
+name = "planes"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+[triggers]
+crons = ["* * * * *"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "planes"
+database_id = "REPLACE_WITH_D1_ID"
+
+[observability]
+enabled = true

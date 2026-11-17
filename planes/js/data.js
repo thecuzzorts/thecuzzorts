@@ -1,8 +1,8 @@
-// planes.json and flight tracks live on the planes-data branch, written by
-// .github/workflows/planes.yml. ?data=<url> points the page somewhere else for testing.
+// planes.json and flight tracks come from the Cloudflare Worker in workers/planes.
+// ?data=<url> points the page somewhere else for testing.
 
 const params = new URLSearchParams(location.search);
-const BASE = (params.get("data") || "https://raw.githubusercontent.com/thecuzzorts/thecuzzorts/planes-data/").replace(/\/?$/, "/");
+const BASE = (params.get("data") || "__WORKER_URL__").replace(/\/?$/, "/");
 const CACHE_KEY = "planes:v1";
 const tracks = new Map();
 
@@ -15,9 +15,7 @@ export async function loadFleet() {
 }
 
 export async function loadPlanes() {
-  // raw.githubusercontent.com caches for a few minutes; a changing query asks for a fresh copy.
-  const bust = Math.floor(Date.now() / 15_000);
-  const response = await fetch(`${BASE}planes.json?t=${bust}`, { cache: "no-store" });
+  const response = await fetch(`${BASE}planes.json`, { cache: "no-store" });
   if (response.status === 404) throw new NoDataYet("No data yet");
   if (!response.ok) throw new Error(`planes.json ${response.status}`);
   const db = await response.json();
