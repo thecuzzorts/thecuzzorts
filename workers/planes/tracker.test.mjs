@@ -1,10 +1,10 @@
-// node --test .github/scripts/planes/tracker.test.mjs
+// node --test workers/planes/tracker.test.mjs
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { test } from "node:test";
-import { createAirportIndex, emptyDb, step } from "./tracker.mjs";
+import { createAirportIndex, emptyDb, step } from "./src/tracker.mjs";
 
-const airports = JSON.parse(readFileSync(new URL("./airports.json", import.meta.url), "utf8"));
+const airports = JSON.parse(readFileSync(new URL("./src/airports.json", import.meta.url), "utf8"));
 const index = createAirportIndex(airports);
 const fleet = [{ tail: "N15RL", hex: "a0c958" }];
 const MIN = 60_000;

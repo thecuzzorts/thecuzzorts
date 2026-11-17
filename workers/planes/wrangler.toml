@@ -1,0 +1,15 @@
+name = "thecuzzorts"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+[triggers]
+crons = ["* * * * *"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "planes"
+database_id = "b4b7fbc8-1907-4b5c-bf2f-f704425f9e22"
+
+[observability]
+enabled = true

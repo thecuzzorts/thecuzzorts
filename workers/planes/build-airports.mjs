@@ -1,8 +1,8 @@
-// Builds airports.json for the /planes history collector from OurAirports data.
+// Builds airports.json for the /planes Worker from OurAirports data.
 //
 //   curl -sSLO https://raw.githubusercontent.com/davidmegginson/ourairports-data/main/airports.csv
 //   curl -sSLO https://raw.githubusercontent.com/davidmegginson/ourairports-data/main/runways.csv
-//   node .github/scripts/planes/build-airports.mjs airports.csv runways.csv
+//   node workers/planes/build-airports.mjs airports.csv runways.csv
 //
 // Keeps open airports with at least one hard-surface runway of 3,000 ft or more,
 // since that is where a Citation can land. Rows are
@@ -86,6 +86,6 @@ for (const airport of parseCsv(readFileSync(airportsPath, "utf8"))) {
   ]);
 }
 
-const target = join(dirname(fileURLToPath(import.meta.url)), "airports.json");
+const target = join(dirname(fileURLToPath(import.meta.url)), "src", "airports.json");
 writeFileSync(target, `[\n${out.map((row) => JSON.stringify(row)).join(",\n")}\n]\n`);
 console.log(`wrote ${out.length} airports to ${target}`);

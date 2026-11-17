@@ -4,7 +4,7 @@ import { BACK, GLYPH, planeSvg } from "./icons.js";
 import { createSheet } from "./sheet.js";
 
 const MIN = 60_000;
-const PROJECT_MAX_MS = 3 * MIN;
+const PROJECT_MAX_MS = 45_000;
 const HOME = [39.8441, -89.6779]; // KSPI
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -717,7 +717,7 @@ function fitFleet() {
 function schedule() {
   clearTimeout(state.timer);
   if (document.hidden) return;
-  const wait = state.error ? 45_000 : anyAirborne() ? 20_000 : 90_000;
+  const wait = state.error ? 30_000 : anyAirborne() ? 10_000 : 60_000;
   state.timer = setTimeout(refresh, wait);
 }
 
